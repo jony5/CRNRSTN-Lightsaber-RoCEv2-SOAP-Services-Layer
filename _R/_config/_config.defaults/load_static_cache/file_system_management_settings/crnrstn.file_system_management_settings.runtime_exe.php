@@ -1,0 +1,407 @@
+<?php
+/*
+ * 5 :: 
+ * Code is Poetry 
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *       CRNRSTN :: The CRNRSTN :: Lightsaber 
+ *                  RoCEv2 SOAP Services 
+ *                  Layer, The CLR-SSL, is an 
+ *                  advanced, open source, 
+ *                  and distributed compute 
+ *                  PHP framework providing: 
+ *                  - a distributed and free 
+ *                    instant messaging 
+ *                    communications platform, 
+ *                  - a distributed and free 
+ *                    cloud-based file storage 
+ *                    system with a built in 
+ *                    photo gallery experience 
+ *                    and with full social media 
+ *                    integrations, and 
+ *                  - a distributed, RAID 
+ *                    style, schedulable, and 
+ *                    RTM-automatable web site 
+ *                    maintenance and back-up 
+ *                    protocol with one click 
+ *                    back-up recovery. 
+ *
+ *                  Here, at the end of this, 
+ *                  the age of the church...
+ *                  the age of grace, and 
+ *                  looking to when the 
+ *                  kingdom of this world 
+ *                  shall become the kingdom 
+ *                  of our Lord and of His 
+ *                  His Christ (Rev. 11:15), 
+ *                  the CLR-SSL is 
+ *                  intentionally and 
+ *                  specifically being 
+ *                  prepared to function as a 
+ *                  heavenly-hosted and 
+ *                  enterprise licensed 
+ *                  (MIT License) architecture 
+ *                  that will connect the 
+ *                  people in the heavens 
+ *                  together with the people 
+ *                  on the earth for much 
+ *                  north-south fellowship. 
+ *
+ *                  The CLR-SSL is the 
+ *                  practical and prophetic 
+ *                  fulfillment of the Son of 
+ *                  Man, the heavenly ladder, 
+ *                  with angels of God ascending 
+ *                  and descending upon the 
+ *                  Son of Man as mentioned by 
+ *                  the King of kings, 
+ *                  Jesus Christ our Lord, in 
+ *                  His word to our brother 
+ *                  Nathanael in John 1:47-51 
+ *                  and with the first mention 
+ *                  in Holy Scriptures coming 
+ *                  from Moses in his Genesis 
+ *                  Chapter 28 account of 
+ *                  Jacob's stone-pillow 
+ *                  dream (28:12). 
+ *
+ *
+ *                  5
+ *
+ *                  Last Modified: Saturday, August 15, 2026 @ 0420 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *       Version :: 2.00.0001
+ * Last Modified :: Tuesday, February 24, 2026 @ 04:20:01.120273 2026.
+ *   Launch Date :: July 4, 2018 - Happy Independence Day from 
+ *      (v1.0.0)                   my dog and I to you...wherever 
+ *                                 and whenever you are. 
+ *        Author :: Jonathan '5' Harris, CEO, CTO, Lead Full Stack 
+ *                  Developer, and as of Q3 in 2025, Chief Creative
+ *                  here at eVifweb® 
+ *                  jharris@eVifweb.com. eVifweb@gmail.com. 
+ *           URI :: https://crnrstn.jony5.com
+ *      Overview :: The CRNRSTN :: Lightsaber RoCEv2 
+ *                  SOAP Services Layer, The CLR-SSL, 
+ *                  is an advanced, open source, and 
+ *                  distributed compute PHP 
+ *                  framework providing: 
+ *                  - a distributed and free 
+ *                    instant messaging 
+ *                    communications platform, 
+ *                  - a distributed and free 
+ *                    cloud-based file storage 
+ *                    system with a built in 
+ *                    photo gallery experience 
+ *                    and with full social media 
+ *                    integrations, and 
+ *                  - a distributed and free, 
+ *                    RAID style, schedulable, 
+ *                    and RTM-automatable web 
+ *                    site maintenance and 
+ *                    back-up protocol with one 
+ *                    click back-up recovery. 
+ *
+ *                  CRNRSTN :: is powered by eVifweb®
+ *
+ *                  CRNRSTN :: is powered by eCRM 
+ *                             Strategy and Execution, Web 
+ *                             Design & Development, and 
+ *                             Only The Best Coffee. 
+ *
+ *
+ *                  5
+ *
+ *                  Copyright © 2012-2027 eVifweb® development.
+ *
+ *                  All Rights Reserved.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *   Description :: The CRNRSTN :: Lightsaber RoCEv2 
+ *                  SOAP Services Layer, The CLR-SSL 
+ *                  is an advanced open source PHP 
+ *                  class library that will 
+ *                  facilitate and spread (via a 
+ *                  SOAP services layer powered by 
+ *                  NuSOAP v1.124) the operations of 
+ *                  a web application across 
+ *                  multiple servers or environments 
+ *                  (e.g. localhost, stage, preprod, 
+ *                  and n+1 production or a 
+ *                  distributed compute of IoT). 
+ *
+ *                  With this tool, data and 
+ *                  functionality possessing 
+ *                  characteristics that inherently 
+ *                  create distinctions between one 
+ *                  environment and another can all 
+ *                  be managed through one framework 
+ *                  for an entire application. 
+ *
+ *                  IP address restrictions, error 
+ *                  logging profiles, and database 
+ *                  authentication credentials are 
+ *                  a few areas within an 
+ *                  application's architecture that 
+ *                  the CLR-SSL has been designed 
+ *                  to excel within. 
+ *
+ *                  Once the CLR-SSL has been 
+ *                  configured to support all of a 
+ *                  web application's running 
+ *                  servers, one can seamlessly RTM 
+ *                  the codebase of the web site 
+ *                  without having to modify the 
+ *                  configuration to account for any 
+ *                  unique and environmentally 
+ *                  specific parameters. 
+ *
+ *                  Receive the benefit of a robust 
+ *                  and polished framework that will 
+ *                  bubble up logs from exception 
+ *                  notifications to any output 
+ *                  channel (email, hidden HTML 
+ *                  comment, native default,...etc.) 
+ *                  of one's own choosing. 
+ *
+ *                  Stand on top of the CLR-SSL in 
+ *                  order to, for example, organize 
+ *                  and strengthen the 
+ *                  communications architecture of 
+ *                  any web application. 
+ *
+ *                  By supporting many-to-one proxy 
+ *                  messaging relationships between 
+ *                  slaves and a master 
+ *                  "communications server", 
+ *                  the CLR-SSL is able to 
+ *                  streamline and simplify the 
+ *                  management of web application 
+ *                  communications. 
+ *
+ *                  One can configure everything 
+ *                  from SMTP credentials to the 
+ *                  character count for line 
+ *                  wrapping in the text versions 
+ *                  of multi-part HTML email. 
+ *
+ *                  The CLR-SSL is the "King's Highway" 
+ *                  (Num. 20:17) for communications 
+ *                  between the kingdom of our Lord 
+ *                  Jesus Christ in heaven, and the 
+ *                  people in His earthly kingdom 
+ *                  here below. 
+ *
+ * Numbers 20:17 :: Please let us pass through your 
+ *                  land. We will not pass through 
+ *                  field or through vineyard, nor 
+ *                  will we drink water from any well; 
+ *                  we will go along the King’s Highway, 
+ *                  not turning aside to the right or 
+ *                  to the left, until we pass through 
+ *                  your territory. 
+ *
+ *                  https://text.recoveryversion.bible/04_Numbers_20.htm#Num20-17
+ *
+ *
+ *                  5
+ *
+ *                  Last Modified: Tuesday, February 24, 2026 @ 0502 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *       License :: MIT 
+ *                  Permission is hereby granted, 
+ *                  free of charge, to any person 
+ *                  obtaining a copy of this 
+ *                  software and associated 
+ *                  documentation files (the 
+ *                  "Software"), to deal in the 
+ *                  Software without restriction, 
+ *                  including without limitation 
+ *                  the rights to use, copy, modify, 
+ *                  merge, publish, distribute, 
+ *                  sublicense, and/or sell copies 
+ *                  of the Software, and to permit 
+ *                  persons to whom the Software is 
+ *                  furnished to do so, subject to 
+ *                  the following conditions: 
+ *
+ *                  The above copyright notice and 
+ *                  this permission notice shall be 
+ *                  included in all copies or 
+ *                  substantial portions of 
+ *                  the Software. 
+ *
+ *                  THE SOFTWARE IS PROVIDED 
+ *                  "AS IS", WITHOUT WARRANTY OF ANY 
+ *                  KIND, EXPRESS OR IMPLIED, 
+ *                  INCLUDING BUT NOT LIMITED TO THE 
+ *                  WARRANTIES OF MERCHANTABILITY, 
+ *                  FITNESS FOR A PARTICULAR PURPOSE 
+ *                  AND NONINFRINGEMENT. IN NO EVENT 
+ *                  SHALL THE AUTHORS OR COPYRIGHT 
+ *                  HOLDERS BE LIABLE FOR ANY CLAIM, 
+ *                  DAMAGES OR OTHER LIABILITY, 
+ *                  WHETHER IN AN ACTION OF 
+ *                  CONTRACT, TORT OR OTHERWISE, 
+ *                  ARISING FROM, OUT OF OR IN 
+ *                  CONNECTION WITH THE SOFTWARE OR 
+ *                  THE USE OR OTHER DEALINGS IN 
+ *                  THE SOFTWARE. 
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ */
+
+namespace CRNRSTN;
+
+/**
+ * R :: Initialize local directory file attributes each with an on/off state for file system management. 
+ *
+ * RUNTIME EXECUTABLE :: /_R/_config/_config.defaults/load_static_cache/file_system_management_settings/crnrstn.file_system_management_settings.runtime_exe.php
+ * EXECUTABLE VERSION :: 1.00.0000
+ * DATE               :: Sunday, May 24, 2026 @ 0935 hrs.
+ * AUTHOR             :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
+ * URI                :: http://evifweb.jony5.com/
+ * TITLE              :: The CRNRSTN :: Lightsaber 
+ *                       RoCEv2 SOAP Services Layer 
+ *                       (CLR-SSL) File 
+ *                       System Management Settings 
+ *                       Runtime Executable 
+ * DESCRIPTION        :: Initialize system variables
+ *                       specific to file system 
+ *                       management settings and 
+ *                       configurstion for 
+ *                       the CRNRSTN :: Lightsaber 
+ *                       RoCEv2 SOAP Services 
+ *                       Layer (CLR-SSL).
+ *
+ *                       This CLR-SSL runtime 
+ *                       executable operates 
+ *                       in conjunction with 
+ *                       crnrstn->R_load_static().
+ *
+ *
+ *                       5
+ *                       
+ *                       Sunday, May 24, 2026 @ 0931 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ * LICENSE            :: MIT | https://crnrstn.jony5.com/licensing/
+ *
+ */
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * The maximum percentage of disk 
+ * (e.g. "fill volume up to 85% and 
+ * stop. start warnings at 70.") 
+ * usage before CRNRSTN :: 
+ * Lightsaber will stop writing files. 
+ *
+ * Setting $max_disk_storage_utilization = 100, 
+ * will eventually brick your server 
+ * if "logging to custom file" 
+ * is enabled. 
+ *
+ * Trust me; be more blessed, 
+ * and believe without seeing. 
+ *
+ *
+ * 5 :: Thursday, August 15, 2024 @ 0033 hrs.
+ *
+ * $this->config_add_resource(
+ *        CRNRSTN_RESOURCE_ALL, 
+ *        'max_disk_storage_utilization', 
+ *        85, 
+ *        'CRNRSTN::RESOURCE::DISK_STORAGE');
+ * $this->config_add_resource(
+ *        CRNRSTN_RESOURCE_ALL, 
+ *        'max_disk_storage_utilization_warning', 
+ *        70, 
+ *        'CRNRSTN::RESOURCE::DISK_STORAGE');
+ */
+$max_disk_storage_utilization         = 85;
+$max_disk_storage_utilization_warning = 70;
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CRNRSTN :: File 
+ * System Integrations.
+ * -----
+ * The following file attributes 
+ * will be stored in runtime 
+ * memory when a file
+ * is touched. Session UI 
+ * meta data enrichment, 
+ * better (read as more detailed) 
+ * reporting, and a more 
+ * granular file access control 
+ * architecture for Linux are 
+ * the wins. 
+ *
+ * Until Windows® testing can be 
+ * brought up to speed, meta 
+ * deactivation is possible here 
+ * in settings if warnings are 
+ * thrown by any file 
+ * access methods.
+ * 
+ *
+ * 5 :: Saturday, September 16, 2023 @ 0845 hrs.
+ *
+ * Current native PHP 
+ * function dependencies 
+ * (Windows® support and 
+ * testing is pending):
+ * PHP Method           File Attribute Dependencies
+ * -----                -----
+ * stat()               UID_INTEGER, UID_STRING, GID_INT, GID_STRING,
+ *                      DATE_LASTACCESSED, DATE_LASTMODIFIED,
+ *                      BLOCK_SIZE, BLOCK_ALLOCATE.
+ * posix_getpwuid()     UID_STRING.
+ * posix_getgrgid()     GID_STRING.
+ * fileperms()          PERMISSIONS_FULL, PERMISSIONS_OCTAL.
+ * decoct()             PERMISSIONS_OCTAL.
+ *
+ * Note: Set both 'PERMISSIONS_OCTAL' => 0 
+ *       and 'PERMISSIONS_FULL' => 0 
+ *       in order to avoid fileperms() 
+ *       calls when locally browsing 
+ *       server directories with CRNRSTN :: 
+ *       or when browsing other servers 
+ *       on top of the CRNRSTN :: 
+ *       Lightsaber RoCEv2 SOAP SERVICES 
+ *       Layer (CLR-SSL) Real-Time Session 
+ *       Cast Services Layer (SSRT-SCSL). 
+ * Note: stat() will be called if 1 of 
+ *       any 8 file attributes are active. 
+ * Note: Filesize AND TOTAL_FILESIZE are 
+ *       Windows® compatible, but Windows® 
+ *       testing is still pending. 
+ * Note: Change the array index (case-sensitive) 
+ *       associating value from 1 to 
+ *       zero (0) or remove the 
+ *       name/value pair from the array 
+ *       to turn the file meta "off". 
+ *
+ * $this->config_add_resource(
+ *        CRNRSTN_RESOURCE_ALL, 
+ *        'system_file_active_attributes_profile', 
+ *        $system_file_attributes, 
+ *        'CRNRSTN::RESOURCE::LOCAL_FILE_SYSTEM');
+ *
+ */
+$system_file_attributes = array('TOTAL_FILESIZE'    => 1, 
+                                'PERMISSIONS_OCTAL' => 1, 
+                                'PERMISSIONS_FULL'  => 1, 
+                                'BLOCK_ALLOCATE'    => 1, 
+                                'BLOCK_SIZE'        => 1, 
+                                'DATE_LASTMODIFIED' => 1, 
+                                'DATE_LASTACCESSED' => 1, 
+                                'GID_STRING'        => 1, 
+                                'GID_INT'           => 1, 
+                                'UID_STRING'        => 1, 
+                                'UID_INTEGER'       => 1, 
+                                'FILESIZE'          => 1);

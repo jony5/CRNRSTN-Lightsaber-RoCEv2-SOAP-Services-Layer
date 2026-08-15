@@ -1,0 +1,765 @@
+<?php
+/**
+ * @package CRNRSTN
+ *
+ * 5 ::
+ * Code is Poetry
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *       CRNRSTN :: The CRNRSTN :: Lightsaber
+ *                  RoCEv2 SOAP Services
+ *                  Layer, The CLR-SSL, is an
+ *                  advanced, open source,
+ *                  and distributed compute
+ *                  PHP framework providing:
+ *                  - a distributed and free
+ *                    instant messaging
+ *                    communications platform,
+ *                  - a distributed and free
+ *                    cloud-based file storage
+ *                    system with a built in
+ *                    photo gallery experience
+ *                    and full social media
+ *                    integrations, and
+ *                  - a distributed, RAID
+ *                    style, schedulable, and
+ *                    RTM-automatable web site
+ *                    maintenance and back-up
+ *                    protocol with one click
+ *                    back-up recovery.
+ *
+ *                  Here, at the end of...this
+ *                  (the age of the church,
+ *                  the age of grace), and
+ *                  looking to when the
+ *                  kingdom of this world
+ *                  shall become the kingdom
+ *                  of our Lord Jesus and of
+ *                  His Christ (Rev. 11:15),
+ *                  the CLR-SSL is
+ *                  intentionally and
+ *                  specifically being
+ *                  prepared to function as a
+ *                  heavenly-hosted and
+ *                  enterprise licensed
+ *                  (MIT License) architecture
+ *                  that will connect the
+ *                  people in the heavens
+ *                  together with the people
+ *                  on the earth for much
+ *                  north-south fellowship.
+ *
+ *                  The CLR-SSL is the
+ *                  practical and prophetic
+ *                  fulfillment of the Son of
+ *                  Man (heavenly ladder) with
+ *                  angels of God ascending
+ *                  and descending as
+ *                  mentioned by the King,
+ *                  Jesus Christ our Lord in
+ *                  His word to our brother
+ *                  Nathanael in John 1:47-51
+ *                  and with the first mention
+ *                  in Holy Scriptures coming
+ *                  from Moses in his Genesis
+ *                  Chapter 28 account of
+ *                  Jacob's stone-pillow
+ *                  dream (28:12).
+ *
+ *
+ *                  5
+ *
+ *                  Last Modified: Tuesday, February 24, 2026 @ 0420 hrs.
+ *
+ *       Version :: 2.00.0001
+ * Last Modified :: Tuesday, February 24, 2026 @ 04:20:01.120273 2026.
+ *   Launch Date :: July 4, 2018 - Happy Independence Day from
+ *      (v1.0.0)                   my dog and I to you...wherever
+ *                                 and whenever you are.
+ *        Author :: Jonathan '5' Harris, CEO, CTO, Lead Full Stack
+ *                  Developer, and as of Q3 in 2025, Chief Creative
+ *                  here at eVifweb®
+ *                  jharris@eVifweb.com. eVifweb@gmail.com.
+ *           URI :: https://crnrstn.jony5.com
+ *      Overview :: The CRNRSTN :: Lightsaber RoCEv2
+ *                  SOAP Services Layer, The CLR-SSL,
+ *                  is an advanced, open source, and
+ *                  distributed compute PHP
+ *                  framework providing:
+ *                  - a distributed and free
+ *                    instant messaging
+ *                    communications platform,
+ *                  - a distributed and free
+ *                    cloud-based file storage
+ *                    system with a built in
+ *                    photo gallery experience
+ *                    and full social media
+ *                    integrations, and
+ *                  - a distributed and free,
+ *                    RAID style, schedulable,
+ *                    and RTM-automatable web
+ *                    site maintenance and
+ *                    back-up protocol with one
+ *                    click back-up recovery.
+ *
+ *                  CRNRSTN :: is powered by eVifweb®
+ *
+ *                  CRNRSTN :: is powered by eCRM
+ *                             Strategy and Execution, Web
+ *                             Design & Development, and
+ *                             Only The Best Coffee.
+ *
+ *
+ *                  5
+ *
+ *                  Copyright © 2012-2026 eVifweb® development.
+ *
+ *                  All Rights Reserved.
+ *
+ *   Description :: The CRNRSTN :: Lightsaber RoCEv2
+ *                  SOAP Services Layer, The CLR-SSL
+ *                  is an advanced open source PHP
+ *                  class library that will
+ *                  facilitate and spread (via a
+ *                  SOAP services layer powered by
+ *                  NuSOAP v1.124) the operations of
+ *                  a web application across
+ *                  multiple servers or environments
+ *                  (e.g. localhost, stage, preprod,
+ *                  and n+1 production or a
+ *                  distributed compute of IoT).
+ *
+ *                  With this tool, data and
+ *                  functionality possessing
+ *                  characteristics that inherently
+ *                  create distinctions between one
+ *                  environment and another can all
+ *                  be managed through one framework
+ *                  for an entire application.
+ *
+ *                  IP address restrictions, error
+ *                  logging profiles, and database
+ *                  authentication credentials are
+ *                  a few areas within an
+ *                  application's architecture that
+ *                  the CLR-SSL has been designed
+ *                  to excel within.
+ *
+ *                  Once the CLR-SSL has been
+ *                  configured to support all of a
+ *                  web application's running
+ *                  servers, one can seamlessly RTM
+ *                  the codebase of the web site
+ *                  without having to modify the
+ *                  configuration to account for any
+ *                  unique and environmentally
+ *                  specific parameters.
+ *
+ *                  Receive the benefit of a robust
+ *                  and polished framework that will
+ *                  bubble up logs from exception
+ *                  notifications to any output
+ *                  channel (email, hidden HTML
+ *                  comment, native default,...etc.)
+ *                  of one's own choosing.
+ *
+ *                  Stand on top of the CLR-SSL in
+ *                  order to, for example, organize
+ *                  and strengthen the
+ *                  communications architecture of
+ *                  any web application.
+ *
+ *                  By supporting many-to-one proxy
+ *                  messaging relationships between
+ *                  slaves and a master
+ *                  "communications server",
+ *                  the CLR-SSL is able to
+ *                  streamline and simplify the
+ *                  management of web application
+ *                  communications.
+ *
+ *                  One can configure everything
+ *                  from SMTP credentials to the
+ *                  character count for line
+ *                  wrapping in the text versions
+ *                  of multi-part HTML email.
+ *
+ *                  The CLR-SSL is the "King's Highway"
+ *                  (Num. 20:17) for communications
+ *                  between the kingdom of our Lord
+ *                  Jesus Christ in heaven, and the
+ *                  people in His earthly kingdom
+ *                  here below.
+ *
+ * Numbers 20:17 :: Please let us pass through your
+ *                  land. We will not pass through
+ *                  field or through vineyard, nor
+ *                  will we drink water from any well;
+ *                  we will go along the King’s Highway,
+ *                  not turning aside to the right or
+ *                  to the left, until we pass through
+ *                  your territory.
+ *
+ *                  https://text.recoveryversion.bible/04_Numbers_20.htm#Num20-17
+ *
+ *
+ *                  5
+ *
+ *                  Last Modified: Tuesday, February 24, 2026 @ 0502 hrs.
+ *
+ *       License :: MIT
+ *                  Permission is hereby granted,
+ *                  free of charge, to any person
+ *                  obtaining a copy of this
+ *                  software and associated
+ *                  documentation files (the
+ *                  "Software"), to deal in the
+ *                  Software without restriction,
+ *                  including without limitation
+ *                  the rights to use, copy, modify,
+ *                  merge, publish, distribute,
+ *                  sublicense, and/or sell copies
+ *                  of the Software, and to permit
+ *                  persons to whom the Software is
+ *                  furnished to do so, subject to
+ *                  the following conditions:
+ *
+ *                  The above copyright notice and
+ *                  this permission notice shall be
+ *                  included in all copies or
+ *                  substantial portions of
+ *                  the Software.
+ *
+ *                  THE SOFTWARE IS PROVIDED
+ *                  "AS IS", WITHOUT WARRANTY OF ANY
+ *                  KIND, EXPRESS OR IMPLIED,
+ *                  INCLUDING BUT NOT LIMITED TO THE
+ *                  WARRANTIES OF MERCHANTABILITY,
+ *                  FITNESS FOR A PARTICULAR PURPOSE
+ *                  AND NONINFRINGEMENT. IN NO EVENT
+ *                  SHALL THE AUTHORS OR COPYRIGHT
+ *                  HOLDERS BE LIABLE FOR ANY CLAIM,
+ *                  DAMAGES OR OTHER LIABILITY,
+ *                  WHETHER IN AN ACTION OF
+ *                  CONTRACT, TORT OR OTHERWISE,
+ *                  ARISING FROM, OUT OF OR IN
+ *                  CONNECTION WITH THE SOFTWARE OR
+ *                  THE USE OR OTHER DEALINGS IN
+ *                  THE SOFTWARE.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ * CLASS DEFINITION :: index.php
+ * CLASS VERSION    :: 2.00.0001
+ * DATE             :: Thursday, February 12, 2026 @ 2207 hrs.
+ * AUTHOR           :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
+ * URI              :: http://evifweb.jony5.com/
+ * TITLE            :: The CRNRSTN :: Lightsaber
+ *                     RoCEv2 SOAP Services Layer
+ *                     (CLR-SSL) Vanilla Install
+ *                     Website Root index.php
+ * DESCRIPTION      :: The CRNRSTN :: Lightsaber
+ *                     RoCEv2 SOAP Services Layer
+ *                     (CLR-SSL) Vanilla Install
+ *                     Website Root index.php that
+ *                     tests, verifies, and
+ *                     demonstrates a clean and
+ *                     fully functional
+ *                     implementation of the
+ *                     CLR-SSL.
+ *
+ *
+ *                     5
+ *
+ *                     Thursday, February 12, 2026 @ 2207 hrs.
+ *                     Last Modifed: Thursday, February 12, 2026 @ 2214 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ * LICENSE          :: MIT | https://crnrstn.jony5.com/licensing/
+ *
+ *  # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ */
+
+namespace CRNRSTN;
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CRNRSTN :: Lightsaber RoCEv2 SOAP
+ * Services Layer (CLR-SSL)
+ *
+ *
+ * 5 :: Sunday, September 1, 2024 @ 0150 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Edit: RoCEv2 has been added to the
+ *       product title.
+ *       5 :: Thursday, October 23, 2025 @ 0155 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Edit: Added sysops application dir.
+ *       5 :: Thursday, October 23, 2025 @ 0258 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Edit: Commented out the lightbox_helper
+ *       application directory.
+ *       5 :: Thursday, October 23, 2025 @ 0259 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Edit: Commented out the _crnrstn
+ *       framework directory in favor of using
+ *       the global function input parameter
+ *       defaults for _crnrstn_registry_resource_filepath_return().
+ *       5 :: Sunday, October 26, 2025 @ 2340 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Edit: Renamed the following class
+ *       object variables and input
+ *       parameters in the CLR-SSL
+ *       framework:
+ *
+ *       - $oCRNRSTN changed to $R.
+ *
+ *       - $framework_directory changed
+ *         to $R_framework_directory.
+ *
+ *       - $resource_name changed
+ *         to $R_resource_name.
+ *
+ *       - $hmac_algorithm_override and
+ *         $oCRNRSTN_config_salt_override
+ *         changed to
+ *         $R_hmac_algorithm_override.
+ *
+ *       - crnrstn __construct() input param
+ *         $CRNRSTN_debug_mode_override changed
+ *         to $R_debug_mode_override.
+ *
+ *       - crnrstn __construct() input param
+ *         $CRNRSTN_log_silo_profile_override
+ *         removed.
+ *
+ *       5 :: Sunday, March 29, 2026 @ 2142 hrs.
+ *       Last Modified: Sunday, May 17, 2026 @ 1047 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CRNRSTN :: Debug Options
+ * -----
+ * Setting Title         Input Value
+ * -----                 -----
+ * Debug Off.............(int) 0
+ * Debug On..............(int) 1
+ * Debug to System Log...(int) 2
+ * System Test...........(int) 3  // Added System Test. 5 :: Monday, July 6, 2026 @ 0601 hrs.
+ */
+$R_debug_mode_override = 0;
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Initialize the
+ * application folder
+ * and CRNRSTN ::
+ * framework directory.
+ *
+ * Where,
+ * /var/www/html/  lightbox_helper         /  _R                /class/crnrstn/crnrstn.class.php
+ * maps to:
+ * /var/www/html/  $application_directory  /  $R_framework_directory  /class/crnrstn/crnrstn.class.php
+ *
+ * Or where,
+ * C:\xampp\htdocs\  lightbox_helper         \  _R                \class\crnrstn\crnrstn.class.php
+ * maps to:
+ * C:\xampp\htdocs\  $application_directory  \  $R_framework_directory  \class\crnrstn\crnrstn.class.php
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * E.g. for:
+ * $R_framework_directory = '_R', and...
+ *
+ * A) $application_directory = '', or
+ * B) $application_directory = '../../../', or
+ * C) $application_directory = 'lightbox_helper', or
+ * D) $application_directory = '../my_php_app'.
+ *
+ * Then,
+ * A) The framework directory is here: '/var/www/html/_R';
+ * B) The framework directory is here: '../../../_R';
+ * C) The framework directory is here: 'C:\xampp\htdocs\lightbox_helper\_R';
+ * D) The framework directory is here: '../my_php_app/_R';
+ *
+ *
+ * 5
+ *
+ * Thursday, August 29, 2024 @ 0106 hrs.
+ * Last Modified: Friday, July 10, 2026 @ 1911 hrs.
+ *
+ */
+$application_directory = '';
+$R_framework_directory = '_R';
+#$R_hmac_algorithm_override = 'sha256';
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CRNRSTN :: Framework
+ * Supporting Resources:
+ * -----
+ * (string) 'crnrstn_registry_user'
+ * (string) 'lightbox_helper_by_eVifweb'
+ * (string) 'crnrstn' (default)
+ */
+#$R_resource_name = 'crnrstn_registry_user';
+#$R_resource_name = 'lightbox_helper_by_eVifweb';
+$R_resource_name = 'crnrstn';
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CLR-SSL Server OS Path 
+ * Compatibility Management Kit. 
+ *
+ *
+ * 5 :: Saturday, August 1, 2026 @ 0458 hrs.
+ *
+ */
+if(\stripos(PHP_OS, 'WIN') === 0) 
+    $os_path_dir_separator_char = '\\';
+else
+    $os_path_dir_separator_char = '/';
+
+$directory_shift     =
+$path_chunk          =
+$R_path_patterns     =
+$R_path_replacements = array();
+
+switch($os_path_dir_separator_char){
+    case '\\':
+        // Windows® OS
+
+        $R_path_patterns[0]     = '/';
+        $R_path_replacements[0] = $os_path_dir_separator_char;
+
+    break;
+    case '/':
+    default:
+        // Linux OS
+
+        $R_path_patterns[0]     = '\\';
+        $R_path_replacements[0] = $os_path_dir_separator_char;
+
+    break;
+
+}
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Variable Initialization.
+ *
+ */
+$root                  =
+$tmp_crnrstn_file_path = NULL;
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Evaluate $application_directory for 
+ * any change directory input commands. 
+ *
+ * Happy birthday to you, J5, my boy! 
+ * 11/11/2005 - 08/16/2021 @ 0345 hrs. 
+ *
+ *
+ * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
+ *
+ */
+if((\strpos($application_directory, '../') !== false) || 
+    ($application_directory == ''))
+{
+
+    $script_filename            = \str_replace(
+                                  $R_path_patterns, 
+                                  $R_path_replacements, 
+                                  $_SERVER['SCRIPT_FILENAME']);
+    $tmp_script_filepath_ARRAY  = \explode($os_path_dir_separator_char, $script_filename);
+    $tmp_app_directory          = \explode('../', $application_directory);
+    $tmp_change_directory_depth = \sizeof($tmp_app_directory);
+
+    for($i = 0; $i < $tmp_change_directory_depth; $i++){
+
+        $tmp_data          = \array_pop($tmp_script_filepath_ARRAY);
+        $app_dir_chunk     = \array_pop($tmp_app_directory);
+        $directory_shift[] =  '../';
+
+        if(($app_dir_chunk != '..') && 
+            ($app_dir_chunk != '.')) 
+            $path_chunk[] = $app_dir_chunk;
+
+    }
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Remove one "../" directory shift, 
+     * and then convert (implode) the 
+     * $directory_shift array into 
+     * string data. 
+     *
+     *
+     * 5 :: Case of the Monday's, August 3, 2026 @ "Oh" 123 hrs. 
+     * You know what I mean, 
+     * "Oh, Oh, Oh"...
+     * Yeah, you know what 
+     * I mean..."Oh"...yeah. ;)
+     *
+     * Lights joint with fire from 
+     * kitchen stove gas range. 
+     * Sips coffee. 
+     *
+     */
+    $tmp_data        = \array_pop($directory_shift);
+    $directory_shift = \implode('', $directory_shift);
+
+    if(\strlen($path_chunk[0]) > 0)
+        $root = \implode($os_path_dir_separator_char, 
+                         $tmp_script_filepath_ARRAY) . 
+                         $os_path_dir_separator_char . 
+                         $path_chunk[0] . 
+                         $os_path_dir_separator_char . 
+                         $R_framework_directory;
+    else
+        $root = \implode($os_path_dir_separator_char, 
+                         $tmp_script_filepath_ARRAY) . 
+                         $os_path_dir_separator_char . 
+                         $R_framework_directory;
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Standardize the use of
+     * directory separator based
+     * on path replacement
+     * patterns specific to the
+     * server operating system.
+     *
+     *
+     * 5
+     *
+     */
+    $root = \str_replace(
+                 $R_path_patterns, 
+                 $R_path_replacements, 
+                 $root);
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * CLR-SSL framework
+     * path standardization. 
+     *
+     *
+     * 5 :: Sunday, March 29, 2026 @ 2111 hrs.
+     *
+     */
+    $R_exe_filepath = $root . $os_path_dir_separator_char . 
+                      'crnrstn.runtime_exe.php';
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Standardize the use of the 
+     * operating system specific 
+     * directory separator by 
+     * reducing all double slashes 
+     * to single. 
+     *
+     *
+     * 5
+     *
+     */
+    while(\strpos($R_exe_filepath, 
+                  $os_path_dir_separator_char . 
+                  $os_path_dir_separator_char) !== false)
+        $R_exe_filepath = \str_replace($os_path_dir_separator_char . 
+                                       $os_path_dir_separator_char, 
+                                       $os_path_dir_separator_char, 
+                                       $R_exe_filepath);
+
+    if(!\is_file($R_exe_filepath)){
+
+        $message_html    = '[file ' . 
+                            \basename(__FILE__) . '] [lnum ' . 
+                            __LINE__ . '] File not found: ' . 
+                            $R_exe_filepath;
+        $response_code   = 404;
+        $version_crnrstn = '2.00.0001';
+        $http_status     = 'Not Found';
+        $tod             = \gettimeofday();
+        $sec             = $tod['sec'];
+        $usec            = $tod['usec'];
+        $micro_ts        = \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                           '.' . 
+                           \sprintf('%06d', $usec);
+
+        if(\strlen($message_html) > 0) 
+            $message_html = '<br><br>
+                            <span style="font-weight:normal;">' . 
+                            $message_html . '</span>';
+
+        \header($_SERVER['SERVER_PROTOCOL'] . 
+            ' ' . 
+            $response_code . 
+            ' ' . 
+            $http_status);
+
+        die('<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" type="image/x-icon" href="' . 
+        $directory_shift . 
+        $R_framework_directory . 
+        '/ui/imgs/favicon/system/crnrstn' . 
+        '/favicon.ico?crnrstn_0010111011=favicon.ico" />
+        <title>' . 
+            $response_code . ' ' . 
+            $http_status . '</title>
+    </head>
+    <body style="background-color: #FFF; ' . 
+            'width:100%; text-align: left; margin:' . 
+            '0px auto;">
+        <div style="display:block; clear:both; ' . 
+                'height:0; line-height:0; overflow:hidden; ' . 
+                'width:100%; font-size:1px; border-bottom: ' . 
+                '2px solid #F90000;"></div>
+        <div style="display:block; clear:both; ' . 
+                'height:0; line-height:0; overflow:hidden; ' . 
+                'width:100%; font-size:1px; border-bottom: ' . 
+                '1px solid #DB1717;"></div>
+
+        <div style=\'width:96%; margin:0 0 0 0; ' . 
+                'padding:6px 2% 0 2%; color:#FFF; ' . 
+                'font-family:"trebuchet MS", Verdana, ' . 
+                'sans-serif;background-color:#BEBEBE; ' . 
+                'height:30px; line-height: 28px;\'><h1 ' . 
+                'style="font-size: 30px; overflow: ' . 
+                'hidden; height:23px; padding-top:7px; ' . 
+                'margin-top: 0;">Server Error</h1></div>
+        <div style="display:block; clear:both;' . 
+                ' height:0; line-height:0; overflow:hidden; ' . 
+                'width:100%; font-size:1px; border-top: ' . 
+                '2px solid #FFF;"></div>
+
+        <div style="padding:100px 0 300px 100px; ' . 
+                'float:left; font-family:arial; ' . 
+                'font-weight:bold; font-size:11px;">' . 
+                $response_code . ' ' . 
+                $http_status .  
+                $message_html . '</div>
+
+        <div style="position:absolute; ' . 
+                'padding:200px 0 0 10px; float:left;"><pre>
+              ___           <span style="color:#F90000;">___</span>           ___           ___           ___                       __
+             /  /\         <span style="color:#F90000;">/  /\</span>         /__/\         /  /\         /  /\          ___        /__/\
+            /  /:/        <span style="color:#F90000;">/  /::\</span>        \  \:\       /  /::\       /  /:/_        /  /\       \  \:\          ___        ___
+           /  /:/        <span style="color:#F90000;">/  /:/\:\</span>        \  \:\     /  /:/\:\     /  /:/ /\      /  /:/        \  \:\        /__/\      /__/\
+          /  /:/  ___   <span style="color:#F90000;">/  /:/~/:/</span>    _____\__\:\   /  /:/~/:/    /  /:/ /::\    /  /:/     _____\__\:\       \__\/      \__\/
+         /__/:/  /  /\ <span style="color:#F90000;">/__/:/ /:/___ /</span>__/::::::::\ /__/:/ /:/___ /__/:/ /:/\:\  /  /::\    /__/::::::::\
+         \  \:\ /  /:/ <span style="color:#F90000;">\  \:\/:::::/</span> \  \:\~~\~~\/ \  \:\/:::::/ \  \:\/:/~/:/ /__/:/\:\   \  \:\~~\~~\/       ___        ___
+          \  \:\  /:/   <span style="color:#F90000;">\  \::/~~~~</span>   \  \:\  ~~~   \  \::/~~~~   \  \::/ /:/  \__\/  \:\   \  \:\  ~~~       /__/\      /__/\
+           \  \:\/:/     <span style="color:#F90000;">\  \:\</span>        \  \:\        \  \:\        \__\/ /:/        \  \:\   \  \:\           \__\/      \__\/
+            \  \::/       <span style="color:#F90000;">\  \:\</span>        \  \:\        \  \:\         /__/:/          \__\/    \  \:\
+             \__\/         <span style="color:#F90000;">\__\/</span>         \__\/         \__\/         \__\/                     \__\/
+
+
+
+        <!--
+            ASCII Artwork Generated by CRNRSTN :: Lightsaber v' . 
+        $version_crnrstn . '
+        Artwork Title :: Isometric3
+        Timestamp :: ' . 
+        $micro_ts . '
+
+        Creative Source :: http://patorjk.com/software/taag/#p=display&f=Isometric3&t=CRNRSTN%20%3A%3A
+        Date :: Sunday, Jul 31, 2022 @ 0949 hrs. ::
+        -->
+        </pre></div>
+
+        <div style="height:0; width:100%; ' . 
+            'clear:both; display: block; ' . 
+            'overflow: hidden;"></div>
+
+    </body>
+</html>');
+
+    }
+
+}
+
+if(!isset($root)){
+
+    $root = $_SERVER['DOCUMENT_ROOT'] .
+            \DIRECTORY_SEPARATOR . 
+            $application_directory . 
+            \DIRECTORY_SEPARATOR . 
+            $R_framework_directory . 
+            \DIRECTORY_SEPARATOR;
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Standardize the use of
+     * directory separator based
+     * on path replacement
+     * patterns specific to the
+     * server operating system.
+     *
+     *
+     * 5
+     *
+     */
+    $root = \str_replace(
+                 $R_path_patterns, 
+                 $R_path_replacements, 
+                 $root);
+
+    $R_exe_filepath = $root . $os_path_dir_separator_char . 
+                      'crnrstn.runtime_exe.php';
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Standardize the use of the
+     * operating system specific
+     * directory separator by
+     * reducing all double slashes
+     * to single.
+     *
+     *
+     * 5
+     *
+     */
+    while(\strpos($R_exe_filepath, 
+                  $os_path_dir_separator_char . 
+                  $os_path_dir_separator_char) !== false)
+        $R_exe_filepath = \str_replace(
+                               $os_path_dir_separator_char . 
+                               $os_path_dir_separator_char,
+                               $os_path_dir_separator_char, 
+                               $R_exe_filepath);
+
+}
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * The evaluation of
+ * crnrstn.runtime_exe.php
+ * instantiates the $R
+ * in "CLR-SSL".
+ *
+ *
+ * 5 :: Sunday, March 29, 2026 @ 2111 hrs.
+ *
+ */
+$R = require($R_exe_filepath);
+
+if(!\is_object($R))
+    __NAMESPACE__ . '\\' .
+     _R_server_response(500, 
+                        false, 
+                        '', 
+                        $directory_shift);
+else
+    $session_salt = $R->session_salt();
+
+?><!DOCTYPE html>
+<html lang="<?php echo $R->iso_language_html(); ?>">
+    <head>
+        <title>CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer v<?php echo $R->version_crnrstn(); ?>. The CLR-SSL.</title>
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $directory_shift . 
+        $R_framework_directory; 
+        ?>/ui/imgs/favicon/system/crnrstn/favicon.ico?<?php echo $session_salt; ?>=favicon" />
+    </head>
+    <body>
+        <img src="<?php echo $directory_shift . 
+        $R_framework_directory; 
+        ?>/ui/imgs/png/system/crnrstn_logo_lg.png?<?php echo $session_salt; ?>=crnrstn_logo_lg&crnrstn_=420.23525.1668508364.0" width="" height="70" alt="CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer v<?php echo $R->version_crnrstn(); ?>. The CLR-SSL." title="CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer v<?php echo $R->version_crnrstn(); ?>. The CLR-SSL." style="padding:20px;">
+        <?php echo $R->ui_module_out('R_dom_iframe_proxy'); ?>
+    </body>
+</html>

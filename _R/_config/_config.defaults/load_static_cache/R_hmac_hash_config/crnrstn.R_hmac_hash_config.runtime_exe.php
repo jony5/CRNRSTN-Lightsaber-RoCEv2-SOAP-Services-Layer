@@ -1,0 +1,360 @@
+<?php
+/*
+ * 5 :: 
+ * Code is Poetry 
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *       CRNRSTN :: The CRNRSTN :: Lightsaber 
+ *                  RoCEv2 SOAP Services 
+ *                  Layer, The CLR-SSL, is an 
+ *                  advanced, open source, 
+ *                  and distributed compute 
+ *                  PHP framework providing: 
+ *                  - a distributed and free 
+ *                    instant messaging 
+ *                    communications platform, 
+ *                  - a distributed and free 
+ *                    cloud-based file storage 
+ *                    system with a built in 
+ *                    photo gallery experience 
+ *                    and with full social media 
+ *                    integrations, and 
+ *                  - a distributed, RAID 
+ *                    style, schedulable, and 
+ *                    RTM-automatable web site 
+ *                    maintenance and back-up 
+ *                    protocol with one click 
+ *                    back-up recovery. 
+ *
+ *                  Here, at the end of this, 
+ *                  the age of the church...
+ *                  the age of grace, and 
+ *                  looking to when the 
+ *                  kingdom of this world 
+ *                  shall become the kingdom 
+ *                  of our Lord and of His 
+ *                  His Christ (Rev. 11:15), 
+ *                  the CLR-SSL is 
+ *                  intentionally and 
+ *                  specifically being 
+ *                  prepared to function as a 
+ *                  heavenly-hosted and 
+ *                  enterprise licensed 
+ *                  (MIT License) architecture 
+ *                  that will connect the 
+ *                  people in the heavens 
+ *                  together with the people 
+ *                  on the earth for much 
+ *                  north-south fellowship. 
+ *
+ *                  The CLR-SSL is the 
+ *                  practical and prophetic 
+ *                  fulfillment of the Son of 
+ *                  Man, the heavenly ladder, 
+ *                  with angels of God ascending 
+ *                  and descending upon the 
+ *                  Son of Man as mentioned by 
+ *                  the King of kings, 
+ *                  Jesus Christ our Lord, in 
+ *                  His word to our brother 
+ *                  Nathanael in John 1:47-51 
+ *                  and with the first mention 
+ *                  in Holy Scriptures coming 
+ *                  from Moses in his Genesis 
+ *                  Chapter 28 account of 
+ *                  Jacob's stone-pillow 
+ *                  dream (28:12). 
+ *
+ *
+ *                  5
+ *
+ *                  Last Modified: Saturday, August 15, 2026 @ 0420 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *       Version :: 2.00.0001
+ * Last Modified :: Tuesday, February 24, 2026 @ 04:20:01.120273 2026.
+ *   Launch Date :: July 4, 2018 - Happy Independence Day from 
+ *      (v1.0.0)                   my dog and I to you...wherever 
+ *                                 and whenever you are. 
+ *        Author :: Jonathan '5' Harris, CEO, CTO, Lead Full Stack 
+ *                  Developer, and as of Q3 in 2025, Chief Creative
+ *                  here at eVifweb® 
+ *                  jharris@eVifweb.com. eVifweb@gmail.com. 
+ *           URI :: https://crnrstn.jony5.com
+ *      Overview :: The CRNRSTN :: Lightsaber RoCEv2 
+ *                  SOAP Services Layer, The CLR-SSL, 
+ *                  is an advanced, open source, and 
+ *                  distributed compute PHP 
+ *                  framework providing: 
+ *                  - a distributed and free 
+ *                    instant messaging 
+ *                    communications platform, 
+ *                  - a distributed and free 
+ *                    cloud-based file storage 
+ *                    system with a built in 
+ *                    photo gallery experience 
+ *                    and with full social media 
+ *                    integrations, and 
+ *                  - a distributed and free, 
+ *                    RAID style, schedulable, 
+ *                    and RTM-automatable web 
+ *                    site maintenance and 
+ *                    back-up protocol with one 
+ *                    click back-up recovery. 
+ *
+ *                  CRNRSTN :: is powered by eVifweb®
+ *
+ *                  CRNRSTN :: is powered by eCRM 
+ *                             Strategy and Execution, Web 
+ *                             Design & Development, and 
+ *                             Only The Best Coffee. 
+ *
+ *
+ *                  5
+ *
+ *                  Copyright © 2012-2027 eVifweb® development.
+ *
+ *                  All Rights Reserved.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *   Description :: The CRNRSTN :: Lightsaber RoCEv2 
+ *                  SOAP Services Layer, The CLR-SSL 
+ *                  is an advanced open source PHP 
+ *                  class library that will 
+ *                  facilitate and spread (via a 
+ *                  SOAP services layer powered by 
+ *                  NuSOAP v1.124) the operations of 
+ *                  a web application across 
+ *                  multiple servers or environments 
+ *                  (e.g. localhost, stage, preprod, 
+ *                  and n+1 production or a 
+ *                  distributed compute of IoT). 
+ *
+ *                  With this tool, data and 
+ *                  functionality possessing 
+ *                  characteristics that inherently 
+ *                  create distinctions between one 
+ *                  environment and another can all 
+ *                  be managed through one framework 
+ *                  for an entire application. 
+ *
+ *                  IP address restrictions, error 
+ *                  logging profiles, and database 
+ *                  authentication credentials are 
+ *                  a few areas within an 
+ *                  application's architecture that 
+ *                  the CLR-SSL has been designed 
+ *                  to excel within. 
+ *
+ *                  Once the CLR-SSL has been 
+ *                  configured to support all of a 
+ *                  web application's running 
+ *                  servers, one can seamlessly RTM 
+ *                  the codebase of the web site 
+ *                  without having to modify the 
+ *                  configuration to account for any 
+ *                  unique and environmentally 
+ *                  specific parameters. 
+ *
+ *                  Receive the benefit of a robust 
+ *                  and polished framework that will 
+ *                  bubble up logs from exception 
+ *                  notifications to any output 
+ *                  channel (email, hidden HTML 
+ *                  comment, native default,...etc.) 
+ *                  of one's own choosing. 
+ *
+ *                  Stand on top of the CLR-SSL in 
+ *                  order to, for example, organize 
+ *                  and strengthen the 
+ *                  communications architecture of 
+ *                  any web application. 
+ *
+ *                  By supporting many-to-one proxy 
+ *                  messaging relationships between 
+ *                  slaves and a master 
+ *                  "communications server", 
+ *                  the CLR-SSL is able to 
+ *                  streamline and simplify the 
+ *                  management of web application 
+ *                  communications. 
+ *
+ *                  One can configure everything 
+ *                  from SMTP credentials to the 
+ *                  character count for line 
+ *                  wrapping in the text versions 
+ *                  of multi-part HTML email. 
+ *
+ *                  The CLR-SSL is the "King's Highway" 
+ *                  (Num. 20:17) for communications 
+ *                  between the kingdom of our Lord 
+ *                  Jesus Christ in heaven, and the 
+ *                  people in His earthly kingdom 
+ *                  here below. 
+ *
+ * Numbers 20:17 :: Please let us pass through your 
+ *                  land. We will not pass through 
+ *                  field or through vineyard, nor 
+ *                  will we drink water from any well; 
+ *                  we will go along the King’s Highway, 
+ *                  not turning aside to the right or 
+ *                  to the left, until we pass through 
+ *                  your territory. 
+ *
+ *                  https://text.recoveryversion.bible/04_Numbers_20.htm#Num20-17
+ *
+ *
+ *                  5
+ *
+ *                  Last Modified: Tuesday, February 24, 2026 @ 0502 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ *       License :: MIT 
+ *                  Permission is hereby granted, 
+ *                  free of charge, to any person 
+ *                  obtaining a copy of this 
+ *                  software and associated 
+ *                  documentation files (the 
+ *                  "Software"), to deal in the 
+ *                  Software without restriction, 
+ *                  including without limitation 
+ *                  the rights to use, copy, modify, 
+ *                  merge, publish, distribute, 
+ *                  sublicense, and/or sell copies 
+ *                  of the Software, and to permit 
+ *                  persons to whom the Software is 
+ *                  furnished to do so, subject to 
+ *                  the following conditions: 
+ *
+ *                  The above copyright notice and 
+ *                  this permission notice shall be 
+ *                  included in all copies or 
+ *                  substantial portions of 
+ *                  the Software. 
+ *
+ *                  THE SOFTWARE IS PROVIDED 
+ *                  "AS IS", WITHOUT WARRANTY OF ANY 
+ *                  KIND, EXPRESS OR IMPLIED, 
+ *                  INCLUDING BUT NOT LIMITED TO THE 
+ *                  WARRANTIES OF MERCHANTABILITY, 
+ *                  FITNESS FOR A PARTICULAR PURPOSE 
+ *                  AND NONINFRINGEMENT. IN NO EVENT 
+ *                  SHALL THE AUTHORS OR COPYRIGHT 
+ *                  HOLDERS BE LIABLE FOR ANY CLAIM, 
+ *                  DAMAGES OR OTHER LIABILITY, 
+ *                  WHETHER IN AN ACTION OF 
+ *                  CONTRACT, TORT OR OTHERWISE, 
+ *                  ARISING FROM, OUT OF OR IN 
+ *                  CONNECTION WITH THE SOFTWARE OR 
+ *                  THE USE OR OTHER DEALINGS IN 
+ *                  THE SOFTWARE. 
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ */
+
+namespace CRNRSTN;
+
+/**
+ * R :: R_hmac_hash_config initializes an array with default and preferred HMAC Hash Algorithms.
+ *
+ * self::$R_data['R_hmac_hash_config'] = 
+ * array('default'   => array(CRNRSTN_INTEGER => -1, 'name' => 'sha256'),
+ *       'preferred' => array());
+ *
+ * @package CRNRSTN
+ * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
+ * @author Jonathan '5' Harris <jharris@eVifweb.com>
+ * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
+ * @license https://crnrstn.jony5.com/licensing/ MIT
+ * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
+ * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
+ * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @param array $R_data will contain the CLR-SSL default and preferred HMAC Hash Algorithms.
+ * @access public
+ *
+ *
+ * 5 :: Sunday, April 5, 2026 @ 0215 hrs.
+ */
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * The HMAC should be compatible 
+ * back to PHP 5.5; we will build 
+ * hash detection into the runtime 
+ * initialization of the CLR-SSL. 
+ * Regarding OpenSSL, do we need 
+ * pre-v1.1.1 support? 
+ *
+ * A list of preferred hashing 
+ * algorithms has been prepared 
+ * by the architect of the 
+ * CRNRSTN :: Lightsaber RoCEv2 
+ * SOAP Services Layer (CLR-SSL). 
+ *
+ * In support of the CLR-SSL 
+ * Multi-Channel Decoupled 
+ * Data Object (MC-DDO) 
+ * Architecture, the hash_algos() 
+ * system registered return array 
+ * has been reduced or filtered by 
+ * the more trusted and mentioned 
+ * afore preferred hashing algorithms. 
+ *
+ * By restricting internal 
+ * system hashes to a set of 
+ * hashes that are approved for 
+ * use in all of the internal 
+ * algorithms that make up 
+ * CRNRSTN, the application 
+ * architecture is given 
+ * consistency in strength 
+ * for the kinds of maneuvers 
+ * that CRNRSTN :: Lightsaber 
+ * will be back-flip jumping 
+ * through hoops with ease. 
+ *
+ * Also, this guarantees that 5, 
+ * the system architect, does 
+ * not end up hearing reports 
+ * about an admin's production 
+ * server being found doing MD1 
+ * hashing for key generation 
+ * in some messaging table 
+ * shard of their 
+ * MySQL database. 
+ *
+ * PLEASE NOTE THAT THE SERVER 
+ * WILL BE CHECKED AT RUNTIME 
+ * BEFORE ANYTHING BELOW WILL 
+ * BE IMPLEMENTED. 
+ *
+ * 5 :: Wednesday, June 12, 2024 @ 0339 hrs.
+ *
+ */
+$R_data = array(
+	     'default'   => array(
+      	               self::$R_data['int_flag']['R_integer'] => -1, 
+      	               'name' => 'sha256'), 
+          'preferred' => array(
+                         'sha512'         => 'sha512', 
+                         'sha384'         => 'sha384', 
+            	          'sha256'         => 'sha256', 
+                         'sha224'         => 'sha224', 
+                         'sha512-224'     => 'sha512-224', 
+                         'sha512-256'     => 'sha512-256', 
+                         'rsa-sha224'     => 'rsa-sha224', 
+                         'rsa-sha256'     => 'rsa-sha256', 
+                         'rsa-sha384'     => 'rsa-sha384', 
+                         'rsa-sha512'     => 'rsa-sha512', 
+                         'rsa-sha512/224' => 'rsa-sha512/224', 
+                         'rsa-sha512/256' => 'rsa-sha512/256', 
+                         'md5'            => 'md5', 
+                         'sha1'           => 'sha1', 
+                         'rsa-md5'        => 'rsa-md5', 
+                         'rsa-sha1'       => 'rsa-sha1', 
+                         'ripemd256'      => 'ripemd256', 
+                         'gost'           => 'gost', 
+                         'snefru256'      => 'snefru256', 
+                         'ripemd128'      => 'ripemd128', 
+                         'tiger128,4'     => 'tiger128,4'));
