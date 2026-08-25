@@ -311,7 +311,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return mixed 
  * @access public
  *
@@ -676,7 +676,7 @@ function _crnrstn_native_resource_registry_content_library(
     $tmp_path['class_session']                = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'session';
     $tmp_path['class_crnrstn']                = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'crnrstn';
     $tmp_path['class_user']                   = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'user';
-    $tmp_path['class_soap_services']          = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'soap_services';
+    $tmp_path['class_soap']                   = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'soap';
     $tmp_path['class_assets']                 = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'assets';
     $tmp_path['class_security']               = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'security';
     $tmp_path['class_accessibility']          = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'accessibility';
@@ -685,7 +685,7 @@ function _crnrstn_native_resource_registry_content_library(
     $tmp_path['class_logging']                = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'logging';
     $tmp_path['class_environment']            = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'environment';
     $tmp_path['class_messenger']              = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'messenger';
-    $tmp_path['class_ftp']                    = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'ftp';
+    $tmp_path['class_ftp']                    = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'networking' . $tmp_slsh . 'ftp';
     $tmp_path['class_form']                   = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'form';
     $tmp_path['class_unittest']               = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'unittest';
     $tmp_path['class_ui']                     = $tmp_crnrstn_root . $tmp_path . 'class' . $tmp_slsh . 'ui';
@@ -1062,17 +1062,9 @@ function _crnrstn_native_resource_registry_content_library(
                          *
                          */
                         $tmp_data_HTML = '<span ' . $tmp_css_data['title'] .
-                        '>PHPMailer Exceptions with ' .
-                        '<span ' . $tmp_css_data['crnrstn'] . '>C<span ' .
-                        $tmp_css_data['crnrstn_R'] . '>R</span>NRSTN ::</span> ' .
-                        '<span ' . $tmp_css_data['lightsaber'] .
-                        '>Lightsaber</span> ' .
-                        '<span ' . $tmp_css_data['rdma'] .
-                        '>RoCEv2</span> ' .
-                        '<span ' . $tmp_css_data['soap'] .
-                        '>SOAP</span> ' .
-                        'Services Layer (CLR-SSL) ' .
-                        'Framework Integrations</span>';
+                        '>The Exceptions Class Definition ' .
+                        'for PHPMailer - A full-featured email ' .
+                        'creation and transfer class for PHP</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -1152,14 +1144,16 @@ function _crnrstn_native_resource_registry_content_library(
                          * Sunday, August 25, 2024 @ 1014 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'PHPMailer Exceptions ' .
-                        'with CRNRSTN :: Lightsaber 
-RoCEv2 SOAP Services Layer ' .
-'(CLS-SSL) Framework Integrations. 
+                        $tmp_data_TEXT = 'PHPMailer Exceptions 
+with CRNRSTN :: Lightsaber 
+RoCEv2 SOAP Services Layer 
+(CLS-SSL) framework integrations. 
 
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1198,12 +1192,14 @@ Messaging Service.';
                         $tmp_css_data['lightsaber'] . '>Lightsaber</span> ' .
                         '<span ' . $tmp_css_data['rdma'] . '>RoCEv2</span> 
 <span ' . $tmp_css_data['soap'] .
-'>SOAP</span> Services Layer (CLR-SSL) Framework Integrations.
+'>SOAP</span> Services Layer (CLR-SSL) framework integrations. 
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.</div>';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.</div>';
 
                 break;
                 case 'CONSTRUCTOR_FUNCTION':
@@ -2108,16 +2104,8 @@ Messaging Service.</div>';
                          *
                          */
                         $tmp_data_HTML = '<span ' . $tmp_css_data['title'] .
-                        '>PHPMailer with ' .
-                        '<span ' . $tmp_css_data['crnrstn'] . '>C<span ' .
-                        $tmp_css_data['crnrstn_R'] . '>R</span>NRSTN ::</span> ' .
-                        '<span ' . $tmp_css_data['lightsaber'] .
-                        '>Lightsaber</span> ' .
-                        '<span ' . $tmp_css_data['rdma'] .
-                        '>RoCEv2</span> ' .
-                        '<span ' . $tmp_css_data['soap'] .
-                        '>SOAP</span> Services Layer (CLR-SSL) ' .
-                        'Framework Integrations</span>';
+                        '>PHPMailer, a full-featured email ' .
+                        'creation and transfer class for PHP</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -2200,11 +2188,13 @@ Messaging Service.</div>';
                         $tmp_data_TEXT = 'PHPMailer with ' .
                         'CRNRSTN :: Lightsaber 
 RoCEv2 SOAP Services Layer ' .
-'(CLR-SSL) Framework Integrations. 
+'(CLR-SSL) framework integrations. 
 
-PHPMailer is a 3rd Party GNU Lesser
-General Public License Email
-Messaging Service.';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2243,12 +2233,14 @@ Messaging Service.';
                         '>Lightsaber</span> <span ' . 
                         $tmp_css_data['rdma'] . '>RoCEv2</span> 
 <span ' . $tmp_css_data['soap'] . 
-'>SOAP</span> Services Layer (CLR-SSL) Framework Integrations.
+'>SOAP</span> Services Layer (CLR-SSL) framework integrations.
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.</div>';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.</div>';
 
                 break;
                 case 'CONSTRUCTOR_FUNCTION':
@@ -2771,19 +2763,10 @@ Messaging Service.</div>';
                          *
                          */
                         $tmp_data_HTML = '<span ' . $tmp_css_data['title'] .
-                        '>PHPMailer SMTP Email Messaging ' .
-                        'and Authentication Services with ' .
-                        '<span ' . $tmp_css_data['crnrstn'] .
-                        '>C<span ' .
-                        $tmp_css_data['crnrstn_R'] .
-                        '>R</span>NRSTN ::</span> ' .
-                        '<span ' . $tmp_css_data['lightsaber'] .
-                        '>Lightsaber</span> <span ' .
-                        $tmp_css_data['rdma'] .
-                        '>RoCEv2</span> <span ' .
-                        $tmp_css_data['soap'] .
-                        '>SOAP</span> Services Layer (CLR-SSL) ' .
-                        'Framework Integrations</span>';
+                        '>SMTP Email Messaging ' .
+                        'and Authentication Services for PHPMailer, ' .
+                        'a full-featured email creation and transfer ' .
+                        'class for PHP</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -2866,11 +2849,13 @@ Messaging Service.</div>';
                         $tmp_data_TEXT = 'PHPMailer SMTP Email Messaging 
 and Authentication Services with 
 CRNRSTN :: Lightsaber RoCEv2 SOAP Services 
-Layer (CLR-SSL) Framework Integrations. 
+Layer (CLR-SSL) framework integrations. 
 
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2909,12 +2894,14 @@ and Authentication Services with
 '>Lightsaber</span> <span ' .
 $tmp_css_data['rdma'] . '>RoCEv2</span> <span ' .
 $tmp_css_data['soap'] . '>SOAP</span> Services 
-Layer (CLR-SSL) Framework Integrations. 
+Layer (CLR-SSL) framework integrations. 
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.</div>';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.</div>';
 
                 break;
                 case 'CONSTRUCTOR_FUNCTION':
@@ -3431,15 +3418,10 @@ Messaging Service.</div>';
                          *
                          */
                         $tmp_data_HTML = '<span ' . $tmp_css_data['title'] .
-                        '>PHPMailer OAuth Email Messaging ' .
-                        'and Authentication Services with ' .
-                        '<span ' . $tmp_css_data['crnrstn'] . '>C<span ' .
-                        $tmp_css_data['crnrstn_R'] . '>R</span>NRSTN ::</span> ' .
-                        '<span ' . $tmp_css_data['lightsaber'] .
-                        '>Lightsaber</span> <span ' .
-                        $tmp_css_data['rdma'] . '>RoCEv2</span> <span ' .
-                        $tmp_css_data['soap'] . '>SOAP</span> Services Layer ' .
-                        '(CLS-SSL) Framework Integrations Support</span>';
+                        '>The OAuth Email Messaging and Authentication ' .
+                        'Services of PHPMailer, a ' .
+                        'full-featured email creation ' .
+                        'and transfer class for PHP</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -3522,11 +3504,13 @@ Messaging Service.</div>';
                         $tmp_data_TEXT = 'PHPMailer OAuth Email Messaging and 
 Authentication Services with  
 CRNRSTN :: Lightsaber RoCEv2 SOAP Services 
-Layer (CLR-SSL) Framework Integrations. 
+Layer (CLR-SSL) framework integrations. 
 
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -3565,12 +3549,14 @@ Authentication Services with<br>
 '<span ' . $tmp_css_data['lightsaber'] . '>Lightsaber</span> ' .
 '<span ' . $tmp_css_data['rdma'] . '>RoCEv2</span> ' .
 '<span ' . $tmp_css_data['soap'] . '>SOAP</span> Services<br>
-Layer (CLR-SSL) Framework Integrations.
+Layer (CLR-SSL) framework integrations.
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
-PHPMailer is a 3rd Party GNU Lesser<br>
-General Public License Email<br>
-Messaging Service.</div>';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.</div>';
 
                 break;
                 case 'CONSTRUCTOR_FUNCTION':
@@ -4084,16 +4070,9 @@ Messaging Service.</div>';
                          *
                          */
                         $tmp_data_HTML = '<span ' . $tmp_css_data['title'] .
-                        '>PHPMailer POP3 Email Messaging ' .
-                        'and Authentication Services ' .
-                        'with <span ' . $tmp_css_data['crnrstn'] .
-                        '>C<span ' . $tmp_css_data['crnrstn_R'] .
-                        '>R</span>NRSTN ::</span> ' .
-                        '<span ' . $tmp_css_data['lightsaber'] .
-                        '>Lightsaber</span> ' .
-                        '<span ' . $tmp_css_data['rdma'] . '>RoCEv2</span> <span ' .
-                        $tmp_css_data['soap'] . '>SOAP</span> Services Layer ' .
-                        '(CLR-SSL) Framework Integrations</span>';
+                        '>The POP3 Email Messaging and Authentication ' .
+                        'Services of PHPMailer, a full-featured email ' .
+                        'creation and transfer class for PHP</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -4176,11 +4155,13 @@ Messaging Service.</div>';
                         $tmp_data_TEXT = 'PHPMailer POP3 Email Messaging and 
 Authentication Services with
 CRNRSTN :: Lightsaber RoCEv2 SOAP Services 
-Layer (CLR-SSL) Framework Integrations. 
+Layer (CLR-SSL) framework integrations. 
 
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -4212,20 +4193,21 @@ Messaging Service.';
                          *
                          */
                         $tmp_data_HTML = '<div ' . $tmp_css_data['description'] .
-                        '>A full-featured email creation and ' .
-                        'transfer class for PHP. PHPMailer POP3 Email Messaging and 
+                        '>PHPMailer POP3 Email Messaging and 
 Authentication Services with 
 <span ' . $tmp_css_data['crnrstn'] . '>C<span ' .
 $tmp_css_data['crnrstn_R'] . '>R</span>NRSTN ::</span> ' .
 '<span ' . $tmp_css_data['lightsaber'] . '>Lightsaber</span> ' .
 '<span ' . $tmp_css_data['rdma'] . '>RoCEv2</span> ' .
 '<span ' . $tmp_css_data['soap'] . '>SOAP</span> Services 
-Layer (CLR-SSL) Framework Integrations. 
+Layer (CLR-SSL) framework integrations. 
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
-PHPMailer is a 3rd Party GNU Lesser 
-General Public License Email 
-Messaging Service.</div>';
+PHPMailer is a full-featured email 
+creation and transfer class for 
+PHP and is GNU Lesser 
+General Public Licensed email 
+messaging service software.</div>';
 
                 break;
                 case 'CONSTRUCTOR_FUNCTION':
@@ -4593,6 +4575,1273 @@ Messaging Service.</div>';
             }
 
         break;
+        case $root . $os_path_dir_separator_char .
+             'class' . $os_path_dir_separator_char .
+             'thirdparty' . $os_path_dir_separator_char .
+             'monstaapps' . $os_path_dir_separator_char .
+             'PHP-IMAP-Fetcher' . $os_path_dir_separator_char .
+             'mimeDecode.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
+        case 'mimeDecode.php':
+        case __NAMESPACE__ .
+             '\Mail_mimeDecode':
+        case 'Mail_mimeDecode':
+        case 'gabriel_mimedecode':
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * CLASS_DEFINITION
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Added RoCEv2 content to crnrstn_POP3
+             *       HTML title and description copy stored in the
+             *       CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer
+             *       (CLR-SSL) System Registered Resource
+             *       Content Library.
+             *       5 :: Tuesday, October 28, 2025 @ 0444 hrs.
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Added the RoCEv2 technology component
+             *       to crnrstn_POP3 Text description copy
+             *       stored in the CLR-SSL System Registered
+             *       Resource Content Library.
+             *       5 :: Thursday, October 30, 2025 @ 0122 hrs.
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Initialize an output type
+             * control parameter to support
+             * HTML, Text, and Multi-Part output.
+             *
+             * Where,
+             * $tmp_multi_part_output_mode = ['HTML',
+             *                                'TEXT',
+             *                                'MULTI-PART']
+             *
+             *
+             * 5 :: Thursday, November 6, 2025 @ 0324 hrs.
+             *
+             */
+            $tmp_multi_part_output_mode = NULL;
+
+            switch($attribute){
+                case 'TITLE':
+                case 'TITLE_HTML':
+                case 'TITLE_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * TITLE_HTML   = HTML Output
+                     * TITLE_TEXT   = Text Output
+                     * TITLE        = Multi-Part HTML
+                     *                & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Thursday, October 30, 2025 @ 0728 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'TITLE_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'TITLE_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'TITLE':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Standardize the Text data
+                         * parameter variable name in
+                         * order to hold the Text
+                         * data handling parallel to
+                         * to the HTML data handling
+                         * in the same architecture.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = $resource_title_text;
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the multi-part
+                         * title data for this natively
+                         * registered resource of the
+                         * CRNRSTN :: Lightsaber RoCEv2
+                         * SOAP Services Layer (CLR-SSL)
+                         * System Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         */
+                        $tmp_data_HTML = '<span ' . $tmp_css_data['title'] .
+                        '>MonstaApps<sup ' .
+                        $tmp_css_data['reg_mark'] .
+                        '>&reg;</sup> Mime Email Decoder</span>';
+
+                break;
+                case 'DESCRIPTION':
+                case 'DESCRIPTION_HTML':
+                case 'DESCRIPTION_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * DESCRIPTION_HTML   = HTML Output
+                     * DESCRIPTION_TEXT   = Text Output
+                     * DESCRIPTION        = Multi-Part HTML
+                     *                      & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Friday, November 7, 2025 @ 0420 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'DESCRIPTION_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'DESCRIPTION_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'DESCRIPTION':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * description Text data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = 'The MonstaApps® Mime Email Decoder ' .
+                        'will parse a raw mime email and return the ' .
+                        'structure. The returned structure is similar ' .
+                        'to that returned by imap_fetchstructure().';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * description HTML data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Sunday, August 25, 2024 @ 1123 hrs.
+                         *
+                         */
+                        $tmp_data_HTML = '<div ' . $tmp_css_data['description'] .
+                        '>The MonstaApps® Mime Email Decoder ' .
+                        'will parse a raw mime email and return the ' .
+                        'structure. The returned structure is similar ' .
+                        'to that returned by imap_fetchstructure().</div>';
+
+                break;
+                case 'CONSTRUCTOR_FUNCTION':
+                case 'CONSTRUCTOR_FUNCTION_HTML':
+                case 'CONSTRUCTOR_FUNCTION_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * CONSTRUCTOR_FUNCTION_HTML   = HTML Output
+                     * CONSTRUCTOR_FUNCTION_TEXT   = Text Output
+                     * CONSTRUCTOR_FUNCTION        = Multi-Part HTML
+                     *                               & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Friday, November 7, 2025 @ 0420 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'CONSTRUCTOR_FUNCTION_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'CONSTRUCTOR_FUNCTION_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'CONSTRUCTOR_FUNCTION':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * constructor function Text
+                         * data for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = '__construct()';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * constructor function HTML
+                         * data for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Sunday, August 25, 2024 @ 1122 hrs.
+                         *
+                         */
+                        $tmp_data_HTML = '<span ' . $tmp_css_data['constructor_function'] .
+                        '>__construct()</span>';
+
+                break;
+                case 'PREVIEW_RESOURCE':
+                case 'PREVIEW_RESOURCE_HTML':
+                case 'PREVIEW_RESOURCE_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * PREVIEW_RESOURCE_HTML   = HTML Output
+                     * PREVIEW_RESOURCE_TEXT   = Text Output
+                     * PREVIEW_RESOURCE        = Multi-Part HTML
+                     *                           & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Friday, November 7, 2025 @ 0420 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'PREVIEW_RESOURCE_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'PREVIEW_RESOURCE_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'PREVIEW_RESOURCE':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * resource Text preview data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = '';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * resource HTML preview data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Sunday, August 25, 2024 @ 1125 hrs.
+                         *
+                         */
+                        $tmp_data_HTML = '';
+
+                break;
+                case 'SOCIAL_MEDIA_PREVIEW_META':
+
+                    $R_resp = _crnrstn_native_resource_registry_meta_social_media(
+                              $R_resp,
+                              $attribute,
+                              $R,
+                              $background_color_hex,
+                              $iso_lang_code,
+                              $R_debug_mode,
+                              $generate_search_algorithm_data,
+                              $generate_content_synchronization_hash,
+                              $resource_title_text,
+                              $resource_license_name_text,
+                              $resource_license_url,
+                              $resource_copyright_text);
+
+                break;
+                case 'LICENSE_NAME':
+                case 'LICENSE_NAME_HTML':
+                case 'LICENSE_NAME_TEXT':
+                case 'LICENSE_URL':
+                case 'LICENSE_URL_HTML':
+                case 'LICENSE_URL_TEXT':
+
+                    $R_resp = _crnrstn_native_resource_registry_meta_license(
+                              $R_resp[$mem_pointer]['license']['key'],
+                              $attribute,
+                              $R,
+                              $background_color_hex,
+                              $iso_lang_code,
+                              $R_debug_mode,
+                              $generate_search_algorithm_data,
+                              $generate_content_synchronization_hash,
+                              $resource_license_name_text,
+                              $resource_license_url);
+
+                break;
+                case 'COMPANY_NAME':
+                case 'COMPANY_NAME_HTML':
+                case 'COMPANY_NAME_TEXT':
+                case 'AUTHOR_CONTRIBUTORS':
+                case 'AUTHOR_CONTRIBUTORS_HTML':
+                case 'AUTHOR_CONTRIBUTORS_TEXT':
+                case 'COPYRIGHT':
+                case 'COPYRIGHT_HTML':
+                case 'COPYRIGHT_TEXT':
+                case 'URL':
+                case 'URL_HTML':
+                case 'URL_TEXT':
+                case 'MEDIA_ELEMENT_KEY':
+
+                    $R_resp = _crnrstn_native_resource_registry_meta_corporate(
+                              $R_resp[$mem_pointer]['software_company']['key'],
+                              $attribute,
+                              $R,
+                              $background_color_hex,
+                              $iso_lang_code,
+                              $R_debug_mode,
+                              $generate_search_algorithm_data,
+                              $generate_content_synchronization_hash,
+                              $resource_license_name_text,
+                              $resource_license_url);
+
+                break;
+                default:
+
+                    $clr_ssl_msg = 'Unable to return unknown ' .
+                                   $attribute .
+                                   ' copy data for the system resource, ' .
+                                   $name . '.';
+
+                    if(!(_crnrstn_native_resource_registry(
+                        __FUNCTION__,
+                        $R,
+                        'registry_access_is_authorized',
+                         NULL,
+                         $R_debug_mode) !== false))
+                    {
+
+                        // 5 :: Tuesday, May 19, 2026 @ 0820 hrs.
+                        if(($R_debug_mode === $int_flag['CRNRSTN_DEBUG_ON']) ||
+                            ($R_debug_mode === $int_flag['CRNRSTN_DEBUG_SYSLOG']))
+                        {
+
+                            $syslog_level     = LOG_WARNING;
+                            $tod              = \gettimeofday();
+                            $sec              = $tod['sec'];
+                            $usec             = $tod['usec'];
+                            $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
+                            $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
+                                                '.' . \sprintf('%06d', $usec) .
+                                                '] [func ' .
+                                                __FUNCTION__ . '] [lnum ' .
+                                                __LINE__ . '] [rtime ' .
+                                                \substr($timediff, 0, -8) .
+                                                '] ';
+                            \openlog(
+                                $syslog_prefix,
+                                \LOG_CONS |
+                                \LOG_NDELAY |
+                                \LOG_NOWAIT |
+                                \LOG_PID |
+                                \LOG_PERROR,
+                                \LOG_SYSLOG);
+                            \syslog($syslog_level, $clr_ssl_msg);
+                            \closelog();
+
+                        }
+
+                        return '';
+
+                    }
+
+                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __FUNCTION__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $R->error_log(
+                        $clr_ssl_msg,
+                        \LOG_ERR,
+                        \E_ERROR,
+                        __LINE__,
+                        __FUNCTION__,
+                        __FILE__,
+                        $token);
+
+                break;
+
+            }
+
+        break;
+        case $root . $os_path_dir_separator_char .
+             'class' . $os_path_dir_separator_char .
+             'thirdparty' . $os_path_dir_separator_char .
+             'phpmailer' . $os_path_dir_separator_char .
+             'src' . $os_path_dir_separator_char .
+             'MimePart.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
+        case 'MimePart.php':
+        case __NAMESPACE__ .
+             '\MimePart':
+        case 'MimePart':
+        case 'gabriel_mimepart':
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * CLASS_DEFINITION
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Added RoCEv2 content to crnrstn_POP3
+             *       HTML title and description copy stored in the
+             *       CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer
+             *       (CLR-SSL) System Registered Resource
+             *       Content Library.
+             *       5 :: Tuesday, October 28, 2025 @ 0444 hrs.
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Added the RoCEv2 technology component
+             *       to crnrstn_POP3 Text description copy
+             *       stored in the CLR-SSL System Registered
+             *       Resource Content Library.
+             *       5 :: Thursday, October 30, 2025 @ 0122 hrs.
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Initialize an output type
+             * control parameter to support
+             * HTML, Text, and Multi-Part output.
+             *
+             * Where,
+             * $tmp_multi_part_output_mode = ['HTML',
+             *                                'TEXT',
+             *                                'MULTI-PART']
+             *
+             *
+             * 5 :: Thursday, November 6, 2025 @ 0324 hrs.
+             *
+             */
+            $tmp_multi_part_output_mode = NULL;
+
+            switch($attribute){
+                case 'TITLE':
+                case 'TITLE_HTML':
+                case 'TITLE_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * TITLE_HTML   = HTML Output
+                     * TITLE_TEXT   = Text Output
+                     * TITLE        = Multi-Part HTML
+                     *                & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Thursday, October 30, 2025 @ 0728 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'TITLE_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'TITLE_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'TITLE':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Standardize the Text data
+                         * parameter variable name in
+                         * order to hold the Text
+                         * data handling parallel to
+                         * to the HTML data handling
+                         * in the same architecture.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = $resource_title_text;
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the multi-part
+                         * title data for this natively
+                         * registered resource of the
+                         * CRNRSTN :: Lightsaber RoCEv2
+                         * SOAP Services Layer (CLR-SSL)
+                         * System Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         */
+                        $tmp_data_HTML = '<span ' . $tmp_css_data['title'] .
+                        '>Nette<sup ' .
+                        $tmp_css_data['reg_mark'] .
+                        '>&reg;</sup> Email MIME message part</span>';
+
+                break;
+                case 'DESCRIPTION':
+                case 'DESCRIPTION_HTML':
+                case 'DESCRIPTION_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * DESCRIPTION_HTML   = HTML Output
+                     * DESCRIPTION_TEXT   = Text Output
+                     * DESCRIPTION        = Multi-Part HTML
+                     *                      & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Friday, November 7, 2025 @ 0420 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'DESCRIPTION_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'DESCRIPTION_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'DESCRIPTION':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * description Text data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = 'This is the Nette® Email MIME ' .
+                        'message part which is a part of the ' .
+                        'Nette Framework. (https://nette.org)';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * description HTML data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Sunday, August 25, 2024 @ 1123 hrs.
+                         *
+                         */
+                        $tmp_data_HTML = '<div ' . $tmp_css_data['description'] .
+                        '>This is the Nette® Email MIME ' .
+                        'message part which is a part of the ' .
+                        'Nette Framework.
+<div ' . $tmp_css_data['line_break'] . '><br><br></div>
+(<a href="https://nette.org" target="_blank">https://nette.org</a>)
+</div>';
+
+                break;
+                case 'CONSTRUCTOR_FUNCTION':
+                case 'CONSTRUCTOR_FUNCTION_HTML':
+                case 'CONSTRUCTOR_FUNCTION_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * CONSTRUCTOR_FUNCTION_HTML   = HTML Output
+                     * CONSTRUCTOR_FUNCTION_TEXT   = Text Output
+                     * CONSTRUCTOR_FUNCTION        = Multi-Part HTML
+                     *                               & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Friday, November 7, 2025 @ 0420 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'CONSTRUCTOR_FUNCTION_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'CONSTRUCTOR_FUNCTION_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'CONSTRUCTOR_FUNCTION':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * constructor function Text
+                         * data for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = '__construct()';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * constructor function HTML
+                         * data for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Sunday, August 25, 2024 @ 1122 hrs.
+                         *
+                         */
+                        $tmp_data_HTML = '<span ' . $tmp_css_data['constructor_function'] .
+                        '>__construct()</span>';
+
+                break;
+                case 'PREVIEW_RESOURCE':
+                case 'PREVIEW_RESOURCE_HTML':
+                case 'PREVIEW_RESOURCE_TEXT':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Resource Registry
+                     * Content Library Meta Data
+                     * Output Controller.
+                     *
+                     * PREVIEW_RESOURCE_HTML   = HTML Output
+                     * PREVIEW_RESOURCE_TEXT   = Text Output
+                     * PREVIEW_RESOURCE        = Multi-Part HTML
+                     *                           & Text Output
+                     *
+                     *
+                     * 5 ::
+                     *
+                     * Friday, November 7, 2025 @ 0420 hrs.
+                     *
+                     */
+                    switch($attribute){
+                        case 'PREVIEW_RESOURCE_HTML':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Where the multi_part_output_mode
+                             * values are:
+                             * - 'HTML',
+                             * - 'TEXT', and
+                             * - 'MULTI-PART'.
+                             *
+                             */
+                            $tmp_multi_part_output_mode = 'HTML';
+
+                        break;
+                        case 'PREVIEW_RESOURCE_TEXT':
+
+                            $tmp_multi_part_output_mode = 'TEXT';
+
+                        break;
+                        case 'PREVIEW_RESOURCE':
+                        default:
+
+                            $tmp_multi_part_output_mode = 'MULTI-PART';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * Text data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'TEXT') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * resource Text preview data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Thursday, October 30, 2025 @ 1420 hrs.
+                         *
+                         */
+                        $tmp_data_TEXT = '';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we temporarily load the
+                     * CLR-SSL Content Library
+                     * Resource low-level
+                     * language default $iso = 'en'
+                     * HTML data into server memory?
+                     *
+                     *
+                     * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
+                     *
+                     */
+                    if(($tmp_multi_part_output_mode == 'HTML') ||
+                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize the software
+                         * resource HTML preview data
+                         * for this natively
+                         * registered resource of
+                         * the CRNRSTN :: Lightsaber
+                         * RoCEv2 SOAP Services
+                         * Layer (CLR-SSL) System
+                         * Resource Registry.
+                         *
+                         *
+                         * 5
+                         *
+                         * Sunday, August 25, 2024 @ 1125 hrs.
+                         *
+                         */
+                        $tmp_data_HTML = '';
+
+                break;
+                case 'SOCIAL_MEDIA_PREVIEW_META':
+
+                    $R_resp = _crnrstn_native_resource_registry_meta_social_media(
+                              $R_resp,
+                              $attribute,
+                              $R,
+                              $background_color_hex,
+                              $iso_lang_code,
+                              $R_debug_mode,
+                              $generate_search_algorithm_data,
+                              $generate_content_synchronization_hash,
+                              $resource_title_text,
+                              $resource_license_name_text,
+                              $resource_license_url,
+                              $resource_copyright_text);
+
+                break;
+                case 'LICENSE_NAME':
+                case 'LICENSE_NAME_HTML':
+                case 'LICENSE_NAME_TEXT':
+                case 'LICENSE_URL':
+                case 'LICENSE_URL_HTML':
+                case 'LICENSE_URL_TEXT':
+
+                    $R_resp = _crnrstn_native_resource_registry_meta_license(
+                              $R_resp[$mem_pointer]['license']['key'],
+                              $attribute,
+                              $R,
+                              $background_color_hex,
+                              $iso_lang_code,
+                              $R_debug_mode,
+                              $generate_search_algorithm_data,
+                              $generate_content_synchronization_hash,
+                              $resource_license_name_text,
+                              $resource_license_url);
+
+                break;
+                case 'COMPANY_NAME':
+                case 'COMPANY_NAME_HTML':
+                case 'COMPANY_NAME_TEXT':
+                case 'AUTHOR_CONTRIBUTORS':
+                case 'AUTHOR_CONTRIBUTORS_HTML':
+                case 'AUTHOR_CONTRIBUTORS_TEXT':
+                case 'COPYRIGHT':
+                case 'COPYRIGHT_HTML':
+                case 'COPYRIGHT_TEXT':
+                case 'URL':
+                case 'URL_HTML':
+                case 'URL_TEXT':
+                case 'MEDIA_ELEMENT_KEY':
+
+                    $R_resp = _crnrstn_native_resource_registry_meta_corporate(
+                              $R_resp[$mem_pointer]['software_company']['key'],
+                              $attribute,
+                              $R,
+                              $background_color_hex,
+                              $iso_lang_code,
+                              $R_debug_mode,
+                              $generate_search_algorithm_data,
+                              $generate_content_synchronization_hash,
+                              $resource_license_name_text,
+                              $resource_license_url);
+
+                break;
+                default:
+
+                    $clr_ssl_msg = 'Unable to return unknown ' .
+                                   $attribute .
+                                   ' copy data for the system resource, ' .
+                                   $name . '.';
+
+                    if(!(_crnrstn_native_resource_registry(
+                        __FUNCTION__,
+                        $R,
+                        'registry_access_is_authorized',
+                         NULL,
+                         $R_debug_mode) !== false))
+                    {
+
+                        // 5 :: Tuesday, May 19, 2026 @ 0820 hrs.
+                        if(($R_debug_mode === $int_flag['CRNRSTN_DEBUG_ON']) ||
+                            ($R_debug_mode === $int_flag['CRNRSTN_DEBUG_SYSLOG']))
+                        {
+
+                            $syslog_level     = LOG_WARNING;
+                            $tod              = \gettimeofday();
+                            $sec              = $tod['sec'];
+                            $usec             = $tod['usec'];
+                            $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
+                            $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
+                                                '.' . \sprintf('%06d', $usec) .
+                                                '] [func ' .
+                                                __FUNCTION__ . '] [lnum ' .
+                                                __LINE__ . '] [rtime ' .
+                                                \substr($timediff, 0, -8) .
+                                                '] ';
+                            \openlog(
+                                $syslog_prefix,
+                                \LOG_CONS |
+                                \LOG_NDELAY |
+                                \LOG_NOWAIT |
+                                \LOG_PID |
+                                \LOG_PERROR,
+                                \LOG_SYSLOG);
+                            \syslog($syslog_level, $clr_ssl_msg);
+                            \closelog();
+
+                        }
+
+                        return '';
+
+                    }
+
+                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __FUNCTION__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $R->error_log(
+                        $clr_ssl_msg,
+                        \LOG_ERR,
+                        \E_ERROR,
+                        __LINE__,
+                        __FUNCTION__,
+                        __FILE__,
+                        $token);
+
+                break;
+
+            }
+
+        break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
              'crnrstn' . $os_path_dir_separator_char . 
@@ -4825,8 +6074,8 @@ bits, assuming floats are
 64 bit or something. 
 
 I\'m sure that\'s enough 
-enough bits for 
-anything...I hope :D. 
+bits for anything...
+I hope :D. 
 
 *Not infinite, sorry. 
 
@@ -4904,8 +6153,8 @@ bits, assuming floats are
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
 I\'m sure that\'s enough 
-enough bits for 
-anything...I hope :D. 
+bits for anything...
+I hope :D. 
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
 *Not infinite, sorry. 
@@ -9969,17 +11218,17 @@ $tmp_css_data['copy_a'] . ' href="https://github.com/f00b4r/nusoap" ' .
              'thirdparty' . $os_path_dir_separator_char . 
              'nusoap' . $os_path_dir_separator_char . 
              '1.123' . $os_path_dir_separator_char . 
-             'class.soap_val.php':
+             'class.soapval.php':
         case '1.123' . $os_path_dir_separator_char . 
-             'class.soap_val.php':
+             'class.soapval.php':
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
              'thirdparty' . $os_path_dir_separator_char . 
              'nusoap' . $os_path_dir_separator_char . 
              '1.124' . $os_path_dir_separator_char . 
-             'class.soap_val.php':
+             'class.soapval.php':
         case '1.124' . $os_path_dir_separator_char . 
-             'class.soap_val.php':
+             'class.soapval.php':
         case __NAMESPACE__ . 
              '\soapval':
         case 'soapval':
@@ -29142,7 +30391,7 @@ for integer generation.
 5
 
 Thursday, February 12, 2026 @ 2143 hrs.
-Last Modifed: Thursday, February 12, 2026 @ 2158 hrs.';
+Last Modified: Thursday, February 12, 2026 @ 2158 hrs.';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -29211,7 +30460,7 @@ for integer generation.
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
 Thursday, February 12, 2026 @ 2143 hrs.<br>
-Last Modifed: Thursday, February 12, 2026 @ 2158 hrs.';
+Last Modified: Thursday, February 12, 2026 @ 2158 hrs.';
 
                 break;
                 case 'CONSTRUCTOR_FUNCTION':
@@ -29383,7 +30632,16 @@ Last Modifed: Thursday, February 12, 2026 @ 2158 hrs.';
                      *
                      *
                      * 5 :: Saturday, February 28, 2026 @ "00" 0000 hrs.
-                     *      We have coffee and cannabis.
+                     *
+                     * "00"..."00"..."00"...Oh,
+                     * Oh, Oh, Oh. You know what I mean.
+                     *
+                     * Yeah, you know what I mean:
+                     * "Oh, Oh, Oh"...
+                     * Yeah, you know what 
+                     * I mean..."Oh"...yeah. ;)
+                     *
+                     * We have coffee and cannabis.
                      *
                      */
                     if(($tmp_multi_part_output_mode == 'TEXT') || 
@@ -39663,7 +40921,7 @@ Saturday, September 14, 2024 @ 0249 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
+             'soap' . $os_path_dir_separator_char . 
              'crnrstnmgmt' . $os_path_dir_separator_char . 
              '1.0.0' . $os_path_dir_separator_char . 
              'wsdl' . $os_path_dir_separator_char . 
@@ -40312,7 +41570,7 @@ content management.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
+             'soap' . $os_path_dir_separator_char . 
              'crnrstn' . $os_path_dir_separator_char . 
              '1.0.0' . $os_path_dir_separator_char . 
              'wsdl' . $os_path_dir_separator_char . 
@@ -42493,7 +43751,7 @@ Thursday, August 8, 2024 @ 0320 hrs.</div>';
                         '>Lightsaber</span> <span ' .
                         $tmp_css_data['rdma'] . '>RoCEv2</span> <span ' .
                         $tmp_css_data['soap'] . '>SOAP</span> Services ' .
-                        'Layer (CLR-SSL) System Registry User</span>';
+                        'Layer (CLR-SSL) Resource Registry User</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -42576,11 +43834,10 @@ designed to work in
 conjunction with the 
 CRNRSTN :: Lightsaber RoCEv2 
 SOAP Services Layer (CLR-SSL) 
-System Registry. 
+Resource Registry. 
 
-The CRNRSTN :: Lightsaber 
-Registry User is 
-authorized by default for 
+The CLR-SSL Registry User 
+is authorized by default for 
 both natively registered 
 and runtime (OOP) 
 registered method call 
@@ -42628,15 +43885,10 @@ $tmp_css_data['lightsaber'] . '>Lightsaber</span> <span ' .
 $tmp_css_data['rdma'] . '>RoCEv2</span> <span ' .
 $tmp_css_data['soap'] . '>SOAP</span>
 Services Layer (CLR-SSL) 
-System Registry. 
+Resource Registry. 
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
-The <span ' . $tmp_css_data['crnrstn'] . '>C<span ' .
-$tmp_css_data['crnrstn_R'] .
-'>R</span>NRSTN ::</span> <span ' .
-$tmp_css_data['lightsaber'] .
-'>Lightsaber</span> 
-Registry User is 
+The CLR-SSL Registry User is 
 authorized by default for 
 both natively registered 
 and runtime (OOP) 
@@ -42729,19 +43981,17 @@ Monday, July 29, 2024 @ 0809 hrs.</div>';
                          *
                          */
                         $tmp_data_TEXT = '__construct(
-    $application_directory = \'crnrstn\',
-    $framework_directory = \'_crnrstn\',
-    $object_boot_resources = NULL,
-    $string_concat_delimiter_char = \'|\',
-    $hash_algorithm_override = \'sha256\',
-    $background_color_hex = \'#FFF\',
-    $file_modification_resets_configuration = true,
-    $application_paths_ARRAY = NULL,
-    $config_serial_override = NULL,
-    $request_id_override = NULL,
-    $request_serial_override = NULL,
-    $CRNRSTN_config_salt_override = NULL,
-    $suppress_object_boot = false
+    $application_directory = \'\', 
+    $R_framework_directory = \'_R\', 
+    $R_hmac_algorithm_override = NULL, 
+    $R_debug_mode_override = NULL, 
+    $PHPMailer_debug_mode_override = NULL, 
+    $WordPress_debug_mode_override = NULL, 
+    $R_cluster_id_override = NULL, 
+    $R_node_id_override = NULL, 
+    $R_client_id_override = NULL, 
+    $R_request_id_override = NULL, 
+    $R_request_serial_override = NULL)
 )';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -42776,20 +44026,17 @@ Monday, July 29, 2024 @ 0809 hrs.</div>';
                         $tmp_data_HTML = '<div ' . $tmp_css_data['constructor_function'] .
                         '>__construct(<br>
     &nbsp;&nbsp;$application_directory = \'crnrstn\',<br>
-    &nbsp;&nbsp;$framework_directory = \'_crnrstn\',<br>
-    &nbsp;&nbsp;$object_boot_resources = NULL,<br>
-    &nbsp;&nbsp;$string_concat_delimiter_char = \'|\',<br>
-    &nbsp;&nbsp;$hash_algorithm_override = \'sha256\',<br>
-    &nbsp;&nbsp;$background_color_hex = \'#FFF\',<br>
-    &nbsp;&nbsp;$file_modification_resets_configuration = true,<br>
-    &nbsp;&nbsp;$application_paths_ARRAY = NULL,<br>
-    &nbsp;&nbsp;$config_serial_override = NULL,<br>
-    &nbsp;&nbsp;$request_id_override = NULL,<br>
-    &nbsp;&nbsp;$request_serial_override = NULL,<br>
-    &nbsp;&nbsp;$C<span ' .
-    $tmp_css_data['crnrstn_R'] .
-    '>R</span>NRSTN_config_salt_override = NULL,<br>
-    &nbsp;&nbsp;$suppress_object_boot = false<br>
+    &nbsp;&nbsp;$application_directory = \'\',<br>
+    &nbsp;&nbsp;$R_framework_directory = \'_R\',<br>
+    &nbsp;&nbsp;$R_hmac_algorithm_override = NULL,<br>
+    &nbsp;&nbsp;$R_debug_mode_override = NULL,<br>
+    &nbsp;&nbsp;$PHPMailer_debug_mode_override = NULL,<br> 
+    &nbsp;&nbsp;$WordPress_debug_mode_override = NULL,<br>
+    &nbsp;&nbsp;$R_cluster_id_override = NULL,<br>
+    &nbsp;&nbsp;$R_node_id_override = NULL,<br>
+    &nbsp;&nbsp;$R_client_id_override = NULL,<br>
+    &nbsp;&nbsp;$R_request_id_override = NULL,<br>
+    &nbsp;&nbsp;$R_request_serial_override = NULL)<br>
 )</div>';
 
                 break;
@@ -47729,8 +48976,8 @@ and email.</div>';
         case $root . $os_path_dir_separator_char . 
              '_config' . $os_path_dir_separator_char . 
              'config.database.secure' . $os_path_dir_separator_char . 
-             'crnrstn.db.config.runtime_exe.php':
-        case 'crnrstn.db.config.runtime_exe.php':
+             'crnrstn.db_config.runtime_exe.php':
+        case 'crnrstn.db_config.runtime_exe.php':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * RUNTIME_EXECUTABLE
              *
@@ -53103,8 +54350,8 @@ Monday, July 22, 2024 @ 1111 hrs.</div>';
         case $root . $os_path_dir_separator_char . 
              '_config' . $os_path_dir_separator_char . 
              'config.soap.secure' . $os_path_dir_separator_char . 
-             'crnrstn.soap.config.runtime_exe.php':
-        case 'crnrstn.soap.config.runtime_exe.php':
+             'crnrstn.soap_config.runtime_exe.php':
+        case 'crnrstn.soap_config.runtime_exe.php':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * RUNTIME_EXECUTABLE
              *
@@ -56163,8 +57410,8 @@ Monday, July 22, 2024 @ 1234 hrs.</div>';
         case $root . $os_path_dir_separator_char . 
              '_config' . $os_path_dir_separator_char . 
              'config.integer_constants' . $os_path_dir_separator_char . 
-             'crnrstn.integer_return.function.php':
-        case 'crnrstn.integer_return.function.php':
+             'crnrstn.int_return.function.php':
+        case 'crnrstn.int_return.function.php':
         case __NAMESPACE__ . 
              '\_crnrstn_int_return':
         case '_crnrstn_int_return':
@@ -58219,7 +59466,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return mixed 
  * @access public
  *
@@ -63101,13 +64348,12 @@ Tuesday, July 30, 2024 @ 0734 hrs.</div>';
                          *
                          */
                         $tmp_data_TEXT = '__construct(
-    $application_directory = \'crnrstn\',
-    $framework_directory = \'_crnrstn\',
-    $CRNRSTN_config_salt_override = NULL,
-    $R_debug_mode_override = NULL,
-    $PHPMailer_debug_mode_override = NULL,
-    $CRNRSTN_log_silo_profile_override = NULL,
-    $file_modification_resets_configuration_override = NULL
+    $application_directory = \'\', 
+    $R_framework_directory = \'_R\', 
+    $R_hmac_algorithm_override = NULL, 
+    $R_debug_mode_override = NULL, 
+    $PHPMailer_debug_mode_override = NULL, 
+    $WordPress_debug_mode_override = NULL)
 )';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -63141,18 +64387,12 @@ Tuesday, July 30, 2024 @ 0734 hrs.</div>';
                          */
                         $tmp_data_HTML = '<div ' . $tmp_css_data['constructor_function'] .
                     '>__construct(<br>
-    &nbsp;&nbsp;$application_directory = \'c<span ' . $tmp_css_data['crnrstn_R'] .
-    '>r</span>nrstn\',<br>
-    &nbsp;&nbsp;$framework_directory = \'_c<span ' . $tmp_css_data['crnrstn_R'] .
-    '>r</span>nrstn\',<br>
-    &nbsp;&nbsp;$C<span ' . $tmp_css_data['crnrstn_R'] .
-    '>R</span>NRSTN_config_salt_override = NULL,<br>
-    &nbsp;&nbsp;$C<span ' . $tmp_css_data['crnrstn_R'] .
-    '>R</span>NRSTN_debug_mode_override = NULL,<br>
+    &nbsp;&nbsp;$application_directory = \'\',<br>
+    &nbsp;&nbsp;$framework_directory = \_R\',<br>
+    &nbsp;&nbsp;$R_hmac_algorithm_override = NULL,<br>
+    &nbsp;&nbsp;$R_debug_mode_override = NULL,<br>
     &nbsp;&nbsp;$PHPMailer_debug_mode_override = NULL,<br>
-    &nbsp;&nbsp;$C<span ' . $tmp_css_data['crnrstn_R'] .
-    '>R</span>NRSTN_log_silo_profile_override = NULL,<br>
-    &nbsp;&nbsp;$file_modification_resets_configuration_override = NULL<br>
+    &nbsp;&nbsp;$WordPress_debug_mode_override = NULL<br>
 )</div>';
 
                 break;
@@ -63766,9 +65006,9 @@ Tuesday, July 30, 2024 @ 0741 hrs.</div>';
                          *
                          */
                         $tmp_data_TEXT = '__construct(
-    $oCRNRSTN, 
-    $CRNRSTN_config_salt = NULL, 
-    $hash_algorithm = \'sha256\' 
+    $R_method_manager, 
+    $R_link_manager, 
+    $R_ddo
 )';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -63800,7 +65040,7 @@ Tuesday, July 30, 2024 @ 0741 hrs.</div>';
                          * Saturday, November 8, 2025 @ "01" 2345 hrs.
                          *
                          * "01010101...split the atom...Oh, 
-                         * Oh, Oh, Oh. You know what I mean."
+                         * Oh, Oh, Oh. You know what I mean. 
                          *
                          * Yeah, you know what I mean: 
                          * "Oh, Oh, Oh"... 
@@ -63810,11 +65050,9 @@ Tuesday, July 30, 2024 @ 0741 hrs.</div>';
                          */
                         $tmp_data_HTML = '<div ' . $tmp_css_data['constructor_function'] .
                     '>__construct(<br>
-    &nbsp;&nbsp;<span ' . $tmp_css_data['crnrstn'] . '>$oC<span ' .
-    $tmp_css_data['crnrstn_R'] . '>R</span>NRSTN</span>,<br>
-    &nbsp;&nbsp;$C<span ' .
-    $tmp_css_data['crnrstn_R'] . '>R</span>NRSTN_config_salt = NULL,<br>
-    &nbsp;&nbsp;$hash_algorithm = \'sha256\'<br>
+    &nbsp;&nbsp;$R_method_manager,<br> 
+    &nbsp;&nbsp;$R_link_manager,<br> 
+    &nbsp;&nbsp;$R_ddo<br>
 )</div>';
 
                 break;
@@ -81384,17 +82622,17 @@ Tuesday, July 2, 2024 @ 0600 hrs.</div>';
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
              'user' . $os_path_dir_separator_char . 
-             'crnrstn.soap_services_authorization_manager.class.php':
-        case 'crnrstn.soap_services_authorization_manager.class.php':
+             'crnrstn.soap_authorization_manager.class.php':
+        case 'crnrstn.soap_authorization_manager.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_soap_services_authorization_manager':
-        case 'crnrstn_soap_services_authorization_manager':
+             '\crnrstn_soap_authorization_manager':
+        case 'crnrstn_soap_authorization_manager':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Edit: Completed 
-             *       crnrstn_soap_services_authorization_manager 
+             *       crnrstn_soap_authorization_manager 
              *       HTML and text Title content 
              *       adjustments between the CLR-SSL 
              *       Registry and the Resource Content 
@@ -82042,17 +83280,17 @@ Monday, July 29, 2024 @ 1324 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
-             'crnrstn.soap_services_content_memory_cache_return.class.php':
-        case 'crnrstn.soap_services_content_memory_cache_return.class.php':
+             'soap' . $os_path_dir_separator_char . 
+             'crnrstn.soap_content_memory_cache.class.php':
+        case 'crnrstn.soap_content_memory_cache.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_soap_services_content_memory_cache_return':
-        case 'crnrstn_soap_services_content_memory_cache_return':
+             '\crnrstn_soap_content_memory_cache':
+        case 'crnrstn_soap_content_memory_cache':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Edit: Completed crnrstn_soap_services_content_memory_cache_return 
+             * Edit: Completed crnrstn_soap_content_memory_cache
              *       HTML and text Title content 
              *       adjustments between the CLR-SSL 
              *       Registry and the Resource Content 
@@ -82774,12 +84012,12 @@ Monday, August 26, 2024 @ 0244 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
-             'crnrstn.soap_services_client_manager.class.php':
-        case 'crnrstn.soap_services_client_manager.class.php':
+             'soap' . $os_path_dir_separator_char . 
+             'crnrstn.soap_authentication_manager.class.php':
+        case 'crnrstn.soap_authentication_manager.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_soap_services_client_manager':
-        case 'crnrstn_soap_services_client_manager':
+             '\crnrstn_soap_authentication_manager':
+        case 'crnrstn_soap_authentication_manager':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
@@ -82904,7 +84142,7 @@ Monday, August 26, 2024 @ 0244 hrs.</div>';
                          * Sunday, August 25, 2024 @ 0645 hrs.
                          *
                          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Edit: Updates to the crnrstn_soap_services_client_manager
+                         * Edit: Updates to the crnrstn_soap_authentication_manager
                          *       Title copy in the CLR-SSL
                          *       Resource Content Library including
                          *       the addition of the RDMA
@@ -82920,7 +84158,7 @@ Monday, August 26, 2024 @ 0244 hrs.</div>';
                         '>RoCEv2</span> ' .
                         '<span ' . $tmp_css_data['soap'] .
                         '>SOAP</span> Services Layer (CLR-SSL) ' .
-                        'Client Manager</span>';
+                        'Client Authentication Manager</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -82999,8 +84237,9 @@ Monday, August 26, 2024 @ 0244 hrs.</div>';
                          *
                          */
                         $tmp_data_TEXT = 'CRNRSTN :: Lightsaber RoCEv2 SOAP 
-Services Layer (CLR-SSL) Client Manager 
-is responsible for overseeing 
+Services Layer (CLR-SSL) Client 
+Authentication Manager is 
+responsible for overseeing 
 all CLR-SSL SOAP Server 
 and SOAP client 
 authentication handshakes 
@@ -83046,8 +84285,9 @@ Tuesday, July 30, 2024 @ 0804 hrs.';
                         '>Lightsaber</span> <span ' . $tmp_css_data['rdma'] .
                         '>RoCEv2</span> <span ' .
                         $tmp_css_data['soap'] . '>SOAP</span> 
-Services Layer (CLR-SSL) Client Manager 
-is responsible for overseeing 
+Services Layer (CLR-SSL) Client 
+Authentication Manager is 
+responsible for overseeing 
 all CLR-SSL <span ' . $tmp_css_data['soap'] .
 '>SOAP</span> Server 
 and <span ' . $tmp_css_data['soap'] . '>SOAP</span> client 
@@ -83437,18 +84677,18 @@ Tuesday, July 30, 2024 @ 0804 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
-             'crnrstn.soap_services_access_manager.class.php':
-        case 'crnrstn.soap_services_access_manager.class.php':
+             'soap' . $os_path_dir_separator_char . 
+             'crnrstn.soap_access_manager.class.php':
+        case 'crnrstn.soap_access_manager.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_soap_services_access_manager':
-        case 'crnrstn_soap_services_access_manager':
+             '\crnrstn_soap_access_manager':
+        case 'crnrstn_soap_access_manager':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Edit: Updates to the 
-             *       crnrstn_soap_services_access_manager 
+             *       crnrstn_soap_access_manager 
              *       Title copy in the CLR-SSL Resource 
              *       Content Library including the 
              *       addition of the RDMA 
@@ -84109,7 +85349,7 @@ Tuesday, July 2, 2024 @ 0721 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
+             'soap' . $os_path_dir_separator_char . 
              'crnrstn.soap_server_manager.class.php':
         case 'crnrstn.soap_server_manager.class.php':
         case __NAMESPACE__ . 
@@ -84758,7 +85998,7 @@ Tuesday, July 30, 2024 @ 1410 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
+             'soap' . $os_path_dir_separator_char . 
              'crnrstn.soap_client_manager.class.php':
         case 'crnrstn.soap_client_manager.class.php':
         case __NAMESPACE__ . 
@@ -85411,7 +86651,7 @@ Tuesday, July 30, 2024 @ 1422 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
+             'soap' . $os_path_dir_separator_char . 
              'crnrstn.soap_data_tunnel_packet.class.php':
         case 'crnrstn.soap_data_tunnel_packet.class.php':
         case __NAMESPACE__ . 
@@ -86133,18 +87373,18 @@ Wednesday, July 24, 2024 @ 0311 hrs.</div>';
         break;
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
-             'soap_services' . $os_path_dir_separator_char . 
-             'crnrstn.soa_endpoint_request_manager.class.php':
-        case 'crnrstn.soa_endpoint_request_manager.class.php':
+             'soap' . $os_path_dir_separator_char . 
+             'crnrstn.soap_request_manager.class.php':
+        case 'crnrstn.soap_request_manager.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_soa_endpoint_request_manager':
-        case 'crnrstn_soa_endpoint_request_manager':
+             '\crnrstn_soap_request_manager':
+        case 'crnrstn_soap_request_manager':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Edit: Added RoCEv2 content to 
-             *       crnrstn_soa_endpoint_request_manager 
+             *       crnrstn_soap_request_manager 
              *       HTML title and description copy 
              *       stored in the CRNRSTN :: 
              *       Lightsaber RoCEv2 SOAP Services 
@@ -91176,7 +92416,7 @@ Monday, July 29, 2024 @ 0819 hrs.</div>';
                          * Sunday, November 9, 2025 @ "01" 2345 hrs.
                          *
                          * "01010101...split the atom...Oh, 
-                         * Oh, Oh, Oh. You know what I mean."
+                         * Oh, Oh, Oh. You know what I mean. 
                          *
                          * Yeah, you know what I mean: 
                          * "Oh, Oh, Oh"... 
@@ -109146,7 +110386,7 @@ Friday, July 26, 2024 @ 0546 hrs.</div>';
                         'Database Integrations ' .
                         'Services Layer MySQL ' .
                         'Database Server ' .
-                        'Request Support</span>';
+                        'Request Support Class Object</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -110323,11 +111563,11 @@ Friday, July 26, 2024 @ 0538 hrs.</div>';
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
              'database' . $os_path_dir_separator_char . 
-             'crnrstn.sqlselect_tracker.class.php':
-        case 'crnrstn.sqlselect_tracker.class.php':
+             'crnrstn.sql_field_output_manager.class.php':
+        case 'crnrstn.sql_field_output_manager.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_sqlselect_tracker':
-        case 'crnrstn_sqlselect_tracker':
+             '\crnrstn_sql_field_output_manager':
+        case 'crnrstn_sql_field_output_manager':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
@@ -110340,6 +111580,15 @@ Friday, July 26, 2024 @ 0538 hrs.</div>';
              *       (CLR-SSL) System Registered 
              *       Resource Content Library. 
              *       5 :: Saturday, November 1, 2025 @ 0724 hrs.
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Renamed the class,
+             *       crnrstn_query_field_output_manager to
+             *       crnrstn_sql_field_output_manager as
+             *       we restart CLR-SSL Database Services
+             *       Layer integrations development
+             *       from scratch.
+             *       5 :: Sunday, August 16, 2026 @ 0411 hrs.
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Initialize an output type 
@@ -110473,11 +111722,8 @@ Friday, July 26, 2024 @ 0538 hrs.</div>';
                         '>SOAP</span> ' .
                         'Services Layer (CLR-SSL) ' .
                         'MySQL Database Integrations ' .
-                        'Services Layer SQL Select ' .
-                        'Statement Query Tracker ' .
-                        'for Response Result ' .
-                        'Set Mapping to MySQL ' .
-                        'Database Requests</span>';
+                        'Services Layer SQL Response Result ' .
+                        'Set Output Mapping Manager</span>';
 
                 break;
                 case 'DESCRIPTION':
@@ -110555,12 +111801,14 @@ Friday, July 26, 2024 @ 0538 hrs.</div>';
                          * 5
                          *
                          */
-                        $tmp_data_TEXT = 'The CRNRSTN :: Lightsaber RoCEv2 
-SOAP Services Layer (CLR-SSL) 
-SQL Select Tracker class object 
-supports the CLR-SSL Database 
-Services Layer by doing one thing, 
-and doing that one thing well: 
+                        $tmp_data_TEXT = 'The CLR-SSL SQL MySQL Database
+Integrations Services Layer
+SQL Response Result Set
+Output Mapping Manager
+class object supports the 
+CRNRSTN :: Database Services 
+Layer by doing one thing, 
+and doing that one thing well:
 
   For any SQL that will be 
   returning a database result 
@@ -110572,12 +111820,14 @@ and doing that one thing well:
   query field names to the 
   query\'s result set data. 
 
-The CLR-SSL has a lightening fast 
-MySQL database services layer using 
-OOP style to return database result 
-set data ONLY because the CLR-SSL
-SQL Select Tracker does one thing, 
-and does that one thing well. 
+The CLR-SSL SQL MySQL Database
+Integrations Services Layer
+SQL Response Result Set
+Output Mapping Manager
+class object supports the 
+CRNRSTN :: Database Services 
+Layer by doing one thing, 
+and doing that one thing well:
 
 What do we do? 
 
@@ -110623,19 +111873,14 @@ Friday, July 26, 2024 @ 1045 hrs.';
                          *
                          */
                         $tmp_data_HTML = '<div ' . $tmp_css_data['description'] .
-                        '>The ' .
-                        '<span ' . $tmp_css_data['crnrstn'] .
-                        '>C<span ' . $tmp_css_data['crnrstn_R'] .
-                        '>R</span>NRSTN ::</span> ' .
-                        '<span ' . $tmp_css_data['lightsaber'] .
-                        '>Lightsaber</span> <span ' . $tmp_css_data['rdma'] .
-                        '>RoCEv2</span> 
-                        <span ' . $tmp_css_data['soap'] .
-                        '>SOAP</span> ' .
-                        'Services Layer (CLR-SSL) SQL Select Tracker 
-class object supports the CLR-SSL 
-Database Services Layer by doing one 
-thing, and doing that one thing well: 
+                        '>The CLR-SSL SQL MySQL Database 
+Integrations Services Layer 
+SQL Response Result Set 
+Output Mapping Manager 
+class object supports the 
+CRNRSTN :: Database Services 
+Layer by doing one thing, 
+and doing that one thing well: 
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
 
@@ -111044,11 +112289,11 @@ Friday, July 26, 2024 @ 1045 hrs.</div>';
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
              'database' . $os_path_dir_separator_char . 
-             'crnrstn.query_profile_manager.class.php':
-        case 'crnrstn.query_profile_manager.class.php':
+             'crnrstn.sql_profile_manager.class.php':
+        case 'crnrstn.sql_profile_manager.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_query_profile_manager':
-        case 'crnrstn_query_profile_manager':
+             '\crnrstn_sql_profile_manager':
+        case 'crnrstn_sql_profile_manager':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
@@ -111061,6 +112306,15 @@ Friday, July 26, 2024 @ 1045 hrs.</div>';
              *       Layer (CLR-SSL) System Registered 
              *       Resource Content Library. 
              *       5 :: Saturday, November 1, 2025 @ 0745 hrs.
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Renamed the class,
+             *       crnrstn_query_profile_manager to
+             *       crnrstn_sql_profile_manager as
+             *       we restart CLR-SSL Database Services
+             *       Layer integrations development
+             *       from scratch.
+             *       5 :: Sunday, August 16, 2026 @ 0428 hrs.
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Initialize an output type 
@@ -111724,23 +112978,35 @@ Friday, July 26, 2024 @ 0846 hrs.</div>';
         case $root . $os_path_dir_separator_char . 
              'class' . $os_path_dir_separator_char . 
              'database' . $os_path_dir_separator_char . 
-             'crnrstn.query_manager.class.php':
-        case 'crnrstn.query_manager.class.php':
+             'crnrstn.sql_manager.class.php':
+        case 'crnrstn.sql_manager.class.php':
         case __NAMESPACE__ . 
-             '\crnrstn_query_manager':
-        case 'crnrstn_query_manager':
+             '\crnrstn_sql_manager':
+        case 'crnrstn_sql_manager':
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * CLASS_DEFINITION
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Edit: Added RoCEv2 content to 
-             *       crnrstn_query_profile_manager 
+             *       crnrstn_query_manager
              *       HTML title and description copy 
              *       stored here in the CRNRSTN :: 
              *       Lightsaber RoCEv2 SOAP Services 
              *       Layer (CLR-SSL) System Registered 
              *       Resource Content Library. 
              *       5 :: Saturday, November 1, 2025 @ 0755 hrs.
+             *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Renamed the class,
+             *       crnrstn_query_manager to
+             *       crnrstn_sql_manager as
+             *       we restart CLR-SSL Database Services
+             *       Layer integrations development
+             *       from scratch.
+             *       5 :: Sunday, August 16, 2026 @ 0420 hrs.
+             *       Lights joint with fire from
+             *       kitchen stove gas range.
+             *
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Initialize an output type 
@@ -120104,7 +121370,8 @@ Monday, July 29, 2024 @ 0754 hrs.</div>';
 
         break;
         case $root . $os_path_dir_separator_char . 
-             'class' . $os_path_dir_separator_char . 
+             'class' . $os_path_dir_separator_char .
+             'networking' . $os_path_dir_separator_char .
              'ftp' . $os_path_dir_separator_char . 
              'crnrstn.wind_cloud_fire.class.php':
         case 'crnrstn.wind_cloud_fire.class.php':
@@ -120448,7 +121715,7 @@ This is CRNRSTN :: Electrum ::
 
 5
 
-Monday, July 29 2024 @ 0605 hrs.
+Monday, July 29, 2024 @ 0605 hrs.
 
 
   Ezekiel 1:4  And I looked, and there
@@ -120616,7 +121883,7 @@ This is <span ' . $tmp_css_data['crnrstn'] .
 5
 
 <div ' . $tmp_css_data['line_break'] . '><br><br></div>
-Monday, July 29 2024 @ 0605 hrs.
+Monday, July 29, 2024 @ 0605 hrs.
 
 
   Ezekiel 1:4  And I looked, and there
@@ -121001,7 +122268,8 @@ Monday, July 29 2024 @ 0605 hrs.
 
         break;
         case $root . $os_path_dir_separator_char . 
-             'class' . $os_path_dir_separator_char . 
+             'class' . $os_path_dir_separator_char .
+             'networking' . $os_path_dir_separator_char .
              'ftp' . $os_path_dir_separator_char . 
              'crnrstn.lightning_bolt.class.php':
         case 'crnrstn.lightning_bolt.class.php':
@@ -121697,7 +122965,8 @@ Monday, July 29, 2024 @ 0526 hrs.
 
         break;
         case $root . $os_path_dir_separator_char . 
-             'class' . $os_path_dir_separator_char . 
+             'class' . $os_path_dir_separator_char .
+             'networking' . $os_path_dir_separator_char .
              'ftp' . $os_path_dir_separator_char . 
              'crnrstn.wheel_high_awesome_eyes.class.php':
         case 'crnrstn.wheel_high_awesome_eyes.class.php':
@@ -122450,7 +123719,8 @@ Monday, July 29, 2024 @ 0500 hrs.
 
         break;
         case $root . $os_path_dir_separator_char . 
-             'class' . $os_path_dir_separator_char . 
+             'class' . $os_path_dir_separator_char .
+             'networking' . $os_path_dir_separator_char .
              'ftp' . $os_path_dir_separator_char . 
              'crnrstn.fire_ftp_conn_manager.class.php':
         case 'crnrstn.fire_ftp_conn_manager.class.php':
@@ -123120,7 +124390,8 @@ Monday, July 29, 2024 @ 0836 hrs.
 
         break;
         case $root . $os_path_dir_separator_char . 
-             'class' . $os_path_dir_separator_char . 
+             'class' . $os_path_dir_separator_char .
+             'networking' . $os_path_dir_separator_char .
              'ftp' . $os_path_dir_separator_char . 
              'crnrstn.lightning_ftp_conn.class.php':
         case 'crnrstn.lightning_ftp_conn.class.php':
@@ -123784,7 +125055,8 @@ Monday, July, 29, 2024 @ 0506 hrs.
 
         break;
         case $root . $os_path_dir_separator_char . 
-             'class' . $os_path_dir_separator_char . 
+             'class' . $os_path_dir_separator_char .
+             'networking' . $os_path_dir_separator_char .
              'ftp' . $os_path_dir_separator_char . 
              'crnrstn.electrum_the_statistician.class.php':
         case 'crnrstn.electrum_the_statistician.class.php':

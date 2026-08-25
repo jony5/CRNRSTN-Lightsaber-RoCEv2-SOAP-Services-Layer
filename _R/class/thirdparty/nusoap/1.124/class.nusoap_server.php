@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,18 +40,37 @@ http://www.nusphere.com
 */
 
 /*
- *  Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
- *  SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
- *  WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
- *  SOAP Messages With Attachments (http://www.w3.org/TR/SOAP-attachments)
- *  XML 1.0 (http://www.w3.org/TR/2006/REC-xml-20060816/)
- *  Namespaces in XML 1.0 (http://www.w3.org/TR/2006/REC-xml-names-20060816/)
- *  XML Schema 1.0 (http://www.w3.org/TR/xmlschema-0/)
- *  RFC 2045 Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
- *  RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
- *  RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
+ *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
+ *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
+ *	SOAP Messages With Attachments (http://www.w3.org/TR/SOAP-attachments)
+ *	XML 1.0 (http://www.w3.org/TR/2006/REC-xml-20060816/)
+ *	Namespaces in XML 1.0 (http://www.w3.org/TR/2006/REC-xml-names-20060816/)
+ *	XML Schema 1.0 (http://www.w3.org/TR/xmlschema-0/)
+ *	RFC 2045 Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
+ *	RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
+ *	RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
  */
+
+/* load classes
+
+// necessary classes
+require_once('class.soapclient.php');
+require_once('class.soap_val.php');
+require_once('class.soap_parser.php');
+require_once('class.soap_fault.php');
+
+// transport classes
+require_once('class.soap_transport_http.php');
+
+// optional add-on classes
+require_once('class.xmlschema.php');
+require_once('class.wsdl.php');
+
+// server class
+require_once('class.soap_server.php');*/
+
 
 /**
  *
@@ -265,16 +286,12 @@ class nusoap_server extends nusoap_base
         parent::__construct();
         // turn on debugging?
         global $debug;
-        global $HTTP_SERVER_VARS;
 
         if (isset($_SERVER)) {
             $this->debug("_SERVER is defined:");
             $this->appendDebug($this->varDump($_SERVER));
-        } elseif (isset($HTTP_SERVER_VARS)) {
-            $this->debug("HTTP_SERVER_VARS is defined:");
-            $this->appendDebug($this->varDump($HTTP_SERVER_VARS));
         } else {
-            $this->debug("Neither _SERVER nor HTTP_SERVER_VARS is defined.");
+            $this->debug("_SERVER is not defined.");
         }
 
         if (isset($debug)) {
@@ -284,15 +301,7 @@ class nusoap_server extends nusoap_base
             $qs = explode('&', $_SERVER['QUERY_STRING']);
             foreach ($qs as $v) {
                 if (substr($v, 0, 6) == 'debug=') {
-                    $this->debug("In nusoap_server, set debug_flag=" . substr($v, 6) . " based on query string #1");
-                    $this->debug_flag = substr($v, 6);
-                }
-            }
-        } elseif (isset($HTTP_SERVER_VARS['QUERY_STRING'])) {
-            $qs = explode('&', $HTTP_SERVER_VARS['QUERY_STRING']);
-            foreach ($qs as $v) {
-                if (substr($v, 0, 6) == 'debug=') {
-                    $this->debug("In nusoap_server, set debug_flag=" . substr($v, 6) . " based on query string #2");
+                    $this->debug("In nusoap_server, set debug_flag=" . substr($v, 6) . " based on query string");
                     $this->debug_flag = substr($v, 6);
                 }
             }
@@ -307,7 +316,16 @@ class nusoap_server extends nusoap_base
                 $this->debug('Use existing wsdl instance from ' . $this->externalWSDLURL);
             } else {
                 $this->debug('Create wsdl from ' . $wsdl);
-                $this->wsdl = new wsdl($wsdl);
+                //$this->wsdl = new wsdl($wsdl);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Thursday, August 20, 2026 @ 0529 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'wsdl',
+                       $wsdl);
+                $this->anoint(
+                       'wsdl',
+                       $this->wsdl);
                 $this->externalWSDLURL = $wsdl;
             }
             $this->appendDebug($this->wsdl->getDebug());
@@ -326,23 +344,8 @@ class nusoap_server extends nusoap_base
      */
     function service($data)
     {
-        global $HTTP_SERVER_VARS;
-
-        if (isset($_SERVER['REQUEST_METHOD'])) {
-            $rm = $_SERVER['REQUEST_METHOD'];
-        } elseif (isset($HTTP_SERVER_VARS['REQUEST_METHOD'])) {
-            $rm = $HTTP_SERVER_VARS['REQUEST_METHOD'];
-        } else {
-            $rm = '';
-        }
-
-        if (isset($_SERVER['QUERY_STRING'])) {
-            $qs = $_SERVER['QUERY_STRING'];
-        } elseif (isset($HTTP_SERVER_VARS['QUERY_STRING'])) {
-            $qs = $HTTP_SERVER_VARS['QUERY_STRING'];
-        } else {
-            $qs = '';
-        }
+        $rm = $_SERVER['REQUEST_METHOD'] ?? '';
+        $qs = $_SERVER['QUERY_STRING'] ?? '';
         $this->debug("In service, request method=$rm query string=$qs strlen(\$data)=" . strlen($data));
 
         if ($rm == 'POST') {
@@ -405,8 +408,6 @@ class nusoap_server extends nusoap_base
      */
     function parse_http_headers()
     {
-        global $HTTP_SERVER_VARS;
-
         $this->request = '';
         $this->SOAPAction = '';
         if (function_exists('getallheaders')) {
@@ -472,42 +473,6 @@ class nusoap_server extends nusoap_base
                     $this->request .= "$k: $v\r\n";
                     $this->debug("$k: $v");
                 }
-            }
-        } elseif (is_array($HTTP_SERVER_VARS)) {
-            $this->debug("In parse_http_headers, use HTTP_SERVER_VARS");
-            foreach ($HTTP_SERVER_VARS as $k => $v) {
-                if (substr($k, 0, 5) == 'HTTP_') {
-                    $k = str_replace(' ', '-', strtolower(str_replace('_', ' ', substr($k, 5))));
-                    $k = strtolower(substr($k, 5));
-                } else {
-                    $k = str_replace(' ', '-', strtolower(str_replace('_', ' ', $k)));
-                    $k = strtolower($k);
-                }
-                if ($k == 'soapaction') {
-                    // get SOAPAction header
-                    $k = 'SOAPAction';
-                    $v = str_replace('"', '', $v);
-                    $v = str_replace('\\', '', $v);
-                    $this->SOAPAction = $v;
-                } elseif ($k == 'content-type') {
-                    // get the character encoding of the incoming request
-                    if (strpos($v, '=')) {
-                        $enc = substr(strstr($v, '='), 1);
-                        $enc = str_replace('"', '', $enc);
-                        $enc = str_replace('\\', '', $enc);
-                        if (preg_match('/^(ISO-8859-1|US-ASCII|UTF-8)$/i', $enc)) {
-                            $this->xml_encoding = strtoupper($enc);
-                        } else {
-                            $this->xml_encoding = 'US-ASCII';
-                        }
-                    } else {
-                        // should be US-ASCII for HTTP 1.0 or ISO-8859-1 for HTTP 1.1
-                        $this->xml_encoding = 'ISO-8859-1';
-                    }
-                }
-                $this->headers[$k] = $v;
-                $this->request .= "$k: $v\r\n";
-                $this->debug("$k: $v");
             }
         } else {
             $this->debug("In parse_http_headers, HTTP headers not accessible");
@@ -975,7 +940,20 @@ class nusoap_server extends nusoap_base
         }
         $this->debug('Use encoding: ' . $this->xml_encoding . ' when creating nusoap_parser');
         // parse response, get soap parser obj
-        $parser = new nusoap_parser($data, $this->xml_encoding, '', $this->decode_utf8);
+        //$parser = new nusoap_parser($data, $this->xml_encoding, '', $this->decode_utf8);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1942 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_parser',
+               $data,
+               $this->xml_encoding,
+               '',
+               $this->decode_utf8);
+        $this->anoint(
+               'nusoap_parser',
+               $parser);
+        $this->anoint_eval('soap_parser');
         // parser debug
         $this->debug("parser debug: \n" . $parser->getDebug());
         // if fault occurred during message parsing
@@ -990,8 +968,8 @@ class nusoap_server extends nusoap_base
             $this->debug('methodname: ' . $this->methodname . ' methodURI: ' . $this->methodURI);
 
             // get/set custom response tag name
-            $outputMessage = $this->wsdl->getOperationData($this->methodname)['output']['message'];
-            $this->responseTagName = $outputMessage;
+            $opData = $this->wsdl->getOperationData($this->methodname);
+            $this->responseTagName = isset($opData['output']['message']) ? $opData['output']['message'] : '';
             $this->debug('responseTagName: ' . $this->responseTagName . ' methodURI: ' . $this->methodURI);
 
             $this->debug('calling parser->get_soapbody()');
@@ -1075,8 +1053,6 @@ class nusoap_server extends nusoap_base
      */
     function register($name, $in = array(), $out = array(), $namespace = false, $soapaction = false, $style = false, $use = false, $documentation = '', $encodingStyle = '', $customResponseTagName = '')
     {
-        global $HTTP_SERVER_VARS;
-
         if ($this->externalWSDLURL) {
             die('You cannot bind to an external WSDL file, and register methods outside of it! Please choose either WSDL or no WSDL.');
         }
@@ -1093,13 +1069,9 @@ class nusoap_server extends nusoap_base
             if (isset($_SERVER)) {
                 $SERVER_NAME = $_SERVER['SERVER_NAME'];
                 $SCRIPT_NAME = $_SERVER['SCRIPT_NAME'];
-                $HTTPS = isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : (isset($HTTP_SERVER_VARS['HTTPS']) ? $HTTP_SERVER_VARS['HTTPS'] : 'off');
-            } elseif (isset($HTTP_SERVER_VARS)) {
-                $SERVER_NAME = $HTTP_SERVER_VARS['SERVER_NAME'];
-                $SCRIPT_NAME = $HTTP_SERVER_VARS['SCRIPT_NAME'];
-                $HTTPS = isset($HTTP_SERVER_VARS['HTTPS']) ? $HTTP_SERVER_VARS['HTTPS'] : 'off';
+                $HTTPS = $_SERVER['HTTPS'] ?? 'off';
             } else {
-                $this->setError("Neither _SERVER nor HTTP_SERVER_VARS is available");
+                $this->setError("_SERVER is not available");
                 $HTTPS = '';
                 $SERVER_NAME = '';
                 $SCRIPT_NAME = '';
@@ -1154,7 +1126,20 @@ class nusoap_server extends nusoap_base
         if ($faultdetail == '' && $this->debug_flag) {
             $faultdetail = $this->getDebug();
         }
-        $this->fault = new nusoap_fault($faultcode, $faultactor, $faultstring, $faultdetail);
+        //$this->fault = new nusoap_fault($faultcode, $faultactor, $faultstring, $faultdetail);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1948 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_fault',
+               $faultcode,
+               $faultactor,
+               $faultstring,
+               $faultdetail);
+        $this->anoint(
+               'nusoap_fault',
+               $this->fault);
+        $this->anoint_eval('soap_fault');
         $this->fault->soap_defencoding = $this->soap_defencoding;
     }
 
@@ -1171,20 +1156,13 @@ class nusoap_server extends nusoap_base
      */
     function configureWSDL($serviceName, $namespace = false, $endpoint = false, $style = 'rpc', $transport = 'http://schemas.xmlsoap.org/soap/http', $schemaTargetNamespace = false)
     {
-        global $HTTP_SERVER_VARS;
-
-        if (isset($_SERVER)) {
+        if (isset($_SERVER['SERVER_NAME'])) {
             $SERVER_NAME = $_SERVER['SERVER_NAME'];
             $SERVER_PORT = $_SERVER['SERVER_PORT'];
             $SCRIPT_NAME = $_SERVER['SCRIPT_NAME'];
-            $HTTPS = isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : (isset($HTTP_SERVER_VARS['HTTPS']) ? $HTTP_SERVER_VARS['HTTPS'] : 'off');
-        } elseif (isset($HTTP_SERVER_VARS)) {
-            $SERVER_NAME = $HTTP_SERVER_VARS['SERVER_NAME'];
-            $SERVER_PORT = $HTTP_SERVER_VARS['SERVER_PORT'];
-            $SCRIPT_NAME = $HTTP_SERVER_VARS['SCRIPT_NAME'];
-            $HTTPS = isset($HTTP_SERVER_VARS['HTTPS']) ? $HTTP_SERVER_VARS['HTTPS'] : 'off';
+            $HTTPS = $_SERVER['HTTPS'] ?? 'off';
         } else {
-            $this->setError("Neither _SERVER nor HTTP_SERVER_VARS is available");
+            $this->setError("_SERVER is not available");
             $SERVER_PORT = '';
             $SERVER_NAME = '';
             $SCRIPT_NAME = '';
@@ -1217,7 +1195,15 @@ class nusoap_server extends nusoap_base
             $schemaTargetNamespace = $namespace;
         }
 
-        $this->wsdl = new wsdl;
+        //$this->wsdl = new wsdl;
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1956 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'wsdl');
+        $this->anoint(
+               'wsdl',
+               $this->wsdl);
         $this->wsdl->serviceName = $serviceName;
         $this->wsdl->soap_defencoding = $this->soap_defencoding;
         $this->wsdl->endpoint = $endpoint;
@@ -1227,7 +1213,30 @@ class nusoap_server extends nusoap_base
         if ($schemaTargetNamespace != $namespace) {
             $this->wsdl->namespaces['types'] = $schemaTargetNamespace;
         }
-        $this->wsdl->schemas[$schemaTargetNamespace][0] = new nusoap_xmlschema('', '', $this->wsdl->namespaces);
+        //$this->wsdl->schemas[$schemaTargetNamespace][0] = new nusoap_xmlschema('', '', $this->wsdl->namespaces);
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Thursday, August 20, 2026 @ "00" 2000 hrs.
+         *
+         * "00"..."00"..."00"...Oh,
+         * Oh, Oh, Oh. You know what I mean.
+         *
+         * Yeah, you know what I mean:
+         * "Oh, Oh, Oh"...
+         * Yeah, you know what
+         * I mean..."Oh"...yeah. ;)
+         *
+         */
+        $spice_salt_mem_ptr = NULL;
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_xmlschema',
+               '',
+               '',
+               $this->wsdl->namespaces);
+        $this->anoint(
+               'nusoap_xmlschema',
+               $this->wsdl->schemas[$schemaTargetNamespace][0]);
+               $this->anoint_eval('XMLSchema');
         if ($style == 'document') {
             $this->wsdl->schemas[$schemaTargetNamespace][0]->schemaInfo['elementFormDefault'] = 'qualified';
         }

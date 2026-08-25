@@ -284,7 +284,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -412,12 +412,14 @@ class crnrstn_ui_content_assembler extends crnrstn
              * Last Modified: Thursday, July 9, 2026 @ 0358 hrs.
              *
              */
+
+            $spice_salt_mem_ptr = NULL;
             // 5 :: Thursday, July 9, 2026 @ 0353 hrs.
             $this->compound_ointment(
+                   $spice_salt_mem_ptr,
                    'crnrstn_content_generator',
                    $this,
                    $resource);
-
             // 5 :: Thursday, July 9, 2026 @ 0354 hrs.
             $this->anoint(
                    'crnrstn_content_generator',
@@ -492,12 +494,14 @@ class crnrstn_ui_content_assembler extends crnrstn
              * Last Modified: Thursday, July 9, 2026 @ 0403 hrs.
              *
              */
+
+            $spice_salt_mem_ptr = NULL;
             // 5 :: Thursday, July 9, 2026 @ 0353 hrs.
             $this->compound_ointment(
+                   $spice_salt_mem_ptr,
                    'crnrstn_content_generator',
                    $this,
                    $tmp_module_page_key);
-
             // 5 :: Thursday, July 9, 2026 @ 0354 hrs.
             $this->anoint(
                    'crnrstn_content_generator',
@@ -569,15 +573,17 @@ Removed: Monday, June 29, 2026 @ 0524 hrs.
 
         $oQueryProfileMgr = NULL;
 	    //error_log('67 side bitch usr - ' . $page_content);
-        //$oQueryProfileMgr           = new crnrstn_query_profile_manager($this);
+        //$oQueryProfileMgr           = new crnrstn_sql_profile_manager($this);
+
+        $spice_salt_mem_ptr = NULL;
         // 5 :: Thursday, July 9, 2026 @ 0530 hrs.
         $this->compound_ointment(
-               'crnrstn_query_profile_manager',
+               $spice_salt_mem_ptr,
+               'crnrstn_sql_profile_manager',
                $this);
-
         // 5 :: Thursday, July 9, 2026 @ 0530 hrs.
         $this->anoint(
-               'crnrstn_query_profile_manager',
+               'crnrstn_sql_profile_manager',
                $oQueryProfileMgr);
 
         $tmp_page_serial            = self::$R_content_gen->returnPageSerial();

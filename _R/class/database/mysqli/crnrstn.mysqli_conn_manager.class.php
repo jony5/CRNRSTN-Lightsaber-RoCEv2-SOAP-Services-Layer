@@ -297,7 +297,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -305,27 +305,45 @@ namespace CRNRSTN;
 class crnrstn_mysqli_conn_manager extends crnrstn 
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * Edit: We modified the crnrstn_mysqli_conn_manager 
-     *       class object by adding an 
-     *       extension of the crnrstn object, 
-     *       by deleting the 
-     *       __construct($oCRNRSTN) input 
-     *       parameter with its public 
-     *       definition, and by removing the 
-     *       object assignment to the 
-     *       public $oCRNRSTN variable. 
+     * Edit: We modified the crnrstn_mysqli_conn_manager
+     *       class object by adding an
+     *       extension of the crnrstn object,
+     *       by deleting the
+     *       __construct($oCRNRSTN) input
+     *       parameter with its public
+     *       definition, and by removing the
+     *       object assignment to the
+     *       public $oCRNRSTN variable.
      *       5 :: Wednesday, March 11, 2026 @ 0920 hrs.
      *
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * Edit: Renamed crcINT() implementations 
-     *       to crc_int32(). 
+     * Edit: Renamed crcINT() implementations
+     *       to crc_int32().
      *       5 :: Wednesday, July 1, 2026 @ 0527 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Deleted the following method(s)
+     *       in order to resolve conflicts with
+     *       crnrstn due to the inheritance of the
+     *       object by crnrstn_mysqli_conn_manager:
+     *
+     *       - return_dataset_nomination_prefix()
+     *         -----
+     *         Fatal error: Access level to
+     *         CRNRSTN\crnrstn_mysqli_conn_manager::
+     *         return_dataset_nomination_prefix() must
+     *         be public (as in class CRNRSTN\crnrstn) in
+     *         C:\xampp\htdocs\_R\class\database\mysqli
+     *         \crnrstn.mysqli_conn_manager.class.php
+     *         on line 2209
+     *
+     *         5 :: Sunday, August 16, 2026 @ 0637 hrs.
      *
      */
 
     public $oCRNRSTN_USR;
 
-    private static $R_data = array();
+    private $R_data = array();
 
     private static $db_env_ARRAY = array();
     private static $db_profile_is_selected_ARRAY = array();
@@ -357,10 +375,10 @@ class crnrstn_mysqli_conn_manager extends crnrstn
     public function __construct()
     {
 
-        self::$R_data['R_cluster_id'] = $this->get_crnrstn('R_cluster_id');
+        $this->R_data['R_cluster_id'] = $this->get_crnrstn('R_cluster_id');
 
         //$this->print_r('cluster id =[' . 
-        //       self::$R_data['R_cluster_id'] . '] for ' . 
+        //       $this->R_data['R_cluster_id'] . '] for ' .
         //       __CLASS__ . '.', 
         //       NULL, 
         //       CRNRSTN_UI_DARKNIGHT, 
@@ -601,21 +619,66 @@ class crnrstn_mysqli_conn_manager extends crnrstn
 
     }
 
-    private function config_add_resource(
-                     $env_key, 
-                     $data_key, 
-                     $data_value = NULL, 
-                     $data_type_family = 'CRNRSTN::RESOURCE', 
-                     $data_authorization_profile = CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_RUNTIME)
+    function config_add_resource(
+             $env_key,
+             $data_key,
+             $data_value = NULL,
+             $data_type_family = 'CRNRSTN::RESOURCE',
+             $data_authorization_profile = 'R_authorize & R_channel_RUNTIME',
+             $index = NULL,
+             $ttl = 60)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Changed method visibility of the
+         *       method config_add_resource from
+         *       private to public and added the
+         *       inputs, $index = NULL and
+         *       $ttl = 60 in order to align
+         *       this method to crnrstn's usage
+         *       of the same:
+         *
+         *       Fatal error: Access level to
+         *       CRNRSTN\crnrstn_mysqli_conn_manager::
+         *       config_add_resource() must be public
+         *       (as in class CRNRSTN\crnrstn) in
+         *       C:\xampp\htdocs\_R\class\database\mysqli
+         *       \crnrstn.mysqli_conn_manager.class.php
+         *       on line 604
+         *
+         *       5 :: Sunday, August 16, 2026 @ 0623 hrs.
+         *
+         */
+
+        if(is_string($data_authorization_profile)){
+
+            switch($data_authorization_profile){
+                case 'R_authorize & R_channel_RUNTIME':
+                default:
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Convert CLR-SSL channel
+                     * data to integer.
+                     *
+                     *
+                     * 5 :: Sunday, August 16, 2026 @ 0625 hrs.
+                     *
+                     */
+                    $data_authorization_profile = $this->R_data['int_flag']['R_authorize'] &
+                                                  $this->R_data['int_flag']['R_channel_RUNTIME'];
+
+                break;
+
+            }
+
+        }
 
         $this->add_resource(
-               $data_key, 
+               $data_key,
                $data_value, 
-               $data_type_family, 
-               $data_authorization_profile, 
-               0, 
-               $env_key);
+               $data_type_family,
+               $data_authorization_profile,
+               $index,
+               $ttl);
 
     }
 
@@ -1180,9 +1243,9 @@ class crnrstn_mysqli_conn_manager extends crnrstn
             // configuration file. 
             if(!($this->oCRNRSTN_USR->isset_session_param('_CRNRSTN_DB_HOST'))){
 
-                if(isset(self::$db_host[self::$R_data['R_cluster_id']])){
+                if(isset(self::$db_host[$this->R_data['R_cluster_id']])){
 
-                    foreach(self::$db_host[self::$R_data['R_cluster_id']][self::$appEnvKey] as 
+                    foreach(self::$db_host[$this->R_data['R_cluster_id']][self::$appEnvKey] as
                         $tmp_db_host => $tmp_host_array)
                     {
 
@@ -1199,7 +1262,7 @@ class crnrstn_mysqli_conn_manager extends crnrstn
                                     __METHOD__ .
                                     ':: [$tmp_db_db=' . $tmp_db_db .
                                     '][' . 
-                                    print_r(self::$db_host[self::$R_data['R_cluster_id']][self::$appEnvKey], true) . 
+                                    print_r(self::$db_host[$this->R_data['R_cluster_id']][self::$appEnvKey], true) .
                                     '].');
 
                                 //
@@ -2158,143 +2221,6 @@ class crnrstn_mysqli_conn_manager extends crnrstn
             return $mysqli;
 
         }
-
-    }
-
-    private function return_dataset_nomination_prefix(
-                     $output_format = NULL, 
-                     $var0 = NULL, 
-                     $var1 = NULL, 
-                     $var2 = NULL, 
-                     $var3 = NULL, 
-                     $var4 = NULL, 
-                     $var5 = NULL, 
-                     $var6 = NULL, 
-                     $var7 = NULL, 
-                     $var8 = NULL, 
-                     $var9 = NULL, 
-                     $var10 = NULL, 
-                     $var11 = NULL)
-    {
-
-        if(!isset($output_format)){
-
-            $output_format = 'array';
-
-        }
-
-        $tmp_str_out = '';
-        $tmp_array_str_unit_ARRAY = array();
-        $tmp_array_out_ARRAY = array();
-
-        if(isset($var0)){
-
-            $tmp_crc = $this->crc_int32($var0);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var1)){
-
-            $tmp_crc = $this->crc_int32($var1);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var2)){
-
-            $tmp_crc = $this->crc_int32($var2);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var3)){
-
-            $tmp_crc = $this->crc_int32($var3);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var4)){
-
-            $tmp_crc = $this->crc_int32($var4);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var5)){
-
-            $tmp_crc = $this->crc_int32($var5);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var6)){
-
-            $tmp_crc = $this->crc_int32($var6);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var7)){
-
-            $tmp_crc = $this->crc_int32($var7);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var8)){
-
-            $tmp_crc = $this->crc_int32($var8);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var9)){
-
-            $tmp_crc = $this->crc_int32($var9);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var10)){
-
-            $tmp_crc = $this->crc_int32($var10);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        if(isset($var11)){
-
-            $tmp_crc = $this->crc_int32($var11);
-            $tmp_str_out .= $tmp_crc . '::';
-            $tmp_array_str_unit_ARRAY[] = $tmp_crc;
-
-        }
-
-        $tmp_array_out_ARRAY['str_out'] = $tmp_str_out;
-        $tmp_array_out_ARRAY['str_section_array'] = $tmp_array_str_unit_ARRAY;
-
-        if($output_format == 'array'){
-
-            return $tmp_array_out_ARRAY;
-
-        }
-
-        //
-        // $output_format = 'string'
-        return $tmp_array_out_ARRAY['str_out'];
 
     }
 

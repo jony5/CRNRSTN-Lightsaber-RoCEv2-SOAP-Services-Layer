@@ -307,7 +307,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return mixed 
  * @access public
  *
@@ -397,7 +397,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery';
+                    $R_meta['title']['TEXT']         = 'jQuery';
                     $R_meta['version']               = '4.0.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery is a fast, small, and 
@@ -471,7 +471,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery';
+                    $R_meta['title']['TEXT']         = 'jQuery';
                     $R_meta['version']               = '4.0.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery is a fast, small, and feature-rich JavaScript library. It 
@@ -523,7 +523,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery';
+                    $R_meta['title']['TEXT']         = 'jQuery';
                     $R_meta['version']               = '3.7.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery is a fast, small, and feature-rich JavaScript library. It 
@@ -575,7 +575,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery';
+                    $R_meta['title']['TEXT']         = 'jQuery';
                     $R_meta['version']               = '3.6.1';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery is a fast, small, and feature-rich JavaScript library. It 
@@ -627,7 +627,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery';
+                    $R_meta['title']['TEXT']         = 'jQuery';
                     $R_meta['version']               = '2.2.4';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery is a fast, small, and feature-rich JavaScript library. It 
@@ -679,7 +679,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery';
+                    $R_meta['title']['TEXT']         = 'jQuery';
                     $R_meta['version']               = '1.12.4';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery is a fast, small, and feature-rich JavaScript library. It 
@@ -731,7 +731,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery';
+                    $R_meta['title']['TEXT']         = 'jQuery';
                     $R_meta['version']               = '1.11.1';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery is a fast, small, and feature-rich JavaScript library. It 
@@ -794,7 +794,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery UI';
+                    $R_meta['title']['TEXT']         = 'jQuery UI';
                     $R_meta['version']               = '1.14.2';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery UI is a curated set of user interface interactions, effects, 
@@ -854,7 +854,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery UI';
+                    $R_meta['title']['TEXT']         = 'jQuery UI';
                     $R_meta['version']               = '1.14.2';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery UI is a curated set of user interface interactions, effects, 
@@ -914,7 +914,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery UI';
+                    $R_meta['title']['TEXT']         = 'jQuery UI';
                     $R_meta['version']               = '1.13.2';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery UI is a curated set of user interface interactions, effects, 
@@ -974,7 +974,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery UI';
+                    $R_meta['title']['TEXT']         = 'jQuery UI';
                     $R_meta['version']               = '1.12.1';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'jQuery UI is a curated set of user interface interactions, effects, 
@@ -1033,7 +1033,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'jQuery Mobile';
+                    $R_meta['title']['TEXT']         = 'jQuery Mobile';
                     $R_meta['version']               = '1.4.5';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'A Touch-Optimized Web Framework. jQuery Mobile is a HTML5-based user
@@ -1118,7 +1118,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'LIGHTBOX';
+                    $R_meta['title']['TEXT']         = 'LIGHTBOX';
                     $R_meta['version']               = '2.12.0';
                     $R_meta['browser_compatibility'] = 'IE 9+, Chrome, Safari, Firefox, ' . 
                                                        'iOS Safari, iOS Chrome, ' . 
@@ -1215,7 +1215,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'LIGHTBOX';
+                    $R_meta['title']['TEXT']         = 'LIGHTBOX';
                     $R_meta['version']               = '2.12.0';
                     $R_meta['browser_compatibility'] = 'IE 9+, Chrome, Safari, Firefox, ' . 
                                                        'iOS Safari, iOS Chrome, ' . 
@@ -1307,7 +1307,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'LIGHTBOX';
+                    $R_meta['title']['TEXT']         = 'LIGHTBOX';
                     $R_meta['version']               = '2.11.3';
                     $R_meta['browser_compatibility'] = 'IE 9+, Chrome, Safari, Firefox, ' . 
                                                        'iOS Safari, iOS Chrome, ' . 
@@ -1385,7 +1385,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'LIGHTBOX';
+                    $R_meta['title']['TEXT']         = 'LIGHTBOX';
                     $R_meta['version']               = '2.10.0';
                     $R_meta['browser_compatibility'] = 'IE 9+, Chrome, Safari, Firefox, ' . 
                                                        'iOS Safari, iOS Chrome, ' . 
@@ -1471,7 +1471,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'LIGHTBOX + JQUERY';
+                    $R_meta['title']['TEXT']         = 'LIGHTBOX + JQUERY';
                     $R_meta['version']               = 'Lightbox v2.11.3, jQuery v3.4.1';
                     $R_meta['browser_compatibility'] = 'IE 9+, Chrome, Safari, Firefox, ' . 
                                                        'iOS Safari, iOS Chrome, ' . 
@@ -1549,7 +1549,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'LIGHTBOX';
+                    $R_meta['title']['TEXT']         = 'LIGHTBOX';
                     $R_meta['version']               = '2.03.3';
                     $R_meta['browser_compatibility'] = 'IE 9+, Chrome, Safari, Firefox, ' . 
                                                        'iOS Safari, iOS Chrome, ' . 
@@ -1606,7 +1606,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'React';
+                    $R_meta['title']['TEXT']         = 'React';
                     $R_meta['version']               = '18.2.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'A JavaScript library for building user interfaces. React makes it 
@@ -1898,7 +1898,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'React';
+                    $R_meta['title']['TEXT']         = 'React';
                     $R_meta['version']               = '18.2.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'A JavaScript library for building user interfaces. React makes it 
@@ -2201,7 +2201,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'ReactDOM';
+                    $R_meta['title']['TEXT']         = 'ReactDOM';
                     $R_meta['version']               = '18.2.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The react-dom package provides DOM-specific methods that can be used 
@@ -2495,7 +2495,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'ReactDOM';
+                    $R_meta['title']['TEXT']         = 'ReactDOM';
                     $R_meta['version']               = '18.2.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The react-dom package provides DOM-specific methods that can be used 
@@ -2799,7 +2799,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Mithril.js';
+                    $R_meta['title']['TEXT']         = 'Mithril.js';
                     $R_meta['version']               = '2.2.2';
                     $R_meta['browser_compatibility'] = 'IE11, Firefox ESR, Firefox, Edge, ' .
                                                        'Safari, Chrome';
@@ -3173,7 +3173,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Mithril.js';
+                    $R_meta['title']['TEXT']         = 'Mithril.js';
                     $R_meta['version']               = '2.2.2';
                     $R_meta['browser_compatibility'] = 'IE11, Firefox ESR, Firefox, Edge, Safari, ' .
                                                        'Chrome';
@@ -3557,7 +3557,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'BACKBONE.JS';
+                    $R_meta['title']['TEXT']         = 'BACKBONE.JS';
                     $R_meta['version']               = '1.4.1';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Backbone.js gives structure to web applications by providing models 
@@ -3615,7 +3615,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'BACKBONE.JS';
+                    $R_meta['title']['TEXT']         = 'BACKBONE.JS';
                     $R_meta['version']               = '1.4.1';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Backbone.js gives structure to web applications by providing models 
@@ -3673,7 +3673,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -3749,7 +3749,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -3826,7 +3826,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -3902,7 +3902,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -3978,7 +3978,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4054,7 +4054,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4130,7 +4130,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4206,7 +4206,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4282,7 +4282,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4358,7 +4358,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4434,7 +4434,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4510,7 +4510,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4586,7 +4586,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4662,7 +4662,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'UNDERSCORE.JS';
+                    $R_meta['title']['TEXT']         = 'UNDERSCORE.JS';
                     $R_meta['version']               = '1.13.6';
                     $R_meta['browser_compatibility'] = 'Chrome (26–latest), ' .
                                                        'Edge (13, 18 and latest), Firefox (11–latest), ' . 
@@ -4750,7 +4750,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Prototype';
+                    $R_meta['title']['TEXT']         = 'Prototype';
                     $R_meta['version']               = '1.7.3';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Prototype takes the complexity out of client-side web programming. 
@@ -4805,7 +4805,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Prototype';
+                    $R_meta['title']['TEXT']         = 'Prototype';
                     $R_meta['version']               = '1.7.3';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Prototype takes the complexity out of client-side web programming. 
@@ -4861,7 +4861,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'script.aculo.us';
+                    $R_meta['title']['TEXT']         = 'script.aculo.us';
                     $R_meta['version']               = '1.9.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'script.aculo.us provides you with easy-to-use, cross-browser user 
@@ -4951,7 +4951,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'moo.fx';
+                    $R_meta['title']['TEXT']         = 'moo.fx';
                     $R_meta['version']               = '2.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'moo.fx is a superlightweight, ultratiny, megasmall javascript 
@@ -5007,7 +5007,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'SWFObject';
+                    $R_meta['title']['TEXT']         = 'SWFObject';
                     $R_meta['version']               = '2.2';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = '';
@@ -5068,7 +5068,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MooTools MORE (all boxes checked + full core)';
+                    $R_meta['title']['TEXT']         = 'MooTools MORE (all boxes checked + full core)';
                     $R_meta['version']               = '1.6.0';
                     $R_meta['browser_compatibility'] = 'IE, Firefox, Safari, Chrome, Opera, PhantomJS (virtual browser).';
                     $R_meta['description']['TEXT']   = 'Welcome to MooTools More, the official plugin repository for the 
@@ -5131,7 +5131,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MooTools MORE (all boxes checked + full core)';
+                    $R_meta['title']['TEXT']         = 'MooTools MORE (all boxes checked + full core)';
                     $R_meta['version']               = '1.6.0';
                     $R_meta['browser_compatibility'] = 'IE, Firefox, Safari, Chrome, Opera, PhantomJS (virtual browser).';
                     $R_meta['description']['TEXT']   = 'Welcome to MooTools More, the official plugin repository for the 
@@ -5205,7 +5205,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MooTools CORE';
+                    $R_meta['title']['TEXT']         = 'MooTools CORE';
                     $R_meta['version']               = '1.6.0';
                     $R_meta['browser_compatibility'] = 'IE, Firefox, Safari, Chrome, Opera, PhantomJS (virtual browser).';
                     $R_meta['description']['TEXT']   = 'MooTools is a compact, modular, Object-Oriented JavaScript framework 
@@ -5263,7 +5263,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MooTools CORE';
+                    $R_meta['title']['TEXT']         = 'MooTools CORE';
                     $R_meta['version']               = '1.6.0';
                     $R_meta['browser_compatibility'] = 'IE, Firefox, Safari, Chrome, Opera, PhantomJS (virtual browser).';
                     $R_meta['description']['TEXT']   = 'MooTools is a compact, modular, Object-Oriented JavaScript framework 
@@ -5316,7 +5316,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'CRNRSTN :: INTERACT UI/UX JS';
+                    $R_meta['title']['TEXT']         = 'CRNRSTN :: INTERACT UI/UX JS';
                     $R_meta['TITLE_DISPLAY']         = 'C<span class="the_R">R</span>NRSTN :: INTERACT UI/UX JS';
                     $R_meta['version']               = 'C<span class="the_R">R</span>NRSTN :: v' . $R->oCRNRSTN->version_crnrstn();
                     $R_meta['browser_compatibility'] = '';
@@ -5370,7 +5370,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Simple Grid';
+                    $R_meta['title']['TEXT']         = 'Simple Grid';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Responsive; your website will display beautifully, no matter the 
@@ -5428,7 +5428,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -5518,7 +5518,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -5609,7 +5609,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -5700,7 +5700,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -5791,7 +5791,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -5882,7 +5882,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -5970,7 +5970,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -6061,7 +6061,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '960 Grid System';
+                    $R_meta['title']['TEXT']         = '960 Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The 960 Grid System is an effort to streamline web development 
@@ -6163,7 +6163,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Foundation';
+                    $R_meta['title']['TEXT']         = 'Foundation';
                     $R_meta['version']               = '6.7.5';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The most advanced responsive front-end framework in the world. A 
@@ -6217,7 +6217,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Foundation';
+                    $R_meta['title']['TEXT']         = 'Foundation';
                     $R_meta['version']               = '6.7.5';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The most advanced responsive front-end framework in the world. A 
@@ -6281,7 +6281,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'HTML5 Boilerplate';
+                    $R_meta['title']['TEXT']         = 'HTML5 Boilerplate';
                     $R_meta['version']               = '8.0.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The web\'s most popular front-end template, HTML5 Boilerplate helps 
@@ -6386,7 +6386,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'HTML5 Boilerplate';
+                    $R_meta['title']['TEXT']         = 'HTML5 Boilerplate';
                     $R_meta['version']               = '8.0.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'The web\'s most popular front-end template, HTML5 Boilerplate helps 
@@ -6491,7 +6491,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Responsive Grid System';
+                    $R_meta['title']['TEXT']         = 'Responsive Grid System';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Spectacularly Easy Responsive Design. The Responsive Grid System 
@@ -6542,7 +6542,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'unsemantic';
+                    $R_meta['title']['TEXT']         = 'unsemantic';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Unsemantic is a fluid grid system that is the successor to the 960 
@@ -6617,7 +6617,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'unsemantic';
+                    $R_meta['title']['TEXT']         = 'unsemantic';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Unsemantic is a fluid grid system that is the successor to the 960 
@@ -6692,7 +6692,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'unsemantic';
+                    $R_meta['title']['TEXT']         = 'unsemantic';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Unsemantic is a fluid grid system that is the successor to the 960 
@@ -6767,7 +6767,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'unsemantic';
+                    $R_meta['title']['TEXT']         = 'unsemantic';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Unsemantic is a fluid grid system that is the successor to the 960 
@@ -6841,7 +6841,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'unsemantic';
+                    $R_meta['title']['TEXT']         = 'unsemantic';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Unsemantic is a fluid grid system that is the successor to the 960 
@@ -6916,7 +6916,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'unsemantic';
+                    $R_meta['title']['TEXT']         = 'unsemantic';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Unsemantic is a fluid grid system that is the successor to the 960 
@@ -6991,7 +6991,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Dead Simple Grid';
+                    $R_meta['title']['TEXT']         = 'Dead Simple Grid';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Dead Simple Grid is a responsive CSS  grid micro framework that is 
@@ -7051,7 +7051,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'SKELETON';
+                    $R_meta['title']['TEXT']         = 'SKELETON';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = 'Chrome, Firefox, Opera, Safari, IE.';
                     $R_meta['description']['TEXT']   = 'A dead simple, responsive boilerplate. Light as a feather at ~400 
@@ -7121,7 +7121,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'RWD GRID';
+                    $R_meta['title']['TEXT']         = 'RWD GRID';
                     $R_meta['version']               = '2.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Responsive Grid System for your Next Project. 2kb, Mobile First 
@@ -7231,7 +7231,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'RWD GRID';
+                    $R_meta['title']['TEXT']         = 'RWD GRID';
                     $R_meta['version']               = '2.0';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Responsive Grid System for your Next Project. 2kb, Mobile First 
@@ -7339,7 +7339,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Simple Grid (This is Dallas)';
+                    $R_meta['title']['TEXT']         = 'Simple Grid (This is Dallas)';
                     $R_meta['version']               = '';
                     $R_meta['browser_compatibility'] = '';
                     $R_meta['description']['TEXT']   = 'Simple Grid was created for developers who need a barebones grid. 
@@ -7396,7 +7396,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'CRNRSTN :: INTERACT UI Desktop Stylesheet';
+                    $R_meta['title']['TEXT']         = 'CRNRSTN :: INTERACT UI Desktop Stylesheet';
                     $R_meta['TITLE_DISPLAY']         = 'C<span class="the_R">R</span>NRSTN :: INTERACT UI Desktop Stylesheet';
                     $R_meta['version']               = 'C<span class="the_R">R</span>NRSTN :: v' . $R->oCRNRSTN->version_crnrstn();
                     $R_meta['browser_compatibility'] = '';
@@ -7439,7 +7439,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'CRNRSTN :: INTERACT UI Tablet Device Stylesheet';
+                    $R_meta['title']['TEXT']         = 'CRNRSTN :: INTERACT UI Tablet Device Stylesheet';
                     $R_meta['TITLE_DISPLAY'] = 'C<span class="the_R">R</span>NRSTN :: INTERACT UI Tablet Device Stylesheet';
                     $R_meta['version']               = 'C<span class="the_R">R</span>NRSTN :: v' . $R->oCRNRSTN->version_crnrstn();
                     $R_meta['browser_compatibility'] = '';
@@ -7481,7 +7481,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'C<span class="the_R">R</span>NRSTN :: INTERACT UI Mobile 
+                    $R_meta['title']['TEXT']         = 'C<span class="the_R">R</span>NRSTN :: INTERACT UI Mobile 
                     Device Stylesheet';
                     $R_meta['TITLE_DISPLAY']         = 'C<span class="the_R">R</span>NRSTN :: INTERACT UI 
                     Mobile Device Stylesheet';
@@ -7522,7 +7522,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7552,7 +7552,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7582,7 +7582,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7612,7 +7612,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7642,7 +7642,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7672,7 +7672,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7702,7 +7702,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7732,7 +7732,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7762,7 +7762,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7792,7 +7792,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7823,7 +7823,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7853,7 +7853,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7883,7 +7883,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7913,7 +7913,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7943,7 +7943,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -7973,7 +7973,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8003,7 +8003,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8033,7 +8033,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8063,7 +8063,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8093,7 +8093,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8123,7 +8123,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8153,7 +8153,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8183,7 +8183,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8213,7 +8213,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8243,7 +8243,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8273,7 +8273,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8300,7 +8300,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8328,7 +8328,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8356,7 +8356,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8384,7 +8384,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8414,7 +8414,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8441,7 +8441,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8468,7 +8468,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8495,7 +8495,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8522,7 +8522,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8549,7 +8549,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8579,7 +8579,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8609,7 +8609,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8639,7 +8639,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8669,7 +8669,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8699,7 +8699,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8729,7 +8729,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8759,7 +8759,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -8789,7 +8789,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'PHP Night';
+                    $R_meta['title']['TEXT']         = 'PHP Night';
                     $R_meta['description']['TEXT']   = 'A replication of the lead ' . 
                                                        'developer\'s IDE theme. ' . 
                                                        'How CRNRSTN :: Lightsaber ' . 
@@ -8822,7 +8822,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Dark Night';
+                    $R_meta['title']['TEXT']         = 'Dark Night';
                     $R_meta['description']['TEXT']   = 'Similar to PHP Night, but ' . 
                                                        'darker. Nothing could be ' . 
                                                        'darker. Nothing.';
@@ -8854,7 +8854,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'PHP';
+                    $R_meta['title']['TEXT']         = 'PHP';
                     $R_meta['description']['TEXT']   = 'All about the business.';
 
                 break;
@@ -8884,7 +8884,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Grey Sky';
+                    $R_meta['title']['TEXT']         = 'Grey Sky';
                     $R_meta['description']['TEXT']   = 'Alone and sad with a ' . 
                                                        'nice cup of coffee, ' . 
                                                        'a rack mounted dual-video ' . 
@@ -8919,7 +8919,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'HTML';
+                    $R_meta['title']['TEXT']         = 'HTML';
                     $R_meta['description']['TEXT']   = 'Be light and happy.';
 
                 break;
@@ -8949,7 +8949,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Daylight';
+                    $R_meta['title']['TEXT']         = 'Daylight';
                     $R_meta['description']['TEXT']   = 'Similar to the HTML ' . 
                                                        'theme but...lighter. ' . 
                                                        'Nothing could be lighter.';
@@ -8981,7 +8981,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Feather';
+                    $R_meta['title']['TEXT']         = 'Feather';
                     $R_meta['description']['TEXT']   = 'Lighter than Daylight.';
 
                 break;
@@ -9011,7 +9011,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Glass (light text)';
+                    $R_meta['title']['TEXT']         = 'Glass (light text)';
                     $R_meta['description']['TEXT']   = 'Experimental UI theme ' . 
                                                        'for light colored text ' . 
                                                        'and a darker background.';
@@ -9043,7 +9043,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Glass (dark text)';
+                    $R_meta['title']['TEXT']         = 'Glass (dark text)';
                     $R_meta['description']['TEXT']   = 'Experimental UI theme ' . 
                                                        'for dark colored text ' . 
                                                        'and a lighter color ' . 
@@ -9076,7 +9076,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Wood';
+                    $R_meta['title']['TEXT']         = 'Wood';
                     $R_meta['description']['TEXT']   = 'Got wood?';
 
                 break;
@@ -9106,7 +9106,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Terminal';
+                    $R_meta['title']['TEXT']         = 'Terminal';
                     $R_meta['description']['TEXT']   = 'Green text. Black ' . 
                                                        'background. Hardcore ' . 
                                                        'and forever stuck in ' . 
@@ -9139,7 +9139,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Random Theme';
+                    $R_meta['title']['TEXT']         = 'Random Theme';
                     $R_meta['description']['TEXT']   = 'Loads the HTML content ' . 
                                                        'choosing a UI theme ' . 
                                                        'at random.';
@@ -9171,7 +9171,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Desktop Device';
+                    $R_meta['title']['TEXT']         = 'Desktop Device';
                     $R_meta['description']['TEXT']   = 'Desktop internet browsing device.';
 
                 break;
@@ -9201,7 +9201,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Tablet Device';
+                    $R_meta['title']['TEXT']         = 'Tablet Device';
                     $R_meta['description']['TEXT']   = 'Tablet internet browsing device.';
 
                 break;
@@ -9231,7 +9231,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Mobile Device';
+                    $R_meta['title']['TEXT']         = 'Mobile Device';
                     $R_meta['description']['TEXT']   = 'Mobile internet browsing device.';
 
                 break;
@@ -9262,7 +9262,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -9292,7 +9292,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -9322,7 +9322,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']         = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -9432,8 +9432,8 @@ function _crnrstn_system_integer_bank(
                     // CHANGE $R_meta ARRAY STRUCTURE IN WHOLE FILE.
                     //
                     // Monday, August 21, 2023 @ 0331 hrs.
-                    $R_meta['title']['TEXT'][]       = 'HyperText Markup Language (HTML)';
-                    $R_meta['description']['main']['TEXT'][] = 'The HyperText Markup Language or HTML is the standard 
+                    $R_meta['title']['TEXT']                 = 'HyperText Markup Language (HTML)';
+                    $R_meta['description']['main']['TEXT'] = 'The HyperText Markup Language or HTML is the standard 
                     markup language for documents designed to be displayed in a web browser. It defines the meaning and 
                     structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and 
                     scripting languages such as JavaScript.
@@ -9743,8 +9743,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Joint Photographic Experts Group (JPEG)';
-                    $R_meta['description']['main']['TEXT'][] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
+                    $R_meta['title']['TEXT']                 = 'Joint Photographic Experts Group (JPEG)';
+                    $R_meta['description']['main']['TEXT'] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
                     Experts Group) is a commonly used method of lossy compression for digital images, particularly for those 
                     images produced by digital photography. The degree of compression can be adjusted, allowing a selectable 
                     tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little 
@@ -10005,8 +10005,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Graphics Interchange Format (GIF)';
-                    $R_meta['description']['main']['TEXT'][] = 'The Graphics Interchange Format (GIF; /ɡɪf/ GHIF or /dʒɪf/ 
+                    $R_meta['title']['TEXT']                 = 'Graphics Interchange Format (GIF)';
+                    $R_meta['description']['main']['TEXT'] = 'The Graphics Interchange Format (GIF; /ɡɪf/ GHIF or /dʒɪf/ 
                     JIF, see pronunciation) is a bitmap image format that was developed by a team at the online services 
                     provider CompuServe led by American computer scientist Steve Wilhite and released on June 15, 1987. 
                     It is in widespread usage on the World Wide Web due to its wide support and portability between 
@@ -10174,8 +10174,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Portable Network Graphics (PNG)';
-                    $R_meta['description']['main']['TEXT'][] = 'Portable Network Graphics (PNG, officially pronounced 
+                    $R_meta['title']['TEXT']                 = 'Portable Network Graphics (PNG)';
+                    $R_meta['description']['main']['TEXT'] = 'Portable Network Graphics (PNG, officially pronounced 
                     /pɪŋ/ PING, colloquially pronounced /ˌpiːɛnˈdʒiː/ PEE-en-JEE) is a raster-graphics file format that 
                     supports lossless data compression. PNG was developed as an improved, non-patented replacement for 
                     Graphics Interchange Format (GIF)—unofficially, the initials PNG stood for the recursive acronym 
@@ -10331,8 +10331,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
-                    $R_meta['description']['main']['TEXT'][]                            = '';
+                    $R_meta['title']['TEXT']                 = '';
+                    $R_meta['description']['main']['TEXT'] = '';
 
                 break;
 
@@ -10439,14 +10439,14 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'String Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'A string is a series of ' . 
-                                                       'characters, where a character ' . 
-                                                       'is the same as a byte. ' . 
-                                                       'This means that PHP only ' . 
-                                                       'supports a 256-character set, ' . 
-                                                       'and hence does not offer ' . 
-                                                       'native Unicode support.';
+                    $R_meta['title']['TEXT']                 = 'String Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'A string is a series of ' . 
+                                                               'characters, where a character ' . 
+                                                               'is the same as a byte. ' . 
+                                                               'This means that PHP only ' . 
+                                                               'supports a 256-character set, ' . 
+                                                               'and hence does not offer ' . 
+                                                               'native Unicode support.';
 
                 break;
 
@@ -10478,8 +10478,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Integer (Int) Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'An int is a number of the set ℤ = {..., -2, -1, 0, 1, 2, ...}.';
+                    $R_meta['title']['TEXT']                 = 'Integer (Int) Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'An int is a number of the set ℤ = {..., -2, -1, 0, 1, 2, ...}.';
 
                 break;
 
@@ -10510,8 +10510,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Integer (Int) Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'An int is a number of the set ℤ = {..., -2, -1, 0, 1, 2, ...}.';
+                    $R_meta['title']['TEXT']                 = 'Integer (Int) Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'An int is a number of the set ℤ = {..., -2, -1, 0, 1, 2, ...}.';
 
                 break;
 
@@ -10542,8 +10542,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Boolean (Bool) Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'The bool type only has two ' . 
+                    $R_meta['title']['TEXT']                 = 'Boolean (Bool) Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'The bool type only has two ' . 
                                                                 'values, and is used to ' . 
                                                                 'express a truth value. ' . 
                                                                 'It can be either true ' . 
@@ -10578,12 +10578,12 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Boolean (Bool) Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'The bool type only has two ' . 
-                                                       'values, and is used to ' . 
-                                                       'express a truth value. ' . 
-                                                       'It can be either true ' . 
-                                                       'or false.';
+                    $R_meta['title']['TEXT']               = 'Boolean (Bool) Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'The bool type only has two ' . 
+                                                             'values, and is used to ' .
+                                                             'express a truth value. ' .
+                                                             'It can be either true ' .
+                                                             'or false.';
 
                 break;
 
@@ -10614,15 +10614,15 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Float (Double) Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'Floating point numbers ' . 
-                                                       '(also known as "floats", ' . 
-                                                       '"doubles", or "real ' . 
-                                                       'numbers") can be specified ' . 
-                                                       'using any of the ' . 
-                                                       'following syntaxes: 1.234, ' . 
-                                                       '1.2e3, 7E-10, and 1_234.567 ' . 
-                                                       '(as of PHP 7.4.0).';
+                    $R_meta['title']['TEXT']               = 'Float (Double) Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'Floating point numbers ' . 
+                                                             '(also known as "floats", ' .
+                                                             '"doubles", or "real ' .
+                                                             'numbers") can be specified ' .
+                                                             'using any of the ' .
+                                                             'following syntaxes: 1.234, ' .
+                                                             '1.2e3, 7E-10, and 1_234.567 ' .
+                                                             '(as of PHP 7.4.0).';
 
                 break;
 
@@ -10653,15 +10653,15 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Float (Double) Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'Floating point numbers ' . 
-                                                       '(also known as "floats", ' . 
-                                                       '"doubles", or "real ' . 
-                                                       'numbers") can be specified ' . 
-                                                       'using any of the ' . 
-                                                       'following syntaxes: 1.234, ' . 
-                                                       '1.2e3, 7E-10, and 1_234.567 ' . 
-                                                       '(as of PHP 7.4.0).';
+                    $R_meta['title']['TEXT']               = 'Float (Double) Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'Floating point numbers ' . 
+                                                             '(also known as "floats", ' .
+                                                             '"doubles", or "real ' .
+                                                             'numbers") can be specified ' .
+                                                             'using any of the ' .
+                                                             'following syntaxes: 1.234, ' .
+                                                             '1.2e3, 7E-10, and 1_234.567 ' .
+                                                             '(as of PHP 7.4.0).';
 
                 break;
 
@@ -10692,24 +10692,24 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Array Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'An array in PHP is ' . 
-                                                       'actually an ordered map. ' . 
-                                                       'A map is a type that ' . 
-                                                       'associates values to ' . 
-                                                       'keys. This type is ' . 
-                                                       'optimized for several ' . 
-                                                       'different uses; it can ' . 
-                                                       'be treated as an array, ' . 
-                                                       'list (vector), hash ' . 
-                                                       'table (an implementation ' . 
-                                                       'of a map), dictionary, ' . 
-                                                       'collection, stack, queue, ' . 
-                                                       'and probably more. As ' . 
-                                                       'array values can be other ' . 
-                                                       'arrays, trees and ' . 
-                                                       'multidimensional arrays ' . 
-                                                       'are also possible.';
+                    $R_meta['title']['TEXT']               = 'Array Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'An array in PHP is ' . 
+                                                             'actually an ordered map. ' .
+                                                             'A map is a type that ' .
+                                                             'associates values to ' .
+                                                             'keys. This type is ' .
+                                                             'optimized for several ' .
+                                                             'different uses; it can ' .
+                                                             'be treated as an array, ' .
+                                                             'list (vector), hash ' .
+                                                             'table (an implementation ' .
+                                                             'of a map), dictionary, ' .
+                                                             'collection, stack, queue, ' .
+                                                             'and probably more. As ' .
+                                                             'array values can be other ' .
+                                                             'arrays, trees and ' .
+                                                             'multidimensional arrays ' .
+                                                             'are also possible.';
 
                 break;
 
@@ -10740,21 +10740,21 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Object Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'PHP includes a complete ' . 
-                                                       'object model. Some of its ' . 
-                                                       'features are: visibility, ' . 
-                                                       'abstract and final classes ' . 
-                                                       'and methods, additional ' . 
-                                                       'magic methods, interfaces, ' . 
-                                                       'and cloning. 
+                    $R_meta['title']['TEXT']               = 'Object Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'PHP includes a complete ' . 
+                                                             'object model. Some of its ' .
+                                                             'features are: visibility, ' .
+                                                             'abstract and final classes ' .
+                                                             'and methods, additional ' .
+                                                             'magic methods, interfaces, ' .
+                                                             'and cloning. 
 
-                                                       PHP treats objects in the ' . 
-                                                       'same way as references or ' . 
-                                                       'handles, meaning that each ' . 
-                                                       'variable contains an object ' . 
-                                                       'reference rather than a copy ' . 
-                                                       'of the entire object.';
+                                                             PHP treats objects in the ' .
+                                                             'same way as references or ' .
+                                                             'handles, meaning that each ' .
+                                                             'variable contains an object ' .
+                                                             'reference rather than a copy ' .
+                                                             'of the entire object.';
 
                 break;
 
@@ -10787,11 +10787,11 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Null Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'The null type is ' . 
-                                                       'PHP\'s unit type, ' . 
-                                                       'i.e. it has only ' . 
-                                                       'one value: null.';
+                    $R_meta['title']['TEXT']               = 'Null Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'The null type is ' . 
+                                                             'PHP\'s unit type, ' .
+                                                             'i.e. it has only ' .
+                                                             'one value: null.';
 
                 break;
 
@@ -10821,17 +10821,17 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Resource Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'A resource is a special ' . 
-                                                       'variable, holding a ' . 
-                                                       'reference to an external ' . 
-                                                       'resource. Resources are ' . 
-                                                       'created and used by ' . 
-                                                       'special functions. See ' . 
-                                                       'the appendix for a listing ' . 
-                                                       'of all these functions ' . 
-                                                       'and the corresponding ' . 
-                                                       'resource types.';
+                    $R_meta['title']['TEXT']               = 'Resource Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'A resource is a special ' . 
+                                                             'variable, holding a ' .
+                                                             'reference to an external ' .
+                                                             'resource. Resources are ' .
+                                                             'created and used by ' .
+                                                             'special functions. See ' .
+                                                             'the appendix for a listing ' .
+                                                             'of all these functions ' .
+                                                             'and the corresponding ' .
+                                                             'resource types.';
 
                 break;
 
@@ -10863,17 +10863,17 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Resource Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'A resource is a special ' . 
-                                                       'variable, holding a ' . 
-                                                       'reference to an external ' . 
-                                                       'resource. Resources are ' . 
-                                                       'created and used by ' . 
-                                                       'special functions. See ' . 
-                                                       'the appendix for a listing ' . 
-                                                       'of all these functions ' . 
-                                                       'and the corresponding ' . 
-                                                       'resource types.';
+                    $R_meta['title']['TEXT']               = 'Resource Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'A resource is a special ' . 
+                                                             'variable, holding a ' .
+                                                             'reference to an external ' .
+                                                             'resource. Resources are ' .
+                                                             'created and used by ' .
+                                                             'special functions. See ' .
+                                                             'the appendix for a listing ' .
+                                                             'of all these functions ' .
+                                                             'and the corresponding ' .
+                                                             'resource types.';
 
                 break;
 
@@ -10905,14 +10905,14 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Mixed Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'The mixed type accepts ' . 
-                                                       'every value. It is ' . 
-                                                       'equivalent to the union ' . 
-                                                       'type object|resource|' . 
-                                                       'array|string|float|int|' . 
-                                                       'bool|null. Available ' . 
-                                                       'as of PHP 8.0.0.';
+                    $R_meta['title']['TEXT']               = 'Mixed Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'The mixed type accepts ' . 
+                                                             'every value. It is ' .
+                                                             'equivalent to the union ' .
+                                                             'type object|resource|' .
+                                                             'array|string|float|int|' .
+                                                             'bool|null. Available ' .
+                                                             'as of PHP 8.0.0.';
 
                 break;
 
@@ -10943,22 +10943,22 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Unknown Data Type';
-                    $R_meta['description']['main']['TEXT'][] = 'PHP uses a nominal type system ' . 
-                                                       'with a strong behavioral ' . 
-                                                       'subtyping relation. The ' . 
-                                                       'subtyping relation is checked ' . 
-                                                       'at compile time whereas the ' . 
-                                                       'verification of types is ' . 
-                                                       'dynamically checked at ' . 
-                                                       'run time.
+                    $R_meta['title']['TEXT']               = 'Unknown Data Type';
+                    $R_meta['description']['main']['TEXT'] = 'PHP uses a nominal type system ' . 
+                                                             'with a strong behavioral ' .
+                                                             'subtyping relation. The ' .
+                                                             'subtyping relation is checked ' .
+                                                             'at compile time whereas the ' .
+                                                             'verification of types is ' .
+                                                             'dynamically checked at ' .
+                                                             'run time.
 
-                                                       PHP\'s type system supports ' . 
-                                                       'various atomic types that ' . 
-                                                       'can be composed together to ' . 
-                                                       'create more complex types. ' . 
-                                                       'Some of these types can be ' . 
-                                                       'written as type declarations.';
+                                                             PHP\'s type system supports ' .
+                                                             'various atomic types that ' .
+                                                             'can be composed together to ' .
+                                                             'create more complex types. ' .
+                                                             'Some of these types can be ' .
+                                                             'written as type declarations.';
 
                 break;
 
@@ -10989,7 +10989,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -11105,8 +11105,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Cascading Style Sheets (CSS)';
-                    $R_meta['description']['main']['TEXT'][] = 'Cascading Style Sheets (CSS) is a style sheet language 
+                    $R_meta['title']['TEXT']               = 'Cascading Style Sheets (CSS)';
+                    $R_meta['description']['main']['TEXT'] = 'Cascading Style Sheets (CSS) is a style sheet language 
                     used for describing the presentation of a document written in a markup language such as HTML or XML 
                     (including XML dialects such as SVG, MathML or XHTML). CSS is a cornerstone technology of the World Wide 
                     Web, alongside HTML and JavaScript.
@@ -11409,8 +11409,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'JavaScript';
-                    $R_meta['description']['main']['TEXT'][] = 'JavaScript (/ˈdʒɑːvəskrɪpt/), often abbreviated as JS, is 
+                    $R_meta['title']['TEXT']               = 'JavaScript';
+                    $R_meta['description']['main']['TEXT'] = 'JavaScript (/ˈdʒɑːvəskrɪpt/), often abbreviated as JS, is 
                     a programming language that is one of the core technologies of the World Wide Web, alongside HTML and 
                     CSS. As of 2023, 98.7% of websites use JavaScript on the client side for webpage behavior, often 
                     incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to 
@@ -11623,8 +11623,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'HyperText Markup Language (HTML)';
-                    $R_meta['description']['main']['TEXT'][] = 'The HyperText Markup Language or HTML is the standard 
+                    $R_meta['title']['TEXT']               = 'HyperText Markup Language (HTML)';
+                    $R_meta['description']['main']['TEXT'] = 'The HyperText Markup Language or HTML is the standard 
                     markup language for documents designed to be displayed in a web browser. It defines the meaning and 
                     structure of web content. It is often assisted by technologies such as Cascading Style Sheets (CSS) and 
                     scripting languages such as JavaScript.
@@ -11793,8 +11793,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Server Side Include (SSI) Enabled HTML';
-                    $R_meta['description']['main']['TEXT'][] = 'Server Side Includes (SSI) is a simple interpreted server-
+                    $R_meta['title']['TEXT']               = 'Server Side Include (SSI) Enabled HTML';
+                    $R_meta['description']['main']['TEXT'] = 'Server Side Includes (SSI) is a simple interpreted server-
                     side scripting language used almost exclusively for the World Wide Web. It is most useful for including 
                     the contents of one or more files into a web page on a web server (see below), using its #include 
                     directive. This could commonly be a common piece of code throughout a site, such as a page header, a 
@@ -11906,8 +11906,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Server Side Include (SSI) Enabled HTML';
-                    $R_meta['description']['main']['TEXT'][] = 'Server Side Includes (SSI) is a simple interpreted server-
+                    $R_meta['title']['TEXT']               = 'Server Side Include (SSI) Enabled HTML';
+                    $R_meta['description']['main']['TEXT'] = 'Server Side Includes (SSI) is a simple interpreted server-
                     side scripting language used almost exclusively for the World Wide Web. It is most useful for including 
                     the contents of one or more files into a web page on a web server (see below), using its #include 
                     directive. This could commonly be a common piece of code throughout a site, such as a page header, a 
@@ -12019,8 +12019,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Server Side Include (SSI) Enabled HTML';
-                    $R_meta['description']['main']['TEXT'][] = 'Server Side Includes (SSI) is a simple interpreted server-
+                    $R_meta['title']['TEXT']               = 'Server Side Include (SSI) Enabled HTML';
+                    $R_meta['description']['main']['TEXT'] = 'Server Side Includes (SSI) is a simple interpreted server-
                     side scripting language used almost exclusively for the World Wide Web. It is most useful for including 
                     the contents of one or more files into a web page on a web server (see below), using its #include 
                     directive. This could commonly be a common piece of code throughout a site, such as a page header, a 
@@ -12132,8 +12132,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Extensible HyperText Markup Language (XHTML)';
-                    $R_meta['description']['main']['TEXT'][] = 'Extensible HyperText Markup Language (XHTML) is part of 
+                    $R_meta['title']['TEXT']               = 'Extensible HyperText Markup Language (XHTML)';
+                    $R_meta['description']['main']['TEXT'] = 'Extensible HyperText Markup Language (XHTML) is part of 
                     the family of XML markup languages. It mirrors or extends versions of the widely used HyperText Markup 
                     Language (HTML), the language in which Web pages are formulated.
 
@@ -12297,8 +12297,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Extensible Markup Language (XML)';
-                    $R_meta['description']['main']['TEXT'][] = 'Extensible Markup Language (XML) is a markup language and 
+                    $R_meta['title']['TEXT']               = 'Extensible Markup Language (XML)';
+                    $R_meta['description']['main']['TEXT'] = 'Extensible Markup Language (XML) is a markup language and 
                     file format for storing, transmitting, and reconstructing arbitrary data. It defines a set of rules for 
                     encoding documents in a format that is both human-readable and machine-readable. The World Wide Web 
                     Consortium\'s XML 1.0 Specification of 1998 and several other related specifications-—all of 
@@ -12484,8 +12484,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Extensible Stylesheet Language Transformations (XSLT)';
-                    $R_meta['description']['main']['TEXT'][] = 'XSLT (Extensible Stylesheet Language Transformations) is a 
+                    $R_meta['title']['TEXT']               = 'Extensible Stylesheet Language Transformations (XSLT)';
+                    $R_meta['description']['main']['TEXT'] = 'XSLT (Extensible Stylesheet Language Transformations) is a 
                     language originally designed for transforming XML documents into other XML documents, or other 
                     formats such as HTML for web pages, plain text or XSL Formatting Objects, which may subsequently be 
                     converted to other formats, such as PDF, PostScript and PNG. Support for JSON and plain-text 
@@ -12654,8 +12654,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'XML User Interface Language (XUL)';
-                    $R_meta['description']['main']['TEXT'][] = 'XUL (/ˈzuːl/ ZOOL), which stands for XML User Interface 
+                    $R_meta['title']['TEXT']               = 'XML User Interface Language (XUL)';
+                    $R_meta['description']['main']['TEXT'] = 'XUL (/ˈzuːl/ ZOOL), which stands for XML User Interface 
                     Language, is a user interface markup language developed by Mozilla. XUL is an XML dialect for writing 
                     graphical user interfaces, enabling developers to write user interface elements in a manner similar to 
                     web pages.
@@ -12794,8 +12794,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Comma-separated values (CSV)';
-                    $R_meta['description']['main']['TEXT'][] = 'Comma-separated values (CSV) is a text file format that 
+                    $R_meta['title']['TEXT']               = 'Comma-separated values (CSV)';
+                    $R_meta['description']['main']['TEXT'] = 'Comma-separated values (CSV) is a text file format that 
                     uses commas to separate values. A CSV file stores tabular data (numbers and text) in plain text, where 
                     each line of the file typically represents one data record. Each record consists of the same number of 
                     fields, and these are separated by commas in the CSV file. If the field delimiter itself may appear 
@@ -12955,8 +12955,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Text';
-                    $R_meta['description']['main']['TEXT'][] = 'A text file (sometimes spelled textfile; an old 
+                    $R_meta['title']['TEXT']               = 'Text';
+                    $R_meta['description']['main']['TEXT'] = 'A text file (sometimes spelled textfile; an old 
                     alternative name is flatfile) is a kind of computer file that is structured as a sequence of lines of 
                     electronic text. A text file exists stored as data within a computer file system. In operating systems 
                     such as CP/M and MS-DOS, where the operating system does not keep track of the file size in bytes, the 
@@ -13149,8 +13149,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Structured Query Language (SQL)';
-                    $R_meta['description']['main']['TEXT'][] = 'Structured Query Language (SQL) (/ˌɛsˌkjuːˈɛl/ i S-Q-L, 
+                    $R_meta['title']['TEXT']               = 'Structured Query Language (SQL)';
+                    $R_meta['description']['main']['TEXT'] = 'Structured Query Language (SQL) (/ˌɛsˌkjuːˈɛl/ i S-Q-L, 
                     sometimes /ˈsiːkwəl/ "sequel" for historical reasons) is a domain-specific language used in programming 
                     and designed for managing data held in a relational database management system (RDBMS), or for stream 
                     processing in a relational data stream management system (RDSMS). It is particularly useful in handling 
@@ -13303,7 +13303,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
+                    $R_meta['title']['TEXT']               = 'Perl';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -13405,7 +13405,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -13507,8 +13507,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Dynamic-link library (DLL)';
-                    $R_meta['description']['main']['TEXT'][] = 'Dynamic-link library (DLL) is Microsoft\'s implementation 
+                    $R_meta['title']['TEXT']               = 'Dynamic-link library (DLL)';
+                    $R_meta['description']['main']['TEXT'] = 'Dynamic-link library (DLL) is Microsoft\'s implementation 
                     of the shared library concept in the Microsoft Windows and OS/2 operating systems. These libraries 
                     usually have the file extension DLL, OCX (for libraries containing ActiveX controls), or DRV (for legacy 
                     system drivers). The file formats for DLLs are the same as for Windows EXE files – that is, Portable 
@@ -13715,8 +13715,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Batch (BAT)';
-                    $R_meta['description']['main']['TEXT'][] = 'A batch file is a script file in DOS, OS/2 and Microsoft 
+                    $R_meta['title']['TEXT']               = 'Batch (BAT)';
+                    $R_meta['description']['main']['TEXT'] = 'A batch file is a script file in DOS, OS/2 and Microsoft 
                     Windows. It consists of a series of commands to be executed by the command-line interpreter, stored in a 
                     plain text file. A batch file may contain any command the interpreter accepts interactively and use 
                     constructs that enable conditional branching and looping within the batch file, such as IF, FOR, and 
@@ -13900,7 +13900,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
+                    $R_meta['title']['TEXT']               = 'Perl';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -14002,7 +14002,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
+                    $R_meta['title']['TEXT']               = 'Perl';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -14104,7 +14104,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
+                    $R_meta['title']['TEXT']               = 'Perl';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -14206,7 +14206,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
+                    $R_meta['title']['TEXT']               = 'Perl';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -14308,7 +14308,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
+                    $R_meta['title']['TEXT']               = 'Perl';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -14410,7 +14410,7 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
+                    $R_meta['title']['TEXT']               = 'Perl';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -14512,8 +14512,8 @@ function _crnrstn_system_integer_bank(
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Perl';
-                    $R_meta['description']['main']['TEXT'][] = 'Perl is a high-level, general-purpose, interpreted, dynamic programming language. Though Perl is not officially an acronym,[9] there are various backronyms in use, including "Practical Extraction and Reporting Language".[10]
+                    $R_meta['title']['TEXT']               = 'Perl';
+                    $R_meta['description']['main']['TEXT'] = 'Perl is a high-level, general-purpose, interpreted, dynamic programming language. Though Perl is not officially an acronym,[9] there are various backronyms in use, including "Practical Extraction and Reporting Language".[10]
 
                     Perl was developed by Larry Wall in 1987[11] as a general-purpose Unix scripting language to make report processing easier.[12][11][13] Since then, it has undergone many changes and revisions. Perl originally was not capitalized and the name was changed to being capitalized by the time Perl 4 was released.[13] The latest release is Perl 5, first released in 1994. From 2000 to October 2019 a sixth version of Perl was in development, before the latter\'s name was officially changed to Raku.[14][15] Both languages continue to be developed independently by different development teams and liberally borrow ideas from each other.
 
@@ -14716,8 +14716,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Batch (CMD)';
-                    $R_meta['description']['main']['TEXT'][] = 'A batch file is a script file in DOS, OS/2 and Microsoft 
+                    $R_meta['title']['TEXT']               = 'Batch (CMD)';
+                    $R_meta['description']['main']['TEXT'] = 'A batch file is a script file in DOS, OS/2 and Microsoft 
                     Windows. It consists of a series of commands to be executed by the command-line interpreter, stored in a 
                     plain text file. A batch file may contain any command the interpreter accepts interactively and use 
                     constructs that enable conditional branching and looping within the batch file, such as IF, FOR, and 
@@ -14901,8 +14901,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Batch (BTM)';
-                    $R_meta['description']['main']['TEXT'][] = 'A batch file is a script file in DOS, OS/2 and Microsoft 
+                    $R_meta['title']['TEXT']               = 'Batch (BTM)';
+                    $R_meta['description']['main']['TEXT'] = 'A batch file is a script file in DOS, OS/2 and Microsoft 
                     Windows. It consists of a series of commands to be executed by the command-line interpreter, stored in a 
                     plain text file. A batch file may contain any command the interpreter accepts interactively and use 
                     constructs that enable conditional branching and looping within the batch file, such as IF, FOR, and 
@@ -15084,8 +15084,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'PHP';
-                    $R_meta['description']['main']['TEXT'][] = 'PHP is a general-purpose scripting language geared towards 
+                    $R_meta['title']['TEXT']               = 'PHP';
+                    $R_meta['description']['main']['TEXT'] = 'PHP is a general-purpose scripting language geared towards 
                     web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1993 and 
                     released in 1995. The PHP reference implementation is now produced by the PHP Group. PHP was originally 
                     an abbreviation of Personal Home Page, but it now stands for the recursive 
@@ -15588,8 +15588,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'PHP Archive (PHAR)';
-                    $R_meta['description']['main']['TEXT'][] = 'In software, a PHAR (PHP Archive) file is a package format 
+                    $R_meta['title']['TEXT']               = 'PHP Archive (PHAR)';
+                    $R_meta['description']['main']['TEXT'] = 'In software, a PHAR (PHP Archive) file is a package format 
                     to enable distribution of applications and libraries by bundling many PHP code files and other resources 
                     (e.g. images, stylesheets, etc.) into a single archive file.
 
@@ -15707,7 +15707,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -15807,7 +15807,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -15907,8 +15907,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'PHP';
-                    $R_meta['description']['main']['TEXT'][] = 'PHP is a general-purpose scripting language geared towards 
+                    $R_meta['title']['TEXT']               = 'PHP';
+                    $R_meta['description']['main']['TEXT'] = 'PHP is a general-purpose scripting language geared towards 
                     web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1993 and 
                     released in 1995. The PHP reference implementation is now produced by the PHP Group. PHP was originally 
                     an abbreviation of Personal Home Page, but it now stands for the recursive 
@@ -16410,8 +16410,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'C (programming language)';
-                    $R_meta['description']['main']['TEXT'][] = 'C (pronounced /ˈsiː/ – like the letter c) is a general-
+                    $R_meta['title']['TEXT']               = 'C (programming language)';
+                    $R_meta['description']['main']['TEXT'] = 'C (pronounced /ˈsiː/ – like the letter c) is a general-
                     purpose computer programming language. It was created in the 1970s by Dennis Ritchie, and remains very 
                     widely used and influential. By design, C\'s features cleanly reflect the capabilities of the targeted 
                     CPUs. It has found lasting use in operating systems, device drivers, protocol stacks, but its use in 
@@ -16794,7 +16794,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -16990,7 +16990,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -17340,8 +17340,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Rich Text Format';
-                    $R_meta['description']['main']['TEXT'][] = 'The Rich Text Format (often abbreviated RTF) is a 
+                    $R_meta['title']['TEXT']               = 'Rich Text Format';
+                    $R_meta['description']['main']['TEXT'] = 'The Rich Text Format (often abbreviated RTF) is a 
                     proprietary document file format with published specification developed by Microsoft Corporation from 
                     1987 until 2008 for cross-platform document interchange with Microsoft products. Prior to 2008, 
                     Microsoft published updated specifications for RTF with major revisions of Microsoft Word and 
@@ -17467,7 +17467,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -17569,7 +17569,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -17671,7 +17671,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -17773,7 +17773,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -17875,7 +17875,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -17977,7 +17977,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -18079,7 +18079,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -18179,8 +18179,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'ZIP';
-                    $R_meta['description']['main']['TEXT'][] = 'ZIP is an archive file format that supports lossless data 
+                    $R_meta['title']['TEXT']               = 'ZIP';
+                    $R_meta['description']['main']['TEXT'] = 'ZIP is an archive file format that supports lossless data 
                     compression. A ZIP file may contain one or more files or directories that may have been compressed. The 
                     ZIP file format permits a number of compression algorithms, though DEFLATE is the most common. This 
                     format was originally created in 1989 and was first implemented in PKWARE, Inc.\'s PKZIP utility, as a 
@@ -18320,8 +18320,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'ZIP';
-                    $R_meta['description']['main']['TEXT'][] = 'ZIP is an archive file format that supports lossless data 
+                    $R_meta['title']['TEXT']               = 'ZIP';
+                    $R_meta['description']['main']['TEXT'] = 'ZIP is an archive file format that supports lossless data 
                     compression. A ZIP file may contain one or more files or directories that may have been compressed. The 
                     ZIP file format permits a number of compression algorithms, though DEFLATE is the most common. This 
                     format was originally created in 1989 and was first implemented in PKWARE, Inc.\'s PKZIP utility, as a 
@@ -18459,7 +18459,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -18559,7 +18559,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -18659,7 +18659,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -18759,7 +18759,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -18859,7 +18859,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -18959,7 +18959,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19059,7 +19059,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19159,7 +19159,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19259,7 +19259,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19359,7 +19359,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19459,7 +19459,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19559,7 +19559,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19659,7 +19659,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -19776,8 +19776,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Joint Photographic Experts Group (JPEG)';
-                    $R_meta['description']['main']['TEXT'][] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
+                    $R_meta['title']['TEXT']               = 'Joint Photographic Experts Group (JPEG)';
+                    $R_meta['description']['main']['TEXT'] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
                     Experts Group) is a commonly used method of lossy compression for digital images, particularly for those 
                     images produced by digital photography. The degree of compression can be adjusted, allowing a selectable 
                     tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little 
@@ -20035,8 +20035,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Joint Photographic Experts Group (JPEG)';
-                    $R_meta['description']['main']['TEXT'][] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
+                    $R_meta['title']['TEXT']               = 'Joint Photographic Experts Group (JPEG)';
+                    $R_meta['description']['main']['TEXT'] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
                     Experts Group) is a commonly used method of lossy compression for digital images, particularly for those 
                     images produced by digital photography. The degree of compression can be adjusted, allowing a selectable 
                     tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little 
@@ -20298,8 +20298,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Joint Photographic Experts Group (JPEG)';
-                    $R_meta['description']['main']['TEXT'][] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
+                    $R_meta['title']['TEXT']               = 'Joint Photographic Experts Group (JPEG)';
+                    $R_meta['description']['main']['TEXT'] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
                     Experts Group) is a commonly used method of lossy compression for digital images, particularly for those 
                     images produced by digital photography. The degree of compression can be adjusted, allowing a selectable 
                     tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little 
@@ -20557,8 +20557,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Joint Photographic Experts Group (JPEG)';
-                    $R_meta['description']['main']['TEXT'][] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
+                    $R_meta['title']['TEXT']               = 'Joint Photographic Experts Group (JPEG)';
+                    $R_meta['description']['main']['TEXT'] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
                     Experts Group) is a commonly used method of lossy compression for digital images, particularly for those 
                     images produced by digital photography. The degree of compression can be adjusted, allowing a selectable 
                     tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little 
@@ -20816,8 +20816,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Joint Photographic Experts Group (JPEG)';
-                    $R_meta['description']['main']['TEXT'][] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
+                    $R_meta['title']['TEXT']               = 'Joint Photographic Experts Group (JPEG)';
+                    $R_meta['description']['main']['TEXT'] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
                     Experts Group) is a commonly used method of lossy compression for digital images, particularly for those 
                     images produced by digital photography. The degree of compression can be adjusted, allowing a selectable 
                     tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little 
@@ -21075,8 +21075,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Joint Photographic Experts Group (JPEG)';
-                    $R_meta['description']['main']['TEXT'][] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
+                    $R_meta['title']['TEXT']               = 'Joint Photographic Experts Group (JPEG)';
+                    $R_meta['description']['main']['TEXT'] = 'JPEG (/ˈdʒeɪpɛɡ/ JAY-peg, short for Joint Photographic 
                     Experts Group) is a commonly used method of lossy compression for digital images, particularly for those 
                     images produced by digital photography. The degree of compression can be adjusted, allowing a selectable 
                     tradeoff between storage size and image quality. JPEG typically achieves 10:1 compression with little 
@@ -21334,7 +21334,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -21451,7 +21451,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -21568,7 +21568,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -21685,7 +21685,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -21802,7 +21802,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -21902,7 +21902,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -22043,7 +22043,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -22160,7 +22160,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -22269,8 +22269,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Musical Instrument Digital Interface (MIDI)';
-                    $R_meta['description']['main']['TEXT'][] = 'MIDI (/ˈmɪdi/; Musical Instrument Digital Interface) is a 
+                    $R_meta['title']['TEXT']               = 'Musical Instrument Digital Interface (MIDI)';
+                    $R_meta['description']['main']['TEXT'] = 'MIDI (/ˈmɪdi/; Musical Instrument Digital Interface) is a 
                     technical standard that describes a communication protocol, digital interface, and electrical connectors 
                     that connect a wide variety of electronic musical instruments, computers, and related audio devices for 
                     playing, editing, and recording music.
@@ -22488,8 +22488,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Musical Instrument Digital Interface (MIDI)';
-                    $R_meta['description']['main']['TEXT'][] = 'MIDI (/ˈmɪdi/; Musical Instrument Digital Interface) is a 
+                    $R_meta['title']['TEXT']               = 'Musical Instrument Digital Interface (MIDI)';
+                    $R_meta['description']['main']['TEXT'] = 'MIDI (/ˈmɪdi/; Musical Instrument Digital Interface) is a 
                     technical standard that describes a communication protocol, digital interface, and electrical connectors 
                     that connect a wide variety of electronic musical instruments, computers, and related audio devices for 
                     playing, editing, and recording music.
@@ -22707,7 +22707,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -22813,7 +22813,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -22919,7 +22919,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -23030,8 +23030,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MPEG-1 Audio Layer II (MP2)';
-                    $R_meta['description']['main']['TEXT'][] = 'MPEG-1 Audio Layer II or MPEG-2 Audio Layer II (MP2, 
+                    $R_meta['title']['TEXT']               = 'MPEG-1 Audio Layer II (MP2)';
+                    $R_meta['description']['main']['TEXT'] = 'MPEG-1 Audio Layer II or MPEG-2 Audio Layer II (MP2, 
                     sometimes incorrectly called Musicam or MUSICAM) is a lossy audio compression format defined by ISO/IEC 
                     11172-3 alongside MPEG-1 Audio Layer I and MPEG-1 Audio Layer III (MP3). While MP3 is much more popular 
                     for PC and Internet applications, MP2 remains a dominant standard for audio broadcasting.';
@@ -23224,7 +23224,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -23330,7 +23330,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -23436,8 +23436,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MP3 (MPEG-1 Audio Layer III or MPEG-2 Audio Layer III)';
-                    $R_meta['description']['main']['TEXT'][] = 'MP3 (formally MPEG-1 Audio Layer III or MPEG-2 Audio Layer 
+                    $R_meta['title']['TEXT']               = 'MP3 (MPEG-1 Audio Layer III or MPEG-2 Audio Layer III)';
+                    $R_meta['description']['main']['TEXT'] = 'MP3 (formally MPEG-1 Audio Layer III or MPEG-2 Audio Layer 
                     III) is a coding format for digital audio developed largely by the Fraunhofer Society in Germany under 
                     the lead of Karlheinz Brandenburg, with support from other digital scientists in other countries. 
                     Originally defined as the third audio format of the MPEG-1 standard, it was retained and further 
@@ -23823,7 +23823,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -23934,7 +23934,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -24045,7 +24045,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -24160,7 +24160,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -24278,7 +24278,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -24389,8 +24389,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Real Audio Media (RAM/RA)';
-                    $R_meta['description']['main']['TEXT'][] = 'RealAudio, or also spelled as Real Audio is a proprietary audio 
+                    $R_meta['title']['TEXT']               = 'Real Audio Media (RAM/RA)';
+                    $R_meta['description']['main']['TEXT'] = 'RealAudio, or also spelled as Real Audio is a proprietary audio 
                     format developed by RealNetworks and first released in April 1995. It uses a variety of audio codecs, 
                     ranging from low-bitrate formats that can be used over dialup modems, to high-fidelity formats 
                     for music. 
@@ -24513,7 +24513,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -24624,7 +24624,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -24724,8 +24724,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Waveform Audio File Format (WAV)';
-                    $R_meta['description']['main']['TEXT'][] = 'Waveform Audio File Format (WAVE, or WAV due to its 
+                    $R_meta['title']['TEXT']               = 'Waveform Audio File Format (WAV)';
+                    $R_meta['description']['main']['TEXT'] = 'Waveform Audio File Format (WAVE, or WAV due to its 
                     filename extension; pronounced /wæv/ or /weɪv/) is an audio file format standard, developed by IBM and 
                     Microsoft, for storing an audio bitstream on personal computers. It is the main format used on Microsoft 
                     Windows systems for uncompressed audio. The usual bitstream encoding is the linear pulse-code modulation 
@@ -24905,7 +24905,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -25020,7 +25020,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -25131,7 +25131,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -25242,7 +25242,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -25353,7 +25353,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -25464,8 +25464,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Windows Media Metafile';
-                    $R_meta['description']['main']['TEXT'][] = 'Metafiles that reference Windows Media files with .asf, .wma, or .wax file name extensions.';
+                    $R_meta['title']['TEXT']               = 'Windows Media Metafile';
+                    $R_meta['description']['main']['TEXT'] = 'Metafiles that reference Windows Media files with .asf, .wma, or .wax file name extensions.';
                     $R_meta['file_sys']['description_source_url']['main'][] = 'https://learn.microsoft.com/en-us/windows/win32/wmp/file-name-extensions';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][] = '06/20/2023';
 
@@ -25560,8 +25560,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Windows Media Metafile';
-                    $R_meta['description']['main']['TEXT'][] = 'Metafiles that reference Windows Media files with .wma, .wmv, .wvx, or .wax file name extensions.';
+                    $R_meta['title']['TEXT']               = 'Windows Media Metafile';
+                    $R_meta['description']['main']['TEXT'] = 'Metafiles that reference Windows Media files with .wma, .wmv, .wvx, or .wax file name extensions.';
                     $R_meta['file_sys']['description_source_url']['main'][] = 'https://learn.microsoft.com/en-us/windows/win32/wmp/file-name-extensions';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][] = '06/20/2023';
 
@@ -25667,8 +25667,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Windows Media Metafile';
-                    $R_meta['description']['main']['TEXT'][] = 'Metafiles that reference Windows Media files with .wma, .wax, .wmv, .wvx, .asf, or .asx file name extensions.';
+                    $R_meta['title']['TEXT']               = 'Windows Media Metafile';
+                    $R_meta['description']['main']['TEXT'] = 'Metafiles that reference Windows Media files with .wma, .wax, .wmv, .wvx, .asf, or .asx file name extensions.';
                     $R_meta['file_sys']['description_source_url']['main'][] = 'https://learn.microsoft.com/en-us/windows/win32/wmp/file-name-extensions';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][] = '06/20/2023';
 
@@ -25763,8 +25763,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Windows Media Metafile (Reserved)';
-                    $R_meta['description']['main']['TEXT'][] = 'Reserved.';
+                    $R_meta['title']['TEXT']               = 'Windows Media Metafile (Reserved)';
+                    $R_meta['description']['main']['TEXT'] = 'Reserved.';
                     $R_meta['file_sys']['description_source_url']['main'][] = 'https://learn.microsoft.com/en-us/windows/win32/wmp/file-name-extensions';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][] = '06/20/2023';
 
@@ -25859,7 +25859,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -25982,7 +25982,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -26088,7 +26088,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -26204,7 +26204,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -26320,7 +26320,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -26431,7 +26431,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -26533,7 +26533,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -26639,7 +26639,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -26755,8 +26755,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MPEG-4 Part 14 (MP4)';
-                    $R_meta['description']['main']['TEXT'][] = 'MPEG-4 Part 14 or MP4 is a digital multimedia container 
+                    $R_meta['title']['TEXT']               = 'MPEG-4 Part 14 (MP4)';
+                    $R_meta['description']['main']['TEXT'] = 'MPEG-4 Part 14 or MP4 is a digital multimedia container 
                     format most commonly used to store video and audio, but it can also be used to store other data such as 
                     subtitles and still images. Like most modern container formats, it allows streaming over the Internet. 
                     The only filename extension for MPEG-4 Part 14 files as defined by the specification is .mp4. MPEG-4 
@@ -26909,7 +26909,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27015,7 +27015,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27121,7 +27121,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27227,7 +27227,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27333,7 +27333,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27444,7 +27444,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27579,8 +27579,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'MPEG';
-                    $R_meta['description']['main']['TEXT'][] = 'MPEG-1 is a standard for lossy compression of video and 
+                    $R_meta['title']['TEXT']               = 'MPEG';
+                    $R_meta['description']['main']['TEXT'] = 'MPEG-1 is a standard for lossy compression of video and 
                     audio. It is designed to compress VHS-quality raw digital video and CD audio down to about 1.5 Mbit/s 
                     (26:1 and 6:1 compression ratios respectively) without excessive quality loss, making video CDs, digital 
                     cable/satellite TV and digital audio broadcasting (DAB) practical.
@@ -27756,7 +27756,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27872,7 +27872,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -27978,7 +27978,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -28084,7 +28084,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -28200,8 +28200,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'QuickTime';
-                    $R_meta['description']['main']['TEXT'][] = 'QuickTime File Format (QTFF) is a computer file format 
+                    $R_meta['title']['TEXT']               = 'QuickTime';
+                    $R_meta['description']['main']['TEXT'] = 'QuickTime File Format (QTFF) is a computer file format 
                     used natively by the QuickTime framework.
 
                     Design
@@ -28351,7 +28351,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -28464,7 +28464,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -28570,7 +28570,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -28676,7 +28676,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -28782,7 +28782,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -28898,7 +28898,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29014,7 +29014,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29145,7 +29145,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29247,7 +29247,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29349,8 +29349,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Audio Video Interleave (AVI)';
-                    $R_meta['description']['main']['TEXT'][] = 'Audio Video Interleave (also Audio Video Interleaved and 
+                    $R_meta['title']['TEXT']               = 'Audio Video Interleave (AVI)';
+                    $R_meta['description']['main']['TEXT'] = 'Audio Video Interleave (also Audio Video Interleaved and 
                     known by its initials and filename extension AVI, usually pronounced /ˌeɪ.viːˈaɪ/) is a proprietary 
                     multimedia container format and Windows standard introduced by Microsoft in November 1992 as part of its 
                     Video for Windows software. AVI files can contain both audio and video data in a file container that 
@@ -29489,7 +29489,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29605,7 +29605,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29721,7 +29721,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29821,7 +29821,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -29921,7 +29921,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30022,7 +30022,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30122,7 +30122,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30222,7 +30222,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30322,7 +30322,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30424,7 +30424,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30524,7 +30524,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30626,7 +30626,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30728,7 +30728,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30830,7 +30830,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -30947,7 +30947,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -31047,7 +31047,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -31147,7 +31147,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -31247,8 +31247,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Microsoft Word';
-                    $R_meta['description']['main']['TEXT'][] = 'Microsoft Word is a word processor developed by 
+                    $R_meta['title']['TEXT']               = 'Microsoft Word';
+                    $R_meta['description']['main']['TEXT'] = 'Microsoft Word is a word processor developed by 
                     Microsoft. It was first released on October 25, 1983, under the name Multi-Tool Word for Xenix 
                     systems. Subsequent versions were later written for several other platforms including: IBM PCs 
                     running DOS (1983), Apple Macintosh running the Classic Mac OS (1985), AT&T UNIX PC (1985), 
@@ -31506,7 +31506,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -31606,7 +31606,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -31706,8 +31706,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Microsoft Excel';
-                    $R_meta['description']['main']['TEXT'][] = 'Microsoft Excel is a spreadsheet editor developed by 
+                    $R_meta['title']['TEXT']               = 'Microsoft Excel';
+                    $R_meta['description']['main']['TEXT'] = 'Microsoft Excel is a spreadsheet editor developed by 
                     Microsoft for Windows, macOS, Android, iOS and iPadOS. It features calculation or computation 
                     capabilities, graphing tools, pivot tables, and a macro programming language called Visual Basic for 
                     Applications (VBA). Excel forms part of the Microsoft 365 suite of software.
@@ -31914,7 +31914,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -32014,8 +32014,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Microsoft Word';
-                    $R_meta['description']['main']['TEXT'][] = 'Microsoft Word is a word processor developed by 
+                    $R_meta['title']['TEXT']               = 'Microsoft Word';
+                    $R_meta['description']['main']['TEXT'] = 'Microsoft Word is a word processor developed by 
                     Microsoft. It was first released on October 25, 1983, under the name Multi-Tool Word for Xenix 
                     systems. Subsequent versions were later written for several other platforms including: IBM PCs 
                     running DOS (1983), Apple Macintosh running the Classic Mac OS (1985), AT&T UNIX PC (1985), 
@@ -32273,7 +32273,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -32373,7 +32373,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -32473,7 +32473,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -32573,8 +32573,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Microsoft PowerPoint';
-                    $R_meta['description']['main']['TEXT'][] = 'Microsoft PowerPoint is a presentation program, created by 
+                    $R_meta['title']['TEXT']               = 'Microsoft PowerPoint';
+                    $R_meta['description']['main']['TEXT'] = 'Microsoft PowerPoint is a presentation program, created by 
                     Robert Gaskins and Dennis Austin at a software company named Forethought, Inc. It was released on April 
                     20, 1987, initially for Macintosh computers only. Microsoft acquired PowerPoint for about $14 million 
                     three months after it appeared. This was Microsoft\'s first significant acquisition, and Microsoft set 
@@ -32882,7 +32882,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -32982,7 +32982,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33082,7 +33082,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33182,7 +33182,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33282,7 +33282,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33382,7 +33382,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33482,7 +33482,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33584,7 +33584,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33684,7 +33684,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33784,7 +33784,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33884,7 +33884,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -33984,7 +33984,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34084,7 +34084,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34184,7 +34184,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34284,7 +34284,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34384,7 +34384,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34484,7 +34484,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34584,7 +34584,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34684,7 +34684,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34784,7 +34784,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -34884,8 +34884,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Microsoft Excel';
-                    $R_meta['description']['main']['TEXT'][] = 'Microsoft Excel is a spreadsheet editor developed by 
+                    $R_meta['title']['TEXT']               = 'Microsoft Excel';
+                    $R_meta['description']['main']['TEXT'] = 'Microsoft Excel is a spreadsheet editor developed by 
                     Microsoft for Windows, macOS, Android, iOS and iPadOS. It features calculation or computation 
                     capabilities, graphing tools, pivot tables, and a macro programming language called Visual Basic for 
                     Applications (VBA). Excel forms part of the Microsoft 365 suite of software.
@@ -35092,7 +35092,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35192,7 +35192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35292,7 +35292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35392,7 +35392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35492,7 +35492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35592,7 +35592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35692,7 +35692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35792,7 +35792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35892,7 +35892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -35992,8 +35992,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Microsoft PowerPoint';
-                    $R_meta['description']['main']['TEXT'][] = 'Microsoft PowerPoint is a presentation program, created by 
+                    $R_meta['title']['TEXT']               = 'Microsoft PowerPoint';
+                    $R_meta['description']['main']['TEXT'] = 'Microsoft PowerPoint is a presentation program, created by 
                     Robert Gaskins and Dennis Austin at a software company named Forethought, Inc. It was released on April 
                     20, 1987, initially for Macintosh computers only. Microsoft acquired PowerPoint for about $14 million 
                     three months after it appeared. This was Microsoft\'s first significant acquisition, and Microsoft set 
@@ -36301,7 +36301,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -36401,7 +36401,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -36501,7 +36501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -36601,7 +36601,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -36701,7 +36701,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -36801,7 +36801,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -36901,7 +36901,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37001,7 +37001,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37101,7 +37101,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37201,7 +37201,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37301,7 +37301,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37401,7 +37401,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37501,7 +37501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37601,7 +37601,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37701,7 +37701,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37801,7 +37801,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -37901,7 +37901,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38001,7 +38001,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38101,7 +38101,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38201,7 +38201,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38301,7 +38301,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38401,7 +38401,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38501,7 +38501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38601,7 +38601,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38701,7 +38701,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38801,7 +38801,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -38901,7 +38901,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39001,7 +39001,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39101,7 +39101,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39201,7 +39201,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39301,7 +39301,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39401,7 +39401,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39501,7 +39501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39601,7 +39601,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39701,7 +39701,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39801,7 +39801,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -39901,7 +39901,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40001,7 +40001,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40101,7 +40101,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40201,7 +40201,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40301,7 +40301,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40401,7 +40401,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40501,7 +40501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40601,7 +40601,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40701,7 +40701,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40801,7 +40801,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -40901,7 +40901,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41001,7 +41001,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41101,7 +41101,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41201,7 +41201,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41301,7 +41301,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41401,7 +41401,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41501,7 +41501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41601,7 +41601,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41701,7 +41701,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41801,7 +41801,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -41901,7 +41901,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42001,7 +42001,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42101,7 +42101,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42201,7 +42201,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42301,7 +42301,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42401,7 +42401,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42501,7 +42501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42601,7 +42601,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42701,7 +42701,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42801,7 +42801,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -42901,7 +42901,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43003,7 +43003,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43105,7 +43105,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43207,7 +43207,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43309,7 +43309,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43409,7 +43409,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43509,7 +43509,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43609,7 +43609,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43709,7 +43709,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43809,7 +43809,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -43909,7 +43909,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -44009,7 +44009,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -44109,7 +44109,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -44209,8 +44209,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Pages';
-                    $R_meta['description']['main']['TEXT'][] = 'Pages is a word processor developed by Apple Inc. It is 
+                    $R_meta['title']['TEXT']               = 'Pages';
+                    $R_meta['description']['main']['TEXT'] = 'Pages is a word processor developed by Apple Inc. It is 
                     part of the iWork productivity suite and runs on the macOS, iPadOS and iOS operating systems. It is also 
                     available on iCloud on the web. The first version of Pages was released in February 2005. Pages is 
                     marketed by Apple as an easy-to-use application that allows users to quickly create documents on their 
@@ -44331,8 +44331,8 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Keynote';
-                    $R_meta['description']['main']['TEXT'][] = 'Keynote is a presentation software application developed 
+                    $R_meta['title']['TEXT']               = 'Keynote';
+                    $R_meta['description']['main']['TEXT'] = 'Keynote is a presentation software application developed 
                     as a part of the iWork productivity suite by Apple Inc. Version 10 of Keynote for Mac, the latest major 
                     update, was released in March 2020. On January 27, 2010, Apple announced a new version of Keynote for 
                     iPad with an all-new touch interface. It is now also available for the iPhone to download from the 
@@ -44454,7 +44454,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -44554,7 +44554,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -44654,7 +44654,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -44754,7 +44754,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['main']['TEXT'][]                            = '';
                     $R_meta['file_sys']['description_source_url']['main'][]             = '';
                     $R_meta['file_sys']['description_source_lastmodified']['main'][]    = '';
@@ -44852,7 +44852,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -44882,7 +44882,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -44934,7 +44934,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -44986,7 +44986,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45016,7 +45016,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45046,7 +45046,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45076,7 +45076,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45106,7 +45106,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45137,7 +45137,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45168,7 +45168,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45198,7 +45198,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45229,7 +45229,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45259,7 +45259,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45290,7 +45290,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45320,7 +45320,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45350,7 +45350,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45380,7 +45380,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45410,7 +45410,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45440,7 +45440,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45471,7 +45471,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45501,7 +45501,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45532,7 +45532,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45562,7 +45562,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45593,7 +45593,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45623,7 +45623,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45654,7 +45654,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45684,7 +45684,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45715,7 +45715,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
+                    $R_meta['title']['TEXT']               = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'NAME');
                     $R_meta['description']['TEXT']   = $R->oCRNRSTN->get_system_logging_config($resource_constant, 'DESCRIPTION');
 
                 break;
@@ -45745,7 +45745,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45775,7 +45775,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45805,7 +45805,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45851,7 +45851,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45892,7 +45892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -45937,7 +45937,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -46948,7 +46948,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -46979,7 +46979,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47010,7 +47010,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47042,7 +47042,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47074,7 +47074,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47104,7 +47104,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47135,7 +47135,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47166,7 +47166,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47196,7 +47196,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47226,7 +47226,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47256,7 +47256,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47286,7 +47286,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47316,7 +47316,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47346,7 +47346,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47376,7 +47376,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47406,7 +47406,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47436,7 +47436,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47466,7 +47466,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47496,7 +47496,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47526,7 +47526,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47556,7 +47556,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47586,7 +47586,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47616,7 +47616,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47646,7 +47646,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47676,7 +47676,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47706,7 +47706,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47736,7 +47736,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47766,7 +47766,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47796,7 +47796,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47826,7 +47826,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47856,7 +47856,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47890,7 +47890,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47920,7 +47920,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47950,7 +47950,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -47980,7 +47980,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48010,7 +48010,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48040,7 +48040,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48070,7 +48070,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48100,7 +48100,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48130,7 +48130,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48160,7 +48160,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48190,7 +48190,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48220,7 +48220,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48250,7 +48250,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48280,7 +48280,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48310,7 +48310,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48340,7 +48340,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48370,7 +48370,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48400,7 +48400,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48430,7 +48430,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48460,7 +48460,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48491,7 +48491,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48522,7 +48522,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48553,7 +48553,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48585,7 +48585,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = '';
+                    $R_meta['title']['TEXT']               = '';
                     $R_meta['description']['TEXT']   = '';
 
                 break;
@@ -48619,7 +48619,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
                 case 'en':
                 default:
 
-                    $R_meta['title']['TEXT'][]       = 'Unknown resource';
+                    $R_meta['title']['TEXT']               = 'Unknown resource';
                     $R_meta['description']['TEXT']   = 'Unknown resource.';
                     $R_meta['url'][]                 = '';
 

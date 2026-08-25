@@ -303,7 +303,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -386,7 +386,27 @@ class crnrstn_database_wiring
      *         5 :: Tuesday, June 30, 2026 @ 0711 hrs.
      *
      */
-    public function __construct($oCRNRSTN_USR)
+
+    /**
+     * R :: Content pending.
+     *
+     * @return
+     * @access public
+     *
+     */
+    function __construct()
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * CLR-SSL Database Integrations
+         * Services Layer clean restart.
+         *
+         * 5 :: Sunday, August 16, 2026 @ 0319 hrs.
+         *
+         */
+
+    }
+
+    public function __clr_ssl_construct($oCRNRSTN_USR)
     {
 
         $this->class_name = get_class();

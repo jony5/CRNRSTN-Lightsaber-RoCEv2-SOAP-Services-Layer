@@ -298,12 +298,12 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
  */
-class crnrstn_database_crnrstn 
+class crnrstn_database_crnrstn extends crnrstn
 {
 
     public $oCRNRSTN_USR;
@@ -312,7 +312,26 @@ class crnrstn_database_crnrstn
 
     public $crnrstn_db_crnrstn_serial;
 
-    public function __construct($oCRNRSTN_USR)
+    /**
+     * R :: Content pending.
+     *
+     * @return
+     * @access public
+     *
+     */
+    function __construct()
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * CLR-SSL Database Integrations
+         * Services Layer clean restart.
+         *
+         * 5 :: Sunday, August 16, 2026 @ 0247 hrs.
+         *
+         */
+
+    }
+
+    public function ______pre_clr_ssl_construct($oCRNRSTN_USR)
     {
 
         try{
@@ -352,7 +371,7 @@ class crnrstn_database_crnrstn
 //
 //            //
 //            // INSTANTIATE THE QUERY MANAGER CLASS OBJECT.
-//            self::$oQueryManager = new crnrstn_query_manager($this->oCRNRSTN_USR);
+//            self::$oQueryManager = new crnrstn_sql_manager($this->oCRNRSTN_USR);
 
         }catch(Exception $e){
 
@@ -410,7 +429,8 @@ class crnrstn_database_crnrstn
 
     }
 
-    public function return_database_value(
+    //public function return_database_value(
+    public function return_db_value(
                     $oCRNRSTN_MySQLi, 
                     $result_handle, 
                     $batch_key, 
@@ -418,6 +438,24 @@ class crnrstn_database_crnrstn
                     $fieldname, 
                     $pos)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Renamed the method return_database_value()
+         *       to return_db_value() due to conflict:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_database_crnrstn::
+         *       return_database_value($oCRNRSTN_MySQLi,
+         *       $result_handle, $batch_key, $result_set_key,
+         *       $fieldname, $pos) must be compatible with
+         *       CRNRSTN\crnrstn::return_database_value
+         *       $result_set_key, $fieldname, $pos = 0,
+         *       $json_out = false) in
+         *       C:\xampp\htdocs\_R\class\database
+         *       \crnrstn.database_crnrstn.class.php
+         *       on line 433
+         *       5 :: Sunday, August 16, 2026 @ 0724 hrs.
+         *
+         */
 
         return self::$oQueryManager->return_db_value(
                                      self::$oDB_wiring, 

@@ -284,7 +284,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -546,7 +546,7 @@ class crnrstn_content_generator extends crnrstn
              $channel)
     {
 
-        $oQueryProfileMgr = new crnrstn_query_profile_manager($this);
+        $oQueryProfileMgr = new crnrstn_sql_profile_manager($this);
         $html_out = '';
 
         $tmp_path_directory = $this->get_resource('crnrstn_path_directory', 0, 'CRNRSTN::RESOURCE::HTTP_IMAGES');

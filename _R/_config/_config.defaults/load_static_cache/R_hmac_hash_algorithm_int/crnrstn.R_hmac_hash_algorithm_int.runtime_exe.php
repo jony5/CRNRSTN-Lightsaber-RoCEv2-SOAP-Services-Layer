@@ -269,7 +269,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @param array $R_data will contain the CLR-SSL default HMAC Hash Algorithm (int) position indicator.
  * @access public
  *

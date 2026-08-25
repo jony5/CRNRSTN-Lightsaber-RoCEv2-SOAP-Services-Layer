@@ -323,7 +323,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -343,7 +343,26 @@ class crnrstn_mysqli_conn
 
     public $oCRNRSTN_USR;
 
-    public function __construct(
+    /**
+     * R :: Content pending.
+     *
+     * @return
+     * @access public
+     *
+     */
+    function __construct()
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * CLR-SSL Database Integrations
+         * Services Layer clean restart.
+         *
+         * 5 :: Sunday, August 16, 2026 @ 0323 hrs.
+         *
+         */
+
+    }
+
+    public function __pre_clr_ssl_construct(
                     $host, 
                     $un, 
                     $pwd, 
@@ -393,96 +412,128 @@ class crnrstn_mysqli_conn
         //
         // Thursday, July 20, 2023 @ 1210 hrs.
 
-        try{
-
-            if(self::$db_port != ''){
-
-                //
-                // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                // Return an instantiation
-                // of the MySQLi Database
-                // Connection object.
-                //
-                //
-                // 5 :: Monday, July 15, 2024 @ 1955 hrs.
-                //
-                // self::$mysqli = new mysqli(self::$db_host, self::$db_un, self::$db_pwd, self::$db_db, self::$db_port);
-                self::$mysqli = $this->return_registered_resource('new', 'mysqli', self::$db_host, self::$db_un, self::$db_pwd, self::$db_db, self::$db_port);
-
-            }else{
-
-                //
-                // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                // Return an instantiation
-                // of a MySQLi Database
-                // Connection object from
-                // the CRNRSTN :: Lightsaber
-                // SOAP Services Layer system
-                // registry as a registered
-                // system resource.
-                //
-                //
-                // 5
-                //
-                // Monday, July 15, 2024 @ 1955 hrs.
-                //
-                // self::$mysqli = new mysqli(self::$db_host, self::$db_un, self::$db_pwd, self::$db_db);
-                self::$mysqli = $this->return_registered_resource('new', 'mysqli', self::$db_host, self::$db_un, self::$db_pwd, self::$db_db);
-
-            }
-
-            if(self::$mysqli->connect_error){
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * HOOOSTON, VE HAFF PROBLEM!
-                 * https://www.wired.com/2011/04/alt-text-spacecraft/
-                 *
-                 */
-                throw new Exception('CRNRSTN :: mysqli connection ' . 
-                    'error :: failed to connect to MySQL: (' . 
-                     self::$mysqli->connect_errno . ') ' . 
-                     self::$mysqli->connect_error . ' on server ' .
-                     $_SERVER['SERVER_NAME'] . ' (' . 
-                     $_SERVER['SERVER_ADDR'] . 
-                     ').');
-
-            }
-
-            return self::$mysqli;
-
-        }catch(Exception $e){
+        if(self::$db_port != ''){
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Exception handling performed 
-             * by the Logging Services Layer 
-             * of the CRNRSTN :: Lightsaber 
-             * RoCEv2 SOAP Services 
-             * Layer (CLR-SSL). 
+             * Return an instantiation
+             * of the MySQLi Database
+             * Connection object.
              *
-             * Allow the CLR-SSL to handle 
-             * this exception per the 
-             * configured logging profile of 
-             * the running application on 
-             * this server. 
+             *
+             * 5 :: Monday, July 15, 2024 @ 1955 hrs.
+             *
+             * self::$mysqli = new mysqli(self::$db_host, self::$db_un, self::$db_pwd, self::$db_db, self::$db_port);
+             *
+             * CLR-SSL Resource Registry
+             * Prototyping (2024-2026):
+             * self::$mysqli = $this->return_registered_resource(
+             *                        'new',
+             *                        'mysqli',
+             *                        self::$db_host,
+             *                        self::$db_un,
+             *                        self::$db_pwd,
+             *                        self::$db_db,
+             *                        self::$db_port);
+             *
+             */
+
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Saturday, August 22, 2026 @ 1346 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'mysqli',
+                   self::$db_host,
+                   self::$db_un,
+                   self::$db_pwd,
+                   self::$db_db,
+                   self::$db_port);
+            $this->anoint(
+                   'mysqli',
+                   self::$mysqli);
+
+        }else{
+
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Return an instantiation
+             * of a MySQLi Database
+             * Connection object from
+             * the CRNRSTN :: Lightsaber
+             * SOAP Services Layer system
+             * registry as a registered
+             * system resource.
              *
              *
              * 5
              *
-             * Sunday, June 30, 2024 @ 1550 hrs.
-             * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
+             * Monday, July 15, 2024 @ 1955 hrs.
+             *
+             * self::$mysqli = new mysqli(self::$db_host, self::$db_un, self::$db_pwd, self::$db_db);
+             *
+             * CLR-SSL Resource Registry
+             * Prototyping (2024-2026):
+             * self::$mysqli = $this->return_registered_resource(
+             *                        'new',
+             *                        'mysqli',
+             *                        self::$db_host,
+             *                        self::$db_un,
+             *                        self::$db_pwd,
+             *                        self::$db_db);
              *
              */
-            $this->oCRNRSTN_USR->catch_exception(
-                                 $e, 
-                                 LOG_ERR, 
-                                 __METHOD__, 
-                                 __NAMESPACE__);
 
-            //
-            // Retrun false.
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Saturday, August 22, 2026 @ 1348 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'mysqli',
+                   self::$db_host,
+                   self::$db_un,
+                   self::$db_pwd,
+                   self::$db_db);
+            $this->anoint(
+                   'mysqli',
+                   self::$mysqli);
+
+        }
+
+        if(self::$mysqli->connect_error){
+
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * HOOOSTON, VE HAFF PROBLEM!
+             * https://www.wired.com/2011/04/alt-text-spacecraft/
+             *
+             */
+            $clr_ssl_msg = 'CRNRSTN :: mysqli connection ' .
+                           'error :: failed to connect to MySQL: (' .
+                           self::$mysqli->connect_errno . ') ' .
+                           self::$mysqli->connect_error . ' on server ' .
+                           $_SERVER['SERVER_NAME'] . ' (' .
+                           $_SERVER['SERVER_ADDR'] .
+                           ').';
+            // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+            $token = array(
+                     'token'                   => $msg_token,
+                     'token_generation_date'   => $token_generation_date,
+                     'request_type'            => __METHOD__,
+                     'code'                    => 200,
+                     'clr_ssl_msg'             => $clr_ssl_msg);
+            $this->error_log(
+                   $clr_ssl_msg,
+                   \LOG_CRIT,
+                   \E_ERROR,
+                   __LINE__,
+                   __METHOD__,
+                   __FILE__,
+                   $token);
+
             return false;
 
         }
+
+        return self::$mysqli;
 
     }
 

@@ -297,7 +297,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -2459,57 +2459,30 @@ class crnrstn_ui_tunnel_response_manager extends crnrstn
 
     }
 
-    /**
-     * R :: SOAP Data Tunnel Layer form integrations packet generation with fresh content checksums.
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Deleted the following methods
+     *       in order to get behind the
+     *       crnrstn_ui_tunnel_response_manager's extension
+     *       of crnrstn and to remove
+     *       unrelated-to-CLR-SSL clutter:
      *
-     * @param
-     * @return
-     * @access public
+     *       return_crnrstn_data_packet()
+     *
+     *       Fatal error: Declaration of
+     *       CRNRSTN\crnrstn_ui_tunnel_response_manager::
+     *       return_crnrstn_data_packet(
+     *       $data_authorization_profile) must
+     *       be compatible with
+     *       CRNRSTN\crnrstn::return_crnrstn_data_packet(
+     *       $packet_type = 'R_channel_...')
+     *       in C:\xampp\htdocs\_R\class\ui
+     *       \crnrstn.ui_tunnel_response_manager.class.php
+     *       on line 2470
+     *
+     *
+     *       5 :: Friday, August 21, 2026 @ 0851 hrs.
      *
      */
-    function return_crnrstn_data_packet($data_authorization_profile)
-    {
-
-        return $this->return_crnrstn_data_packet($data_authorization_profile);
-
-//        $tmp_oNUSOAP_BASE = $this->return_oNUSOAP_BASE();
-//
-//        $tmp_request_serialization_key = $this->return_form_submitted_value('crnrstn_request_serialization_key');
-//        $tmp_request_serialization_hash = $this->return_form_submitted_value('crnrstn_request_serialization_hash');
-//        $tmp_client_id = $this->return_form_submitted_value('crnrstn_session_client_id');
-//        $tmp_client_auth_key = $this->return_form_submitted_value('crnrstn_session_client_auth_key');
-//
-//        $this->form_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_request_serialization_key', true);
-//        $this->form_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_request_serialization_hash', true);
-//        $this->form_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_session', false);
-//
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_session', true, $this->return_crnrstn_data_packet(CRNRSTN_CHANNEL_PSSDTLA));
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_form_serial', true, $this->generate_new_key(64), 'crnrstn_soap_srvc_form_serial');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_timestamp', true, $this->return_micro_time(), 'crnrstn_soap_srvc_timestamp');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_ttl', true, $this->return_ssdtl_packet_ttl(), 'crnrstn_soap_srvc_ttl');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_user_agent', true, $_SERVER['HTTP_USER_AGENT'], 'crnrstn_soap_srvc_user_agent');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_server_ip', true, $_SERVER['SERVER_ADDR'], 'crnrstn_soap_srvc_server_ip');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_service_client_ip', true, $this->client_ip(), 'crnrstn_soap_service_client_ip');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_stime', true, $this->start_time(true), 'crnrstn_soap_srvc_stime');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_rtime', true, $this->wall_time(), 'crnrstn_soap_srvc_rtime');
-//        //$this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_protocol_version', true, $this->proper_version('SOAP'), 'crnrstn_soap_srvc_protocol_version');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_php_sessionid', true, session_id());
-//        //$this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_soap_srvc_encoding', true, $tmp_oNUSOAP_BASE->soap_defencoding, 'crnrstn_soap_srvc_protocol_version');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_session_client_id', true, $tmp_client_id, 'crnrstn_session_client_id');
-//        $this->form_hidden_input_add('crnrstn_soap_data_tunnel_form', 'crnrstn_session_client_auth_key', true, $tmp_client_auth_key, 'crnrstn_session_client_auth_key');
-//
-//        $tmp_str_out = '<form action="' . $this->get_resource('ROOT_PATH_CLIENT_HTTP') . $this->get_resource('ROOT_PATH_CLIENT_HTTP_DIR') . 'soa/tunnel/" method="post" id="crnrstn_soap_data_tunnel_frm" name="crnrstn_soap_data_tunnel_frm" enctype="multipart/form-data">
-//            <textarea id="crnrstn_soap_srvc_data" name="crnrstn_soap_srvc_data" cols="130" rows="5">SOAP_DATA_TUNNEL_LAYER_PACKET</textarea>
-//            <button type="submit">SUBMIT</button>
-//            <input type="hidden" id="crnrstn_request_serialization_key" name="crnrstn_request_serialization_key" value="' . $tmp_request_serialization_key . '">
-//            <input type="hidden" id="crnrstn_request_serialization_hash" name="crnrstn_request_serialization_hash" value="' . $tmp_request_serialization_hash . '">'.
-//            $this->ui_content_module_out(CRNRSTN_PSSDTLA_PACKET, 'crnrstn_soap_data_tunnel_form').'
-//        </form>';
-//
-//        return $tmp_str_out;
-
-    }
-
     /**
      * R :: Content pending. 
      *

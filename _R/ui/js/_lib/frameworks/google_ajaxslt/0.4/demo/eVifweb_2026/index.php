@@ -392,7 +392,7 @@ function get_include_contents($filename){
     swfobject.embedSWF("./common/flash/msg_relay.swf?server_addr_text=<?php 
       echo \urlencode($R->get_crnrstn('https')); ?>&application_dir_text=<?php 
       echo \urlencode($R->get_crnrstn('application_directory')); ?>&framework_dir_text=<?php 
-      echo \urlencode($R->get_crnrstn('framework_directory')); ?>&framework_https_dir=<?php 
+      echo \urlencode($R->get_crnrstn('R_framework_directory')); ?>&framework_https_dir=<?php
       echo \urlencode($R->get_crnrstn('framework_https') . 'ui/js/_lib/frameworks/' . 
            'google_ajaxslt/0.4/demo/eVifweb_2026/' . 
            'common/xml/token_xml.php'); ?>&https_text=<?php 

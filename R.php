@@ -249,8 +249,8 @@
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
- * CLASS DEFINITION :: index.php
- * CLASS VERSION    :: 2.00.0001
+ * ENDPOINT         :: R.php
+ * ENDPOINT VERSION :: 2.00.0001
  * DATE             :: Thursday, February 12, 2026 @ 2207 hrs.
  * AUTHOR           :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
  * URI              :: http://evifweb.jony5.com/
@@ -342,7 +342,7 @@ namespace CRNRSTN;
  *       Last Modified: Sunday, May 17, 2026 @ 1047 hrs.
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * CRNRSTN :: Debug Options
+ * CLR-SSL Debug Options
  * -----
  * Setting Title         Input Value
  * -----                 -----
@@ -354,20 +354,19 @@ namespace CRNRSTN;
 $R_debug_mode_override = 0;
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * Initialize the
- * application folder
- * and CRNRSTN ::
- * framework directory.
+ * Initialize an optional
+ * application folder and the
+ * CLR-SSL framework directory.
  *
  * Where,
- * /var/www/html/  lightbox_helper         /  _R                /class/crnrstn/crnrstn.class.php
+ * /var/www/html/     lightbox_helper         /   _R                      /class/crnrstn/crnrstn.class.php
  * maps to:
- * /var/www/html/  $application_directory  /  $R_framework_directory  /class/crnrstn/crnrstn.class.php
+ * /var/www/html/    $application_directory   /   $R_framework_directory  /class/crnrstn/crnrstn.class.php
  *
  * Or where,
- * C:\xampp\htdocs\  lightbox_helper         \  _R                \class\crnrstn\crnrstn.class.php
+ * C:\xampp\htdocs\  lightbox_helper         \   _R                       \class\crnrstn\crnrstn.class.php
  * maps to:
- * C:\xampp\htdocs\  $application_directory  \  $R_framework_directory  \class\crnrstn\crnrstn.class.php
+ * C:\xampp\htdocs\  $application_directory  \   $R_framework_directory   \class\crnrstn\crnrstn.class.php
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * E.g. for:
@@ -391,8 +390,8 @@ $R_debug_mode_override = 0;
  * Last Modified: Friday, July 10, 2026 @ 1911 hrs.
  *
  */
-$application_directory = '';
-$R_framework_directory = '_R';
+$application_directory      = '';
+$R_framework_directory      = '_R';
 #$R_hmac_algorithm_override = 'sha256';
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -415,22 +414,28 @@ $R_resource_name = 'crnrstn';
  * 5 :: Saturday, August 1, 2026 @ 0458 hrs.
  *
  */
-if(\stripos(PHP_OS, 'WIN') === 0) 
-    $os_path_dir_separator_char = '\\';
+if(\stripos(\PHP_OS, 'WIN') === 0) 
+    $R_os_path_dir_separator_char = '\\';
 else
-    $os_path_dir_separator_char = '/';
+    $R_os_path_dir_separator_char = '/';
 
-$directory_shift     =
-$path_chunk          =
-$R_path_patterns     =
-$R_path_replacements = array();
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Variable Initialization.
+ *
+ */
+$R_root                = NULL;
+$R_resp_header_options =
+$R_directory_shift     =
+$R_path_chunk          =
+$R_path_patterns       =
+$R_path_replacements   = array();
 
-switch($os_path_dir_separator_char){
+switch($R_os_path_dir_separator_char){
     case '\\':
         // Windows® OS
 
         $R_path_patterns[0]     = '/';
-        $R_path_replacements[0] = $os_path_dir_separator_char;
+        $R_path_replacements[0] = $R_os_path_dir_separator_char;
 
     break;
     case '/':
@@ -438,18 +443,11 @@ switch($os_path_dir_separator_char){
         // Linux OS
 
         $R_path_patterns[0]     = '\\';
-        $R_path_replacements[0] = $os_path_dir_separator_char;
+        $R_path_replacements[0] = $R_os_path_dir_separator_char;
 
     break;
 
 }
-
-/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * Variable Initialization.
- *
- */
-$root                  =
-$tmp_crnrstn_file_path = NULL;
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Evaluate $application_directory for 
@@ -466,30 +464,30 @@ if((\strpos($application_directory, '../') !== false) ||
     ($application_directory == ''))
 {
 
-    $script_filename            = \str_replace(
+    $R_script_filename  = \str_replace(
                                   $R_path_patterns, 
                                   $R_path_replacements, 
                                   $_SERVER['SCRIPT_FILENAME']);
-    $tmp_script_filepath_ARRAY  = \explode($os_path_dir_separator_char, $script_filename);
-    $tmp_app_directory          = \explode('../', $application_directory);
-    $tmp_change_directory_depth = \sizeof($tmp_app_directory);
+    $R_script_filepath  = \explode($R_os_path_dir_separator_char, $R_script_filename);
+    $R_app_directory    = \explode('../', $application_directory);
+    $R_change_dir_depth = \sizeof($R_app_directory);
 
-    for($i = 0; $i < $tmp_change_directory_depth; $i++){
+    for($i = 0; $i < $R_change_dir_depth; $i++){
 
-        $tmp_data          = \array_pop($tmp_script_filepath_ARRAY);
-        $app_dir_chunk     = \array_pop($tmp_app_directory);
-        $directory_shift[] =  '../';
+        $R_tmp               = \array_pop($R_script_filepath);
+        $R_app_dir_chunk     = \array_pop($R_app_directory);
+        $R_directory_shift[] =  '../';
 
-        if(($app_dir_chunk != '..') && 
-            ($app_dir_chunk != '.')) 
-            $path_chunk[] = $app_dir_chunk;
+        if(($R_app_dir_chunk != '..') && 
+            ($R_app_dir_chunk != '.')) 
+            $R_path_chunk[] = $R_app_dir_chunk;
 
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Remove one "../" directory shift, 
      * and then convert (implode) the 
-     * $directory_shift array into 
+     * $R_directory_shift array into 
      * string data. 
      *
      *
@@ -504,21 +502,21 @@ if((\strpos($application_directory, '../') !== false) ||
      * Sips coffee. 
      *
      */
-    $tmp_data        = \array_pop($directory_shift);
-    $directory_shift = \implode('', $directory_shift);
+    $R_tmp             = \array_pop($R_directory_shift);
+    $R_directory_shift = \implode('', $R_directory_shift);
 
-    if(\strlen($path_chunk[0]) > 0)
-        $root = \implode($os_path_dir_separator_char, 
-                         $tmp_script_filepath_ARRAY) . 
-                         $os_path_dir_separator_char . 
-                         $path_chunk[0] . 
-                         $os_path_dir_separator_char . 
-                         $R_framework_directory;
+    if(\strlen($R_path_chunk[0]) > 0)
+        $R_root = \implode($R_os_path_dir_separator_char, 
+                           $R_script_filepath) . 
+                           $R_os_path_dir_separator_char . 
+                           $R_path_chunk[0] . 
+                           $R_os_path_dir_separator_char . 
+                           $R_framework_directory;
     else
-        $root = \implode($os_path_dir_separator_char, 
-                         $tmp_script_filepath_ARRAY) . 
-                         $os_path_dir_separator_char . 
-                         $R_framework_directory;
+        $R_root = \implode($R_os_path_dir_separator_char, 
+                           $R_script_filepath) . 
+                           $R_os_path_dir_separator_char . 
+                           $R_framework_directory;
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Standardize the use of
@@ -531,10 +529,10 @@ if((\strpos($application_directory, '../') !== false) ||
      * 5
      *
      */
-    $root = \str_replace(
-                 $R_path_patterns, 
-                 $R_path_replacements, 
-                 $root);
+    $R_root = \str_replace(
+              $R_path_patterns, 
+              $R_path_replacements, 
+              $R_root);
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * CLR-SSL framework
@@ -544,34 +542,34 @@ if((\strpos($application_directory, '../') !== false) ||
      * 5 :: Sunday, March 29, 2026 @ 2111 hrs.
      *
      */
-    $R_exe_filepath = $root . $os_path_dir_separator_char . 
+    $R_exe_filepath = $R_root . $R_os_path_dir_separator_char . 
                       'crnrstn.runtime_exe.php';
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Standardize the use of the 
      * operating system specific 
      * directory separator by 
-     * reducing all double slashes 
-     * to single. 
+     * reducing all double
+     * slashes to single.
      *
      *
      * 5
      *
      */
     while(\strpos($R_exe_filepath, 
-                  $os_path_dir_separator_char . 
-                  $os_path_dir_separator_char) !== false)
-        $R_exe_filepath = \str_replace($os_path_dir_separator_char . 
-                                       $os_path_dir_separator_char, 
-                                       $os_path_dir_separator_char, 
+                  $R_os_path_dir_separator_char . 
+                  $R_os_path_dir_separator_char) !== false)
+        $R_exe_filepath = \str_replace($R_os_path_dir_separator_char . 
+                                       $R_os_path_dir_separator_char, 
+                                       $R_os_path_dir_separator_char, 
                                        $R_exe_filepath);
 
     if(!\is_file($R_exe_filepath)){
 
-        $message_html    = '[file ' . 
-                            \basename(__FILE__) . '] [lnum ' . 
-                            __LINE__ . '] File not found: ' . 
-                            $R_exe_filepath;
+        $R_message_html    = '[file ' . 
+                             \basename(__FILE__) . '] [lnum ' .
+                             __LINE__ . '] File not found: ' .
+                             $R_exe_filepath;
         $response_code   = 404;
         $version_crnrstn = '2.00.0001';
         $http_status     = 'Not Found';
@@ -582,10 +580,29 @@ if((\strpos($application_directory, '../') !== false) ||
                            '.' . 
                            \sprintf('%06d', $usec);
 
-        if(\strlen($message_html) > 0) 
-            $message_html = '<br><br>
-                            <span style="font-weight:normal;">' . 
-                            $message_html . '</span>';
+        if(\strlen($R_message_html) > 0) 
+            $R_message_html = '<br><br>
+                              <span style="font-weight:normal;">' .
+                              $R_message_html . '</span>';
+
+        // Prepare response header profile.
+        $R_version               = '2.00.0001';
+        $R_content_date          = \date('D, M j Y G:i:s T');
+        $R_content_date_expire   = \date('D, M j Y G:i:s T', \strtotime('+ 7 days'));
+        $R_content_date_lastmod  = \date('D, j M Y G:i:s T');
+        $R_resp_header_options[] = 'Content-Language: en';
+        $R_resp_header_options[] = 'Content-Type: text/html; charset=UTF-8';
+        $R_resp_header_options[] = 'Cache-Control: max-age=604800';
+        $R_resp_header_options[] = 'Date: ' . $R_content_date;
+        $R_resp_header_options[] = 'Expires: ' . $R_content_date_expire;
+        $R_resp_header_options[] = 'Last-Modified: ' . $R_content_date_lastmod;
+        $R_resp_header_options[] = 'X-Powered-By: PHP v' . \PHP_MAJOR_VERSION .
+                                    '.' . \PHP_MINOR_VERSION .
+                                    '.' . \PHP_RELEASE_VERSION .
+                                   ', CRNRSTN :: Lightsaber v' . $R_version;
+        $cnt = \sizeof($R_resp_header_options);
+        for($i = 0; $i < $cnt; $i++)
+             \header($R_resp_header_options[$i]);
 
         \header($_SERVER['SERVER_PROTOCOL'] . 
             ' ' . 
@@ -598,7 +615,7 @@ if((\strpos($application_directory, '../') !== false) ||
     <head>
         <meta charset="utf-8" />
         <link rel="shortcut icon" type="image/x-icon" href="' . 
-        $directory_shift . 
+        $R_directory_shift . 
         $R_framework_directory . 
         '/ui/imgs/favicon/system/crnrstn' . 
         '/favicon.ico?crnrstn_0010111011=favicon.ico" />
@@ -607,36 +624,36 @@ if((\strpos($application_directory, '../') !== false) ||
             $http_status . '</title>
     </head>
     <body style="background-color: #FFF; ' . 
-            'width:100%; text-align: left; margin:' . 
-            '0px auto;">
+    'width:100%; text-align: left; margin:' .
+    '0px auto;">
         <div style="display:block; clear:both; ' . 
-                'height:0; line-height:0; overflow:hidden; ' . 
-                'width:100%; font-size:1px; border-bottom: ' . 
-                '2px solid #F90000;"></div>
+        'height:0; line-height:0; overflow:hidden; ' .
+        'width:100%; font-size:1px; border-bottom: ' .
+        '2px solid #F90000;"></div>
         <div style="display:block; clear:both; ' . 
-                'height:0; line-height:0; overflow:hidden; ' . 
-                'width:100%; font-size:1px; border-bottom: ' . 
-                '1px solid #DB1717;"></div>
+        'height:0; line-height:0; overflow:hidden; ' .
+        'width:100%; font-size:1px; border-bottom: ' .
+        '1px solid #DB1717;"></div>
 
         <div style=\'width:96%; margin:0 0 0 0; ' . 
-                'padding:6px 2% 0 2%; color:#FFF; ' . 
-                'font-family:"trebuchet MS", Verdana, ' . 
-                'sans-serif;background-color:#BEBEBE; ' . 
-                'height:30px; line-height: 28px;\'><h1 ' . 
-                'style="font-size: 30px; overflow: ' . 
-                'hidden; height:23px; padding-top:7px; ' . 
-                'margin-top: 0;">Server Error</h1></div>
-        <div style="display:block; clear:both;' . 
-                ' height:0; line-height:0; overflow:hidden; ' . 
-                'width:100%; font-size:1px; border-top: ' . 
-                '2px solid #FFF;"></div>
+        'padding:6px 2% 0 2%; color:#FFF; ' .
+        'font-family:"trebuchet MS", Verdana, ' .
+        'sans-serif;background-color:#BEBEBE; ' .
+        'height:30px; line-height: 28px;\'><h1 ' .
+        'style="font-size: 30px; overflow: ' .
+        'hidden; height:23px; padding-top:7px; ' .
+        'margin-top: 0;">Server Error</h1></div>
+        <div style="display:block; clear:both;' .
+        ' height:0; line-height:0; overflow:hidden; ' .
+        'width:100%; font-size:1px; border-top: ' .
+        '2px solid #FFF;"></div>
 
         <div style="padding:100px 0 300px 100px; ' . 
-                'float:left; font-family:arial; ' . 
-                'font-weight:bold; font-size:11px;">' . 
-                $response_code . ' ' . 
-                $http_status .  
-                $message_html . '</div>
+        'float:left; font-family:arial; ' .
+        'font-weight:bold; font-size:11px;">' .
+        $response_code . ' ' .
+        $http_status .
+        $R_message_html . '</div>
 
         <div style="position:absolute; ' . 
                 'padding:200px 0 0 10px; float:left;"><pre>
@@ -677,14 +694,14 @@ if((\strpos($application_directory, '../') !== false) ||
 
 }
 
-if(!isset($root)){
+if(!isset($R_root)){
 
-    $root = $_SERVER['DOCUMENT_ROOT'] .
-            \DIRECTORY_SEPARATOR . 
-            $application_directory . 
-            \DIRECTORY_SEPARATOR . 
-            $R_framework_directory . 
-            \DIRECTORY_SEPARATOR;
+    $R_root = $_SERVER['DOCUMENT_ROOT'] .
+              \DIRECTORY_SEPARATOR . 
+              $application_directory . 
+              \DIRECTORY_SEPARATOR . 
+              $R_framework_directory . 
+              \DIRECTORY_SEPARATOR;
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Standardize the use of
@@ -697,12 +714,12 @@ if(!isset($root)){
      * 5
      *
      */
-    $root = \str_replace(
-                 $R_path_patterns, 
-                 $R_path_replacements, 
-                 $root);
+    $R_root = \str_replace(
+              $R_path_patterns, 
+              $R_path_replacements, 
+              $R_root);
 
-    $R_exe_filepath = $root . $os_path_dir_separator_char . 
+    $R_exe_filepath = $R_root . $R_os_path_dir_separator_char . 
                       'crnrstn.runtime_exe.php';
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -717,12 +734,12 @@ if(!isset($root)){
      *
      */
     while(\strpos($R_exe_filepath, 
-                  $os_path_dir_separator_char . 
-                  $os_path_dir_separator_char) !== false)
+                  $R_os_path_dir_separator_char . 
+                  $R_os_path_dir_separator_char) !== false)
         $R_exe_filepath = \str_replace(
-                               $os_path_dir_separator_char . 
-                               $os_path_dir_separator_char,
-                               $os_path_dir_separator_char, 
+                               $R_os_path_dir_separator_char . 
+                               $R_os_path_dir_separator_char,
+                               $R_os_path_dir_separator_char, 
                                $R_exe_filepath);
 
 }
@@ -735,31 +752,49 @@ if(!isset($root)){
  *
  *
  * 5 :: Sunday, March 29, 2026 @ 2111 hrs.
- *
+ * http://192.168.1.42/_R/ui/iframe/?crnrstn_iframe=ea946892e8694526d3c59cdc8543285af06d0e168a27d87dac521d3aa69f76f2
  */
 $R = require($R_exe_filepath);
 
 if(!\is_object($R))
     __NAMESPACE__ . '\\' .
-     _R_server_response(500, 
-                        false, 
-                        '', 
-                        $directory_shift);
+    _R_server_response(
+            500,
+            false,
+            '',
+            $R_directory_shift);
 else
     $session_salt = $R->session_salt();
 
 ?><!DOCTYPE html>
 <html lang="<?php echo $R->iso_language_html(); ?>">
     <head>
-        <title>CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer v<?php echo $R->version_crnrstn(); ?>. The CLR-SSL.</title>
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $directory_shift . 
+        <title><?php
+            echo $R->get_crnrstn('CLR_SSL_long_TEXT'); ?> v<?php
+            echo $R->version_crnrstn();
+            ?>. The CLR-SSL.</title>
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $R_directory_shift . 
         $R_framework_directory; 
-        ?>/ui/imgs/favicon/system/crnrstn/favicon.ico?<?php echo $session_salt; ?>=favicon" />
+        ?>/ui/imgs/favicon/system/crnrstn/favicon.ico?<?php
+        echo $session_salt; ?>=favicon&R_cache='<?php
+        echo $R->file_url_cache_id($R->get_crnrstn('R_framework_path') .
+                 '/ui/imgs/favicon/system/crnrstn/favicon.ico'); ?>" />
     </head>
     <body>
-        <img src="<?php echo $directory_shift . 
+        <img src="<?php echo $R_directory_shift . 
         $R_framework_directory; 
-        ?>/ui/imgs/png/system/crnrstn_logo_lg.png?<?php echo $session_salt; ?>=crnrstn_logo_lg&crnrstn_=420.23525.1668508364.0" width="" height="70" alt="CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer v<?php echo $R->version_crnrstn(); ?>. The CLR-SSL." title="CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer v<?php echo $R->version_crnrstn(); ?>. The CLR-SSL." style="padding:20px;">
+        ?>/ui/imgs/png/system/crnrstn_logo_lg.png?<?php
+        echo $session_salt; ?>=crnrstn_logo_lg&R_cache='<?php
+        echo $R->file_url_cache_id($R->get_crnrstn('R_framework_path') .
+                 '/ui/imgs/png/system/crnrstn_logo_lg.png');
+        ?>'"
+        'width="" height="70" alt="<?php
+        echo $R->get_crnrstn('CLR_SSL_long_TEXT'); ?> v<?php
+        echo $R->version_crnrstn();
+        ?>. The CLR-SSL." title="<?php
+        echo $R->get_crnrstn('CLR_SSL_long_TEXT'); ?> v<?php
+        echo $R->version_crnrstn();
+        ?>. The CLR-SSL." style="padding:20px;">
         <?php echo $R->ui_module_out('R_dom_iframe_proxy'); ?>
     </body>
 </html>

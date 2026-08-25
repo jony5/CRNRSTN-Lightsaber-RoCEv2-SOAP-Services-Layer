@@ -338,7 +338,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -371,6 +371,8 @@ class crnrstn_performance_regulator extends crnrstn
      *       5 :: Monday, March 16, 2026 @ 0226 hrs.
      *
      */
+    
+    private $R_data = array();
 
     public $system_integer_meta_lookup_ARRAY = array();
     public $system_integer_meta_cache_ARRAY = array();
@@ -400,8 +402,10 @@ class crnrstn_performance_regulator extends crnrstn
      */
     function __construct()
     {
+        
+        $this->R_data['int_flag'] = $this->get_crnrstn('int_flag');
 
-        $this->snapshot_ini_values();
+        //$this->snapshot_ini_values();
 
         self::$config_relevant_ini_values_ARRAY = array('default_socket_timeout', 
                                                         'file_uploads', 
@@ -938,39 +942,39 @@ class crnrstn_performance_regulator extends crnrstn
          * data for spooling. 
          *
          */
-        $tmp_ARRAY[$pointer][$key]['TYPE'] = $this->gettype($data, CRNRSTN_INTEGER);
+        $tmp_ARRAY[$pointer][$key]['TYPE'] = $this->gettype($data, $this->R_data['int_flag']['R_integer']);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Data type.
          *
          */
         switch($tmp_ARRAY[$pointer][$key]['TYPE']){
-            case CRNRSTN_STRING:
-            case CRNRSTN_INT:
-            case CRNRSTN_INTEGER:
-            case CRNRSTN_BOOL:
-            case CRNRSTN_BOOLEAN:
-            case CRNRSTN_FLOAT:
-            case CRNRSTN_DOUBLE:
-            case CRNRSTN_RESOURCE:
-            case CRNRSTN_RESOURCE_CLOSED:
-            case CRNRSTN_UNKNOWN_TYPE:
-            case CRNRSTN_NULL:
-            case CRNRSTN_MIXED:
+            case $this->R_data['int_flag']['R_string']:
+            case $this->R_data['int_flag']['R_int']:
+            case $this->R_data['int_flag']['R_integer']:
+            case $this->R_data['int_flag']['R_bool']:
+            case $this->R_data['int_flag']['R_boolean']:
+            case $this->R_data['int_flag']['R_float']:
+            case $this->R_data['int_flag']['R_double']:
+            case $this->R_data['int_flag']['R_resource']:
+            case $this->R_data['int_flag']['R_resource_closed']:
+            case $this->R_data['int_flag']['R_unknown_type']:
+            case $this->R_data['int_flag']['R_null']:
+            case $this->R_data['int_flag']['R_mixed']:
 
                 $tmp_ARRAY[$pointer][$key]['DATA']   = $data;
-                $tmp_ARRAY[$pointer][$key]['LENGTH'] = strlen(strval($data));
+                $tmp_ARRAY[$pointer][$key]['LENGTH'] = \strlen(strval($data));
 
             break;
-            case CRNRSTN_ARRAY:
-            case CRNRSTN_OBJECT:
+            case $this->R_data['int_flag']['R_array']:
+            case $this->R_data['int_flag']['R_object']:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Serialize.
                  *
                  */
-                $tmp_ARRAY[$pointer][$key]['DATA']   = serialize($data);
-                $tmp_ARRAY[$pointer][$key]['LENGTH'] = strlen($tmp_ARRAY[$pointer][$key]['DATA']);
+                $tmp_ARRAY[$pointer][$key]['DATA']   = \serialize($data);
+                $tmp_ARRAY[$pointer][$key]['LENGTH'] = \strlen($tmp_ARRAY[$pointer][$key]['DATA']);
 
             break;
             default:
@@ -991,8 +995,8 @@ class crnrstn_performance_regulator extends crnrstn
                        $tmp_err_msg, 
                        __LINE__, 
                        __METHOD__, 
-                       __FILE__, 
-                       CRNRSTN_SETTINGS_CRNRSTN);
+                       __FILE__,
+                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
             break;
 
@@ -1141,13 +1145,13 @@ class crnrstn_performance_regulator extends crnrstn
 
                     $tmp_curr_pointer = $spool_ddo_pointer;
 
-                    $tmp_data_profile               = NULL;
-                    $tmp_data                       = NULL;
-                    $tmp_data_key                   = NULL;
-                    $tmp_data_type_family           = NULL;
-                    $tmp_index                      = NULL;
-                    $tmp_data_authorization_profile = NULL;
-                    $tmp_ttl                        = NULL;
+                    $tmp_data_profile               =
+                    $tmp_data                       =
+                    $tmp_data_key                   =
+                    $tmp_data_type_family           =
+                    $tmp_index                      =
+                    $tmp_data_authorization_profile =
+                    $tmp_ttl                        =
                     $tmp_env_key                    = NULL;
 
                 }
@@ -1253,26 +1257,26 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'data_profile':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_data_profile = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_data_profile = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_data_profile = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1283,19 +1287,19 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_data_profile = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_data_profile = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1306,7 +1310,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1317,13 +1321,13 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_data_profile = $spool_ARRAY2['DATA'];
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1334,8 +1338,8 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length       = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1366,8 +1370,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -1377,69 +1381,69 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'data':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_data   = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_data   = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_data   = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     $tmp_data   = $this->tidy_boolean($spool_ARRAY2['DATA']);
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_data   = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_data   = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     $tmp_data   = $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     $tmp_data   = $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_data   = $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     $tmp_data   = NULL;
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * UNSERIALIZE.
@@ -1467,8 +1471,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -1478,26 +1482,26 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'data_key':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_data_key = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_data_key = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_data_key = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1508,19 +1512,19 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_data_key = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_data_key = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1531,7 +1535,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1542,13 +1546,13 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_data_key = $spool_ARRAY2['DATA'];
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1559,8 +1563,8 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length   = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1591,8 +1595,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -1602,26 +1606,26 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'data_type_family':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_data_type_family = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_data_type_family = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_data_type_family = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1632,19 +1636,19 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_data_type_family = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_data_type_family = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1655,7 +1659,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1666,20 +1670,20 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_data_type_family = $spool_ARRAY2['DATA'];
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     $tmp_data_type_family = NULL;
                                     $tmp_length           = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1709,8 +1713,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -1720,26 +1724,26 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'index':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_index  = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_index  = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_index  = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1750,19 +1754,19 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_index  = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_index  = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1773,7 +1777,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1784,20 +1788,20 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_index  = $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     $tmp_index  = NULL;
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1828,8 +1832,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -1839,26 +1843,26 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'data_authorization_profile':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_data_authorization_profile = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_data_authorization_profile = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_data_authorization_profile = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1869,19 +1873,19 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_data_authorization_profile = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_data_authorization_profile = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1892,7 +1896,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1903,20 +1907,20 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_data_authorization_profile = $spool_ARRAY2['DATA'];
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     $tmp_data_authorization_profile = NULL;
                                     $tmp_length                     = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1947,8 +1951,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -1958,26 +1962,26 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'ttl':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_ttl    = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_ttl    = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_ttl    = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -1988,19 +1992,19 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_ttl    = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_ttl    = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -2011,7 +2015,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -2022,20 +2026,20 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_ttl    = $spool_ARRAY2['DATA'];
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     $tmp_ttl    = NULL;
                                     $tmp_length = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -2066,8 +2070,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -2077,26 +2081,26 @@ class crnrstn_performance_regulator extends crnrstn
                         case 'env_key':
 
                             switch($spool_ARRAY2['TYPE']){
-                                case CRNRSTN_STRING:
+                                case $this->R_data['int_flag']['R_string']:
 
                                     $tmp_env_key = (string) $spool_ARRAY2['DATA'];
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INT:
+                                case $this->R_data['int_flag']['R_int']:
 
                                     $tmp_env_key = (int) $spool_ARRAY2['DATA'];
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_INTEGER:
+                                case $this->R_data['int_flag']['R_integer']:
 
                                     $tmp_env_key = (integer) $spool_ARRAY2['DATA'];
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_BOOL:
-                                case CRNRSTN_BOOLEAN:
+                                case $this->R_data['int_flag']['R_bool']:
+                                case $this->R_data['int_flag']['R_boolean']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -2107,19 +2111,19 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_FLOAT:
+                                case $this->R_data['int_flag']['R_float']:
 
                                     $tmp_env_key = (float) $spool_ARRAY2['DATA'];
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_DOUBLE:
+                                case $this->R_data['int_flag']['R_double']:
 
                                     $tmp_env_key = (double) $spool_ARRAY2['DATA'];
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE:
+                                case $this->R_data['int_flag']['R_resource']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -2130,7 +2134,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_RESOURCE_CLOSED:
+                                case $this->R_data['int_flag']['R_resource_closed']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -2141,20 +2145,20 @@ class crnrstn_performance_regulator extends crnrstn
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_UNKNOWN_TYPE:
+                                case $this->R_data['int_flag']['R_unknown_type']:
 
                                     $tmp_env_key = $spool_ARRAY2['DATA'];
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_NULL:
+                                case $this->R_data['int_flag']['R_null']:
 
                                     $tmp_env_key = NULL;
                                     $tmp_length  = $spool_ARRAY2['LENGTH'];
 
                                 break;
-                                case CRNRSTN_ARRAY:
-                                case CRNRSTN_OBJECT:
+                                case $this->R_data['int_flag']['R_array']:
+                                case $this->R_data['int_flag']['R_object']:
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * This case will 
@@ -2185,8 +2189,8 @@ class crnrstn_performance_regulator extends crnrstn
                                            $tmp_err_msg, 
                                            __LINE__, 
                                            __METHOD__, 
-                                           __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 break;
 
@@ -2300,8 +2304,18 @@ class crnrstn_performance_regulator extends crnrstn
      * @access public
      *
      */
-    function get_disk_free_space($path = CRNRSTN_ROOT)
+    function get_disk_free_space($path = NULL)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Changed the default for the $path input
+         *       parameter to NULL from CRNRSTN_ROOT for
+         *       the method, get_disk_free_space.
+         *       5 :: Tuesday, August 25, 2026 @ 0450 hrs.
+         *
+         */
+
+        if(!isset($path))
+            $path = $this->get_crnrstn('R_framework_path');
 
         return $this->return_disk_free_space($path);
 
@@ -2315,8 +2329,18 @@ class crnrstn_performance_regulator extends crnrstn
      * @access public
      *
      */
-    function get_disk_size($path = CRNRSTN_ROOT)
+    function get_disk_size($path = NULL)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Changed the default for the $path input
+         *       parameter to NULL from CRNRSTN_ROOT for
+         *       the method, get_disk_size.
+         *       5 :: Tuesday, August 25, 2026 @ 0453 hrs.
+         *
+         */
+
+        if(!isset($path))
+            $path = $this->get_crnrstn('R_framework_path');
 
         return $this->return_hard_disk_size($path);
 
@@ -2668,7 +2692,7 @@ class crnrstn_performance_regulator extends crnrstn
                    __LINE__, 
                    __METHOD__, 
                    __FILE__, 
-                   CRNRSTN_SETTINGS_CRNRSTN);
+                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
             $this->print_r('WARNING: maximum permitted ' . 
                    'disk storage will be reached soon. ' . 
@@ -2680,8 +2704,8 @@ class crnrstn_performance_regulator extends crnrstn
                    '% is the configured maximum. For the record, ' . 
                    $this->return_bytes($this->hard_disk_bytes_capacity_total) . 
                    ' are available at ' . 
-                   $filepath . '.', 
-                   CRNRSTN_UI_PHPNIGHT, 
+                   $filepath . '.',
+                   $this->R_data['int_flag']['CRNRSTN_UI_PHPNIGHT'],
                    __LINE__, 
                    __METHOD__, 
                    __FILE__);
@@ -2690,10 +2714,10 @@ class crnrstn_performance_regulator extends crnrstn
 
         error_log(__LINE__ . ' ' . 
             __CLASS__ . ' $percentage_utilization_ask[' . 
-            $percentage_utilization_ask . '] fail%[' . 
-            $this->max_disk_storage_utilization . ']. warn%[' . 
+            $percentage_utilization_ask . '] Fail at ' .
+            $this->max_disk_storage_utilization . '%. Warn at' .
             $this->max_disk_storage_utilization_warning . 
-            '].');
+            '%.');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Disk full error. 
@@ -2725,8 +2749,8 @@ class crnrstn_performance_regulator extends crnrstn
                    $filepath . '.', 
                    __LINE__, 
                    __METHOD__, 
-                   __FILE__, 
-                   CRNRSTN_SETTINGS_CRNRSTN);
+                   __FILE__,
+                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
             $this->print_r('DISK FULL ERROR: Maximum ' . 
                    'storage utilization has been reached ' . 
@@ -2744,8 +2768,8 @@ class crnrstn_performance_regulator extends crnrstn
                    $this->return_bytes($this->hard_disk_bytes_capacity_total) . 
                    ' are available at ' . 
                    $filepath . '.', 
-                   'Image Processing.', 
-                   CRNRSTN_UI_PHPNIGHT, 
+                   'Image Processing.',
+                   $this->R_data['int_flag']['CRNRSTN_UI_PHPNIGHT'],
                    __LINE__, 
                    __METHOD__, 
                    __FILE__);
@@ -2867,7 +2891,7 @@ class crnrstn_performance_regulator extends crnrstn
                    __LINE__, 
                    __METHOD__, 
                    __FILE__, 
-                   CRNRSTN_SETTINGS_CRNRSTN);
+                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * trigger_error('PID ' . 
              *     $pid . ' doesn't exists', 
@@ -2890,7 +2914,7 @@ class crnrstn_performance_regulator extends crnrstn
              *     $ps[$key]);
              *
              */
-            $ps[$key] = explode(' ', $ps[$key]);
+            $ps[$key] = \explode(' ', $ps[$key]);
 
         }
 
@@ -3219,9 +3243,22 @@ class crnrstn_performance_regulator extends crnrstn
      *
      */
     private function return_hard_disk_size(
-                     $path = CRNRSTN_ROOT, 
-                     $env_key = CRNRSTN_RESOURCE_ALL)
+                     $path = NULL,
+                     $env_key = 'CRNRSTN_RESOURCE_ALL')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Changed the default for the $path input
+         *       parameter to NULL from CRNRSTN_ROOT for
+         *       the method, return_hard_disk_size.
+         *       5 :: Tuesday, August 25, 2026 @ 0456 hrs.
+         *
+         */
+
+        if(!isset($path))
+            $path = $this->get_crnrstn('R_framework_path');
+
+        if(\is_string($env_key))
+            $env_key = $this->R_data['int_flag'][$env_key];
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Caution: On Windows, dirname() 
@@ -3243,9 +3280,9 @@ class crnrstn_performance_regulator extends crnrstn
          * function is undefined. 
          *
          */
-        $path = dirname($path);
+        $path = \dirname($path);
 
-        $this->disk_size_bytes_ARRAY[$env_key][$path] = disk_total_space($path);
+        $this->disk_size_bytes_ARRAY[$env_key][$path] = \disk_total_space($path);
 
         /**
          *$this->print_r('WE GOOD. CRNRSTN :: ' . 
@@ -3272,9 +3309,22 @@ class crnrstn_performance_regulator extends crnrstn
      *
      */
     private function return_disk_free_space(
-                     $path = CRNRSTN_ROOT, 
-                     $env_key = CRNRSTN_RESOURCE_ALL)
+                     $path = NULL,
+                     $env_key = 'CRNRSTN_RESOURCE_ALL')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Changed the default for the $path input
+         *       parameter to NULL from CRNRSTN_ROOT for
+         *       the method, return_disk_free_space.
+         *       5 :: Tuesday, August 25, 2026 @ 0458 hrs.
+         *
+         */
+
+        if(!isset($path))
+            $path = $this->get_crnrstn('R_framework_path');
+
+        if(\is_string($env_key))
+            $env_key = $this->R_data['int_flag'][$env_key];
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Caution: On Windows, dirname() 
@@ -3501,23 +3551,15 @@ class crnrstn_performance_regulator extends crnrstn
 
         $tmp_exception_bypass = false;
 
-        if(!isset($data_authorization_profile)){
+        if(!isset($data_authorization_profile))
+            $data_authorization_profile = $this->R_data['int_flag']['R_authorize'] &
+                                          $this->R_data['int_flag']['R_channel_RUNTIME'];
 
-            $data_authorization_profile = CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_RUNTIME;
+        if(!isset($env_key))
+            $env_key = $this->R_data['int_flag']['CRNRSTN_RESOURCE_ALL'];
 
-        }
-
-        if(!isset($env_key)){
-
-            $env_key = CRNRSTN_RESOURCE_ALL;
-
-        }
-
-        if(!isset($ttl)){
-
+        if(!isset($ttl))
             $ttl = $this->cache_ttl_default;
-
-        }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * CLR-SSL Initialization 
@@ -3747,7 +3789,7 @@ class crnrstn_performance_regulator extends crnrstn
                          * above, we can lazy update. 
                          *
                          */
-                        $tmp_data = $this->return_int_const_profile($data, CRNRSTN_INTEGER);
+                        $tmp_data = $this->return_int_const_profile($data, $this->R_data['int_flag']['R_integer']);
 
                     }
 
@@ -3859,8 +3901,8 @@ class crnrstn_performance_regulator extends crnrstn
                                                       ', could not be found. The system ' . 
                                                       'output profile has manually been set to ' .
                                                       $this->return_constant_profile_ARRAY(
-                                                                       $tmp_int, 
-                                                                       CRNRSTN_STRING) . '. ' .
+                                                                       $tmp_int,
+                                                                       $this->R_data['int_flag']['R_string']) . '. ' .
                                                       $this->data_report(
                                                                        $data, 
                                                                        'CRNRSTN :: MC-DDO UGC Input Data Report');
@@ -3958,8 +4000,8 @@ class crnrstn_performance_regulator extends crnrstn
                                                'configuration settings; it will ' . 
                                                'be manually set to, ' .
                                                $this->return_constant_profile_ARRAY(
-                                                      $tmp_int, 
-                                                      CRNRSTN_STRING) . '. ' .
+                                                      $tmp_int,
+                                                      $this->R_data['int_flag']['R_string']) . '. ' .
                                                $this->data_report(
                                                       $data, 
                                                       'CRNRSTN :: MC-DDO UGC Input Data Report');
@@ -4036,8 +4078,8 @@ class crnrstn_performance_regulator extends crnrstn
                                                \strval($tmp_int) . 
                                                '].  The theme will be manually set to, ' .
                                                $this->return_constant_profile_ARRAY(
-                                                      $int_const_index, 
-                                                      CRNRSTN_STRING) . '. ' .
+                                                      $int_const_index,
+                                                      $this->R_data['int_flag']['R_string']) . '. ' .
                                                $this->data_report(
                                                       $data, 
                                                       'CRNRSTN :: MC-DDO UGC Input Data Report');
@@ -4126,8 +4168,8 @@ class crnrstn_performance_regulator extends crnrstn
                                                    'configuration settings; it will ' . 
                                                    'be manually set to, ' .
                                                    $this->return_constant_profile_ARRAY(
-                                                          $tmp_default_interact_ui_theme, 
-                                                          CRNRSTN_STRING) . '. ' .
+                                                          $tmp_default_interact_ui_theme,
+                                                          $this->R_data['int_flag']['R_string']) . '. ' .
                                                           $this->data_report(
                                                                  $data, 
                                                                  'CRNRSTN :: MC-DDO UGC Input Data Report');
@@ -4220,7 +4262,7 @@ class crnrstn_performance_regulator extends crnrstn
                                                    ']. The theme has been manually set to, ' .
                                                    $this->return_constant_profile_ARRAY(
                                                           $int_const_index, 
-                                                          CRNRSTN_STRING) . '. ' .
+                                                          $this->R_data['int_flag']['R_string']) . '. ' .
                                                    $this->data_report(
                                                           $data, 
                                                           'CRNRSTN :: MC-DDO UGC Input Data Report');
@@ -4847,8 +4889,9 @@ class crnrstn_performance_regulator extends crnrstn
                                            'profile using the data,' .
                                            strval($tmp_int) . 
                                            '. The system will revert to ' . 
-                                           'the default, CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_RUNTIME[' .
-                                           strval(CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_RUNTIME) . ']. ' . 
+                                           'the default, R_authorize & R_channel_RUNTIME[' .
+                                           strval($this->R_data['int_flag']['R_authorize'] &
+                                               $this->R_data['int_flag']['R_channel_RUNTIME']) . ']. ' .
                                            strval($data) .
                                            ', was the value that was provided ' . 
                                            'as method input to this environment. ' .
@@ -4875,7 +4918,8 @@ class crnrstn_performance_regulator extends crnrstn
                              *
                              */
                             $this->input_data_value(
-                                   CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_RUNTIME, 
+                                   $this->R_data['int_flag']['R_authorize'] &
+                                   $this->R_data['int_flag']['R_channel_RUNTIME'],
                                    $data_key, 
                                    $data_type_family, 
                                    $index, 
@@ -5017,8 +5061,8 @@ class crnrstn_performance_regulator extends crnrstn
 
                         $tmp_int = $this->return_valid_constant(
                                           $tmp_int, 
-                                          'R_debug_mode_ARRAY', 
-                                          CRNRSTN_DEBUG_OFF);
+                                          'R_debug_mode_ARRAY',
+                                          $this->R_data['int_flag']['CRNRSTN_DEBUG_OFF']);
                         $this->set_crnrstn(
                                'R_debug_mode', 
                                $tmp_int);
@@ -5039,8 +5083,8 @@ class crnrstn_performance_regulator extends crnrstn
 
                         $tmp_int = $this->return_valid_constant(
                                           $tmp_int, 
-                                          'PHPMailer_debug_mode', 
-                                          CRNRSTN_PHPMAILER_DEBUG_OFF);
+                                          'PHPMailer_debug_mode',
+                                          $this->R_data['int_flag']['CRNRSTN_PHPMAILER_DEBUG_OFF']);
 
                     break;
                     default:
@@ -5236,7 +5280,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        $tmp_int);
 
                             break;
-                            case 'R_debug_mode_override':
+                            case 'R_debug_mode':
 
                                 $this->set_crnrstn(
                                        'R_debug_mode', 
@@ -5937,8 +5981,8 @@ class crnrstn_performance_regulator extends crnrstn
                                    'system email communications.', 
                                    __LINE__, 
                                    __METHOD__, 
-                                   __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   __FILE__,
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * CRNRSTN :: Icy Digital ITCC 
@@ -5955,7 +5999,7 @@ class crnrstn_performance_regulator extends crnrstn
                              *
                              */
                             $this->initialize_bit(
-                                   CRNRSTN_EMAIL_MULTI_PART, 
+                                   $this->R_data['int_flag']['CRNRSTN_EMAIL_MULTI_PART'],
                                    true);
 
                         }
@@ -5974,8 +6018,7 @@ class crnrstn_performance_regulator extends crnrstn
                              * we will turn it off. 
                              *
                              */
-                            if($this->is_bit_set((int) self::$R_data['int_flag']['R_js_css_min_mode']) == true){
-
+                            if($this->is_bit_set((int) $this->R_data['int_flag']['R_js_css_min_mode']) == true)
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Icy Digital ITCC 
                                  * Bitmask Integer State (Bit Flip) 
@@ -5985,9 +6028,7 @@ class crnrstn_performance_regulator extends crnrstn
                                  * input [ICY_DIGITALITCC-BITMASK]
                                  *
                                  */
-                                $this->initialize_bit((int) self::$R_data['int_flag']['R_js_css_min_mode'], false);
-
-                            }
+                                $this->initialize_bit((int) $this->R_data['int_flag']['R_js_css_min_mode'], false);
 
                             return true;
 
@@ -6004,7 +6045,7 @@ class crnrstn_performance_regulator extends crnrstn
                              * input [ICY_DIGITALITCC-BITMASK]
                              *
                              */
-                            $this->initialize_bit((int) self::$R_data['int_flag']['R_js_css_min_mode'], true);
+                            $this->initialize_bit((int) $this->R_data['int_flag']['R_js_css_min_mode'], true);
 
                             return true;
 
@@ -6065,8 +6106,8 @@ class crnrstn_performance_regulator extends crnrstn
                                    strtoupper($tmp_asset_type) . '.', 
                                    __LINE__, 
                                    __METHOD__, 
-                                   __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   __FILE__,
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             switch($tmp_asset_type){
                                 case 'favicon':
@@ -6081,7 +6122,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     $this->initialize_bit(
-                                           (int) self::$R_data['int_flag']['R_fs_map_favicon'], 
+                                           (int) $this->R_data['int_flag']['R_fs_map_favicon'],
                                            true);
 
                                 break;
@@ -6097,7 +6138,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     $this->initialize_bit(
-                                           CRNRSTN_CSS_LIB_ASSET_MAPPING, 
+                                           $this->R_data['int_flag']['R_fs_map_css_lib'],
                                            true);
 
                                 break;
@@ -6113,7 +6154,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     $this->initialize_bit(
-                                           (int) self::$R_data['int_flag']['R_fs_map_js_lib'], 
+                                           (int) $this->R_data['int_flag']['R_fs_map_js_lib'],
                                            true);
 
                                 break;
@@ -6129,7 +6170,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     $this->initialize_bit(
-                                           (int) self::$R_data['int_flag']['R_fs_map_system'], 
+                                           (int) $this->R_data['int_flag']['R_fs_map_system'],
                                            true);
 
                                 break;
@@ -6145,7 +6186,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     $this->initialize_bit(
-                                           (int) self::$R_data['int_flag']['R_fs_map_social'], 
+                                           (int) $this->R_data['int_flag']['R_fs_map_social'],
                                            true);
 
                                 break;
@@ -6161,7 +6202,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     $this->initialize_bit(
-                                           (int) self::$R_data['int_flag']['R_fs_map_meta'], 
+                                           (int) $this->R_data['int_flag']['R_fs_map_meta'],
                                            true);
 
                                 break;
@@ -6211,9 +6252,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     if($this->is_bit_set(
-                                              (int) self::$R_data['int_flag']['R_fs_map_favicon']) == true)
-                                    {
-
+                                              (int) $this->R_data['int_flag']['R_fs_map_favicon']) == true)
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * CRNRSTN :: Icy Digital ITCC 
                                          * Bitmask Integer State (Bit Flip) 
@@ -6224,10 +6263,8 @@ class crnrstn_performance_regulator extends crnrstn
                                          *
                                          */
                                         $this->initialize_bit(
-                                               (int) self::$R_data['int_flag']['R_fs_map_favicon'], 
+                                               (int) $this->R_data['int_flag']['R_fs_map_favicon'],
                                                false);
-
-                                    }
 
                                 break;
                                 case 'css':
@@ -6242,8 +6279,6 @@ class crnrstn_performance_regulator extends crnrstn
                                      */
                                     if($this->is_bit_set(
                                               CRNRSTN_CSS_LIB_ASSET_MAPPING) == true)
-                                    {
-
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * CRNRSTN :: Icy Digital ITCC 
                                          * Bitmask Integer State (Bit Flip) 
@@ -6257,8 +6292,6 @@ class crnrstn_performance_regulator extends crnrstn
                                               CRNRSTN_CSS_LIB_ASSET_MAPPING, 
                                               false);
 
-                                    }
-
                                 break;
                                 case 'js':
 
@@ -6271,9 +6304,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     if($this->is_bit_set(
-                                              (int) self::$R_data['int_flag']['R_fs_map_js_lib']) == true)
-                                    {
-
+                                              (int) $this->R_data['int_flag']['R_fs_map_js_lib']) == true)
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * CRNRSTN :: Icy Digital ITCC 
                                          * Bitmask Integer State (Bit Flip) 
@@ -6284,10 +6315,8 @@ class crnrstn_performance_regulator extends crnrstn
                                          *
                                          */
                                         $this->initialize_bit(
-                                               (int) self::$R_data['int_flag']['R_fs_map_js_lib'], 
+                                               (int) $this->R_data['int_flag']['R_fs_map_js_lib'],
                                                false);
-
-                                    }
 
                                 break;
                                 case 'system img':
@@ -6301,9 +6330,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     if($this->is_bit_set(
-                                              (int) self::$R_data['int_flag']['R_fs_map_system']) == true)
-                                    {
-
+                                              (int) $this->R_data['int_flag']['R_fs_map_system']) == true)
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * CRNRSTN :: Icy Digital ITCC 
                                          * Bitmask Integer State (Bit Flip) 
@@ -6314,10 +6341,8 @@ class crnrstn_performance_regulator extends crnrstn
                                          *
                                          */
                                         $this->initialize_bit(
-                                               (int) self::$R_data['int_flag']['R_fs_map_system'], 
+                                               (int) $this->R_data['int_flag']['R_fs_map_system'],
                                                false);
-
-                                    }
 
                                 break;
                                 case 'social img':
@@ -6331,9 +6356,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *
                                      */
                                     if($this->is_bit_set(
-                                              (int) self::$R_data['int_flag']['R_fs_map_social']) == true)
-                                    {
-
+                                              (int) $this->R_data['int_flag']['R_fs_map_social']) == true)
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * CRNRSTN :: Icy Digital ITCC 
                                          * Bitmask Integer State (Bit Flip) 
@@ -6344,10 +6367,8 @@ class crnrstn_performance_regulator extends crnrstn
                                          *
                                          */
                                         $this->initialize_bit(
-                                               (int) self::$R_data['int_flag']['R_fs_map_social'], 
+                                               (int) $this->R_data['int_flag']['R_fs_map_social'],
                                                false);
-
-                                    }
 
                                 break;
                                 case 'meta img':
@@ -6360,15 +6381,13 @@ class crnrstn_performance_regulator extends crnrstn
                                      * we will turn it off. 
                                      *
                                      *
-                                     *if($this->oCRNRSTN->is_bit_set((int) self::$R_data['int_flag']['R_fs_map_meta']) == true){
+                                     *if($this->oCRNRSTN->is_bit_set((int) $this->R_data['int_flag']['R_fs_map_meta']) == true){
                                      *
                                      */
                                     if($this->tidy_boolean(
-                                              (int) self::$R_data['int_flag']['R_fs_map_meta'], 
-                                              CRNRSTN_BOOLEAN, 
-                                              (int) self::$R_data['int_flag']['R_fs_map_meta']) == true)
-                                    {
-
+                                              (int) $this->R_data['int_flag']['R_fs_map_meta'],
+                                              $this->R_data['int_flag']['R_boolean'],
+                                              (int) $this->R_data['int_flag']['R_fs_map_meta']) == true)
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * CRNRSTN :: Icy Digital ITCC 
                                          * Bitmask Integer State (Bit Flip) 
@@ -6379,10 +6398,8 @@ class crnrstn_performance_regulator extends crnrstn
                                          *
                                          */
                                         $this->initialize_bit(
-                                               (int) self::$R_data['int_flag']['R_fs_map_meta'], 
+                                               (int) $this->R_data['int_flag']['R_fs_map_meta'],
                                                false);
-
-                                    }
 
                                 break;
                                 default:
@@ -8157,7 +8174,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -8175,8 +8192,8 @@ class crnrstn_performance_regulator extends crnrstn
                             if(!$this->isset_resource(
                                        'data_value', 
                                        $data_key, 
-                                       $data_type_family, 
-                                       CRNRSTN_CHANNEL_SESSION) == true)
+                                       $data_type_family,
+                                       $this->R_data['int_flag']['R_channel_SESSION']) == true)
                             {
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -8215,8 +8232,8 @@ class crnrstn_performance_regulator extends crnrstn
                                     if(!$this->isset_resource(
                                                'data_value', 
                                                $data_key, 
-                                               $data_type_family, 
-                                               CRNRSTN_CHANNEL_SESSION) == true)
+                                               $data_type_family,
+                                               $this->R_data['int_flag']['R_channel_SESSION']) == true)
                                     {
 
                                         $tmp_force_data_err = true;
@@ -8233,7 +8250,7 @@ class crnrstn_performance_regulator extends crnrstn
                                          *
                                          */
                                         //$tmp_openssl_cipher_preferred_ARRAY = $this->get_crnrstn('openssl_cipher_preferred_ARRAY');
-                                        foreach(self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['preferred'] as 
+                                        foreach($this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['cipher']['preferred'] as
                                             $openssl_cipher_index => $openssl_cipher_name)
                                         {
 
@@ -8327,7 +8344,7 @@ class crnrstn_performance_regulator extends crnrstn
                                          *    ']. $data_key[' . 
                                          *    $data_key . 
                                          *    ']. self::$openssl_ARRAY[' . 
-                                         *    print_r(self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['ISACTIVE'], true) . 
+                                         *    print_r($this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['ISACTIVE'], true) .
                                          *    '].');
                                          *
                                          *
@@ -8352,8 +8369,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                              $tmp_cipher, 
                                                              $data_key, 
                                                              $data_type_family, 
-                                                             $index, 
-                                                             CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                             $index,
+                                                             $this->R_data['int_flag']['R_authorize'] & 
+                                                             $this->R_data['int_flag']['R_channel_SESSION'], 
                                                              $ttl, 
                                                              $spool_resource, 
                                                              $env_key);
@@ -8366,8 +8384,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                       strtolower(trim($tmp_cipher))), 
                                                $data_key . '_index', 
                                                $data_type_family, 
-                                               $index, 
-                                               CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                               $index,
+                                               $this->R_data['int_flag']['R_authorize'] & 
+                                               $this->R_data['int_flag']['R_channel_SESSION'], 
                                                $ttl, 
                                                $spool_resource, 
                                                $env_key);
@@ -8382,7 +8401,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      * SET SESSION 
                                      * FROM RUNTIME. 
                                      *
-                                     * $tmp_cipher = self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default']['name'];
+                                     * $tmp_cipher = $this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default']['name'];
                                      *
                                      */
                                     $tmp_cipher = $this->get_crnrstn(
@@ -8413,17 +8432,18 @@ class crnrstn_performance_regulator extends crnrstn
                                                          $tmp_cipher, 
                                                          $data_key, 
                                                          $data_type_family, 
-                                                         $index, 
-                                                         CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                         $index,
+                                                         $this->R_data['int_flag']['R_authorize'] & 
+                                                         $this->R_data['int_flag']['R_channel_SESSION'], 
                                                          $ttl, 
                                                          $spool_resource, 
                                                          $env_key);
                                     /*$this->input_data_value(
-                                     *       self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['ISACTIVE'][\strtolower(trim($tmp_cipher))], 
+                                     *       $this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['ISACTIVE'][\strtolower(trim($tmp_cipher))],
                                      *       $data_key . '_index', 
                                      *       $data_type_family, 
                                      *       $index, 
-                                     *       CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                     *       $this->R_data['int_flag']['R_authorize'] & $this->R_data['int_flag']['R_channel_SESSION'], 
                                      *       $ttl, 
                                      *       $spool_resource, 
                                      *       $env_key);
@@ -8438,8 +8458,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                   \strtolower(trim($tmp_cipher))), 
                                            $data_key . '_index', 
                                            $data_type_family, 
-                                           $index, 
-                                           CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                           $index,
+                                           $this->R_data['int_flag']['R_authorize'] & 
+                                           $this->R_data['int_flag']['R_channel_SESSION'], 
                                            $ttl, 
                                            $spool_resource, 
                                            $env_key);
@@ -8488,17 +8509,19 @@ class crnrstn_performance_regulator extends crnrstn
                                  * by-passes server setting 
                                  * lookup and processing. 
                                  *
-                                 *self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default'][CRNRSTN_INTEGER] = $this->get_resource(
+                                 *$this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default'][CRNRSTN_INTEGER] = $this->get_resource(
                                  *                                                                                                                                     $data_key . '_index', 
                                  *                                                                                                                                     0, 
                                  *                                                                                                                                     $data_type_family, 
-                                 *                                                                                                                                     CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION);
+                                 *                                                                                                                                     $this->R_data['int_flag']['R_authorize'] & 
+                                 *                                                                                                                                     $this->R_data['int_flag']['R_channel_SESSION']);
                                  *
-                                 *$tmp_cipher = self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default']['name'] = $this->get_resource(
+                                 *$tmp_cipher = $this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default']['name'] = $this->get_resource(
                                  *                                                                                                                                          $data_key, 
                                  *                                                                                                                                          0, 
                                  *                                                                                                                                          $data_type_family, 
-                                 *                                                                                                                                          CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION);
+                                 *                                                                                                                                          $this->R_data['int_flag']['R_authorize'] & 
+                                 *                                                                                                                                          $this->R_data['int_flag']['R_channel_SESSION']);
                                  *
                                  */
                                 $this->set_crnrstn(
@@ -8506,18 +8529,20 @@ class crnrstn_performance_regulator extends crnrstn
                                        $this->get_resource(
                                               $data_key . '_index', 
                                               0, 
-                                              $data_type_family, 
-                                              CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION), 
+                                              $data_type_family,
+                                              $this->R_data['int_flag']['R_authorize'] & 
+                                              $this->R_data['int_flag']['R_channel_SESSION']), 
                                        'cipher', 
-                                       'default', 
-                                       CRNRSTN_INTEGER);
+                                       'default',
+                                       $this->R_data['int_flag']['R_integer']);
                                 $this->set_crnrstn(
                                        'openssl_ARRAY', 
                                        $this->get_resource(
                                               $data_key, 
                                               0, 
-                                              $data_type_family, 
-                                              CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION), 
+                                              $data_type_family,
+                                              $this->R_data['int_flag']['R_authorize'] & 
+                                              $this->R_data['int_flag']['R_channel_SESSION']), 
                                        'cipher', 
                                        'default', 
                                        'name');
@@ -8526,7 +8551,8 @@ class crnrstn_performance_regulator extends crnrstn
                                  *                     $data_key, 
                                  *                     0, 
                                  *                     $data_type_family, 
-                                 *                     CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION);
+                                 *                     $this->R_data['int_flag']['R_authorize'] & 
+                                 *                     $this->R_data['int_flag']['R_channel_SESSION']);
                                  *
                                  */
 
@@ -8545,7 +8571,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -8563,8 +8589,8 @@ class crnrstn_performance_regulator extends crnrstn
                             if(!$this->isset_resource(
                                        'data_value', 
                                        $data_key, 
-                                       $data_type_family, 
-                                       CRNRSTN_CHANNEL_SESSION) == true)
+                                       $data_type_family,
+                                       $this->R_data['int_flag']['R_channel_SESSION']) == true)
                             {
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -8761,7 +8787,7 @@ class crnrstn_performance_regulator extends crnrstn
                                          */
 
                                         $tmp_lower_hash = \strtolower($digest_name);
-                                        //self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'][$tmp_lower_hash] = $digest_index;
+                                        //$this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'][$tmp_lower_hash] = $digest_index;
 
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * Store this OpenSSL 
@@ -8782,8 +8808,8 @@ class crnrstn_performance_regulator extends crnrstn
                                             $tmp_digest = $digest_name;
 
                                             /*self::$openssl_cipher_int = $digest_index;
-                                             *self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default'][CRNRSTN_INTEGER] = $digest_index;
-                                             *self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default']['name']          = $tmp_digest = $digest_name;
+                                             *$this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default'][CRNRSTN_INTEGER] = $digest_index;
+                                             *$this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default']['name']          = $tmp_digest = $digest_name;
                                              *
                                              */
 
@@ -8795,8 +8821,8 @@ class crnrstn_performance_regulator extends crnrstn
                                                    'openssl_ARRAY', 
                                                    $digest_index, 
                                                    'digest_method', 
-                                                   'default', 
-                                                   CRNRSTN_INTEGER);
+                                                   'default',
+                                                   $this->R_data['int_flag']['R_integer']);
 
                                             $this->set_crnrstn(
                                                    'openssl_ARRAY', 
@@ -8836,14 +8862,16 @@ class crnrstn_performance_regulator extends crnrstn
                                             $tmp_output = $this->add_resource(
                                                                  $data_key, 
                                                                  $tmp_digest, 
-                                                                 $data_type_family, 
-                                                                 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                                 $data_type_family,
+                                                                 $this->R_data['int_flag']['R_authorize'] & 
+                                                                 $this->R_data['int_flag']['R_channel_SESSION'], 
                                                                  0);
                                             $this->add_resource(
                                                    $data_key . '_index', 
                                                    $digest_index, 
-                                                   $data_type_family, 
-                                                   CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                   $data_type_family,
+                                                   $this->R_data['int_flag']['R_authorize'] & 
+                                                   $this->R_data['int_flag']['R_channel_SESSION'], 
                                                    0);
 
                                             $tmp_ddo_write = true;
@@ -8855,8 +8883,8 @@ class crnrstn_performance_regulator extends crnrstn
                                     if(!$this->isset_resource(
                                                'data_value', 
                                                $data_key, 
-                                               $data_type_family, 
-                                               CRNRSTN_CHANNEL_SESSION) == true)
+                                               $data_type_family,
+                                               $this->R_data['int_flag']['R_channel_SESSION']) == true)
                                     {
 
                                         $tmp_force_data_err = true;
@@ -8969,7 +8997,7 @@ class crnrstn_performance_regulator extends crnrstn
                                          *    $tmp_digest . ']. $data_key[' . 
                                          *    $data_key . 
                                          *    ']. self::$openssl_ARRAY[' . 
-                                         *    print_r(self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'], true) . 
+                                         *    print_r($this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'], true) .
                                          *    '].');
                                          *
                                          */
@@ -8996,16 +9024,17 @@ class crnrstn_performance_regulator extends crnrstn
                                                              $tmp_digest, 
                                                              $data_key, 
                                                              $data_type_family, 
-                                                             $index, 
-                                                             CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                             $index,
+                                                             $this->R_data['int_flag']['R_authorize'] & 
+                                                             $this->R_data['int_flag']['R_channel_SESSION'], 
                                                              $ttl, 
                                                              $spool_resource, 
                                                              $env_key);
                                         /*$this->input_data_value(
-                                         *                 self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'][\strtolower(trim($tmp_digest))], 
+                                         *                 $this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'][\strtolower(trim($tmp_digest))],
                                          *                 $data_key . '_index', 
                                          *                 $data_type_family, 
-                                         *                 $index, CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                         *                 $index, $this->R_data['int_flag']['R_authorize'] & $this->R_data['int_flag']['R_channel_SESSION'], 
                                          *                 $ttl, 
                                          *                 $spool_resource, 
                                          *                 $env_key);
@@ -9020,8 +9049,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                       \strtolower(\trim($tmp_digest))), 
                                                $data_key . '_index', 
                                                $data_type_family, 
-                                               $index, 
-                                               CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                               $index,
+                                               $this->R_data['int_flag']['R_authorize'] & 
+                                               $this->R_data['int_flag']['R_channel_SESSION'], 
                                                $ttl, 
                                                $spool_resource, 
                                                $env_key);
@@ -9065,17 +9095,18 @@ class crnrstn_performance_regulator extends crnrstn
                                                          $tmp_digest, 
                                                          $data_key, 
                                                          $data_type_family, 
-                                                         $index, 
-                                                         CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                         $index,
+                                                         $this->R_data['int_flag']['R_authorize'] & 
+                                                         $this->R_data['int_flag']['R_channel_SESSION'], 
                                                          $ttl, 
                                                          $spool_resource, 
                                                          $env_key);
                                     /*$this->input_data_value(
-                                     *                 self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'][\strtolower(trim($tmp_digest))], 
+                                     *                 $this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['ISACTIVE'][\strtolower(trim($tmp_digest))],
                                      *                 $data_key . '_index', 
                                      *                 $data_type_family, 
                                      *                 $index, 
-                                     *                 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                     *                 $this->R_data['int_flag']['R_authorize'] & $this->R_data['int_flag']['R_channel_SESSION'], 
                                      *                 $ttl, 
                                      *                 $spool_resource, 
                                      *                 $env_key);
@@ -9090,8 +9121,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                   \strtolower(trim($tmp_digest))), 
                                            $data_key . '_index', 
                                            $data_type_family, 
-                                           $index, 
-                                           CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                           $index,
+                                           $this->R_data['int_flag']['R_authorize'] & 
+                                           $this->R_data['int_flag']['R_channel_SESSION'], 
                                            $ttl, 
                                            $spool_resource, 
                                            $env_key);
@@ -9133,11 +9165,12 @@ class crnrstn_performance_regulator extends crnrstn
                                  * server setting lookup and processing. 
                                  *
                                  *
-                                 * self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default'][CRNRSTN_INTEGER] = $this->get_resource(
+                                 * $this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default'][CRNRSTN_INTEGER] = $this->get_resource(
                                  *                                                                                                                                             $data_key . '_index', 
                                  *                                                                                                                                             0, 
                                  *                                                                                                                                             $data_type_family, 
-                                 *                                                                                                                                             CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION);
+                                 *                                                                                                                                             $this->R_data['int_flag']['R_authorize'] & 
+                                 *                                                                                                                                             $this->R_data['int_flag']['R_channel_SESSION']);
                                  *
                                  */
                                 $this->set_crnrstn(
@@ -9145,17 +9178,19 @@ class crnrstn_performance_regulator extends crnrstn
                                        $this->get_resource(
                                               $data_key . '_index', 
                                               0, 
-                                              $data_type_family, 
-                                              CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION), 
+                                              $data_type_family,
+                                              $this->R_data['int_flag']['R_authorize'] & 
+                                              $this->R_data['int_flag']['R_channel_SESSION']), 
                                        'digest_method', 
-                                       'default', 
-                                       CRNRSTN_INTEGER);
+                                       'default',
+                                       $this->R_data['int_flag']['R_integer']);
 
-                                /*$tmp_digest = self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default']['name'] = $this->get_resource(
+                                /*$tmp_digest = $this->R_data[$this->R_data['R_cluster_id']][$this->R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default']['name'] = $this->get_resource(
                                  *                                                                                                                                                 $data_key, 
                                  *                                                                                                                                                 0, 
                                  *                                                                                                                                                 $data_type_family, 
-                                 *                                                                                                                                                 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION);
+                                 *                                                                                                                                                 $this->R_data['int_flag']['R_authorize'] & 
+                                 *                                                                                                                                                 $this->R_data['int_flag']['R_channel_SESSION']);
                                  *
                                  */
                                 $tmp_digest = $this->set_crnrstn(
@@ -9163,8 +9198,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                      $this->get_resource(
                                                             $data_key, 
                                                             0, 
-                                                            $data_type_family, 
-                                                            CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION), 
+                                                            $data_type_family,
+                                                            $this->R_data['int_flag']['R_authorize'] & 
+                                                            $this->R_data['int_flag']['R_channel_SESSION']), 
                                                      'digest_method', 
                                                      'default', 
                                                      'name');
@@ -9184,7 +9220,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -9202,8 +9238,8 @@ class crnrstn_performance_regulator extends crnrstn
                             if(!$this->isset_resource(
                                        'data_value', 
                                        $data_key, 
-                                       $data_type_family, 
-                                       CRNRSTN_CHANNEL_SESSION) == true)
+                                       $data_type_family,
+                                       $this->R_data['int_flag']['R_channel_SESSION']) == true)
                             {
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -9281,8 +9317,8 @@ class crnrstn_performance_regulator extends crnrstn
                                             $this->set_crnrstn(
                                                    'R_hmac_hash_config', 
                                                    $hash_index, 
-                                                   'default', 
-                                                   CRNRSTN_INTEGER);
+                                                   'default',
+                                                   $this->R_data['int_flag']['R_integer']);
 
                                             //self::$hmac_hash_algorithm_ARRAY['DEFAULT']['NAME'] = $tmp_hmac = $hash_name;
                                             $this->set_crnrstn(
@@ -9342,14 +9378,16 @@ class crnrstn_performance_regulator extends crnrstn
                                             $tmp_output = $this->add_resource(
                                                                  $data_key, 
                                                                  $tmp_hmac, 
-                                                                 $data_type_family, 
-                                                                 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                                 $data_type_family,
+                                                                 $this->R_data['int_flag']['R_authorize'] & 
+                                                                 $this->R_data['int_flag']['R_channel_SESSION'], 
                                                                  0);
                                             $this->add_resource(
                                                    $data_key .'_index', 
                                                    $hash_index, 
-                                                   $data_type_family, 
-                                                   CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                   $data_type_family,
+                                                   $this->R_data['int_flag']['R_authorize'] & 
+                                                   $this->R_data['int_flag']['R_channel_SESSION'], 
                                                    0);
 
                                             $tmp_ddo_write = true;
@@ -9361,8 +9399,8 @@ class crnrstn_performance_regulator extends crnrstn
                                     if(!($this->isset_resource(
                                                 'data_value', 
                                                 $data_key, 
-                                                $data_type_family, 
-                                                CRNRSTN_CHANNEL_SESSION) == true))
+                                                $data_type_family,
+                                                $this->R_data['int_flag']['R_channel_SESSION']) == true))
                                     {
 
                                         $tmp_force_data_err = true;
@@ -9464,21 +9502,22 @@ class crnrstn_performance_regulator extends crnrstn
                                                              $tmp_hmac, 
                                                              $data_key, 
                                                              $data_type_family, 
-                                                             $index, 
-                                                             CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                             $index,
+                                                             $this->R_data['int_flag']['R_authorize'] & 
+                                                             $this->R_data['int_flag']['R_channel_SESSION'], 
                                                              $ttl, 
                                                              $spool_resource, 
                                                              $env_key);
-                                        /**
-                                         *$this->input_data_value(
-                                         *                 self::$hmac_hash_algorithm_ARRAY['options']['ISACTIVE'][strtolower(trim($tmp_hmac))], 
-                                         *                 $data_key . '_index', 
-                                         *                 $data_type_family, 
-                                         *                 $index, 
-                                         *                 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
-                                         *                 $ttl, 
-                                         *                 $spool_resource, 
-                                         *                 $env_key);
+                                        /* $this->input_data_value(
+                                         *        self::$hmac_hash_algorithm_ARRAY['options']['ISACTIVE'][strtolower(trim($tmp_hmac))], 
+                                         *        $data_key . '_index', 
+                                         *        $data_type_family, 
+                                         *        $index, 
+                                         *        $this->R_data['int_flag']['R_authorize'] & 
+                                         *        $this->R_data['int_flag']['R_channel_SESSION'], 
+                                         *        $ttl, 
+                                         *        $spool_resource, 
+                                         *        $env_key);
                                          *
                                          */
                                         $this->input_data_value(
@@ -9489,8 +9528,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                       strtolower(trim($tmp_hmac))), 
                                                $data_key . '_index', 
                                                $data_type_family, 
-                                               $index, 
-                                               CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                               $index,
+                                               $this->R_data['int_flag']['R_authorize'] & 
+                                               $this->R_data['int_flag']['R_channel_SESSION'], 
                                                $ttl, 
                                                $spool_resource, 
                                                $env_key);
@@ -9536,21 +9576,21 @@ class crnrstn_performance_regulator extends crnrstn
                                                          $tmp_hmac, 
                                                          $data_key, 
                                                          $data_type_family, 
-                                                         $index, 
-                                                         CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                                         $index,
+                                                         $this->R_data['int_flag']['R_authorize'] & 
+                                                         $this->R_data['int_flag']['R_channel_SESSION'], 
                                                          $ttl, 
                                                          $spool_resource, 
                                                          $env_key);
-                                    /**
-                                     *$this->input_data_value(
-                                     *                 self::$hmac_hash_algorithm_ARRAY['options']['ISACTIVE'][strtolower(trim($tmp_hmac))], 
-                                     *                 $data_key . '_index', 
-                                     *                 $data_type_family, 
-                                     *                 $index, 
-                                     *                 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
-                                     *                 $ttl, 
-                                     *                 $spool_resource, 
-                                     *                 $env_key);
+                                    /* $this->input_data_value(
+                                     *        self::$hmac_hash_algorithm_ARRAY['options']['ISACTIVE'][strtolower(trim($tmp_hmac))], 
+                                     *        $data_key . '_index', 
+                                     *        $data_type_family, 
+                                     *        $index, 
+                                     *        $this->R_data['int_flag']['R_authorize'] & $this->R_data['int_flag']['R_channel_SESSION'], 
+                                     *        $ttl, 
+                                     *        $spool_resource, 
+                                     *        $env_key);
                                      *
                                      */
                                     $this->input_data_value(
@@ -9561,8 +9601,9 @@ class crnrstn_performance_regulator extends crnrstn
                                                   \strtolower(\trim($tmp_hmac))), 
                                            $data_key . '_index', 
                                            $data_type_family, 
-                                           $index, 
-                                           CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION, 
+                                           $index,
+                                           $this->R_data['int_flag']['R_authorize'] & 
+                                           $this->R_data['int_flag']['R_channel_SESSION'], 
                                            $ttl, 
                                            $spool_resource, 
                                            $env_key);
@@ -9613,17 +9654,19 @@ class crnrstn_performance_regulator extends crnrstn
                                  * lookup and processing. 
                                  *
                                  *
-                                 *self::$hmac_hash_algorithm_ARRAY['DEFAULT'][CRNRSTN_INTEGER] = $this->get_resource(
-                                 *                                                                      $data_key . '_index', 
-                                 *                                                                      0, 
-                                 *                                                                      $data_type_family, 
-                                 *                                                                      CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION);
+                                 * self::$hmac_hash_algorithm_ARRAY['DEFAULT'][CRNRSTN_INTEGER] = $this->get_resource(
+                                 *                                                                       $data_key . '_index', 
+                                 *                                                                       0, 
+                                 *                                                                       $data_type_family, 
+                                 *                                                                       $this->R_data['int_flag']['R_authorize'] & 
+                                 *                                                                       $this->R_data['int_flag']['R_channel_SESSION']);
                                  *
-                                 *$tmp_hmac = self::$hmac_hash_algorithm_ARRAY['DEFAULT']['NAME'] = $this->get_resource(
-                                 *                                                                         $data_key, 
-                                 *                                                                         0, 
-                                 *                                                                         $data_type_family, 
-                                 *                                                                         CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION);
+                                 * $tmp_hmac = self::$hmac_hash_algorithm_ARRAY['DEFAULT']['NAME'] = $this->get_resource(
+                                 *                                                                          $data_key, 
+                                 *                                                                          0, 
+                                 *                                                                          $data_type_family, 
+                                 *                                                                          $this->R_data['int_flag']['R_authorize'] & 
+                                 *                                                                          $this->R_data['int_flag']['R_channel_SESSION']);
                                  *
                                  */
                                 $this->set_crnrstn(
@@ -9631,32 +9674,31 @@ class crnrstn_performance_regulator extends crnrstn
                                        $this->get_resource(
                                               $data_key . '_index', 
                                               0, 
-                                              $data_type_family, 
-                                              CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION), 
-                                       'default', 
-                                       CRNRSTN_INTEGER);
+                                              $data_type_family,
+                                              $this->R_data['int_flag']['R_authorize'] & 
+                                              $this->R_data['int_flag']['R_channel_SESSION']), 
+                                       'default',
+                                       $this->R_data['int_flag']['R_integer']);
                                 $this->set_crnrstn(
                                        'R_hmac_hash_config', 
                                        $this->get_resource(
                                               $data_key, 
                                               0, 
-                                              $data_type_family, 
-                                              CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SESSION), 
+                                              $data_type_family,
+                                              $this->R_data['int_flag']['R_authorize'] & 
+                                              $this->R_data['int_flag']['R_channel_SESSION']), 
                                        'default', 
                                        'name');
 
                             }
 
-                            if($tmp_force_data_err == true){
-
+                            if($tmp_force_data_err == true)
                                 $this->error_log(
                                        $tmp_err_str, 
                                        __LINE__, 
                                        __METHOD__, 
-                                       __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
-
-                            }
+                                       __FILE__,
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             /**
                             [Thu Oct 12 01:55:06.735017 2023] [:error] [pid 80241] 
@@ -10110,7 +10152,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      * 5 :: Friday, October 13, 2023 @ "01" 0234.56 hrs.
                                      *
                                      * "01010101...split the atom...Oh, 
-                                     * Oh, Oh, Oh. You know what I mean."
+                                     * Oh, Oh, Oh. You know what I mean. 
                                      *
                                      * Yeah, you know what I mean: 
                                      * "Oh, Oh, Oh"... 
@@ -10136,7 +10178,7 @@ class crnrstn_performance_regulator extends crnrstn
                                                __LINE__, 
                                                __METHOD__, 
                                                __FILE__, 
-                                               CRNRSTN_SETTINGS_CRNRSTN);
+                                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                         return NULL;
 
@@ -10182,7 +10224,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -10259,7 +10301,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -10460,7 +10502,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -10509,7 +10551,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -10518,7 +10560,7 @@ class crnrstn_performance_regulator extends crnrstn
 
                             $tmp_theme_style_ARRAY = $this->return_constant_profile_ARRAY($data);
 
-                            $tmp_data = $tmp_theme_style_int = $tmp_theme_style_ARRAY[CRNRSTN_INTEGER];
+                            $tmp_data = $tmp_theme_style_int = $tmp_theme_style_ARRAY[$this->R_data['int_flag']['R_integer']];
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * CLR-SSL UGC data 
@@ -10528,15 +10570,15 @@ class crnrstn_performance_regulator extends crnrstn
                             if($this->system_isset_output_profile_constants($tmp_theme_style_int) == true){
 
                                 $tmp_theme_style_ARRAY = $this->return_constant_profile_ARRAY($tmp_theme_style_int);
-                                $tmp_data = $tmp_theme_style_ARRAY[CRNRSTN_INTEGER];
+                                $tmp_data = $tmp_theme_style_ARRAY[$this->R_data['int_flag']['R_integer']];
 
                                 $tmp_force_data_err = true;
                                 $tmp_force_data_err_msg = 'Unable to find a CRNRSTN :: ' . 
                                                           'INTERACT UI Theme with the provided, (' .
                                                           $this->gettype($data) . ') ' . 
                                                           strval($data) . '. ' . 
-                                                          $tmp_theme_style_ARRAY[CRNRSTN_STRING] .
-                                                          '[' . $tmp_theme_style_ARRAY[CRNRSTN_INTEGER] . 
+                                                          $tmp_theme_style_ARRAY[$this->R_data['int_flag']['R_string']] .
+                                                          '[' . $tmp_theme_style_ARRAY[$this->R_data['int_flag']['R_integer']] .
                                                           '] has been manually set to be the ' . 
                                                           'system default CRNRSTN :: INTERACT UI Theme. ' .
                                                           $this->data_report(
@@ -10551,8 +10593,8 @@ class crnrstn_performance_regulator extends crnrstn
                                        $tmp_force_data_err_msg, 
                                        __LINE__, 
                                        __METHOD__, 
-                                       __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       __FILE__,
+                                    $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -11619,7 +11661,7 @@ class crnrstn_performance_regulator extends crnrstn
                                                __LINE__, 
                                                __METHOD__, 
                                                __FILE__, 
-                                               CRNRSTN_SETTINGS_CRNRSTN);
+                                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                     }
 
@@ -11779,7 +11821,7 @@ class crnrstn_performance_regulator extends crnrstn
                                            __LINE__, 
                                            __METHOD__, 
                                            __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 }
 
@@ -12029,7 +12071,7 @@ class crnrstn_performance_regulator extends crnrstn
                            __LINE__, 
                            __METHOD__, 
                            __FILE__, 
-                           CRNRSTN_SETTINGS_CRNRSTN);
+                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                 }
 
@@ -12273,7 +12315,7 @@ class crnrstn_performance_regulator extends crnrstn
             case 'config_add_environment_integer_mode':
 
                     switch($data_key){
-                        case 'R_debug_mode_override':
+                        case 'R_debug_mode':
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * public function config_add_environment(
                              *                 $env_key, 
@@ -12404,7 +12446,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load ' . 
                                            'the system settings configuration file, ' . 
                                            $data_key .
@@ -12432,7 +12474,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load the ' . 
                                            'system overrides configuration file, ' . 
                                            $data_key . ', (' . 
@@ -12459,7 +12501,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load the ' . 
                                            'CRNRSTN :: INTERACT UI theme ' . 
                                            'settings configuration file, ' .
@@ -12487,7 +12529,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load ' . 
                                            'the social media settings ' . 
                                            'configuration file, ' .
@@ -12516,7 +12558,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load ' . 
                                            'the CRNRSTN :: WILD CARD ' . 
                                            'RESOURCES (WCR) settings ' . 
@@ -12546,7 +12588,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load ' . 
                                            'the CRNRSTN :: SQL silo ' . 
                                            'settings configuration file, ' .
@@ -12575,7 +12617,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load the ' . 
                                            'database authentication ' . 
                                            'settings configuration file, ' .
@@ -12604,7 +12646,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load the ' . 
                                            'OpenSSL v' . 
                                            $this->version_openssl() .
@@ -12633,7 +12675,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load the ' . 
                                            'system resources settings ' . 
                                            'configuration file, ' .
@@ -12662,7 +12704,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load the ' . 
                                            'SEO ANALYTICS settings ' . 
                                            'configuration file, ' .
@@ -12690,7 +12732,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                             $tmp_err_str = 'CRNRSTN :: could not load the ' . 
                                            'SEO ENGAGEMENT settings configuration file, ' .
                                            $data_key . ', (' . 
@@ -12762,7 +12804,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         /*public function crnrstn_include_file(
                          *                $calling_method, $file_path, 
@@ -12797,7 +12839,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -12858,7 +12900,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -12891,7 +12933,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -12917,7 +12959,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -12943,7 +12985,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -12969,7 +13011,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -12997,7 +13039,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -13023,7 +13065,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -13049,7 +13091,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -13075,7 +13117,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $this->crnrstn_include_file(
                                __METHOD__, 
@@ -13095,7 +13137,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                         $this->crnrstn_include_file(
                                __METHOD__, 
                                $tmp_file_path, 
@@ -13211,7 +13253,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         break;
 
@@ -13357,7 +13399,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 $this->crnrstn_include_file(
                                        __METHOD__, 
@@ -13383,7 +13425,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                 $this->crnrstn_include_file(
                                        __METHOD__, 
@@ -13407,7 +13449,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             break;
 
@@ -13436,7 +13478,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                                 $tmp_err_str = 'CRNRSTN :: could not load ' . 
                                                'the IP address "grant exclusive ' . 
                                                'access" settings configuration file, ' . 
@@ -13465,7 +13507,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                                 $tmp_err_str = 'CRNRSTN :: could not load ' . 
                                                'the IP address "deny access" ' . 
                                                'settings configuration file, ' . 
@@ -13491,7 +13533,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             break;
 
@@ -13596,7 +13638,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         break;
 
@@ -13634,7 +13676,7 @@ class crnrstn_performance_regulator extends crnrstn
  *                                       __LINE__, 
  *                                       __METHOD__, 
  *                                       __FILE__, 
- *                                       CRNRSTN_SETTINGS_CRNRSTN);
+ *                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
  *
  *                                $this->crnrstn_include_file(__METHOD__, $tmp_file_path);
  *
@@ -13648,7 +13690,7 @@ class crnrstn_performance_regulator extends crnrstn
  *                                   __LINE__, 
  *                                   __METHOD__, 
  *                                   __FILE__, 
- *                                   CRNRSTN_SETTINGS_CRNRSTN);
+ *                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
  *
  *                        break;
  *                        case 'config_deny_access_file_path':
@@ -13671,7 +13713,7 @@ class crnrstn_performance_regulator extends crnrstn
  *                                       __LINE__, 
  *                                       __METHOD__, 
  *                                       __FILE__, 
- *                                       CRNRSTN_SETTINGS_CRNRSTN);
+ *                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
  *
  *                                $this->crnrstn_include_file(
  *                                       __METHOD__, 
@@ -13756,7 +13798,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                                     $this->crnrstn_include_file(
                                        __METHOD__, 
                                        $tmp_file_path, 
@@ -14036,7 +14078,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                     break;
 
@@ -14095,7 +14137,7 @@ class crnrstn_performance_regulator extends crnrstn
  *                                       __LINE__, 
  *                                       __METHOD__, 
  *                                       __FILE__, 
- *                                       CRNRSTN_SETTINGS_CRNRSTN);
+ *                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
  *                                $tmp_err_str = 'CRNRSTN :: could not load ' . 
  *                                               'the IP address "grant exclusive ' . 
  *                                               'access" settings configuration file, ' . 
@@ -14123,7 +14165,7 @@ class crnrstn_performance_regulator extends crnrstn
  *                                       __LINE__, 
  *                                       __METHOD__, 
  *                                       __FILE__, 
- *                                       CRNRSTN_SETTINGS_CRNRSTN);
+ *                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
  *                                $tmp_err_str = 'CRNRSTN :: could not load ' . 
  *                                               'the IP address "deny access" ' . 
  *                                               'settings configuration file, ' . 
@@ -14223,7 +14265,7 @@ class crnrstn_performance_regulator extends crnrstn
                            __LINE__, 
                            __METHOD__, 
                            __FILE__, 
-                           CRNRSTN_SETTINGS_CRNRSTN);
+                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                     $this->crnrstn_include_file(
                            __METHOD__, 
@@ -14287,7 +14329,7 @@ class crnrstn_performance_regulator extends crnrstn
                            __LINE__, 
                            __METHOD__, 
                            __FILE__, 
-                           CRNRSTN_SETTINGS_CRNRSTN);
+                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                     $tmp_err_str = 'CRNRSTN :: could not load ' . 
                                    'the CRNRSTN :: DATABASE QUERY ' . 
                                    'SILO class definition and ' . 
@@ -14397,7 +14439,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }else{
 
@@ -14411,7 +14453,7 @@ class crnrstn_performance_regulator extends crnrstn
                                        __LINE__, 
                                        __METHOD__, 
                                        __FILE__, 
-                                       CRNRSTN_SETTINGS_CRNRSTN);
+                                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             }
 
@@ -14567,7 +14609,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * The CRNRSTN :: Lightsaber 
@@ -14723,7 +14765,7 @@ class crnrstn_performance_regulator extends crnrstn
                                    __LINE__, 
                                    __METHOD__, 
                                    __FILE__, 
-                                   CRNRSTN_SETTINGS_CRNRSTN);
+                                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * The CRNRSTN :: Lightsaber 
@@ -14788,15 +14830,22 @@ class crnrstn_performance_regulator extends crnrstn
                 $data_type_family = $this->return_encryption_data_type_family($tmp_int_const);
 
                 switch($tmp_int_const){
-                    case CRNRSTN_ENCRYPT_TUNNEL & CRNRSTN_CHANNEL_GET:
-                    case CRNRSTN_ENCRYPT_TUNNEL & CRNRSTN_CHANNEL_POST:
-                    case CRNRSTN_ENCRYPT_TUNNEL & CRNRSTN_CHANNEL_COOKIE:
-                    case CRNRSTN_ENCRYPT_TUNNEL & CRNRSTN_CHANNEL_SESSION:
-                    case CRNRSTN_ENCRYPT_TUNNEL & CRNRSTN_CHANNEL_DATABASE:
-                    case CRNRSTN_ENCRYPT_TUNNEL:
-                    case CRNRSTN_ENCRYPT_TUNNEL & CRNRSTN_CHANNEL_SOAP:
-                    case CRNRSTN_ENCRYPT_TUNNEL & CRNRSTN_CHANNEL_FILE:
-                    case CRNRSTN_ENCRYPT_OERSL:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL'] & 
+                         $this->R_data['int_flag']['R_channel_GET']:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL'] & 
+                         $this->R_data['int_flag']['R_channel_POST']:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL'] & 
+                         $this->R_data['int_flag']['R_channel_COOKIE']:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL'] & 
+                         $this->R_data['int_flag']['R_channel_SESSION']:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL'] & 
+                         $this->R_data['int_flag']['R_channel_DATABASE']:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL']:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL'] & 
+                         $this->R_data['int_flag']['R_channel_SOAP']:
+                    case $this->R_data['int_flag']['R_encrypt_TUNNEL'] & 
+                         $this->R_data['int_flag']['R_channel_FILE']:
+                    case $this->R_data['int_flag']['R_encrypt_OERSL']:
 
                         switch($data_key){
                             case 'encrypt_cipher':
@@ -14874,7 +14923,7 @@ class crnrstn_performance_regulator extends crnrstn
                                            __LINE__, 
                                            __METHOD__, 
                                            __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * The CRNRSTN :: Lightsaber 
@@ -15200,7 +15249,7 @@ class crnrstn_performance_regulator extends crnrstn
                                                __LINE__, 
                                                __METHOD__, 
                                                __FILE__, 
-                                               CRNRSTN_SETTINGS_CRNRSTN);
+                                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                         $tmp_int = OPENSSL_RAW_DATA;
 
@@ -15303,7 +15352,7 @@ class crnrstn_performance_regulator extends crnrstn
                                            __LINE__, 
                                            __METHOD__, 
                                            __FILE__, 
-                                           CRNRSTN_SETTINGS_CRNRSTN);
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * The CRNRSTN :: Lightsaber 
@@ -15478,8 +15527,8 @@ class crnrstn_performance_regulator extends crnrstn
                                  *
                                  */
                                 $tmp_int = $this->get_system_logging_config(
-                                                  $data, 
-                                                  CRNRSTN_INTEGER);
+                                                  $data,
+                                                  $this->R_data['int_flag']['R_integer']);
 
                             }
 
@@ -15496,8 +15545,8 @@ class crnrstn_performance_regulator extends crnrstn
                              *
                              */
                             $tmp_int = $this->get_system_logging_config(
-                                              $data, 
-                                              CRNRSTN_INTEGER);
+                                              $data,
+                                              $this->R_data['int_flag']['R_integer']);
 
                         }
 
@@ -15528,8 +15577,9 @@ class crnrstn_performance_regulator extends crnrstn
                                '].', 
                                __LINE__, 
                                __METHOD__, 
-                               __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               __FILE__,
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
+
                         error_log(
                             __LINE__ . 
                             ' crnrstn MISSING SWITCH CASE[' . 
@@ -15623,7 +15673,7 @@ class crnrstn_performance_regulator extends crnrstn
                                __LINE__, 
                                __METHOD__, 
                                __FILE__, 
-                               CRNRSTN_SETTINGS_CRNRSTN);
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
                         error_log(
                             __LINE__ . 
                             ' crnrstn MISSING SWITCH CASE[' . 
@@ -15675,7 +15725,7 @@ class crnrstn_performance_regulator extends crnrstn
                        __LINE__, 
                        __METHOD__, 
                        __FILE__, 
-                       CRNRSTN_SETTINGS_CRNRSTN);
+                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
             break;
             case  'config_custom_error_handler_boolean':

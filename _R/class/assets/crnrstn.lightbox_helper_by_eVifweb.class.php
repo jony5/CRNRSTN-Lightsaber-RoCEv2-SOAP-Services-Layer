@@ -182,7 +182,7 @@
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -425,36 +425,36 @@ class lightbox_helper_by_eVifweb extends crnrstn
              *
              * ❤ ❤ C ❤ R ❤ N ❤ R ❤ S ❤ T ❤ N ❤ : : ❤ ❤ ❤ ❤
              *
-             *  I will ❤ you always, M, my dear.
+             * I will ❤ you always, M, my dear.
              *
-             *  It is on this day 14 years ago, at 11:11 AM
-             *  on Sunday, July 4, 2010, that I, 5, reached
-             *  out to someone who in short order, she
-             *  became so very special to me.
+             * It is on this day 14 years ago, at 11:11 AM
+             * on Sunday, July 4, 2010, that I, 5, reached
+             * out to someone who in short order, she
+             * became so very special to me.
              *
-             *  My upstairs 935M neighbor and text/plain-
-             *  mime-type-relationship lady friend and
-             *  associate, M, at 935M in Atlanta,
-             *  GA...she walked into my life on this very
-             *  day in 2010 as I sat out on my APT #305
-             *  porch by the pool.
+             * My upstairs 935M neighbor and text/plain-
+             * mime-type-relationship lady friend and
+             * associate, M, at 935M in Atlanta,
+             * GA...she walked into my life on this very
+             * day in 2010 as I sat out on my APT #305
+             * porch by the pool.
              *
-             *  Check out the MacBook Pro that is out
-             *  on my apartment porch right exactly where
-             *  she and I met on this day in 2010,
-             *  July the 4th!
+             * Check out the MacBook Pro that is out
+             * on my apartment porch right exactly where
+             * she and I met on this day in 2010,
+             * July the 4th!
              *
-             *  https://jony5.com/common/imgs/_M/M_WITH_5_AT_935M_ATLANTA_G2x_BACKUP_APR_23_2011_IMG021.jpg
+             * https://jony5.com/common/imgs/_M/M_WITH_5_AT_935M_ATLANTA_G2x_BACKUP_APR_23_2011_IMG021.jpg
              *
-             *  And, I thank my Lord Father God that by
-             *  the grace of the Lord Jesus Christ, this
-             *  woman and all that is hers will forever
-             *  and ever be able to be in my life
-             *  in heaven.
+             * And, I thank my Lord Father God that by
+             * the grace of the Lord Jesus Christ, this
+             * woman and all that is hers will forever
+             * and ever be able to be in my life
+             * in heaven.
              *
-             *  Amen.
+             * Amen.
              *
-             *  5 :: Thursday, July 4, 2024 @ 0120 hrs.
+             * 5 :: Thursday, July 4, 2024 @ 0120 hrs.
              *
              */
             $this->load_system_resource_registry(
@@ -533,7 +533,19 @@ class lightbox_helper_by_eVifweb extends crnrstn
             $tmp_queue_mem_pointer = $this->queue_registered_resource(
                                             '_lightbox_helper_load_page_data' . 
                                             '|_lightbox_helper_load_gallery_data');
+            /*
+            CLR-SSL Resource Registry Prototyping (2024-2026):
 
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Thursday, August 20, 2026 @ xxxx hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_bitmask');
+            $this->anoint(
+                   'crnrstn_bitmask',
+                   $R_bitmask);
+
+            */
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * As a demonstration and for testing,
              * we will flush the configuration resource
@@ -5214,7 +5226,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
                     return self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK']['HTTP'];
                 case 'framework_https':
                     return self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK']['HTTPS'];
-                case 'framework_directory':
+                case 'R_framework_directory':
                     return self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK']['DIRECTORY'];
                 case 'running_http':
                     return self::$application_paths_ARRAY[self::$config_serial]['RUNNING']['HTTP'];
@@ -6284,7 +6296,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
         //
         // 5
         $this->initialize_application_path('framework_https');
-        $this->initialize_application_path('framework_directory');
+        $this->initialize_application_path('R_framework_directory');
 
         //
         // Initialize the CRNRSTN ::
@@ -6770,7 +6782,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
         // Initialize the framework
         // directory for the Lightbox Helper
         // by eVifweb®
-        $this->config_load_system_data('framework_directory', 'framework_directory');
+        $this->config_load_system_data('R_framework_directory', 'R_framework_directory');
 
         //
         // Initialize the data type master
@@ -7007,7 +7019,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
                     self::$datatype_master_ARRAY = _lightbox_helper_by_eVifweb_settings($name, $this);
 
                 break;
-                case 'framework_directory':
+                case 'R_framework_directory':
 
                     //
                     // Is this is a 
@@ -7017,13 +7029,13 @@ class lightbox_helper_by_eVifweb extends crnrstn
                     if(isset($data_request_bypass)){
 
                         switch($data_request_bypass){
-                            case 'framework_directory':
+                            case 'R_framework_directory':
 
                                 //
                                 // Configuration resource
                                 // basic path initialization.
                                 $tmp_slsh                       = DIRECTORY_SEPARATOR;
-                                $tmp_path                       = CRNRSTN_ROOT . $tmp_slsh . $this->get_data('framework_directory') . $tmp_slsh;
+                                $tmp_path                       = CRNRSTN_ROOT . $tmp_slsh . $this->get_data('R_framework_directory') . $tmp_slsh;
                                 $tmp_dir_root_config            = $tmp_path . '_config' . $tmp_slsh . 'config.lightbox_helper' . $tmp_slsh;
 
                                 //
@@ -24691,7 +24703,7 @@ Born on Nov. 10th, 2005, my dog...named \'J5\' (proper)...is part Korean Jindo, 
                     return self::$scriptures_get_param_name;
 
                 break;
-                case 'framework_directory':
+                case 'R_framework_directory':
 
                     return self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK_DIRECTORY'];
 
@@ -25081,7 +25093,7 @@ Born on Nov. 10th, 2005, my dog...named \'J5\' (proper)...is part Korean Jindo, 
                 return self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK']['HTTPS'];
 
             break;
-            case 'framework_directory':
+            case 'R_framework_directory':
                 // 5 :: Wednesday, August 7, 2024 @ 0515 hrs.
 
                 return self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK']['DIRECTORY'];

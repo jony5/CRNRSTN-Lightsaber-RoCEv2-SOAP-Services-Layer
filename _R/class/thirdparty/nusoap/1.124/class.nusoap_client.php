@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,7 +40,7 @@ http://www.nusphere.com
 */
 
 /*
- *	Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
  *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
  *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
@@ -50,6 +52,25 @@ http://www.nusphere.com
  *	RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
  *	RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
  */
+
+/* load classes
+
+// necessary classes
+require_once('class.soapclient.php');
+require_once('class.soap_val.php');
+require_once('class.soap_parser.php');
+require_once('class.soap_fault.php');
+
+// transport classes
+require_once('class.soap_transport_http.php');
+
+// optional add-on classes
+require_once('class.xmlschema.php');
+require_once('class.wsdl.php');
+
+// server class
+require_once('class.soap_server.php');*/
+
 
 /**
  *
@@ -175,6 +196,8 @@ class nusoap_client extends nusoap_base
                 $this->endpoint = $this->wsdl->wsdl;
                 $this->wsdlFile = $this->endpoint;
                 $this->debug('existing wsdl instance created from ' . $this->endpoint);
+                // propagate charencoding to wsdl
+                $this->wsdl->setCharencoding($this->charencoding);
                 $this->checkWSDL();
             } else {
                 $this->wsdlFile = $this->endpoint;
@@ -332,19 +355,19 @@ class nusoap_client extends nusoap_base
         }
 
         // wrap document/literal wrapped calls with operation element
-		if ($usewrapped) {
-			// (This code block was based on http://www.ibm.com/developerworks/webservices/library/ws-whichwsdl/
-			// and tailored to the needs of one specific SOAP server, where no nsPrefix was seen...
-			$this->debug("wrapping document request with literal method element");
+        if ($usewrapped) {
+            // (This code block was based on http://www.ibm.com/developerworks/webservices/library/ws-whichwsdl/
+            // and tailored to the needs of one specific SOAP server, where no nsPrefix was seen...
+            $this->debug("wrapping document request with literal method element");
 
-			if ($namespace) {
-				$payload = "<$operation xmlns=\"$namespace\">" .
-					$payload .
+            if ($namespace) {
+                $payload = "<$operation xmlns=\"$namespace\">" .
+                    $payload .
                     "</$operation>";
-			} else {
-				$payload = "<$operation>" . $payload . "</$operation>";
-			}
-		}
+            } else {
+                $payload = "<$operation>" . $payload . "</$operation>";
+            }
+        }
 
         // wrap RPC calls with method element
         if ($style == 'rpc') {
@@ -467,8 +490,27 @@ class nusoap_client extends nusoap_base
     function loadWSDL()
     {
         $this->debug('instantiating wsdl class with doc: ' . $this->wsdlFile);
-        $this->wsdl = new wsdl('', $this->proxyhost, $this->proxyport, $this->proxyusername, $this->proxypassword, $this->timeout, $this->response_timeout, $this->curl_options, $this->use_curl);
+        //$this->wsdl = new wsdl('', $this->proxyhost, $this->proxyport, $this->proxyusername, $this->proxypassword, $this->timeout, $this->response_timeout, $this->curl_options, $this->use_curl);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1903 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'wsdl',
+               '',
+               $this->proxyhost,
+               $this->proxyport,
+               $this->proxyusername,
+               $this->proxypassword,
+               $this->timeout,
+               $this->response_timeout,
+               $this->curl_options,
+               $this->use_curl);
+        $this->anoint(
+               'wsdl',
+               $this->wsdl);
         $this->wsdl->setCredentials($this->username, $this->password, $this->authtype, $this->certRequest);
+        // propagate charencoding to wsdl
+        $this->wsdl->setCharencoding($this->charencoding);
         $this->wsdl->fetchWSDL($this->wsdlFile);
         $this->checkWSDL();
     }
@@ -520,7 +562,18 @@ class nusoap_client extends nusoap_base
                 if ($this->persistentConnection && is_object($this->persistentConnection)) {
                     $http =& $this->persistentConnection;
                 } else {
-                    $http = new soap_transport_http($this->endpoint, $this->curl_options, $this->use_curl);
+                    //$http = new soap_transport_http($this->endpoint, $this->curl_options, $this->use_curl);
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Thursday, August 20, 2026 @ 1903 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'soap_transport_http',
+                           $this->endpoint,
+                           $this->curl_options,
+                           $this->use_curl);
+                    $this->anoint(
+                           'soap_transport_http',
+                           $http);
                     if ($this->persistentConnection) {
                         $http->usePersistentConnection();
                     }
@@ -612,7 +665,20 @@ class nusoap_client extends nusoap_base
             $this->xml_encoding = 'ISO-8859-1';
         }
         $this->debug('Use encoding: ' . $this->xml_encoding . ' when creating nusoap_parser');
-        $parser = new nusoap_parser($data, $this->xml_encoding, $this->operations, $this->decode_utf8);
+        //$parser = new nusoap_parser($data, $this->xml_encoding, $this->operations, $this->decode_utf8);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1916 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_parser',
+               $data,
+               $this->xml_encoding,
+               $this->operations,
+               $this->decode_utf8);
+        $this->anoint(
+               'nusoap_parser',
+               $parser);
+        $this->anoint_eval('soap_parser');
         // add parser debug data to our debug
         $this->appendDebug($parser->getDebug());
         // if parse errors
@@ -868,7 +934,7 @@ class nusoap_client extends nusoap_base
             $evalStr = 'A proxy can only be created for a WSDL client';
             $this->setError($evalStr);
 
-          return "echo \"$evalStr\";";
+            return "echo \"$evalStr\";";
         }
         if (is_null($this->wsdl)) {
             $this->loadWSDL();
@@ -907,7 +973,7 @@ class nusoap_client extends nusoap_base
             }
         }
 
-      return 'class nusoap_proxy_' . $r . ' extends nusoap_client {
+        return 'class nusoap_proxy_' . $r . ' extends nusoap_client {
 ' . $evalStr . '
 }';
     }

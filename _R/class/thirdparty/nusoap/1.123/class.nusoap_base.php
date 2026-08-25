@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.123 2010/04/26 20:15:08 snichol Exp $
 
@@ -82,7 +84,15 @@ $GLOBALS['_transient']['static']['nusoap_base']['globalDebugLevel'] = 9;
 * @version  $Id: class.nusoap_base.php,v 1.56 2010/04/26 20:15:08 snichol Exp $
 * @access   public
 */
-class nusoap_base {
+class nusoap_base extends crnrstn
+{
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: We modified the nusoap_base
+     *       class object by adding an
+     *       extension of the crnrstn object.
+     *       5 :: Thursday, August 20, 2026 @ 0859 hrs.
+     *
+     */
 	/**
 	 * Identification for HTTP headers.
 	 *
@@ -272,16 +282,44 @@ class nusoap_base {
 	}
 
 	/**
-	* adds debug data to the instance debug string with formatting
-	*
-	* @param    string $string debug data
-	* @access   private
-	*/
-	function debug($string){
-		if ($this->debugLevel > 0) {
-			$this->appendDebug($this->getmicrotime().' '.get_class($this).": $string\n");
-		}
-	}
+	 * adds debug data to the instance debug string with formatting
+	 *
+	 * @param    string $string debug data
+	 * @access   private
+	 */
+	function debug($string)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Thursday, August 20, 2026 @ 2101 hrs.
+         *
+         * if ($this->debugLevel > 0) {
+         *    $this->appendDebug($this->getmicrotime().' '.get_class($this).": $string\n");
+         * }
+         *
+         */
+
+        $clr_ssl_msg = \get_class($this) .
+                       ": $string\n";
+        // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token = array(
+                 'token'                   => $msg_token,
+                 'token_generation_date'   => $token_generation_date,
+                 'request_type'            => __METHOD__,
+                 'code'                    => 200,
+                 'clr_ssl_msg'             => $clr_ssl_msg);
+        $this->error_log(
+               $clr_ssl_msg,
+               \LOG_ALERT,
+               \E_ERROR,
+               __LINE__,
+               __METHOD__,
+               __FILE__,
+               $token);
+
+    }
 
 	/**
 	* adds debug data to the instance debug string without formatting

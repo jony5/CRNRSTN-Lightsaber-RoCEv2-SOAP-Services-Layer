@@ -293,7 +293,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @param int $R_data contains the CLR-SSL Asset Mode constant such as (int) self::$R_data['int_flag']['CRNRSTN_MODE_PNG'] and directs browser response return.
  * @access public
  * 

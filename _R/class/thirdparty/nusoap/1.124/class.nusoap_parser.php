@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,18 +40,37 @@ http://www.nusphere.com
 */
 
 /*
- *  Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
- *  SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
- *  WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
- *  SOAP Messages With Attachments (http://www.w3.org/TR/SOAP-attachments)
- *  XML 1.0 (http://www.w3.org/TR/2006/REC-xml-20060816/)
- *  Namespaces in XML 1.0 (http://www.w3.org/TR/2006/REC-xml-names-20060816/)
- *  XML Schema 1.0 (http://www.w3.org/TR/xmlschema-0/)
- *  RFC 2045 Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
- *  RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
- *  RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
+ *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
+ *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
+ *	SOAP Messages With Attachments (http://www.w3.org/TR/SOAP-attachments)
+ *	XML 1.0 (http://www.w3.org/TR/2006/REC-xml-20060816/)
+ *	Namespaces in XML 1.0 (http://www.w3.org/TR/2006/REC-xml-names-20060816/)
+ *	XML Schema 1.0 (http://www.w3.org/TR/xmlschema-0/)
+ *	RFC 2045 Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
+ *	RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
+ *	RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
  */
+
+/* load classes
+
+// necessary classes
+require_once('class.soapclient.php');
+require_once('class.soap_val.php');
+require_once('class.soap_parser.php');
+require_once('class.soap_fault.php');
+
+// transport classes
+require_once('class.soap_transport_http.php');
+
+// optional add-on classes
+require_once('class.xmlschema.php');
+require_once('class.wsdl.php');
+
+// server class
+require_once('class.soap_server.php');*/
+
 
 /**
  *
@@ -151,11 +172,9 @@ class nusoap_parser extends nusoap_base
             //xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
             xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, 0);
             xml_parser_set_option($this->parser, XML_OPTION_TARGET_ENCODING, $this->xml_encoding);
-            // Set the object for the parser.
-            xml_set_object($this->parser, $this);
             // Set the element handlers for the parser.
-            xml_set_element_handler($this->parser, 'start_element', 'end_element');
-            xml_set_character_data_handler($this->parser, 'character_data');
+            xml_set_element_handler($this->parser, [$this, 'start_element'], [$this, 'end_element']);
+            xml_set_character_data_handler($this->parser, [$this, 'character_data']);
             $parseErrors = array();
             $chunkSize = 4096;
             for($pointer = 0; $pointer < strlen($xml) && empty($parseErrors); $pointer += $chunkSize) {
@@ -188,7 +207,7 @@ class nusoap_parser extends nusoap_base
                 $substrXml = $xml;
                 foreach($this->attachments as $key => $attachment) {
                     $startPos = max(
-                        stripos($substrXml, $attachment['boundaryStr']),
+                        isset($attachment['boundaryStr']) ? stripos($substrXml, $attachment['boundaryStr']) : false,
                         (array_key_exists('Content-Type', $attachment) ? stripos($substrXml, $attachment['Content-Type']) : 0),
                         (array_key_exists('Content-Id', $attachment) ? stripos($substrXml, $attachment['Content-Id']) : 0),
                         (array_key_exists('Content-Transfer-Encoding', $attachment) ? stripos($substrXml, $attachment['Content-Transfer-Encoding']) : 0)
@@ -213,9 +232,8 @@ class nusoap_parser extends nusoap_base
                     $this->parser = xml_parser_create($this->xml_encoding);
                     xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, 0);
                     xml_parser_set_option($this->parser, XML_OPTION_TARGET_ENCODING, $this->xml_encoding);
-                    xml_set_object($this->parser, $this);
-                    xml_set_element_handler($this->parser, 'start_element', 'end_element');
-                    xml_set_character_data_handler($this->parser, 'character_data');
+                    xml_set_element_handler($this->parser, [$this, 'start_element'], [$this, 'end_element']);
+                    xml_set_character_data_handler($this->parser, [$this, 'character_data']);
 
                     if(!empty($attachment['content'])) {
                         $content = $attachment['content'];
@@ -238,8 +256,8 @@ class nusoap_parser extends nusoap_base
             if(!empty($parseErrors)){
                 // Display an error message.
                 $err = sprintf('XML error parsing SOAP payload on line %d: %s',
-                        $parseErrors['lineNumber'],
-                        $parseErrors['errorString']);
+                    $parseErrors['lineNumber'],
+                    $parseErrors['errorString']);
                 $this->debug($err);
                 $this->setError($err);
             } else {
@@ -267,7 +285,7 @@ class nusoap_parser extends nusoap_base
                     }
                 }
             }
-            xml_parser_free($this->parser);
+            (PHP_VERSION_ID < 80000) && xml_parser_free($this->parser);
             unset($this->parser);
         } else {
             $this->debug('xml was empty, didn\'t parse!');
@@ -373,13 +391,13 @@ class nusoap_parser extends nusoap_base
             } elseif ($key_localpart == 'arrayType') {
                 $this->message[$pos]['type'] = 'array';
                 /* do arrayType ereg here
-                [1]    arrayTypeValue    ::=    atype asize
-                [2]    atype    ::=    QName rank*
-                [3]    rank    ::=    '[' (',')* ']'
-                [4]    asize    ::=    '[' length~ ']'
-                [5]    length    ::=    nextDimension* Digit+
-                [6]    nextDimension    ::=    Digit+ ','
-                */
+				[1]    arrayTypeValue    ::=    atype asize
+				[2]    atype    ::=    QName rank*
+				[3]    rank    ::=    '[' (',')* ']'
+				[4]    asize    ::=    '[' length~ ']'
+				[5]    length    ::=    nextDimension* Digit+
+				[6]    nextDimension    ::=    Digit+ ','
+				*/
                 $expr = '/([A-Za-z0-9_]+):([A-Za-z]+[A-Za-z0-9_]+)\[([0-9]+),?([0-9]*)\]/';
                 if (preg_match($expr, $value, $regs)) {
                     $this->message[$pos]['typePrefix'] = $regs[1];
@@ -504,15 +522,15 @@ class nusoap_parser extends nusoap_base
                 }
 
                 /* add value to parent's result, if parent is struct/array
-                $parent = $this->message[$pos]['parent'];
-                if($this->message[$parent]['type'] != 'map'){
-                    if(strtolower($this->message[$parent]['type']) == 'array'){
-                        $this->message[$parent]['result'][] = $this->message[$pos]['result'];
-                    } else {
-                        $this->message[$parent]['result'][$this->message[$pos]['name']] = $this->message[$pos]['result'];
-                    }
-                }
-                */
+				$parent = $this->message[$pos]['parent'];
+				if($this->message[$parent]['type'] != 'map'){
+					if(strtolower($this->message[$parent]['type']) == 'array'){
+						$this->message[$parent]['result'][] = $this->message[$pos]['result'];
+					} else {
+						$this->message[$parent]['result'][$this->message[$pos]['name']] = $this->message[$pos]['result'];
+					}
+				}
+				*/
             }
         }
 
@@ -632,13 +650,13 @@ class nusoap_parser extends nusoap_base
             return (int) $value;
         }
         if ($type == 'float' || $type == 'double' || $type == 'decimal') {
-            return (double) $value;
+            return (float) $value;
         }
         if ($type == 'boolean') {
             if (strtolower($value) == 'false' || strtolower($value) == 'f') {
                 return false;
             }
-            return (boolean) $value;
+            return (bool) $value;
         }
         if ($type == 'base64' || $type == 'base64Binary') {
             $this->debug('Decode base64 value');

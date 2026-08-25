@@ -327,7 +327,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -2974,8 +2974,10 @@ class crnrstn_living_streams_of_communication_manager
                      *
                      */
 
+                    $spice_salt_mem_ptr = NULL;
                     // 5 :: Wednesday, June 18, 2026 @ 0003 hrs.
                     self::$R_registry_usr->compound_ointment(
+                                           $spice_salt_mem_ptr,
                                            'crnrstn_living_streams_of_communication', 
                                            $channel, 
                                            $devicetype, 
@@ -2983,7 +2985,6 @@ class crnrstn_living_streams_of_communication_manager
                                            'COMM_STREAM', 
                                            $oDB_RESP, 
                                            $ii);
-
                     // 5 :: Wednesday, June 18, 2026 @ 0004 hrs.
                     self::$R_registry_usr->anoint(
                                            'crnrstn_living_streams_of_communication',
@@ -3115,8 +3116,10 @@ class crnrstn_living_streams_of_communication_manager
                      *
                      */
 
+                    $spice_salt_mem_ptr = NULL;
                     // 5 :: Thursday, June 18, 2026 @ 0005 hrs.
                     self::$R_registry_usr->compound_ointment(
+                                           $spice_salt_mem_ptr,
                                            'crnrstn_living_streams_of_communication', 
                                            $channel, 
                                            $devicetype, 
@@ -3324,9 +3327,11 @@ class crnrstn_living_streams_of_communication_manager
                      *                         $ii);
                      */
 
+                    $spice_salt_mem_ptr = NULL;
                     // 5 :: Thursday, June 18, 2026 @ 0008 hrs.
                     self::$R_registry_usr->compound_ointment(
-                                           'crnrstn_living_streams_of_communication', 
+                                           $spice_salt_mem_ptr,
+                                           'crnrstn_living_streams_of_communication',
                                            $channel, 
                                            $devicetype, 
                                            $serial, 

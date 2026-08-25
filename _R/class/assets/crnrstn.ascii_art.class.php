@@ -284,7 +284,7 @@ namespace CRNRSTN;
  *                     represented internally as an
  *                     integer and private static defined 
  *                     within CRNRSTN :: Lightsaber as
- *                     (int) self::$R_data[\'int_flag\'][\'R_bool_is_html\'],
+ *                     (int) $this->R_data[\'int_flag\'][\'R_bool_is_html\'],
  *                     the System ASCII Art Source
  *                     Control Manager will be will be a
  *                     formidable CRNRSTN :: UX agent
@@ -336,7 +336,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -356,6 +356,7 @@ class crnrstn_ascii_art extends crnrstn
      *       5 :: Wednesday, March 11, 2026 @ 0434 hrs.
      *
      */
+    private $R_data = array();
 
     private static $CRNRSTN_ascii_name = 'CRNRSTN%20%3A%3A';
     private static $ascii_family_key;
@@ -652,7 +653,7 @@ strtoupper($this->get_channel_config($channel_constant, 'NAME')) . '</a>
 #   Channel Name: ' . 
 strtoupper($this->get_channel_config($channel_char, 'NAME')) . '
 #   CHANNEL Integer:  '  . 
-$this->get_channel_config($channel_char, 'SOURCEID', self::$R_data['int_flag']['R_string']) . '  ' . 
+$this->get_channel_config($channel_char, 'SOURCEID', $this->R_data['int_flag']['R_string']) . '  ' . 
 strval($tmp_channel_int)  . '
 #   Description: ' . 
 $this->get_channel_config($channel_char, 'DESCRIPTION') . '
@@ -919,13 +920,13 @@ $this->channel_bytes_stored($tmp_channel) . '
 
         switch($this->tidy_boolean(
                       self::$is_HTML, 
-                      (int) self::$R_data['int_flag']['R_string'], 
-                      (int) self::$R_data['int_flag']['R_bool_is_html']))
+                      (int) $this->R_data['int_flag']['R_string'], 
+                      (int) $this->R_data['int_flag']['R_bool_is_html']))
         {
             case 'TEXT':
 
                 switch(self::$art_id){
-                    case self::$R_data['int_flag']['R_channel_GET']:
+                    case $this->R_data['int_flag']['R_channel_GET']:
 
                         /*
                         #
@@ -996,37 +997,37 @@ $this->channel_bytes_stored($tmp_channel) . '
                         // $tmp_art_ARRAY[] = '';
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_POST']:
+                    case $this->R_data['int_flag']['R_channel_POST']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_COOKIE']:
+                    case $this->R_data['int_flag']['R_channel_COOKIE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SESSION']:
+                    case $this->R_data['int_flag']['R_channel_SESSION']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_DATABASE']:
+                    case $this->R_data['int_flag']['R_channel_DATABASE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_SSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_PSSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_PSSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FORM']:
+                    case $this->R_data['int_flag']['R_channel_FORM']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RUNTIME']:
+                    case $this->R_data['int_flag']['R_channel_RUNTIME']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SOAP']:
+                    case $this->R_data['int_flag']['R_channel_SOAP']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RDMA']:
+                    case $this->R_data['int_flag']['R_channel_RDMA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FILE']:
+                    case $this->R_data['int_flag']['R_channel_FILE']:
 
                     break;
                     default:
@@ -1052,7 +1053,7 @@ $this->channel_bytes_stored($tmp_channel) . '
                 //case 'HTML':
 
                 switch(self::$art_id){
-                    case self::$R_data['int_flag']['R_channel_GET']:
+                    case $this->R_data['int_flag']['R_channel_GET']:
 
                         $tmp_art_ARRAY[] = '';
 
@@ -1065,37 +1066,37 @@ $this->channel_bytes_stored($tmp_channel) . '
                         // $tmp_art_ARRAY[] = '';
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_POST']:
+                    case $this->R_data['int_flag']['R_channel_POST']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_COOKIE']:
+                    case $this->R_data['int_flag']['R_channel_COOKIE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SESSION']:
+                    case $this->R_data['int_flag']['R_channel_SESSION']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_DATABASE']:
+                    case $this->R_data['int_flag']['R_channel_DATABASE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_SSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_PSSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_PSSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FORM']:
+                    case $this->R_data['int_flag']['R_channel_FORM']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RUNTIME']:
+                    case $this->R_data['int_flag']['R_channel_RUNTIME']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SOAP']:
+                    case $this->R_data['int_flag']['R_channel_SOAP']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RDMA']:
+                    case $this->R_data['int_flag']['R_channel_RDMA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FILE']:
+                    case $this->R_data['int_flag']['R_channel_FILE']:
 
                     break;
                     default:
@@ -1121,7 +1122,7 @@ $this->channel_bytes_stored($tmp_channel) . '
 
         //
         // Concatenate output 
-        // (self::$R_data['int_flag']['R_string']) String. 
+        // ($this->R_data['int_flag']['R_string']) String. 
         //
         // 5 :: Wednesday, November 22, 2023 @ 0451 hrs.
         foreach($tmp_art_ARRAY as 
@@ -1133,7 +1134,7 @@ $this->channel_bytes_stored($tmp_channel) . '
         }
 
         //
-        // Return self::$R_data['int_flag']['R_string'] 
+        // Return $this->R_data['int_flag']['R_string'] 
         // data type output. 
         return $tmp_str;
 
@@ -1148,11 +1149,11 @@ $this->channel_bytes_stored($tmp_channel) . '
                 self::$art_id = self::$multi_channel_int;
                 $content_type = $this->tidy_boolean(
                                        self::$is_HTML, 
-                                       (int) self::$R_data['int_flag']['R_string'], 
-                                       (int) self::$R_data['int_flag']['R_bool_is_html']);
+                                       (int) $this->R_data['int_flag']['R_string'], 
+                                       (int) $this->R_data['int_flag']['R_bool_is_html']);
 
                 switch(self::$multi_channel_int){
-                    case self::$R_data['int_flag']['R_channel_GET']:
+                    case $this->R_data['int_flag']['R_channel_GET']:
 
                         //
                         // $_GET[] Channel 
@@ -1161,37 +1162,37 @@ $this->channel_bytes_stored($tmp_channel) . '
                         // 5 :: Wednesday, November 22, 2023 @ 0135 hrs.
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_POST']:
+                    case $this->R_data['int_flag']['R_channel_POST']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_COOKIE']:
+                    case $this->R_data['int_flag']['R_channel_COOKIE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SESSION']:
+                    case $this->R_data['int_flag']['R_channel_SESSION']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_DATABASE']:
+                    case $this->R_data['int_flag']['R_channel_DATABASE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_SSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_PSSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_PSSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FORM']:
+                    case $this->R_data['int_flag']['R_channel_FORM']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RUNTIME']:
+                    case $this->R_data['int_flag']['R_channel_RUNTIME']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SOAP']:
+                    case $this->R_data['int_flag']['R_channel_SOAP']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RDMA']:
+                    case $this->R_data['int_flag']['R_channel_RDMA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FILE']:
+                    case $this->R_data['int_flag']['R_channel_FILE']:
 
                     break;
 
@@ -1254,7 +1255,7 @@ $this->channel_bytes_stored($tmp_channel) . '
         self::$multi_channel_int = $this->get_channel_config(
                                           $channel_char, 
                                           'SOURCEID', 
-                                          self::$R_data['int_flag']['R_integer']);
+                                          $this->R_data['int_flag']['R_integer']);
         self::$is_HTML           = $is_HTML;
         self::$ascii_selection   = $selection_override;
         self::$ascii_count_ARRAY[self::$config_serial][self::$ascii_family_key][self::$multi_channel_int] = 0;
@@ -1277,42 +1278,42 @@ $this->channel_bytes_stored($tmp_channel) . '
                 */
 
                 switch(self::$multi_channel_int){
-                    case self::$R_data['int_flag']['R_channel_GET']:
+                    case $this->R_data['int_flag']['R_channel_GET']:
 
                         self::$ascii_count_ARRAY[self::$config_serial][self::$ascii_family_key][self::$multi_channel_int] = $this->return_ascii_count();
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_POST']:
+                    case $this->R_data['int_flag']['R_channel_POST']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_COOKIE']:
+                    case $this->R_data['int_flag']['R_channel_COOKIE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SESSION']:
+                    case $this->R_data['int_flag']['R_channel_SESSION']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_DATABASE']:
+                    case $this->R_data['int_flag']['R_channel_DATABASE']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_SSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_PSSDTLA']:
+                    case $this->R_data['int_flag']['R_channel_PSSDTLA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FORM']:
+                    case $this->R_data['int_flag']['R_channel_FORM']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RUNTIME']:
+                    case $this->R_data['int_flag']['R_channel_RUNTIME']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_SOAP']:
+                    case $this->R_data['int_flag']['R_channel_SOAP']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_RDMA']:
+                    case $this->R_data['int_flag']['R_channel_RDMA']:
 
                     break;
-                    case self::$R_data['int_flag']['R_channel_FILE']:
+                    case $this->R_data['int_flag']['R_channel_FILE']:
 
                     break;
 
@@ -1359,14 +1360,14 @@ $this->channel_bytes_stored($tmp_channel) . '
 
         }
 
-        $tmp_channel_ARRAY['SOURCEID'][self::$R_data['int_flag']['R_integer']] =
-        $tmp_channel_ARRAY['SOURCEID'][self::$R_data['int_flag']['R_string']] = 'R_channel_GET';
-        $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][self::$R_data['int_flag']['R_integer']] =
-        $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][self::$R_data['int_flag']['R_string']] = 'R_encrypt_GET';
+        $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] =
+        $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'R_channel_GET';
+        $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] =
+        $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = 'R_encrypt_GET';
         $tmp_channel_ARRAY['NAME'] = 'get';
         $tmp_channel_ARRAY['DESCRIPTION'] = 'G :: HTTP $_GET REQUEST';
-        $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][self::$R_data['int_flag']['R_integer']] =
-        $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][self::$R_data['int_flag']['R_string']] = 'R_channel_GET';
+        $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] =
+        $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = 'R_channel_GET';
 
         $this->get_channel_config($channel, 'NAME');
         $this->get_channel_config($channel, 'DESCRIPTION');

@@ -3462,7 +3462,7 @@ class jony5_database_integration
 
                     $tmp_resp_array = self::$result_ARRAY['log_bassdrive_program'];
 
-                    $tmp_env_key = $oUserEnvironment->returnResouceKey();
+                    $tmp_env_key = $oUserEnvironment->returnResourceKey();
 
                     //if($tmp_env_key == $this->crc_int32('LOCALHOST_MAC')){
                     if(1 == 2){

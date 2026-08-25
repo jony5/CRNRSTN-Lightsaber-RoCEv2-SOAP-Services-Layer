@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,7 +40,7 @@ http://www.nusphere.com
 */
 
 /*
- *	Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
  *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
  *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
@@ -50,6 +52,25 @@ http://www.nusphere.com
  *	RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
  *	RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
  */
+
+/* load classes
+
+// necessary classes
+require_once('class.soapclient.php');
+require_once('class.soap_val.php');
+require_once('class.soap_parser.php');
+require_once('class.soap_fault.php');
+
+// transport classes
+require_once('class.soap_transport_http.php');
+
+// optional add-on classes
+require_once('class.xmlschema.php');
+require_once('class.wsdl.php');
+
+// server class
+require_once('class.soap_server.php');*/
+
 
 /**
  * parses a WSDL file, allows access to it's data, other utility methods.
@@ -111,6 +132,8 @@ class wsdl extends nusoap_base
     /** @var mixed */
     var $serviceName;
     var $wsdl_info;
+    /** @var string */
+    var $schemaTargetNamespace = '';
 
     /**
      * constructor
@@ -268,7 +291,18 @@ class wsdl extends nusoap_base
         if (isset($wsdl_props['scheme']) && ($wsdl_props['scheme'] == 'http' || $wsdl_props['scheme'] == 'https')) {
             $this->debug('getting WSDL http(s) URL ' . $wsdl);
             // get wsdl
-            $tr = new soap_transport_http($wsdl, $this->curl_options, $this->use_curl);
+            //$tr = new soap_transport_http($wsdl, $this->curl_options, $this->use_curl);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Thursday, August 20, 2026 @ 0902 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'soap_transport_http',
+                   $wsdl,
+                   $this->curl_options,
+                   $this->use_curl);
+            $this->anoint(
+                   'soap_transport_http',
+                   $tr);
             $tr->request_method = 'GET';
             $tr->useSOAPAction = false;
             if ($this->proxyhost && $this->proxyport) {
@@ -320,11 +354,9 @@ class wsdl extends nusoap_base
         // Set the options for parsing the XML data.
         // xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
         xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, 0);
-        // Set the object for the parser.
-        xml_set_object($this->parser, $this);
         // Set the element handlers for the parser.
-        xml_set_element_handler($this->parser, 'start_element', 'end_element');
-        xml_set_character_data_handler($this->parser, 'character_data');
+        xml_set_element_handler($this->parser, [$this, 'start_element'], [$this, 'end_element']);
+        xml_set_character_data_handler($this->parser, [$this, 'character_data']);
         // Parse the XML file.
         if (!xml_parse($this->parser, $wsdl_string, true)) {
             // Display an error message.
@@ -337,12 +369,12 @@ class wsdl extends nusoap_base
             $this->debug($errstr);
             $this->debug("XML payload:\n" . $wsdl_string);
             $this->setError($errstr);
-            xml_parser_free($this->parser);
+            (PHP_VERSION_ID < 80000) && xml_parser_free($this->parser);
             unset($this->parser);
             return false;
         }
         // free the parser
-        xml_parser_free($this->parser);
+        (PHP_VERSION_ID < 80000) && xml_parser_free($this->parser);
         unset($this->parser);
         $this->debug('Parsing WSDL done');
         // catch wsdl parse errors
@@ -370,7 +402,19 @@ class wsdl extends nusoap_base
             $this->debug('Parsing WSDL schema');
             // $this->debug("startElement for $name ($attrs[name]). status = $this->status (".$this->getLocalPart($name).")");
             $this->status = 'schema';
-            $this->currentSchema = new nusoap_xmlschema('', '', $this->namespaces);
+            //$this->currentSchema = new nusoap_xmlschema('', '', $this->namespaces);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Thursday, August 20, 2026 @ 2038 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'nusoap_xmlschema',
+                   '',
+                   '',
+                   $this->namespaces);
+            $this->anoint(
+                   'nusoap_xmlschema',
+                   $this->currentSchema);
+            $this->anoint_eval('XMLSchema');
             $this->currentSchema->schemaStartElement($parser, $name, $attrs);
             $this->appendDebug($this->currentSchema->getDebug());
             $this->currentSchema->clearDebug();
@@ -410,10 +454,10 @@ class wsdl extends nusoap_base
             } else {
                 $attrs = array();
             }
-		// Set default prefix and namespace
-		// to prevent error Undefined variable $prefix and $namespace if (preg_match('/:/', $name)) return 0 or FALSE
-		$prefix = '';
-		$namespace = '';
+            // Set default prefix and namespace
+            // to prevent error Undefined variable $prefix and $namespace if (preg_match('/:/', $name)) return 0 or FALSE
+            $prefix = '';
+            $namespace = '';
             // get element prefix, namespace and name
             if (preg_match('/:/', $name)) {
                 // get ns prefix
@@ -831,18 +875,9 @@ class wsdl extends nusoap_base
      */
     function webDescription()
     {
-        global $HTTP_SERVER_VARS;
+        $PHP_SELF = $_SERVER['PHP_SELF'] ?? '';
 
-        if (isset($_SERVER)) {
-            $PHP_SELF = $_SERVER['PHP_SELF'];
-        } elseif (isset($HTTP_SERVER_VARS)) {
-            $PHP_SELF = $HTTP_SERVER_VARS['PHP_SELF'];
-        } else {
-            $this->setError("Neither _SERVER nor HTTP_SERVER_VARS is available");
-            $PHP_SELF = '';
-        }
-
-        $b = '
+        $b = '<!DOCTYPE html>
 		<html><head><title>NuSOAP: ' . $this->serviceName . '</title>
 		<style type="text/css">
 		    body    { font-family: arial; color: #000000; background-color: #ffffff; margin: 0px 0px 0px 0px; }
@@ -863,12 +898,11 @@ class wsdl extends nusoap_base
 			padding-top: 10px; padding-bottom: 10px;}
 		    .hidden {
 			position: absolute; visibility: hidden; z-index: 200; left: 250px; top: 100px;
-			font-family: arial; overflow: hidden; width: 600;
-			padding: 20px; font-size: 10px; background-color: #999999;
-			layer-background-color:#FFFFFF; }
-		    a,a:active  { color: charcoal; font-weight: bold; }
+			font-family: arial; overflow: hidden; width: 600px;
+			padding: 20px; font-size: 10px; background-color: #999999; }
+		    a,a:active  { color: #36454f; font-weight: bold; }
 		    a:visited   { color: #666666; font-weight: bold; }
-		    a:hover     { color: cc3300; font-weight: bold; }
+		    a:hover     { color: #cc3300; font-weight: bold; }
 		</style>
 		<script language="JavaScript" type="text/javascript">
 		<!--
@@ -926,13 +960,13 @@ class wsdl extends nusoap_base
 				Click on an operation name to view it&apos;s details.</p>
 				<ul>';
         foreach ($this->getOperations() as $op => $data) {
-            $b .= "<li><a href='#' onclick=\"popout();popup('$op')\">$op</a></li>";
+            $b .= "<li><a href='#' onclick=\"popout();popup('$op')\">$op</a>";
             // create hidden div
             $b .= "<div id='$op' class='hidden'>
-				    <a href='#' onclick='popout()'><font color='#ffffff'>Close</font></a><br><br>";
+				    <a href='#' onclick='popout()'><span style=\"color: #ffffff\">Close</span></a><br><br>";
             foreach ($data as $donnie => $marie) { // loop through opdata
                 if ($donnie == 'input' || $donnie == 'output') { // show input/output data
-                    $b .= "<font color='white'>" . ucfirst($donnie) . ':</font><br>';
+                    $b .= '<span style="color: white">' . ucfirst($donnie) . ':</span><br>';
                     foreach ($marie as $captain => $tenille) { // loop through data
                         if ($captain == 'parts') { // loop thru parts
                             $b .= "&nbsp;&nbsp;$captain:<br>";
@@ -946,13 +980,13 @@ class wsdl extends nusoap_base
                         }
                     }
                 } else {
-                    $b .= "<font color='white'>" . ucfirst($donnie) . ":</font> $marie<br>";
+                    $b .= '<span style="color: white">' . ucfirst($donnie) . ":</span> $marie<br>";
                 }
             }
-            $b .= '</div>';
+            $b .= '</div></li>';
         }
         $b .= '
-				<ul>
+				</ul>
 			</div>
 		</div></body></html>';
         return $b;
@@ -1390,7 +1424,7 @@ class wsdl extends nusoap_base
             }
             $attrs = $value->attributes;
             $value = $value->value;
-            $this->debug("in serializeType: soapval overrides value to $value");
+            $this->debug("in serializeType: soapval overrides value to " . $this->varDump($value));
             if ($attrs) {
                 if (!is_array($value)) {
                     $value['!'] = $value;
@@ -1828,15 +1862,15 @@ class wsdl extends nusoap_base
                             {
                                 // TODO: serialize a nil correctly, but for now serialize schema-defined type
                                 $xml .= $this->serializeType ($eName,
-                                                              isset($attrs['type']) ? $attrs['type'] : $attrs['ref'],
-                                                              $v, $use, $encodingStyle, $unqualified);
+                                    isset($attrs['type']) ? $attrs['type'] : $attrs['ref'],
+                                    $v, $use, $encodingStyle, $unqualified);
                             }
                             elseif (isset($attrs['type']) || isset($attrs['ref']))
                             {
                                 // serialize schema-defined type
                                 $xml .= $this->serializeType ($eName,
-                                                              isset($attrs['type']) ? $attrs['type'] : $attrs['ref'],
-                                                              $v, $use, $encodingStyle, $unqualified);
+                                    isset($attrs['type']) ? $attrs['type'] : $attrs['ref'],
+                                    $v, $use, $encodingStyle, $unqualified);
                             }
                             else
                             {

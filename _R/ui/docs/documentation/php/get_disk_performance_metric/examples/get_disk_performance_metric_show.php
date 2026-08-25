@@ -52,17 +52,17 @@ $tmp_small_data_size = strlen($tmp_small_data);
 //
 // FAKE SOME BIG DATA. MAYBE PROD IS GOOD FOR IT?
 $tmp_big_data = $oCRNRSTN->generate_new_key(50);
-$tmp_big_data_size = $this->oCRNRSTN->format_bytes('100 GB');
+$tmp_big_data_size = $this->oCRNRSTN->return_bytes('100 GB');
 
 //
 // GET WRITE PERMISSIONS FOR SMALL DATA.
 if($this->oCRNRSTN->grant_permissions_fwrite($tmp_write_path, $tmp_small_data_size)){
 
-    echo 'Permission granted to write ' . $this->oCRNRSTN->format_bytes($tmp_small_data_size, 4) . ' of data.<br><br>';
+    echo 'Permission granted to write ' . $this->oCRNRSTN->return_bytes($tmp_small_data_size, 4) . ' of data.<br><br>';
 
 }else{
 
-    echo 'Permission DENIED to write ' . $this->oCRNRSTN->format_bytes($tmp_small_data_size, 4) . '!<br><br>';
+    echo 'Permission DENIED to write ' . $this->oCRNRSTN->return_bytes($tmp_small_data_size, 4) . '!<br><br>';
 
 }
 
@@ -70,11 +70,11 @@ if($this->oCRNRSTN->grant_permissions_fwrite($tmp_write_path, $tmp_small_data_si
 // GET WRITE PERMISSIONS FOR BIG DATA.
 if($this->oCRNRSTN->grant_permissions_fwrite($tmp_write_path, $tmp_big_data_size)){
 
-    echo 'Permission granted to write ' . $this->oCRNRSTN->format_bytes($tmp_big_data_size, 4) . '!';
+    echo 'Permission granted to write ' . $this->oCRNRSTN->return_bytes($tmp_big_data_size, 4) . '!';
 
 }else{
 
-    echo 'Permission DENIED to write ' . $this->oCRNRSTN->format_bytes($tmp_big_data_size, 4) . '!';
+    echo 'Permission DENIED to write ' . $this->oCRNRSTN->return_bytes($tmp_big_data_size, 4) . '!';
 
 }
 

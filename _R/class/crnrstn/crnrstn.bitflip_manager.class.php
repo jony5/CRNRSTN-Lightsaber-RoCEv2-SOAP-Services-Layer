@@ -337,7 +337,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -375,12 +375,25 @@ class crnrstn_bitflip_manager extends crnrstn
      *       class definitions. 
      *       5 :: Wednesday, April 8, 2026 @ 1902 hrs.
      *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Deleted the following methods
+     *       in order to get behind the
+     *       crnrstn_bitflip_manager's extension
+     *       of crnrstn and to remove
+     *       architecturally redundant clutter:
+     *
+     *       - initialize_cpu_profile()
+     *
+     *       5 :: Saturday, August 22, 2026 @ 0401 hrs.
+     *
      */
+
+    public $R       = array();
     private $R_data = array();
 
-    protected $oCRNRSTN_BITWISE;
+    //protected $oCRNRSTN_BITWISE;
 
-    protected $oCRNRSTN_BITS_ARRAY = array();
+    //protected $oCRNRSTN_BITS_ARRAY = array();
     //private static $os_bit_size;
     private static $lscpu_output;
     private static $uname_output;
@@ -402,7 +415,38 @@ class crnrstn_bitflip_manager extends crnrstn
     function __construct()
     {
 
-        $this->initialize_cpu_profile();
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Return an instantiation of
+         * The CRNRSTN :: Lightsaber RoCEv2 SOAP
+         * Services Layer Icy Digital ITCC -
+         * Bitmask Integer State (Bit Flip)
+         * Management Technology class object.
+         *
+         * SOURCE :: https://www.php.net/manual/en/language.operators.bitwise.php
+         * AUTHOR :: https://www.php.net/manual/en/language.operators.bitwise.php#50299
+         *
+         *
+         * Icy at Digital ITCC dot com
+         *
+         * 5 :: Thursday, July 11, 2024 @ 0413 hrs.
+         * $this->oCRNRSTN_BITWISE = new crnrstn_bitmask();
+         *
+         * CLR-SSL Resource Registry
+         * Prototyping (2024-2026):
+         * $this->oCRNRSTN_BITWISE = $this->return_registered_resource(
+         *                                  'new',
+         *                                  'crnrstn_bitmask');
+         *
+         */
+
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Saturday, August 22, 2026 @ 0519 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'crnrstn_bitmask');
+        $this->anoint(
+               'crnrstn_bitmask',
+               $this->R['icy_digital_itcc']);
 
     }
 
@@ -488,20 +532,20 @@ class crnrstn_bitflip_manager extends crnrstn
              $integer_constant)
     {
 
-        if(!isset($this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
-            $this->hash($bitwise_object_array_index_serial, 'md5')]))
+        if(!isset($this->R['bits'][$this->hash(
+                                          $bitwise_object_array_index_serial,
+                                          'md5')]))
         {
 
             return false;
 
         }else{
 
-            $oCRNRSTN_BITMASK = $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
-                                $this->hash(
-                                                 $bitwise_object_array_index_serial, 
+            $R_bitmask = $this->R['bits'][$this->hash(
+                                                 $bitwise_object_array_index_serial,
                                                  'md5')];
 
-            $tmp_val = $this->return_bit_value($integer_constant);
+            $tmp_val = $R_bitmask->return_bit_value($integer_constant);
 
             return $tmp_val;
 
@@ -521,7 +565,6 @@ class crnrstn_bitflip_manager extends crnrstn
     {
 
         //return $this->return_bit_value($name);
-
         return constant($name);
 
     }
@@ -542,49 +585,31 @@ class crnrstn_bitflip_manager extends crnrstn
              $is_bit_set = NULL)
     {
 
-        if(!isset($this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
-            $this->hash($name, 'md5')]))
-        {
-
+        if(!isset($this->R['bits'][$this->hash(
+                                          $name,
+                                          'md5')]))
             return false;
 
-        }
+        $R_bitmask = $this->R['bits'][$this->hash(
+                                             $name,
+                                             'md5')];
 
-        $oCRNRSTN_BITMASK = $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
-                            $this->hash(
-                                   $name, 
-                                   'md5')];
-
-        if(is_bool($is_bit_set)){
-
-            if($is_bit_set == true){
-
-                if(!($oCRNRSTN_BITMASK->read($integer_constant) == true)){
-
+        if(\is_bool($is_bit_set))
+            if($is_bit_set == true)
+                if(!($R_bitmask->read($integer_constant) == true))
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Flip to 1. 
                      *
                      */
-                    $oCRNRSTN_BITMASK->toggle($integer_constant);
-
-                }
-
-            }else{
-
-                if($oCRNRSTN_BITMASK->read($integer_constant) == true){
-
+                    $R_bitmask->toggle($integer_constant);
+            else
+                if($R_bitmask->read($integer_constant) == true)
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Flip to 0. 
                      *
                      */
-                    $oCRNRSTN_BITMASK->toggle($integer_constant);
-
-                }
-
-            }
-
-        }else{
-
+                    $R_bitmask->toggle($integer_constant);
+        else
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * FLIP IT ::
              * https://www.youtube.com/watch?v=eBShN8qT4lk
@@ -593,13 +618,11 @@ class crnrstn_bitflip_manager extends crnrstn
              *          (Official Music Video) 
              *
              */
-            $oCRNRSTN_BITMASK->toggle($integer_constant);
+            $R_bitmask->toggle($integer_constant);
 
-        }
+        $this->R['bits'][$this->hash($name, 'md5')] = $R_bitmask;
 
-        $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . $this->hash($name, 'md5')] = $oCRNRSTN_BITMASK;
-
-        return $oCRNRSTN_BITMASK->read($integer_constant);
+        return $R_bitmask->read($integer_constant);
 
     }
 
@@ -617,7 +640,7 @@ class crnrstn_bitflip_manager extends crnrstn
              $is_bit_set = NULL)
     {
 
-        if(!isset($this->oCRNRSTN_BITWISE)){
+        if(!isset($this->R['bitwise'])){
 
             return false;
 
@@ -625,33 +648,22 @@ class crnrstn_bitflip_manager extends crnrstn
 
             if(is_bool($is_bit_set)){
 
-                $this->oCRNRSTN_BITWISE->toggle($integer_constant);
+                $this->R['icy_digital_itcc']->toggle($integer_constant);
 
-                if($is_bit_set == true){
-
-                    if(!($this->oCRNRSTN_BITWISE->read($integer_constant) == true)){
-
+                if($is_bit_set == true)
+                    if(!($this->R['icy_digital_itcc']->read($integer_constant) == true))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Flip to 1. 
                          *
                          */
-                        $this->oCRNRSTN_BITWISE->toggle($integer_constant);
-
-                    }
-
-                }else{
-
-                    if($this->oCRNRSTN_BITWISE->read($integer_constant) == true){
-
+                        $this->R['icy_digital_itcc']->toggle($integer_constant);
+                else
+                    if($this->R['icy_digital_itcc']->read($integer_constant) == true)
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Flip to 0. 
                          *
                          */
-                        $this->oCRNRSTN_BITWISE->toggle($integer_constant);
-
-                    }
-
-                }
+                        $this->R['icy_digital_itcc']->toggle($integer_constant);
 
             }else{
 
@@ -663,11 +675,11 @@ class crnrstn_bitflip_manager extends crnrstn
                  *          (Official Music Video) 
                  *
                  */
-                $this->oCRNRSTN_BITWISE->toggle($integer_constant);
+                $this->R['icy_digital_itcc']->toggle($integer_constant);
 
             }
 
-            return $this->oCRNRSTN_BITWISE->read($integer_constant);
+            return $this->R['icy_digital_itcc']->read($integer_constant);
 
         }
 
@@ -689,7 +701,7 @@ class crnrstn_bitflip_manager extends crnrstn
              $default_state = true)
     {
 
-        if(!isset($this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
+        if(!isset($this->R['bits']['CRNRSTN_' .
             $this->hash($name, 'md5')]))
         {
 
@@ -710,25 +722,27 @@ class crnrstn_bitflip_manager extends crnrstn
              *
              * $oCRNRSTN_BITMASK = new crnrstn_bitmask();
              *
-             */
-            //$oCRNRSTN_BITMASK = $this->return_registered_resource('new', 'crnrstn_bitmask');
-            $oCRNRSTN_BITMASK = new crnrstn_bitmask();
-
-            /**
-             *error_log(__LINE__ .' '. 
-             *      __METHOD__ . 
-             *      ' NEW bitmask object flipping[' . 
-             *      $integer_const . 
-             *      '] to array index, ' . 
-             *      strtoupper($this->hash($name, 'md5')));
+             * CLR-SSL Resource Registry
+             * Prototyping (2024-2026):
+             * $oCRNRSTN_BITMASK = $this->return_registered_resource(
+             *                            'new',
+             *                            'crnrstn_bitmask');
              *
              */
-            $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . $this->hash($name, 'md5')] = $oCRNRSTN_BITMASK;
+
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Saturday, August 22, 2026 @ 1336 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_bitmask');
+            $this->anoint(
+                   'crnrstn_bitmask',
+                   $R_bitmask);
 
         }
 
-        $oCRNRSTN_BITMASK = $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
-                            $this->hash($name, 'md5')];
+        if(!isset($R_bitmask))
+            $R_bitmask = $this->R['bits'][$this->hash($name, 'md5')];
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * This will basically return an int++
@@ -739,32 +753,32 @@ class crnrstn_bitflip_manager extends crnrstn
          * manage the actual storage, flip, and
          * retrieval (flip checking).
          *
-         * Therefore CRNRSTN :: doesn't really
+         * Therefore, CRNRSTN :: doesn't really
          * care about the integer being stored
          * (i.e. the value of the constant).
          *
          * Using "auto-increment" for bland
          * integer ranges where performance
          * demands do not require that bitwise
-         * join operation output be equally
-         * unique would be fine. CRNRSTN ::
-         * just needs to ensure that the
-         * number going into this cold shit
-         * is unique...whether this integer is
-         * bitwise operation output or not.
+         * "join operation output" or maths
+         * be equally unique would be fine.
+         *
+         * CRNRSTN :: just needs to ensure
+         * that the number going into this
+         * cold shit is unique...whether
+         * this integer is bitwise operation
+         * output or not.
          *
          * To help, get around these collisions
-         * when unavoidable (when the numbers
-         * just don't up for you), this method
-         * adds a layer of serialization to the
-         * the bitmask object data
-         * storage equation.
+         * when unavoidable, this method adds a
+         * layer of serialization to the
+         * bitmask object data storage equation.
          *
          *
          * 5 :: Thursday, July 11, 2024 @ 0408 hrs.
          *
          */
-        $tmp_val = $this->return_bit_value($integer_const);
+        $tmp_val = $R_bitmask->return_bit_value($integer_const);
 
         if($default_state == true){
 
@@ -772,7 +786,7 @@ class crnrstn_bitflip_manager extends crnrstn
              * FLAG - State is ON.
              *
              */
-            $oCRNRSTN_BITMASK->set($integer_const);
+            $R_bitmask->set($integer_const);
 
         }else{
 
@@ -780,22 +794,18 @@ class crnrstn_bitflip_manager extends crnrstn
              * FLAG - State is OFF.
              *
              */
-            $oCRNRSTN_BITMASK->set($integer_const);
-            $oCRNRSTN_BITMASK->toggle($integer_const);
+            $R_bitmask->set($integer_const);
+            $R_bitmask->toggle($integer_const);
 
         }
 
-        /**
-         *error_log(__LINE__ . ' ' . 
-         *    __METHOD__ . 
-         *    ' we put back into the array[' . 
-         *    strtoupper($this->hash(
-         *                                $name, 
-         *                                'md5')) . 
-         *    ']...a oCRNRSTN_BITMASK object.');
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Return the updated
+         * object to the bits
+         * object array.
          *
          */
-        $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . $this->hash($name, 'md5')] = $oCRNRSTN_BITMASK;
+        $this->R['bits'][$this->hash($name, 'md5')] = $R_bitmask;
 
         return $tmp_val;
 
@@ -816,30 +826,6 @@ class crnrstn_bitflip_manager extends crnrstn
              $default_state = false, 
              $constant_value = NULL)
     {
-
-        if(!isset($this->oCRNRSTN_BITWISE)){
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Return an instantiation of
-             * The CRNRSTN :: Lightsaber RoCEv2 SOAP
-             * Services Layer Icy Digital ITCC -
-             * Bitmask Integer State (Bit Flip)
-             * Management Technology class object.
-             *
-             * SOURCE :: https://www.php.net/manual/en/language.operators.bitwise.php
-             * AUTHOR :: https://www.php.net/manual/en/language.operators.bitwise.php#50299
-             *
-             *
-             * Icy at Digital ITCC dot com
-             *
-             * 5 :: Thursday, July 11, 2024 @ 0413 hrs.
-             * $this->oCRNRSTN_BITWISE = new crnrstn_bitmask();
-             *
-             */
-            //$this->oCRNRSTN_BITWISE = $this->return_registered_resource('new', 'crnrstn_bitmask');
-            $this->oCRNRSTN_BITWISE = new crnrstn_bitmask();
-
-        }
 
         if(is_int($constant_nom)){
 
@@ -870,16 +856,16 @@ class crnrstn_bitflip_manager extends crnrstn
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * FLAG - State is ON.
              *
-             * $this->oCRNRSTN_BITWISE->set($tmp_val);
+             * $this->R['icy_digital_itcc']->set($tmp_val);
              *
              */
-            $this->oCRNRSTN_BITWISE->set($tmp_val);
+            $this->R['icy_digital_itcc']->set($tmp_val);
 
             /**
              *error_log(__LINE__ . 
              *    ' crnrstn $os_bit_size[' . 
              *    $this->os_bit_size . ']. BIT[' . 
-             *    print_r(gettype($this->oCRNRSTN_BITWISE->read($tmp_val)), true) . 
+             *    print_r(gettype($this->R['icy_digital_itcc']->read($tmp_val)), true) .
              *    ']. $tmp_val[' . 
              *    $tmp_val . ']. $default_state[' . 
              *    $default_state . ']. $constant_nom[' . 
@@ -894,8 +880,8 @@ class crnrstn_bitflip_manager extends crnrstn
              * FLAG - State is OFF.
              *
              */
-            $this->oCRNRSTN_BITWISE->set($tmp_val);
-            $this->oCRNRSTN_BITWISE->toggle($tmp_val);
+            $this->R['icy_digital_itcc']->set($tmp_val);
+            $this->R['icy_digital_itcc']->toggle($tmp_val);
 
             /**
              *error_log(__LINE__ . 
@@ -928,7 +914,7 @@ class crnrstn_bitflip_manager extends crnrstn
              $return_raw_byte_read = false)
     {
 
-        if(!isset($this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
+        if(!isset($this->R['bits']['CRNRSTN_' .
             $this->hash($name, 'md5')]))
         {
 
@@ -936,31 +922,24 @@ class crnrstn_bitflip_manager extends crnrstn
 
         }else{
 
-            /**
-             *error_log(__LINE__ . ' ' . 
-             *    __METHOD__ . 
-             *    ' we think the array[' . 
-             *    $name . 
-             *    '] index holds a ' . 
-             *    'oCRNRSTN_BITMASK object.');
+            /* error_log(__LINE__ . ' ' .
+             *     __METHOD__ .
+             *     ' we think the array[' .
+             *     $name .
+             *     '] index holds a ' .
+             *     'oCRNRSTN_BITMASK object.');
              *
              */
-            $oCRNRSTN_BITMASK = $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
+            $oCRNRSTN_BITMASK = $this->R['bits']['CRNRSTN_' .
                                 $this->hash($name, 'md5')];
 
             $tmp_int_read = $oCRNRSTN_BITMASK->read($integer_constant);
 
-            if($return_raw_byte_read !== false){
-
+            if($return_raw_byte_read !== false)
                 return $tmp_int_read;
 
-            }
-
-            if($tmp_int_read > 0){
-
+            if($tmp_int_read > 0)
                 return true;
-
-            }
 
             //return $oCRNRSTN_BITMASK->read($integer_constant);
             return false;
@@ -997,7 +976,7 @@ class crnrstn_bitflip_manager extends crnrstn
 
         }
 
-        //return $this->oCRNRSTN_BITWISE->read($integer_constant);
+        //return $this->R['icy_digital_itcc']->read($integer_constant);
         return false;
 
     }
@@ -1016,7 +995,7 @@ class crnrstn_bitflip_manager extends crnrstn
              $bits_stringin)
     {
 
-        if(!isset($this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
+        if(!isset($this->R['bits']['CRNRSTN_' .
             $this->hash($name, 'md5')]))
         {
 
@@ -1036,19 +1015,33 @@ class crnrstn_bitflip_manager extends crnrstn
              * 5 :: Thursday, July 11, 2024 @ 0420 hrs.
              * $oCRNRSTN_BITMASK = new crnrstn_bitmask();
              *
+             * CLR-SSL Resource Registry
+             * Prototyping (2024-2026):
+             * $this->oCRNRSTN_BITMASK = $this->return_registered_resource(
+             *                                  'new',
+             *                                  'crnrstn_bitmask');
+             *
              */
-            $this->oCRNRSTN_BITWISE = $this->return_registered_resource('new', 'crnrstn_bitmask');
 
-            $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . $this->hash($name, 'md5')] = $oCRNRSTN_BITMASK;
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Saturday, August 22, 2026 @ 0435 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_bitmask');
+            $this->anoint(
+                   'crnrstn_bitmask',
+                   $R_bitmask);
+
+            $this->R['bits'][$this->hash($name, 'md5')] = $R_bitmask;
 
         }
 
-        $oCRNRSTN_BITMASK = $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
-                            $this->hash($name, 'md5')];
+        $R_bitmask = $this->R['bits']['CRNRSTN_' .
+                     $this->hash($name, 'md5')];
 
-        $oCRNRSTN_BITMASK->stringin($bits_stringin);
+        $R_bitmask->stringin($bits_stringin);
 
-        $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . $this->hash($name, 'md5')] = $oCRNRSTN_BITMASK;
+        $this->R['bits'][$this->hash($name, 'md5')] = $R_bitmask;
 
         return true;
 
@@ -1082,7 +1075,7 @@ class crnrstn_bitflip_manager extends crnrstn
 
         $tmp_str = '';
 
-        if(!isset($this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
+        if(!isset($this->R['bits']['CRNRSTN_' .
             $this->hash($name, 'md5')]))
         {
 
@@ -1098,7 +1091,7 @@ class crnrstn_bitflip_manager extends crnrstn
              *    'oCRNRSTN_BITMASK object.');
              *
              */
-            $oCRNRSTN_BITMASK = $this->oCRNRSTN_BITS_ARRAY['CRNRSTN_' . 
+            $oCRNRSTN_BITMASK = $this->R['bits']['CRNRSTN_' .
                                 $this->hash($name, 'md5')];
 
             $tmp_str = $oCRNRSTN_BITMASK->stringout();
@@ -1180,66 +1173,6 @@ class crnrstn_bitflip_manager extends crnrstn
     //   return $this->global_constants_string_ARRAY;
     //
     //}
-
-    /**
-     * R :: Content pending. 
-     *
-     * @return
-     * @access private
-     *
-     */
-    private function initialize_cpu_profile()
-    {
-
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * 5 :: Thursday, October 10, 2024 @ 1005 hrs.
-         *
-         *error_log('[lnum ' . 
-         *    __LINE__ . '] [' . 
-         *    __METHOD__ . 
-         *    '] TODO :: Simplify the ' . 
-         *    'initialization of the operating ' . 
-         *    'system integer size to ' . 
-         *    'use "PHP_INT_SIZE" [' . 
-         *    PHP_INT_SIZE . 
-         *    '].');
-         *
-         */
-
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * 5 :: Friday, October 24, 2025 @ 0533 hrs.
-         *
-         */
-        switch(PHP_INT_SIZE){
-            case 4:
-
-                $this->os_bit_size = (int) 32;
-
-            break;
-            case 8:
-            default:
-
-                $this->os_bit_size = (int) 64;
-
-            break;
-
-        }
-
-        if($this->R_data['operating_system']['name'] == 'Linux'){
-
-            //self::$lscpu_output   = \shell_exec('lscpu');
-            $this->R_data['operating_system']['lscpu_output']   = \shell_exec('lscpu');
-            //self::$uname_output   = \shell_exec('uname -m');
-            $this->R_data['operating_system']['uname_output']   = \shell_exec('uname -m');
-            //self::$getconf_output = (int) \shell_exec('getconf LONG_BIT');
-            $this->R_data['operating_system']['getconf_output'] = (int) \shell_exec('getconf LONG_BIT');
-            //$this->R_data['operating_system']['getconf_output'] = 128;
- 
-        }
-
-        return true;
-
-    }
 
     /**
      * R :: Content pending. 

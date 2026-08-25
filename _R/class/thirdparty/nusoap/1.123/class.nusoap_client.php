@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.123 2010/04/26 20:15:08 snichol Exp $
 
@@ -455,7 +457,24 @@ class nusoap_client extends nusoap_base  {
 	 */
 	function loadWSDL() {
 		$this->debug('instantiating wsdl class with doc: '.$this->wsdlFile);
-		$this->wsdl = new wsdl('',$this->proxyhost,$this->proxyport,$this->proxyusername,$this->proxypassword,$this->timeout,$this->response_timeout,$this->curl_options,$this->use_curl);
+		//$this->wsdl = new wsdl('',$this->proxyhost,$this->proxyport,$this->proxyusername,$this->proxypassword,$this->timeout,$this->response_timeout,$this->curl_options,$this->use_curl);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1842 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'wsdl',
+               '',
+               $this->proxyhost,
+               $this->proxyport,
+               $this->proxyusername,
+               $this->proxypassword,
+               $this->timeout,
+               $this->response_timeout,
+               $this->curl_options,
+               $this->use_curl);
+        $this->anoint(
+               'wsdl',
+               $this->wsdl);
 		$this->wsdl->setCredentials($this->username, $this->password, $this->authtype, $this->certRequest);
 		$this->wsdl->fetchWSDL($this->wsdlFile);
 		$this->checkWSDL();
@@ -504,7 +523,18 @@ class nusoap_client extends nusoap_base  {
 				if($this->persistentConnection == true && is_object($this->persistentConnection)){
 					$http =& $this->persistentConnection;
 				} else {
-					$http = new soap_transport_http($this->endpoint, $this->curl_options, $this->use_curl);
+					//$http = new soap_transport_http($this->endpoint, $this->curl_options, $this->use_curl);
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Thursday, August 20, 2026 @ 1843 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'soap_transport_http',
+                           $this->endpoint,
+                           $this->curl_options,
+                           $this->use_curl);
+                    $this->anoint(
+                           'soap_transport_http',
+                           $http);
 					if ($this->persistentConnection) {
 						$http->usePersistentConnection();
 					}
@@ -597,7 +627,20 @@ class nusoap_client extends nusoap_base  {
 			$this->xml_encoding = 'ISO-8859-1';
 		}
 		$this->debug('Use encoding: ' . $this->xml_encoding . ' when creating nusoap_parser');
-		$parser = new nusoap_parser($data,$this->xml_encoding,$this->operation,$this->decode_utf8);
+		//$parser = new nusoap_parser($data,$this->xml_encoding,$this->operation,$this->decode_utf8);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1846 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_parser',
+               $data,
+               $this->xml_encoding,
+               $this->operation,
+               $this->decode_utf8);
+        $this->anoint(
+               'nusoap_parser',
+               $parser);
+        $this->anoint_eval('soap_parser');
 		// add parser debug data to our debug
 		$this->appendDebug($parser->getDebug());
 		// if parse errors

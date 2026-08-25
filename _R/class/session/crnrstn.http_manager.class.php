@@ -304,7 +304,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -330,18 +330,17 @@ class crnrstn_http_manager extends crnrstn
      *
      */
 
-    private $R_data;
+    public $R       = array();
+    private $R_data = array();
 
 	public $http_headers_ARRAY;
 	public $http_headers_string;
 
 	private static $relevant_header_fields_ARRAY = array();
-	public $is_SSL = false;
 	private static $ssdtla_enabled = false;
 
     public $client_header_field_data_ARRAY = array();
 
-    public $oMOBI_DETECT;
     public $isMobile;
     public $isTablet;
     public $device_detected = false;
@@ -352,7 +351,16 @@ class crnrstn_http_manager extends crnrstn
 
     public $country_iso_code = 'en';
 
-    public function __construct()
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function __construct($Mobile_Detect)
     {
     	/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
     	 * Edit: We deleted $oCRNRSTN 
@@ -361,7 +369,19 @@ class crnrstn_http_manager extends crnrstn
     	 *       __construt().
     	 *       5 :: Wednesday, March 11, 2026 @ 2222 hrs.
     	 *
+    	 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+    	 * Edit: Added $Mobile_Detect as
+    	 *       __construct() input for  
+    	 *       the crnrstn_http_manager 
+    	 *       class object.
+    	 *       5 :: Friday, August 21, 2026 @ 1015 hrs.
+    	 *
     	 */
+
+        $this->R['mobile_detect'] = $Mobile_Detect;
+
+        // 5 :: Friday, August 21, 2026 @ 1012 hrs.
+        $this->R_data['int_flag'] = $this->get_crnrstn('int_flag');
 
         self::$relevant_header_fields_ARRAY = array('Accept', 
         	                                        'Accept-Charset', 
@@ -393,9 +413,6 @@ class crnrstn_http_manager extends crnrstn
         	                                        'X-Wap-Profile', 
         	                                        'X-UIDH[34][35][36]');
 
-        if($this->is_ssl())
-            $this->is_SSL = true;
-
 	    //
         // LOAD CLIENT HEADERS
 	    $this->http_headers_ARRAY  = $this->get_headers();
@@ -403,7 +420,7 @@ class crnrstn_http_manager extends crnrstn
 
 	    //
         // INITIALIZE CLIENT PROFILE
-        $this->load_client_profile();
+        //$this->load_client_profile();
 
         //
         // INITIALIZE CRNRSTN :: CHANNEL
@@ -600,7 +617,15 @@ class crnrstn_http_manager extends crnrstn
 
 	}
 
-	public function config_load_static_application_data($data_type)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function config_load_static_application_data($data_type)
     {
 
         switch($data_type){
@@ -624,7 +649,19 @@ class crnrstn_http_manager extends crnrstn
 
     }
 
-	public function return_client_header_value($header_attribute, $index = 0){
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function return_client_header_value(
+             $header_attribute,
+             $index = 0)
+    {
 
         $header_attribute_nom_LOWER = \strtolower($header_attribute);
 
@@ -671,19 +708,19 @@ class crnrstn_http_manager extends crnrstn
         // DETECT APPROPRIATE CHANNEL AND SYNC SESSION
         if($this->is_mobile()){
 
-            return CRNRSTN_MOBILE;
+            return $this->R_data['int_flag']['CRNRSTN_MOBILE'];
 
         }else{
 
             if($this->is_tablet()){
 
-                return CRNRSTN_TABLET;
+                return $this->R_data['int_flag']['CRNRSTN_TABLET'];
 
             }else{
 
                 $this->set_desktop();
 
-                return CRNRSTN_DESKTOP;
+                return $this->R_data['int_flag']['CRNRSTN_DESKTOP'];
 
             }
 
@@ -695,7 +732,7 @@ class crnrstn_http_manager extends crnrstn
 
         foreach($this->http_headers_ARRAY as $attribute_nom => $attrib_value){
 
-            $attribute_nom = strtolower($attribute_nom);
+            $attribute_nom = \strtolower($attribute_nom);
 
             if($this->is_crnrstn_relevant($attribute_nom))
                 $this->initialize_client_profile($attribute_nom, $attrib_value);
@@ -875,25 +912,25 @@ class crnrstn_http_manager extends crnrstn
 
                         /*
                         'crnrstn_xhr_root', 'crnrstn_xhr_root');
-                        'crnrstn_request_serialization_key', 'crnrstn_request_serialization_key', '', CRNRSTN_INPUT_REQUIRED);
-                        'crnrstn_request_serialization_hash', 'crnrstn_request_serialization_hash', '', CRNRSTN_INPUT_REQUIRED);
+                        'crnrstn_request_serialization_key', 'crnrstn_request_serialization_key', '', $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
+                        'crnrstn_request_serialization_hash', 'crnrstn_request_serialization_hash', '', $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
                         'crnrstn_interact_ui_link_text_click', 'crnrstn_interact_ui_link_text_click');
                         'crnrstn_interact_ui_loadbar_progress', 'crnrstn_interact_ui_loadbar_progress');
                         'crnrstn_interact_ui_active_nav_links', 'crnrstn_interact_ui_active_nav_links');
-                        'crnrstn_pssdtl_packet', 'crnrstn_pssdtl_packet', $this->return_crnrstn_data_packet('R_channel_PSSDTLA'), CRNRSTN_INPUT_REQUIRED);
-                        'crnrstn_ssdtla_form_serial', 'crnrstn_ssdtla_form_serial', $this->oCRNRSTN_USR->generate_new_key(64), CRNRSTN_INPUT_REQUIRED);
+                        'crnrstn_pssdtl_packet', 'crnrstn_pssdtl_packet', $this->return_crnrstn_data_packet('R_channel_PSSDTLA'), $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
+                        'crnrstn_ssdtla_form_serial', 'crnrstn_ssdtla_form_serial', $this->oCRNRSTN_USR->generate_new_key(64), $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
                         'crnrstn_ssdtla_timestamp', 'crnrstn_ssdtla_timestamp', $this->oCRNRSTN_USR->return_micro_time());
-                        'crnrstn_ssdtl_packet_ttl', 'crnrstn_ssdtl_packet_ttl', $this->oCRNRSTN_USR->return_ssdtl_packet_ttl(), CRNRSTN_INPUT_REQUIRED);
-                        'crnrstn_client_user_agent', 'crnrstn_client_user_agent', $_SERVER['HTTP_USER_AGENT'], CRNRSTN_INPUT_REQUIRED);
-                        'crnrstn_soap_service_server_ip', 'crnrstn_soap_service_server_ip', $_SERVER['SERVER_ADDR'], CRNRSTN_INPUT_REQUIRED);
-                        'crnrstn_soap_service_client_ip', 'crnrstn_soap_service_client_ip', $this->client_ip(), CRNRSTN_INPUT_REQUIRED);
+                        'crnrstn_ssdtl_packet_ttl', 'crnrstn_ssdtl_packet_ttl', $this->oCRNRSTN_USR->return_ssdtl_packet_ttl(), $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
+                        'crnrstn_client_user_agent', 'crnrstn_client_user_agent', $_SERVER['HTTP_USER_AGENT'], $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
+                        'crnrstn_soap_service_server_ip', 'crnrstn_soap_service_server_ip', $_SERVER['SERVER_ADDR'], $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
+                        'crnrstn_soap_service_client_ip', 'crnrstn_soap_service_client_ip', $this->client_ip(), $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
                         'crnrstn_soap_service_stime', 'crnrstn_soap_service_stime', $this->start_time(true));
                         'crnrstn_soap_service_rtime', 'crnrstn_soap_service_rtime', $this->wall_time());
                         'crnrstn_soap_service_framework_version', 'crnrstn_soap_service_framework_version',$this->oCRNRSTN_USR->proper_version('SOAP'));
                         'crnrstn_soap_service_encoding', 'crnrstn_soap_service_encoding', $this->soap_defencoding());
-                        'crnrstn_session_client_auth_key', 'crnrstn_session_client_auth_key', $this->session_client_auth_key, CRNRSTN_INPUT_REQUIRED);
-                        'crnrstn_session_client_id', 'crnrstn_session_client_id', $this->session_client_id, CRNRSTN_INPUT_REQUIRED);
-                        'crnrstn_php_sessionid', 'crnrstn_php_sessionid', session_id(), CRNRSTN_INPUT_REQUIRED);
+                        'crnrstn_session_client_auth_key', 'crnrstn_session_client_auth_key', $this->session_client_auth_key, $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
+                        'crnrstn_session_client_id', 'crnrstn_session_client_id', $this->session_client_id, $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
+                        'crnrstn_php_sessionid', 'crnrstn_php_sessionid', session_id(), $this->R_data['int_flag']['CRNRSTN_INPUT_REQUIRED']);
 
                         */
 
@@ -929,7 +966,7 @@ class crnrstn_http_manager extends crnrstn
 
             //
             // CHECK INTEGRITY OF DATA
-            if(strlen($data) < 1){
+            if(\strlen($data) < 1){
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * HOOOSTON, VE HAFF PROBLEM!
@@ -984,7 +1021,29 @@ class crnrstn_http_manager extends crnrstn
 
     }
 
-    public function client_request_listen($listener_profile){
+    public function client_request_listen($listener_profile = 'PSSDTLA'){
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added client_request_listen
+         *       method input parameter default,
+         *       $listener_profile = 'PSSDTLA',
+         *       so as to align to the use of this
+         *       method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_http_manager::
+         *       client_request_listen($listener_profile)
+         *       must be compatible with
+         *       CRNRSTN\crnrstn::client_request_listen(
+         *       $listener_profile = 'PSSDTLA') in
+         *       C:\xampp\htdocs\_R\class\session
+         *       \crnrstn.http_manager.class.php
+         *       on line 987
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0958 hrs.
+         *
+         */
 
         $CRNRSTN_LISTENER_RESPONSE = '';
 
@@ -1530,7 +1589,7 @@ class crnrstn_http_manager extends crnrstn
     		case $this->R_data['int_flag']['R_array']:
 
 				//return \getallheaders();
-        		return $this->oMOBI_DETECT->getHttpHeaders();
+        		return $this->R['mobile_detect']->getHttpHeaders();
 
     		break;
     		case $this->R_data['int_flag']['R_string']:
@@ -1541,7 +1600,7 @@ class crnrstn_http_manager extends crnrstn
 					default:
 
 					    $str          = '';
-						$http_headers = $this->oMOBI_DETECT->getHttpHeaders();
+						$http_headers = $this->R['mobile_detect']->getHttpHeaders();
 
 		                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
 		                 * $this->print_r(
@@ -1579,31 +1638,31 @@ class crnrstn_http_manager extends crnrstn
 
     public function get_user_agent(){
 
-        return $this->oMOBI_DETECT->getUserAgent();
+        return $this->R['mobile_detect']->getUserAgent();
 
     }
 
     public function get_mobile_devices(){
 
-        return $this->oMOBI_DETECT->getPhoneDevices();
+        return $this->R['mobile_detect']->getPhoneDevices();
 
     }
 
     public function get_tablet_devices(){
 
-        return $this->oMOBI_DETECT->getTabletDevices();
+        return $this->R['mobile_detect']->getTabletDevices();
 
     }
 
     public function get_browsers(){
 
-        return $this->oMOBI_DETECT->getBrowsers();
+        return $this->R['mobile_detect']->getBrowsers();
 
     }
 
     public function get_mobile_os(){
 
-        return $this->oMOBI_DETECT->getOperatingSystems();
+        return $this->R['mobile_detect']->getOperatingSystems();
 
     }
 
@@ -1688,7 +1747,7 @@ class crnrstn_http_manager extends crnrstn
             $opt_array[] = 'X-Powered-By: PHP v' . 
                            $this->version_php() . 
                            ', CRNRSTN :: Lightsaber v' . 
-                           $this->R_data['version_crnrstn'];
+                           $this->version_crnrstn();
 
         return $opt_array;
 
@@ -2201,17 +2260,17 @@ class crnrstn_http_manager extends crnrstn
             $this->device_type_bit = $tmp_bit;
 
             switch($tmp_bit){
-                case CRNRSTN_DESKTOP:
+                case $this->R_data['int_flag']['CRNRSTN_DESKTOP']:
 
                     $this->device_type = 'DESKTOP';
 
                 break;
-                case CRNRSTN_TABLET:
+                case $this->R_data['int_flag']['CRNRSTN_TABLET']:
 
                     $this->device_type = 'TABLET';
 
                 break;
-                case CRNRSTN_MOBILE:
+                case $this->R_data['int_flag']['CRNRSTN_MOBILE']:
 
                     $this->device_type = 'MOBILE';
 
@@ -2348,7 +2407,7 @@ class crnrstn_http_manager extends crnrstn
                 if($tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] == 'TRUE'){
 
                     //$this->add_resource('custom_mobi_name', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
-                    //$this->add_resource('custom_mobi_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
+                    //$this->add_resource('custom_mobi_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
                     //$this->add_resource('custom_mobi_detection_result', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
 
                     //
@@ -2400,8 +2459,8 @@ class crnrstn_http_manager extends crnrstn
                     //	            PACKET CONTAINING SESSION META AND A CACHE EXPIRATION TTL.
                     //
                     //              NULL IS THE DEFAULT FOR ERR MESSAGE OUTPUT OVERRIDE.
-                    error_log(__LINE__ . ' http custom_mobi_name[' . $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] . '].');
-                    if(!($tmp_result = $this->config_ugc_input_clean_data(__FUNCTION__ . '_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER], 'custom_mobi_integer', 'CRNRSTN::RESOURCE::DEVICE_TYPE', 0))){
+                    error_log(__LINE__ . ' http custom_mobi_name[' . $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] . '].');
+                    if(!($tmp_result = $this->config_ugc_input_clean_data(__FUNCTION__ . '_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']], 'custom_mobi_integer', 'CRNRSTN::RESOURCE::DEVICE_TYPE', 0))){
 
                         /**
 		                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2463,59 +2522,26 @@ class crnrstn_http_manager extends crnrstn
         // public function get_resource($data_key, $index = NULL, $data_type_family = 'CRNRSTN::RESOURCE', $data_authorization_profile = 'R_channel_RUNTIME'){
         // $tmp_custom_device = $this->get_resource('custom_mobi_name', 0, 'CRNRSTN::RESOURCE::DEVICE_TYPE');
 
-        if($this->is_bit_set(CRNRSTN_MOBILE) == true){
-
+        if($this->is_bit_set($this->R_data['int_flag']['CRNRSTN_MOBILE']) == true)
             return true;
 
-        }
-
-        if($this->is_bit_set(CRNRSTN_TABLET) == true){
+        if($this->is_bit_set($this->R_data['int_flag']['CRNRSTN_TABLET']) == true){
 
             //
             // DO WE CONSIDER TABLETS AS MOBILE?
-            if($tablet_is_mobile){
-
+            if($tablet_is_mobile)
                 return true;
-
-            }else{
-
+            else
                 return false;
 
-            }
-
         }
 
-        if($this->is_bit_set(CRNRSTN_DESKTOP) == true){
-
+        if($this->is_bit_set($this->R_data['int_flag']['CRNRSTN_DESKTOP']) == true)
             return false;
-
-        }
-
-        //
-        // THERE IS NO CONFIRMATION OF MOBILE STATE. LET'S DO THE WORK TO ANSWER THE QUESTION.
-        // NEED TO DETERMINE DEVICE TYPE.
-        if(!isset($this->oMOBI_DETECT)){
-
-            //
-            // INITIALIZE MOBILE DETECT (3RD PARTY OPEN SOURCE).
-            //
-            // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-            // Return an instantiation of
-            // the Mobile Detect - PHP
-            // Mobile Device Detection
-            // class object.
-            //
-            //
-            // 5 :: Monday, July 15, 2024 @ 2158 hrs.
-            //
-            // $this->oMOBI_DETECT = new crnrstn_Mobile_Detect();
-            $this->oMOBI_DETECT = $this->return_registered_resource('new', 'crnrstn_Mobile_Detect');
-
-        }
 
         //
         // IS MOBILE?
-        if($this->oMOBI_DETECT->isMobile($this->http_headers_string)){
+        if($this->R['mobile_detect']->isMobile($this->http_headers_string)){
 
             $this->set_mobile();
             return true;
@@ -2526,7 +2552,7 @@ class crnrstn_http_manager extends crnrstn
 
             //
             // HANDLE TABLETS AS MOBILE
-            if($this->oMOBI_DETECT->isTablet($this->http_headers_string)){
+            if($this->R['mobile_detect']->isTablet($this->http_headers_string)){
 
                 $this->set_tablet();
 
@@ -2556,7 +2582,7 @@ class crnrstn_http_manager extends crnrstn
                 if($tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] == 'TRUE'){
 
                     //$this->add_resource('custom_mobi_name', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
-                    //$this->add_resource('custom_mobi_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
+                    //$this->add_resource('custom_mobi_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
                     //$this->add_resource('custom_mobi_detection_result', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'], 'CRNRSTN::RESOURCE::DEVICE_TYPE', NULL, 0);
 
                     //
@@ -2607,7 +2633,7 @@ class crnrstn_http_manager extends crnrstn
                     //	            PACKET CONTAINING SESSION META AND A CACHE EXPIRATION TTL.
                     //
                     //              NULL IS THE DEFAULT FOR ERR MESSAGE OUTPUT OVERRIDE.
-                    if(!($tmp_result = $this->config_ugc_input_clean_data(__FUNCTION__ . '_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER], 'custom_mobi_integer', 'CRNRSTN::RESOURCE::DEVICE_TYPE', 0))){
+                    if(!($tmp_result = $this->config_ugc_input_clean_data(__FUNCTION__ . '_integer', $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']], 'custom_mobi_integer', 'CRNRSTN::RESOURCE::DEVICE_TYPE', 0))){
 
                         /**
 		                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2667,13 +2693,13 @@ class crnrstn_http_manager extends crnrstn
         // CHECK SESSION FOR EXISTING CONFIGURATION
         $tmp_custom_device = $this->get_resource('custom_mobi_name', 0, 'CRNRSTN::RESOURCE::DEVICE_TYPE');
 
-        if($this->is_bit_set(CRNRSTN_TABLET) == true){
+        if($this->is_bit_set($this->R_data['int_flag']['CRNRSTN_TABLET']) == true){
 
             return true;
 
         }
 
-        if($this->is_bit_set(CRNRSTN_MOBILE) == true){
+        if($this->is_bit_set($this->R_data['int_flag']['CRNRSTN_MOBILE']) == true){
 
             //
             // DO WE CONSIDER TABLETS AS MOBILE?
@@ -2689,36 +2715,15 @@ class crnrstn_http_manager extends crnrstn
 
         }
 
-        if($this->is_bit_set(CRNRSTN_DESKTOP) == true){
+        if($this->is_bit_set($this->R_data['int_flag']['CRNRSTN_DESKTOP']) == true){
 
             return false;
 
         }
 
         //
-        // NEED TO DETERMINE DEVICE TYPE.
-        if(!isset($this->oMOBI_DETECT)){
-
-            //
-            // INITIALIZE MOBILE DETECT (3RD PARTY OPEN SOURCE).
-            //
-            // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-            // Return an instantiation of
-            // the Mobile Detect - PHP
-            // Mobile Device Detection
-            // class object.
-            //
-            //
-            // 5 :: Monday, July 15, 2024 @ 2159 hrs.
-            //
-            // $this->oMOBI_DETECT = new crnrstn_Mobile_Detect();
-            $this->oMOBI_DETECT = $this->return_registered_resource('new', 'crnrstn_Mobile_Detect');
-
-        }
-
-        //
         // IS TABLET?
-        if($this->oMOBI_DETECT->isTablet($this->http_headers_string)){
+        if($this->R['mobile_detect']->isTablet($this->http_headers_string)){
 
             $this->set_tablet();
 
@@ -2729,7 +2734,7 @@ class crnrstn_http_manager extends crnrstn
         //
         // HANDLE MOBILE AS TABLETS
         // IS MOBILE?
-        if($this->oMOBI_DETECT->isMobile($this->http_headers_string)){
+        if($this->R['mobile_detect']->isMobile($this->http_headers_string)){
 
             $this->set_mobile();
 
@@ -2747,8 +2752,8 @@ class crnrstn_http_manager extends crnrstn
 
     public function set_desktop(){
 
-        $tmp_ARRAY = array(CRNRSTN_TABLET, CRNRSTN_MOBILE);
-        $this->clear_all_bits_set_one(CRNRSTN_DESKTOP, true, $tmp_ARRAY);
+        $tmp_ARRAY = array($this->R_data['int_flag']['CRNRSTN_TABLET'], $this->R_data['int_flag']['CRNRSTN_MOBILE']);
+        $this->clear_all_bits_set_one($this->R_data['int_flag']['CRNRSTN_DESKTOP'], true, $tmp_ARRAY);
         $this->device_type = 'DESKTOP';
 
         return true;
@@ -2765,8 +2770,8 @@ class crnrstn_http_manager extends crnrstn
 
         }
 
-        $tmp_ARRAY = array(CRNRSTN_DESKTOP, CRNRSTN_MOBILE);
-        $this->clear_all_bits_set_one(CRNRSTN_TABLET, true, $tmp_ARRAY);
+        $tmp_ARRAY = array($this->R_data['int_flag']['CRNRSTN_DESKTOP'], $this->R_data['int_flag']['CRNRSTN_MOBILE']);
+        $this->clear_all_bits_set_one($this->R_data['int_flag']['CRNRSTN_TABLET'], true, $tmp_ARRAY);
         $this->device_type = 'TABLET';
 
         return true;
@@ -2783,15 +2788,36 @@ class crnrstn_http_manager extends crnrstn
 
         }
 
-        $tmp_ARRAY = array(CRNRSTN_DESKTOP, CRNRSTN_TABLET);
-        $this->clear_all_bits_set_one(CRNRSTN_MOBILE, true, $tmp_ARRAY);
+        $tmp_ARRAY = array($this->R_data['int_flag']['CRNRSTN_DESKTOP'], $this->R_data['int_flag']['CRNRSTN_TABLET']);
+        $this->clear_all_bits_set_one($this->R_data['int_flag']['CRNRSTN_MOBILE'], true, $tmp_ARRAY);
         $this->device_type = 'MOBILE';
 
         return true;
 
     }
 
-    private function set_mobile_custom($magic_method = NULL, $force_override = true){
+    function set_mobile_custom(
+             $magic_method = NULL,
+             $force_override = true)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Refactored set_mobile_custom
+         *       visibility from private to static
+         *       to align to the use of this method
+         *       by crnrstn:
+         *
+         *       Fatal error: Access level to
+         *       CRNRSTN\crnrstn_http_manager::
+         *       set_mobile_custom() must be public
+         *       (as in class CRNRSTN\crnrstn) in
+         *       C:\xampp\htdocs\_R\class\session
+         *       \crnrstn.http_manager.class.php
+         *       on line 2816
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 1006 hrs.
+         *
+         */
 
         try{
 
@@ -2802,30 +2828,31 @@ class crnrstn_http_manager extends crnrstn
                 $tmp_detection_algorithm = trim(strtolower($magic_method));
                 $tmp_detection_algorithm = $this->str_sanitize($tmp_detection_algorithm, 'custom_mobi_detect_alg');
 
-                switch($tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER]){
+                switch($tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']]){
                     case 0:
                         // Experimental version() method
 
                         /*
                         ['NAME'] = 'version(Chrome)';
-                        [CRNRSTN_INTEGER] = 0;
-                        ['DETECTION_RESULT'] = $this->oMOBI_DETECT->version('Chrome');
+                        [$this->R_data['int_flag']['R_integer']] = 0;
+                        ['DETECTION_RESULT'] = $this->R['mobile_detect']->version('Chrome');
 
                         */
 
                     break;
-                    case CRNRSTN_MOBILE:
+                    case $this->R_data['int_flag']['CRNRSTN_MOBILE']:
 
                         $this->set_mobile();
 
                     break;
-                    case CRNRSTN_TABLET:
+                    case $this->R_data['int_flag']['CRNRSTN_TABLET']:
 
                         $this->set_tablet();
 
                     break;
+                    case $this->R_data['int_flag']['CRNRSTN_DESKTOP']:
                     default:
-                        // CRNRSTN_DESKTOP
+
                         $this->set_desktop();
 
                     break;
@@ -2938,35 +2965,14 @@ class crnrstn_http_manager extends crnrstn
 
             }else{
 
-                //
-                // NO SESSION MATCH. FURTHER DISCOVERY NEEDED.
-                if(!isset($this->oMOBI_DETECT)){
-
-                    //
-                    // INITIALIZE MOBILE DETECT (3RD PARTY OPEN SOURCE).
-                    //
-                    // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                    // Return an instantiation of
-                    // the Mobile Detect - PHP
-                    // Mobile Device Detection
-                    // class object.
-                    //
-                    //
-                    // 5 :: Monday, July 15, 2024 @ 2200 hrs.
-                    //
-                    // $this->oMOBI_DETECT = new crnrstn_Mobile_Detect();
-                    $this->oMOBI_DETECT = $this->return_registered_resource('new', 'crnrstn_Mobile_Detect');
-
-                }
-
                 try{
 
                     switch($tmp_detection_algorithm){
                         case 'versionchrome':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'version(Chrome)';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = 0;
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->oMOBI_DETECT->version('Chrome');
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = 0;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->R['mobile_detect']->version('Chrome');
 
                             return $tmp_custom_profile_ARRAY;
 
@@ -2974,8 +2980,8 @@ class crnrstn_http_manager extends crnrstn
                         case 'versionsafari':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'version(Safari)';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = 0;
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->oMOBI_DETECT->version('Safari');
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = 0;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->R['mobile_detect']->version('Safari');
 
                             return $tmp_custom_profile_ARRAY;
 
@@ -2983,8 +2989,8 @@ class crnrstn_http_manager extends crnrstn
                         case 'versionwebkit':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'version(Webkit)';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = 0;
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->oMOBI_DETECT->version('Webkit');
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = 0;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->R['mobile_detect']->version('Webkit');
 
                             return $tmp_custom_profile_ARRAY;
 
@@ -2992,8 +2998,8 @@ class crnrstn_http_manager extends crnrstn
                         case 'versionios':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'version(iOS)';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = 0;
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->oMOBI_DETECT->version('iOS');
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = 0;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = $this->R['mobile_detect']->version('iOS');
 
                             return $tmp_custom_profile_ARRAY;
 
@@ -3001,10 +3007,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismobile':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMobile';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMobile($this->http_headers_string)){
+                            if($this->R['mobile_detect']->isMobile($this->http_headers_string)){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3028,10 +3034,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'istablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTablet($this->http_headers_string)){
+                            if($this->R['mobile_detect']->isTablet($this->http_headers_string)){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3055,10 +3061,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isiphone':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isiPhone';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isiPhone()){
+                            if($this->R['mobile_detect']->isiPhone()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3082,10 +3088,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isblackberry':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBlackBerry';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBlackBerry()){
+                            if($this->R['mobile_detect']->isBlackBerry()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3109,10 +3115,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispixel':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPixel';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPixel()){
+                            if($this->R['mobile_detect']->isPixel()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3136,10 +3142,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ishtc':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isHTC';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isHTC()){
+                            if($this->R['mobile_detect']->isHTC()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3163,10 +3169,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnexus':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNexus';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNexus()){
+                            if($this->R['mobile_detect']->isNexus()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3190,10 +3196,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdell':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDell';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDell()){
+                            if($this->R['mobile_detect']->isDell()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3217,10 +3223,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismotorola':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMotorola';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMotorola()){
+                            if($this->R['mobile_detect']->isMotorola()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3244,10 +3250,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issamsung':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSamsung';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSamsung()){
+                            if($this->R['mobile_detect']->isSamsung()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3271,10 +3277,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'islg':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isLG';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isLG()){
+                            if($this->R['mobile_detect']->isLG()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3298,10 +3304,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issony':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSony';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSony()){
+                            if($this->R['mobile_detect']->isSony()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3325,10 +3331,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isasus':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAsus';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAsus()){
+                            if($this->R['mobile_detect']->isAsus()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3352,10 +3358,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isxiaomi':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isXiaomi';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isXiaomi()){
+                            if($this->R['mobile_detect']->isXiaomi()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3379,10 +3385,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnokialumia':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNokiaLumia';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNokiaLumia()){
+                            if($this->R['mobile_detect']->isNokiaLumia()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3406,10 +3412,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismicromax':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMicromax';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMicromax()){
+                            if($this->R['mobile_detect']->isMicromax()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3433,10 +3439,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispalm':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPalm';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPalm()){
+                            if($this->R['mobile_detect']->isPalm()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3460,10 +3466,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isvertu':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isVertu';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isVertu()){
+                            if($this->R['mobile_detect']->isVertu()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3487,10 +3493,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispantech':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPantech';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPantech()){
+                            if($this->R['mobile_detect']->isPantech()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3514,10 +3520,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isfly':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isFly';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isFly()){
+                            if($this->R['mobile_detect']->isFly()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3541,10 +3547,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iswiko':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isWiko';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isWiko()){
+                            if($this->R['mobile_detect']->isWiko()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3568,10 +3574,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isimobile':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isiMobile';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isiMobile()){
+                            if($this->R['mobile_detect']->isiMobile()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3595,10 +3601,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issimvalley':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSimValley';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSimValley()){
+                            if($this->R['mobile_detect']->isSimValley()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3622,10 +3628,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iswolfgang':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isWolfgang';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isWolfgang()){
+                            if($this->R['mobile_detect']->isWolfgang()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3649,10 +3655,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isalcatel':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAlcatel';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAlcatel()){
+                            if($this->R['mobile_detect']->isAlcatel()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3676,10 +3682,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnintendo':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNintendo';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNintendo()){
+                            if($this->R['mobile_detect']->isNintendo()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3703,10 +3709,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isamoi':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAmoi';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAmoi()){
+                            if($this->R['mobile_detect']->isAmoi()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3730,10 +3736,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isinq':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isINQ';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isINQ()){
+                            if($this->R['mobile_detect']->isINQ()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3757,10 +3763,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isoneplus':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isOnePlus';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isOnePlus()){
+                            if($this->R['mobile_detect']->isOnePlus()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3784,10 +3790,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isgenericphone':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isGenericPhone';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isGenericPhone()){
+                            if($this->R['mobile_detect']->isGenericPhone()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3811,10 +3817,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isipad':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isiPad';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isiPad()){
+                            if($this->R['mobile_detect']->isiPad()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3838,10 +3844,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnexustablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNexusTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNexusTablet()){
+                            if($this->R['mobile_detect']->isNexusTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3864,27 +3870,21 @@ class crnrstn_http_manager extends crnrstn
                         break;
                         case 'isgoogletablet':
 
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isGoogleTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME']             = 'isGoogleTablet';
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']]    = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isGoogleTablet()){
+                            if($this->R['mobile_detect']->isGoogleTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
-                                if(!$force_override){
-
+                                if(!$force_override)
                                     return $tmp_custom_profile_ARRAY;
 
-                                }
-
                             }
 
-                            if($force_override){
-
+                            if($force_override)
                                 return $tmp_custom_profile_ARRAY;
-
-                            }
 
                             return $tmp_custom_profile_ARRAY;
 
@@ -3892,10 +3892,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issamsungtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSamsungTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSamsungTablet()){
+                            if($this->R['mobile_detect']->isSamsungTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3919,10 +3919,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iskindle':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isKindle';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isKindle()){
+                            if($this->R['mobile_detect']->isKindle()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3946,10 +3946,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issurfacetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSurfaceTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSurfaceTablet()){
+                            if($this->R['mobile_detect']->isSurfaceTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -3973,10 +3973,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ishptablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isHPTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isHPTablet()){
+                            if($this->R['mobile_detect']->isHPTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4000,10 +4000,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isasustablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAsusTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAsusTablet()){
+                            if($this->R['mobile_detect']->isAsusTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4027,10 +4027,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isblackberrytablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBlackBerryTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBlackBerryTablet()){
+                            if($this->R['mobile_detect']->isBlackBerryTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4054,10 +4054,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ishtctablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isHTCtablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isHTCtablet()){
+                            if($this->R['mobile_detect']->isHTCtablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4081,10 +4081,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismotorolatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMotorolaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMotorolaTablet()){
+                            if($this->R['mobile_detect']->isMotorolaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4108,10 +4108,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnooktablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNookTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNookTablet()){
+                            if($this->R['mobile_detect']->isNookTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4135,10 +4135,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isacertablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAcerTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAcerTablet()){
+                            if($this->R['mobile_detect']->isAcerTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4162,10 +4162,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'istoshibatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isToshibaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isToshibaTablet()){
+                            if($this->R['mobile_detect']->isToshibaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4189,10 +4189,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'islgtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isLGTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isLGTablet()){
+                            if($this->R['mobile_detect']->isLGTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4216,10 +4216,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isfujitsutablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isFujitsuTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isFujitsuTablet()){
+                            if($this->R['mobile_detect']->isFujitsuTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4243,10 +4243,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isprestigiotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPrestigioTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPrestigioTablet()){
+                            if($this->R['mobile_detect']->isPrestigioTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4270,10 +4270,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'islenovotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isLenovoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isLenovoTablet()){
+                            if($this->R['mobile_detect']->isLenovoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4297,10 +4297,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdelltablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDellTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDellTablet()){
+                            if($this->R['mobile_detect']->isDellTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4324,10 +4324,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isxiaomitablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isXiaomiTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isXiaomiTablet()){
+                            if($this->R['mobile_detect']->isXiaomiTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4351,10 +4351,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isyarviktablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isYarvikTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isYarvikTablet()){
+                            if($this->R['mobile_detect']->isYarvikTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4378,10 +4378,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismediontablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMedionTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMedionTablet()){
+                            if($this->R['mobile_detect']->isMedionTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4405,10 +4405,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isarnovatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isArnovaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isArnovaTablet()){
+                            if($this->R['mobile_detect']->isArnovaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4432,10 +4432,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isintensotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isIntensoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isIntensoTablet()){
+                            if($this->R['mobile_detect']->isIntensoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4459,10 +4459,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isirutablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isIRUTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isIRUTablet()){
+                            if($this->R['mobile_detect']->isIRUTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4486,10 +4486,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismegafontablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMegafonTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMegafonTablet()){
+                            if($this->R['mobile_detect']->isMegafonTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4513,10 +4513,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isebodatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isEbodaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isEbodaTablet()){
+                            if($this->R['mobile_detect']->isEbodaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4540,10 +4540,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isallviewtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAllViewTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAllViewTablet()){
+                            if($this->R['mobile_detect']->isAllViewTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4567,10 +4567,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isarchostablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isArchosTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isArchosTablet()){
+                            if($this->R['mobile_detect']->isArchosTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4594,10 +4594,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isainoltablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAinolTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAinolTablet()){
+                            if($this->R['mobile_detect']->isAinolTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4621,10 +4621,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnokialumiatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNokiaLumiaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNokiaLumiaTablet()){
+                            if($this->R['mobile_detect']->isNokiaLumiaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4648,10 +4648,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issonytablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSonyTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSonyTablet()){
+                            if($this->R['mobile_detect']->isSonyTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4675,10 +4675,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isphilipstablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPhilipsTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPhilipsTablet()){
+                            if($this->R['mobile_detect']->isPhilipsTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4702,10 +4702,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iscubetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isCubeTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isCubeTablet()){
+                            if($this->R['mobile_detect']->isCubeTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4729,10 +4729,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iscobytablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isCobyTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isCobyTablet()){
+                            if($this->R['mobile_detect']->isCobyTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4756,10 +4756,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismidtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMIDTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMIDTablet()){
+                            if($this->R['mobile_detect']->isMIDTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4783,10 +4783,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismsitablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMSITablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMSITablet()){
+                            if($this->R['mobile_detect']->isMSITablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4810,10 +4810,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issmittablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSMiTTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSMiTTablet()){
+                            if($this->R['mobile_detect']->isSMiTTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4837,10 +4837,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isrockchiptablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isRockChipTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isRockChipTablet()){
+                            if($this->R['mobile_detect']->isRockChipTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4864,10 +4864,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isflytablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isFlyTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isFlyTablet()){
+                            if($this->R['mobile_detect']->isFlyTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4891,10 +4891,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isbqtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isbqTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isbqTablet()){
+                            if($this->R['mobile_detect']->isbqTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4918,10 +4918,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ishuaweitablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isHuaweiTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isHuaweiTablet()){
+                            if($this->R['mobile_detect']->isHuaweiTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4945,10 +4945,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnectablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNecTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNecTablet()){
+                            if($this->R['mobile_detect']->isNecTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4972,10 +4972,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispantechtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPantechTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPantechTablet()){
+                            if($this->R['mobile_detect']->isPantechTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -4999,10 +4999,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isbronchotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBronchoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBronchoTablet()){
+                            if($this->R['mobile_detect']->isBronchoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5026,10 +5026,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isversustablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isVersusTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isVersusTablet()){
+                            if($this->R['mobile_detect']->isVersusTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5053,10 +5053,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iszynctablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isZyncTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isZyncTablet()){
+                            if($this->R['mobile_detect']->isZyncTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5080,10 +5080,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispositivotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPositivoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPositivoTablet()){
+                            if($this->R['mobile_detect']->isPositivoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5107,10 +5107,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnabitablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNabiTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNabiTablet()){
+                            if($this->R['mobile_detect']->isNabiTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5134,10 +5134,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iskobotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isKoboTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isKoboTablet()){
+                            if($this->R['mobile_detect']->isKoboTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5161,10 +5161,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdanewtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDanewTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDanewTablet()){
+                            if($this->R['mobile_detect']->isDanewTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5188,10 +5188,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'istexettablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTexetTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTexetTablet()){
+                            if($this->R['mobile_detect']->isTexetTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5215,10 +5215,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isplaystationtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPlaystationTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPlaystationTablet()){
+                            if($this->R['mobile_detect']->isPlaystationTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5242,10 +5242,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'istrekstortablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTrekstorTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTrekstorTablet()){
+                            if($this->R['mobile_detect']->isTrekstorTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5269,10 +5269,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispyleaudiotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPyleAudioTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPyleAudioTablet()){
+                            if($this->R['mobile_detect']->isPyleAudioTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5296,10 +5296,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isadvantablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAdvanTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAdvanTablet()){
+                            if($this->R['mobile_detect']->isAdvanTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5323,10 +5323,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdanytechtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDanyTechTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDanyTechTablet()){
+                            if($this->R['mobile_detect']->isDanyTechTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5350,10 +5350,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isgalapadtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isGalapadTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isGalapadTablet()){
+                            if($this->R['mobile_detect']->isGalapadTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5377,10 +5377,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismicromaxtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMicromaxTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMicromaxTablet()){
+                            if($this->R['mobile_detect']->isMicromaxTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5404,10 +5404,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iskarbonntablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isKarbonnTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isKarbonnTablet()){
+                            if($this->R['mobile_detect']->isKarbonnTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5431,10 +5431,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isallfinetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAllFineTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAllFineTablet()){
+                            if($this->R['mobile_detect']->isAllFineTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5458,10 +5458,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isproscantablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPROSCANTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPROSCANTablet()){
+                            if($this->R['mobile_detect']->isPROSCANTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5485,10 +5485,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isyonestablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isYONESTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isYONESTablet()){
+                            if($this->R['mobile_detect']->isYONESTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5512,10 +5512,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ischangjiatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isChangJiaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isChangJiaTablet()){
+                            if($this->R['mobile_detect']->isChangJiaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5539,10 +5539,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isgutablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isGUTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isGUTablet()){
+                            if($this->R['mobile_detect']->isGUTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5566,10 +5566,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispointofviewtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPointOfViewTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPointOfViewTablet()){
+                            if($this->R['mobile_detect']->isPointOfViewTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5593,10 +5593,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isovermaxtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isOvermaxTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isOvermaxTablet()){
+                            if($this->R['mobile_detect']->isOvermaxTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5620,10 +5620,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ishcltablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isHCLTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isHCLTablet()){
+                            if($this->R['mobile_detect']->isHCLTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5647,10 +5647,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdpstablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDPSTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDPSTablet()){
+                            if($this->R['mobile_detect']->isDPSTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5674,10 +5674,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isvisturetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isVistureTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isVistureTablet()){
+                            if($this->R['mobile_detect']->isVistureTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5701,10 +5701,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iscrestatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isCrestaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isCrestaTablet()){
+                            if($this->R['mobile_detect']->isCrestaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5728,10 +5728,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismediatektablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMediatekTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMediatekTablet()){
+                            if($this->R['mobile_detect']->isMediatekTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5755,10 +5755,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isconcordetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isConcordeTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isConcordeTablet()){
+                            if($this->R['mobile_detect']->isConcordeTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5782,10 +5782,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isgoclevertablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isGoCleverTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isGoCleverTablet()){
+                            if($this->R['mobile_detect']->isGoCleverTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5809,10 +5809,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismodecomtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isModecomTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isModecomTablet()){
+                            if($this->R['mobile_detect']->isModecomTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5836,10 +5836,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isvoninotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isVoninoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isVoninoTablet()){
+                            if($this->R['mobile_detect']->isVoninoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5863,10 +5863,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isecstablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isECSTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isECSTablet()){
+                            if($this->R['mobile_detect']->isECSTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5890,10 +5890,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isstorextablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isStorexTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isStorexTablet()){
+                            if($this->R['mobile_detect']->isStorexTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5917,10 +5917,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isvodafonetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isVodafoneTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isVodafoneTablet()){
+                            if($this->R['mobile_detect']->isVodafoneTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5944,10 +5944,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isessentielbtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isEssentielBTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isEssentielBTablet()){
+                            if($this->R['mobile_detect']->isEssentielBTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5971,10 +5971,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isrossmoortablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isRossMoorTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isRossMoorTablet()){
+                            if($this->R['mobile_detect']->isRossMoorTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -5998,10 +5998,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isimobiletablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isiMobileTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isiMobileTablet()){
+                            if($this->R['mobile_detect']->isiMobileTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6025,10 +6025,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'istolinotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTolinoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTolinoTablet()){
+                            if($this->R['mobile_detect']->isTolinoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6052,10 +6052,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isaudiosonictablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAudioSonicTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAudioSonicTablet()){
+                            if($this->R['mobile_detect']->isAudioSonicTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6079,10 +6079,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isampetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAMPETablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAMPETablet()){
+                            if($this->R['mobile_detect']->isAMPETablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6106,10 +6106,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isskktablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSkkTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSkkTablet()){
+                            if($this->R['mobile_detect']->isSkkTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6133,10 +6133,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'istecnotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTecnoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTecnoTablet()){
+                            if($this->R['mobile_detect']->isTecnoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6160,10 +6160,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isjxdtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isJXDTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isJXDTablet()){
+                            if($this->R['mobile_detect']->isJXDTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6187,10 +6187,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isijoytablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isiJoyTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isiJoyTablet()){
+                            if($this->R['mobile_detect']->isiJoyTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6214,10 +6214,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isfx2tablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isFX2Tablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isFX2Tablet()){
+                            if($this->R['mobile_detect']->isFX2Tablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6241,10 +6241,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isxorotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isXoroTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isXoroTablet()){
+                            if($this->R['mobile_detect']->isXoroTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6268,10 +6268,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isviewsonictablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isViewsonicTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isViewsonicTablet()){
+                            if($this->R['mobile_detect']->isViewsonicTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6295,10 +6295,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isverizontablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isVerizonTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isVerizonTablet()){
+                            if($this->R['mobile_detect']->isVerizonTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6322,10 +6322,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isodystablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isOdysTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isOdysTablet()){
+                            if($this->R['mobile_detect']->isOdysTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6349,10 +6349,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iscaptivatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isCaptivaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isCaptivaTablet()){
+                            if($this->R['mobile_detect']->isCaptivaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6376,10 +6376,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isiconbittablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isIconbitTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isIconbitTablet()){
+                            if($this->R['mobile_detect']->isIconbitTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6403,10 +6403,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isteclasttablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTeclastTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTeclastTablet()){
+                            if($this->R['mobile_detect']->isTeclastTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6430,10 +6430,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isondatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isOndaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isOndaTablet()){
+                            if($this->R['mobile_detect']->isOndaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6457,10 +6457,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isjaytechtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isJaytechTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isJaytechTablet()){
+                            if($this->R['mobile_detect']->isJaytechTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6484,10 +6484,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isblaupunkttablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBlaupunktTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBlaupunktTablet()){
+                            if($this->R['mobile_detect']->isBlaupunktTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6511,10 +6511,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdigmatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDigmaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDigmaTablet()){
+                            if($this->R['mobile_detect']->isDigmaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6538,10 +6538,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isevoliotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isEvolioTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isEvolioTablet()){
+                            if($this->R['mobile_detect']->isEvolioTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6565,10 +6565,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'islavatablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isLavaTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isLavaTablet()){
+                            if($this->R['mobile_detect']->isLavaTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6592,10 +6592,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isaoctablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAocTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAocTablet()){
+                            if($this->R['mobile_detect']->isAocTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6619,10 +6619,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismpmantablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMpmanTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMpmanTablet()){
+                            if($this->R['mobile_detect']->isMpmanTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6646,10 +6646,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iscelkontablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isCelkonTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isCelkonTablet()){
+                            if($this->R['mobile_detect']->isCelkonTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6673,10 +6673,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iswoldertablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isWolderTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isWolderTablet()){
+                            if($this->R['mobile_detect']->isWolderTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6700,10 +6700,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismediacomtablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMediacomTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMediacomTablet()){
+                            if($this->R['mobile_detect']->isMediacomTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6727,10 +6727,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismitablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMiTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMiTablet()){
+                            if($this->R['mobile_detect']->isMiTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6754,10 +6754,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnibirutablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNibiruTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNibiruTablet()){
+                            if($this->R['mobile_detect']->isNibiruTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6781,10 +6781,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnexotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNexoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNexoTablet()){
+                            if($this->R['mobile_detect']->isNexoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6808,10 +6808,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isleadertablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isLeaderTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isLeaderTablet()){
+                            if($this->R['mobile_detect']->isLeaderTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6835,10 +6835,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isubislatetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isUbislateTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isUbislateTablet()){
+                            if($this->R['mobile_detect']->isUbislateTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6862,10 +6862,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispocketbooktablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPocketBookTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPocketBookTablet()){
+                            if($this->R['mobile_detect']->isPocketBookTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6889,10 +6889,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iskocasotablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isKocasoTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isKocasoTablet()){
+                            if($this->R['mobile_detect']->isKocasoTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6916,10 +6916,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ishisensetablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isHisenseTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isHisenseTablet()){
+                            if($this->R['mobile_detect']->isHisenseTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6943,10 +6943,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ishudl':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isHudl';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isHudl()){
+                            if($this->R['mobile_detect']->isHudl()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6970,10 +6970,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'istelstratablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTelstraTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTelstraTablet()){
+                            if($this->R['mobile_detect']->isTelstraTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -6997,10 +6997,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isgenerictablet':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isGenericTablet';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isGenericTablet()){
+                            if($this->R['mobile_detect']->isGenericTablet()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7024,10 +7024,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isandroidos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isAndroidOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isAndroidOS()){
+                            if($this->R['mobile_detect']->isAndroidOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7051,10 +7051,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isblackberryos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBlackBerryOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBlackBerryOS()){
+                            if($this->R['mobile_detect']->isBlackBerryOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7078,10 +7078,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispalmos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPalmOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPalmOS()){
+                            if($this->R['mobile_detect']->isPalmOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7105,10 +7105,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issymbianos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSymbianOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSymbianOS()){
+                            if($this->R['mobile_detect']->isSymbianOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7132,10 +7132,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iswindowsmobileos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isWindowsMobileOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isWindowsMobileOS()){
+                            if($this->R['mobile_detect']->isWindowsMobileOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7159,10 +7159,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iswindowsphoneos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isWindowsPhoneOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isWindowsPhoneOS()){
+                            if($this->R['mobile_detect']->isWindowsPhoneOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7186,10 +7186,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isios':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isiOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isiOS()){
+                            if($this->R['mobile_detect']->isiOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7213,10 +7213,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isipados':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isiPadOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_TABLET;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_TABLET'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isiPadOS()){
+                            if($this->R['mobile_detect']->isiPadOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7240,10 +7240,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issailfishos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSailfishOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSailfishOS()){
+                            if($this->R['mobile_detect']->isSailfishOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7267,10 +7267,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismeegoos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMeeGoOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMeeGoOS()){
+                            if($this->R['mobile_detect']->isMeeGoOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7294,10 +7294,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismaemoos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMaemoOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMaemoOS()){
+                            if($this->R['mobile_detect']->isMaemoOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7321,10 +7321,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isjavaos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isJavaOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isJavaOS()){
+                            if($this->R['mobile_detect']->isJavaOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7348,10 +7348,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iswebos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'iswebOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->iswebOS()){
+                            if($this->R['mobile_detect']->iswebOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7375,10 +7375,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isbadaos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isbadaOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isbadaOS()){
+                            if($this->R['mobile_detect']->isbadaOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7402,10 +7402,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isbrewos':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBREWOS';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBREWOS()){
+                            if($this->R['mobile_detect']->isBREWOS()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7429,10 +7429,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ischrome':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isChrome';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isChrome()){
+                            if($this->R['mobile_detect']->isChrome()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7456,10 +7456,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdolfin':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDolfin';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDolfin()){
+                            if($this->R['mobile_detect']->isDolfin()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7483,10 +7483,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isopera':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isOpera';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isOpera()){
+                            if($this->R['mobile_detect']->isOpera()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7510,10 +7510,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isskyfire':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSkyfire';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSkyfire()){
+                            if($this->R['mobile_detect']->isSkyfire()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7537,10 +7537,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isedge':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isEdge';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isEdge()){
+                            if($this->R['mobile_detect']->isEdge()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7564,10 +7564,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isie':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isIE';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isIE()){
+                            if($this->R['mobile_detect']->isIE()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7591,10 +7591,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isfirefox':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isFirefox';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isFirefox()){
+                            if($this->R['mobile_detect']->isFirefox()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7618,10 +7618,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isbolt':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBolt';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBolt()){
+                            if($this->R['mobile_detect']->isBolt()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7645,10 +7645,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isteashark':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isTeaShark';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isTeaShark()){
+                            if($this->R['mobile_detect']->isTeaShark()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7672,10 +7672,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isblazer':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isBlazer';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isBlazer()){
+                            if($this->R['mobile_detect']->isBlazer()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7699,10 +7699,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'issafari':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isSafari';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isSafari()){
+                            if($this->R['mobile_detect']->isSafari()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7726,10 +7726,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'iswechat':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isWeChat';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isWeChat()){
+                            if($this->R['mobile_detect']->isWeChat()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7753,10 +7753,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isucbrowser':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isUCBrowser';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isUCBrowser()){
+                            if($this->R['mobile_detect']->isUCBrowser()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7780,10 +7780,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isbaiduboxapp':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isbaiduboxapp';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isbaiduboxapp()){
+                            if($this->R['mobile_detect']->isbaiduboxapp()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7807,10 +7807,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isbaidubrowser':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isbaidubrowser';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isbaidubrowser()){
+                            if($this->R['mobile_detect']->isbaidubrowser()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7834,10 +7834,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isdiigobrowser':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isDiigoBrowser';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isDiigoBrowser()){
+                            if($this->R['mobile_detect']->isDiigoBrowser()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7861,10 +7861,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ismercury':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isMercury';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isMercury()){
+                            if($this->R['mobile_detect']->isMercury()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7888,10 +7888,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isobigobrowser':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isObigoBrowser';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isObigoBrowser()){
+                            if($this->R['mobile_detect']->isObigoBrowser()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7915,10 +7915,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isnetfront':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isNetFront';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isNetFront()){
+                            if($this->R['mobile_detect']->isNetFront()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7942,10 +7942,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'isgenericbrowser':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isGenericBrowser';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isGenericBrowser()){
+                            if($this->R['mobile_detect']->isGenericBrowser()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -7969,10 +7969,10 @@ class crnrstn_http_manager extends crnrstn
                         case 'ispalemoon':
 
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['NAME'] = 'isPaleMoon';
-                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][CRNRSTN_INTEGER] = CRNRSTN_MOBILE;
+                            $tmp_custom_profile_ARRAY[$tmp_detection_algorithm][$this->R_data['int_flag']['R_integer']] = $this->R_data['int_flag']['CRNRSTN_MOBILE'];
                             $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'FALSE';
 
-                            if($this->oMOBI_DETECT->isPaleMoon()){
+                            if($this->R['mobile_detect']->isPaleMoon()){
 
                                 $tmp_custom_profile_ARRAY[$tmp_detection_algorithm]['DETECTION_RESULT'] = 'TRUE';
 
@@ -8052,28 +8052,23 @@ class crnrstn_http_manager extends crnrstn
 
     }
 
-    public function is($key, $userAgent = null, $httpHeaders = null){
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function is(
+             $key,
+             $userAgent = null,
+             $httpHeaders = null)
+    {
 
-        if(!isset($this->oMOBI_DETECT)){
-
-            //
-            // INITIALIZE MOBILE DETECT (3RD PARTY OPEN SOURCE).
-            //
-            // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-            // Return an instantiation of
-            // the Mobile Detect - PHP
-            // Mobile Device Detection
-            // class object.
-            //
-            //
-            // 5 :: Monday, July 15, 2024 @ 2200 hrs.
-            //
-            // $this->oMOBI_DETECT = new crnrstn_Mobile_Detect();
-            $this->oMOBI_DETECT = $this->return_registered_resource('new', 'crnrstn_Mobile_Detect');
-
-        }
-
-        return $this->oMOBI_DETECT->is($key, $userAgent, $httpHeaders);
+        return $this->R['mobile_detect']->is($key, $userAgent, $httpHeaders);
 
     }
 

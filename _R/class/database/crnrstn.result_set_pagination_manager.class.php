@@ -337,7 +337,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -355,7 +355,26 @@ class crnrstn_result_set_pagination_manager
     protected $pagination_sensation_endpoint = array();
     protected $pagination_handle_var = array();
 
-    public function __construct($oCRNRSTN_USR)
+    /**
+     * R :: Content pending.
+     *
+     * @return
+     * @access public
+     *
+     */
+    function __construct()
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * CLR-SSL Database Integrations
+         * Services Layer clean restart.
+         *
+         * 5 :: Friday, August 21, 2026 @ 0510 hrs.
+         *
+         */
+
+    }
+
+    public function ______pre_clr_ssl_construct($oCRNRSTN_USR)
     {
 
         $this->oCRNRSTN_USR = $oCRNRSTN_USR;

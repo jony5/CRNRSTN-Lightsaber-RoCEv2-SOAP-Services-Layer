@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,7 +40,7 @@ http://www.nusphere.com
 */
 
 /*
- *	Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
  *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
  *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
@@ -83,8 +85,15 @@ $GLOBALS['_transient']['static']['nusoap_base']['globalDebugLevel'] = 9;
  * @version  $Id: nusoap.php,v 1.123 2010/04/26 20:15:08 snichol Exp $
  * @access   public
  */
-class nusoap_base
+class nusoap_base extends crnrstn
 {
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: We modified the nusoap_base
+     *       class object by adding an
+     *       extension of the crnrstn object.
+     *       5 :: Thursday, August 20, 2026 @ 0645 hrs.
+     *
+     */
     /**
      * Identification for HTTP headers.
      *
@@ -105,7 +114,7 @@ class nusoap_base
      * @var string
      * @access private
      */
-    var $revision = '$Revision: 1.123 $';
+    var $revision = '$Revision: 1.124 $';
     /**
      * Current error string (manipulated by getError/setError)
      *
@@ -290,9 +299,36 @@ class nusoap_base
      */
     function debug($string)
     {
-        if ($this->debugLevel > 0) {
-            $this->appendDebug($this->getmicrotime() . ' ' . get_class($this) . ": $string\n");
-        }
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Thursday, August 20, 2026 @ 2050 hrs.
+         *
+         * if ($this->debugLevel > 0) {
+         *    $this->appendDebug($this->getmicrotime().' '.get_class($this).": $string\n");
+         * }
+         *
+         */
+
+        $clr_ssl_msg = \get_class($this) .
+                       ": $string\n";
+        // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token = array(
+                 'token'                   => $msg_token,
+                 'token_generation_date'   => $token_generation_date,
+                 'request_type'            => __METHOD__,
+                 'code'                    => 200,
+                 'clr_ssl_msg'             => $clr_ssl_msg);
+        $this->error_log(
+               $clr_ssl_msg,
+               \LOG_ALERT,
+               \E_ERROR,
+               __LINE__,
+               __METHOD__,
+               __FILE__,
+               $token);
+
     }
 
     /**
@@ -394,6 +430,29 @@ class nusoap_base
     function setError($str)
     {
         $this->error_str = $str;
+    }
+
+    /**
+     * gets the charencoding setting that controls whether special characters are encoded as XML entities
+     *
+     * @return   boolean
+     * @access   public
+     */
+    function getCharencoding()
+    {
+        return $this->charencoding;
+    }
+
+    /**
+     * sets the charencoding setting
+     *
+     * @param    boolean $charencoding Whether to encode special characters as XML entities in expandEntities()
+     * @return   void
+     * @access   public
+     */
+    function setCharencoding($charencoding)
+    {
+        $this->charencoding = $charencoding;
     }
 
     /**
@@ -617,9 +676,9 @@ class nusoap_base
                             $array_typename = 'unnamed_struct_use_soapval';
                         } else {
                             // if type is prefixed, create type prefix
-                            if ($tt_ns != '' && $tt_ns == $this->namespaces['xsd']) {
+                            if (isset($tt_ns) && $tt_ns != '' && $tt_ns == $this->namespaces['xsd']) {
                                 $array_typename = 'xsd:' . $tt;
-                            } elseif ($tt_ns) {
+                            } elseif (isset($tt_ns) && $tt_ns) {
                                 $tt_prefix = 'ns' . rand(1000, 9999);
                                 $array_typename = "$tt_prefix:$tt";
                                 $xmlns .= " xmlns:$tt_prefix=\"$tt_ns\"";
@@ -682,7 +741,7 @@ class nusoap_base
         $this->debug("serialize_val returning $xml");
         return $xml;
     }
-    
+
     /**
      * serializes a message
      *
@@ -892,9 +951,9 @@ class nusoap_base
             $sec = time();
             $usec = 0;
         }
-        $dtx = new DateTime("@$sec");
-	return
-          date_format($dtx, 'Y-m-d H:i:s') . '.' . sprintf('%06d', $usec);
+        $dtx = new \DateTime("@$sec");
+        return
+            date_format($dtx, 'Y-m-d H:i:s') . '.' . sprintf('%06d', $usec);
     }
 
     /**

@@ -1,4 +1,7 @@
 <?php
+
+namespace CRNRSTN;
+
 /*
 $Id: nusoapmime.php,v 1.13 2010/04/26 20:15:08 snichol Exp $
 
@@ -41,6 +44,6 @@ http://www.nusphere.com
  *	For backwards compatiblity, define soapclientmime unless the PHP SOAP extension is loaded.
  */
 if (!extension_loaded('soap')) {
-	class soapclientmime extends nusoap_client_mime {
-	}
+    class soapclientmime extends nusoap_client_mime {
+    }
 }

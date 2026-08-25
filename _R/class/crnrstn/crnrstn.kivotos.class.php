@@ -265,7 +265,7 @@ namespace CRNRSTN;
  * DATE             :: Thursday, August 6, 2026 @ "00" 0200 hrs.
  *
  *                     "00"..."00"..."00"...Oh, 
- *                     Oh, Oh, Oh. You know what I mean."
+ *                     Oh, Oh, Oh. You know what I mean.
  *
  *                     Yeah, you know what I mean: 
  *                     "Oh, Oh, Oh"... 
@@ -314,7 +314,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -338,16 +338,13 @@ class crnrstn_kivotos extends crnrstn
      */
     function __construct()
     {
-        $tmp = array();
+
         $this->R_data['R_debug_mode']        = $this->get_crnrstn('R_debug_mode');
-        $this->R_data['operating_system']['os_path_dir_separator_char'] = $this->get_crnrstn('os_path_dir_separator_char');
         $this->R_data['R_cluster_id']        = $this->get_crnrstn('R_cluster_id');
         $this->R_data['R_node_id']           = $this->get_crnrstn('R_node_id');
         $this->R_data['int_flag']            = $this->get_crnrstn('int_flag');
-        $this->R_data['framework_path_root'] = $this->get_crnrstn('framework_path_root');
-        $this->R_kivotos_index               = $this->R_load_static(
-                                                __METHOD__, 
-                                                'R_kivotos_index');
+        $this->R_data['R_framework_path']    = $this->get_crnrstn('R_framework_path');
+        $this->R_data['operating_system']['os_path_dir_separator_char'] = $this->get_crnrstn('os_path_dir_separator_char');
 
     }
 
@@ -835,3391 +832,89 @@ class crnrstn_kivotos extends crnrstn
          *
          */
         switch($res_name){
-            case __NAMESPACE__ . '\crnrstn_kivotos':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1200 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Thursday, August 6, 2026 @ "Oh" 0123 hrs.
-                 *
-                 * You know what I mean, 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->return_bytes(
-                              $html_out, 
-                              0, 
-                              NULL, 
-                              false, 
-                              true, 
-                              true, 
-                              true));
-                /*
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                */
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_ascii_art':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1200 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Thursday, May 21, 2026 @ 0548 hrs.
-                 *
-                 */
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) System ASCII Art 
-                 * Source Control class object. 
-                 *
-                 *
-                 * 5 :: Thursday, May 21, 2026 @ 0550 hrs.
-                 *
-                 */
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_file_system_integrations_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1200 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Thursday, May 21, 2026 @ 0548 hrs.
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) File System 
-                 * Integrations Manager 
-                 * class object. 
-                 *
-                 *
-                 * 5 :: Thursday, May 21, 2026 @ 0551 hrs.
-                 *
-                 */
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_logging':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Saturday, April 25, 2026 @ 0834 hrs.
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Return an instantiation of 
-                 * The CRNRSTN :: Lightsaber RoCEv2 
-                 * SOAP Services Layer (CLR-SSL) 
-                 * Logging Services Layer 
-                 * class object. 
-                 *
-                 * The logging services layer 
-                 * provides multiple touch points 
-                 * for an enriched debugging/log 
-                 * trace experience. 
-                 *
-                 *
-                 * 5 :: Monday, July 8, 2024 @ 0510 hrs.
-                 *
-                 * self::$oLogger = new crnrstn_logging(
-                 *                      __CLASS__, 
-                 *                      $this);
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Instantiate the CRNRSTN ::
-                 * Lightsaber Logging Services
-                 * Layer class object of the
-                 * CRNRSTN :: Lightsaber RoCEv2 SOAP
-                 * Services Layer.
-                 *
-                 *
-                 * 5
-                 *
-                 * Saturday, August 10, 2024 @ 0258 hrs.
-                 *
-                 * //$this->oCRNRSTN_LOGGING = new crnrstn_logging(__CLASS__, $this);
-                 *
-                 * $this->oCRNRSTN_LOGGING = $this->return_registered_resource(
-                 *                                  'new', 
-                 *                                  'crnrstn_logging');
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) Logging Services 
-                 * Layer class object. 
-                 *
-                 * The logging services layer 
-                 * provides multiple touch points 
-                 * for an enriched debugging/log 
-                 * trace experience. 
-                 *
-                 *
-                 * 5 :: Monday, July 8, 2024 @ 0510 hrs.
-                 *
-                 * self::$oLogger = new crnrstn_logging(__CLASS__, $this);
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_session_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Saturday, April 25, 2026 @ 0835 hrs.
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Return an instantiation of
-                 * Services Layer Session
-                 * Management class object.
-                 *
-                 *
-                 * 5 :: Monday, August 12, 2024 @ 0150 hrs.
-                 * self::$oSESSION_MGR = $this->return_registered_resource(
-                 *                              'new', 
-                 *                              'crnrstn_session_manager', 
-                 *                              $this, 
-                 *                              $config_serial_override, 
-                 *                              $R_hmac_algorithm_override,  
-                 *                              $R_config_salt_override);
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) Session Management 
-                 * class object. 
-                 *
-                 *
-                 * 5 :: Monday, July 8, 2024 @ 0523 hrs.
-                 *
-                 * self::$oSESSION_MGR = new crnrstn_session_manager($this);
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_json':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Monday, May 11, 2026 @ 0517 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_xml':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Monday, May 11, 2026 @ 0525 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_socket':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Thursday, July 9, 2026 @ 1550 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_curl':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Thursday, July 9, 2026 @ 1552 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_stream':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Thursday, July 9, 2026 @ 1553 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_multi_language_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1202 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Friday, July 10, 2026 @ 1009 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_client_assets':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * ^ Delete this entire case when
-                 *   integration checks are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Monday, July 13, 2026 @ 0623 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' .
-                    'checking that the ' .
-                    $this->return_bytes(
-                        $R_resp[$mem_ptr]['data_bytes'][0],
-                        2,
-                        NULL,
-                        true,
-                        false,
-                        false) .
-                    ' (' .
-                    \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
-                    \get_class($R_resp[$mem_ptr]['data'][0]) .
-                    ' data we are receiving from the ' .
-                    'CLR-SSL Resource Registry is ' .
-                    $R_resp[$mem_ptr]['title']['TEXT'] .
-                    ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                    'token'                   => $msg_token,
-                    'token_generation_date'   => $token_generation_date,
-                    'request_type'            => __METHOD__,
-                    'code'                    => 200,
-                    'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_NOTICE,
-                    \E_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                    $R_resp,
-                    $clr_ssl_msg,
-                    true,
-                    __LINE__,
-                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers.
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh,
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean:
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 */
-                $this->set_response_headers(
-                    'Content-Type: text/html; charset=utf-8',
-                    $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_ui_content_assembler':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * ^ Delete this entire case when
-                 *   integration checks are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1206 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' .
-                    'checking that the ' .
-                    $this->return_bytes(
-                        $R_resp[$mem_ptr]['data_bytes'][0],
-                        2,
-                        NULL,
-                        true,
-                        false,
-                        false) .
-                    ' (' .
-                    \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
-                    \get_class($R_resp[$mem_ptr]['data'][0]) .
-                    ' data we are receiving from the ' .
-                    'CLR-SSL Resource Registry is ' .
-                    $R_resp[$mem_ptr]['title']['TEXT'] .
-                    ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                    'token'                   => $msg_token,
-                    'token_generation_date'   => $token_generation_date,
-                    'request_type'            => __METHOD__,
-                    'code'                    => 200,
-                    'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_NOTICE,
-                    \E_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                    $R_resp,
-                    $clr_ssl_msg,
-                    true,
-                    __LINE__,
-                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers.
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh,
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean:
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 */
-                $this->set_response_headers(
-                    'Content-Type: text/html; charset=utf-8',
-                    $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_content_source_controller':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * ^ Delete this entire case when
-                 *   integration checks are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1206 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Sunday, June 28, 2026 @ 0801 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' .
-                    'checking that the ' .
-                    $this->return_bytes(
-                        $R_resp[$mem_ptr]['data_bytes'][0],
-                        2,
-                        NULL,
-                        true,
-                        false,
-                        false) .
-                    ' (' .
-                    \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
-                    \get_class($R_resp[$mem_ptr]['data'][0]) .
-                    ' data we are receiving from the ' .
-                    'CLR-SSL Resource Registry is ' .
-                    $R_resp[$mem_ptr]['title']['TEXT'] .
-                    ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                    'token'                   => $msg_token,
-                    'token_generation_date'   => $token_generation_date,
-                    'request_type'            => __METHOD__,
-                    'code'                    => 200,
-                    'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_NOTICE,
-                    \E_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                    $R_resp,
-                    $clr_ssl_msg,
-                    true,
-                    __LINE__,
-                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers.
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh,
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean:
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 */
-                $this->set_response_headers(
-                    'Content-Type: text/html; charset=utf-8',
-                    $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_performance_regulator':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * ^ Delete this entire case when
-                 *   integration checks are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Sunday, July 26, 2026 @ 0954 hrs.
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' .
-                    'checking that the ' .
-                    $this->return_bytes(
-                        $R_resp[$mem_ptr]['data_bytes'][0],
-                        2,
-                        NULL,
-                        true,
-                        false,
-                        false) .
-                    ' (' .
-                    \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
-                    \get_class($R_resp[$mem_ptr]['data'][0]) .
-                    ' data we are receiving from the ' .
-                    'CLR-SSL Resource Registry is ' .
-                    $R_resp[$mem_ptr]['title']['TEXT'] .
-                    ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                    'token'                   => $msg_token,
-                    'token_generation_date'   => $token_generation_date,
-                    'request_type'            => __METHOD__,
-                    'code'                    => 200,
-                    'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_NOTICE,
-                    \E_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                    $R_resp,
-                    $clr_ssl_msg,
-                    true,
-                    __LINE__,
-                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers.
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh,
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean:
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 */
-                $this->set_response_headers(
-                    'Content-Type: text/html; charset=utf-8',
-                    $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_method_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * ^ Delete this entire case when
-                 *   integration checks are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1206 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Thursday, July 23, 2026 @ "Oh" 123 hrs.
-                 *
-                 * You know what I mean,
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 * Lights joint off stove gas range.
-                 * Sips on some refreshing Coca-Cola®
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' .
-                    'checking that the ' .
-                    $this->return_bytes(
-                        $R_resp[$mem_ptr]['data_bytes'][0],
-                        2,
-                        NULL,
-                        true,
-                        false,
-                        false) .
-                    ' (' .
-                    \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
-                    \get_class($R_resp[$mem_ptr]['data'][0]) .
-                    ' data we are receiving from the ' .
-                    'CLR-SSL Resource Registry is ' .
-                    $R_resp[$mem_ptr]['title']['TEXT'] .
-                    ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                    'token'                   => $msg_token,
-                    'token_generation_date'   => $token_generation_date,
-                    'request_type'            => __METHOD__,
-                    'code'                    => 200,
-                    'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_NOTICE,
-                    \E_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                    $R_resp,
-                    $clr_ssl_msg,
-                    true,
-                    __LINE__,
-                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers.
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh,
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean:
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 */
-                $this->set_response_headers(
-                    'Content-Type: text/html; charset=utf-8',
-                    $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_configuration_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * ^ Delete this entire case when
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Wednesday, July 22, 2026 @ 1620 hrs.
-                // Lights joint off stove gas range.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' .
-                    'checking that the ' .
-                    $this->return_bytes(
-                        $R_resp[$mem_ptr]['data_bytes'][0],
-                        2,
-                        NULL,
-                        true,
-                        false,
-                        false) .
-                    ' (' .
-                    \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
-                    \get_class($R_resp[$mem_ptr]['data'][0]) .
-                    ' data we are receiving from the ' .
-                    'CLR-SSL Resource Registry is ' .
-                    $R_resp[$mem_ptr]['title']['TEXT'] .
-                    ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                    'token'                   => $msg_token,
-                    'token_generation_date'   => $token_generation_date,
-                    'request_type'            => __METHOD__,
-                    'code'                    => 200,
-                    'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_NOTICE,
-                    \E_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                    $R_resp,
-                    $clr_ssl_msg,
-                    true,
-                    __LINE__,
-                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers.
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh,
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean:
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 */
-                $this->set_response_headers(
-                    'Content-Type: text/html; charset=utf-8',
-                    $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_link_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1206 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Thursday, July 23, 2026 @ 0132 hrs.
-                // Sips on some refreshing Coca-Cola®
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_decoupled_data_object':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Thursday, July 23, 2026 @ 0134 hrs.
-                // Sips on some refreshing Coca-Cola®
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_response_return_serialization_map':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Sunday, July 26, 2026 @ 0911 hrs.
-                 * Lights righteous rip on bong off of 
-                 * stove gas range.
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_system_asset_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * ^ Delete this entire case when
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1201 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Monday, July 13, 2026 @ 0623 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' .
-                    'checking that the ' .
-                    $this->return_bytes(
-                        $R_resp[$mem_ptr]['data_bytes'][0],
-                        2,
-                        NULL,
-                        true,
-                        false,
-                        false) .
-                    ' (' .
-                    \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
-                    \get_class($R_resp[$mem_ptr]['data'][0]) .
-                    ' data we are receiving from the ' .
-                    'CLR-SSL Resource Registry is ' .
-                    $R_resp[$mem_ptr]['title']['TEXT'] .
-                    ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                    'token'                   => $msg_token,
-                    'token_generation_date'   => $token_generation_date,
-                    'request_type'            => __METHOD__,
-                    'code'                    => 200,
-                    'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_NOTICE,
-                    \E_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                    $R_resp,
-                    $clr_ssl_msg,
-                    true,
-                    __LINE__,
-                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers.
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh,
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean:
-                 * "Oh, Oh, Oh"...
-                 * Yeah, you know what
-                 * I mean..."Oh"...yeah. ;)
-                 *
-                 */
-                $this->set_response_headers(
-                    'Content-Type: text/html; charset=utf-8',
-                    $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '/crnrstn_redirect_controller':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_query_profile_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Monday, July 27, 2026 @ 0031 hrs.
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_result_set_pagination_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_ux_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_user':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Sunday, July 26, 2026 @ 1137 hrs.
-                 * Hits a righteous rip on the bong 
-                 * off of stove gas range fire. 
-                 *
-                 */
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the initialization 
-                 * of the CLR-SSL User 
-                 * class object. 
-                 *
-                 */
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_environment':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Sunday, July 26, 2026 @ 1042 hrs.
-                 * Hits a righteous rip on the bong 
-                 * off of stove gas range fire. 
-                 *
-                 */
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Return an instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) Server 
-                 * Environment's objectification.
-                 *
-                 *
-                 * 5 :: Monday, July 8, 2024 @ 0606 hrs.
-                 *
-                 * $this->oCRNRSTN_ENV = new crnrstn_environment($this);
-                 *
-                 * $this->R_data['R']['env'] = $this->return_registered_resource(
-                 *                                    'new', 
-                 *                                    'crnrstn_environment');
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_ui_tunnel_response_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Sunday, July 26, 2026 @ 1957 hrs.
-                 * Hits a joint off of that 
-                 * stove gas range fire. 
-                 * Takes a sip from a can 
-                 * of Coca-Cola® Classic®
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_logging_output_profile_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Sunday, July 26, 2026 @ 2323 hrs.
-                 * Hits a surpassingly righteous 
-                 * bong rip off of that 
-                 * stove gas range fire. 
-                 * Takes a sip from a can 
-                 * of Coca-Cola® Classic®
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_bitflip_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Saturday, April 25, 2026 @ 1211 hrs.
-
-                /*
-                # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                5 :: Monday, March 8, 2021 @ 0609 hrs.
-
-                Notes :: 
-                On 32-bit builds, a string can be 
-                as large as up to 2GB (2147483647 
-                bytes maximum) 
-
-                The name of a constant follows the 
-                same rules as any label in PHP. 
-
-                A valid constant name starts with 
-                a letter or underscore, followed 
-                by any number of letters, numbers, 
-                or underscores. 
-
-                As a regular expression, it would
-                be expressed thusly: 
-
-                ^[a-zA-Z_\x80-\xff][a-zA-Z0-9_\x80-\xff]*$
-
-                Warning :: Use functions from 
-                the gmp extension for bitwise 
-                manipulation on numbers 
-                beyond PHP_INT_MAX. 
-
-
-                5 :: Tuesday, July 9, 2024 @ 0547 hrs.
-
-                */
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) Icy Digital ITCC 
-                 * Bitmask Integer State 
-                 * (Bit Flip) Management 
-                 * Services Layer 
-                 * class object. 
-                 *
-                 *
-                 * 5 :: Monday, July 8, 2024 @ 0601 hrs.
-                 *
-                 * $this->oCRNRSTN_BITFLIP_MGR = new crnrstn_bitflip_manager($this);
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_ip_authorization_manager':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Saturday, April 25, 2026 @ 1212 hrs.
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) IP Address 
-                 * Authorization Manager 
-                 * class object. 
-                 *
-                 *
-                 * 5 :: Monday, July 8, 2024 @ 0630 hrs.
-                 *
-                 * self::$oCRNRSTN_IP_MGR = new crnrstn_ip_authorization_manager($this);
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_registry_user':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Saturday, April 25, 2026 @ 0835 hrs.
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * The CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services Layer 
-                 * (CLR-SSL) System Registry 
-                 * User class object. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 28, 2024 @ 0117 hrs.
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
-            case __NAMESPACE__ . '\crnrstn_finite_expression':
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
-                 * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
-                 *
-                 *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
-                 *
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 */
-                // 5 :: Thursday, May 25, 2026 @ 0151 hrs.
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Store the instantiation of 
-                 * the CRNRSTN :: Lightsaber 
-                 * SOAP Services Layer 
-                 * Finite Expressions Management 
-                 * Class Object. 
-                 *
-                 *
-                 * 5 :: Monday, July 15, 2024 @ 2011 hrs.
-                 *
-                 * self::$oFINITE_EXPRESS = new crnrstn_finite_expression();
-                 *
-                 * $this->oFINITE_EXPRESS = $this->return_registered_resource(
-                 *                                 'new', 
-                 *                                 'crnrstn_finite_expression');
-                 *
-                 */
-
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                $this->initialized_via_test[$res_name]                    = 1;
-                $this->R_kivotos_meta[$res_name]                          = $R_resp;
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
-                 *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
-                 *
-                 */
-                \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
-
-                $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
-                               'checking that the ' . 
-                               $this->return_bytes(
-                                      $R_resp[$mem_ptr]['data_bytes'][0], 
-                                      2, 
-                                      NULL, 
-                                      true, 
-                                      false, 
-                                      false) . 
-                               ' (' . 
-                               \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
-                               \get_class($R_resp[$mem_ptr]['data'][0]) . 
-                               ' data we are receiving from the ' . 
-                               'CLR-SSL Resource Registry is ' . 
-                               $R_resp[$mem_ptr]['title']['TEXT'] . 
-                               ', and all is well.';
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
-
-            break;
+            // CLR-SSL :: CORE
+            case __NAMESPACE__ . '===\crnrstn_kivotos':
+            case __NAMESPACE__ . 'crnrstn_bitflip_manager':
+            case __NAMESPACE__ . '===\crnrstn_ip_authorization_manager':
+            case __NAMESPACE__ . '===\crnrstn_ascii_art':
+            case __NAMESPACE__ . '===\crnrstn_file_system_integrations_manager':
+            case __NAMESPACE__ . '===\crnrstn_logging':
+            case __NAMESPACE__ . '===\crnrstn_session_manager':
+            case __NAMESPACE__ . '===\crnrstn_json':
+            case __NAMESPACE__ . '===\crnrstn_xml':
+            case __NAMESPACE__ . '===\crnrstn_socket':
+            case __NAMESPACE__ . '===\crnrstn_curl':
+            case __NAMESPACE__ . '===\crnrstn_stream':
+            case __NAMESPACE__ . '===\crnrstn_multi_language_manager':
+
+            // CLR-SSL :: SOAP
+            case __NAMESPACE__ . '===\crnrstn_soap_server_manager':
+            case __NAMESPACE__ . '===\crnrstn_soap_client_manager':
+            case __NAMESPACE__ . '===\crnrstn_soap_request_manager':
+            case __NAMESPACE__ . '===\crnrstn_soap_data_tunnel_packet':
+            case __NAMESPACE__ . '===\crnrstn_soap_authentication_manager':
+            case __NAMESPACE__ . '===\crnrstn_soap_access_manager':
+            case __NAMESPACE__ . '===\crnrstn_soap_authorization_manager':
+            case __NAMESPACE__ . '===\crnrstn_soap_content_memory_cache':
+
+            // Database
+            case __NAMESPACE__ . '===\crnrstn_mysqli_conn_manager':
+            case __NAMESPACE__ . '===\crnrstn_mysqli_conn':
+            case __NAMESPACE__ . '===\crnrstn_sql_profile_manager':
+            case __NAMESPACE__ . '===\crnrstn_database_connection_handle':
+            case __NAMESPACE__ . '===\crnrstn_sql_manager':
+            case __NAMESPACE__ . '===\crnrstn_sql_field_output_manager':
+            case __NAMESPACE__ . '===\crnrstn_database_request':
+            case __NAMESPACE__ . '===\crnrstn_database_wiring':
+            case __NAMESPACE__ . '===\crnrstn_database_query':
+            case __NAMESPACE__ . '===\crnrstn_database_crnrstn':
+
+            // NuSOAP
+            case __NAMESPACE__ . '===\nusoap_server_mime':
+            case __NAMESPACE__ . '===\nusoap_client_mime':
+            case __NAMESPACE__ . '===\nusoap_base':
+            case __NAMESPACE__ . '===\nusoap_fault':
+            case __NAMESPACE__ . '===\nusoap_parser':
+            case __NAMESPACE__ . '===\nusoapservermime':
+            case __NAMESPACE__ . '===\nusoap_wsdlcache':
+            case __NAMESPACE__ . '===\nusoap_xmlschema':
+            case __NAMESPACE__ . '\soapclientmime':
+            case __NAMESPACE__ . '===\soapclient':
+            case __NAMESPACE__ . '\soap_fault':
+            case __NAMESPACE__ . '\soap_parser':
+            case __NAMESPACE__ . '\soap_server':
+            case __NAMESPACE__ . '===\soap_transport_http':
+            case __NAMESPACE__ . '===\soapval':
+            case __NAMESPACE__ . '===\wsdlcache':
+            case __NAMESPACE__ . '===\wsdl':
+            case __NAMESPACE__ . 'XMLSchema':
+            case __NAMESPACE__ . '===\nusoap_server':
+            case __NAMESPACE__ . '===\nusoap_client':
+
+            // PHPMailer
+            case __NAMESPACE__ . '===\crnrstn_PHPMailer':
+
+            // Mobile_Detect
+            case __NAMESPACE__ . '===\crnrstn_Mobile_Detect':
+
+            // CLR-SSL :: CORE
+            case __NAMESPACE__ . '===\crnrstn_client_assets':
+            case __NAMESPACE__ . '===\crnrstn_ui_content_assembler':
+            case __NAMESPACE__ . '===\crnrstn_content_source_controller':
+            case __NAMESPACE__ . '===\crnrstn_performance_regulator':
+            case __NAMESPACE__ . '===\crnrstn_method_manager':
+            case __NAMESPACE__ . '===\crnrstn_link_manager':
+            case __NAMESPACE__ . '===\crnrstn_decoupled_data_object':
+            case __NAMESPACE__ . '===\crnrstn_configuration_manager':
+            case __NAMESPACE__ . '===\crnrstn_response_return_serialization_map':
+            case __NAMESPACE__ . '===\crnrstn_ux_manager':
+            case __NAMESPACE__ . '===\crnrstn_redirect_controller':
+            case __NAMESPACE__ . '===\crnrstn_result_set_pagination_manager':
+            case __NAMESPACE__ . '===\crnrstn_user':
+            case __NAMESPACE__ . '===\crnrstn_ui_tunnel_response_manager':
+            case __NAMESPACE__ . '===\crnrstn_environment':
+            case __NAMESPACE__ . '===\crnrstn_registry_user':
+            case __NAMESPACE__ . '===\crnrstn_finite_expression':
             case __NAMESPACE__ . '\crnrstn':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
                  * ^ Delete this entire case when 
@@ -4288,9 +983,11 @@ class crnrstn_kivotos extends crnrstn
 
                 */
 
-                $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
+                $this->R[$R_resp[$mem_ptr]['public_key']] = $R_resp[$mem_ptr]['data'][0];
                 $this->initialized_via_test[$res_name]                    = 1;
                 $this->R_kivotos_meta[$res_name]                          = $R_resp;
+                $this->R_kivotos_index[$res_name]['storage_arch']         = $R_resp[$mem_ptr]['storage_arch'];
+                $this->R_kivotos_index[\get_class($this->R[$R_resp[$mem_ptr]['public_key']])]['public_key'] = $R_resp[$mem_ptr]['public_key'];
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * We don't need the object initialization
@@ -4337,33 +1034,12 @@ class crnrstn_kivotos extends crnrstn
                        __FILE__, 
                        $token);
 
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   true,
-                                   __LINE__, 
-                                   __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                die($html_out);
+                $this->clr_ssl_registry_resource_report(
+                       $R_resp,
+                       $clr_ssl_msg,
+                       false,
+                       __LINE__,
+                       __METHOD__);
 
             break;
             default:
@@ -4410,43 +1086,9 @@ class crnrstn_kivotos extends crnrstn
 
         }
 
-        if(!isset($this->R_kivotos_index[$res_name]) && 
-            !isset($this->init_via_test[$res_name]))
-        { 
+        if(!isset($this->init_via_test[$res_name])){
 
-            $clr_ssl_msg = 'The ' . 
-                           \gettype($R_resp[$mem_ptr]['data'][0]) . 
-                           ' resource, ' . 
-                           \print_r($res_name, true) . 
-                           ', is not configured ' . 
-                           'for storage in the CLR-SSL ' . 
-                           'Resource Kivotos.';
-            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __METHOD__, 
-                     'code'                    => 200, 
-                     'clr_ssl_msg'             => $clr_ssl_msg);
-            $this->error_log(
-                   $clr_ssl_msg, 
-                   \LOG_WARNING, 
-                   \E_WARNING, 
-                   __LINE__, 
-                   __METHOD__, 
-                   __FILE__, 
-                   $token);
-
-        }
-
-        if(isset($this->R_kivotos_index[$res_name]) && 
-            !isset($this->init_via_test[$res_name]))
-        {
-
-            switch($this->R_kivotos_index[$res_name]['storage_arch']){
+            switch($R_resp[$mem_ptr]['storage_arch']){
                 case 'secure_resource':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -4479,88 +1121,123 @@ class crnrstn_kivotos extends crnrstn
                     $html_out = $this->clr_ssl_registry_resource_report(
                                        $R_resp,
                                        $clr_ssl_msg, 
-                                       true,
+                                       false,
                                        __LINE__, 
                                        __METHOD__);
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_NOTICE, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Set the response headers. 
-                     *
-                     *
-                     * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                     *
-                     * "00"..."00"..."00"...Oh, 
-                     * Oh, Oh, Oh. You know what I mean."
-                     *
-                     * Yeah, you know what I mean: 
-                     * "Oh, Oh, Oh"... 
-                     * Yeah, you know what 
-                     * I mean..."Oh"...yeah. ;) 
-                     *
-                     */
-                    $this->set_response_headers(
-                           'Content-Type: text/html; charset=utf-8', 
-                           $this->return_bytes(
-                                  $html_out, 
-                                  0, 
-                                  NULL, 
-                                  false, 
-                                  true, 
-                                  true, 
-                                  true));
-                    /*
-                    $this->set_response_headers(
-                           'Content-Type: text/html; charset=utf-8', 
-                           $this->data_reporting_bytes($html_out));
-
-                    */
-
-                    // Temporarily, we will output this report. 
-                    die($html_out);
 
                 break;
                 case 'general_resource':
                 default:
 
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Store The CRNRSTN :: Lightsaber 
-                     * RoCEv2 SOAP Services Layer 
-                     * (CLR-SSL) Resource Registry 
-                     * data output at the location of 
-                     * public_key. 
-                     *
-                     *
-                     * 5 :: Friday, August 8, 2026 @ 0812 hrs.
-                     *
-                     */
-                    $this->R[$this->R_kivotos_index[$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                    $this->R_kivotos_meta[$res_name]                          = $R_resp;
+                    switch($this->gettype($R_resp[$mem_ptr]['data'][0], $this->R_data['int_flag']['R_integer'])){
+                        case $this->R_data['int_flag']['R_object']:
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Store The CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services Layer
+                             * (CLR-SSL) Resource Registry
+                             * data output at the location of
+                             * public_key.
+                             *
+                             *
+                             * 5 :: Friday, August 8, 2026 @ 0812 hrs.
+                             *
+                             */
+                            $this->R[$R_resp[$mem_ptr]['public_key']]         = $R_resp[$mem_ptr]['data'][0];
+                            $this->R_kivotos_meta[$res_name]                  = $R_resp;
+                            $this->R_kivotos_index[$res_name]['storage_arch'] = $R_resp[$mem_ptr]['storage_arch'];
+                            $this->R_kivotos_index[\get_class($this->R[$R_resp[$mem_ptr]['public_key']])]['public_key'] = $R_resp[$mem_ptr]['public_key'];
+
+                        break;
+                        case $this->R_data['int_flag']['R_resource']:
+                        default:
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Store The CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services Layer
+                             * (CLR-SSL) Resource Registry
+                             * data output at the location of
+                             * public_key.
+                             *
+                             *
+                             * 5 :: Friday, August 8, 2026 @ 0812 hrs.
+                             *
+                             */
+                            $this->R[$R_resp[$mem_ptr]['public_key']]         = $R_resp[$mem_ptr]['data'][0];
+                            $this->R_kivotos_meta[$res_name]                  = $R_resp;
+                            $this->R_kivotos_index[$res_name]['storage_arch'] = $R_resp[$mem_ptr]['storage_arch'];
+                            $this->R_kivotos_index[$res_name]['public_key']   = $R_resp[$mem_ptr]['public_key'];
+
+                        break;
+
+                    }
+
+                    // 5 :: Sunday, August 23, 2026 @ 2022 hrs.
+                    if(isset($this->initialization_protocol[$res_name]) ||
+                        isset($R_resp[$mem_ptr]['initialization_protocol']))
+                        $this->fire_init_protocol($res_name);
 
                     /*
                     echo '<br><pre><code>[mthd ' .
                         __METHOD__ . '] [lnum ' .
-                        __LINE__ . '] Check meta for memory_pointer: ' .
-                        $this->R_kivotos_meta[$res_name]['clr_ssl_resource']['memory_pointer'][0] .
+                        __LINE__ . '] $res_name: ' .
+                        $res_name .
                         '.</code></pre>';
+
+                    CRNRSTN\crnrstn_ascii_art
+                    CRNRSTN\crnrstn_file_system_integrations_manager
+                    CRNRSTN\crnrstn_logging
+                    CRNRSTN\crnrstn_session_manager
+                    CRNRSTN\crnrstn_json
+                    CRNRSTN\crnrstn_xml
+                    CRNRSTN\crnrstn_socket
+                    CRNRSTN\crnrstn_curl
+                    CRNRSTN\crnrstn_stream
+                    CRNRSTN\crnrstn_multi_language_manager
+                    CRNRSTN\crnrstn_mysqli_conn_manager
+                    CRNRSTN\crnrstn_mysqli_conn
+                    CRNRSTN\crnrstn_database_connection_handle
+                    CRNRSTN\crnrstn_sql_manager
+                    CRNRSTN\crnrstn_sql_profile_manager
+                    CRNRSTN\crnrstn_sql_field_output_manager
+                    CRNRSTN\crnrstn_database_request
+                    CRNRSTN\crnrstn_database_wiring
+                    CRNRSTN\crnrstn_database_query
+
+
+                    19 resources loading.
+                    5 :: Sunday, August 16, 2026 @ 1018 hrs.
+
+                    CRNRSTN\crnrstn_ascii_art
+                    CRNRSTN\crnrstn_file_system_integrations_manager
+                    CRNRSTN\crnrstn_logging
+                    CRNRSTN\crnrstn_session_manager
+                    CRNRSTN\crnrstn_json
+                    CRNRSTN\crnrstn_xml
+                    CRNRSTN\crnrstn_socket
+                    CRNRSTN\crnrstn_curl
+                    CRNRSTN\crnrstn_stream
+                    CRNRSTN\crnrstn_multi_language_manager
+                    CRNRSTN\crnrstn_mysqli_conn_manager
+                    CRNRSTN\crnrstn_mysqli_conn
+                    CRNRSTN\crnrstn_database_connection_handle
+                    CRNRSTN\crnrstn_sql_manager
+                    CRNRSTN\crnrstn_sql_profile_manager
+                    CRNRSTN\crnrstn_sql_field_output_manager
+                    CRNRSTN\crnrstn_database_request
+                    CRNRSTN\crnrstn_database_wiring
+                    CRNRSTN\crnrstn_database_query
+                    CRNRSTN\crnrstn_database_crnrstn
+                    CRNRSTN\nusoap_wsdlcache
+                    CRNRSTN\wsdlcache
+                    CRNRSTN\nusoap_base
+                    CRNRSTN\nusoap_parser
+                    CRNRSTN\soapval
+
+
+                    25 resources loading.
+                    5 :: Sunday, August 16, 2026 @
+
                     */
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -4585,9 +1262,9 @@ class crnrstn_kivotos extends crnrstn
                                    ' of data for ' . 
                                    $R_resp[$mem_ptr]['resource_name'] .
                                    ' at the index of (' . 
-                                   $this->gettype($this->R_kivotos_index[$res_name]['public_key']) . 
+                                   $this->gettype($R_resp[$mem_ptr]['public_key']) .
                                    ') ' . 
-                                   $this->R_kivotos_index[$res_name]['public_key'] . 
+                                   $R_resp[$mem_ptr]['public_key'] .
                                    '.';
 
                     /*
@@ -4597,7 +1274,7 @@ class crnrstn_kivotos extends crnrstn
                     [lnum 4213] 
                     [rtime 0.104022] 
 
-                    The CLR-SSL Resource Kivotos Advanced 
+                    The CLR-SSL Resource Kivotós Advanced
                     Object Storage Ark has stored 2.67 KiB 
                     of data for crnrstn_ascii_art at the 
                     index of (string) ascii_art.
@@ -4649,7 +1326,7 @@ class crnrstn_kivotos extends crnrstn
     function kivotos_storage($public_key)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         *  5 :: Friday, August 7, 2026 @ 1256 hrs.
+         * 5 :: Friday, August 7, 2026 @ 1256 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Renamed the method 
@@ -4662,293 +1339,25 @@ class crnrstn_kivotos extends crnrstn
         if(isset($this->R[$public_key]))
             return $this->R[$public_key];
 
-        return NULL;
-
-    }
-
-    /**
-     * R :: Retrieve and return cold static CLR-SSL data. 
-     *
-     * @param
-     * @param
-     * @return
-     * @access private
-     *
-     */
-    private function R_load_static(
-                     $caller, 
-                     $resource)
-    {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied the method R_load_static() 
-         * from crnrstn to the crnrstn_kivotos 
-         * class object definition.
-         * 5 :: Saturday, August 8, 2026 @ 1233 hrs.
+         * We will articulate the CLR-SSL
+         * Resource Registry, if we do not
+         * have the requested resource
+         * for immediate return.
+         *
+         *
+         * 5 :: Saturday, August 22, 2026 @ 1323 hrs.
          *
          */
+        $R_resp = $spice_salt_mem_ptr = NULL;
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               $public_key);
+        $this->anoint(
+               $public_key,
+               $R_resp);
 
-        // Initialize $R_data. 
-        $R_data = '';
-
-        // 5 :: Tuesday, June 16, 2026 @ 1227 hrs.
-        $read_access_denied = false;
-
-        switch($resource){
-            case 'R_kivotos_index':
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Include and evaluate 
-                 * the system file to receive
-                 * and return $R_data. 
-                 *
-                 * /_crnrstn/_config/_config.defaults
-                 * /load_static_cache/R_kivotos_index
-                 * /crnrstn.R_kivotos_index.runtime_exe.php
-                 *
-                 */
-                $read_authorized_callers = array(__NAMESPACE__ . 
-                                           '\crnrstn_kivotos::__construct' => 1);
-
-                if(!isset($read_authorized_callers[$caller])){
-
-                    $read_access_denied = true;
-
-                    break 1;
-
-                }
-
-                $resource_filename = 'crnrstn.' . $resource . 
-                                     '.runtime_exe.php';
-                $resource_filepath = $this->R_data['framework_path_root'] . $this->R_data['operating_system']['os_path_dir_separator_char'] . 
-                                     '_config' . $this->R_data['operating_system']['os_path_dir_separator_char'] . 
-                                     '_config.defaults' . $this->R_data['operating_system']['os_path_dir_separator_char'] . 
-                                     'load_static_cache' . $this->R_data['operating_system']['os_path_dir_separator_char'] . 
-                                     $resource . $this->R_data['operating_system']['os_path_dir_separator_char'] . 
-                                     $resource_filename;
-
-                if($this->is_file($resource_filepath, $resource_filename)){
-
-                    // Load $R_data into memory. 
-                    require($resource_filepath);
-
-                }else{
-
-                    $clr_ssl_msg = 'Data request failed. Cannot ' . 
-                                   'evaluate missing system file: ' .
-                                   $resource_filepath . 
-                                   ' Default data will manually be ' . 
-                                   'loaded by CRNRSTN ::';
-                    // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_CRIT, 
-                           \E_ERROR, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Gracefully degrade with 
-                     * a manual initialization of 
-                     * $R_data here.
-                     *
-                     *
-                     * 5 :: Saturday, August 8, 2026 @ 1254 hrs.
-                     *
-                     */
-                    $R_data = array(__NAMESPACE__ . 
-                              '\crnrstn_ascii_art'        =>
-                                  array('public_key'      => 'ascii_art',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_file_system_integrations_manager' =>
-                                  array('public_key'      => 'file_sys_int_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_logging'          =>
-                                  array('public_key'      => 'logging',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_session_manager'  =>
-                                  array('public_key'      => 'session_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_json'             =>
-                                  array('public_key'      => 'json',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_xml'              =>
-                                  array('public_key'      => 'xml',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_socket'           =>
-                                  array('public_key'      => 'socket',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_curl'             =>
-                                  array('public_key'      => 'curl',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_stream'           =>
-                                  array('public_key'      => 'stream',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_multi_language_manager' =>
-                                  array('public_key'      => 'lang_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_system_asset_manager' =>
-                                  array('public_key'      => 'asset_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_client_assets'    =>
-                                 array('public_key'      => 'js_css',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_content_source_controller' =>
-                                  array('public_key'      => 'content_src_ctrlr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_ui_content_assembler' =>
-                                  array('public_key'      => 'ui_assembler',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_method_manager'   =>
-                                  array('public_key'      => 'method_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_link_manager'     =>
-                                  array('public_key'      => 'link_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_decoupled_data_object' =>
-                                  array('public_key'      => 'ddo',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_configuration_manager' =>
-                                  array('public_key'      => 'config_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_response_return_serialization_map' =>
-                                  array('public_key'      => 'rrs_map',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_performance_regulator' =>
-                                  array('public_key'      => 'performance_regulator',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_query_profile_manager' =>
-                                  array('public_key'      => 'sql_profile_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_redirect_controller' =>
-                                  array('public_key'      => 'redirect_controller',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_result_set_pagination_manager' =>
-                                  array('public_key'      => 'pagination_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_ux_manager'       =>
-                                  array('public_key'      => 'ux_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_user'             =>
-                                  array('public_key'      => 'usr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_environment'      =>
-                                  array('public_key'      => 'env',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_ui_tunnel_response_manager' =>
-                                  array('public_key'      => 'ui_trm',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_logging_output_profile_manager' =>
-                                  array('public_key'      => 'log_output_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_bitflip_manager'  =>
-                                  array('public_key'      => 'bitflip_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_ip_authorization_manager' =>
-                                  array('public_key'      => 'ip_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_registry_user'    =>
-                                  array('public_key'      => 'registry_usr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_finite_expression' =>
-                                  array('public_key'      => 'finite_expression',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_kivotos'          =>
-                                  array('public_key'      => 'kivotos',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_openssl_encryption_rotation_services_manager' =>
-                                  array('public_key'      => 'oersl_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_database_crnrstn' =>
-                                  array('public_key'      => 'database',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_mysqli_conn_manager' =>
-                                  array('public_key'      => 'mysqli_conn_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_ui_html_manager' =>
-                                  array('public_key'      => 'ui_html_mgr',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_data_tunnel_services_manager' =>
-                                 array('public_key'      => 'dtsm',
-                                       'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn_messenger_from_north' =>
-                                  array('public_key'      => 'gabriel',
-                                        'storage_arch'    => 'general_resource'), __NAMESPACE__ .
-                              '\crnrstn'                  =>
-                                  array('public_key'      => 'crnrstn',
-                                        'storage_arch'    => 'general_resource'));
-
-                }
-
-            break;
-            default:
-
-                $clr_ssl_msg = 'Unknown resource requested: ' .
-                               \strval($resource);
-                // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_ERR, 
-                       \E_ERROR, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-            break;
-
-        }
-
-        if($read_access_denied !== false){
-
-            $clr_ssl_msg = 'Data index[' . 
-                           \strval($resource) . 
-                           '] read access denied to ' . 
-                           \strval($caller);
-            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __METHOD__, 
-                     'code'                    => 200, 
-                     'clr_ssl_msg'             => $clr_ssl_msg);
-            $this->error_log(
-                   $clr_ssl_msg, 
-                   \LOG_WARNING, 
-                   \E_WARNING, 
-                   __LINE__, 
-                   __METHOD__, 
-                   __FILE__, 
-                   $token);
-
-            return '';
-
-        }
-
-        // Return $R_data. 
-        return $R_data;
+        return $R_resp;
 
     }
 
@@ -5013,27 +1422,31 @@ class crnrstn_kivotos extends crnrstn
             default:
 
                 $clr_ssl_msg = 'Unknown data type received: ' .
-                               $this->gettype($resource, $this->R_data['int_flag']['R_string']) . ' ' .
-                               '[' . \strval($this->gettype($resource, $this->R_data['int_flag']['R_integer'])) .
+                               $this->gettype(
+                                      $resource,
+                                      $this->R_data['int_flag']['R_string']) . ' ' .
+                               '[' . \strval($this->gettype(
+                                                    $resource,
+                                                    $this->R_data['int_flag']['R_integer'])) .
                                '].';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token = array(
-                    'token' => $msg_token,
-                    'token_generation_date' => $token_generation_date,
-                    'request_type' => __METHOD__,
-                    'code' => 200,
-                    'clr_ssl_msg' => $clr_ssl_msg);
+                         'token' => $msg_token,
+                         'token_generation_date' => $token_generation_date,
+                         'request_type' => __METHOD__,
+                         'code' => 200,
+                         'clr_ssl_msg' => $clr_ssl_msg);
                 $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_WARNING,
-                    \E_WARNING,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
+                       $clr_ssl_msg,
+                       \LOG_WARNING,
+                       \E_WARNING,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
 
             break;
 
@@ -5091,30 +1504,142 @@ class crnrstn_kivotos extends crnrstn
             default:
 
                 $clr_ssl_msg = 'Unknown switch case received [' .
-                    \strval($name) .
-                    '].';
+                               \strval($name) .
+                               '].';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                    'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token = array(
-                    'token' => $msg_token,
-                    'token_generation_date' => $token_generation_date,
-                    'request_type' => __METHOD__,
-                    'code' => 200,
-                    'clr_ssl_msg' => $clr_ssl_msg);
+                         'token' => $msg_token,
+                         'token_generation_date' => $token_generation_date,
+                         'request_type' => __METHOD__,
+                         'code' => 200,
+                         'clr_ssl_msg' => $clr_ssl_msg);
                 $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_WARNING,
-                    \E_WARNING,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token);
+                       $clr_ssl_msg,
+                       \LOG_WARNING,
+                       \E_WARNING,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
 
             break;
 
         }
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    private function fire_init_protocol($resource_name)
+    {
+        // 5 :: Sunday, August 23, 2026 @ 2025 hrs.
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Initialize the CLR-SSL
+         * Resource Registry
+         * data storage location
+         * memory pointer.
+         *
+         *
+         * 5 :: Sunday, August 23, 2026 @ 2037 hrs.
+         *
+         */
+        $mem_ptr = $this->R_kivotos_meta[$resource_name]['clr_ssl_resource']['memory_pointer'][0];
+
+        switch($resource_name){
+            case $this->R_data['R_framework_path'] . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'thirdparty' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'nusoap' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                '1.123' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_server.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
+            case '1.123' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_server.php':
+            case $this->R_data['R_framework_path'] . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'thirdparty' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'nusoap' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                '1.124' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_server.php':
+            case '1.124' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_server.php':
+            case __NAMESPACE__ .
+                '\nusoap_server':
+            case 'nusoap_server':
+
+                $soa_namespace = $this->get_crnrstn(
+                                        'networking',
+                                        'nusoap',
+                                        'soa_namespace');
+                $this->R[$this->R_kivotos_meta[$resource_name][$mem_ptr]['public_key']]->debug_flag = $this->get_crnrstn(
+                                                                                                             'networking',
+                                                                                                             'nusoap',
+                                                                                                             'debug_flag');
+                $this->R['nusoap_server']->wsdl->schemaTargetNamespace = $soa_namespace;
+                $this->R['nusoap_server']->configureWSDL(
+                                          'CLR_SSL_SOAP_SVC',
+                                          $soa_namespace);
+
+                $this->R_data_write(
+                       __METHOD__,
+                       $this->R_kivotos_meta[$resource_name][$mem_ptr]['public_key'],
+                       $this->R['nusoap_server']);
+
+            break;
+            case $this->R_data['R_framework_path'] . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'thirdparty' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'nusoap' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                '1.123' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_client.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
+            case '1.123' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_client.php':
+            case $this->R_data['R_framework_path'] . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'thirdparty' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'nusoap' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                '1.124' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_client.php':
+            case '1.124' . $this->R_data['operating_system']['os_path_dir_separator_char'] .
+                'class.nusoap_client.php':
+            case __NAMESPACE__ .
+                '\nusoap_client':
+            case 'nusoap_client':
+
+                if(!extension_loaded('soap')){
+                    // 5 :: Tuesday, June 2, 2026 @ 0755 hrs.
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * NuSOAP - Web Services Toolkit for PHP 
+                     * -----
+                     * For backwards compatibility, 
+                     * define soapclient and 
+                     * soapclientmime (unless 
+                     * the PHP SOAP extension 
+                     * is loaded). 
+                     *
+                     */
+                    $this->anoint_eval('soapclientmime');
+                    $this->anoint_eval('soapclient');
+                    $this->anoint_eval('soap_parser');
+
+                }
+
+            break;
+
+        }
+
+        return NULL;
 
     }
 

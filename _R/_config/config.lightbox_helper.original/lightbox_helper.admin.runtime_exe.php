@@ -294,8 +294,7 @@ namespace CRNRSTN;
  *
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Initialize an account 
  * authentication email 
  * to establish a 
@@ -309,4 +308,4 @@ namespace CRNRSTN;
  * 5 :: Sunday, July 28, 2024 @ 0208 hrs.
  *
  */
-$oCRNRSTN->config_admin_email(CRNRSTN_RESOURCE_ALL, 'Jonathan Harris eVifweb@gmail.com, Jonathan 5 Harris j5@jony5.com');
+//$oCRNRSTN->config_admin_email(CRNRSTN_RESOURCE_ALL, 'Jonathan Harris eVifweb@gmail.com, Jonathan 5 Harris j5@jony5.com');

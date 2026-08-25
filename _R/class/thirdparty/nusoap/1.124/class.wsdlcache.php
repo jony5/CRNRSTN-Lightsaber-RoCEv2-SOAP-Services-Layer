@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,7 +40,7 @@ http://www.nusphere.com
 */
 
 /*
- *	Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
  *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
  *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
@@ -50,6 +52,25 @@ http://www.nusphere.com
  *	RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
  *	RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
  */
+
+/* load classes
+
+// necessary classes
+require_once('class.soapclient.php');
+require_once('class.soap_val.php');
+require_once('class.soap_parser.php');
+require_once('class.soap_fault.php');
+
+// transport classes
+require_once('class.soap_transport_http.php');
+
+// optional add-on classes
+require_once('class.xmlschema.php');
+require_once('class.wsdl.php');
+
+// server class
+require_once('class.soap_server.php');*/
+
 
 /**
  * For backward compatibility

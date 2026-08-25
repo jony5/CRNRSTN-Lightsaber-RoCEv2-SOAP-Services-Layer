@@ -313,7 +313,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -433,7 +433,7 @@ class crnrstn_decoupled_data_object extends crnrstn
         //  $oCRNRSTN->set_channel_config(),
         //  and $oCRNRSTN->isset_channel_config().
         //
-        // Thursday, November 23 2023 @ 0632 hrs.
+        // Thursday, November 23, 2023 @ 0632 hrs.
         self::$rrs_map_attribute_ARRAY = array(
             'total_channel_bytes' => 1,
             'total_bytes' => 1,
@@ -3239,28 +3239,41 @@ class crnrstn_decoupled_data_object extends crnrstn
 
             }
 
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] $tmp_channel_data_type[' . 
+            echo '[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ . '] $tmp_channel_data_type[' .
+                \print_r($tmp_channel_data_type, true) . '].';
+
+            //die();
+            /*
+            error_log('[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ . '] $tmp_channel_data_type[' .
                 print_r($tmp_channel_data_type, true) . '].');
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] R_string[' . 
+            error_log('[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ . '] R_string[' .
                 print_r($this->R_data['int_flag']['R_string'], true) . '].');
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] R_int[' . 
+            error_log('[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ . '] R_int[' .
                 print_r($this->R_data['int_flag']['R_int'], true) . '].');
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] R_integer[' . 
+            error_log('[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ . '] R_integer[' .
                 print_r($this->R_data['int_flag']['R_integer'], true) . '].');
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] $channel[' .  
+            error_log('[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ . '] $channel[' .
                 print_r(gettype($channel), true) . '].');
+            [Sat Aug 22 16:11:03.601019 2026] [php:notice] [pid 9668:tid 1936] [client 192.168.1.42:53917] [mthd CRNRSTN\\crnrstn_decoupled_data_object::channel_meta] [lnum 3244] $tmp_channel_data_type[14].
+            [Sat Aug 22 16:11:03.601019 2026] [php:notice] [pid 9668:tid 1936] [client 192.168.1.42:53917] [mthd CRNRSTN\\crnrstn_decoupled_data_object::channel_meta] [lnum 3248] R_string[13].
+            [Sat Aug 22 16:11:03.601019 2026] [php:notice] [pid 9668:tid 1936] [client 192.168.1.42:53917] [mthd CRNRSTN\\crnrstn_decoupled_data_object::channel_meta] [lnum 3252] R_int[7].
+            [Sat Aug 22 16:11:03.601019 2026] [php:notice] [pid 9668:tid 1936] [client 192.168.1.42:53917] [mthd CRNRSTN\\crnrstn_decoupled_data_object::channel_meta] [lnum 3256] R_integer[8].
+            [Sat Aug 22 16:11:03.601019 2026] [php:notice] [pid 9668:tid 1936] [client 192.168.1.42:53917] [mthd CRNRSTN\\crnrstn_decoupled_data_object::channel_meta] [lnum 3260] $channel[array].
 
             die();
+             */
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Initialization return for the 
@@ -6985,6 +6998,13 @@ class crnrstn_decoupled_data_object extends crnrstn
          *
          */
 
+        echo '<br><pre><code>[mthd ' .
+            __METHOD__ . '] 
+[lnum ' .
+            __LINE__ . '] 
+$channel=' . $channel . '</code></pre>';
+        echo $this->err();
+        die();
         try{
 
             if(!isset($channel)){
@@ -8161,9 +8181,10 @@ class crnrstn_decoupled_data_object extends crnrstn
          * Edit: Added input defaults for 
          *       the following parameters 
          *       for aligning the 
-         *       utilization of the 
+         *       utilization of this
          *       channel_report 
-         *       method to crnrstn usage:
+         *       method to crnrstn's usage
+         *       of the same:
          *
          *       $return_data_type      = 'R_string', 
          *       $php_logo_height       = 20, 
@@ -11443,7 +11464,7 @@ $this->get_channel_config($channel_char, 'SOURCEID', $this->R_data['int_flag']['
 
                 //$tmp_serialized_bit_nom = $this->return_serialized_bit_nom('CLIENT_REQUESTED_PERMISSIONS'); // CLIENT_REQUESTED_PERMISSIONS, SERVER_AUTH_CONN_PERMISSIONS, SERVER_AUTH_CLIENT_PERMISSIONS
 
-                //   crnrstn_soap_services_client_manager
+                //   crnrstn_soap_authentication_manager
                 //   $tmp_bit_state_nomination = 'CRNRSTN_CLIENT_SOAP_PERMS_REQUESTED';
                 //$this->oCRNRSTN_USR->oCRNRSTN_BITFLIP_MGR->initialize_serialized_bit($tmp_bit_state_nomination, CRNRSTN_RESOURCE_OPENSOURCE);
 

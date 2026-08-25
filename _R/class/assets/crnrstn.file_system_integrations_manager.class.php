@@ -298,7 +298,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -533,14 +533,15 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                      * generate a new object return 
                      * executable for class definition, 
                      * crnrstn_finite_expression v2.00.0001 
-                     * at file path: /var/www/html/sysops
-                     *               /_crnrstn
-                     *               /_config
-                     *               /_config.resource_registry
-                     *               /resource
-                     *               /object_return
-                     *               /crnrstn_finite_expression
-                     *               /crnrstn.crnrstn_finite_expression.runtime_exe.php.
+                     * at file path:
+                     * /var/www/html/sysops
+                     * /_crnrstn
+                     * /_config
+                     * /_config.resource_registry
+                     * /resource
+                     * /object_return
+                     * /crnrstn_finite_expression
+                     * /crnrstn.crnrstn_finite_expression.runtime_exe.php.
                      * 
                      */
                     $clr_ssl_msg = 'File not found. ' .
@@ -1335,10 +1336,10 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.database_query.class.php'] = 'crnrstn_database_query';
                         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.database_request.class.php'] = 'crnrstn_database_request';
                         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.database_wiring.class.php'] = 'crnrstn_database_wiring';
-                        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.query_manager.class.php'] = 'crnrstn_query_manager';
-                        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.query_profile_manager.class.php'] = 'crnrstn_query_profile_manager';
+                        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sql_manager.class.php'] = 'crnrstn_sql_manager';
+                        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sql_profile_manager.class.php'] = 'crnrstn_sql_profile_manager';
                         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.result_set_pagination_manager.class.php'] = 'crnrstn_result_set_pagination_manager';
-                        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sqlselect_tracker.class.php'] = 'crnrstn_sqlselect_tracker';
+                        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sql_field_output_manager.class.php'] = 'crnrstn_sql_field_output_manager';
                         $res_definitions['/var/www/html/sysops/_R/class/database/mysqli/crnrstn.mysqli_conn.class.php'] = 'crnrstn_mysqli_conn';
                         $res_definitions['/var/www/html/sysops/_R/class/database/mysqli/crnrstn.mysqli_conn_manager.class.php'] = 'crnrstn_mysqli_conn_manager';
                         $res_definitions['/var/www/html/sysops/_R/class/database/maintenance/crnrstn.mysql_table_workshop.class.php'] = 'crnrstn_mysql_table_workshop';
@@ -1443,10 +1444,10 @@ class crnrstn_file_system_integrations_manager extends crnrstn
         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.database_query.class.php'] = 'crnrstn_database_query';
         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.database_request.class.php'] = 'crnrstn_database_request';
         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.database_wiring.class.php'] = 'crnrstn_database_wiring';
-        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.query_manager.class.php'] = 'crnrstn_query_manager';
-        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.query_profile_manager.class.php'] = 'crnrstn_query_profile_manager';
+        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sql_manager.class.php'] = 'crnrstn_sql_manager';
+        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sql_profile_manager.class.php'] = 'crnrstn_sql_profile_manager';
         $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.result_set_pagination_manager.class.php'] = 'crnrstn_result_set_pagination_manager';
-        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sqlselect_tracker.class.php'] = 'crnrstn_sqlselect_tracker';
+        $res_definitions['/var/www/html/sysops/_R/class/database/crnrstn.sql_field_output_manager.class.php'] = 'crnrstn_sql_field_output_manager';
         $res_definitions['/var/www/html/sysops/_R/class/database/mysqli/crnrstn.mysqli_conn.class.php'] = 'crnrstn_mysqli_conn';
         $res_definitions['/var/www/html/sysops/_R/class/database/mysqli/crnrstn.mysqli_conn_manager.class.php'] = 'crnrstn_mysqli_conn_manager';
         $res_definitions['/var/www/html/sysops/_R/class/database/maintenance/crnrstn.mysql_table_workshop.class.php'] = 'crnrstn_mysql_table_workshop';

@@ -331,7 +331,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return NULL Modify a CLR-SSL content source 
  *              controller object by reference, 
  *              and return NULL. 
@@ -26643,7 +26643,7 @@ $codeAlphabet .= "<span class="crnrstn_documentation_method_string_data">' .
                     $tmp_example_execute_file);
 
         break;
-        case '/suite_methods/mysql_database/new_crnrstn_query_profile_manager/':
+        case '/suite_methods/mysql_database/new_crnrstn_sql_profile_manager/':
 
             $tmp_categ_name = 'MySQL Database Query/Response';
 
@@ -26657,7 +26657,7 @@ $codeAlphabet .= "<span class="crnrstn_documentation_method_string_data">' .
              */
             $tmp_subcateg_name = 'MySQL Database Query/Response';
 
-            $tmp_subsubcat_name = 'new crnrstn_query_profile_manager()';
+            $tmp_subsubcat_name = 'new crnrstn_sql_profile_manager()';
             $tmp_page_serial = $R_csc->initialize_page(
                                        'PAGE', 
                                        $tmp_categ_name, 

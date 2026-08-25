@@ -488,7 +488,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -508,6 +508,8 @@ class crnrstn_log extends crnrstn
      *       5 :: Thursday, March 12, 2026 @ 1155 hrs.
      *
      */
+    
+    private $R_data = array();
 
     private static $serial;
     private static $watch_key;
@@ -535,28 +537,29 @@ class crnrstn_log extends crnrstn
              $log_silo_profile = NULL)
     {
 
+        // 5 :: Friday, August 21, 2026 @ 2332 hrs.
+        $this->R_data['int_flag'] = $this->get_crnrstn('int_flag');
+
         self::$transaction_time = $transaction_time;
         self::$serial = $this->generate_new_key(64, NULL, true);
         self::$watch_key = self::$transaction_time . '::' . self::$serial;
 
         if(!isset($log_silo_profile)){
 
-            self::$silo_profile_ARRAY = array(CRNRSTN_LOG_ALL => CRNRSTN_LOG_ALL);
+            self::$silo_profile_ARRAY = array($this->R_data['int_flag']['CRNRSTN_LOG_ALL'] =>
+                                              $this->R_data['int_flag']['CRNRSTN_LOG_ALL']);
 
         }else{
 
-            $tmp_type = $this->gettype($log_silo_profile, self::$R_data['int_flag']['R_integer']);
+            $tmp_type = $this->gettype($log_silo_profile, $this->R_data['int_flag']['R_integer']);
             switch($tmp_type){
-                //case CRNRSTN_INT:
-                //case CRNRSTN_INTEGER:
-                case self::$R_data['int_flag']['R_int']:
-                case self::$R_data['int_flag']['R_integer']:
+                case $this->R_data['int_flag']['R_int']:
+                case $this->R_data['int_flag']['R_integer']:
 
                     self::$silo_profile_ARRAY = array($log_silo_profile => 1);
 
                 break;
-                //case CRNRSTN_STRING:
-                case self::$R_data['int_flag']['R_string']:
+                case $this->R_data['int_flag']['R_string']:
 
                     self::$silo_profile_ARRAY = array($log_silo_profile => 1);
 
@@ -675,30 +678,20 @@ class crnrstn_log extends crnrstn
 
             $tmp_out_processed = '';
 
-            if(isset($break_char)){
-
+            if(isset($break_char))
                 $tmp_linebreak = $break_char;
-
-            }else{
-
+            else
                 $tmp_linebreak = '';
-
-            }
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Remain still while 
              * your life is extracted. 
              *
              */
-            if($is_visible_time == true){
-
+            if($is_visible_time == true)
                 $tmp_transactionTime = $this->get_transactionTime();
-
-            }else{
-
+            else
                 $tmp_transactionTime = '';
-
-            }
 
             $tmp_runTime         = $this->get_runTime();
             $tmp_runFile_raw     = $this->get_runFile();
@@ -711,81 +704,44 @@ class crnrstn_log extends crnrstn
              * assembly. 
              *
              */
-            $tmp_runTime = ' [rtime ' . $tmp_runTime . ']';
+            $tmp_runTime = ' [rtime ' .
+                           $tmp_runTime . ']';
 
-            if(isset($tmp_classMethod_raw)){
-
-                if($tmp_classMethod_raw != ''){
-
-                    $tmp_classMethodFile = ' [mthd ' . $tmp_classMethod_raw . ']';
-
-                }else{
-
-                    if(isset($tmp_runFile_raw)){
-
-                        if($tmp_runFile_raw != ''){
-
-                            $tmp_classMethodFile = ' [file ' . $tmp_runFile_raw . ']';
-
-                        }else{
-
+            if(isset($tmp_classMethod_raw))
+                if ($tmp_classMethod_raw != '')
+                    $tmp_classMethodFile = ' [mthd ' .
+                                           $tmp_classMethod_raw . ']';
+                else
+                    if(isset($tmp_runFile_raw))
+                        if ($tmp_runFile_raw != '')
+                            $tmp_classMethodFile = ' [file ' .
+                                                   $tmp_runFile_raw . ']';
+                        else
                             $tmp_classMethodFile = '';
-
-                        }
-
-                    }else{
-
+                    else
                         $tmp_classMethodFile = '';
-
-                    }
-
-                }
-
-            }else{
-
-                if(isset($tmp_runFile_raw)){
-
-                    if($tmp_runFile_raw != ''){
-
-                        $tmp_classMethodFile = ' [file ' . $tmp_runFile_raw . ']';
-
-                    }else{
-
+            else
+                if(isset($tmp_runFile_raw))
+                    if($tmp_runFile_raw != '')
+                        $tmp_classMethodFile = ' [file ' .
+                                               $tmp_runFile_raw . ']';
+                    else
                         $tmp_classMethodFile = '';
-
-                    }
-
-                }else{
-
+                else
                     $tmp_classMethodFile = '';
 
-                }
-
-            }
-
-            if(isset($tmp_lineNumber_raw)){
-
-                if($tmp_lineNumber_raw != ''){
-
-                    $tmp_lineNumber = ' [lnum ' . $tmp_lineNumber_raw . ']';
-
-                }else{
-
+            if(isset($tmp_lineNumber_raw))
+                if($tmp_lineNumber_raw != '')
+                    $tmp_lineNumber = ' [lnum ' .
+                                      $tmp_lineNumber_raw . ']';
+                else
                     $tmp_lineNumber = '';
-
-                }
-
-            }else{
-
+            else
                 $tmp_lineNumber = '';
 
-            }
-
-            if(isset($tmp_logMsg_raw)){
-
-                $tmp_logMsg = ' ' . $tmp_logMsg_raw;
-
-            }
+            if(isset($tmp_logMsg_raw))
+                $tmp_logMsg = ' ' .
+                              $tmp_logMsg_raw;
 
             $tmp_out_raw = $tmp_transactionTime . 
 			               $tmp_runTime . 
@@ -793,7 +749,7 @@ class crnrstn_log extends crnrstn
 			               $tmp_lineNumber . 
 			               $tmp_logMsg;
 
-            if((strlen($tmp_out_raw) > $line_wrap) && 
+            if((\strlen($tmp_out_raw) > $line_wrap) &&
             	($line_wrap > 0))
             {
 
@@ -802,11 +758,8 @@ class crnrstn_log extends crnrstn
                  * string for screen text. 
                  *
             	 */
-                if($tmp_linebreak != ''){
-
-                    $tmp_out_raw = rtrim($tmp_out_raw, $tmp_linebreak);
-
-                }
+                if($tmp_linebreak != '')
+                    $tmp_out_raw = \rtrim($tmp_out_raw, $tmp_linebreak);
 
                 $oChunkRestrictData = $this->chunkPageData($tmp_out_raw, $line_wrap);
 
@@ -932,15 +885,10 @@ class crnrstn_log extends crnrstn
     function get_runTime()
     {
 
-        if(isset(self::$run_time)){
-
+        if(isset(self::$run_time))
             return self::$run_time;
-
-        }else{
-
+        else
             return NULL;
-
-        }
 
     }
 
@@ -955,11 +903,8 @@ class crnrstn_log extends crnrstn
     function set_runFile($str = NULL)
     {
 
-        if(isset($str)){
-
+        if(isset($str))
             self::$run_file = $str;
-
-        }
 
     }
 
@@ -973,15 +918,10 @@ class crnrstn_log extends crnrstn
     function get_runFile()
     {
 
-        if(isset(self::$run_file)){
-
+        if(isset(self::$run_file))
             return self::$run_file;
-
-        }else{
-
+        else
             return NULL;
-
-        }
 
     }
 
@@ -996,11 +936,8 @@ class crnrstn_log extends crnrstn
     function set_classMethod($str = NULL)
     {
 
-        if(isset($str)){
-
+        if(isset($str))
             self::$class_method = $str;
-
-        }
 
     }
 
@@ -1014,15 +951,10 @@ class crnrstn_log extends crnrstn
     function get_classMethod()
     {
 
-        if(isset(self::$class_method)){
-
+        if(isset(self::$class_method))
             return self::$class_method;
-
-        }else{
-
+        else
             return NULL;
-
-        }
 
     }
 
@@ -1037,11 +969,8 @@ class crnrstn_log extends crnrstn
     function set_lineNumber($str = NULL)
     {
 
-        if(isset($str)){
-
+        if(isset($str))
             self::$line_number = $str;
-
-        }
 
     }
 
@@ -1055,15 +984,10 @@ class crnrstn_log extends crnrstn
     function get_lineNumber()
     {
 
-        if(isset(self::$line_number)){
-
+        if(isset(self::$line_number))
             return self::$line_number;
-
-        }else{
-
+        else
             return NULL;
-
-        }
 
     }
 
@@ -1092,15 +1016,10 @@ class crnrstn_log extends crnrstn
     function get_logMsg()
     {
 
-        if(isset(self::$message)){
-
+        if(isset(self::$message))
             return self::$message;
-
-        }else{
-
+        else
             return NULL;
-
-        }
 
     }
 

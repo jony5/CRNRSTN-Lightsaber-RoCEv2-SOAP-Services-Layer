@@ -328,7 +328,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -389,7 +389,7 @@ class crnrstn_logging_output_profile_manager extends crnrstn
      * @access public
      *
      */
-    function __construct($sys_logging_profile_pack)
+    function __construct($sys_logging_profile_pack = NULL)
     {
 
         /* $sys_logging_profile_pack['sys_logging_profile_ARRAY'] = ARRAY[$this->hash($this->R_data['R_cluster_id'])][self::$resource_key];
@@ -399,29 +399,34 @@ class crnrstn_logging_output_profile_manager extends crnrstn
          */
 
         $this->R_data['R_cluster_id'] = $this->get_crnrstn('R_cluster_id');
+        $this->R_data['R_debug_mode'] = $this->get_crnrstn('R_debug_mode');
 
-        /* TODO :: Hold on a sec for doing 
-         *         this object array. 
-         *         5 :: Thursday, May 25, 2023 @ 1450 hrs.
-         *
-         *         $this->oCRNRSTN_WCR_ARRAY = $this->return_wcr_ARRAY();
-         *
-         */
+        if(isset($sys_logging_profile_pack)){
 
-        $this->oCRNRSTN_WCR_ARRAY = array();
+            /* TODO :: Hold on a sec for doing
+             *         this object array.
+             *         5 :: Thursday, May 25, 2023 @ 1450 hrs.
+             *
+             *         $this->oCRNRSTN_WCR_ARRAY = $this->return_wcr_ARRAY();
+             *
+             */
 
-        $this->build_sys_wcr_profile_criteria();
+            $this->oCRNRSTN_WCR_ARRAY = array();
 
-        $this->load_system_profiles();
+            $this->build_sys_wcr_profile_criteria();
 
-        $this->logging_profile_pack = $sys_logging_profile_pack;
+            $this->load_system_profiles();
 
-        $this->spool_up_logging_profiles();
+            $this->logging_profile_pack = $sys_logging_profile_pack;
 
-        /* $this->oLog_output_ARRAY[] = $this->error_log('Instantiating logging output ' . 
-         *                                     'profile manager within this environment.');
-         *
-         */
+            $this->spool_up_logging_profiles();
+
+            /* $this->oLog_output_ARRAY[] = $this->error_log('Instantiating logging output ' .
+             *                                     'profile manager within this environment.');
+             *
+             */
+
+        }
 
     }
 
@@ -1426,6 +1431,8 @@ class crnrstn_logging_output_profile_manager extends crnrstn
              *                            $this->profile_endpoint_criteria_ARRAY, 
              *                            $this->oCRNRSTN);
              *
+             * CLR-SSL Resource Registry
+             * Prototyping (2024-2026):
              * $tmp_oLoggingProfile = $this->return_registered_resource(
              *                               'new', 
              *                               'crnrstn_logging_oprofile', 
@@ -1435,62 +1442,19 @@ class crnrstn_logging_output_profile_manager extends crnrstn
              *
              */
 
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] Compound ointment for $key[' . print_r($key, true) . ']');   
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] Compound ointment for $profile[' . print_r($profile, true) . ']');   
-            die();
-
+            $spice_salt_mem_ptr = NULL;
             // 5 :: Tuesday, July 28, 2026 @ 0357 hrs.
             $this->compound_ointment(
-                   'crnrstn_logging_output_profile', 
+                   $spice_salt_mem_ptr,
+                   'crnrstn_logging_oprofile',
                    $profile, 
                    $this->R_data['R_cluster_id'], 
                    $this->profile_endpoint_criteria_ARRAY);
+            $this->anoint(
+                   'crnrstn_bitmask',
+                   $oLogging_profile);
 
-            $res_name = 'crnrstn_logging_output_profile';
-            if(!($R_resp = _crnrstn_native_resource_registry(
-                'return', 
-                $this, 
-                NULL, 
-                $res_name, 
-                self::$R_data['R_debug_mode'])))
-            {
-
-                $clr_ssl_msg = 'CLR-SSL resource ' . 
-                               'initialization failure: ' . 
-                               $res_name;
-                // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                    $clr_ssl_msg, 
-                    \LOG_ALERT, 
-                    \E_ERROR, 
-                    __LINE__, 
-                    __METHOD__, 
-                    __FILE__, 
-                    $token);
-
-            }
-
-            $mem_ptr = $R_resp['clr_ssl_resource']['memory_pointer'][0];
-
-            error_log('[mthd ' . 
-                __METHOD__ . '] [lnum ' . 
-                __LINE__ . '] New crnrstn_logging_output_profile $mem_ptr[' . $mem_ptr . '].');
-            die();
-
-            $this->oLog_profiles_ARRAY[] = $tmp_oLoggingProfile;
+            $this->oLog_profiles_ARRAY[] = $oLogging_profile;
 
         }
 

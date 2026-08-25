@@ -31,9 +31,23 @@
  *       \CRNRSTN\crnrstn_PHPMailer. 
  *       5 :: Tuesday, June 16, 2026 @ 0137 hrs.
  *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Edit: Modified the PHPMailer namespace
+ *       from \CRNRSTN\crnrstn_PHPMailer to
+ *       \CRNRSTN.
+ *
+ *       Fatal error: Uncaught Error:
+ *       Class "CRNRSTN\crnrstn_PHPMailer\crnrstn"
+ *       not found in C:\xampp\htdocs\_R\class
+ *       \thirdparty\phpmailer\src
+ *       \crnrstn_SMTP.php:45
+ *
+ *       5 :: Thursday, August 20, 2026 @ 2155 hrs.
+ *
+ *
  */
 
-namespace CRNRSTN\crnrstn_PHPMailer;
+namespace CRNRSTN;
 
 /**
  * PHPMailer - PHP email creation and transport class.
@@ -850,7 +864,7 @@ class crnrstn_PHPMailer extends crnrstn
     public function __construct($exceptions = null)
     {
 
-        $this->SMTPDebug = $this->PHPMailer_debug_mode();
+        $this->SMTPDebug = $this->get_crnrstn('phpmailer_debug_mode');
 
         if (null !== $exceptions) {
             $this->exceptions = (bool) $exceptions;
@@ -1135,7 +1149,15 @@ class crnrstn_PHPMailer extends crnrstn
             $this->setError($error_message);
             $this->edebug($error_message, __LINE__, __METHOD__, __FILE__);
             if ($this->exceptions) {
-                throw new crnrstn_Exception($error_message);
+                //throw new crnrstn_Exception($error_message);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0030 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $error_message);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             return false;
@@ -1185,7 +1207,15 @@ class crnrstn_PHPMailer extends crnrstn
             $this->setError($error_message);
             $this->edebug($error_message, __LINE__, __METHOD__, __FILE__);
             if ($this->exceptions) {
-                throw new crnrstn_Exception($error_message);
+                //throw new crnrstn_Exception($error_message);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0033 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $error_message);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             return false;
@@ -1200,7 +1230,15 @@ class crnrstn_PHPMailer extends crnrstn
             $this->setError($error_message);
             $this->edebug($error_message, __LINE__, __METHOD__, __FILE__);
             if ($this->exceptions) {
-                throw new crnrstn_Exception($error_message);
+                //throw new crnrstn_Exception($error_message);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0033 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $error_message);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             return false;
@@ -1309,7 +1347,15 @@ class crnrstn_PHPMailer extends crnrstn
             $this->setError($error_message);
             $this->edebug($error_message, __LINE__, __METHOD__, __FILE__);
             if ($this->exceptions) {
-                throw new crnrstn_Exception($error_message);
+                //throw new crnrstn_Exception($error_message);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0034 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $error_message);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             return false;
@@ -1546,7 +1592,16 @@ class crnrstn_PHPMailer extends crnrstn
                 call_user_func_array([$this, 'addAnAddress'], $params);
             }
             if (count($this->to) + count($this->cc) + count($this->bcc) < 1) {
-                throw new crnrstn_Exception($this->lang('provide_address'), self::STOP_CRITICAL);
+                //throw new crnrstn_Exception($this->lang('provide_address'), self::STOP_CRITICAL);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0035 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('provide_address'),
+                       self::STOP_CRITICAL);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             // Validate From, Sender, and ConfirmReadingTo addresses
@@ -1566,7 +1621,15 @@ class crnrstn_PHPMailer extends crnrstn
                     $this->setError($error_message);
                     $this->edebug($error_message, __LINE__, __METHOD__, __FILE__);
                     if ($this->exceptions) {
-                        throw new crnrstn_Exception($error_message);
+                        //throw new crnrstn_Exception($error_message);
+                        $spice_salt_mem_ptr = NULL;
+                        // 5 :: Friday, August 21, 2026 @ 0036 hrs.
+                        $this->compound_ointment(
+                               $spice_salt_mem_ptr,
+                               'crnrstn_Exception',
+                               $error_message);
+                        $this->anoint('crnrstn_Exception');
+
                     }
 
                     return false;
@@ -1581,7 +1644,16 @@ class crnrstn_PHPMailer extends crnrstn
             $this->setMessageType();
             // Refuse to send an empty message unless we are specifically allowing it
             if (!$this->AllowEmpty && empty($this->Body)) {
-                throw new crnrstn_Exception($this->lang('empty_message'), self::STOP_CRITICAL);
+                //throw new crnrstn_Exception($this->lang('empty_message'), self::STOP_CRITICAL);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0037 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('empty_message'),
+                       self::STOP_CRITICAL);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             //Trim subject consistently
@@ -1711,7 +1783,17 @@ class crnrstn_PHPMailer extends crnrstn
             foreach ($this->SingleToArray as $toAddr) {
                 $mail = @popen($sendmail, 'w');
                 if (!$mail) {
-                    throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                    //throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Friday, August 21, 2026 @ 0038 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'crnrstn_Exception',
+                           $this->lang('execute') .
+                           $this->Sendmail,
+                           self::STOP_CRITICAL);
+                    $this->anoint('crnrstn_Exception');
+
                 }
                 fwrite($mail, 'To: ' . $toAddr . "\n");
                 fwrite($mail, $header);
@@ -1728,13 +1810,33 @@ class crnrstn_PHPMailer extends crnrstn
                     []
                 );
                 if (0 !== $result) {
-                    throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                    //throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Friday, August 21, 2026 @ 0038 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'crnrstn_Exception',
+                           $this->lang('execute') .
+                           $this->Sendmail,
+                           self::STOP_CRITICAL);
+                    $this->anoint('crnrstn_Exception');
+
                 }
             }
         } else {
             $mail = @popen($sendmail, 'w');
             if (!$mail) {
-                throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                //throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0039 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('execute') .
+                       $this->Sendmail,
+                       self::STOP_CRITICAL);
+                $this->anoint('crnrstn_Exception');
+
             }
             fwrite($mail, $header);
             fwrite($mail, $body);
@@ -1750,7 +1852,17 @@ class crnrstn_PHPMailer extends crnrstn
                 []
             );
             if (0 !== $result) {
-                throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                //throw new crnrstn_Exception($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0039 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('execute') .
+                       $this->Sendmail,
+                       self::STOP_CRITICAL);
+                $this->anoint('crnrstn_Exception');
+
             }
         }
 
@@ -1858,7 +1970,16 @@ class crnrstn_PHPMailer extends crnrstn
             ini_set('sendmail_from', $old_from);
         }
         if (!$result) {
-            throw new crnrstn_Exception($this->lang('instantiate'), self::STOP_CRITICAL);
+            //throw new crnrstn_Exception($this->lang('instantiate'), self::STOP_CRITICAL);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Friday, August 21, 2026 @ 0040 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_Exception',
+                   $this->lang('instantiate'),
+                   self::STOP_CRITICAL);
+            $this->anoint('crnrstn_Exception');
+
         }
 
         return true;
@@ -1874,7 +1995,15 @@ class crnrstn_PHPMailer extends crnrstn
     public function getSMTPInstance()
     {
         if (!is_object($this->smtp)) {
-            $this->smtp = new crnrstn_SMTP();
+            //$this->smtp = new crnrstn_SMTP();
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Thursday, August 20, 2026 @ 2210 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_SMTP');
+            $this->anoint(
+                   'crnrstn_SMTP',
+                   $this->smtp);
         }
 
         return $this->smtp;
@@ -1904,7 +2033,7 @@ class crnrstn_PHPMailer extends crnrstn
      *
      * @see PHPMailer::setSMTPInstance() to use a different class.
      *
-     * @uses \PHPMailer\PHPMailer\crnrstn_SMTP
+     * @uses \CRNRSTN\crnrstn_SMTP
      *
      */
     protected function smtpSend($header, $body)
@@ -1912,7 +2041,16 @@ class crnrstn_PHPMailer extends crnrstn
         $header = static::stripTrailingWSP($header) . static::$LE . static::$LE;
         $bad_rcpt = [];
         if (!$this->smtpConnect($this->SMTPOptions)) {
-            throw new crnrstn_Exception($this->lang('smtp_connect_failed'), self::STOP_CRITICAL);
+            //throw new crnrstn_Exception($this->lang('smtp_connect_failed'), self::STOP_CRITICAL);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Friday, August 21, 2026 @ 0041 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_Exception',
+                   $this->lang('smtp_connect_failed'),
+                   self::STOP_CRITICAL);
+            $this->anoint('crnrstn_Exception');
+
         }
         //Sender already validated in preSend()
         if ('' === $this->Sender) {
@@ -1922,7 +2060,16 @@ class crnrstn_PHPMailer extends crnrstn
         }
         if (!$this->smtp->mail($smtp_from)) {
             $this->setError($this->lang('from_failed') . $smtp_from . ' : ' . implode(',', $this->smtp->getError()));
-            throw new crnrstn_Exception($this->ErrorInfo, self::STOP_CRITICAL);
+            //throw new crnrstn_Exception($this->ErrorInfo, self::STOP_CRITICAL);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Friday, August 21, 2026 @ 0041 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_Exception',
+                   $this->ErrorInfo,
+                   self::STOP_CRITICAL);
+            $this->anoint('crnrstn_Exception');
+
         }
 
         $callbacks = [];
@@ -1943,7 +2090,16 @@ class crnrstn_PHPMailer extends crnrstn
 
         // Only send the DATA command if we have viable recipients
         if ((count($this->all_recipients) > count($bad_rcpt)) && !$this->smtp->data($header . $body)) {
-            throw new crnrstn_Exception($this->lang('data_not_accepted'), self::STOP_CRITICAL);
+            //throw new crnrstn_Exception($this->lang('data_not_accepted'), self::STOP_CRITICAL);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_Exception',
+                   $this->lang('data_not_accepted'),
+                   self::STOP_CRITICAL);
+            $this->anoint('crnrstn_Exception');
+
         }
 
         $smtp_transaction_id = $this->smtp->getLastTransactionID();
@@ -1974,7 +2130,17 @@ class crnrstn_PHPMailer extends crnrstn
             foreach ($bad_rcpt as $bad) {
                 $errstr .= $bad['to'] . ': ' . $bad['error'];
             }
-            throw new crnrstn_Exception($this->lang('recipients_failed') . $errstr, self::STOP_CONTINUE);
+            //throw new crnrstn_Exception($this->lang('recipients_failed') . $errstr, self::STOP_CONTINUE);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'crnrstn_Exception',
+                   $this->lang('recipients_failed') .
+                   $errstr,
+                   self::STOP_CONTINUE);
+            $this->anoint('crnrstn_Exception');
+
         }
 
         return true;
@@ -1989,7 +2155,7 @@ class crnrstn_PHPMailer extends crnrstn
      * @return bool
      *@throws crnrstn_Exception
      *
-     * @uses \PHPMailer\PHPMailer\crnrstn_SMTP
+     * @uses \CRNRSTN\crnrstn_SMTP
      *
      */
     public function smtpConnect($options = null)
@@ -2054,7 +2220,17 @@ class crnrstn_PHPMailer extends crnrstn
             if (static::ENCRYPTION_STARTTLS === $secure || static::ENCRYPTION_SMTPS === $secure) {
                 //Check for an OpenSSL constant rather than using extension_loaded, which is sometimes disabled
                 if (!$sslext) {
-                    throw new crnrstn_Exception($this->lang('extension_missing') . 'openssl', self::STOP_CRITICAL);
+                    //throw new crnrstn_Exception($this->lang('extension_missing') . 'openssl', self::STOP_CRITICAL);
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'crnrstn_Exception',
+                           $this->lang('extension_missing') .
+                           'openssl',
+                           self::STOP_CRITICAL);
+                    $this->anoint('crnrstn_Exception');
+
                 }
             }
             $host = $hostinfo[2];
@@ -2080,7 +2256,15 @@ class crnrstn_PHPMailer extends crnrstn
                     }
                     if ($tls) {
                         if (!$this->smtp->startTLS()) {
-                            throw new crnrstn_Exception($this->lang('connect_host'));
+                            //throw new crnrstn_Exception($this->lang('connect_host'));
+                            $spice_salt_mem_ptr = NULL;
+                            // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                            $this->compound_ointment(
+                                   $spice_salt_mem_ptr,
+                                   'crnrstn_Exception',
+                                   $this->lang('connect_host'));
+                            $this->anoint('crnrstn_Exception');
+
                         }
                         // We must resend EHLO after TLS negotiation
                         $this->smtp->hello($hello);
@@ -2091,7 +2275,15 @@ class crnrstn_PHPMailer extends crnrstn
                         $this->AuthType,
                         $this->oauth
                     )) {
-                        throw new crnrstn_Exception($this->lang('authenticate'));
+                        //throw new crnrstn_Exception($this->lang('authenticate'));
+                        $spice_salt_mem_ptr = NULL;
+                        // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                        $this->compound_ointment(
+                               $spice_salt_mem_ptr,
+                               'crnrstn_Exception',
+                               $this->lang('authenticate'));
+                        $this->anoint('crnrstn_Exception');
+
                     }
 
                     return true;
@@ -2846,12 +3038,30 @@ class crnrstn_PHPMailer extends crnrstn
         if ($this->isError()) {
             $body = '';
             if ($this->exceptions) {
-                throw new crnrstn_Exception($this->lang('empty_message'), self::STOP_CRITICAL);
+                //throw new crnrstn_Exception($this->lang('empty_message'), self::STOP_CRITICAL);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('empty_message'),
+                       self::STOP_CRITICAL);
+                $this->anoint('crnrstn_Exception');
+
             }
         } elseif ($this->sign_key_file) {
             try {
                 if (!defined('PKCS7_TEXT')) {
-                    throw new crnrstn_Exception($this->lang('extension_missing') . 'openssl');
+                    //throw new crnrstn_Exception($this->lang('extension_missing') . 'openssl');
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'crnrstn_Exception',
+                           $this->lang('extension_missing') .
+                           'openssl');
+                    $this->anoint('crnrstn_Exception');
+
                 }
 
                 $file = tempnam(sys_get_temp_dir(), 'srcsign');
@@ -2889,7 +3099,16 @@ class crnrstn_PHPMailer extends crnrstn
                     $body = $parts[1];
                 } else {
                     @unlink($signed);
-                    throw new crnrstn_Exception($this->lang('signing') . openssl_error_string());
+                    //throw new crnrstn_Exception($this->lang('signing') . openssl_error_string());
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'crnrstn_Exception',
+                           $this->lang('signing') .
+                           \openssl_error_string());
+                    $this->anoint('crnrstn_Exception');
+
                 }
             } catch (crnrstn_Exception $exc) {
                 $body = '';
@@ -3022,7 +3241,17 @@ class crnrstn_PHPMailer extends crnrstn
     ) {
         try {
             if (!static::isPermittedPath($path) || !@is_file($path) || !is_readable($path)) {
-                throw new crnrstn_Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
+                //throw new crnrstn_Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('file_access') .
+                       $path,
+                       self::STOP_CONTINUE);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             // If a MIME type is not specified, try to work it out from the file name
@@ -3036,7 +3265,16 @@ class crnrstn_PHPMailer extends crnrstn
             }
 
             if (!$this->validateEncoding($encoding)) {
-                throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                //throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('encoding') .
+                       $encoding);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             $this->attachment[] = [
@@ -3197,11 +3435,31 @@ class crnrstn_PHPMailer extends crnrstn
     {
         try {
             if (!static::isPermittedPath($path) || !file_exists($path) || !is_readable($path)) {
-                throw new crnrstn_Exception($this->lang('file_open') . $path, self::STOP_CONTINUE);
+                //throw new crnrstn_Exception($this->lang('file_open') . $path, self::STOP_CONTINUE);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('file_open') .
+                       $path,
+                       self::STOP_CONTINUE);
+                $this->anoint('crnrstn_Exception');
+
             }
             $file_buffer = file_get_contents($path);
             if (false === $file_buffer) {
-                throw new crnrstn_Exception($this->lang('file_open') . $path, self::STOP_CONTINUE);
+                //throw new crnrstn_Exception($this->lang('file_open') . $path, self::STOP_CONTINUE);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('file_open') .
+                       $path,
+                       self::STOP_CONTINUE);
+                $this->anoint('crnrstn_Exception');
+
             }
             $file_buffer = $this->encodeString($file_buffer, $encoding);
 
@@ -3256,7 +3514,16 @@ class crnrstn_PHPMailer extends crnrstn
             default:
                 $this->setError($this->lang('encoding') . $encoding);
                 if ($this->exceptions) {
-                    throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                    //throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                    $spice_salt_mem_ptr = NULL;
+                    // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                    $this->compound_ointment(
+                           $spice_salt_mem_ptr,
+                           'crnrstn_Exception',
+                           $this->lang('encoding') .
+                           $encoding);
+                    $this->anoint('crnrstn_Exception');
+
                 }
                 break;
         }
@@ -3525,7 +3792,16 @@ class crnrstn_PHPMailer extends crnrstn
             }
 
             if (!$this->validateEncoding($encoding)) {
-                throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                //throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('encoding') .
+                       $encoding);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             // Append to $attachment array
@@ -3583,7 +3859,17 @@ class crnrstn_PHPMailer extends crnrstn
     ) {
         try {
             if (!static::isPermittedPath($path) || !@is_file($path) || !is_readable($path)) {
-                throw new crnrstn_Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
+                //throw new crnrstn_Exception($this->lang('file_access') . $path, self::STOP_CONTINUE);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('file_access') .
+                       $path,
+                       self::STOP_CONTINUE);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             // If a MIME type is not specified, try to work it out from the file name
@@ -3592,7 +3878,16 @@ class crnrstn_PHPMailer extends crnrstn
             }
 
             if (!$this->validateEncoding($encoding)) {
-                throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                //throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('encoding') .
+                       $encoding);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             $filename = (string) static::mb_pathinfo($path, PATHINFO_BASENAME);
@@ -3658,7 +3953,16 @@ class crnrstn_PHPMailer extends crnrstn
             }
 
             if (!$this->validateEncoding($encoding)) {
-                throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                //throw new crnrstn_Exception($this->lang('encoding') . $encoding);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('encoding') .
+                       $encoding);
+                $this->anoint('crnrstn_Exception');
+
             }
 
             // Append to $attachment array
@@ -4030,7 +4334,15 @@ class crnrstn_PHPMailer extends crnrstn
         //Ensure name is not empty, and that neither name nor value contain line breaks
         if (empty($name) || strpbrk($name . $value, "\r\n") !== false) {
             if ($this->exceptions) {
-                throw new crnrstn_Exception('Invalid header name or value');
+                //throw new crnrstn_Exception('Invalid header name or value');
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0042 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       'Invalid header name or value');
+                $this->anoint('crnrstn_Exception');
+
             }
 
             return false;
@@ -4543,7 +4855,16 @@ class crnrstn_PHPMailer extends crnrstn
     {
         if (!defined('PKCS7_TEXT')) {
             if ($this->exceptions) {
-                throw new crnrstn_Exception($this->lang('extension_missing') . 'openssl');
+                //throw new crnrstn_Exception($this->lang('extension_missing') . 'openssl');
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Friday, August 21, 2026 @ 0044 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_Exception',
+                       $this->lang('extension_missing') .
+                       'openssl');
+                $this->anoint('crnrstn_Exception');
+
             }
 
             return '';

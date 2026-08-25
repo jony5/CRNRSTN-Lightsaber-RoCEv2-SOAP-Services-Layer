@@ -270,9 +270,9 @@ namespace CRNRSTN\resource;
 use CRNRSTN\crnrstn_logging;
 
 /**
- * R :: crnrstn_logging object instantiation into R_resp.
+ * R :: crnrstn_logging object instantiation and return.
  *
- * $R_resp[$mem_pointer]['data'][] = new crnrstn_logging();
+ * $R['kivotos'][{resource public_key}] = new crnrstn_logging();
  *
  * @package CRNRSTN
  * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
@@ -281,7 +281,7 @@ use CRNRSTN\crnrstn_logging;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @access public
  *
  *
@@ -289,3 +289,81 @@ use CRNRSTN\crnrstn_logging;
  *
  */
 return new crnrstn_logging();
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CLR-SSL Resource Registry
+ * Data Transport Architecture
+ * Interfaces
+ *
+ * TLDR;
+ * 1) CLR-SSL Kivotós Advanced Object Storage Ark.
+ * 2) Resource Anointing with Compounded Ointment of Input Parameters.
+ * 3) CLR-SSL Resource Registry Direct Integrations.
+ *
+ * 1) $var = $R->kivotos_storage('xml');
+ * 2) $var = $R->compound_ointment_extract('wsdl', 0, false);
+ * 3) $var = $R_resp[$memory_pointer]['input_parameter_defaults'][$R_resp[$memory_pointer]['software_default']][0];
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * A) CLR-SSL Kivotós Advanced
+ *    Object Storage Ark.
+ *    Use kivotos_storage() to
+ *    access core resources that are
+ *    loaded automatically by the
+ *    CLR-SSL Resource Registry
+ *    Internals. Access object,
+ *    function output return,
+ *    and runtime exe output
+ *    return data.
+ *
+ *    function kivotos_storage($public_key)
+ *    {}
+ *
+ * E.g.:
+ *    $var = $R->kivotos_storage('xml');
+ *
+ * Note: (string) $public_key is
+ *       the index at which the data
+ *       can be accessed within the
+ *       CLR-SSL Kivotós Advanced
+ *       Object Storage Ark or
+ *       CRNRSTN :: KAOS ('chaos').
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * B) Just-In-Time Ointment Compounding
+ *    and Variable Anointing and Just-
+ *    In-Time Resource Definition
+ *    Evaluations (or returns).
+ *    Use compound_ointment_extract() to
+ *    access resources loaded in the wild
+ *    and dynamically via
+ *    $R->compound_ointment() + $R->anoint()
+ *    resource acquisition maneuvers.
+ *
+ *    function compound_ointment_extract(
+ *             $resource_name,
+ *             $input_position = 0,
+ *             $input_default = NULL)
+ *             {}
+ *
+ * E.g.:
+ *    $var = $R->compound_ointment_extract('wsdl', 0, false);
+ *
+ * Note: For Just-In-Time resource returns
+ *       behind this architecture, please see:
+ *
+ *       $var = $R->return_anointed_resource($resource_name)
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * C) Direct integrations with the
+ *    CLR-SSL Resource Registry's
+ *    own internal data architecture.
+ *
+ * E.g.:
+ *    $var = $R_resp[$memory_pointer]['input_parameter_defaults'][$R_resp[$memory_pointer]['software_default']][0];
+ *
+ *
+ * 5 :: Saturday, August 22, 2026 @ 0742 hrs.
+ * Last Modified: Monday, August 24, 2026 @ 1911 hrs.
+ *
+ */

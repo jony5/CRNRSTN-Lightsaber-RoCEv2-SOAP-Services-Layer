@@ -354,14 +354,15 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
  */
-class crnrstn_finite_expression {
+class crnrstn_finite_expression
+{
 
-    private static $lang_content_ARRAY = array();
+    private static $lang_struct_time = array();
 
     public function __construct(){
 
@@ -544,28 +545,28 @@ class crnrstn_finite_expression {
     //
     private function initialize_language(){
 
-        self::$lang_content_ARRAY['YEAR']    = 'year';
-        self::$lang_content_ARRAY['YEARS']   = 'years';
-        self::$lang_content_ARRAY['Y']       = 'y';
-        self::$lang_content_ARRAY['WEEK']    = 'week';
-        self::$lang_content_ARRAY['WEEKS']   = 'weeks';
-        self::$lang_content_ARRAY['W']       = 'w';
-        self::$lang_content_ARRAY['DAY']     = 'day';
-        self::$lang_content_ARRAY['DAYS']    = 'days';
-        self::$lang_content_ARRAY['D']       = 'd';
-        self::$lang_content_ARRAY['HOUR']    = 'hour';
-        self::$lang_content_ARRAY['HOURS']   = 'hours';
-        self::$lang_content_ARRAY['H']       = 'h';
-        self::$lang_content_ARRAY['MINUTE']  = 'minute';
-        self::$lang_content_ARRAY['MINUTES'] = 'minutes';
-        self::$lang_content_ARRAY['M']       = 'm';
-        self::$lang_content_ARRAY['SECOND']  = 'second';
-        self::$lang_content_ARRAY['SECONDS'] = 'seconds';
-        self::$lang_content_ARRAY['S']       = 's';
-        self::$lang_content_ARRAY['AND']     = 'and';
-        self::$lang_content_ARRAY['AGO']     = 'ago';
+        self::$lang_struct_time['YEAR']    = 'year';
+        self::$lang_struct_time['YEARS']   = 'years';
+        self::$lang_struct_time['Y']       = 'y';
+        self::$lang_struct_time['WEEK']    = 'week';
+        self::$lang_struct_time['WEEKS']   = 'weeks';
+        self::$lang_struct_time['W']       = 'w';
+        self::$lang_struct_time['DAY']     = 'day';
+        self::$lang_struct_time['DAYS']    = 'days';
+        self::$lang_struct_time['D']       = 'd';
+        self::$lang_struct_time['HOUR']    = 'hour';
+        self::$lang_struct_time['HOURS']   = 'hours';
+        self::$lang_struct_time['H']       = 'h';
+        self::$lang_struct_time['MINUTE']  = 'minute';
+        self::$lang_struct_time['MINUTES'] = 'minutes';
+        self::$lang_struct_time['M']       = 'm';
+        self::$lang_struct_time['SECOND']  = 'second';
+        self::$lang_struct_time['SECONDS'] = 'seconds';
+        self::$lang_struct_time['S']       = 's';
+        self::$lang_struct_time['AND']     = 'and';
+        self::$lang_struct_time['AGO']     = 'ago';
 
-        #error_log("finite (101)->" . print_r(self::$lang_content_ARRAY['WEEKS']));
+        #error_log("finite (101)->" . print_r(self::$lang_struct_time['WEEKS']));
 
     }
 
@@ -592,26 +593,26 @@ class crnrstn_finite_expression {
 
         //
         // This. Will. Be. MANUAL.
-        self::$lang_content_ARRAY['YEAR']    = $oUser->getLangElem('FINITE_EXP_YEAR');
-        self::$lang_content_ARRAY['YEARS']   = $oUser->getLangElem('FINITE_EXP_YEARS');
-        self::$lang_content_ARRAY['Y']       = $oUser->getLangElem('FINITE_EXP_Y');
-        self::$lang_content_ARRAY['WEEK']    = $oUser->getLangElem('FINITE_EXP_WEEK');
-        self::$lang_content_ARRAY['WEEKS']   = $oUser->getLangElem('FINITE_EXP_WEEKS');
-        self::$lang_content_ARRAY['W']       = $oUser->getLangElem('FINITE_EXP_W');
-        self::$lang_content_ARRAY['DAY']     = $oUser->getLangElem('FINITE_EXP_DAY');
-        self::$lang_content_ARRAY['DAYS']    = $oUser->getLangElem('FINITE_EXP_DAYS');
-        self::$lang_content_ARRAY['D']       = $oUser->getLangElem('FINITE_EXP_D');
-        self::$lang_content_ARRAY['HOUR']    = $oUser->getLangElem('FINITE_EXP_HOUR');
-        self::$lang_content_ARRAY['HOURS']   = $oUser->getLangElem('FINITE_EXP_HOURS');
-        self::$lang_content_ARRAY['H']       = $oUser->getLangElem('FINITE_EXP_H');
-        self::$lang_content_ARRAY['MINUTE']  = $oUser->getLangElem('FINITE_EXP_MINUTE');
-        self::$lang_content_ARRAY['MINUTES'] = $oUser->getLangElem('FINITE_EXP_MINUTES');
-        self::$lang_content_ARRAY['M']       = $oUser->getLangElem('FINITE_EXP_M');
-        self::$lang_content_ARRAY['SECOND']  = $oUser->getLangElem('FINITE_EXP_SECOND');
-        self::$lang_content_ARRAY['SECONDS'] = $oUser->getLangElem('FINITE_EXP_SECONDS');
-        self::$lang_content_ARRAY['S']       = $oUser->getLangElem('FINITE_EXP_S');
-        self::$lang_content_ARRAY['AND']     = $oUser->getLangElem('FINITE_EXP_AND');
-        self::$lang_content_ARRAY['AGO']     = $oUser->getLangElem('FINITE_EXP_AGO');
+        self::$lang_struct_time['YEAR']    = $oUser->getLangElem('FINITE_EXP_YEAR');
+        self::$lang_struct_time['YEARS']   = $oUser->getLangElem('FINITE_EXP_YEARS');
+        self::$lang_struct_time['Y']       = $oUser->getLangElem('FINITE_EXP_Y');
+        self::$lang_struct_time['WEEK']    = $oUser->getLangElem('FINITE_EXP_WEEK');
+        self::$lang_struct_time['WEEKS']   = $oUser->getLangElem('FINITE_EXP_WEEKS');
+        self::$lang_struct_time['W']       = $oUser->getLangElem('FINITE_EXP_W');
+        self::$lang_struct_time['DAY']     = $oUser->getLangElem('FINITE_EXP_DAY');
+        self::$lang_struct_time['DAYS']    = $oUser->getLangElem('FINITE_EXP_DAYS');
+        self::$lang_struct_time['D']       = $oUser->getLangElem('FINITE_EXP_D');
+        self::$lang_struct_time['HOUR']    = $oUser->getLangElem('FINITE_EXP_HOUR');
+        self::$lang_struct_time['HOURS']   = $oUser->getLangElem('FINITE_EXP_HOURS');
+        self::$lang_struct_time['H']       = $oUser->getLangElem('FINITE_EXP_H');
+        self::$lang_struct_time['MINUTE']  = $oUser->getLangElem('FINITE_EXP_MINUTE');
+        self::$lang_struct_time['MINUTES'] = $oUser->getLangElem('FINITE_EXP_MINUTES');
+        self::$lang_struct_time['M']       = $oUser->getLangElem('FINITE_EXP_M');
+        self::$lang_struct_time['SECOND']  = $oUser->getLangElem('FINITE_EXP_SECOND');
+        self::$lang_struct_time['SECONDS'] = $oUser->getLangElem('FINITE_EXP_SECONDS');
+        self::$lang_struct_time['S']       = $oUser->getLangElem('FINITE_EXP_S');
+        self::$lang_struct_time['AND']     = $oUser->getLangElem('FINITE_EXP_AND');
+        self::$lang_struct_time['AGO']     = $oUser->getLangElem('FINITE_EXP_AGO');
 
     }
 
@@ -622,18 +623,18 @@ class crnrstn_finite_expression {
         $delta_secs = $ts - $secs;
 
         $bit = array(
-            self::$lang_content_ARRAY['Y'] => $delta_secs / 31556926 % 12,
-            self::$lang_content_ARRAY['W'] => $delta_secs / 604800 % 52,
-            self::$lang_content_ARRAY['D'] => $delta_secs / 86400 % 7,
-            self::$lang_content_ARRAY['H'] => $delta_secs / 3600 % 24,
-            self::$lang_content_ARRAY['M'] => $delta_secs / 60 % 60,
-            self::$lang_content_ARRAY['S'] => $delta_secs % 60
+            self::$lang_struct_time['Y'] => $delta_secs / 31556926 % 12,
+            self::$lang_struct_time['W'] => $delta_secs / 604800 % 52,
+            self::$lang_struct_time['D'] => $delta_secs / 86400 % 7,
+            self::$lang_struct_time['H'] => $delta_secs / 3600 % 24,
+            self::$lang_struct_time['M'] => $delta_secs / 60 % 60,
+            self::$lang_struct_time['S'] => $delta_secs % 60
         );
 
         //
         // Let's confirm 
         // language operation.
-        //error_log("(146) Y->".self::$lang_content_ARRAY['Y']);      // shows 1...not y...
+        //error_log("(146) Y->".self::$lang_struct_time['Y']);      // shows 1...not y...
 
         foreach($bit as $k => $v){
 
@@ -647,7 +648,10 @@ class crnrstn_finite_expression {
                 // 5
                 // 
                 // Monday, July 29, 2024 @ 1022 hrs.
-                if($k == self::$lang_content_ARRAY['Y'] || $k == self::$lang_content_ARRAY['W'] || ($k == self::$lang_content_ARRAY['D'] && $v > 1)){
+                if(($k == self::$lang_struct_time['Y']) ||
+                    ($k == self::$lang_struct_time['W']) ||
+                    ($k == self::$lang_struct_time['D'] && $v > 1))
+                {
 
                     //
                     // Return the default
@@ -686,7 +690,7 @@ class crnrstn_finite_expression {
 
             }else{
 
-                $ret[] = self::$lang_content_ARRAY['AGO'];
+                $ret[] = self::$lang_struct_time['AGO'];
 
             }
 
@@ -749,21 +753,21 @@ class crnrstn_finite_expression {
         );
 
         $bit_singular = array(
-            '0'     => ' '.self::$lang_content_ARRAY['YEAR'],
-            '1'     => ' '.self::$lang_content_ARRAY['WEEK'],
-            '2'     => ' '.self::$lang_content_ARRAY['DAY'],
-            '3'     => ' '.self::$lang_content_ARRAY['HOUR'],
-            '4'     => ' '.self::$lang_content_ARRAY['MINUTE'],
-            '5'     => ' '.self::$lang_content_ARRAY['SECOND']
+            '0'     => ' '.self::$lang_struct_time['YEAR'],
+            '1'     => ' '.self::$lang_struct_time['WEEK'],
+            '2'     => ' '.self::$lang_struct_time['DAY'],
+            '3'     => ' '.self::$lang_struct_time['HOUR'],
+            '4'     => ' '.self::$lang_struct_time['MINUTE'],
+            '5'     => ' '.self::$lang_struct_time['SECOND']
         );
 
         $bit_plural = array(
-            '0'     => ' '.self::$lang_content_ARRAY['YEARS'],
-            '1'     => ' '.self::$lang_content_ARRAY['WEEKS'],
-            '2'     => ' '.self::$lang_content_ARRAY['DAYS'],
-            '3'     => ' '.self::$lang_content_ARRAY['HOURS'],
-            '4'     => ' '.self::$lang_content_ARRAY['MINUTES'],
-            '5'     => ' '.self::$lang_content_ARRAY['SECONDS']
+            '0'     => ' '.self::$lang_struct_time['YEARS'],
+            '1'     => ' '.self::$lang_struct_time['WEEKS'],
+            '2'     => ' '.self::$lang_struct_time['DAYS'],
+            '3'     => ' '.self::$lang_struct_time['HOURS'],
+            '4'     => ' '.self::$lang_struct_time['MINUTES'],
+            '5'     => ' '.self::$lang_struct_time['SECONDS']
         );
 
         foreach($bit as $k => $v){
@@ -809,8 +813,8 @@ class crnrstn_finite_expression {
         //     if($v == 1)$ret[] = $v . $k;
         // }
 
-        array_splice($ret, count($ret)-1, 0, self::$lang_content_ARRAY['AND']);
-        $ret[] = self::$lang_content_ARRAY['AGO'];
+        array_splice($ret, count($ret)-1, 0, self::$lang_struct_time['AND']);
+        $ret[] = self::$lang_struct_time['AGO'];
 
         return join(' ', $ret);
 

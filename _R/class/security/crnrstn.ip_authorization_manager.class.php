@@ -611,11 +611,10 @@ class crnrstn_ip_authorization_manager extends crnrstn
      */
     function __construct()
     {
-		
-		//
-		// GET CURRENT IP ADDRESS.
+
+		// Get client IP address.
 		self::$clientIpAddress = $this->return_ip();
-		
+
 	}
 
     /**

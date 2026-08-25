@@ -295,7 +295,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -3324,8 +3324,7 @@ class crnrstn_session_manager extends crnrstn
 
 				}else{
 					
-					/**
-                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+					/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * HOOOSTON, VE HAFF PROBLEM!
                      * https://www.wired.com/2011/04/alt-text-spacecraft/
                      *

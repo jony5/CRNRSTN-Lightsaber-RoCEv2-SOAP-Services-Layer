@@ -312,7 +312,7 @@ namespace CRNRSTN;
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://crnrstn.jony5.com/documentation/classes/crnrstn/ CRNRSTN :: Resource Documentation Deep Link.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object The crnrstn class object.
  * @since 1.0.0 CRNRSTN :: An Advanced PHP Class Library for Enterprise.
  * @access public
@@ -344,20 +344,31 @@ class crnrstn
      *
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * TODO :: Take self::$R_data['framework_root'] 
-     *         to self::$R_data['framework_path_root'], 
+     *         to self::$R_data['R_framework_path'],
      *         and there should be an http/https 
      *         equivalent 
      *         self::$R_data['framework_http_root'].
      *         5 :: Monday, August 10, 2026 @ 2111 hrs.
      *         Sips can of crisp Cola-Cola® Classic® 
      *         Lights joint with fire from 
-     *         kitchen stove gas range. 
+     *         kitchen stove gas range.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Renamed the CLR-SSL Kivotós
+     *       object storage array to $_R,
+     *       and added a publically scoped
+     *       Kivotós object storage array,
+     *       $R = array().
+     *       5 :: Sunday, August 23, 2026 @ 2143 hrs.
+     *       ...waitress asked, "How many bottles?".
+     *       I told her "twenty three."
      *
      */
 
-    private static $R                       = array();
+    private static $_R               = array();
     private static $R_data           = array();
     private static $oMessenger_ARRAY = array();
+    public $R                        = array();
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * If destruct_output has content, 
@@ -415,9 +426,7 @@ class crnrstn
     private static $byte_units_ARRAY = array();
     private static $permissions_chmod = 775;
     private static $config_resource_meta_ARRAY = array();
-    private static $file_modification_resets_configuration;
     private static $iframe_proxy_enabled = true;
-    private static $nusoap_framework_directory;
     private static $openssl_cipher = 'aes-192-ofb';
     private static $channel_syntax_ARRAY = array();
     private static $get_channel_system_parameters_ARRAY = array();
@@ -431,7 +440,7 @@ class crnrstn
     public $iso_language_html_default;
     public $iso_language_html_available_ARRAY = array();
     public $iso_profile_ARRAY = array();
-    private static $lang_content_ARRAY = array();
+    private static $lang_struct_time = array();
     private static $system_logging_output_profile_ARRAY = array();
     private static $sys_logging_meta_ARRAY = array();
     public $cache_meta_ARRAY = array();
@@ -708,7 +717,7 @@ class crnrstn
      *       $oCRNRSTN->version_crnrstn() . '.';
      *
      *
-     *  5 :: Sunday, June 30, 2024 @ 0623 hrs.
+     * 5 :: Sunday, June 30, 2024 @ 0623 hrs.
      *
      */
     /**
@@ -730,8 +739,7 @@ class crnrstn
              $R_hmac_algorithm_override = NULL, 
              $R_debug_mode_override = NULL, 
              $PHPMailer_debug_mode_override = NULL, 
-             $WordPress_debug_mode_override = NULL, 
-             $R_odata = NULL)
+             $WordPress_debug_mode_override = NULL)
     {
 
         try{
@@ -844,6 +852,11 @@ class crnrstn
              *       with self::$R_data['R']. 
              *       5 :: Wednesday, July 15, 2026 @ 0911 hrs.
              *
+             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Edit: Deleted the variable private static
+             *       $file_modification_resets_configuration.
+             *       5 :: Tuesday, August 25, 2026 @ 0233 hrs.
+             *
              */
             $this->clr_ssl_initialize(
                    $application_directory, 
@@ -851,8 +864,7 @@ class crnrstn
                    $R_hmac_algorithm_override, 
                    $R_debug_mode_override, 
                    $PHPMailer_debug_mode_override, 
-                   $WordPress_debug_mode_override, 
-                   $R_odata);
+                   $WordPress_debug_mode_override);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Create a monitoring and
@@ -1163,7 +1175,7 @@ class crnrstn
              *       5 :: Sunday, March 15, 2026 @ "01" 2345 hrs.
              *
              *       "01010101...split the atom...Oh, 
-             *       Oh, Oh, Oh. You know what I mean."
+             *       Oh, Oh, Oh. You know what I mean. 
              *
              *       Yeah, you know what I mean: 
              *       "Oh, Oh, Oh"... 
@@ -1204,7 +1216,7 @@ class crnrstn
              *       5 :: Sunday, March 15, 2026 @ "01" 2345 hrs.
              *
              *       "01010101...split the atom...Oh, 
-             *       Oh, Oh, Oh. You know what I mean."
+             *       Oh, Oh, Oh. You know what I mean. 
              *
              *       Yeah, you know what I mean: 
              *       "Oh, Oh, Oh"... 
@@ -1313,22 +1325,6 @@ class crnrstn
              *
              */
 
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * J5, my boy!
-             *
-             * Initialize the runtime 
-             * configuration alpha-
-             * to-binary shift crypt 
-             * key for the CRNRSTN :: 
-             * Lightsaber RoCEv2 SOAP 
-             * Services Layer (CLR-SSL). 
-             *
-             *
-             * 5 :: Tuesday, July 9, 2024 @ 0748 hrs.
-             *
-             */
-            $this->initialize_alpha_shift_crypt('JFIVEMYBOY');
-
             $this->generate_weighted_elements_keys(
                    count(self::$system_creative_element_keys_ARRAY));
 
@@ -1406,10 +1402,10 @@ class crnrstn
              *                                       $this);
              *
              *
-            self::$R['kivotos']->R['log_output_mgr'] = $this->return_registered_resource(
-                                                              'new', 
-                                                              'crnrstn_logging_output_profile_manager', 
-                                                              $sys_logging_profile_pack);
+            self::$_R['kivotos']->R['log_output_mgr'] = $this->return_registered_resource(
+                                                               'new',
+                                                               'crnrstn_logging_output_profile_manager',
+                                                               $sys_logging_profile_pack);
              */
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1424,7 +1420,7 @@ class crnrstn
              * Configuration Manager.
              *
              */
-            self::$R['kivotos']->R['config_mgr']->consume_rrs_map(self::$R_rrs_map);
+            self::$_R['kivotos']->R['config_mgr']->consume_rrs_map(self::$_R['kivotos']->R['rrs_map']);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Load $_SERVER[] data 
@@ -1629,114 +1625,6 @@ class crnrstn
                        __FILE__, 
                        $token);
 
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * syslog()
-                 * SYSLOG priority is a combination of the
-                 * facility and the level.
-                 *
-                 * Possible values are (in descending order):
-                 * Constant        Description
-                 * \LOG_EMERG       system is unusable.
-                 * \LOG_ALERT       action must be
-                 *                 taken immediately
-                 * \LOG_CRIT        critical conditions
-                 * \LOG_ERR         error conditions
-                 * \LOG_WARNING     warning conditions
-                 * \LOG_NOTICE      normal, but
-                 *                 significant, condition
-                 * \LOG_INFO        informational message
-                 * \LOG_DEBUG       debug-level message
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-
                 throw new \Exception('CRNRSTN :: Construct Error ::  ' . 
                     '$_SERVER[] super global has ' . 
                     'not been initialized. ' . 
@@ -1801,8 +1689,7 @@ class crnrstn
                      $R_hmac_algorithm_override,
                      $R_debug_mode_override,
                      $PHPMailer_debug_mode_override, 
-                     $WordPress_debug_mode_override, 
-                     $R_odata = NULL)
+                     $WordPress_debug_mode_override)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Added private method 
@@ -1866,11 +1753,25 @@ class crnrstn
          *       class object.
          *       5 :: Tuesday, June 16, 2026 @ 1958 hrs.
          *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Deleted R_odata = NULL input
+         *       parameter from the crnrstn
+         *       class object.
+         *       5 :: Saturday, August 22, 2026 @ 1555 hrs.
+         *
          */
 
         //$this->starttime = $_SERVER['REQUEST_TIME_FLOAT'];
-        self::$R_data['starttime']       = $_SERVER['REQUEST_TIME_FLOAT'];
-        self::$R_data['starttime_dst']   = \gettimeofday();
+        self::$R_data['starttime']          = $_SERVER['REQUEST_TIME_FLOAT'];
+        self::$R_data['starttime_dst']      = \gettimeofday();
+        self::$R_data['eVifweb_long_HTML']  = 'e<span class="the_V">V</span>ifweb development';
+        self::$R_data['eVifweb_long_TEXT']  = 'eVifweb development';
+        self::$R_data['eVifweb_short_HTML'] = 'e<span class="the_V">V</span>ifweb';
+        self::$R_data['eVifweb_short_TEXT'] = 'eVifweb';
+        self::$R_data['CLR_SSL_long_HTML']  = 'The C<span class="the_R">R</span>NRSTN :: Lightsaber RoCEv2 SOAP Services Layer';
+        self::$R_data['CLR_SSL_long_TEXT']  = 'The CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer';
+        self::$R_data['CLR_SSL_short_HTML'] = 'The C<span class="the_R">R</span>NRSTN :: Lightsaber RoCEv2 SOAP Services Layer';
+        self::$R_data['CLR_SSL_short_TEXT'] = 'The CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer';
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * In the event of timezone 
@@ -1888,12 +1789,7 @@ class crnrstn
          *
          */
         self::$R_data['R_timezone']      = 'america/new_york';
-
         self::$R_data['version_crnrstn'] = '2.00.0001';
-        self::$R_data['R_kivotos_index'] = array(__NAMESPACE__ .
-                                           '\crnrstn_kivotos'       =>
-                                               array('public_key'   => 'kivotos', 
-                                                     'storage_arch' => 'general_resource'));
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * The original CRNRSTN :: Debug Mode 
@@ -2064,8 +1960,8 @@ class crnrstn
          * framework parameters. 
          *
          * $this->R_data['application_directory']
-         * $this->R_data['framework_directory']
-         * $this->R_data['framework_path_root']
+         * $this->R_data['R_framework_directory']
+         * $this->R_data['R_framework_path']
          *
          *
          * 5 ::
@@ -2111,26 +2007,30 @@ class crnrstn
                 case '3':
                 case 3:
 
-                    self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_SYSTEM_TEST'];
+                    self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_SYSTEM_TEST'];
+                    self::$R_data['nusoap_debug_flag'] = true;
 
                 break;
                 case '2':
                 case 2:
 
-                    self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_DEBUG_SYSLOG'];
+                    self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_SYSLOG'];
+                    self::$R_data['nusoap_debug_flag'] = true;
 
                 break;
                 case '1':
                 case 1:
 
-                    self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_DEBUG_ON'];
+                    self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_ON'];
+                    self::$R_data['nusoap_debug_flag'] = true;
 
                 break;
                 case '0':
                 case 0:
                 default:
 
-                    self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_DEBUG_OFF'];
+                    self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_OFF'];
+                    self::$R_data['nusoap_debug_flag'] = false;
 
                 break;
 
@@ -2148,25 +2048,29 @@ class crnrstn
                     // 5 :: Tuesday, July 21, 2026 @ 0436 hrs.
 
                     self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_SYSTEM_TEST'];
+                    self::$R_data['nusoap_debug_flag'] = true;
 
                 break;
                 case '2':
                 case 2:
 
                     self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_DEBUG_SYSLOG'];
+                    self::$R_data['nusoap_debug_flag'] = true;
 
                 break;
                 case '1':
                 case 1:
 
-                    self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_DEBUG_ON'];
+                    self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_ON'];
+                    self::$R_data['nusoap_debug_flag'] = true;
 
                 break;
                 case '0':
                 case 0:
                 default:
 
-                    self::$R_data['R_debug_mode'] = self::$R_data['int_flag']['CRNRSTN_DEBUG_OFF'];
+                    self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_OFF'];
+                    self::$R_data['nusoap_debug_flag'] = false;
 
                 break;
 
@@ -2268,6 +2172,22 @@ class crnrstn
         }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Load the database authentication
+         * credentials and administrative
+         * contact information for the
+         * initialization of the CLR-SSL
+         * Database Integrations
+         * Services Layer.
+         *
+         *
+         * 5 :: Saturday August 15, 2026 @ 2235 hrs.
+         *
+         */
+        $this->R_data_write(
+               __METHOD__,
+               'R_config_database_secure');
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * TODO :: Initialize these defaults closer 
          *         to the initialization of 
          *         the CLR-SSL SOAP architecture: 
@@ -2281,9 +2201,10 @@ class crnrstn
          *         - nusoap_xmlschema. 
          *         5 :: Tuesday, June 9, 2026 @ 0955 hrs.
          */
-        self::$R_data['wsdl[proxyhost]']        = false;
-        self::$R_data['wsdl[proxyport]']        = false;
-        self::$R_data['wsdl[proxyusername]']    = false;
+        self::$R_data['wsdl[wsdl]']             = '';
+        self::$R_data['wsdl[proxyhost]']        =
+        self::$R_data['wsdl[proxyport]']        =
+        self::$R_data['wsdl[proxyusername]']    =
         self::$R_data['wsdl[proxypassword]']    = false;
         self::$R_data['wsdl[timeout]']          = 0;
         self::$R_data['wsdl[response_timeout]'] = 30;
@@ -2302,12 +2223,12 @@ class crnrstn
          *
          */
         self::$R_data['nusoap_fault[faultcode]']   = 'SOAP-ENV:Server';
-        self::$R_data['nusoap_fault[faultactor]']  = '';
-        self::$R_data['nusoap_fault[faultstring]'] = '';
+        self::$R_data['nusoap_fault[faultactor]']  =
+        self::$R_data['nusoap_fault[faultstring]'] =
         self::$R_data['nusoap_fault[faultdetail]'] = '';
 
         // Set bool default for NuSOAP timestamp_to_iso8601.
-        self::$R_data['timestamp_to_iso8601[is_utc]'] = true;
+        self::$R_data['timestamp_to_iso8601[utc]'] = true;
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Initialize boolean default for 
@@ -2327,8 +2248,8 @@ class crnrstn
          * framework parameters. 
          *
          * $this->R_data['application_directory']
-         * $this->R_data['framework_directory']
-         * $this->R_data['framework_path_root']
+         * $this->R_data['R_framework_directory']
+         * $this->R_data['R_framework_path']
          *
          *
          * 5 ::
@@ -2357,10 +2278,10 @@ class crnrstn
          *
          */
         self::$R_data['nusoap_client[endpoint]']         = '';
-        self::$R_data['nusoap_client[wsdl]']             = false;
-        self::$R_data['nusoap_client[proxyhost]']        = false;
-        self::$R_data['nusoap_client[proxyport]']        = false;
-        self::$R_data['nusoap_client[proxyusername]']    = false;
+        self::$R_data['nusoap_client[wsdl]']             =
+        self::$R_data['nusoap_client[proxyhost]']        =
+        self::$R_data['nusoap_client[proxyport]']        =
+        self::$R_data['nusoap_client[proxyusername]']    =
         self::$R_data['nusoap_client[proxypassword]']    = false;
         self::$R_data['nusoap_client[timeout]']          = 0;
         self::$R_data['nusoap_client[response_timeout]'] = 30;
@@ -2377,8 +2298,8 @@ class crnrstn
         self::$R_data['soapval[name]']       = 'soapval';
         self::$R_data['soapval[type]']       = false;
         self::$R_data['soapval[value]']      = -1;
-        self::$R_data['soapval[element_ns]'] = false;
-        self::$R_data['soapval[type_ns]']    = false;
+        self::$R_data['soapval[element_ns]'] =
+        self::$R_data['soapval[type_ns]']    =
         self::$R_data['soapval[attributes]'] = false;
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2402,7 +2323,7 @@ class crnrstn
          * 5 :: Tuesday, June 2, 2026 @ 1039 hrs.
          *
          */
-        self::$R_data['nusoap_xmlschema[schema]']     = '';
+        self::$R_data['nusoap_xmlschema[schema]']     =
         self::$R_data['nusoap_xmlschema[xml]']        = '';
         self::$R_data['nusoap_xmlschema[namespaces]'] = array();
 
@@ -2656,11 +2577,11 @@ class crnrstn
          *
          */
         if(!($R_resp = _crnrstn_native_resource_registry(
-            'evaluate', 
-            $this, 
-            NULL, 
-            'session_id_start', 
-            self::$R_data['R_debug_mode'])))
+                       'evaluate',
+                       $this,
+                       NULL,
+                       'session_id_start',
+                       self::$R_data['R_debug_mode'])))
         {
 
             $clr_ssl_msg = 'CLR-SSL session start ' . 
@@ -2771,11 +2692,8 @@ class crnrstn
                  *
                  */
 
-                if(isset(self::$R_data['evaluated_resources'][$resource_name])){
-
+                if(isset(self::$R_data['evaluated_resources'][$resource_name]))
                     return false;
-
-                }
 
                 self::$R_data['evaluated_resources'][$resource_name] = 1;
 
@@ -2838,11 +2756,7 @@ class crnrstn
                             $loading_architecture, 
                             $resource_name,
                             $eval_ttl)))
-                {
-
                     return false;
-
-                }
 
                 return true;
 
@@ -2953,7 +2867,7 @@ class crnrstn
                 switch($loading_architecture){
                     case 'R_load_1_to_1_session':
 
-                        if(!(isset(self::$R['kivotos']->R['session_mgr'])))
+                        if(!(isset(self::$_R['kivotos']->R['session_mgr'])))
                         {
 
                             if(!(isset(self::$R_data['spool']['evaluated_resources']['clr_ssl_load_approved'][$loading_architecture][$resource_name])))
@@ -3023,16 +2937,16 @@ class crnrstn
                          * 5 :: Thursday, April 9, 2026 @ 0410 hrs.
                          *
                          */
-                        return self::$R['kivotos']->R['session_mgr']->R_session_data(
-                                                                      $request_type, 
-                                                                      $loading_architecture, 
-                                                                      $resource_name,
-                                                                      $eval_ttl);
+                        return self::$_R['kivotos']->R['session_mgr']->R_session_data(
+                                                                       $request_type,
+                                                                       $loading_architecture,
+                                                                       $resource_name,
+                                                                       $eval_ttl);
 
                     break;
                     case 'R_load_on_ttl_expire':
 
-                        if(!(isset(self::$R['kivotos']->R['session_mgr'])))
+                        if(!(isset(self::$_R['kivotos']->R['session_mgr'])))
                         {
 
                             if(!(isset(self::$R_data['spool']['evaluated_resources']['clr_ssl_load_approved'][$loading_architecture][$resource_name])))
@@ -3153,11 +3067,11 @@ class crnrstn
                          * 5 :: Thursday, April 9, 2026 @ 0411 hrs.
                          *
                          */
-                        return self::$R['kivotos']->R['session_mgr']->R_session_data(
-                                                                      $request_type, 
-                                                                      $loading_architecture, 
-                                                                      $resource_name,
-                                                                      $eval_ttl);
+                        return self::$_R['kivotos']->R['session_mgr']->R_session_data(
+                                                                       $request_type,
+                                                                       $loading_architecture,
+                                                                       $resource_name,
+                                                                       $eval_ttl);
 
                     break;
 
@@ -3323,49 +3237,60 @@ class crnrstn
                  * Lightsaber RoCEv2 SOAP Services
                  * Layer (CLR-SSL).
                  *
-                 * PHP Vers.  Server Name      Server Manufacture/Make              Hardware Specs           Server Laboratory IP
-                 * -----      -----            -----                                -----                    -----
-                 * 8.2.12     eVifweb_asusf15  ASUS® TUF® F15 Gaming Laptop         12th Gen Intel® Core™
-                 *                             (Windows® 11 Pro + XAMPP)            i5-12500H @ 2.50 GHz,
-                 *                                                                  64GB RAM, 2TB SSD.       192.168.1.69
-                 * 8.2.12     eVifweb_xps8950  Dell® XPS® 8950 Gaming Desktop       12th Gen Intel® Core™
-                 *                             (Windows® 11 Pro + XAMPP)            i9-12900K @ 3.20 GHz
-                 *                                                                  128GB RAM, 2TB SSD
-                 *                                                                  + 4TB HDD.               192.168.1.42
-                 * 8.1.25     eVifweb_optplx0  Dell® OptiPlex® 7050 SFF Desktop     Intel® Core™ i7-7700T
-                 *                             (Windows® 11 Pro + XAMPP)            CPU @ 2.90GHz,
-                 *                                                                  32GB RAM, 1TB SSD.       192.168.1.81
-                 * 8.0.30     eVifweb_nspiron  Dell® Inspiron® Desktop              Intel® Core™ i5-7400
-                 *                             (Windows® 10 Pro + XAMPP)            CPU @ 3.00GHz, 8GB RAM,
-                 *                                                                  1TB HDD.                 192.168.1.80
-                 * 7.4.33     eVifweb_lenovo0  Lenovo® ThinkCentre® M625q           AMD® E2-9000e RADEON®
-                 *                             Mini Desktop                         R2, 4 COMPUTE CORES
-                 *                             (Windows® 11 Pro + XAMPP)            2C+2G 1.50 GHz,
-                 *                                                                  32GB RAM, 2TB SSD.       192.168.1.23
-                 * 7.3.2      eVifweb_hp00000  HP® ProDesk® 600G4 Desktop Computer  Intel® Core™ i5-8500
-                 *                             (Windows® 10 Home + XAMPP)           CPU @ 3.00GHz,
-                 *                                                                  32GB RAM, 1TB SSD.       192.168.1.12
-                 * 7.2.15     eVifweb_optplx1  Dell® OptiPlex® 7040 Desktop         Intel® Core™ i5-6500
-                 *                             (Windows® 11 Pro + XAMPP)            CPU @ 3.20GHz,
-                 *                                                                  32GB RAM, 1TB SSD.       192.168.1.72
-                 * 7.1.33     eVifweb_optplx2  Dell® OptiPlex® 7040 Desktop         Intel® Core™ i5-6500
-                 *                             (Windows® 11 Pro + XAMPP)            CPU @ 3.20GHz32GB RAM,
-                 *                                                                  1TB SSD.                 192.168.1.71
-                 * 7.0.33     ubuntu18.04.1    15in. 2017 Apple® MacBook® Pro on    Intel® Core i7
-                 *                             MacOS Mojave 10.14.6 w/Ubuntu® VM    2.9 GHz,
-                 *                                                                  16GB RAM, 500GB SSD.     172.16.225.128
-                 * 5.4.31     eVifscoot_XP     Same Apple® MacBook® Pro
-                 *                             running a Windows® XP® Pro VM                                 172.16.225.153
-                 * 5.4.7[*]   eVifscoot_XP     Same Apple® MacBook® Pro
-                 *                             running that XP® Pro 2002 SP2 VM                              172.16.225.153
-                 * 5.3.1[**]  eVifscoot_XP     Same Apple® MacBook® Pro
-                 *                             running that Windows® XP® SP2 VM                              172.16.225.153
-                 * 5.3.0[***] eVifscoot_XP     Same Apple® MacBook® Pro
-                 *                             running that Windows® System32 VM                             172.16.225.153
+                 * Software Version
+                 * PHP       MySQL       Server Name       Server Manufacture/Make              Hardware Specs           Server Laboratory IP
+                 * -----     -----       -----             -----                                -----                    -----
+                 * 8.2.12    8.2.12      eVifweb_asusf15   ASUS® TUF® F15 Gaming Laptop         12th Gen Intel® Core™    192.168.1.69
+                 *                                         (Windows® 11 Pro + XAMPP)            i5-12500H @ 2.50 GHz,
+                 *                                                                              64GB RAM, 2TB SSD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 8.2.12    8.2.12      eVifweb_xps8950   Dell® XPS® 8950 Gaming Desktop       12th Gen Intel® Core™    192.168.1.42
+                 *                                         (Windows® 11 Pro + XAMPP)            i9-12900K @ 3.20 GHz
+                 *                                                                              128GB RAM, 2TB SSD
+                 *                                                                              + 4TB HDD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 8.1.25    8.1.25      eVifweb_optplx0   Dell® OptiPlex® 7050 SFF Desktop     Intel® Core™ i7-7700T    192.168.1.81
+                 *                                         (Windows® 11 Pro + XAMPP)            CPU @ 2.90GHz,
+                 *                                                                              32GB RAM, 1TB SSD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 8.0.30    8.0.30      eVifweb_nspiron   Dell® Inspiron® Desktop              Intel® Core™ i5-7400     192.168.1.80
+                 *                                         (Windows® 10 Pro + XAMPP)            CPU @ 3.00GHz, 8GB RAM,
+                 *                                                                              1TB HDD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 7.4.33    7.4.33      eVifweb_lenovo0   Lenovo® ThinkCentre® M625q           AMD® E2-9000e RADEON®    192.168.1.23
+                 *                                         Mini Desktop                         R2, 4 COMPUTE CORES
+                 *                                         (Windows® 11 Pro + XAMPP)            2C+2G 1.50 GHz,
+                 *                                                                              32GB RAM, 2TB SSD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 7.3.2     5.0.12-dev  eVifweb_hp00000   HP® ProDesk® 600G4 Desktop Computer  Intel® Core™ i5-8500     192.168.1.12
+                 *                                         (Windows® 10 Home + XAMPP)           CPU @ 3.00GHz,
+                 *                                                                              32GB RAM, 1TB SSD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 7.2.15    5.0.12-dev  eVifweb_optplx1   Dell® OptiPlex® 7040 Desktop         Intel® Core™ i5-6500     192.168.1.72
+                 *                                         (Windows® 11 Pro + XAMPP)            CPU @ 3.20GHz,
+                 *                                                                              32GB RAM, 1TB SSD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 7.1.33    5.0.12-dev  eVifweb_optplx2   Dell® OptiPlex® 7040 Desktop         Intel® Core™ i5-6500     192.168.1.71
+                 *                                         (Windows® 11 Pro + XAMPP)            CPU @ 3.20GHz32GB RAM,
+                 *                                                                              1TB SSD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 7.0.33    5.0.12-dev  ubuntu18.04.1     15in. 2017 Apple® MacBook® Pro on    Intel® Core i7           172.16.225.128
+                 *                                         MacOS Mojave 10.14.6 w/Ubuntu® VM    2.9 GHz,
+                 *                                                                              16GB RAM, 500GB SSD.
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 5.4.31    5.0.10      eVifscoot_XP      Same Apple® MacBook® Pro                                      172.16.225.153
+                 *                                         running a Windows® XP® Pro VM
+                 * --------------------------------------------------------------------------------------------------------------------------
+                 * 5.4.7[*]              eVifscoot_XP      Same Apple® MacBook® Pro                                      172.16.225.153
+                 *                                         running that XP® Pro 2002 SP2 VM
+                 * 5.3.1[**]             eVifscoot_XP      Same Apple® MacBook® Pro                                      172.16.225.153
+                 *                                         running that Windows® XP® SP2 VM
+                 * 5.3.0[***]            eVifscoot_XP      Same Apple® MacBook® Pro                                      172.16.225.153
+                 *                                         running that Windows® System32 VM
                  *
                  *
                  * 5 :: Friday, June 13, 2025 @ 0935 hrs.
-                 * Last Modified: Monday, August 10, 2026 @ 0900 hrs.
+                 * Last Modified: Saturday, August 15, 2026 @ 2220 hrs.
                  *
                  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Note:
@@ -3881,7 +3806,7 @@ class crnrstn
                  */
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                // TODO :: Authorize from 
+                 * TODO :: Authorize from
                            inside the registry, 
                            not here.
                 if(_crnrstn_native_resource_registry(
@@ -3964,7 +3889,7 @@ class crnrstn
          * 5 :: Tuesday, July 9, 2024 @ 0631 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Re-engaged config_load_system_data('framework_directory', 
+         * Edit: Re-engaged config_load_system_data('framework_directory',
          *       'framework_directory') from the crnrstn 
          *       object constructor and modified the architecture 
          *       to support response_header_attribute_ARRAY. 
@@ -4041,7 +3966,6 @@ class crnrstn
          *
          */
         $this->initialize_config_serialization();
-
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Initialize application 
@@ -4291,7 +4215,7 @@ class crnrstn
     private function registry_boot($resource_name = 'boot')
     {
 
-        $root                     = self::$R_data['framework_path_root'];
+        $root                     = self::$R_data['R_framework_path'];
         $tmp_iso_lang_code        = $this->get_crnrstn('iso_lang_code');
         $tmp_background_color_hex = $this->get_crnrstn('background_color_hex');
 
@@ -4381,7 +4305,7 @@ class crnrstn
                  *
                  *
                  * 5 :: Monday, November 17, 2025 @ 0648 hrs.
-                 * Last Modifed: Monday, March 9, 2026 @ 0859 hrs.
+                 * Last Modified: Monday, March 9, 2026 @ 0859 hrs.
                  *
                  */
                 $tmp_resource_name                      = '_crnrstn_native_resource_registry';
@@ -4806,11 +4730,11 @@ class crnrstn
                         case 'CLASS_DEFINITION':
 
                             if(!($R_resp = _crnrstn_native_resource_registry(
-                                'return', 
-                                $this, 
-                                NULL, 
-                                $res_name, 
-                                self::$R_data['R_debug_mode'])))
+                                           'return',
+                                           $this,
+                                           NULL,
+                                           $res_name,
+                                           self::$R_data['R_debug_mode'])))
                             {
 
                                 $clr_ssl_msg = 'CLR-SSL resource ' . 
@@ -4853,11 +4777,11 @@ class crnrstn
                         case 'FUNCTION_DEFINITION':
 
                             if(!($R_resp = _crnrstn_native_resource_registry(
-                                'evaluate', 
-                                $this, 
-                                NULL, 
-                                $res_name, 
-                                self::$R_data['R_debug_mode'])))
+                                           'evaluate',
+                                           $this,
+                                           NULL,
+                                           $res_name,
+                                           self::$R_data['R_debug_mode'])))
                             {
 
                                 $clr_ssl_msg = 'CLR-SSL resource ' . 
@@ -5080,7 +5004,7 @@ class crnrstn
                                              * 5 :: Monday, August 3, 2026 @ "01" 0234 hrs.
                                              *
                                              * "01010101...split the atom...Oh, 
-                                             * Oh, Oh, Oh. You know what I mean."
+                                             * Oh, Oh, Oh. You know what I mean. 
                                              *
                                              * Yeah, you know what I mean: 
                                              * "Oh, Oh, Oh"... 
@@ -5117,7 +5041,8 @@ class crnrstn
                                                                  'R_channel_FILE'                     => 0,
                                                                  'R_channel_FORM'                     => 0,
                                                                  'R_channel_RDMA'                     => 0,
-                                                                 'R_channel_OERSL'                    => 0,'CRNRSTN_LOG_NONE' => 0,
+                                                                 'R_channel_OERSL'                    => 0,
+                                                                 'CRNRSTN_LOG_NONE'                   => 0,
                                                                  'CRNRSTN_LOG_ALL'                    => 0,
                                                                  'CRNRSTN_LOG_PROXY'                  => 0,
                                                                  'CRNRSTN_LOG_DEFAULT'                => 0,
@@ -5174,7 +5099,8 @@ class crnrstn
                                                                  'CRNRSTN_FILE_MANAGEMENT'            => 0, // self::$R_data['int_flag']['CRNRSTN_FILE_MANAGEMENT']    CRNRSTN_RESOURCE_OPENSOURCE
                                                                  'CRNRSTN_RESOURCE_ALL'               => 0,
                                                                  'CRNRSTN_RESOURCE_THIRDPARTY'        => 0, // self::$R_data['int_flag']['CRNRSTN_RESOURCE_THIRDPARTY']    CRNRSTN_RESOURCE_THIRDPARTY
-                                                                 'CRNRSTN_RESOURCE_OPENSOURCE'        => 0);// self::$R_data['int_flag']['CRNRSTN_RESOURCE_OPENSOURCE']    CRNRSTN_RESOURCE_OPENSOURCE
+                                                                 'CRNRSTN_RESOURCE_OPENSOURCE'        => 0, // self::$R_data['int_flag']['CRNRSTN_RESOURCE_OPENSOURCE']    CRNRSTN_RESOURCE_OPENSOURCE
+                                                                 'CRNRSTN_EMAIL_MULTI_PART'           => 0);
 
                                             foreach($R_int_const as 
                                                 $crnrstn_constant_nom => $init_bitwise)
@@ -5339,7 +5265,7 @@ class crnrstn
                                             5 :: Wednesday, June 24, 2026 @ "01" 0234 hrs.
 
                                             "01010101...split the atom...Oh, 
-                                            Oh, Oh, Oh. You know what I mean."
+                                            Oh, Oh, Oh. You know what I mean. 
 
                                             Yeah, you know what I mean: 
                                             "Oh, Oh, Oh"... 
@@ -5551,7 +5477,7 @@ class crnrstn
                                                  * and R_facility_id.
                                                  *
                                                  *
-                                                 *  5 :: Wednesday, June 10, 2026 @ 0111 hrs.
+                                                 * 5 :: Wednesday, June 10, 2026 @ 0111 hrs.
                                                  *
                                                  */
                                                 $_SESSION['R_cluster_id']     = 
@@ -5712,38 +5638,40 @@ class crnrstn
 
                                             }
 
+                                            $R_debug_mode_override = $this->R_data_write(
+                                                                            __METHOD__,
+                                                                            'networking');
+
+                                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                             * J5, my boy!
+                                             *
+                                             * Initialize the runtime
+                                             * configuration alpha-
+                                             * to-binary shift crypt
+                                             * key for the CRNRSTN ::
+                                             * Lightsaber RoCEv2 SOAP
+                                             * Services Layer (CLR-SSL).
+                                             *
+                                             *
+                                             * 5 :: Tuesday, July 9, 2024 @ 0748 hrs.
+                                             *
+                                             */
+                                            $this->initialize_alpha_shift_crypt('JFIVEMYBOY');
+
+                                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                             * J5, my boy!
+                                             *
+                                             *
+                                             * 5
+                                             *
+                                             * Sunday, July 21, 2024 @ 0643 hrs.
+                                             *
+                                             */
+                                            $this->encoder_wheel_integrations();
+
+                                            $this->initialize_asset_management();
+
                                         }
-
-                                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                         * J5, my boy!
-                                         *
-                                         * Initialize the runtime
-                                         * configuration alpha-
-                                         * to-binary shift crypt
-                                         * key for the CRNRSTN ::
-                                         * Lightsaber RoCEv2 SOAP
-                                         * Services Layer (CLR-SSL).
-                                         *
-                                         *
-                                         * 5 ::
-                                         *
-                                         * Tuesday, July 21, 2024 @ 0635 hrs.
-                                         *
-                                         */
-                                        $this->initialize_alpha_shift_crypt('JFIVEMYBOY');
-
-                                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                         * J5, my boy!
-                                         *
-                                         *
-                                         * 5
-                                         *
-                                         * Sunday, July 21, 2024 @ 0643 hrs.
-                                         *
-                                         */
-                                        $this->encoder_wheel_integrations();
-
-                                        $this->initialize_asset_management();
 
                                     break;
 
@@ -5756,11 +5684,11 @@ class crnrstn
                             // 5 :: Tuesday, July 28, 2026 @ 0232 hrs.
 
                             if(!($R_resp = _crnrstn_native_resource_registry(
-                                'evaluate', 
-                                $this, 
-                                NULL, 
-                                $res_name, 
-                                self::$R_data['R_debug_mode'])))
+                                           'evaluate',
+                                           $this,
+                                           NULL,
+                                           $res_name,
+                                           self::$R_data['R_debug_mode'])))
                             {
 
                                 $clr_ssl_msg = 'CLR-SSL resource ' . 
@@ -5785,19 +5713,7 @@ class crnrstn
                                     __FILE__, 
                                     $token);
 
-                                error_log('[mthd ' . 
-                                    __METHOD__ . '] [lnum ' . 
-                                    __LINE__ . '] $R_resp[' . 
-                                    \print_r($R_resp, true) . '].');
-                                die();
-
                             }
-
-                            error_log('[mthd ' . 
-                                __METHOD__ . '] [lnum ' . 
-                                __LINE__ . '] $R_resp[' . 
-                                \print_r($R_resp, true) . '].');
-                            die();
 
                         break;
 
@@ -5870,8 +5786,8 @@ class crnrstn
     {
         // 5 :: Wednesday, July 29, 2026 @ 2300 hrs.
 
-        if(isset(self::$R['kivotos']))
-            return self::$R['kivotos']->process_R_resp($R_resp);
+        if(isset(self::$_R['kivotos']))
+            return self::$_R['kivotos']->process_R_resp($R_resp);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Initialize the CLR-SSL 
@@ -6709,7 +6625,7 @@ class crnrstn
          *
          */
         switch($res_name){
-            case __NAMESPACE__ . '\crnrstn_kivotos':
+            case __NAMESPACE__ . '===\crnrstn_kivotos':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
                  * ^ Delete this entire case when 
                  *   integration checks for this
@@ -6731,8 +6647,11 @@ class crnrstn
                  *
                  */
 
-                self::$R[self::$R_data['R_kivotos_index'][$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
-                self::$R_data['initialized_via_test'][$res_name]                    = 1;
+                self::$_R[$R_resp[$mem_ptr]['public_key']]                  = $R_resp[$mem_ptr]['data'][0];
+                self::$R_data['initialized_via_test'][$res_name]            = 1;
+                self::$R_data['R_kivotos_meta'][$res_name]                  = $R_resp;
+                self::$R_data['R_kivotos_index'][$res_name]['storage_arch'] = $R_resp[$mem_ptr]['storage_arch'];
+                self::$R_data['R_kivotos_index'][$res_name]['public_key']   = $R_resp[$mem_ptr]['public_key'];
 
                 $clr_ssl_msg = '@TODO :: Remove this report output after ' . 
                                'checking that the ' . 
@@ -6772,43 +6691,9 @@ class crnrstn
                 $html_out = $this->clr_ssl_registry_resource_report(
                                    $R_resp,
                                    $clr_ssl_msg, 
-                                   true,
+                                   false,
                                    __LINE__, 
                                    __METHOD__);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Set the response headers. 
-                 *
-                 *
-                 * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                 *
-                 * "00"..."00"..."00"...Oh, 
-                 * Oh, Oh, Oh. You know what I mean."
-                 *
-                 * Yeah, you know what I mean: 
-                 * "Oh, Oh, Oh"... 
-                 * Yeah, you know what 
-                 * I mean..."Oh"...yeah. ;) 
-                 *
-                 */
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->return_bytes(
-                              $html_out, 
-                              0, 
-                              NULL, 
-                              false, 
-                              true, 
-                              true, 
-                              true));
-                /*
-                $this->set_response_headers(
-                       'Content-Type: text/html; charset=utf-8', 
-                       $this->data_reporting_bytes($html_out));
-
-                */
-
-                die($html_out);
 
             break;
             default:
@@ -6855,8 +6740,7 @@ class crnrstn
 
         }
 
-        if(!isset(self::$R_data['R_kivotos_index'][$res_name]) &&
-            !isset(self::$R_data['initialized_via_test'][$res_name]))
+        if(!isset(self::$R_data['initialized_via_test'][$res_name]))
         { 
 
             $clr_ssl_msg = 'The ' . 
@@ -6890,16 +6774,14 @@ class crnrstn
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * TODO :: Do we honor TTL for the resource 
          *         stored here in self::$R? We are only
-         *         processing here if: !isset(self::$R[...]).
+         *         processing here if: !isset(self::$_R[...]).
          *         5 :: Thursday, August 13, 2026 @ 0301 hrs.
          *
          */
-        if(isset(self::$R_data['R_kivotos_index'][$res_name]) &&
-            !isset(self::$R_data['initialized_via_test'][$res_name]) &&
-            !isset(self::$R[self::$R_data['R_kivotos_index'][$res_name]['public_key']]))
+        if(!isset(self::$R_data['initialized_via_test'][$res_name]))
         {
 
-            switch(self::$R_data['R_kivotos_index'][$res_name]['storage_arch']){
+            switch($R_resp[$mem_ptr]['storage_arch']){
                 case 'secure_resource':
 
                     switch(\gettype($R_resp[$mem_ptr]['data'][0])){
@@ -6960,80 +6842,29 @@ class crnrstn
                     $html_out = $this->clr_ssl_registry_resource_report(
                                        $R_resp,
                                        $clr_ssl_msg, 
-                                       true,
+                                       false,
                                        __LINE__, 
                                        __METHOD__);
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_NOTICE, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Set the response headers. 
-                     *
-                     *
-                     * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
-                     *
-                     * "00"..."00"..."00"...Oh, 
-                     * Oh, Oh, Oh. You know what I mean."
-                     *
-                     * Yeah, you know what I mean: 
-                     * "Oh, Oh, Oh"... 
-                     * Yeah, you know what 
-                     * I mean..."Oh"...yeah. ;) 
-                     *
-                     */
-                    $this->set_response_headers(
-                           'Content-Type: text/html; charset=utf-8', 
-                           $this->return_bytes(
-                                  $html_out, 
-                                  0, 
-                                  NULL, 
-                                  false, 
-                                  true, 
-                                  true, 
-                                  true));
-                    /*
-                    $this->set_response_headers(
-                           'Content-Type: text/html; charset=utf-8', 
-                           $this->data_reporting_bytes($html_out));
-
-                    */
-
-                    // Temporarily, we will output this report. 
-                    die($html_out);
 
                 break;
                 case 'general_resource':
                 default:
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Store The CRNRSTN :: Lightsaber 
+                     * Store the CRNRSTN :: Lightsaber
                      * RoCEv2 SOAP Services Layer 
                      * (CLR-SSL) Resource Registry 
-                     * data output.
+                     * data output at the Kivotós
+                     * public key location.
                      *
                      *
                      * 5 :: Friday, August 7, 2026 @ 0311 hrs.
                      *
                      */
-                    // Store the data at public key location.
-                    self::$R[self::$R_data['R_kivotos_index'][$res_name]['public_key']] = $R_resp[$mem_ptr]['data'][0];
+                    self::$_R[$R_resp[$mem_ptr]['public_key']]                  = $R_resp[$mem_ptr]['data'][0];
+                    self::$R_data['R_kivotos_meta'][$res_name]                  = $R_resp;
+                    self::$R_data['R_kivotos_index'][$res_name]['storage_arch'] = $R_resp[$mem_ptr]['storage_arch'];
+                    self::$R_data['R_kivotos_index'][$res_name]['public_key']   = $R_resp[$mem_ptr]['public_key'];
 
                     $clr_ssl_msg = 'The CLR-SSL has stored ' . 
                                    $this->return_bytes(
@@ -7110,7 +6941,23 @@ class crnrstn
          *
          */
 
-        return self::$R['kivotos']->kivotos_storage($public_key);
+        if(isset(self::$_R['kivotos']))
+            return self::$_R['kivotos']->kivotos_storage($public_key);
+
+        echo '<br>[mthd ' . __METHOD__ . '] [lnum ' . __LINE__ . '] ' . $public_key;
+        die();
+        return self::$_R['kivotos']->kivotos_storage($public_key);
+
+    }
+
+    function kivotos_key_report($resource)
+    {
+        // 5 :: Saturday, August 22, 2026 @ 0802 hrs.
+
+        if(\is_object($resource))
+            $resource = \get_class($resource);
+
+        return '';
 
     }
 
@@ -7952,8 +7799,7 @@ die();</code></pre>';
              $request_type, 
              $R_resp, 
              $R_debug_mode, 
-             $clr_ssl_sandbox, 
-             $R_resp_exe)
+             $clr_ssl_sandbox)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * And when they came to Marah, they 
@@ -8175,7 +8021,7 @@ die();</code></pre>';
                                                  * 5 :: Thursday, May 28, 2026 @ 1648 hrs.
                                                  *
                                                  */
-                                                //return self::$R_data['framework_path_root'];
+                                                //return self::$R_data['R_framework_path'];
                                                 return $R_registry_usr->springs_of_Elim(
                                                                         $caller, 
                                                                         $request_type, 
@@ -8266,10 +8112,10 @@ die();</code></pre>';
          */
 
         // 5 :: Tuesday, May 26, 2026 @ 0347 hrs.
-        return self::$R['kivotos']->R['registry_usr']->file_sys_integrations_init(
-                                                       $request_type, 
-                                                       $R_resp, 
-                                                       $memory_pointer);
+        return self::$_R['kivotos']->R['registry_usr']->file_sys_integrations_init(
+                                                        $request_type,
+                                                        $R_resp,
+                                                        $memory_pointer);
 
     }
 
@@ -8318,9 +8164,9 @@ die();</code></pre>';
          *       5 :: Wednesday, June 10, 2026 @ 1616 hrs.
          *        
          */
-        self::$R['kivotos']->R['logging']->set_crnrstn_logging(
-                                           'R_cluster_id', 
-                                           self::$R_data['R_cluster_id']);
+        self::$_R['kivotos']->R['logging']->set_crnrstn_logging(
+                                            'R_cluster_id',
+                                            self::$R_data['R_cluster_id']);
 
         return self::$R_data['R_cluster_id'];
     
@@ -8625,13 +8471,12 @@ die();</code></pre>';
         self::$R_data['application_directory'] = $application_directory;
 
         if(isset($R_framework_directory))
-            self::$R_data['framework_directory'] = $R_framework_directory;
+            self::$R_data['R_framework_directory'] = $R_framework_directory;
 
-        //self::$R_data['framework_path_root'] = $this->parse_file_path_root(NULL, $R_framework_directory);
-        self::$R_data['framework_path_root'] = $this->return_root(
-                                                      NULL, 
-                                                      NULL, 
-                                                      $R_framework_directory);
+        self::$R_data['R_framework_path'] = $this->return_root(
+                                                   NULL,
+                                                   NULL,
+                                                   $R_framework_directory);
 
         /*
         error_log('[lnum ' . 
@@ -8765,6 +8610,99 @@ die();</code></pre>';
     }
 
     /**
+     * R :: Write data to the CLR-SSL private $R_data.
+     *
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function R_data_read(
+             $caller,
+             $resource,
+             $R_data_000 = NULL)
+    {
+        // 5 :: Wednesday, August 19, 2026 @ 1257 hrs.
+
+        $read_access_denied = true;
+
+        switch($resource){
+            case 'R_kivotos':
+                // 5 :: Wednesday, August 19, 2026 @ 1303 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Initialize CLR-SSL data
+                 * write access authorization
+                 * control data structure.
+                 *
+                 */
+                $write_authorized_callers = array(__NAMESPACE__ .
+                                                '\crnrstn::clr_ssl_initialize'               => 1, __NAMESPACE__ .
+                                                '\crnrstn_registry_user::clr_ssl_initialize' => 1);
+
+                if(!isset($write_authorized_callers[$caller])){
+
+                    $write_access_denied = true;
+
+                    break 1;
+
+                }
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * List of supported
+                 * timezones.
+                 *
+                 *
+                 * https://www.php.net/manual/en/timezones.php
+                 *
+                 */
+                // 5 :: Monday, August 10, 2026 @ 0952 hrs.
+                self::$R_data[$resource] = $this->R_load_static(
+                                                  __METHOD__,
+                                                  $resource);
+
+                if(self::$R_data[$resource] !== $R_data_000)
+                    if(\date_default_timezone_set(self::$R_data[$resource]) == false){
+
+                        $clr_ssl_msg = 'An error was experienced while ' .
+                                       'attempting to set the default ' .
+                                       'timezone for ' .
+                                       \strval($caller) .
+                                       '.';
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __METHOD__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $this->error_log(
+                               $clr_ssl_msg,
+                               \LOG_ERR,
+                               \E_ERROR,
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               $token);
+
+                        // Final attempt to set the timezone after failure.
+                        \date_default_timezone_set(self::$R_data['R_timezone']);
+
+                    }
+
+            break;
+
+        }
+
+
+    }
+
+    /**
      * R :: Write data to the CLR-SSL private $R_data. 
      *
      * @param
@@ -8789,6 +8727,40 @@ die();</code></pre>';
         $write_access_denied = false;
 
         switch($resource){
+            case 'nusoap_server':
+                // 5 :: Sunday, August 23, 2026 @ 2042 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Initialize CLR-SSL data
+                 * write access authorization
+                 * control data structure.
+                 *
+                 */
+                $write_authorized_callers = array(__NAMESPACE__ .
+                                                '\crnrstn_kivotos::fire_init_protocol' => 1);
+
+                if(!isset($write_authorized_callers[$caller])){
+
+                    $write_access_denied = true;
+
+                    break 1;
+
+                }
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Initialize a simplified (and public)
+                 * CLR-SSL Kivotós advanced object
+                 * storage data array with the
+                 * NuSOAP - Web Services Toolkit
+                 * SOAP Server Objectification.
+                 *
+                 *
+                 * 5 :: Sunday, August 23, 2026 @ 2044 hrs.
+                 *
+                 */
+                $this->R['kivotos']['nusoap_server'] = $R_data_000;
+
+            break;
             case 'R_timezone_default':
                 // 5 :: Monday, August 10, 2026 @ 0947 hrs.
 
@@ -8880,6 +8852,89 @@ die();</code></pre>';
                 self::$R_data[$resource] = $this->R_load_static(
                                                   __METHOD__,
                                                   $resource);
+
+            break;
+            case 'networking':
+                // 5 :: Wednesday, August 19, 2026 @ 0756 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Initialize CLR-SSL data
+                 * write access authorization
+                 * control data structure.
+                 *
+                 */
+                $write_authorized_callers = array(__NAMESPACE__ .
+                                                '\crnrstn::registry_boot'               => 1, __NAMESPACE__ .
+                                                '\crnrstn_registry_user::registry_boot' => 1);
+
+                if(!isset($write_authorized_callers[$caller])){
+
+                    $write_access_denied = true;
+
+                    break 1;
+
+                }
+
+                self::$R_data[$resource] = $this->R_load_static(
+                                                  __METHOD__,
+                                                  $resource);
+
+            break;
+            case 'R_config_database_secure':
+                // 5 :: Saturday, August 15, 2026 @ 2240 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Initialize CLR-SSL data
+                 * write access authorization
+                 * control data structure.
+                 *
+                 */
+                $write_authorized_callers = array(__NAMESPACE__ .
+                                                '\crnrstn::clr_ssl_initialize'               => 1, __NAMESPACE__ .
+                                                '\crnrstn_registry_user::clr_ssl_initialize' => 1);
+
+                if(!isset($write_authorized_callers[$caller])){
+
+                    $write_access_denied = true;
+
+                    break 1;
+
+                }
+
+                self::$R_data[$resource] = $this->R_load_static(
+                                                  __METHOD__,
+                                                  $resource);
+
+            break;
+            case 'R_kivotos':
+                // 5 :: Sunday, August 16, 2026 @ 0944 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Initialize CLR-SSL data
+                 * write access authorization
+                 * control data structure.
+                 *
+                 */
+                $write_authorized_callers = array(__NAMESPACE__ .
+                                                '\crnrstn_configuration_manager::__construct' => 1);
+
+                if(!isset($write_authorized_callers[$caller])){
+
+                    $write_access_denied = true;
+
+                    echo '<br>[mthd ' .
+                         __METHOD__ . '] [lnum ' .
+                         __LINE__ . '] sucker: ' .
+                        $caller;
+
+                    die();
+
+                    break 1;
+
+                }
+
+                // Return the CLR-SSL Kivotos.
+                return self::$_R['kivotos'];
 
             break;
             case 'R_hmac_hash':
@@ -9463,7 +9518,7 @@ die();</code></pre>';
                  *
                  * Previously initialized via:
                  * self::$get_channel_system_parameters_ARRAY = 
-                 * self::$R['kivotos']->R['env']->config_load_static_application_data('get_channel_system_parameters_ARRAY');
+                 * self::$_R['kivotos']->R['env']->config_load_static_application_data('get_channel_system_parameters_ARRAY');
                  *
                  * Some UPS tracking URL 
                  * parameters from an UPS 
@@ -9515,7 +9570,7 @@ die();</code></pre>';
                 $write_authorized_callers = array(__NAMESPACE__ . 
                                                 '\crnrstn::config_load_static_application_data'               => 1, __NAMESPACE__ . 
                                                 '\crnrstn_registry_user::config_load_static_application_data' => 1,
-                                                self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                                                self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                                 '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                 'config.integer_constants' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                 'crnrstn.constants_load.runtime_exe.php'                      => 1);
@@ -9543,7 +9598,7 @@ die();</code></pre>';
                 $write_authorized_callers = array(__NAMESPACE__ . 
                                                 '\crnrstn::config_load_static_application_data'               => 1, __NAMESPACE__ . 
                                                 '\crnrstn_registry_user::config_load_static_application_data' => 1, 
-                                                self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                                                self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                                 '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                 'config.integer_constants' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                 'crnrstn.constants_load.runtime_exe.php'                      => 1);
@@ -9806,7 +9861,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -9905,7 +9960,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource .
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
@@ -9946,7 +10001,165 @@ die();</code></pre>';
                 }
 
             break;
-            case 'framework_directory':
+            case 'networking':
+                // 5 :: Wednesday, August 19, 2026 @ 0750 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Include and evaluate
+                 * the system file to receive
+                 * and return $R_data.
+                 *
+                 * /_R/_config/_config.defaults
+                 * /load_static_cache/networking
+                 * /crnrstn.networking.runtime_exe.php
+                 *
+                 *
+                 *
+                 * 5 :: Wednesday, August 19, 2026 @ 0752 hrs.
+                 *
+                 */
+                $read_authorized_callers = array(__NAMESPACE__ .
+                                               '\crnrstn::R_data_write' => 1);
+
+                if(!isset($read_authorized_callers[$caller])){
+
+                    $read_access_denied = true;
+
+                    break 1;
+
+                }
+
+                $resource_filename = 'crnrstn.' . $resource .
+                                     '.runtime_exe.php';
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     $resource . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     $resource_filename;
+
+                if($this->is_file($resource_filepath, $resource_filename)){
+
+                    // Load $R_data into memory.
+                    require($resource_filepath);
+
+                }else{
+
+                    $clr_ssl_msg = 'Data request failed. Cannot ' .
+                                   'evaluate missing system file: ' .
+                                   $resource_filepath .
+                                   ' Default data will manually be ' .
+                                   'loaded by CRNRSTN ::';
+                    // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __METHOD__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                           $clr_ssl_msg,
+                           \LOG_CRIT,
+                           \E_ERROR,
+                           __LINE__,
+                           __METHOD__,
+                           __FILE__,
+                           $token);
+
+                }
+
+            break;
+            case 'R_config_database_secure':
+                // 5 :: Saturday, August 15, 2026 @ 2309 hrs.
+
+                $email        =
+                $hostname     =
+                $username     =
+                $password     =
+                $database     =
+                $port         =
+                $socket       =
+                $table_prefix = '';
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Include and evaluate
+                 * the system file to receive
+                 * and return $R_data.
+                 *
+                 * /_R/_config/_config.defaults
+                 * /load_static_cache/R_seo_analytics
+                 * /crnrstn.R_seo_analytics.runtime_exe.php
+                 *
+                 *
+                 *
+                 * 5 :: Wednesday, August 12, 2026 @ 1134 hrs.
+                 *
+                 */
+                $read_authorized_callers = array(__NAMESPACE__ .
+                                               '\crnrstn::R_data_write' => 1);
+
+                if(!isset($read_authorized_callers[$caller])){
+
+                    $read_access_denied = true;
+
+                    break 1;
+
+                }
+
+                $resource_filename = 'crnrstn.db_config.runtime_exe.php';
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     'config.database.secure' . self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                     $resource_filename;
+
+                if($this->is_file($resource_filepath, $resource_filename)){
+
+                    // Load $R_data into memory.
+                    require($resource_filepath);
+
+                    $R_data = array(
+                              'administrative_email' => $email,
+                              'hostname'             => $hostname,
+                              'username'             => $username,
+                              'password'             => $password,
+                              'database'             => $database,
+                              'port'                 => $port,
+                              'socket'               => $socket,
+                              'table_prefix'         => $table_prefix);
+
+                }else{
+
+                    $clr_ssl_msg = 'Data request failed. Cannot ' .
+                                   'evaluate missing system file: ' .
+                                   $resource_filepath .
+                                   ' Default data will manually be ' .
+                                   'loaded by CRNRSTN ::';
+                    // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __METHOD__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                           $clr_ssl_msg,
+                           \LOG_CRIT,
+                           \E_ERROR,
+                           __LINE__,
+                           __METHOD__,
+                           __FILE__,
+                           $token);
+
+                }
+
+            break;
+            case 'R_framework_directory': // We are not using this case, atm.
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Include and evaluate 
@@ -9980,7 +10193,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10094,7 +10307,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10180,7 +10393,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10266,7 +10479,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10352,7 +10565,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10433,7 +10646,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10516,7 +10729,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10608,7 +10821,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10721,7 +10934,7 @@ die();</code></pre>';
                  *
                  */
                 $read_authorized_callers = array(__NAMESPACE__ . 
-                                               '\crnrstn::object_boot' => 1);
+                                               '\crnrstn::R_data_write' => 1);
 
                 if(!isset($read_authorized_callers[$caller])){
 
@@ -10733,7 +10946,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10820,7 +11033,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10912,7 +11125,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -10967,7 +11180,7 @@ die();</code></pre>';
 
                         $R_theme_data = $this->return_int_const_profile($R_data);
                         $clr_ssl_msg  = 'The CRNRSTN :: Interact UI Theme, ' .
-                                         $R_theme_data['title']['TEXT'][0] . 
+                                         $R_theme_data['title']['TEXT'] .
                                         ', has been set as the default ' . 
                                         'theme.';
                         // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -11064,7 +11277,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11182,7 +11395,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11276,7 +11489,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11366,7 +11579,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11462,7 +11675,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11554,7 +11767,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11622,13 +11835,13 @@ die();</code></pre>';
                  * _crnrstn_settings($name, $this);
                  * 
                  * self::$hmac_algorithm_preferred_ARRAY = 
-                 * self::$R['kivotos']->R['oersl_mgr']->config_load_static_application_data('hmac_algorithm_preferred_ARRAY');
+                 * self::$_R['kivotos']->R['oersl_mgr']->config_load_static_application_data('hmac_algorithm_preferred_ARRAY');
                  * 
                  * self::$openssl_cipher_preferred_ARRAY = 
-                 * self::$R['kivotos']->R['oersl_mgr']->config_load_static_application_data('openssl_cipher_preferred_ARRAY');
+                 * self::$_R['kivotos']->R['oersl_mgr']->config_load_static_application_data('openssl_cipher_preferred_ARRAY');
                  * 
                  * self::$openssl_digest_preferred_ARRAY = 
-                 * self::$R['kivotos']->R['oersl_mgr']->config_load_static_application_data('openssl_digest_preferred_ARRAY');
+                 * self::$_R['kivotos']->R['oersl_mgr']->config_load_static_application_data('openssl_digest_preferred_ARRAY');
                  *
                  *
                  * 5 :: Saturday, June 27, 2026 @ 1911 hrs.
@@ -11647,7 +11860,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11759,7 +11972,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -11883,7 +12096,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -12394,7 +12607,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -12577,7 +12790,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -12700,7 +12913,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -12886,7 +13099,7 @@ die();</code></pre>';
 
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -13383,7 +13596,7 @@ die();</code></pre>';
                 $resource          = 'GET_tunnel_vars';
                 $resource_filename = 'crnrstn.' . $resource . 
                                      '.runtime_exe.php';
-                $resource_filepath = self::$R_data['framework_path_root'] . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                $resource_filepath = self::$R_data['R_framework_path'] . self::$R_data['operating_system']['os_path_dir_separator_char'] .
                                      '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      '_config.defaults' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                      'load_static_cache' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
@@ -13696,6 +13909,16 @@ die();</code></pre>';
         }
 
         if($read_access_denied !== false){
+
+            echo '<br><pre><code>[mthd ' .
+                 __METHOD__ . '] 
+[lnum ' . __LINE__ . '] 
+Data index[' .
+                   \strval($resource) .
+                   '] read access denied to ' .
+                   \strval($caller) . '</code></pre>';
+
+            die();
 
             $clr_ssl_msg = 'Data index[' . 
                            \strval($resource) . 
@@ -14459,13 +14682,13 @@ die();</code></pre>';
              * 5 :: Thursday, July 11, 2024 @ 0820 hrs.
              *
              */
-            if(isset(self::$R['kivotos']->R['config_mgr'])){
+            if(isset(self::$_R['kivotos']->R['config_mgr'])){
 
-                return self::$R['kivotos']->R['config_mgr']->is_valid_registered_resource(
-                                                             $registry_name, 
-                                                             $file_path, 
-                                                             $load_method, 
-                                                             $resource_type);
+                return self::$_R['kivotos']->R['config_mgr']->is_valid_registered_resource(
+                                                              $registry_name,
+                                                              $file_path,
+                                                              $load_method,
+                                                              $resource_type);
 
             }
 
@@ -14784,8 +15007,8 @@ die();</code></pre>';
              * Initializations. 
              *
              */
-            $tmp_page_title         = 'System Resource Registry :: ' . 
-                                      'CRNRSTN :: Lightsaber';
+            $tmp_page_title         = $this->get_crnrstn('CLR_SSL_long_TEXT') .
+                                      ' Resource Registry';
             $tmp_page_description   = 'The System Resource Registry ' . 
                                       'of the CRNRSTN :: Lightsaber ' . 
                                       'RoCEv2 SOAP Services Layer ' . 
@@ -18019,8 +18242,7 @@ $tmp_get_param_run_data .
              &$R_data_010 = NULL, &$R_data_011 = NULL, 
              &$R_data_012 = NULL, &$R_data_013 = NULL, 
              &$R_data_014 = NULL, &$R_data_015 = NULL)
-     {
-
+    {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Added the method, anoint, 
          * to the CLR-SSL. 
@@ -18052,19 +18274,62 @@ $tmp_get_param_run_data .
          *       5 :: Friday, June 5, 2026 @ 0316 hrs.
          *
          */
-        // 5 :: Monday, June 8, 2026 @ 0248 hrs.
-        return self::$R['kivotos']->R['registry_usr']->anoint(
-                                                       $resource_name,  
-                                                       $R_data_000, $R_data_001, 
-                                                       $R_data_002, $R_data_003, 
-                                                       $R_data_004, $R_data_005, 
-                                                       $R_data_006, $R_data_007, 
-                                                       $R_data_008, $R_data_009, 
-                                                       $R_data_010, $R_data_011, 
-                                                       $R_data_012, $R_data_013, 
-                                                       $R_data_014, $R_data_015);
 
-     }
+        if(isset(self::$_R['kivotos']->R['registry_usr']))
+            // 5 :: Monday, June 8, 2026 @ 0248 hrs.
+            return self::$_R['kivotos']->R['registry_usr']->anoint(
+                                                            $resource_name,
+                                                            $R_data_000, $R_data_001,
+                                                            $R_data_002, $R_data_003,
+                                                            $R_data_004, $R_data_005,
+                                                            $R_data_006, $R_data_007,
+                                                            $R_data_008, $R_data_009,
+                                                            $R_data_010, $R_data_011,
+                                                            $R_data_012, $R_data_013,
+                                                            $R_data_014, $R_data_015);
+        else
+            // 5 :: Thursday, August 20, 2026 @ 0607 hrs.
+            return $this->initialization_series_anoint(
+                          $resource_name,
+                          $R_data_000, $R_data_001,
+                          $R_data_002, $R_data_003,
+                          $R_data_004, $R_data_005,
+                          $R_data_006, $R_data_007,
+                          $R_data_008, $R_data_009,
+                          $R_data_010, $R_data_011,
+                          $R_data_012, $R_data_013,
+                          $R_data_014, $R_data_015);
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function compound_ointment_extract(
+                     $resource_name,
+                     $input_position = 0,
+                     $input_default = NULL)
+    {
+        // 5 :: Thursday, August 20, 2026 @ 0813 hrs.
+
+        if(isset(self::$_R['kivotos']->R['registry_usr']))
+            return self::$_R['kivotos']->R['registry_usr']->compound_ointment_extract(
+                                                            $resource_name,
+                                                            $input_position,
+                                                            $input_default);
+        else
+            return $this->initialization_series_compound_ointment_extract(
+                          $resource_name,
+                          $input_position,
+                          $input_default);
+    }
 
     /**
      * R :: Content pending. 
@@ -18075,17 +18340,7 @@ $tmp_get_param_run_data .
      * @access public
      *
      */
-    function return_anointed_resource(
-             $resource_name, 
-             $R_data_000 = NULL, $R_data_001 = NULL, 
-             $R_data_002 = NULL, $R_data_003 = NULL, 
-             $R_data_004 = NULL, $R_data_005 = NULL, 
-             $R_data_006 = NULL, $R_data_007 = NULL, 
-             $R_data_008 = NULL, $R_data_009 = NULL, 
-             $R_data_010 = NULL, $R_data_011 = NULL, 
-             $R_data_012 = NULL, $R_data_013 = NULL, 
-             $R_data_014 = NULL, $R_data_015 = NULL,
-             $R_odata = NULL)
+    function return_anointed_resource($resource_name)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied the method, 
@@ -18115,65 +18370,31 @@ $tmp_get_param_run_data .
          *       crnrstn return_anointed_resource() 
          *       class method. 
          *       5 :: Friday, June 12, 2026 @ 0720 hrs.
-         *       Hits joint. 
+         *       Hits joint.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Deleted $R_data_000 to $R_data_015
+         *       input parameters for the
+         *       crnrstn return_anointed_resource()
+         *       class method.
+         *       5 :: Sunday, August 23, 2026 @ 0139 hrs.
+         *       Hits joint using kitchen fire.
          *
          */
+
         $resource_output = NULL;
 
-        if(isset($R_odata)){
-
-            foreach($R_odata as 
-                $index => $res)
-            {
-
-                $clr_ssl_msg = __CLASS__ . 
-                               ' <- Receiving resource, (' . 
-                               \gettype($res) . ') ' . 
-                               \strval($res) . 
-                               '.';
-                if(\is_object($res)){
-
-                    $clr_ssl_msg = __CLASS__ . 
-                                   ' <- Receiving resource, (' . 
-                                   \gettype($res) . ') ' . 
-                                   \get_class($res) . 
-                                   '.';
-
-                }
-
-                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
-                         'clr_ssl_msg'             => $clr_ssl_msg);
-                $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $token);
-
-
-            }
-
-        }
-
         switch($resource_name){
+            case __NAMESPACE__ . '\crnrstn_OAuth':
             case 'crnrstn_OAuth':
+            case 'gabriel_oauth':
                 // 5 :: Tuesday, June 2, 2026 @ 0622 hrs.
 
                 $PHPMailer = NULL;
 
-                if(isset(self::$R['kivotos']->R['registry_usr'])){
+                if(isset(self::$_R['kivotos']->R['registry_usr'])){
 
-                    self::$R['kivotos']->R['registry_usr']->anoint('crnrstn_PHPMailer', $PHPMailer);
+                    self::$_R['kivotos']->R['registry_usr']->anoint('crnrstn_PHPMailer', $PHPMailer);
 
                     $PHPMailer->setOAuth();
                     $resource_output = $PHPMailer->getOAuth();
@@ -18194,21 +18415,25 @@ $tmp_get_param_run_data .
 
         }
 
-        if(isset(self::$R['kivotos']->R['registry_usr'])){
+        $R_resp = NULL;
 
-            // 5 :: Tuesday, June 2, 2026 @ 0600 hrs.
-            self::$R['kivotos']->R['registry_usr']->anoint($resource_name, $resource_output);
+        if(isset(self::$_R['kivotos']->R['registry_usr']))
+             // 5 :: Tuesday, June 2, 2026 @ 0600 hrs.
+             self::$_R['kivotos']->R['registry_usr']->anoint(
+                                                     $resource_name,
+                                                     $R_resp);
+        else
+            // 5 :: Thursday, August 20, 2026 @ 0607 hrs.
+            $this->initialization_series_anoint(
+                   $resource_name,
+                   $R_resp);
 
-            // 5 :: Tuesday, June 2, 2026 @ 0601 hrs.
-            return $resource_output;
-
-        }
-
-        // 5 :: Tuesday, June 2, 2026 @ 0601 hrs.
-        //$this->anoint($resource_name, $resource_output);
-
-        // 5 :: Tuesday, June 2, 2026 @ 0601 hrs.
-        return $resource_output;
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Return the anointed resource.
+         * 5 :: Tuesday, June 2, 2026 @ 0601 hrs.
+         *
+         */
+        return $R_resp;
 
     }
 
@@ -18222,47 +18447,44 @@ $tmp_get_param_run_data .
      *
      */
     function anoint_eval(
-            $resource_key, 
-            &$R_resp = NULL)
+             $resource_key,
+             &$R_resp = NULL)
     {
-
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Added the method, anoint_eval, 
          * to the CLR-SSL. 
          * 5 :: Monday, April 27, 2026 @ 0535 hrs.
          *
          */
-        
+
         // Where, $xxxxx = 'crnrstn_log|||||||||'.
+        if(isset(self::$_R['kivotos']->R['registry_usr']))
+            self::$_R['kivotos']->R['registry_usr']->anoint_eval(
+                                                     $resource_key,
+                                                     $R_resp);
 
-        if(self::$R['kivotos']->R['registry_usr']->is_ssl()){
+        $this->initialization_series_anoint_eval(
+               $resource_key,
+               $R_resp);
 
-            \error_log('[lnum ' . 
-                __LINE__ . '] [mthd ' . 
-                __METHOD__ .
-                '] This is SSL. Enjoy your online shopping ' . 
-                $resource_key . '.');
-
-        }else{
-
-            \error_log('[lnum ' . 
-                __LINE__ . '] [mthd ' . 
-                __METHOD__ . 
-                '] This is not SSL. Enjoy ' . 
-                'your high school project with ' . 
-                $resource_key . '.');
-
-        }
-
-        self::$R['kivotos']->R['registry_usr']->anoint_eval(
-                                                $resource_key, 
-                                                $R_resp);
+        return NULL;
 
     }
 
     /**
      * R :: Content pending. 
      *
+     * Recycle the $spice_salt_mem_ptr
+     * for a specific resource if the
+     * if the object, function or runtime exe
+     * needs > 16 inputs for the method
+     * call, and then call compound_ointment
+     * multiple times to locally address the
+     * +16 inputs behind the same
+     * $spice_salt_mem_ptr / $resource_name for
+     * the anointing of that resource.
+     *
+     * @param &$spice_salt_mem_ptr
      * @param $resource_name
      * @param $R_data_000
      * @param $R_data_015
@@ -18272,16 +18494,16 @@ $tmp_get_param_run_data .
      *
      */
     function compound_ointment(
-             $resource_name, 
-             $R_data_000 = NULL, $R_data_001 = NULL, 
-             $R_data_002 = NULL, $R_data_003 = NULL, 
-             $R_data_004 = NULL, $R_data_005 = NULL, 
-             $R_data_006 = NULL, $R_data_007 = NULL, 
-             $R_data_008 = NULL, $R_data_009 = NULL, 
-             $R_data_010 = NULL, $R_data_011 = NULL, 
-             $R_data_012 = NULL, $R_data_013 = NULL, 
-             $R_data_014 = NULL, $R_data_015 = NULL, 
-             $combine_calls = false)
+             &$spice_salt_mem_ptr,
+             $resource_name,
+             $R_data_000 = NULL, $R_data_001 = NULL,
+             $R_data_002 = NULL, $R_data_003 = NULL,
+             $R_data_004 = NULL, $R_data_005 = NULL,
+             $R_data_006 = NULL, $R_data_007 = NULL,
+             $R_data_008 = NULL, $R_data_009 = NULL,
+             $R_data_010 = NULL, $R_data_011 = NULL,
+             $R_data_012 = NULL, $R_data_013 = NULL,
+             $R_data_014 = NULL, $R_data_015 = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Added compound_ointment 
@@ -18306,20 +18528,47 @@ $tmp_get_param_run_data .
          *       $combine_calls = false as input. 
          *       5 :: Monday, June 8, 2026 @ 0233 hrs.
          *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added &$spice_salt_mem_ptr = NULL as
+         *      the first input parameter for the
+         *       compound_ointment method, and set
+         *       a default for $resource_name = NULL.
+         *       5 :: Saturday, August 22, 2026 @ 0052 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Removed the $combine_calls = false
+         *       method input from the method,
+         *       compound_ointment.
+         *       5 :: Saturday, August 22, 2026 @ 0149 hrs.
          *
          */
-        // 5 :: Monday, June 8, 2026 @ 0237 hrs.
-        return self::$R['kivotos']->R['registry_usr']->compound_ointment(
-                                                       $resource_name, 
-                                                       $R_data_000, $R_data_001, 
-                                                       $R_data_002, $R_data_003, 
-                                                       $R_data_004, $R_data_005, 
-                                                       $R_data_006, $R_data_007, 
-                                                       $R_data_008, $R_data_009, 
-                                                       $R_data_010, $R_data_011, 
-                                                       $R_data_012, $R_data_013, 
-                                                       $R_data_014, $R_data_015, 
-                                                       $combine_calls);
+
+        if(isset(self::$_R['kivotos']->R['registry_usr']))
+            // 5 :: Monday, June 8, 2026 @ 0237 hrs.
+            return self::$_R['kivotos']->R['registry_usr']->compound_ointment(
+                                                            $spice_salt_mem_ptr,
+                                                            $resource_name,
+                                                            $R_data_000, $R_data_001,
+                                                            $R_data_002, $R_data_003,
+                                                            $R_data_004, $R_data_005,
+                                                            $R_data_006, $R_data_007,
+                                                            $R_data_008, $R_data_009,
+                                                            $R_data_010, $R_data_011,
+                                                            $R_data_012, $R_data_013,
+                                                            $R_data_014, $R_data_015);
+
+        // 5 :: Thursday, August 20, 2026 @ 0538 hrs.
+        return $this->initialization_series_compound_ointment(
+                      $spice_salt_mem_ptr,
+                      $resource_name,
+                      $R_data_000, $R_data_001,
+                      $R_data_002, $R_data_003,
+                      $R_data_004, $R_data_005,
+                      $R_data_006, $R_data_007,
+                      $R_data_008, $R_data_009,
+                      $R_data_010, $R_data_011,
+                      $R_data_012, $R_data_013,
+                      $R_data_014, $R_data_015);
 
     }
 
@@ -18766,7 +19015,7 @@ $tmp_get_param_run_data .
          * Saturday, October 25, 2025 @ 0320 hrs.
          *
          */
-        if(!isset(self::$R['kivotos']->R['registry_usr'])){
+        if(!isset(self::$_R['kivotos']->R['registry_usr'])){
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Is access to the
@@ -18815,28 +19064,28 @@ $tmp_get_param_run_data .
             //   'registry_access_is_authorized', 
             //   $this) !== false){
 
-                self::$R['kivotos']->R['registry_usr'] = _crnrstn_native_resource_registry(
-                                                         'resource_return', 
-                                                         $this, 
-                                                         $R_action, 
-                                                         $name, 
-                                                         self::$R_data['R_debug_mode'], 
-                                                         $R_data_000, 
-                                                         $R_data_001, 
-                                                         $R_data_002, 
-                                                         $R_data_003, 
-                                                         $R_data_004, 
-                                                         $R_data_005, 
-                                                         $R_data_006, 
-                                                         $R_data_007, 
-                                                         $R_data_008, 
-                                                         $R_data_009, 
-                                                         $R_data_010, 
-                                                         $R_data_011, 
-                                                         $R_data_012, 
-                                                         $R_data_013, 
-                                                         $R_data_014, 
-                                                         $R_data_015);
+                self::$_R['kivotos']->R['registry_usr'] = _crnrstn_native_resource_registry(
+                                                          'resource_return',
+                                                          $this,
+                                                          $R_action,
+                                                          $name,
+                                                          self::$R_data['R_debug_mode'],
+                                                          $R_data_000,
+                                                          $R_data_001,
+                                                          $R_data_002,
+                                                          $R_data_003,
+                                                          $R_data_004,
+                                                          $R_data_005,
+                                                          $R_data_006,
+                                                          $R_data_007,
+                                                          $R_data_008,
+                                                          $R_data_009,
+                                                          $R_data_010,
+                                                          $R_data_011,
+                                                          $R_data_012,
+                                                          $R_data_013,
+                                                          $R_data_014,
+                                                          $R_data_015);
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Return the CRNRSTN :: Lightsaber
@@ -18851,7 +19100,7 @@ $tmp_get_param_run_data .
                  *
                  */
                 if($name == 'crnrstn_registry_user') 
-                    return self::$R['kivotos']->R['registry_usr'];
+                    return self::$_R['kivotos']->R['registry_usr'];
 
             //}else{
 
@@ -18911,25 +19160,25 @@ $tmp_get_param_run_data .
          * Tuesday, August 6, 2024 @ 0331 hrs.
          *
          */
-        return self::$R['kivotos']->R['registry_usr']->return_registered_resource(
-                                                       $R_action, 
-                                                       $name, 
-                                                       $R_data_000, 
-                                                       $R_data_001, 
-                                                       $R_data_002, 
-                                                       $R_data_003, 
-                                                       $R_data_004, 
-                                                       $R_data_005, 
-                                                       $R_data_006, 
-                                                       $R_data_007, 
-                                                       $R_data_008, 
-                                                       $R_data_009, 
-                                                       $R_data_010, 
-                                                       $R_data_011, 
-                                                       $R_data_012, 
-                                                       $R_data_013, 
-                                                       $R_data_014, 
-                                                       $R_data_015);
+        return self::$_R['kivotos']->R['registry_usr']->return_registered_resource(
+                                                        $R_action,
+                                                        $name,
+                                                        $R_data_000,
+                                                        $R_data_001,
+                                                        $R_data_002,
+                                                        $R_data_003,
+                                                        $R_data_004,
+                                                        $R_data_005,
+                                                        $R_data_006,
+                                                        $R_data_007,
+                                                        $R_data_008,
+                                                        $R_data_009,
+                                                        $R_data_010,
+                                                        $R_data_011,
+                                                        $R_data_012,
+                                                        $R_data_013,
+                                                        $R_data_014,
+                                                        $R_data_015);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Return the system 
@@ -19141,7 +19390,8 @@ $tmp_get_param_run_data .
                     echo '<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PHP CSS HTML Output Test</title>
+    <title>' . $this->get_crnrstn('CLR_SSL_long_TEXT') .
+    ' PHP CSS HTML Output Test</title>
 </head>
 <body>
     ';
@@ -19296,9 +19546,9 @@ $tmp_get_param_run_data .
             $clr_ssl_msg = 'Manually loading the ' . 
                            'system registry user. ' . 
                            '$framework_directory[' . 
-                           self::$R_data['framework_directory'] . 
+                           self::$R_data['R_framework_directory'] .
                            '] $framework_directory[' . 
-                           self::$R_data['framework_directory'] . 
+                           self::$R_data['R_framework_directory'] .
                            '] $application_directory[' . 
                            print_r(self::$R_data['application_directory'], true) . 
                            '].';
@@ -19326,8 +19576,8 @@ $tmp_get_param_run_data .
             Last Modified: Saturday, August 1, 2026 @ 0201 hrs.
 
             switch(strtolower($path_type)){
-                case 'framework_directory':
-                    return self::$R_data['framework_directory'];
+                case 'R_framework_directory':
+                    return self::$R_data['R_framework_directory'];
                 case 'application_directory':
                     return self::$R_data['application_directory'];
                 case 'registry_directory_endpoints':
@@ -19386,7 +19636,7 @@ $tmp_get_param_run_data .
              * Friday, August 2, 2024 @ 0512 hrs.
              *
              */
-            $tmp_dir_root_registry = self::$R_data['framework_directory'] . 
+            $tmp_dir_root_registry = self::$R_data['R_framework_directory'] .
                                      $tmp_slsh . 
                                      'class' . 
                                      $tmp_slsh . 
@@ -20335,7 +20585,7 @@ $tmp_get_param_run_data .
             switch($name){
                 case 'nusoap_framework_directory':
 
-                    self::$nusoap_framework_directory = _crnrstn_settings($name, $this);
+                    //self::$nusoap_framework_directory = _crnrstn_settings($name, $this);
 
                 break;
                 /*
@@ -20799,7 +21049,7 @@ $tmp_get_param_run_data .
                      * 5 :: Wednesday, June 29, 2022 @ 1953 hrs.
                      *
                      *
-                    self::$hmac_algorithm_preferred_ARRAY = self::$R['kivotos']->R['oersl_mgr']->config_load_static_application_data($name);
+                    self::$hmac_algorithm_preferred_ARRAY = self::$_R['kivotos']->R['oersl_mgr']->config_load_static_application_data($name);
 
                 break;
                 case 'openssl_cipher_preferred_ARRAY':
@@ -20815,7 +21065,7 @@ $tmp_get_param_run_data .
                      * 5 :: Wednesday, June 29, 2022 @ 1953 hrs.
                      *
                      *
-                    self::$openssl_cipher_preferred_ARRAY = self::$R['kivotos']->R['oersl_mgr']->config_load_static_application_data($name);
+                    self::$openssl_cipher_preferred_ARRAY = self::$_R['kivotos']->R['oersl_mgr']->config_load_static_application_data($name);
 
                 break;
                 case 'openssl_digest_preferred_ARRAY':
@@ -20831,7 +21081,7 @@ $tmp_get_param_run_data .
                      * 5 :: Wednesday, June 29, 2022 @ 1953 hrs.
                      *
                      *
-                    self::$openssl_digest_preferred_ARRAY = self::$R['kivotos']->R['oersl_mgr']->config_load_static_application_data($name);
+                    self::$openssl_digest_preferred_ARRAY = self::$_R['kivotos']->R['oersl_mgr']->config_load_static_application_data($name);
 
                 break;
                 case 'sql_interval_ARRAY[UNITS][VALUES]':
@@ -20847,7 +21097,7 @@ $tmp_get_param_run_data .
                      * 5 :: Wednesday, October 4, 2023 @ 1256 hrs.
                      *
                      *
-                    self::$sql_interval_ARRAY['UNITS']['VALUES'] = self::$R['kivotos']->R['database']->config_load_static_application_data($name, $this);
+                    self::$sql_interval_ARRAY['UNITS']['VALUES'] = self::$_R['kivotos']->R['database']->config_load_static_application_data($name, $this);
 
                 break;
                 case 'sql_interval_ARRAY[UNITS][STRING_PATTERN]':
@@ -20863,7 +21113,7 @@ $tmp_get_param_run_data .
                      * 5 :: Wednesday, October 4, 2023 @ 1256 hrs.
                      *
                      *
-                    self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN'] = self::$R['kivotos']->R['database']->config_load_static_application_data($name, $this);
+                    self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN'] = self::$_R['kivotos']->R['database']->config_load_static_application_data($name, $this);
 
                 break;
                 case 'server_operations_ARRAY':
@@ -20893,32 +21143,27 @@ $tmp_get_param_run_data .
                 break;
                 case 'eVifweb_long_HTML':
 
-                    self::$eVifweb_long_HTML = _crnrstn_settings($name, $this);
+                    //self::$eVifweb_long_HTML = _crnrstn_settings($name, $this);
 
                 break;
                 case 'eVifweb_long_TEXT':
 
-                    self::$eVifweb_long_TEXT = _crnrstn_settings($name, $this);
+                    //self::$eVifweb_long_TEXT = _crnrstn_settings($name, $this);
 
                 break;
                 case 'eVifweb_short_HTML':
 
-                    self::$eVifweb_short_HTML = _crnrstn_settings($name, $this);
+                    //self::$eVifweb_short_HTML = _crnrstn_settings($name, $this);
 
                 break;
                 case 'eVifweb_short_TEXT':
 
-                    self::$eVifweb_short_TEXT = _crnrstn_settings($name, $this);
+                    //self::$eVifweb_short_TEXT = _crnrstn_settings($name, $this);
 
                 break;
                 case 'config_resource_meta_ARRAY':
 
                     self::$config_resource_meta_ARRAY = _crnrstn_settings($name, $this);
-
-                break;
-                case 'file_mod_config_reset':
-
-                    self::$file_modification_resets_configuration = _crnrstn_settings($name, $this);
 
                 break;
                 case 'runtime_execution_patch':
@@ -20955,7 +21200,7 @@ $tmp_get_param_run_data .
                      * 5 ::
                      *
                      * Saturday, October 25, 2025 @ 0415 hrs.
-                     * Last Modifed: Monday, March 9, 2026 @ 0736 hrs.
+                     * Last Modified: Monday, March 9, 2026 @ 0736 hrs.
                      *
                      */
                     error_log('[lnum ' . 
@@ -20964,7 +21209,7 @@ $tmp_get_param_run_data .
                         '] Initializing the CLR-SSL System Registry for ' . 
                         'object boot.');
 
-                    echo '<html><head><title>CRNRSTN :: ' . 'Lightsaber</title>' . 
+                    echo '<html><head><title>' . $this->get_crnrstn('CLR_SSL_long_TEXT') . '</title>' .
                          '<link rel="shortcut icon" type="image/x-icon" ' . 
                          'href="./favicon.ico?crnrstn_0010111011=favicon.ico" />' . 
                          '<link type="text/css" rel="stylesheet" href="./' . 
@@ -20988,7 +21233,7 @@ $tmp_get_param_run_data .
                          self::$R_data['application_directory'] . 
                          '<br>
                          <b>$framework_directory:</b> ' . 
-                         self::$R_data['framework_directory'] . '</div></body></html>';
+                         self::$R_data['R_framework_directory'] . '</div></body></html>';
 
                     $this->crnrstn_boot('_crnrstn_native_resource_registry');
 
@@ -21024,14 +21269,14 @@ $tmp_get_param_run_data .
                         __LINE__ . '] [class ' . 
                         __METHOD__ . 
                         '] R_bitflip_mgr class=[' . 
-                        get_class(self::$R['kivotos']->R['bitflip_mgr']) .
+                        \get_class(self::$_R['kivotos']->R['bitflip_mgr']) .
                         ']Finished when the class is right!');
 
                     die();
 
                     $tmp_path              = array();
                     $application_directory = $this->get_crnrstn('application_directory');
-                    $framework_directory   = $this->get_crnrstn('framework_directory');
+                    $framework_directory   = $this->get_crnrstn('R_framework_directory');
 
                     $tmp_path['config_system_paths']            = $_SERVER['DOCUMENT_ROOT'] . \DIRECTORY_SEPARATOR .
                                                                     $application_directory . \DIRECTORY_SEPARATOR .
@@ -21114,7 +21359,7 @@ $tmp_get_param_run_data .
                         $tmp_path_ARRAY = array();
                         $tmp_slsh                               = \DIRECTORY_SEPARATOR;
                         $tmp_path                               = $tmp_slsh . 
-                                                                  self::$R_data['framework_directory'] . 
+                                                                  self::$R_data['R_framework_directory'] .
                                                                   $tmp_slsh;
                         $tmp_crnrstn_root                       = self::$R_data['application_directory'];
                         $tmp_path_ARRAY['config_defaults']      = $tmp_crnrstn_root . 
@@ -21140,9 +21385,9 @@ $tmp_get_param_run_data .
                      * self::$oCRNRSTN_ORESL_MGR = new crnrstn_openssl_encryption_rotation_services_manager($this);
                      *
                      *
-                    self::$R['kivotos']->R['oersl_mgr'] = $this->return_registered_resource(
-                                                                 'new', 
-                                                                 'crnrstn_openssl_encryption_rotation_services_manager');
+                    self::$_R['kivotos']->R['oersl_mgr'] = $this->return_registered_resource(
+                                                                  'new',
+                                                                  'crnrstn_openssl_encryption_rotation_services_manager');
                      *
                      */
 
@@ -21165,9 +21410,9 @@ $tmp_get_param_run_data .
                      * self::$oCRNRSTN_DATABASE = new crnrstn_database_crnrstn($this);
                      *
                      *
-                    self::$R['kivotos']->R['database'] = $this->return_registered_resource(
-                                                                'new', 
-                                                                'crnrstn_database_crnrstn');
+                    self::$_R['kivotos']->R['database'] = $this->return_registered_resource(
+                                                                 'new',
+                                                                 'crnrstn_database_crnrstn');
                      */
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -21178,7 +21423,7 @@ $tmp_get_param_run_data .
                      */
                     $tmp_global_system_data_function_path = self::$R_data['CRNRSTN_ROOT'] . 
                                                             \DIRECTORY_SEPARATOR . 
-                                                            self::$R_data['framework_directory'] . 
+                                                            self::$R_data['R_framework_directory'] .
                                                             \DIRECTORY_SEPARATOR . 
                                                             '_config' . 
                                                             \DIRECTORY_SEPARATOR . 
@@ -21252,8 +21497,7 @@ $tmp_get_param_run_data .
                         'eVifweb_long_HTML'                         => 1,
                         'eVifweb_long_TEXT'                         => 1, 
                         'eVifweb_short_HTML'                        => 1, 
-                        'eVifweb_short_TEXT'                        => 1,
-                        'file_mod_config_reset'                     => 1);
+                        'eVifweb_short_TEXT'                        => 1);
 
                         foreach($tmp_static_load_data_key_ARRAY as 
                             $tmp_static_load_data_key => $tmp_flag_int)
@@ -21487,7 +21731,7 @@ $tmp_get_param_run_data .
          *
          */
         $this->initialize_application_path('framework_https');
-        $this->initialize_application_path('framework_directory');
+        $this->initialize_application_path('R_framework_directory');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Initialize the CRNRSTN :: 
@@ -22026,7 +22270,7 @@ $tmp_get_param_run_data .
          *
          * Previously initialized via: 
          * self::$get_channel_system_parameters_ARRAY = 
-         * self::$R['kivotos']->R['env']->config_load_static_application_data('get_channel_system_parameters_ARRAY');
+         * self::$_R['kivotos']->R['env']->config_load_static_application_data('get_channel_system_parameters_ARRAY');
          *
          *
          * 5 :: Saturday, November 4, 2023 @ 0752 hrs.
@@ -22239,7 +22483,7 @@ $tmp_get_param_run_data .
 
                 */
 
-                return self::$R['kivotos']->R['env']->openssl_get_md_methods(false, false);
+                return self::$_R['kivotos']->R['env']->openssl_get_md_methods(false, false);
 
             break;
             case 'CRNRSTN_OPENSSL_CIPHERS':
@@ -22248,7 +22492,7 @@ $tmp_get_param_run_data .
 
                 */
 
-                return self::$R['kivotos']->R['env']->openssl_get_cipher_methods(false, false);
+                return self::$_R['kivotos']->R['env']->openssl_get_cipher_methods(false, false);
 
             break;
             case 'CRNRSTN_HMAC_HASH_ALGORITHMS':
@@ -22731,7 +22975,7 @@ $tmp_get_param_run_data .
                      * and bitwise combinations. 
                      *
                      */
-                    if(self::$R['kivotos']->R['logging']->is_valid_output_profile($data) !== false)
+                    if(self::$_R['kivotos']->R['logging']->is_valid_output_profile($data) !== false)
                         return (int) $data;
 
                     $tmp_err_str = 'CRNRSTN :: does not ' . 
@@ -22777,7 +23021,7 @@ $tmp_get_param_run_data .
                      * combinations. 
                      *
                      */
-                    if(self::$R['kivotos']->R['logging']->is_valid_output_profile($default_override) !== false)
+                    if(self::$_R['kivotos']->R['logging']->is_valid_output_profile($default_override) !== false)
                         return (int) $default_override;
 
                 }
@@ -22818,7 +23062,7 @@ $tmp_get_param_run_data .
                      * and bitwise combinations. 
                      *
                      */
-                    if(self::$R['kivotos']->R['logging']->is_valid_output_profile($tmp_crnrstn_logging_output_profile) !== false){
+                    if(self::$_R['kivotos']->R['logging']->is_valid_output_profile($tmp_crnrstn_logging_output_profile) !== false){
 
                         self::$system_default_logging_output_profile = $tmp_crnrstn_logging_output_profile;
                         return (int) $tmp_crnrstn_logging_output_profile;
@@ -22989,7 +23233,7 @@ $tmp_get_param_run_data .
                      */
                     if(self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default'][self::$R_data['int_flag']['R_integer']] == -1){
 
-                        if(!isset(self::$R['kivotos']->R['env'])){
+                        if(!isset(self::$_R['kivotos']->R['env'])){
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * Return an instantiation of 
@@ -23004,16 +23248,16 @@ $tmp_get_param_run_data .
                              * $this->oCRNRSTN_ENV = new crnrstn_environment($this);
                              *
                              */
-                            self::$R['kivotos']->R['env'] = $this->return_registered_resource(
-                                                               'new', 
-                                                               'crnrstn_environment');
+                            self::$_R['kivotos']->R['env'] = $this->return_registered_resource(
+                                                                    'new',
+                                                                    'crnrstn_environment');
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * Initialization of 
                              * CRNRSTN :: User. 
                              *
                              */
-                            self::$R['kivotos']->R['usr'] = self::$R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
+                            self::$_R['kivotos']->R['usr'] = self::$_R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
 
                         }
 
@@ -23023,9 +23267,9 @@ $tmp_get_param_run_data .
                          * OpenSSL ciphers. 
                          *
                          */
-                        self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['server'] = self::$R['kivotos']->R['env']->openssl_get_cipher_methods(
-                                                                                                                                                                                     false,
-                                                                                                                                                                                     false);
+                        self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['server'] = self::$_R['kivotos']->R['env']->openssl_get_cipher_methods(
+                                                                                                                                                                                      false,
+                                                                                                                                                                                      false);
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Update the internal 
@@ -23071,10 +23315,10 @@ $tmp_get_param_run_data .
                                  * profile. 
                                  *
                                  */
-                                self::$R['kivotos']->R['env']->set_openssl_cipher_profile(
-                                                               $cipher_name,
-                                                               $data_key,
-                                                               $data_type_family);
+                                self::$_R['kivotos']->R['env']->set_openssl_cipher_profile(
+                                                                $cipher_name,
+                                                                $data_key,
+                                                                $data_type_family);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * The CRNRSTN :: Lightsaber 
@@ -23159,10 +23403,10 @@ $tmp_get_param_run_data .
                                  * preferred. 
                                  *
                                  */
-                                self::$R['kivotos']->R['env']->set_openssl_cipher_profile(
-                                                               $tmp_cipher,
-                                                               $data_key,
-                                                               $data_type_family);
+                                self::$_R['kivotos']->R['env']->set_openssl_cipher_profile(
+                                                                $tmp_cipher,
+                                                                $data_key,
+                                                                $data_type_family);
                                 $tmp_err_str = 'CRNRSTN :: could not ' . 
                                                'recognize the provided ' . 
                                                'OpenSSL cipher, ' . 
@@ -23185,10 +23429,10 @@ $tmp_get_param_run_data .
                                  * from default. 
                                  *
                                  */
-                                self::$R['kivotos']->R['env']->set_openssl_cipher_profile(
-                                                               NULL,
-                                                               $data_key,
-                                                               $data_type_family);
+                                self::$_R['kivotos']->R['env']->set_openssl_cipher_profile(
+                                                                NULL,
+                                                                $data_key,
+                                                                $data_type_family);
                                 $tmp_err_str = 'CRNRSTN :: could not ' . 
                                                'recognize the provided ' . 
                                                'OpenSSL cipher, ' . 
@@ -23380,7 +23624,7 @@ $tmp_get_param_run_data .
                      */
                     if(self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default'][self::$R_data['int_flag']['R_integer']] == -1){
 
-                        if(!isset(self::$R['kivotos']->R['env'])){
+                        if(!isset(self::$_R['kivotos']->R['env'])){
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * Return an instantiation of 
@@ -23395,16 +23639,16 @@ $tmp_get_param_run_data .
                              * $this->oCRNRSTN_ENV = new crnrstn_environment();
                              *
                              */
-                            self::$R['kivotos']->R['env'] = $this->return_registered_resource(
-                                                               'new', 
-                                                               'crnrstn_environment');
+                            self::$_R['kivotos']->R['env'] = $this->return_registered_resource(
+                                                                    'new',
+                                                                    'crnrstn_environment');
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * Initialization of 
                              * CRNRSTN :: User. 
                              *
                              */
-                            self::$R['kivotos']->R['usr'] = self::$R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
+                            self::$_R['kivotos']->R['usr'] = self::$_R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
 
                         }
 
@@ -23414,7 +23658,7 @@ $tmp_get_param_run_data .
                          * OpenSSL digest methods. 
                          *
                          */
-                        self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['server'] = self::$R['kivotos']->R['env']->openssl_get_md_methods();
+                        self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['options']['server'] = self::$_R['kivotos']->R['env']->openssl_get_md_methods();
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Update the internal 
@@ -23467,10 +23711,10 @@ $tmp_get_param_run_data .
                                  * OpenSSL profile. 
                                  *
                                  */
-                                self::$R['kivotos']->R['env']->set_openssl_digest_profile(
-                                                               $tmp_digest,
-                                                               $data_key,
-                                                               $data_type_family);
+                                self::$_R['kivotos']->R['env']->set_openssl_digest_profile(
+                                                                $tmp_digest,
+                                                                $data_key,
+                                                                $data_type_family);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * The CRNRSTN :: Lightsaber 
@@ -23555,10 +23799,10 @@ $tmp_get_param_run_data .
                                  * of preferred. 
                                  *
                                  */
-                                self::$R['kivotos']->R['env']->set_openssl_digest_profile(
-                                                               $tmp_digest,
-                                                               $data_key,
-                                                               $data_type_family);
+                                self::$_R['kivotos']->R['env']->set_openssl_digest_profile(
+                                                                $tmp_digest,
+                                                                $data_key,
+                                                                $data_type_family);
                                 $tmp_err_str = 'CRNRSTN :: could not ' . 
                                                'recognize the provided ' . 
                                                'OpenSSL digest, ' . 
@@ -23583,10 +23827,10 @@ $tmp_get_param_run_data .
                                  * default. 
                                  *
                                  */
-                                self::$R['kivotos']->R['env']->set_openssl_digest_profile(
-                                                               NULL,
-                                                               $data_key,
-                                                               $data_type_family);
+                                self::$_R['kivotos']->R['env']->set_openssl_digest_profile(
+                                                                NULL,
+                                                                $data_key,
+                                                                $data_type_family);
                                 $tmp_err_str = 'CRNRSTN :: could not ' . 
                                                'recognize the provided ' . 
                                                'OpenSSL digest, ' . 
@@ -23829,8 +24073,8 @@ $tmp_get_param_run_data .
                                  * System available:
                                  * $tmp_hash_name = self::$hmac_hash_algorithm_ARRAY['options']['server'][self::$hmac_hash_algorithm_int];
                                  *
-                                 *$tmp_openssl_cipher_best_ARRAY = self::$R['kivotos']->R['env']->openssl_get_cipher_methods();
-                                 *$tmp_openssl_cipher_all_ARRAY = self::$R['kivotos']->R['env']->openssl_get_cipher_methods(false, false);
+                                 *$tmp_openssl_cipher_best_ARRAY = self::$_R['kivotos']->R['env']->openssl_get_cipher_methods();
+                                 *$tmp_openssl_cipher_all_ARRAY = self::$_R['kivotos']->R['env']->openssl_get_cipher_methods(false, false);
                                  *
                                  *error_log(__LINE__ . 
                                  *    ' crnrstn best [' . 
@@ -24208,9 +24452,9 @@ $tmp_get_param_run_data .
          * meta array. 
          *
          */
-        self::$R['kivotos']->R['config_mgr']->set_crnrstn(
-                                              'system_channel_ARRAY', 
-                                              $tmp_system_channel_ARRAY);
+        self::$_R['kivotos']->R['config_mgr']->set_crnrstn(
+                                               'system_channel_ARRAY',
+                                               $tmp_system_channel_ARRAY);
 
     }
 
@@ -24626,10 +24870,10 @@ $tmp_get_param_run_data .
          *{
          *
          */ 
-        if(!($tmp_result = self::$R['kivotos']->R['config_mgr']->php_ini_option_profile(
-                                                                 $data_key, 
-                                                                 $tmp_ini, 
-                                                                 $this->iso_language_html())))
+        if(!($tmp_result = self::$_R['kivotos']->R['config_mgr']->php_ini_option_profile(
+                                                                  $data_key,
+                                                                  $tmp_ini,
+                                                                  $this->iso_language_html())))
         {
 
             error_log(__LINE__ . 
@@ -24640,7 +24884,7 @@ $tmp_get_param_run_data .
                 \strval($tmp_ini) . 
                 ']. [' . 
                 $this->gettype($tmp_result, self::$R_data['int_flag']['R_string']) . 
-                '/' . print_r($tmp_result, true) . 
+                '/' . \print_r($tmp_result, true) .
                 '].');
 
         }else{
@@ -26227,1163 +26471,1183 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        try{
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * TODO :: Design a CLR-SSL
+         *         solution for these static
+         *         localhost endpoints:
+         *         self::$http_path  = '';
+         *         self::$dir_root   = '';
+         *         5 :: Monday, July 15, 2024 @ 0755 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Begin CRNRSTN :: Lightsaber SOAP
+         * Services Layer HTTP $_GET[] and
+         * directory Path Initializations
+         * for The Lightbox Helper
+         * by eVifweb®
+         *
+         * We will do this here for the
+         * Lightbox Helper first, and then
+         * the completed initialization
+         * architecture will be replicated
+         * within the initialization
+         * protocols of CRNRSTN :: Lightsaber.
+         *
+         * This will allow CRNRSTN ::
+         * Lightsaber to successfully complete
+         * its own environmental detection
+         * without fail every time.
+         *
+         *
+         * 5 :: Thursday, July 18, 2024 @ 0454 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Here are the
+         * programmatic objectives
+         * that need to be acquired
+         * for success:
+         * -----
+         * Web Root + the
+         * Framework Directory:
+         * self::$R_data['R_paths']['APPLICATION']['HTTP'] = 'http://172.16.225.128/lightbox_helper/' .
+         *                                                                        '_lightbox_helper/';
+         *
+         * Directory Root +
+         * the Framework Directory:
+         * self::$dir_root           = '/var/www/html/lightbox_helper/_lightbox_helper';
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Acquired SCRIPT_FILENAME [/var/www/html/lightbox_helper/index.php].
+         *      Step 1: Remove filename from string.
+         * ...
+         * self::$R_data['R_paths']['IS_SSL'] = 'FALSE';
+         *
+         * [CRNRSTN :: SOAP Services
+         * Resource Access
+         * Services Layer (CSS-RASL)]       // pronounced "ra - zl" or "razzle".
+         *
+         * Now, all that is
+         * lacking is the CSS-DASSLE        // pronounced "da - zl" or "dazzle".
+         * ...for when...after, like,
+         * we totally CSS-RASL 'em.
+         *
+         *
+         * 5 :: Thursday, July 18, 2024 @ 0635 hrs.
+         * Last Modified: Thursday, May 28, 2026 @ 0834 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Saturday, July 20, 2024 @ 2337 hrs.
+         * Last Modified: Thursday, May 28, 2026 @ 0835 hrs.
+         *
+         * Basic path name to string data
+         * alignment should be something
+         * like the following:
+         * -----
+         * Where the data is:
+         * '/var/www/html/lightbox_helper/_lightbox_helper'
+         * - self::$R_data['R_paths']['APPLICATION']['PATH'] .
+         *   '/ui/imgs/png/system/5.png';
+         *
+         * Where the data is:
+         * 'http://172.16.225.128/lightbox_helper/' . '_lightbox_helper/'
+         * - self::$R_data['R_paths']['APPLICATION']['HTTP'] .
+         *   'ui/imgs/png/system/5.png';  // This will be initialized with string data if valid.
+         *
+         * Where the data is:
+         * 'https://172.16.225.128/lightbox_helper/' . '_lightbox_helper/'
+         * - self::$R_data['R_paths']['APPLICATION']['HTTPS'] .
+         *   'ui/imgs/png/system/5.png';  // This will be initialized if valid.
+         *
+         * Where the data is:
+         * 'http://172.16.225.128/lightbox_helper/' . '_lightbox_helper/soa/'
+         * - self::$R_data['R_paths']['APPLICATION']['CSS-RASL'] = APPLICATION_ROOT {HTTPS} .
+         *   'soa/';       // SOAP WSDL, file buffer output, HTML string data,...
+         *
+         */
 
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * TODO :: Design a CLR-SSL 
-             *         solution for these static 
-             *         localhost endpoints: 
-             *         self::$http_path  = '';
-             *         self::$dir_root   = '';
-             *         5 :: Monday, July 15, 2024 @ 0755 hrs.
-             *
-             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Begin CRNRSTN :: Lightsaber SOAP
-             * Services Layer HTTP $_GET[] and
-             * directory Path Initializations
-             * for The Lightbox Helper
-             * by eVifweb®
-             *
-             * We will do this here for the
-             * Lightbox Helper first, and then
-             * the completed initialization
-             * architecture will be replicated
-             * within the initialization
-             * protocols of CRNRSTN :: Lightsaber.
-             *
-             * This will allow CRNRSTN ::
-             * Lightsaber to successfully complete
-             * its own environmental detection
-             * without fail every time.
-             *
-             *
-             * 5 :: Thursday, July 18, 2024 @ 0454 hrs.
-             *
-             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Here are the
-             * programmatic objectives
-             * that need to be acquired
-             * for success:
-             * -----
-             * Web Root + the
-             * Framework Directory:
-             * self::$R_data['R_paths']['APPLICATION']['HTTP'] = 'http://172.16.225.128/lightbox_helper/' . 
-             *                                                                        '_lightbox_helper/';
-             *
-             * Directory Root +
-             * the Framework Directory:
-             * self::$dir_root           = '/var/www/html/lightbox_helper/_lightbox_helper';
-             *
-             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Acquired SCRIPT_FILENAME [/var/www/html/lightbox_helper/index.php].
-             *      Step 1: Remove filename from string.
-             * ...
-             * self::$R_data['R_paths']['IS_SSL'] = 'FALSE';
-             *
-             * [CRNRSTN :: SOAP Services
-             * Resource Access
-             * Services Layer (CSS-RASL)]       // pronounced "ra - zl" or "razzle".
-             *
-             * Now, all that is
-             * lacking is the CSS-DASSLE        // pronounced "da - zl" or "dazzle".
-             * ...for when...after, like, 
-             * we totally CSS-RASL 'em. 
-             *
-             *
-             * 5 :: Thursday, July 18, 2024 @ 0635 hrs.
-             * Last Modified: Thursday, May 28, 2026 @ 0834 hrs.
-             *
-             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * 5 :: Saturday, July 20, 2024 @ 2337 hrs.
-             * Last Modified: Thursday, May 28, 2026 @ 0835 hrs.
-             *
-             * Basic path name to string data 
-             * alignment should be something 
-             * like the following: 
-             * -----
-             * Where the data is: 
-             * '/var/www/html/lightbox_helper/_lightbox_helper'
-             * - self::$R_data['R_paths']['APPLICATION']['PATH'] . 
-             *   '/ui/imgs/png/system/5.png';
-             *
-             * Where the data is: 
-             * 'http://172.16.225.128/lightbox_helper/' . '_lightbox_helper/'
-             * - self::$R_data['R_paths']['APPLICATION']['HTTP'] . 
-             *   'ui/imgs/png/system/5.png';  // This will be initialized with string data if valid.
-             *
-             * Where the data is: 
-             * 'https://172.16.225.128/lightbox_helper/' . '_lightbox_helper/'
-             * - self::$R_data['R_paths']['APPLICATION']['HTTPS'] . 
-             *   'ui/imgs/png/system/5.png';  // This will be initialized if valid.
-             *
-             * Where the data is: 
-             * 'http://172.16.225.128/lightbox_helper/' . '_lightbox_helper/soa/'
-             * - self::$R_data['R_paths']['APPLICATION']['CSS-RASL'] = APPLICATION_ROOT {HTTPS} . 
-             *   'soa/';       // SOAP WSDL, file buffer output, HTML string data,...
-             *
-             */
+        /* $this->error_log('Finding location...');
+         * $this->error_log('Acquired CRNRSTN_ROOT[' . CRNRSTN_ROOT . '].');
+         * $this->error_log('Acquired PHP_SELF[' . $_SERVER['PHP_SELF'] . '].');
+         * //$this->error_log('Acquired argv[' . $_SERVER['argv'] . '].');
+         * //$this->error_log('Acquired argc[' . $_SERVER['argc'] . '].');
+         * $this->error_log('Acquired QUERY_STRING[' . $_SERVER['QUERY_STRING'] . '].');
+         * $this->error_log('Acquired DOCUMENT_ROOT[' . $_SERVER['DOCUMENT_ROOT'] . '].');
+         * $this->error_log('Acquired SCRIPT_FILENAME[' . $_SERVER['SCRIPT_FILENAME'] . '].');
+         * $this->error_log('Acquired REQUEST_TIME_FLOAT[' . $_SERVER['REQUEST_TIME_FLOAT'] . '].');
+         * $this->error_log('Acquired REQUEST_TIME[' . $_SERVER['REQUEST_TIME'] . '].');
+         *
 
-            /* $this->error_log('Finding location...');
-             * $this->error_log('Acquired CRNRSTN_ROOT[' . CRNRSTN_ROOT . '].');
-             * $this->error_log('Acquired PHP_SELF[' . $_SERVER['PHP_SELF'] . '].');
-             * //$this->error_log('Acquired argv[' . $_SERVER['argv'] . '].');
-             * //$this->error_log('Acquired argc[' . $_SERVER['argc'] . '].');
-             * $this->error_log('Acquired QUERY_STRING[' . $_SERVER['QUERY_STRING'] . '].');
-             * $this->error_log('Acquired DOCUMENT_ROOT[' . $_SERVER['DOCUMENT_ROOT'] . '].');
-             * $this->error_log('Acquired SCRIPT_FILENAME[' . $_SERVER['SCRIPT_FILENAME'] . '].');
-             * $this->error_log('Acquired REQUEST_TIME_FLOAT[' . $_SERVER['REQUEST_TIME_FLOAT'] . '].');
-             * $this->error_log('Acquired REQUEST_TIME[' . $_SERVER['REQUEST_TIME'] . '].');
-             *
+        R :: [2026-05-20 15:18:17.059682]
+             [file /var/www/html/sysops/_crnrstn/class/session/crnrstn.session_manager.class.php]
+             [mthd CRNRSTN\crnrstn_session_manager::initialize_config_serialization] [lnum 802]
+             [rtime 0.0867278] [48736]: Recycling session configuration [2304132756c0cf2b189a327b51d9a37517265ae0ab0097c742786851d1e09e4a].
+             [session_rtime 1197.59 secs].
+        R :: [2026-05-20 15:18:17.059682]
+             [file /var/www/html/sysops/_crnrstn/class/session/crnrstn.session_manager.class.php]
+             [mthd CRNRSTN\crnrstn_session_manager::initialize_config_serialization] [lnum 802]
+             [rtime 0.0867278] [48736]: [Database Integrations Pending] Recycling session configuration [2...
+        R :: [2026-05-20 15:18:17.060597] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21806] [rtime 0.0876450] [48736]:
+             Generating the [https] universal resource indicator, [http://172.16.225.128/], from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.060597] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21806] [rtime 0.0876450] [48736]:
+             [Database Integrations Pending] Generating the [https] universal r...
+        R :: [2026-05-20 15:18:17.061365] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21903] [rtime 0.0884139] [48736]:
+             Generating server 172.16.225.128 [directory] resource path, [/var/www/html], from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.061365] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21903] [rtime 0.0884139] [48736]:
+             [Database Integrations Pending] Generating server 172.16.225.128 [...
+        R :: [2026-05-20 15:18:17.062145] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22033] [rtime 0.0891978] [48736]:
+             Generating the [application_https] universal resource indicator, [http://172.16.225.128/sysops/] from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.062145] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22033] [rtime 0.0891978] [48736]:
+             [Database Integrations Pending] Generating the [application_https]...
+        R :: [2026-05-20 15:18:17.063077] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22174] [rtime 0.0901548] [48736]:
+             Generating server 172.16.225.128 [application_directory] resource path, [/var/www/html/sysops], from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.063077] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22174] [rtime 0.0901548] [48736]:
+             [Database Integrations Pending] Generating server 172.16.225.128 [...
+        R :: [2026-05-20 15:18:17.064067] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22283] [rtime 0.0911190] [48736]:
+             Generating the [framework_https] universal resource indicator, [http://172.16.225.128/sysops/_crnrstn/] from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.064067] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22283] [rtime 0.0911190] [48736]:
+             [Database Integrations Pending] Generating the [framework_https] u...
+        R :: [2026-05-20 15:18:17.064745] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22419] [rtime 0.0917999] [48736]:
+             Generating server 172.16.225.128 [framework_directory] resource path, [/var/www/html/sysops/_crnrstn/], from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.064745] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22419] [rtime 0.0917999] [48736]:
+             [Database Integrations Pending] Generating server 172.16.225.128 [...
+        R :: [2026-05-20 15:18:17.065310] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22465] [rtime 0.0923590] [48736]:
+             Generating the [running_https] universal resource indicator, [http://172.16.225.128/sysops//] from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.065310] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22465] [rtime 0.0923590] [48736]:
+             [Database Integrations Pending] Generating the [running_https] uni...
+        R :: [2026-05-20 15:18:17.065961] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22543] [rtime 0.0930099] [48736]:
+             Generating server 172.16.225.128 [running_directory] resource path, [/var/www/html/sysops/_crnrstn/class/crnrstn], from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.065961] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22543] [rtime 0.0930099] [48736]:
+             [Database Integrations Pending] Generating server 172.16.225.128 [...
+        R :: [2026-05-20 15:18:17.066610] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22658] [rtime 0.0936579] [48736]:
+             Generating the css_rasl_https universal resource indicator, http://172.16.225.128///?R_rasl=1 from client IP, 172.16.225.153].
+        R :: [2026-05-20 15:18:17.066610] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22658] [rtime 0.0936579] [48736]:
+             [Database Integrations Pending] Generating the css_rasl_https univ...
+        R :: [2026-05-20 15:18:17.067528] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22766] [rtime 0.0945799] [48736]:
+             Generating server 172.16.225.128 [css_rasl_directory] resource path, [/var/www/html/sysops/_crnrstn/], from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.067528] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22766] [rtime 0.0945799] [48736]:
+             [Database Integrations Pending] Generating server 172.16.225.128 [...
+        R :: [2026-05-20 15:18:17.068144] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22879] [rtime 0.0951938] [48736]:
+             Generating the crnrstn_soap_https universal resource indicator, http://172.16.225.128///?R_soap=1 from client IP, 172.16.225.153].
+        R :: [2026-05-20 15:18:17.068144] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22879] [rtime 0.0951938] [48736]:
+             [Database Integrations Pending] Generating the crnrstn_soap_https...
+        R :: [2026-05-20 15:18:17.069019] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22965] [rtime 0.0960679] [48736]:
+             Generating server 172.16.225.128 [crnrstn_soap_directory] resource path, [/var/www/html], from client IP, [172.16.225.153].
+        R :: [2026-05-20 15:18:17.069019] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+             [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22965] [rtime 0.0960679] [48736]:
+             [Database Integrations Pending] Generating server 172.16.225.128 [...
+        R :: [2026-05-20 15:18:17.071956] [file /var/www/html/sysops/index.php] [mthd ]
+             [lnum 452] [rtime 0.0989999] [48736]:
+             CLR-SSL Advanced Logging Services Layer system
+             message token: 21aca552e87f9ef7f5c82b0babdc63708195eb3d366c50475c4bafe4c8949458bce91ff1b464d5a164c41cae7964f7e80d085e93f6ca2eea91b4921959e0791c [len=128].
+        R :: [2026-05-20 15:18:17.071956] [file /var/www/html/sysops/index.php] [mthd ]
+             [lnum 452] [rtime 0.0989999] [48736]:
+             [Database Integrations Pending] CLR-SSL Advanced Logging Services...
+        R :: [2026-05-20 15:18:17.072552] [file /var/www/html/sysops/index.php] [mthd ]
+             [lnum 476] [rtime 0.0996010] [48736]:
+             CLR-SSL Advanced Logging Services Layer message
+             token generation date: [2026-05-20 15:18:17].
+        R :: [2026-05-20 15:18:17.072552] [file /var/www/html/sysops/index.php] [mthd ]
+             [lnum 476] [rtime 0.0996010] [48736]:
+             [Database Integrations Pending] CLR-SSL Advanced Logging Services...
+        R :: [2026-05-20 15:18:17.073361] [file /var/www/html/sysops/index.php] [mthd ]
+             [lnum 498] [rtime 0.100409] [48736]:
+             CRNRSTN :: 2.00.0001 works!
+        R :: [2026-05-20 15:18:17.073361] [file /var/www/html/sysops/index.php] [mthd ]
+             [lnum 498] [rtime 0.100409] [48736]:
+             [Database Integrations Pending] CRNRSTN :: 2.00.0001 works!
+        jony5@localdev:/var/log/apache2$
 
-            R :: [2026-05-20 15:18:17.059682] 
-                 [file /var/www/html/sysops/_crnrstn/class/session/crnrstn.session_manager.class.php] 
-                 [mthd CRNRSTN\crnrstn_session_manager::initialize_config_serialization] [lnum 802] 
-                 [rtime 0.0867278] [48736]: Recycling session configuration [2304132756c0cf2b189a327b51d9a37517265ae0ab0097c742786851d1e09e4a]. 
-                 [session_rtime 1197.59 secs].
-            R :: [2026-05-20 15:18:17.059682] 
-                 [file /var/www/html/sysops/_crnrstn/class/session/crnrstn.session_manager.class.php] 
-                 [mthd CRNRSTN\crnrstn_session_manager::initialize_config_serialization] [lnum 802] 
-                 [rtime 0.0867278] [48736]: [Database Integrations Pending] Recycling session configuration [2...
-            R :: [2026-05-20 15:18:17.060597] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21806] [rtime 0.0876450] [48736]: 
-                 Generating the [https] universal resource indicator, [http://172.16.225.128/], from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.060597] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21806] [rtime 0.0876450] [48736]: 
-                 [Database Integrations Pending] Generating the [https] universal r...
-            R :: [2026-05-20 15:18:17.061365] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21903] [rtime 0.0884139] [48736]: 
-                 Generating server 172.16.225.128 [directory] resource path, [/var/www/html], from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.061365] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 21903] [rtime 0.0884139] [48736]: 
-                 [Database Integrations Pending] Generating server 172.16.225.128 [...
-            R :: [2026-05-20 15:18:17.062145] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22033] [rtime 0.0891978] [48736]: 
-                 Generating the [application_https] universal resource indicator, [http://172.16.225.128/sysops/] from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.062145] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22033] [rtime 0.0891978] [48736]: 
-                 [Database Integrations Pending] Generating the [application_https]...
-            R :: [2026-05-20 15:18:17.063077] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22174] [rtime 0.0901548] [48736]: 
-                 Generating server 172.16.225.128 [application_directory] resource path, [/var/www/html/sysops], from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.063077] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22174] [rtime 0.0901548] [48736]: 
-                 [Database Integrations Pending] Generating server 172.16.225.128 [...
-            R :: [2026-05-20 15:18:17.064067] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22283] [rtime 0.0911190] [48736]: 
-                 Generating the [framework_https] universal resource indicator, [http://172.16.225.128/sysops/_crnrstn/] from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.064067] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22283] [rtime 0.0911190] [48736]: 
-                 [Database Integrations Pending] Generating the [framework_https] u...
-            R :: [2026-05-20 15:18:17.064745] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22419] [rtime 0.0917999] [48736]: 
-                 Generating server 172.16.225.128 [framework_directory] resource path, [/var/www/html/sysops/_crnrstn/], from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.064745] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22419] [rtime 0.0917999] [48736]: 
-                 [Database Integrations Pending] Generating server 172.16.225.128 [...
-            R :: [2026-05-20 15:18:17.065310] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22465] [rtime 0.0923590] [48736]: 
-                 Generating the [running_https] universal resource indicator, [http://172.16.225.128/sysops//] from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.065310] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22465] [rtime 0.0923590] [48736]: 
-                 [Database Integrations Pending] Generating the [running_https] uni...
-            R :: [2026-05-20 15:18:17.065961] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22543] [rtime 0.0930099] [48736]: 
-                 Generating server 172.16.225.128 [running_directory] resource path, [/var/www/html/sysops/_crnrstn/class/crnrstn], from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.065961] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22543] [rtime 0.0930099] [48736]: 
-                 [Database Integrations Pending] Generating server 172.16.225.128 [...
-            R :: [2026-05-20 15:18:17.066610] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22658] [rtime 0.0936579] [48736]: 
-                 Generating the css_rasl_https universal resource indicator, http://172.16.225.128///?R_rasl=1 from client IP, 172.16.225.153].
-            R :: [2026-05-20 15:18:17.066610] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22658] [rtime 0.0936579] [48736]: 
-                 [Database Integrations Pending] Generating the css_rasl_https univ...
-            R :: [2026-05-20 15:18:17.067528] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22766] [rtime 0.0945799] [48736]: 
-                 Generating server 172.16.225.128 [css_rasl_directory] resource path, [/var/www/html/sysops/_crnrstn/], from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.067528] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22766] [rtime 0.0945799] [48736]: 
-                 [Database Integrations Pending] Generating server 172.16.225.128 [...
-            R :: [2026-05-20 15:18:17.068144] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22879] [rtime 0.0951938] [48736]: 
-                 Generating the crnrstn_soap_https universal resource indicator, http://172.16.225.128///?R_soap=1 from client IP, 172.16.225.153].
-            R :: [2026-05-20 15:18:17.068144] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22879] [rtime 0.0951938] [48736]: 
-                 [Database Integrations Pending] Generating the crnrstn_soap_https...
-            R :: [2026-05-20 15:18:17.069019] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22965] [rtime 0.0960679] [48736]: 
-                 Generating server 172.16.225.128 [crnrstn_soap_directory] resource path, [/var/www/html], from client IP, [172.16.225.153].
-            R :: [2026-05-20 15:18:17.069019] [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                 [mthd CRNRSTN\crnrstn::initialize_application_path] [lnum 22965] [rtime 0.0960679] [48736]: 
-                 [Database Integrations Pending] Generating server 172.16.225.128 [...
-            R :: [2026-05-20 15:18:17.071956] [file /var/www/html/sysops/index.php] [mthd ] 
-                 [lnum 452] [rtime 0.0989999] [48736]: 
-                 CLR-SSL Advanced Logging Services Layer system 
-                 message token: 21aca552e87f9ef7f5c82b0babdc63708195eb3d366c50475c4bafe4c8949458bce91ff1b464d5a164c41cae7964f7e80d085e93f6ca2eea91b4921959e0791c [len=128].
-            R :: [2026-05-20 15:18:17.071956] [file /var/www/html/sysops/index.php] [mthd ] 
-                 [lnum 452] [rtime 0.0989999] [48736]: 
-                 [Database Integrations Pending] CLR-SSL Advanced Logging Services...
-            R :: [2026-05-20 15:18:17.072552] [file /var/www/html/sysops/index.php] [mthd ] 
-                 [lnum 476] [rtime 0.0996010] [48736]: 
-                 CLR-SSL Advanced Logging Services Layer message 
-                 token generation date: [2026-05-20 15:18:17].
-            R :: [2026-05-20 15:18:17.072552] [file /var/www/html/sysops/index.php] [mthd ] 
-                 [lnum 476] [rtime 0.0996010] [48736]: 
-                 [Database Integrations Pending] CLR-SSL Advanced Logging Services...
-            R :: [2026-05-20 15:18:17.073361] [file /var/www/html/sysops/index.php] [mthd ] 
-                 [lnum 498] [rtime 0.100409] [48736]: 
-                 CRNRSTN :: 2.00.0001 works!
-            R :: [2026-05-20 15:18:17.073361] [file /var/www/html/sysops/index.php] [mthd ] 
-                 [lnum 498] [rtime 0.100409] [48736]: 
-                 [Database Integrations Pending] CRNRSTN :: 2.00.0001 works!
-            jony5@localdev:/var/log/apache2$ 
+         */
 
-             */
+        $path_chunk = array();
 
-            $path_chunk = array();
+        switch($path_type){
+            case 'http':
+            case 'https':
+                // 5 :: Saturday, July 20, 2024 @ 2338 hrs.
 
-            switch($path_type){
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Hypertext transfer
+                 * protocol (HTTP) data
+                 * should always receive a
+                 * trialing forward slash
+                 * append before output.
+                 *
+                 *
+                 * 5 :: Sunday, July 21, 2024 @ 0120 hrs.
+                 *
+                 */
+                $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] .
+                               $_SERVER['SERVER_NAME'] . '/';
+                $clean_uri   = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+
+                $clr_ssl_msg = 'Generating the [' .
+                               $path_type .
+                               '] universal resource indicator, [' .
+                               $clean_uri .
+                               '], from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * [2026-05-17 20:00:49.657383]
+                 * [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+                 * [mthd CRNRSTN\crnrstn::initialize_application_path]
+                 * [lnum 21201]
+                 * [rtime 0.421640]
+                 * [45831]:
+                 * Generating the [http] universal
+                 * resource indicator,
+                 * [http://172.16.225.128/],
+                 * from client IP, [172.16.225.153].
+                 *
+                 */
+
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
                 case 'http':
                 case 'https':
-                    // 5 :: Saturday, July 20, 2024 @ 2338 hrs.
 
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Hypertext transfer
-                     * protocol (HTTP) data
-                     * should always receive a
-                     * trialing forward slash
-                     * append before output.
-                     *
-                     *
-                     * 5 :: Sunday, July 21, 2024 @ 0120 hrs.
-                     *
-                     */
-                    $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] . 
-                                   $_SERVER['SERVER_NAME'] . '/';
-                    $clean_uri   = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+                    'http://192.168.1.71/'
+                    or
+                    'https://192.168.1.71/'
 
-                    $clr_ssl_msg = 'Generating the [' . 
-                                   $path_type . 
-                                   '] universal resource indicator, [' . 
-                                   $clean_uri . 
-                                   '], from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
+                */
+                self::$R_data['R_paths']['HTTP']['uri']  = $clean_uri;
+                self::$R_data['R_paths']['HTTPS']['uri'] = $clean_uri;
 
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * [2026-05-17 20:00:49.657383] 
-                     * [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                     * [mthd CRNRSTN\crnrstn::initialize_application_path] 
-                     * [lnum 21201] 
-                     * [rtime 0.421640] 
-                     * [45831]: 
-                     * Generating the [http] universal 
-                     * resource indicator, 
-                     * [http://172.16.225.128/], 
-                     * from client IP, [172.16.225.153].
-                     *
-                     */
+            break;
+            case 'directory':
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * The CRNRSTN :: Lightsaber RoCEv2
+                 * SOAP Services Layer (CLR-SSL)
+                 * returns all server path data
+                 * with a leading system
+                 * (WIN/LINUX) compatible leading
+                 * directory separator.
+                 *
+                 * PHP on the apache server will
+                 * handle all directory paths in
+                 * the same manner. The $_SERVER
+                 * super global can clearly be
+                 * found to also be having a
+                 * system (WIN/LINUX) compatible
+                 * directory separator as a
+                 * leading prefix on the
+                 * return value.
+                 *
+                 * We will use PHP's global
+                 * document path value here.
+                 *
+                 *
+                 * 5 :: Sunday, July 21, 2024 @ 0125 hrs.
+                 *
+                 */
+                $tmp_str_path = $this->return_root($_SERVER['DOCUMENT_ROOT']);
+
+                // Target output = /var/www/html/  5 :: Wednesday, July 24, 2024 @ 1629 hrs.
+
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                case 'directory':
+
+                    '/var/www/html'
+
+                */
+                $clr_ssl_msg = 'Generating server ' .
+                               $_SERVER['SERVER_ADDR'] .
+                               ' [' . $path_type .
+                               '] resource path, [' .
+                               $tmp_str_path .
+                               '], from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * [2026-05-17 20:10:17.368468]
+                 * [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+                 * [mthd CRNRSTN\crnrstn::initialize_application_path]
+                 * [lnum 21299]
+                 * [rtime 0.338566]
+                 * [45833]: Generating server 172.16.225.128
+                 * [directory] resource path, [/var/www/html],
+                 * from client IP, [172.16.225.153].
+                 *
+                 */
+
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                case 'directory':
+
+                    '/var/www/html'
+
+                */
+                self::$R_data['R_paths']['HTTP']['path']  = $tmp_str_path;
+                self::$R_data['R_paths']['HTTPS']['path'] = $tmp_str_path;
+
+            break;
+            case 'application_http':
+            case 'application_https':
+
+                $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] .
+                               $_SERVER['SERVER_NAME'] . '/';
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Evaluate $application_directory for
+                 * any change directory input commands.
+                 *
+                 * Happy birthday to you, J5, my boy!
+                 * 11/11/2005 - 08/16/2021 @ 0345 hrs.
+                 *
+                 *
+                 * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
+                 *
+                 */
+                if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
+                    (self::$R_data['application_directory'] == ''))
+                {
+
+                    $script_filename            = $this->return_root($_SERVER['SCRIPT_FILENAME']);
+                    $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
+                    $tmp_change_directory_depth = \sizeof($tmp_app_directory);
+                    $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
+
+                    for($i = 0; $i < $tmp_change_directory_depth; $i++){
+
+                        $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
+                        $app_dir_chunk = \array_pop($tmp_app_directory);
+
+                        if(($app_dir_chunk != '..') && ($app_dir_chunk != '.'))
+                            $path_chunk[] = $app_dir_chunk;
+
+                    }
+
+                    if(\strlen($path_chunk[0]) > 0)
+                        $tmp_str_uri .= $path_chunk[0];
+
+                    $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+                    $clean_uri = $this->strrtrim(
+                                        $clean_uri,
+                                        '/') . '/';
 
                     /*
                     Sample Deep Link:
                     http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-                    case 'http':
-                    case 'https':
+                    case 'application_http':
+                    case 'application_https':
+
+                        'http://192.168.1.71/sysops/'
+                        or
+                        'https://192.168.1.71/sysops/'
+
+                        The http of CRNRSTN_ROOT.
+                        E.g.:
+                        * require(CRNRSTN_ROOT . '/_R/class/ftp/crnrstn.fire_ftp_conn_manager.inc.php');
+
+                    */
+
+                }
+
+                if(!isset($clean_uri)){
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'application_http':
+                    case 'application_https':
+
+                        'http://192.168.1.71/sysops/'
+                        or
+                        'https://192.168.1.71/sysops/'
+
+                        The http of CRNRSTN_ROOT.
+                        E.g.:
+                        * require(CRNRSTN_ROOT . '/_R/class/ftp/crnrstn.fire_ftp_conn_manager.inc.php');
+
+                    */
+
+                    $tmp_str_uri .= self::$R_data['application_directory'] .
+                                    '/' .
+                                    self::$R_data['R_framework_directory'] .
+                                    '/';
+
+                    $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+
+                }
+
+                $clr_ssl_msg = 'Generating the [' .
+                               $path_type .
+                               '] universal resource indicator, [' .
+                               $clean_uri .
+                               '] from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * [2026-05-17 20:15:59.623810]
+                 * [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php]
+                 * [mthd CRNRSTN\crnrstn::initialize_application_path]
+                 * [lnum 21423]
+                 * [rtime 0.231899] [45831]:
+                 * Generating the
+                 * [application_http]
+                 * universal resource
+                 * indicator, [http://172.16.225.128/]
+                 * from client IP, [172.16.225.153].
+                 *
+                 */
+                self::$R_data['R_paths']['HTTP']['APPLICATION']['uri']  = $clean_uri;
+                self::$R_data['R_paths']['HTTPS']['APPLICATION']['uri'] = $clean_uri;
+
+            break;
+            case 'application_directory':
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * The CRNRSTN :: Lightsaber RoCEv2
+                 * SOAP Services Layer (CLR-SSL)
+                 * returns all server path data
+                 * with a leading system
+                 * (WIN/LINUX) compatible leading
+                 * directory separator.
+                 *
+                 * PHP on the apache server will
+                 * handle all directory paths in
+                 * the same manner. The $_SERVER
+                 * super global can clearly be
+                 * found to also be having a
+                 * system (WIN/LINUX) compatible
+                 * directory separator as a
+                 * leading prefix on the
+                 * return value.
+                 *
+                 * We will use PHP's global
+                 * document path value here.
+                 *
+                 *
+                 * 5
+                 *
+                 */
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Evaluate $application_directory for
+                 * any change directory input commands.
+                 *
+                 * Happy birthday to you, J5, my boy!
+                 * 11/11/2005 - 08/16/2021 @ 0345 hrs.
+                 *
+                 *
+                 * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
+                 *
+                 */
+                if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
+                    (self::$R_data['application_directory'] == ''))
+                {
+
+                    $tmp_data                   = explode('../', self::$R_data['application_directory']);
+                    $tmp_change_directory_depth = sizeof($tmp_data);
+                    $tmp_script_filepath_ARRAY  = explode(\DIRECTORY_SEPARATOR, $_SERVER['SCRIPT_FILENAME']);
+
+                    for($i = 0; $i < $tmp_change_directory_depth; $i++)
+                        $tmp_data =array_pop($tmp_script_filepath_ARRAY);
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'application_directory':
+
+                        '/var/www/html/sysops'
+
+                    */
+                    $tmp_str_path = implode(\DIRECTORY_SEPARATOR, $tmp_script_filepath_ARRAY);
+
+                }
+
+                if(!isset($tmp_str_path)){
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'application_directory':
+
+                        '/var/www/html/'
+
+                    */
+                    $tmp_str_path = $_SERVER['DOCUMENT_ROOT'];
+
+                    if((self::$R_data['application_directory'] != '') &&
+                        (\strpos(self::$R_data['application_directory'], '../') == false))
+                        $tmp_str_path .= \DIRECTORY_SEPARATOR .
+                                         self::$R_data['application_directory'];
+
+                }
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Target output = /var/www/html/lightbox_helper/_lightbox_helper/
+                 *
+                 * 5 :: Wednesday, July 24, 2024 @ 1629 hrs.
+                 *
+                 */
+                $clr_ssl_msg = 'Generating server ' .
+                               $_SERVER['SERVER_ADDR'] .
+                               ' [' . $path_type .
+                               '] resource path, [' .
+                               $tmp_str_path .
+                               '], from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                self::$R_data['R_paths']['HTTP']['APPLICATION']['path']  = $tmp_str_path;
+                self::$R_data['R_paths']['HTTPS']['APPLICATION']['path'] = $tmp_str_path;
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * For improved interoperability and
+                 * seamless backwards compatibility
+                 * with all the old CRNRSTN :: code
+                 * registered in the CLR-SSL
+                 * Resource Registry.
+                 *
+                 * E.g.:
+                 * require(CRNRSTN_ROOT .
+                 *      '/_R' .
+                 *      '/class' .
+                 *      '/ftp' .
+                 *      '/crnrstn.fire_ftp_conn_manager.inc.php');
+                 *
+                 *
+                 * 5 :: Tuesday, May 26, 2026 @ 1730 hrs.
+                 * takes righteous bong rip.
+                 *
+                 */
+                //@define('CRNRSTN_ROOT', $tmp_str_path);
+                self::$R_data['CRNRSTN_ROOT'] = $tmp_str_path;
+
+            break;
+            case 'framework_http':
+            case 'framework_https':
+
+                $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] .
+                               $_SERVER['SERVER_NAME'] . '/';
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Evaluate $application_directory for
+                 * any change directory input commands.
+                 *
+                 * Happy birthday to you, J5, my boy!
+                 * 11/11/2005 - 08/16/2021 @ 0345 hrs.
+                 *
+                 *
+                 * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
+                 *
+                 */
+                if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
+                    (self::$R_data['application_directory'] == ''))
+                {
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'framework_http':
+                    case 'framework_https':
+
+                        'http://192.168.1.71/sysops/_R/'
+                        or
+                        'https://192.168.1.71/sysops/_R/'
+
+                    */
+
+                    $script_filename            = \str_replace(
+                                                  self::$R_data['operating_system']['R_path_patterns'][0],
+                                                  self::$R_data['operating_system']['R_path_replacements'][0],
+                                                  $_SERVER['SCRIPT_FILENAME']);
+                    $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
+                    $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
+                    $tmp_change_directory_depth = \sizeof($tmp_app_directory);
+
+                    for($i = 0; $i < $tmp_change_directory_depth; $i++){
+
+                        $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
+                        $app_dir_chunk = \array_pop($tmp_app_directory);
+
+                        if(($app_dir_chunk != '..') && ($app_dir_chunk != '.'))
+                            $path_chunk[] = $app_dir_chunk;
+
+                    }
+
+                    if(\strlen($path_chunk[0]) > 0)
+                        $root = \implode(self::$R_data['operating_system']['os_path_dir_separator_char'], $tmp_script_filepath_ARRAY) .
+                                self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                $path_chunk[0] .
+                                self::$R_data['R_framework_directory'];
+                    else
+                        $root = \implode(self::$R_data['operating_system']['os_path_dir_separator_char'], $tmp_script_filepath_ARRAY) .
+                                self::$R_data['operating_system']['os_path_dir_separator_char'] .
+                                self::$R_data['R_framework_directory'];
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Standardize the use of
+                     * directory separator based
+                     * on path replacement
+                     * patterns specific to the
+                     * server operating system.
+                     *
+                     *
+                     * 5
+                     *
+                     */
+                    $clean_uri = \str_replace(
+                                self::$R_data['operating_system']['R_path_patterns'][0],
+                                self::$R_data['operating_system']['R_path_replacements'][0],
+                                $root);
+
+                }
+
+                if(!isset($clean_uri)){
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'framework_http':
+                    case 'framework_https':
+
+                        'http://192.168.1.71/_R/'
+                        or
+                        'https://192.168.1.71/_R/'
+
+                    */
+                    $tmp_str_uri .= self::$R_data['application_directory'] . '/' .
+                                    self::$R_data['R_framework_directory'] . '/';
+
+                }
+
+                $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+
+                $clr_ssl_msg = 'Generating the [' .
+                               $path_type .
+                               '] universal resource indicator, [' .
+                               $clean_uri .
+                               '] from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                self::$R_data['R_paths']['HTTP']['FRAMEWORK']['uri']  = $clean_uri;
+                self::$R_data['R_paths']['HTTPS']['FRAMEWORK']['uri'] = $clean_uri;
+
+            break;
+            case 'R_framework_directory':
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * The CRNRSTN :: Lightsaber RoCEv2
+                 * SOAP Services Layer (CLR-SSL)
+                 * returns all server path data
+                 * with a leading system
+                 * (WIN/LINUX) compatible leading
+                 * directory separator.
+                 *
+                 * PHP on the apache server will
+                 * handle all directory paths in
+                 * the same manner. The $_SERVER
+                 * super global can clearly be
+                 * found to also be having a
+                 * system (WIN/LINUX) compatible
+                 * directory separator as a
+                 * leading prefix on the
+                 * return value.
+                 *
+                 * We will use PHP's global
+                 * document path value here.
+                 *
+                 *
+                 * 5
+                 *
+                 */
+
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                case 'R_framework_directory':
+
+                    '/var/www/html/_R'
+
+                */
+
+                $tmp_str_path = $this->get_crnrstn('R_framework_path');
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Target output = /var/www/html/lightbox_helper/_lightbox_helper/
+                 *
+                 * 5 :: Wednesday, July 24, 2024 @ 1629 hrs.
+                 *
+                 */
+                $clr_ssl_msg = 'Generating server ' .
+                               $_SERVER['SERVER_ADDR'] .
+                               ' [' . $path_type .
+                               '] resource path, [' .
+                               $tmp_str_path .
+                               '], from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                self::$R_data['R_paths']['HTTP']['FRAMEWORK']['path']  = $tmp_str_path;
+                self::$R_data['R_paths']['HTTPS']['FRAMEWORK']['path'] = $tmp_str_path;
+
+            break;
+            case 'running_http':
+            case 'running_https':
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Generate the
+                 * running script
+                 * http URL.
+                 *
+                 *
+                 * 5 :: Wednesday, July 24, 2024 @ 1426 hrs.
+                 *
+                 */
+                $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] .
+                               $_SERVER['HTTP_HOST'] .
+                               $_SERVER['REQUEST_URI'] . '/';
+
+                $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+
+                $clr_ssl_msg = 'Generating the [' .
+                               $path_type .
+                               '] universal resource indicator, [' .
+                               $clean_uri .
+                               '] from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                /*
+                [Wed Jul 24 16:20:26.007119 2024] [:error] [pid 73020]
+                [client 172.16.225.1:61256]
+                [rtime 0.0390369 secs]
+                [mthd lightbox_helper_by_eVifweb::initialize_application_path]
+                [lnum 29175]
+                Generating the universal resource indicator, running_http.
+                data [http://172.16.225.128/lightbox_helper/?key_gen_count=1&run=system_filter].
+                client IP[172.16.225.1].,
+                referer: http://172.16.225.128/lightbox_helper/?key_gen_count=1&run=all
+
+                */
+
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                case 'running_http':
+                case 'running_https':
+
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    or
+                    https://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+
+                */
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Initialize the
+                 * running script
+                 * http URL.
+                 *
+                 *
+                 * 5 :: Wednesday, July 24, 2024 @ 1428 hrs.
+                 *
+                 */
+                self::$R_data['R_paths']['HTTP']['RUNNING']['uri']  = $clean_uri;
+                self::$R_data['R_paths']['HTTPS']['RUNNING']['uri'] = $clean_uri;
+
+            break;
+            case 'running_directory':
+
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                case 'running_directory':
+
+                    /var/www/html/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    or
+                    /var/www/html/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+
+                */
+                $clr_ssl_msg = 'Generating server ' .
+                               $_SERVER['SERVER_ADDR'] .
+                               ' [' . $path_type .
+                               '] resource path, [' .
+                               __DIR__ .
+                               '], from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * SOURCE :: https://www.php.net/manual/en/function.dirname.php
+                 * COMMENT :: https://www.php.net/manual/en/function.dirname.php#115982
+                 * AUTHOR :: y dot a dot dejong at singular dot of dot alumni dot utwente dot nl
+                 *
+                 * As of PHP 5.3.0, you can use __DIR__ as
+                 * a replacement for dirname(__FILE__).
+                 *
+                 *
+                 * 5 :: Sunday, May 17, 2026 @ 1707 hrs.
+                 *
+                 */
+                self::$R_data['R_paths']['HTTP']['RUNNING']['path']  = __DIR__;
+                self::$R_data['R_paths']['HTTPS']['RUNNING']['path'] = __DIR__;
+
+            break;
+            case 'clr_ssl_rasl_http':
+            case 'clr_ssl_rasl_https':
+
+                $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] .
+                               $_SERVER['SERVER_NAME'] . '/';
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Evaluate $application_directory for
+                 * any change directory input commands.
+                 *
+                 * Happy birthday to you, J5, my boy!
+                 * 11/11/2005 - 08/16/2021 @ 0345 hrs.
+                 *
+                 *
+                 * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
+                 *
+                 */
+                if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
+                    (self::$R_data['application_directory'] == ''))
+                {
+
+                    $script_filename            = $this->return_root($_SERVER['SCRIPT_FILENAME']);
+                    $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
+                    $tmp_change_directory_depth = \sizeof($tmp_app_directory);
+                    $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
+
+                    for($i = 0; $i < $tmp_change_directory_depth; $i++){
+
+                        $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
+                        $app_dir_chunk = \array_pop($tmp_app_directory);
+
+                        if(($app_dir_chunk != '..') && ($app_dir_chunk != '.'))
+                            $path_chunk[] = $app_dir_chunk;
+
+                    }
+
+                    if(\strlen($path_chunk[0]) > 0)
+                        $tmp_str_uri .= $path_chunk[0];
+
+                    $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'application_http':
+                    case 'application_https':
+
+                        'http://192.168.1.71/sysops/'
+                        or
+                        'https://192.168.1.71/sysops/'
+
+                        The http of CRNRSTN_ROOT.
+                        E.g.:
+                        * require(CRNRSTN_ROOT . '/_R/class/ftp/crnrstn.fire_ftp_conn_manager.inc.php');
+
+                    */
+
+                }
+
+                if(!isset($clean_uri)){
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'application_http':
+                    case 'application_https':
 
                         'http://192.168.1.71/'
                         or
                         'https://192.168.1.71/'
 
                     */
-                    self::$R_data['R_paths']['HTTP']['uri']  = $clean_uri;
-                    self::$R_data['R_paths']['HTTPS']['uri'] = $clean_uri;
 
-                break;
-                case 'directory':
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * The CRNRSTN :: Lightsaber RoCEv2 
-                     * SOAP Services Layer (CLR-SSL) 
-                     * returns all server path data 
-                     * with a leading system 
-                     * (WIN/LINUX) compatible leading 
-                     * directory separator.
-                     *
-                     * PHP on the apache server will 
-                     * handle all directory paths in 
-                     * the same manner. The $_SERVER 
-                     * super global can clearly be 
-                     * found to also be having a 
-                     * system (WIN/LINUX) compatible 
-                     * directory separator as a 
-                     * leading prefix on the 
-                     * return value. 
-                     *
-                     * We will use PHP's global 
-                     * document path value here. 
-                     *
-                     *
-                     * 5 :: Sunday, July 21, 2024 @ 0125 hrs.
-                     *
-                     */
-                    $tmp_str_path = $this->return_root($_SERVER['DOCUMENT_ROOT']);
-
-                    // Target output = /var/www/html/  5 :: Wednesday, July 24, 2024 @ 1629 hrs.
-
-                    /*
-                    Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                    case 'directory':
-
-                        '/var/www/html'
-
-                    */
-                    $clr_ssl_msg = 'Generating server ' . 
-                                   $_SERVER['SERVER_ADDR'] . 
-                                   ' [' . $path_type . 
-                                   '] resource path, [' . 
-                                   $tmp_str_path . 
-                                   '], from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
+                    $root = $_SERVER['DOCUMENT_ROOT'] .
+                            \DIRECTORY_SEPARATOR .
+                            self::$R_data['application_directory'] .
+                            \DIRECTORY_SEPARATOR .
+                            self::$R_data['R_framework_directory'] .
+                            \DIRECTORY_SEPARATOR;
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * [2026-05-17 20:10:17.368468] 
-                     * [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                     * [mthd CRNRSTN\crnrstn::initialize_application_path] 
-                     * [lnum 21299] 
-                     * [rtime 0.338566] 
-                     * [45833]: Generating server 172.16.225.128 
-                     * [directory] resource path, [/var/www/html], 
-                     * from client IP, [172.16.225.153].
-                     * 
-                     */
-
-                    /*
-                    Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                    case 'directory':
-
-                        '/var/www/html'
-
-                    */
-                    self::$R_data['R_paths']['HTTP']['path']  = $tmp_str_path;
-                    self::$R_data['R_paths']['HTTPS']['path'] = $tmp_str_path;
-
-                break;
-                case 'application_http':
-                case 'application_https':
-
-                    $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] . 
-                                   $_SERVER['SERVER_NAME'] . '/';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Evaluate $application_directory for 
-                     * any change directory input commands. 
-                     *
-                     * Happy birthday to you, J5, my boy! 
-                     * 11/11/2005 - 08/16/2021 @ 0345 hrs. 
-                     *
-                     *
-                     * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
-                     *
-                     */
-                    if((\strpos(self::$R_data['application_directory'], '../') !== false) || 
-                        (self::$R_data['application_directory'] == ''))
-                    {
-
-                        $script_filename            = $this->return_root($_SERVER['SCRIPT_FILENAME']);
-                        $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
-                        $tmp_change_directory_depth = \sizeof($tmp_app_directory);
-                        $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
-
-                        for($i = 0; $i < $tmp_change_directory_depth; $i++){
-
-                            $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
-                            $app_dir_chunk = \array_pop($tmp_app_directory);
-
-                            if(($app_dir_chunk != '..') && ($app_dir_chunk != '.')) 
-                                $path_chunk[] = $app_dir_chunk;
-
-                        }
-
-                        if(\strlen($path_chunk[0]) > 0)
-                            $tmp_str_uri .= $path_chunk[0];
-
-                        $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
-                        $clean_uri = $this->strrtrim(
-                                            $clean_uri, 
-                                            '/') . '/';
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'application_http':
-                        case 'application_https':
-
-                            'http://192.168.1.71/sysops/'
-                            or
-                            'https://192.168.1.71/sysops/'
-
-                            The http of CRNRSTN_ROOT.
-                            E.g.:
-                            * require(CRNRSTN_ROOT . '/_R/class/ftp/crnrstn.fire_ftp_conn_manager.inc.php'); 
-
-                        */
-
-                    }
-
-                    if(!isset($clean_uri)){
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'application_http':
-                        case 'application_https':
-
-                            'http://192.168.1.71/sysops/'
-                            or
-                            'https://192.168.1.71/sysops/'
-
-                            The http of CRNRSTN_ROOT.
-                            E.g.:
-                            * require(CRNRSTN_ROOT . '/_R/class/ftp/crnrstn.fire_ftp_conn_manager.inc.php'); 
-
-                        */
-
-                        $tmp_str_uri .= self::$R_data['application_directory'] . 
-                                        '/' . 
-                                        self::$R_data['framework_directory'] . 
-                                        '/';
-
-                        $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
-
-                    }
-
-                    $clr_ssl_msg = 'Generating the [' . 
-                                   $path_type . 
-                                   '] universal resource indicator, [' . 
-                                   $clean_uri . 
-                                   '] from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * [2026-05-17 20:15:59.623810] 
-                     * [file /var/www/html/sysops/_crnrstn/class/crnrstn/crnrstn.class.php] 
-                     * [mthd CRNRSTN\crnrstn::initialize_application_path] 
-                     * [lnum 21423] 
-                     * [rtime 0.231899] [45831]: 
-                     * Generating the 
-                     * [application_http] 
-                     * universal resource 
-                     * indicator, [http://172.16.225.128/] 
-                     * from client IP, [172.16.225.153].
-                     *
-                     */
-                    self::$R_data['R_paths']['HTTP']['APPLICATION']['uri']  = $clean_uri;
-                    self::$R_data['R_paths']['HTTPS']['APPLICATION']['uri'] = $clean_uri;
-
-                break;
-                case 'application_directory':
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * The CRNRSTN :: Lightsaber RoCEv2 
-                     * SOAP Services Layer (CLR-SSL) 
-                     * returns all server path data 
-                     * with a leading system 
-                     * (WIN/LINUX) compatible leading 
-                     * directory separator.
-                     *
-                     * PHP on the apache server will 
-                     * handle all directory paths in 
-                     * the same manner. The $_SERVER 
-                     * super global can clearly be 
-                     * found to also be having a 
-                     * system (WIN/LINUX) compatible 
-                     * directory separator as a 
-                     * leading prefix on the 
-                     * return value. 
-                     *
-                     * We will use PHP's global 
-                     * document path value here. 
+                     * Standardize the use of
+                     * directory separator based
+                     * on path replacement
+                     * patterns specific to the
+                     * server operating system.
                      *
                      *
                      * 5
                      *
                      */
+                    $root = \str_replace(
+                                 self::$R_data['operating_system']['R_path_patterns'][0],
+                                 self::$R_data['operating_system']['R_path_replacements'][0],
+                                 $root);
+
+                    $clean_uri = $this->str_sanitize($root, 'url_forward_slashes');
+
+                }
+
+                $clean_uri .= '?R_rasl=1';
+
+                $clr_ssl_msg = 'Generating the ' .
+                               $path_type .
+                               ' universal resource indicator, ' .
+                               $clean_uri .
+                               ' from client IP, ' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Evaluate $application_directory for 
-                     * any change directory input commands. 
-                     *
-                     * Happy birthday to you, J5, my boy! 
-                     * 11/11/2005 - 08/16/2021 @ 0345 hrs. 
-                     *
-                     *
-                     * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
-                     *
-                     */
-                    if((\strpos(self::$R_data['application_directory'], '../') !== false) || 
-                        (self::$R_data['application_directory'] == ''))
-                    {
-
-                        $tmp_data                   = explode('../', self::$R_data['application_directory']);
-                        $tmp_change_directory_depth = sizeof($tmp_data);
-                        $tmp_script_filepath_ARRAY  = explode(\DIRECTORY_SEPARATOR, $_SERVER['SCRIPT_FILENAME']);
-
-                        for($i = 0; $i < $tmp_change_directory_depth; $i++)
-                            $tmp_data =array_pop($tmp_script_filepath_ARRAY);
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'application_directory':
-
-                            '/var/www/html/sysops'
-
-                        */
-                        $tmp_str_path = implode(\DIRECTORY_SEPARATOR, $tmp_script_filepath_ARRAY);
-
-                    }
-
-                    if(!isset($tmp_str_path)){
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'application_directory':
-
-                            '/var/www/html/'
-
-                        */
-                        $tmp_str_path = $_SERVER['DOCUMENT_ROOT'];
-
-                        if((self::$R_data['application_directory'] != '') && 
-                            (\strpos(self::$R_data['application_directory'], '../') == false))
-                            $tmp_str_path .= \DIRECTORY_SEPARATOR . 
-                                             self::$R_data['application_directory'];
-
-                    }
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Target output = /var/www/html/lightbox_helper/_lightbox_helper/
-                     *
-                     * 5 :: Wednesday, July 24, 2024 @ 1629 hrs.
-                     *
-                     */
-                    $clr_ssl_msg = 'Generating server ' . 
-                                   $_SERVER['SERVER_ADDR'] . 
-                                   ' [' . $path_type . 
-                                   '] resource path, [' . 
-                                   $tmp_str_path . 
-                                   '], from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    self::$R_data['R_paths']['HTTP']['APPLICATION']['path']  = $tmp_str_path;
-                    self::$R_data['R_paths']['HTTPS']['APPLICATION']['path'] = $tmp_str_path;
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * For improved interoperability and 
-                     * seamless backwards compatibility 
-                     * with all the old CRNRSTN :: code 
-                     * registered in the CLR-SSL 
-                     * Resource Registry. 
-                     *
-                     * E.g.:
-                     * require(CRNRSTN_ROOT . 
-                     *      '/_R' . 
-                     *      '/class' . 
-                     *      '/ftp' . 
-                     *      '/crnrstn.fire_ftp_conn_manager.inc.php'); 
-                     *
-                     *
-                     * 5 :: Tuesday, May 26, 2026 @ 1730 hrs.
-                     * takes righteous bong rip.
-                     *
-                     */
-                    //@define('CRNRSTN_ROOT', $tmp_str_path);
-                    self::$R_data['CRNRSTN_ROOT'] = $tmp_str_path;
-
-                break;
-                case 'framework_http':
-                case 'framework_https':
-
-                    $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] . 
-                                   $_SERVER['SERVER_NAME'] . '/';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Evaluate $application_directory for 
-                     * any change directory input commands. 
-                     *
-                     * Happy birthday to you, J5, my boy! 
-                     * 11/11/2005 - 08/16/2021 @ 0345 hrs. 
-                     *
-                     *
-                     * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
-                     *
-                     */
-                    if((\strpos(self::$R_data['application_directory'], '../') !== false) || 
-                        (self::$R_data['application_directory'] == ''))
-                    {
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'framework_http':
-                        case 'framework_https':
-
-                            'http://192.168.1.71/sysops/_R/'
-                            or
-                            'https://192.168.1.71/sysops/_R/'
-
-                        */
-
-                        $script_filename            = \str_replace(
-                                                      self::$R_data['operating_system']['R_path_patterns'][0], 
-                                                      self::$R_data['operating_system']['R_path_replacements'][0], 
-                                                      $_SERVER['SCRIPT_FILENAME']);
-                        $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
-                        $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
-                        $tmp_change_directory_depth = \sizeof($tmp_app_directory);
-
-                        for($i = 0; $i < $tmp_change_directory_depth; $i++){
-
-                            $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
-                            $app_dir_chunk = \array_pop($tmp_app_directory);
-
-                            if(($app_dir_chunk != '..') && ($app_dir_chunk != '.')) 
-                                $path_chunk[] = $app_dir_chunk;
-
-                        }
-
-                        if(\strlen($path_chunk[0]) > 0)
-                            $root = \implode(self::$R_data['operating_system']['os_path_dir_separator_char'], $tmp_script_filepath_ARRAY) . 
-                                    self::$R_data['operating_system']['os_path_dir_separator_char'] . 
-                                    $path_chunk[0] . 
-                                    self::$R_data['framework_directory'];
-                        else
-                            $root = \implode(self::$R_data['operating_system']['os_path_dir_separator_char'], $tmp_script_filepath_ARRAY) . 
-                                    self::$R_data['operating_system']['os_path_dir_separator_char'] . 
-                                    self::$R_data['framework_directory'];
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Standardize the use of
-                         * directory separator based
-                         * on path replacement
-                         * patterns specific to the
-                         * server operating system.
-                         *
-                         *
-                         * 5
-                         *
-                         */
-                        $clean_uri = \str_replace(
-                                    self::$R_data['operating_system']['R_path_patterns'][0], 
-                                    self::$R_data['operating_system']['R_path_replacements'][0], 
-                                    $root);
-
-                    }
-
-                    if(!isset($clean_uri)){
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'framework_http':
-                        case 'framework_https':
-
-                            'http://192.168.1.71/_R/'
-                            or
-                            'https://192.168.1.71/_R/'
-
-                        */
-                        $tmp_str_uri .= self::$R_data['application_directory'] . '/' . 
-                                        self::$R_data['framework_directory'] . '/';
-
-                    }
-
-                    $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
-
-                    $clr_ssl_msg = 'Generating the [' . 
-                                   $path_type . 
-                                   '] universal resource indicator, [' . 
-                                   $clean_uri . 
-                                   '] from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    self::$R_data['R_paths']['HTTP']['FRAMEWORK']['uri']  = $clean_uri;
-                    self::$R_data['R_paths']['HTTPS']['FRAMEWORK']['uri'] = $clean_uri;
-
-                break;
-                case 'framework_directory':
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * The CRNRSTN :: Lightsaber RoCEv2 
-                     * SOAP Services Layer (CLR-SSL) 
-                     * returns all server path data 
-                     * with a leading system 
-                     * (WIN/LINUX) compatible leading 
-                     * directory separator.
-                     *
-                     * PHP on the apache server will
-                     * handle all directory paths in 
-                     * the same manner. The $_SERVER 
-                     * super global can clearly be 
-                     * found to also be having a 
-                     * system (WIN/LINUX) compatible 
-                     * directory separator as a 
-                     * leading prefix on the 
-                     * return value. 
-                     *
-                     * We will use PHP's global 
-                     * document path value here. 
-                     *
-                     *
-                     * 5
-                     *
-                     */
-
-                    /*
-                    Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                    case 'framework_directory':
-
-                        '/var/www/html/_R'
-
-                    */
-
-                    $tmp_str_path = $this->get_crnrstn('framework_path_root');
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Target output = /var/www/html/lightbox_helper/_lightbox_helper/
-                     *
-                     * 5 :: Wednesday, July 24, 2024 @ 1629 hrs.
-                     *
-                     */
-                    $clr_ssl_msg = 'Generating server ' . 
-                                   $_SERVER['SERVER_ADDR'] . 
-                                   ' [' . $path_type . 
-                                   '] resource path, [' . 
-                                   $tmp_str_path . 
-                                   '], from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    self::$R_data['R_paths']['HTTP']['FRAMEWORK']['path']  = $tmp_str_path;
-                    self::$R_data['R_paths']['HTTPS']['FRAMEWORK']['path'] = $tmp_str_path;
-
-                break;
-                case 'running_http':
-                case 'running_https':
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Generate the
-                     * running script
-                     * http URL.
-                     *
-                     *
-                     * 5 :: Wednesday, July 24, 2024 @ 1426 hrs.
-                     *
-                     */
-                    $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] . 
-                                   $_SERVER['HTTP_HOST'] . 
-                                   $_SERVER['REQUEST_URI'] . '/';
-
-                    $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
-
-                    $clr_ssl_msg = 'Generating the [' . 
-                                   $path_type . 
-                                   '] universal resource indicator, [' . 
-                                   $clean_uri . 
-                                   '] from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /*
-                    [Wed Jul 24 16:20:26.007119 2024] [:error] [pid 73020] 
-                    [client 172.16.225.1:61256]
-                    [rtime 0.0390369 secs]
-                    [mthd lightbox_helper_by_eVifweb::initialize_application_path]
-                    [lnum 29175]
-                    Generating the universal resource indicator, running_http.
-                    data [http://172.16.225.128/lightbox_helper/?key_gen_count=1&run=system_filter].
-                    client IP[172.16.225.1].,
-                    referer: http://172.16.225.128/lightbox_helper/?key_gen_count=1&run=all
-
-                    */
-
-                    /*
-                    Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                    case 'running_http':
-                    case 'running_https':
-
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
-                        or 
-                        https://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
-
-                    */
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize the
-                     * running script
-                     * http URL.
-                     *
-                     *
-                     * 5 :: Wednesday, July 24, 2024 @ 1428 hrs.
-                     *
-                     */
-                    self::$R_data['R_paths']['HTTP']['RUNNING']['uri']  = $clean_uri;
-                    self::$R_data['R_paths']['HTTPS']['RUNNING']['uri'] = $clean_uri;
-
-                break;
-                case 'running_directory':
-
-                    /*
-                    Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                    case 'running_directory':
-
-                        /var/www/html/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
-                        or
-                        /var/www/html/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
-
-                    */
-                    $clr_ssl_msg = 'Generating server ' . 
-                                   $_SERVER['SERVER_ADDR'] . 
-                                   ' [' . $path_type . 
-                                   '] resource path, [' . 
-                                   __DIR__ . 
-                                   '], from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOURCE :: https://www.php.net/manual/en/function.dirname.php
-                     * COMMENT :: https://www.php.net/manual/en/function.dirname.php#115982
-                     * AUTHOR :: y dot a dot dejong at singular dot of dot alumni dot utwente dot nl
-                     *
-                     * As of PHP 5.3.0, you can use __DIR__ as 
-                     * a replacement for dirname(__FILE__).
-                     *
-                     *
-                     * 5 :: Sunday, May 17, 2026 @ 1707 hrs.
-                     *
-                     */
-                    self::$R_data['R_paths']['HTTP']['RUNNING']['path']  = __DIR__;
-                    self::$R_data['R_paths']['HTTPS']['RUNNING']['path'] = __DIR__;
-
-                break;
                 case 'clr_ssl_rasl_http':
                 case 'clr_ssl_rasl_https':
 
-                    $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] . 
-                                   $_SERVER['SERVER_NAME'] . '/';
+                    'http://192.168.1.71/sysops/?R_rasl=1'
+                    or
+                    'https://192.168.1.71/sysops/?R_rasl=1'
 
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Evaluate $application_directory for 
-                     * any change directory input commands. 
-                     *
-                     * Happy birthday to you, J5, my boy! 
-                     * 11/11/2005 - 08/16/2021 @ 0345 hrs. 
-                     *
-                     *
-                     * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
-                     *
-                     */
-                    if((\strpos(self::$R_data['application_directory'], '../') !== false) || 
-                        (self::$R_data['application_directory'] == ''))
-                    {
+                */
+                self::$R_data['R_paths']['HTTP']['CSS-RASL']['uri']  = $clean_uri;
+                self::$R_data['R_paths']['HTTPS']['CSS-RASL']['uri'] = $clean_uri;
 
-                        $script_filename            = $this->return_root($_SERVER['SCRIPT_FILENAME']);
-                        $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
-                        $tmp_change_directory_depth = \sizeof($tmp_app_directory);
-                        $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
+                // 5 :: Tuesday, June 2, 2026 @ 0836 hrs.
+                self::$R_data['soap_transport_http[url]']          = $clean_uri;
+                self::$R_data['soap_transport_http[curl_options]'] = NULL;
+                self::$R_data['soap_transport_http[use_curl]']     = false;
 
-                        for($i = 0; $i < $tmp_change_directory_depth; $i++){
+            break;
+            case 'clr_ssl_rasl_directory':
 
-                            $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
-                            $app_dir_chunk = \array_pop($tmp_app_directory);
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-                            if(($app_dir_chunk != '..') && ($app_dir_chunk != '.')) 
-                                $path_chunk[] = $app_dir_chunk;
-
-                        }
-
-                        if(\strlen($path_chunk[0]) > 0)
-                            $tmp_str_uri .= $path_chunk[0];
-
-                        $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'application_http':
-                        case 'application_https':
-
-                            'http://192.168.1.71/sysops/'
-                            or
-                            'https://192.168.1.71/sysops/'
-
-                            The http of CRNRSTN_ROOT.
-                            E.g.:
-                            * require(CRNRSTN_ROOT . '/_R/class/ftp/crnrstn.fire_ftp_conn_manager.inc.php'); 
-
-                        */
-
-                    }
-
-                    if(!isset($clean_uri)){
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'application_http':
-                        case 'application_https':
-
-                            'http://192.168.1.71/'
-                            or
-                            'https://192.168.1.71/'
-
-                        */
-
-                        $root = $_SERVER['DOCUMENT_ROOT'] .
-                                \DIRECTORY_SEPARATOR . 
-                                self::$R_data['application_directory'] . 
-                                \DIRECTORY_SEPARATOR . 
-                                self::$R_data['framework_directory'] . 
-                                \DIRECTORY_SEPARATOR;
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Standardize the use of
-                         * directory separator based
-                         * on path replacement
-                         * patterns specific to the
-                         * server operating system.
-                         *
-                         *
-                         * 5
-                         *
-                         */
-                        $root = \str_replace(
-                                     self::$R_data['operating_system']['R_path_patterns'][0], 
-                                     self::$R_data['operating_system']['R_path_replacements'][0], 
-                                     $root);
-
-                        $clean_uri = $this->str_sanitize($root, 'url_forward_slashes');
-
-                    }
-
-                    $clean_uri .= '?R_rasl=1'; 
-
-                    $clr_ssl_msg = 'Generating the ' . 
-                                   $path_type . 
-                                   ' universal resource indicator, ' . 
-                                   $clean_uri . 
-                                   ' from client IP, ' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /*
-                    Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                    case 'clr_ssl_rasl_http':
-                    case 'clr_ssl_rasl_https':
-
-                        'http://192.168.1.71/sysops/?R_rasl=1'
-                        or
-                        'https://192.168.1.71/sysops/?R_rasl=1'
-
-                    */
-                    self::$R_data['R_paths']['HTTP']['CSS-RASL']['uri']  = $clean_uri;
-                    self::$R_data['R_paths']['HTTPS']['CSS-RASL']['uri'] = $clean_uri;
-
-                    // 5 :: Tuesday, June 2, 2026 @ 0836 hrs.
-                    self::$R_data['soap_transport_http[url]']          = $clean_uri;
-                    self::$R_data['soap_transport_http[curl_options]'] = NULL;
-                    self::$R_data['soap_transport_http[use_curl]']     = false;
-
-                break;
                 case 'clr_ssl_rasl_directory':
+
+                    /var/www/html/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    or
+                    /var/www/html/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+
+                */
+                if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
+                    (self::$R_data['application_directory'] == ''))
+                {
+
+                    $tmp_data                   = explode('../', self::$R_data['application_directory']);
+                    $tmp_change_directory_depth = sizeof($tmp_data);
+                    $tmp_script_filepath_ARRAY  = explode(\DIRECTORY_SEPARATOR, $_SERVER['SCRIPT_FILENAME']);
+
+                    for($i = 0; $i < $tmp_change_directory_depth; $i++)
+                        $tmp_data = \array_pop($tmp_script_filepath_ARRAY);
 
                     /*
                     Sample Deep Link:
@@ -27391,102 +27655,129 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     case 'clr_ssl_rasl_directory':
 
-                        /var/www/html/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
-                        or
-                        /var/www/html/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                        '/var/www/html/sysops'
 
                     */
-                    if((\strpos(self::$R_data['application_directory'], '../') !== false) || 
-                        (self::$R_data['application_directory'] == ''))
-                    {
+                    $tmp_str_path = implode(\DIRECTORY_SEPARATOR, $tmp_script_filepath_ARRAY);
 
-                        $tmp_data                   = explode('../', self::$R_data['application_directory']);
-                        $tmp_change_directory_depth = sizeof($tmp_data);
-                        $tmp_script_filepath_ARRAY  = explode(\DIRECTORY_SEPARATOR, $_SERVER['SCRIPT_FILENAME']);
+                }
 
-                        for($i = 0; $i < $tmp_change_directory_depth; $i++)
-                            $tmp_data = \array_pop($tmp_script_filepath_ARRAY);
+                if(!isset($tmp_str_path)){
 
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-                        case 'clr_ssl_rasl_directory':
+                    case 'application_directory':
 
-                            '/var/www/html/sysops'
+                        '/var/www/html/'
 
-                        */
-                        $tmp_str_path = implode(\DIRECTORY_SEPARATOR, $tmp_script_filepath_ARRAY);
+                    */
 
-                    }
+                    if(self::$R_data['application_directory'] != '')
+                        $tmp_str_path = $_SERVER['DOCUMENT_ROOT'] .
+                                        \DIRECTORY_SEPARATOR .
+                                        self::$R_data['application_directory'] .
+                                        \DIRECTORY_SEPARATOR .
+                                        self::$R_data['R_framework_directory'] . '/';
+                    else
+                        $tmp_str_path = $_SERVER['DOCUMENT_ROOT'] .
+                                        \DIRECTORY_SEPARATOR .
+                                        self::$R_data['R_framework_directory'] . '/';
 
-                    if(!isset($tmp_str_path)){
+                }
 
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Target output = /var/www/html/lightbox_helper/_lightbox_helper/
+                 *
+                 * 5 :: Wednesday, July 24, 2024 @ 1629 hrs.
+                 *
+                 */
+                $clr_ssl_msg = 'Generating server ' .
+                               $_SERVER['SERVER_ADDR'] .
+                               ' [' . $path_type .
+                               '] resource path, [' .
+                               $tmp_str_path .
+                               '], from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
 
-                        case 'application_directory':
+                self::$R_data['R_paths']['HTTP']['CSS-RASL']['path']  = $tmp_str_path;
+                self::$R_data['R_paths']['HTTPS']['CSS-RASL']['path'] = $tmp_str_path;
 
-                            '/var/www/html/'
+            break;
+            case 'crnrstn_soap_http':
+            case 'crnrstn_soap_https':
 
-                        */
+                $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] .
+                               $_SERVER['SERVER_NAME'] . '/';
 
-                        if(self::$R_data['application_directory'] != '')
-                            $tmp_str_path = $_SERVER['DOCUMENT_ROOT'] . 
-                                            \DIRECTORY_SEPARATOR . 
-                                            self::$R_data['application_directory'] . 
-                                            \DIRECTORY_SEPARATOR . 
-                                            self::$R_data['framework_directory'] . '/';
-                        else
-                            $tmp_str_path = $_SERVER['DOCUMENT_ROOT'] .
-                                            \DIRECTORY_SEPARATOR . 
-                                            self::$R_data['framework_directory'] . '/';
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-                    }
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Target output = /var/www/html/lightbox_helper/_lightbox_helper/
-                     *
-                     * 5 :: Wednesday, July 24, 2024 @ 1629 hrs.
-                     *
-                     */
-                    $clr_ssl_msg = 'Generating server ' . 
-                                   $_SERVER['SERVER_ADDR'] . 
-                                   ' [' . $path_type . 
-                                   '] resource path, [' . 
-                                   $tmp_str_path . 
-                                   '], from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    self::$R_data['R_paths']['HTTP']['CSS-RASL']['path']  = $tmp_str_path;
-                    self::$R_data['R_paths']['HTTPS']['CSS-RASL']['path'] = $tmp_str_path;
-
-                break;
                 case 'crnrstn_soap_http':
                 case 'crnrstn_soap_https':
 
-                    $tmp_str_uri = self::$R_data['hypertext_transfer_protocol_root'] . 
-                                   $_SERVER['SERVER_NAME'] . '/';
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+
+                */
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Evaluate $application_directory for
+                 * any change directory input commands.
+                 *
+                 * Happy birthday to you, J5, my boy!
+                 * 11/11/2005 - 08/16/2021 @ 0345 hrs.
+                 *
+                 *
+                 * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
+                 *
+                 */
+                if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
+                    (self::$R_data['application_directory'] == ''))
+                {
+
+                    $script_filename            = $this->return_root($_SERVER['SCRIPT_FILENAME']);
+                    $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
+                    $tmp_change_directory_depth = \sizeof($tmp_app_directory);
+                    $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
+
+                    for($i = 0; $i < $tmp_change_directory_depth; $i++){
+
+                        $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
+                        $app_dir_chunk = \array_pop($tmp_app_directory);
+
+                        if(($app_dir_chunk != '..') && ($app_dir_chunk != '.'))
+                            $path_chunk[] = $app_dir_chunk;
+
+                    }
+
+                    if(\strlen($path_chunk[0]) > 0)
+                        $tmp_str_uri .= $path_chunk[0];
+
+                    $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+
+                    $clean_uri .= self::$R_data['R_framework_directory'] .
+                                  '/soa/';
 
                     /*
                     Sample Deep Link:
@@ -27495,179 +27786,106 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     case 'crnrstn_soap_http':
                     case 'crnrstn_soap_https':
 
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                        'http://192.168.1.71/sysops/?R_rasl=1'
+                        or
+                        'https://192.168.1.71/sysops/?R_rasl=1'
 
                     */
 
+                }
+
+                if(!isset($clean_uri)){
+
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+
+                    case 'clr_ssl_rasl_http':
+                    case 'clr_ssl_rasl_https':
+
+                        'http://192.168.1.71/?R_rasl=1'
+                        or
+                        'https://192.168.1.71/?R_rasl=1'
+
+                    */
+
+                    $root = $_SERVER['DOCUMENT_ROOT'] .
+                            '/' .
+                            self::$R_data['application_directory'] .
+                            '/' .
+                            self::$R_data['R_framework_directory'] .
+                            '/' .
+                            'soa/';
+
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Evaluate $application_directory for 
-                     * any change directory input commands. 
+                     * Standardize the use of
+                     * directory separator based
+                     * on path replacement
+                     * patterns specific to the
+                     * server operating system.
                      *
-                     * Happy birthday to you, J5, my boy! 
-                     * 11/11/2005 - 08/16/2021 @ 0345 hrs. 
                      *
-                     *
-                     * 5 :: Tuesday, November 11, 2025 @ 2111 hrs.
+                     * 5
                      *
                      */
-                    if((\strpos(self::$R_data['application_directory'], '../') !== false) || 
-                        (self::$R_data['application_directory'] == ''))
-                    {
+                    $root = \str_replace(
+                                 self::$R_data['operating_system']['R_path_patterns'][0],
+                                 self::$R_data['operating_system']['R_path_replacements'][0],
+                                 $root);
 
-                        $script_filename            = $this->return_root($_SERVER['SCRIPT_FILENAME']);
-                        $tmp_app_directory          = \explode('../', self::$R_data['application_directory']);
-                        $tmp_change_directory_depth = \sizeof($tmp_app_directory);
-                        $tmp_script_filepath_ARRAY  = \explode(self::$R_data['operating_system']['os_path_dir_separator_char'], $script_filename);
+                    $clean_uri = $this->str_sanitize($root, 'url_forward_slashes');
 
-                        for($i = 0; $i < $tmp_change_directory_depth; $i++){
+                }
 
-                            $tmp_data      = \array_pop($tmp_script_filepath_ARRAY);
-                            $app_dir_chunk = \array_pop($tmp_app_directory);
+                $clean_uri .= '?wsdl';
 
-                            if(($app_dir_chunk != '..') && ($app_dir_chunk != '.')) 
-                                $path_chunk[] = $app_dir_chunk;
+                $clr_ssl_msg = 'Generating the ' .
+                               $path_type .
+                               ' universal resource indicator, ' .
+                               $clean_uri .
+                               ' from client IP, ' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
 
-                        }
+                self::$R_data['R_paths']['HTTP']['CRNRSTN_SOAP']['uri']  = $clean_uri;
+                self::$R_data['R_paths']['HTTPS']['CRNRSTN_SOAP']['uri'] = $clean_uri;
 
-                        if(\strlen($path_chunk[0]) > 0)
-                            $tmp_str_uri .= $path_chunk[0];
+                // 5 :: Tuesday, June 2, 2026 @ 0711 hrs.
+                self::$R_data['wsdl[wsdl]']         =
+                self::$R_data['crnrstn_soap_https'] = $clean_uri;
 
-                        $clean_uri = $this->str_sanitize($tmp_str_uri, 'url_forward_slashes');
+            break;
+            case 'crnrstn_soap_directory':
 
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
+                    (self::$R_data['application_directory'] == ''))
+                {
 
-                        case 'crnrstn_soap_http':
-                        case 'crnrstn_soap_https':
+                    $tmp_data                   = explode('../', self::$R_data['application_directory']);
+                    $tmp_change_directory_depth = sizeof($tmp_data);
+                    $tmp_script_filepath_ARRAY  = explode(\DIRECTORY_SEPARATOR, $_SERVER['SCRIPT_FILENAME']);
 
-                            'http://192.168.1.71/sysops/?R_rasl=1'
-                            or
-                            'https://192.168.1.71/sysops/?R_rasl=1'
+                    for($i = 0; $i < $tmp_change_directory_depth; $i++){
 
-                        */
-
-                    }
-
-                    if(!isset($clean_uri)){
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'clr_ssl_rasl_http':
-                        case 'clr_ssl_rasl_https':
-
-                            'http://192.168.1.71/?R_rasl=1'
-                            or
-                            'https://192.168.1.71/?R_rasl=1'
-
-                        */
-
-                        $root = $_SERVER['DOCUMENT_ROOT'] .
-                                '/' . 
-                                self::$R_data['application_directory'] . 
-                                '/' . 
-                                self::$R_data['framework_directory'] . 
-                                '/' . 
-                                'soa/';
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Standardize the use of
-                         * directory separator based
-                         * on path replacement
-                         * patterns specific to the
-                         * server operating system.
-                         *
-                         *
-                         * 5
-                         *
-                         */
-                        $root = \str_replace(
-                                     self::$R_data['operating_system']['R_path_patterns'][0], 
-                                     self::$R_data['operating_system']['R_path_replacements'][0], 
-                                     $root);
-
-                        $clean_uri = $this->str_sanitize($root, 'url_forward_slashes');
-
-                    }
-
-                    $clean_uri .= '?wsdl'; 
-
-                    $clr_ssl_msg = 'Generating the ' . 
-                                   $path_type . 
-                                   ' universal resource indicator, ' . 
-                                   $clean_uri . 
-                                   ' from client IP, ' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    self::$R_data['R_paths']['HTTP']['CRNRSTN_SOAP']['uri']  = $clean_uri;
-                    self::$R_data['R_paths']['HTTPS']['CRNRSTN_SOAP']['uri'] = $clean_uri;
-
-                    // 5 :: Tuesday, June 2, 2026 @ 0711 hrs.
-                    self::$R_data['crnrstn_soap_https'] = $clean_uri;
-
-                break;
-                case 'crnrstn_soap_directory':
-
-                    if((\strpos(self::$R_data['application_directory'], '../') !== false) || 
-                        (self::$R_data['application_directory'] == ''))
-                    {
-
-                        $tmp_data                   = explode('../', self::$R_data['application_directory']);
-                        $tmp_change_directory_depth = sizeof($tmp_data);
-                        $tmp_script_filepath_ARRAY  = explode(\DIRECTORY_SEPARATOR, $_SERVER['SCRIPT_FILENAME']);
-
-                        for($i = 0; $i < $tmp_change_directory_depth; $i++){
-
-                            $tmp_data = array_pop($tmp_script_filepath_ARRAY);
-
-                        }
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'clr_ssl_rasl_directory':
-
-                            '/var/www/html/sysops'
-
-                        */
-                        $tmp_str_path = implode(\DIRECTORY_SEPARATOR, $tmp_script_filepath_ARRAY);
-
-                    }
-
-                    if(!isset($tmp_str_path)){
-
-                        /*
-                        Sample Deep Link:
-                        http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
-
-                        case 'application_directory':
-
-                            '/var/www/html/'
-
-                        */
-                        $tmp_str_path = $_SERVER['DOCUMENT_ROOT'];
+                        $tmp_data = array_pop($tmp_script_filepath_ARRAY);
 
                     }
 
@@ -27675,169 +27893,165 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     Sample Deep Link:
                     http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-                    case 'crnrstn_soap_directory':
+                    case 'clr_ssl_rasl_directory':
 
-                        /var/www/html
-                        or
-                        /var/www/html/sysops
+                        '/var/www/html/sysops'
 
                     */
-                    $clr_ssl_msg = 'Generating server ' . 
-                                   $_SERVER['SERVER_ADDR'] . 
-                                   ' [' . $path_type . 
-                                   '] resource path, [' . 
-                                   $tmp_str_path . 
-                                   '], from client IP, [' . 
-                                   $this->return_ip() . 
-                                   '].';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
+                    $tmp_str_path = implode(\DIRECTORY_SEPARATOR, $tmp_script_filepath_ARRAY);
 
-                    self::$R_data['R_paths']['HTTP']['CRNRSTN_SOAP']['path']  = $tmp_str_path;
-                    self::$R_data['R_paths']['HTTPS']['CRNRSTN_SOAP']['path'] = $tmp_str_path;
+                }
 
-                break;
-                default:
-                    // 5 :: Saturday, July 20, 2024 @ 2340 hrs.
+                if(!isset($tmp_str_path)){
 
-                    return self::$R_data['CRNRSTN_ROOT'];
+                    /*
+                    Sample Deep Link:
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-                break;
+                    case 'application_directory':
 
-            }
+                        '/var/www/html/'
 
-            /*
-            5 ::
+                    */
+                    $tmp_str_path = $_SERVER['DOCUMENT_ROOT'];
 
-            [Thu Jul 18 04:43:38.855344 2024] [:error] [pid 10714] 
-            [client 172.16.225.1:64935] [lnum 1182]
-            [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            $registry_name[Array\n(\n
+                }
 
-            [_crnrstn_native_resource_registry] => 1\n)\n].
+                /*
+                Sample Deep Link:
+                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
-            $file_path[/var/www/html/lightbox_helper/_lightbox_helper/
-            _config/_config.resource_registry/
-            crnrstn.native_resource_registry.function.php].
+                case 'crnrstn_soap_directory':
 
-            $resource_type[FUNCTION_DEFINITION].
-            $load_method[require_once].
+                    /var/www/html
+                    or
+                    /var/www/html/sysops
 
-            [Thu Jul 18 04:43:38.857857 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.237401 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1252]
+                */
+                $clr_ssl_msg = 'Generating server ' .
+                               $_SERVER['SERVER_ADDR'] .
+                               ' [' . $path_type .
+                               '] resource path, [' .
+                               $tmp_str_path .
+                               '], from client IP, [' .
+                               $this->return_ip() .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
 
-            Finding location...
+                self::$R_data['R_paths']['HTTP']['CRNRSTN_SOAP']['path']  = $tmp_str_path;
+                self::$R_data['R_paths']['HTTPS']['CRNRSTN_SOAP']['path'] = $tmp_str_path;
 
-            [Thu Jul 18 04:43:38.857961 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.239906 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1253]
+            break;
+            default:
+                // 5 :: Saturday, July 20, 2024 @ 2340 hrs.
 
-            Acquired CRNRSTN_ROOT[/var/www/html/lightbox_helper].
+                return self::$R_data['CRNRSTN_ROOT'];
 
-            [Thu Jul 18 04:43:38.858076 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.239992 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1254]
-
-            Acquired PHP_SELF[/lightbox_helper/index.php].
-
-            [Thu Jul 18 04:43:38.858265 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.240115 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1257]
-
-            Acquired QUERY_STRING[crnrstn_10110010=true].
-
-            [Thu Jul 18 04:43:38.858413 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.240324 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1258]
-
-            Acquired DOCUMENT_ROOT[/var/www/html].
-
-            [Thu Jul 18 04:43:38.858563 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.240522 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1259]
-
-            Acquired SCRIPT_FILENAME[/var/www/html/lightbox_helper/index.php].
-
-            [Thu Jul 18 04:43:38.858622 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.240588 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1260]
-
-            Acquired REQUEST_TIME_FLOAT[1721292218.618].
-
-            [Thu Jul 18 04:43:38.858678 2024] [:error] [pid 10714]
-            [client 172.16.225.1:64935]
-            [rtime 0.24064 secs]
-            [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
-            [lnum 1261]
-
-            Acquired REQUEST_TIME[1721292218].
-
-            */
-
-            return NULL;
-
-        }catch(\Exception $e){
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Exception handling performed 
-                 * by the Logging Services Layer 
-                 * of the CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services 
-                 * Layer (CLR-SSL). 
-                 *
-                 * Allow the CLR-SSL to handle 
-                 * this exception per the 
-                 * configured logging profile of 
-                 * the running application on 
-                 * this server. 
-                 *
-                 *
-                 * 5
-                 *
-                 * Sunday, June 30, 2024 @ 1547 hrs.
-                 * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
-                 *
-                 */
-                $this->catch_exception(
-                       $e, 
-                       \LOG_ERR, 
-                       __METHOD__, 
-                       __NAMESPACE__);
-
-            return '';
+            break;
 
         }
+
+        /*
+        5 ::
+
+        [Thu Jul 18 04:43:38.855344 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935] [lnum 1182]
+        [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        $registry_name[Array\n(\n
+
+        [_crnrstn_native_resource_registry] => 1\n)\n].
+
+        $file_path[/var/www/html/lightbox_helper/_lightbox_helper/
+        _config/_config.resource_registry/
+        crnrstn.native_resource_registry.function.php].
+
+        $resource_type[FUNCTION_DEFINITION].
+        $load_method[require_once].
+
+        [Thu Jul 18 04:43:38.857857 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.237401 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1252]
+
+        Finding location...
+
+        [Thu Jul 18 04:43:38.857961 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.239906 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1253]
+
+        Acquired CRNRSTN_ROOT[/var/www/html/lightbox_helper].
+
+        [Thu Jul 18 04:43:38.858076 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.239992 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1254]
+
+        Acquired PHP_SELF[/lightbox_helper/index.php].
+
+        [Thu Jul 18 04:43:38.858265 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.240115 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1257]
+
+        Acquired QUERY_STRING[crnrstn_10110010=true].
+
+        [Thu Jul 18 04:43:38.858413 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.240324 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1258]
+
+        Acquired DOCUMENT_ROOT[/var/www/html].
+
+        [Thu Jul 18 04:43:38.858563 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.240522 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1259]
+
+        Acquired SCRIPT_FILENAME[/var/www/html/lightbox_helper/index.php].
+
+        [Thu Jul 18 04:43:38.858622 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.240588 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1260]
+
+        Acquired REQUEST_TIME_FLOAT[1721292218.618].
+
+        [Thu Jul 18 04:43:38.858678 2024] [:error] [pid 10714]
+        [client 172.16.225.1:64935]
+        [rtime 0.24064 secs]
+        [mthd lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+        [lnum 1261]
+
+        Acquired REQUEST_TIME[1721292218].
+
+        */
+
+        return NULL;
 
     }
 
@@ -27864,7 +28078,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         if(!isset($path)) 
             $path = self::$R_data['CRNRSTN_ROOT'];
 
-        return self::$R['kivotos']->R['performance_regulator']->get_disk_free_space($path);
+        return self::$_R['kivotos']->R['performance_regulator']->get_disk_free_space($path);
 
     }
 
@@ -27891,7 +28105,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         if(!isset($path)) 
             $path = self::$R_data['CRNRSTN_ROOT'];
 
-        return self::$R['kivotos']->R['performance_regulator']->get_disk_size($path);
+        return self::$_R['kivotos']->R['performance_regulator']->get_disk_size($path);
 
     }
 
@@ -27906,7 +28120,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function get_disk_performance_metric($profile_name)
     {
 
-        return self::$R['kivotos']->R['performance_regulator']->get_disk_performance_metric($profile_name);
+        return self::$_R['kivotos']->R['performance_regulator']->get_disk_performance_metric($profile_name);
 
     }
 
@@ -27924,9 +28138,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $minimum_bytes_required = 0)
     {
 
-        return self::$R['kivotos']->R['performance_regulator']->grant_permissions_fwrite(
-                                                                $filepath,
-                                                                $minimum_bytes_required);
+        return self::$_R['kivotos']->R['performance_regulator']->grant_permissions_fwrite(
+                                                                 $filepath,
+                                                                 $minimum_bytes_required);
 
     }
 
@@ -28708,9 +28922,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $channel)
     {
 
-        return self::$R_rrs_map->rrs_map_get(
-                                 $name, 
-                                 $channel);
+        return self::$_R['kivotos']->R['rrs_map']->rrs_map_get(
+                                                   $name,
+                                                   $channel);
 
     }
 
@@ -28826,7 +29040,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              * return fulfillment.
              *
              */
-            $tmp_return = self::$R['kivotos']->R['rrs_map']->rrs_map_execute($channel . '_cache_accelerated_return');
+            $tmp_return = self::$_R['kivotos']->R['rrs_map']->rrs_map_execute($channel . '_cache_accelerated_return');
             \error_log(__LINE__ . ' ' . 
                 __METHOD__ . 
                 ' ATTEMPTING TO EXTRACT $_GET[] DATA(LEN=' . 
@@ -28894,10 +29108,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              */
             $system = (int) self::$R_data['int_flag'][$system];
 
-        return self::$R['kivotos']->R['rrs_map']->gone_to_plaid(
-                                                  $data_key, 
-                                                  $system, 
-                                                  $channel);
+        return self::$_R['kivotos']->R['rrs_map']->gone_to_plaid(
+                                                   $data_key,
+                                                   $system,
+                                                   $channel);
 
     }
 
@@ -29235,7 +29449,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
  *                    ' crnrstn [\'RRS_MAP\'] RRS MAP APPLICATION ' . 
  *                    'Acceleration Candidate Received [' . 
  *                    __METHOD__ . '].');
- *                    return self::$R['kivotos']->R['env']->client_request_listen('RRS_MAP');
+ *                    return self::$_R['kivotos']->R['env']->client_request_listen('RRS_MAP');
  *
  *                }
 *
@@ -29251,7 +29465,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *     __METHOD__ . '].');
                  *
                  */
-                return self::$R['kivotos']->R['env']->client_request_listen($listener_profile);
+                return self::$_R['kivotos']->R['env']->client_request_listen($listener_profile);
 
             break;
 
@@ -29271,7 +29485,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function integer_constants_unit_test()
     {
 
-        return self::$R['kivotos']->R['bitflip_mgr']->integer_constants_unit_test();
+        return self::$_R['kivotos']->R['bitflip_mgr']->integer_constants_unit_test();
 
     }
 
@@ -31195,7 +31409,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function client_asset_response()
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->client_asset_response();
+        return self::$_R['kivotos']->R['asset_mgr']->client_asset_response();
 
     }
 
@@ -31335,8 +31549,8 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function header_signature_options_return()
     {
 
-        if(isset(self::$R['kivotos']->R['env']))
-            return self::$R['kivotos']->R['env']->header_signature_options_return($header_options);
+        if(isset(self::$_R['kivotos']->R['env']))
+            return self::$_R['kivotos']->R['env']->header_signature_options_return();
 
         $opt_array = array();
 
@@ -31579,7 +31793,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * 5 :: Case of the Monday's, August 3, 2026 @ 1047 hrs.
          *
          */
-        if(is_numeric($content_length) && 
+        if(\is_numeric($content_length) &&
             !isset($content_length_flag)) 
             $assembled_header_options[] = 'Content-length: ' . 
                                           (int) $content_length;
@@ -31669,10 +31883,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $overwrite_existing = true)
     {
 
-        if(isset(self::$R['kivotos']->R['env']))
-            self::$R['kivotos']->R['env']->header_options_add(
-                                           $header_array,
-                                           $overwrite_existing);
+        if(isset(self::$_R['kivotos']->R['env']))
+            self::$_R['kivotos']->R['env']->header_options_add(
+                                            $header_array,
+                                            $overwrite_existing);
         else
             $this->initialization_series_header_options_add(
                    $header_array, 
@@ -31691,8 +31905,8 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function header_options_apply()
     {
 
-        if(isset(self::$R['kivotos']->R['env']))
-            self::$R['kivotos']->R['env']->header_options_apply();
+        if(isset(self::$_R['kivotos']->R['env']))
+            self::$_R['kivotos']->R['env']->header_options_apply();
         else
             $this->initialization_series_header_options_apply();
 
@@ -31713,8 +31927,8 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             // 5 :: Tuesday, July 21, 2026 @ 0705 hrs.
             $return_type = self::$R_data['int_flag'][$return_type];
 
-        if(isset(self::$R['kivotos']->R['env']))
-            return self::$R['kivotos']->R['env']->get_headers($return_type);
+        if(isset(self::$_R['kivotos']->R['env']))
+            return self::$_R['kivotos']->R['env']->get_headers($return_type);
         else
             return $this->initialization_series_get_headers($return_type);
 
@@ -31745,12 +31959,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * PLAID. 
          *
          */
-        return self::$R['kivotos']->R['rrs_map']->init_config_cache_index_mem_header(
-                                                  $ddo_memory_pointer, 
-                                                  $data_key, 
-                                                  $data_authorization_profile, 
-                                                  $index, 
-                                                  $ttl);
+        return self::$_R['kivotos']->R['rrs_map']->init_config_cache_index_mem_header(
+                                                   $ddo_memory_pointer,
+                                                   $data_key,
+                                                   $data_authorization_profile,
+                                                   $index,
+                                                   $ttl);
 
     }
 
@@ -31781,11 +31995,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * PLAID. 
          *
          */
-        self::$R['kivotos']->R['rrs_map']->initialize_cache(
-                                           $crnrstn_asset_family, 
-                                           $salt_ugc, 
-                                           $data_key, 
-                                           $output_mode);
+        self::$_R['kivotos']->R['rrs_map']->initialize_cache(
+                                            $crnrstn_asset_family,
+                                            $salt_ugc,
+                                            $data_key,
+                                            $output_mode);
 
     }
 
@@ -31823,11 +32037,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * PLAID. 
          *
          */
-        return self::$R['kivotos']->R['rrs_map']->get_cache(
-                                                  $attribute, 
-                                                  $ugc_key, 
-                                                  $channel, 
-                                                  $data);
+        return self::$_R['kivotos']->R['rrs_map']->get_cache(
+                                                   $attribute,
+                                                   $ugc_key,
+                                                   $channel,
+                                                   $data);
 
     }
 
@@ -31862,12 +32076,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              */
             $channel = self::$R_data['int_flag'][$channel];
 
-        return self::$R['kivotos']->R['rrs_map']->get_config_cache(
-                                                  $attribute, 
-                                                  $data_key, 
-                                                  $data_type_family, 
-                                                  $index, 
-                                                  self::$R_data['int_flag'][$channel]);
+        return self::$_R['kivotos']->R['rrs_map']->get_config_cache(
+                                                   $attribute,
+                                                   $data_key,
+                                                   $data_type_family,
+                                                   $index,
+                                                   self::$R_data['int_flag'][$channel]);
 
     }
 
@@ -31895,8 +32109,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        /*
-         * //
+        /* //
          * // Multi-Channel data extract loop logic.
          * // Convert an integer into an array of n+1
          * // channel designations where the limit is
@@ -31930,7 +32143,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        if(is_string($data_authorization_profile) || 
+        if(\is_string($data_authorization_profile) ||
             !isset($data_authorization_profile))
         {
 
@@ -31955,10 +32168,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         }
 
-        return self::$R['kivotos']->R['rrs_map']->get_config_cache_count(
-                                                  $data_key,
-                                                  $data_type_family,
-                                                  $data_authorization_profile);
+        return self::$_R['kivotos']->R['rrs_map']->get_config_cache_count(
+                                                   $data_key,
+                                                   $data_type_family,
+                                                   $data_authorization_profile);
 
     }
 
@@ -32065,19 +32278,20 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
         if(isset($ddo_memory_pointer))
-            return self::$R['kivotos']->R['rrs_map']->isset_config_cache(
-                                                      $attribute, 
-                                                      $ddo_memory_pointer, 
-                                                      $channel, 
-                                                      $index);
+            return self::$_R['kivotos']->R['rrs_map']->isset_config_cache(
+                                                       $attribute,
+                                                       $ddo_memory_pointer,
+                                                       $channel,
+                                                       $channel,
+                                                       $index);
 
-        return self::$R['kivotos']->R['rrs_map']->isset_config_cache(
-                                                  $attribute, 
-                                                  $this->hash_ddo_memory_pointer(
-                                                         $data_key, 
-                                                         $data_type_family), 
-                                                  $channel, 
-                                                  $index);
+        return self::$_R['kivotos']->R['rrs_map']->isset_config_cache(
+                                                   $attribute,
+                                                   $this->hash_ddo_memory_pointer(
+                                                          $data_key,
+                                                          $data_type_family),
+                                                   $channel,
+                                                   $index);
 
     }
 
@@ -32135,14 +32349,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * PLAID. 
          *
          */
-        return self::$R['kivotos']->R['rrs_map']->config_cache_data_write(
-                                                  $attribute, 
-                                                  $data, 
-                                                  $ddo_memory_pointer, 
-                                                  $data_type_family, 
-                                                  $index, 
-                                                  $data_authorization_profile, 
-                                                  $channel_override);
+        return self::$_R['kivotos']->R['rrs_map']->config_cache_data_write(
+                                                   $attribute,
+                                                   $data,
+                                                   $ddo_memory_pointer,
+                                                   $data_type_family,
+                                                   $index,
+                                                   $data_authorization_profile,
+                                                   $channel_override);
 
     }
 
@@ -32171,12 +32385,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * PLAID. 
          *
          */
-        return self::$R['kivotos']->R['rrs_map']->cache_write(
-                                                  $attribute, 
-                                                  $data, 
-                                                  $data_type_family, 
-                                                  $channel, 
-                                                  $salt_ugc_override);
+        return self::$_R['kivotos']->R['rrs_map']->cache_write(
+                                                   $attribute,
+                                                   $data,
+                                                   $data_type_family,
+                                                   $channel,
+                                                   $salt_ugc_override);
 
     }
 
@@ -32202,13 +32416,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $source = '$_GET[]')
     {
 
-        return self::$R['kivotos']->R['rrs_map']->to_plaid(
-                                                  $channel, 
-                                                  $salt_ugc, 
-                                                  $crnrstn_asset_family, 
-                                                  $asset_meta_key, 
-                                                  $output_mode_override, 
-                                                  $source);
+        return self::$_R['kivotos']->R['rrs_map']->to_plaid(
+                                                   $channel,
+                                                   $salt_ugc,
+                                                   $crnrstn_asset_family,
+                                                   $asset_meta_key,
+                                                   $output_mode_override,
+                                                   $source);
 
     }
 
@@ -32376,9 +32590,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                      * control here. 
                      *
                      */
-                    self::$R['kivotos']->R['content_src_ctrlr']->load_page(
-                                                                 $salt_ugc, 
-                                                                 'META');
+                    self::$_R['kivotos']->R['content_src_ctrlr']->load_page(
+                                                                  $salt_ugc,
+                                                                  'META');
 
                     return $this->asset_routing_data_key_lookup_ARRAY[$crnrstn_asset_family][$salt_ugc];
 
@@ -32809,7 +33023,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function return_documentation_navigation_array()
     {
 
-        return self::$R['kivotos']->R['ui_html_mgr']->return_output_CRNRSTN_UI_DOCS_NAV_LINK('php', 'array');
+        return self::$_R['kivotos']->R['ui_html_mgr']->return_output_CRNRSTN_UI_DOCS_NAV_LINK('php', 'array');
 
     }
 
@@ -32896,7 +33110,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function crnrstn_data_packet_return($output_channel_constant)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->crnrstn_data_packet_return($output_channel_constant);
+        return self::$_R['kivotos']->R['config_mgr']->crnrstn_data_packet_return($output_channel_constant);
 
     }
 
@@ -32914,9 +33128,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $crnrstn_form_handle)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->crnrstn_data_packet_hidden_input_return(
-                                                     $channel_constant, 
-                                                     $crnrstn_form_handle);
+        return self::$_R['kivotos']->R['config_mgr']->crnrstn_data_packet_hidden_input_return(
+                                                      $channel_constant,
+                                                      $crnrstn_form_handle);
 
     }
 
@@ -32934,9 +33148,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $transport_protocol = 'POST')
     {
 
-        return self::$R['kivotos']->R['usr']->form_serialize_new(
-                                              $crnrstn_form_handle,
-                                              $transport_protocol);
+        return self::$_R['kivotos']->R['usr']->form_serialize_new(
+                                               $crnrstn_form_handle,
+                                               $transport_protocol);
 
     }
 
@@ -32978,13 +33192,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         if(is_string($validation_constant_profile)) 
             $validation_constant_profile = self::$R_data['int_flag'][$validation_constant_profile];
 
-        return self::$R['kivotos']->R['usr']->form_input_add(
-                                              $crnrstn_form_handle,
-                                              $field_input_name,
-                                              $field_input_id,
-                                              $default_value,
-                                              $validation_constant_profile,
-                                              $table_field_name);
+        return self::$_R['kivotos']->R['usr']->form_input_add(
+                                               $crnrstn_form_handle,
+                                               $field_input_name,
+                                               $field_input_id,
+                                               $default_value,
+                                               $validation_constant_profile,
+                                               $table_field_name);
 
     }
 
@@ -33028,14 +33242,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         if(is_string($validation_constant_profile)) 
             $validation_constant_profile = self::$R_data['int_flag'][$validation_constant_profile];
 
-        return self::$R['kivotos']->R['usr']->form_hidden_input_add(
-                                              $crnrstn_form_handle,
-                                              $field_input_name,
-                                              $field_input_id,
-                                              $default_value,
-                                              $validation_constant_profile,
-                                              $table_field_name,
-                                              $encrypt_data);
+        return self::$_R['kivotos']->R['usr']->form_hidden_input_add(
+                                               $crnrstn_form_handle,
+                                               $field_input_name,
+                                               $field_input_id,
+                                               $default_value,
+                                               $validation_constant_profile,
+                                               $table_field_name,
+                                               $encrypt_data);
 
     }
 
@@ -33086,13 +33300,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         */
 
-        return self::$R['kivotos']->R['usr']->form_response_add(
-                                              $crnrstn_form_handle,
-                                              $field_input_name,
-                                              $success_response_data,
-                                              $success_response_type,
-                                              $error_response_data,
-                                              $error_response_type);
+        return self::$_R['kivotos']->R['usr']->form_response_add(
+                                               $crnrstn_form_handle,
+                                               $field_input_name,
+                                               $success_response_data,
+                                               $success_response_type,
+                                               $error_response_data,
+                                               $error_response_type);
 
     }
 
@@ -33120,14 +33334,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $info_msg = NULL)
     {
 
-        return self::$R['kivotos']->R['usr']->form_input_feedback_copy_add(
-                                              $crnrstn_form_handle,
-                                              $validation_constant_profile,
-                                              $field_input_name,
-                                              $field_input_id,
-                                              $err_msg,
-                                              $success_msg,
-                                              $info_msg);
+        return self::$_R['kivotos']->R['usr']->form_input_feedback_copy_add(
+                                               $crnrstn_form_handle,
+                                               $validation_constant_profile,
+                                               $field_input_name,
+                                               $field_input_id,
+                                               $err_msg,
+                                               $success_msg,
+                                               $info_msg);
 
     }
 
@@ -33145,9 +33359,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $input_name)
     {
 
-        return self::$R['kivotos']->R['dtsm']->form_get_resource(
-                                               $crnrstn_form_handle, 
-                                               $input_name);
+        return self::$_R['kivotos']->R['dtsm']->form_get_resource(
+                                                $crnrstn_form_handle,
+                                                $input_name);
 
     }
 
@@ -33167,10 +33381,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $secret_key_override = NULL)
     {
 
-        return self::$R['kivotos']->R['usr']->receive_form_integration_packet(
-                                              $uri_passthrough,
-                                              $cipher_override,
-                                              $secret_key_override);
+        return self::$_R['kivotos']->R['usr']->receive_form_integration_packet(
+                                               $uri_passthrough,
+                                               $cipher_override,
+                                               $secret_key_override);
 
     }
 
@@ -33185,7 +33399,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function isvalid_data_validation_check($transport_protocol = 'POST')
     {
 
-        return self::$R['kivotos']->R['usr']->isvalid_data_validation_check($transport_protocol);
+        return self::$_R['kivotos']->R['usr']->isvalid_data_validation_check($transport_protocol);
 
     }
 
@@ -33199,7 +33413,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function http_data_services_initialize()
     {
 
-        self::$R['kivotos']->R['env']->oHTTP_MGR->http_data_services_initialize();
+        self::$_R['kivotos']->R['env']->oHTTP_MGR->http_data_services_initialize();
 
     }
 
@@ -33219,7 +33433,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         if(is_array($transport_protocol)){
 
-            if(self::$R['kivotos']->R['env']->oHTTP_MGR->issetParam($transport_protocol, $param) == true)
+            if(self::$_R['kivotos']->R['env']->oHTTP_MGR->issetParam($transport_protocol, $param) == true)
                 return true;
             else
                 return false;
@@ -33236,9 +33450,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             switch($http_protocol){
                 case 'POST':
 
-                    if(self::$R['kivotos']->R['env']->oHTTP_MGR->issetParam(
-                                                                 $_POST,
-                                                                 $param) == true)
+                    if(self::$_R['kivotos']->R['env']->oHTTP_MGR->issetParam(
+                                                                  $_POST,
+                                                                  $param) == true)
                         return true;
                     else
                         return false;
@@ -33249,9 +33463,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                      * $_GET
                      *
                      */
-                    if(self::$R['kivotos']->R['env']->oHTTP_MGR->issetParam(
-                                                                 $_GET,
-                                                                 $param) == true)
+                    if(self::$_R['kivotos']->R['env']->oHTTP_MGR->issetParam(
+                                                                  $_GET,
+                                                                  $param) == true)
                         return true;
                     else
                         return false;
@@ -33320,7 +33534,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          */
         if(is_array($transport_protocol)){
 
-            return self::$R['kivotos']->R['env']->issetHTTP($transport_protocol);
+            return self::$_R['kivotos']->R['env']->issetHTTP($transport_protocol);
 
         }
 
@@ -33329,7 +33543,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                                 $http_protocol, 
                                 'http_protocol_simple');
 
-        return self::$R['kivotos']->R['env']->issetHTTP($http_protocol);
+        return self::$_R['kivotos']->R['env']->issetHTTP($http_protocol);
 
     }
 
@@ -33359,12 +33573,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              * documentation/classes/http_manager/extractdata/
              *
              */
-            return self::$R['kivotos']->R['env']->oHTTP_MGR->extractData(
-                                                             $transport_protocol,
-                                                             $param,
-                                                             $tunnel_encrypted);
+            return self::$_R['kivotos']->R['env']->oHTTP_MGR->extractData(
+                                                              $transport_protocol,
+                                                              $param,
+                                                              $tunnel_encrypted);
 
-        $http_protocol = strtoupper($transport_protocol);
+        $http_protocol = \strtoupper($transport_protocol);
         $http_protocol = $this->str_sanitize(
                                 $http_protocol, 
                                 'http_protocol_simple');
@@ -33383,13 +33597,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                      * documentation/classes/http_manager/issetparam/
                      *
                      */
-                    if(self::$R['kivotos']->R['env']->oHTTP_MGR->issetParam(
-                                                                 $_POST,
-                                                                 $param) == true)
-                        return self::$R['kivotos']->R['env']->oHTTP_MGR->extractData(
-                                                                         $_POST,
-                                                                         $param,
-                                                                         $tunnel_encrypted);
+                    if(self::$_R['kivotos']->R['env']->oHTTP_MGR->issetParam(
+                                                                  $_POST,
+                                                                  $param) == true)
+                        return self::$_R['kivotos']->R['env']->oHTTP_MGR->extractData(
+                                                                          $_POST,
+                                                                          $param,
+                                                                          $tunnel_encrypted);
                     else
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * HOOOSTON, VE HAFF PROBLEM!
@@ -33415,15 +33629,15 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                      * $_GET
                      *
                      */
-                    if(self::$R['kivotos']->R['env']->oHTTP_MGR->issetParam(
-                                                                 $_GET,
-                                                                 $param) == true)
+                    if(self::$_R['kivotos']->R['env']->oHTTP_MGR->issetParam(
+                                                                  $_GET,
+                                                                  $param) == true)
                     {
 
-                        return self::$R['kivotos']->R['env']->oHTTP_MGR->extractData(
-                                                                         $_GET,
-                                                                         $param,
-                                                                         $tunnel_encrypted);
+                        return self::$_R['kivotos']->R['env']->oHTTP_MGR->extractData(
+                                                                          $_GET,
+                                                                          $param,
+                                                                          $tunnel_encrypted);
 
                     }else{
 
@@ -33509,24 +33723,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
      * @access public
      *
      */
-    function consume_form_integration_packet()
-    {
-
-        return self::$R['kivotos']->R['env']->consume_form_integration_packet();
-
-    }
-
-    /**
-     * R :: Content pending. 
-     *
-     * @return
-     * @access public
-     *
-     */
     function isset_crnrstn_services_http()
     {
 
-        return self::$R['kivotos']->R['env']->isset_crnrstn_services_http();
+        return self::$_R['kivotos']->R['env']->isset_crnrstn_services_http();
 
     }
 
@@ -33541,7 +33741,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function return_err_data_validation_check($transport_protocol = 'POST')
     {
 
-        return self::$R['kivotos']->R['usr']->return_err_data_validation_check($transport_protocol);
+        return self::$_R['kivotos']->R['usr']->return_err_data_validation_check($transport_protocol);
 
     }
 
@@ -33555,7 +33755,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function return_SOAP_SVC_debugMode()
     {
 
-        return self::$R['kivotos']->R['env']->return_SOAP_SVC_debugMode();
+        return self::$_R['kivotos']->R['env']->return_SOAP_SVC_debugMode();
 
     }
 
@@ -33573,9 +33773,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $transport_protocol = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->return_form_submitted_value(
-                                              $getpost_input_name,
-                                              $transport_protocol);
+        return self::$_R['kivotos']->R['env']->return_form_submitted_value(
+                                               $getpost_input_name,
+                                               $transport_protocol);
 
     }
 
@@ -33589,11 +33789,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
  *            // config_detect_environment() will
  *            // either return false or the
  *            // detected env key.
- *            if(!isset(self::$R['kivotos']->R['usr'])){
+ *            if(!isset(self::$_R['kivotos']->R['usr'])){
  *
- *                //self::$R['kivotos']->R['env'] = new crnrstn_environment($this, 'session_initialization_ping');
- *                //self::$R['kivotos']->R['env'] = new crnrstn_environment($this);
- *                self::$R['kivotos']->R['usr'] = self::$R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
+ *                //self::$_R['kivotos']->R['env'] = new crnrstn_environment($this, 'session_initialization_ping');
+ *                //self::$_R['kivotos']->R['env'] = new crnrstn_environment($this);
+ *                self::$_R['kivotos']->R['usr'] = self::$_R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
  *
  *            }
  *
@@ -33651,12 +33851,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         }
 
-        return self::$R['kivotos']->R['config_mgr']->retrieve_data_value(
-                                                     $data_key, 
-                                                     $data_type_family, 
-                                                     $index, 
-                                                     $env_key, 
-                                                     $data_authorization_profile);
+        return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value(
+                                                      $data_key,
+                                                      $data_type_family,
+                                                      $index,
+                                                      $env_key,
+                                                      $data_authorization_profile);
 
     }
 
@@ -33718,7 +33918,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function iso_language_html()
     {
 
-        return self::$R['kivotos']->R['lang_mgr']->iso_language_html();
+        return self::$_R['kivotos']->R['lang_mgr']->iso_language_html();
 
     }
 
@@ -33813,7 +34013,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         }
 
-        if(isset(self::$R['kivotos']->R['lang_mgr']))
+        if(isset(self::$_R['kivotos']->R['lang_mgr']))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Go to the CLR-SSL Multi-Language 
              * Manager for full multi-lang ISO 
@@ -33822,9 +34022,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              * send several, tho. 
              *
              */
-            return self::$R['kivotos']->R['lang_mgr']->iso_language_profile(
-                                                       $lang_attribute_lower, 
-                                                       $index);
+            return self::$_R['kivotos']->R['lang_mgr']->iso_language_profile(
+                                                        $lang_attribute_lower,
+                                                        $index);
         else
             return $this->initialization_series_iso_language_profile($lang_attribute_lower);
 
@@ -33840,7 +34040,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function iso_language_profile_count()
     {
 
-        return self::$R['kivotos']->R['lang_mgr']->iso_language_profile_count();
+        return self::$_R['kivotos']->R['lang_mgr']->iso_language_profile_count();
 
     }
 
@@ -33880,12 +34080,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
         // 5 :: Friday, August 14, 2026 @ 0957 hrs.
 
-        return self::$R['kivotos']->get_kivotos(
-                                    $name,
-                                    $R_index_000,
-                                    $R_index_001,
-                                    $R_index_002,
-                                    $R_index_003);
+        return self::$_R['kivotos']->get_kivotos(
+                                     $name,
+                                     $R_index_000,
+                                     $R_index_001,
+                                     $R_index_002,
+                                     $R_index_003);
 
     }
 
@@ -33923,9 +34123,17 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          */
 
         switch($name){
-            case 'nusoap_framework_directory':
+            case 'eVifweb_long_HTML':
+            case 'eVifweb_long_TEXT':
+            case 'eVifweb_short_HTML':
+            case 'eVifweb_short_TEXT':
+            case 'CLR_SSL_long_HTML':
+            case 'CLR_SSL_long_TEXT':
+            case 'CLR_SSL_short_HTML':
+            case 'CLR_SSL_short_TEXT':
+                // 5 :: Tuesday, August 25, 2026 @ 0217 hrs.
 
-                return self::$nusoap_framework_directory;
+                return self::$R_data[$name];
 
             case 'CRNRSTN_config_salt':
 
@@ -33935,11 +34143,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 return self::$config_resource_meta_ARRAY;
 
-            case 'file_mod_config_reset':
-
-                return self::$file_modification_resets_configuration;
-
-            //case 'config_serial_override':
             case 'R_cluster_id':
 
                 return self::$R_data['R_cluster_id'];
@@ -33954,7 +34157,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 return self::$R_data['R_client_id'];
 
-            case 'R_request_id_override':
             case 'R_request_id':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Edit: Renamed request_id and 
@@ -33972,7 +34174,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 return self::$R_data['R_request_id'];
 
-            case 'R_request_serial_override':
             case 'R_request_serial':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Edit: Renamed request_serial and 
@@ -33990,7 +34191,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 return self::$R_data['R_request_serial'];
 
-            case 'R_debug_mode_override':
             case 'R_debug_mode':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Set after validation. 
@@ -34023,50 +34223,52 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  */
                 return self::$R_data['R_debug_mode'];
 
-            case 'PHPMailer_debug_mode_override':
             case 'phpmailer_debug_mode':
 
                  return self::$R_data['phpmailer_debug_mode'];
 
-            case 'WordPress_debug_mode_override':
             case 'wordpress_debug_mode':
 
                 return self::$R_data['wordpress_debug_mode'];
 
+            case 'nusoap_debug_flag':
+                // 5 :: Wednesday, August 19, 2026 @ 0807 hrs.
+
+                return self::$R_data['nusoap_debug_flag'];
+
             case 'module_key':
                 // 5 :: Thursday, July 9, 2026 @ 0458 hrs.
 
-                return self::$R['kivotos']->R['content_src_ctrlr']->module_key;
+                return self::$_R['kivotos']->R['content_src_ctrlr']->module_key;
 
             /*
             case 'module_key':
                 // 5 :: Thursday, July 9, 2026 @ 0501 hrs.
 
-                return self::$R['kivotos']->R['content_src_ctrlr']->return_page_serial();
+                return self::$_R['kivotos']->R['content_src_ctrlr']->return_page_serial();
             */
             case 'R_kivotos_index':
 
-                if(isset(self::$R['kivotos']))
-                    return self::$R['kivotos']->get_kivotos($name);
+                if(isset(self::$_R['kivotos']))
+                    return self::$_R['kivotos']->get_kivotos($name);
 
                 return self::$R_data[$name];
 
             case 'crnrstn_interact_ui_link_text_click':
                 // 5 :: Thursday, July 9, 2026 @ 0528 hrs.
 
-                return self::$R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
+                return self::$_R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
 
             case 'directory_shift':
                 // 5 :: Case of the Monday's, August 3, 2026 @ 0610 hrs.
 
                 return self::$R_data['directory_shift'];
 
-            case 'framework_path_root':
+            case 'R_framework_path':
                 // 5 :: Friday, April 3, 2026 @ 2351 hrs.
 
-                return self::$R_data['framework_path_root'];
+                return self::$R_data['R_framework_path'];
 
-            beak;
             case 'operating_system':
                 // 5 :: Wednesday, May 20, 2026 @ 2355 hrs.
 
@@ -34079,6 +34281,17 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     return self::$R_data['operating_system'][$R_index_000];
 
                 return self::$R_data['operating_system'];
+
+            case 'networking':
+                // 5 :: Wednesday, August 19, 2026 @ 0726 hrs.
+
+                if(isset($R_index_001))
+                    return self::$R_data[$name][$R_index_000][$R_index_001];
+
+                if(isset($R_index_000))
+                    return self::$R_data[$name][$R_index_000];
+
+                return self::$R_data[$name];
 
             case 'http': 
                 // 5 :: Wednesday, August 7, 2024 @ 0530 hrs.
@@ -34221,16 +34434,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             case 'timestamp_to_iso8601[timestamp]':
                 // 5 :: Tuesday, June 2, 2026 @ 1135 hrs.
 
-                if(!issset(self::$R_data[$name])){
-
+                if(!issset(self::$R_data[$name]))
                     // Return current Unix timestamp.
                     return time();
 
-                }
-
                 return self::$R_data[$name];
 
-            case 'timestamp_to_iso8601[is_utc]':
+            case 'timestamp_to_iso8601[utc]':
                 // 5 :: Tuesday, June 2, 2026 @ 1135 hrs.
 
                 return self::$R_data[$name];
@@ -34238,11 +34448,8 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             case 'usleepWindows[usec]':
                 // 5 :: Tuesday, June 2, 2026 @ 0931 hrs.
 
-                if(!isset(self::$R_data[$name])){
-
+                if(!isset(self::$R_data[$name]))
                     return 0;
-
-                }
 
                 return self::$R_data[$name];
                 
@@ -34299,6 +34506,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
             case 'nusoap_client[portName]':
                 // 5 :: Tuesday, June 2, 2026 @ 1006 hrs.
+
+                return self::$R_data[$name];
+            case 'wsdl[wsdl]':
+                // 5 :: Tuesday, August 18, 2026 @ 1259 hrs.
 
                 return self::$R_data[$name];
 
@@ -34723,7 +34934,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 return self::$R_data['application_directory'];
 
             case 'R_framework_directory':
-            case 'framework_directory':
+            //case 'framework_directory':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Edit: Added framework_directory 
                  *       as get_crnrstn() method data output. 
@@ -34731,7 +34942,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *
                  */
 
-                return self::$R_data['framework_directory'];
+                return self::$R_data['R_framework_directory'];
 
             case 'max_disk':
 
@@ -34807,7 +35018,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 //return self::$hmac_algorithm_preferred_ARRAY;
                 return self::$R_data['R_hmac_hash_config']['preferred'];
 
-            case 'R_hmac_algorithm_override':
             case 'hmac_algorithm':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Edit: Added hmac_algorithm private 
@@ -34853,7 +35063,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
             case 'css_length_units_ARRAY':
 
-                return self::$R['kivotos']->R['ui_html_mgr']->get_crnrstn_interact_ui_html_mgr('css_length_units_ARRAY');
+                return self::$_R['kivotos']->R['ui_html_mgr']->get_crnrstn_interact_ui_html_mgr('css_length_units_ARRAY');
 
             case 'system_file_attributes_master_ARRAY':
 
@@ -35035,7 +35245,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 self::$R_data['R_byte_units'] = $value;
 
             break;
-            case 'R_debug_mode_override':
             case 'R_debug_mode':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Set after validation. 
@@ -35045,13 +35254,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 self::$R_data['R_debug_mode'] = $value;
 
             break;
-            case 'PHPMailer_debug_mode_override':
             case 'phpmailer_debug_mode':
 
                 self::$R_data['phpmailer_debug_mode'] = $value;
 
             break;
-            case 'WordPress_debug_mode_override':
             case 'wordpress_debug_mode':
 
                 self::$R_data['wordpress_debug_mode'] = $value;
@@ -35249,10 +35456,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                                          * cipher profile. 
                                          *
                                          */
-                                        self::$R['kivotos']->R['env']->set_openssl_cipher_profile(
-                                                                       $cipher_name,
-                                                                       $R_index_002,
-                                                                       $R_index_003);
+                                        self::$_R['kivotos']->R['env']->set_openssl_cipher_profile(
+                                                                        $cipher_name,
+                                                                        $R_index_002,
+                                                                        $R_index_003);
 
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * The CRNRSTN :: Lightsaber 
@@ -35412,10 +35619,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                                          * profile. 
                                          *
                                          */
-                                        self::$R['kivotos']->R['env']->set_openssl_cipher_profile(
-                                                                       $cipher_name,
-                                                                       $R_index_002,
-                                                                       $R_index_003);
+                                        self::$_R['kivotos']->R['env']->set_openssl_cipher_profile(
+                                                                        $cipher_name,
+                                                                        $R_index_002,
+                                                                        $R_index_003);
 
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * The CRNRSTN :: Lightsaber 
@@ -35544,7 +35751,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 self::$R_data[$name] = $value;
 
             break;
-            case 'timestamp_to_iso8601[is_utc]':
+            case 'timestamp_to_iso8601[utc]':
                 // 5 :: Tuesday, June 2, 2026 @ 1136 hrs.
 
                 self::$R_data[$name] = $value;
@@ -35825,9 +36032,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             break;
             case 'css_length_units_ARRAY':
 
-                self::$R['kivotos']->R['ui_html_mgr']->set_crnrstn_interact_ui_html_mgr(
-                                                       'css_length_units_ARRAY', 
-                                                       $value);
+                self::$_R['kivotos']->R['ui_html_mgr']->set_crnrstn_interact_ui_html_mgr(
+                                                        'css_length_units_ARRAY',
+                                                        $value);
 
             break;
             case 'system_file_attributes_master_ARRAY':
@@ -35842,12 +36049,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             break;
             case 'ip_grant_exclusive_access':
 
-                return self::$R['kivotos']->R['ip_mgr']->exclusiveAccess($value);
+                return self::$_R['kivotos']->R['ip_mgr']->exclusiveAccess($value);
 
             break;
             case 'ip_deny_access':
 
-                return self::$R['kivotos']->R['ip_mgr']->denyAccess($value);
+                return self::$_R['kivotos']->R['ip_mgr']->denyAccess($value);
 
             break;
             case 'init_query_silo':
@@ -35874,7 +36081,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * 5 :: Friday, December 1, 2023 @ 1247 hrs.
                  *
                  */
-                self::$R['kivotos']->R['usr']->init_query_silo();
+                self::$_R['kivotos']->R['usr']->init_query_silo();
 
             break;
             case 'R_config_mgr':
@@ -35893,9 +36100,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *                                  $this, 
                  *                                  $CRNRSTN_ROOT);
                  *
-                self::$R['kivotos']->R['config_mgr'] = $this->return_registered_resource(
-                                                              'new',
-                                                              'crnrstn_configuration_manager');
+                self::$_R['kivotos']->R['config_mgr'] = $this->return_registered_resource(
+                                                               'new',
+                                                               'crnrstn_configuration_manager');
                  */
 
             break;
@@ -35941,10 +36148,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * $this->oDATA_TUNNEL_SERVICES_MGR = new crnrstn_data_tunnel_services_manager($this);
                  *
                  *
-                self::$R['kivotos']->R['dtsm'] = $this->return_registered_resource(
-                                                        'new', 
-                                                        'crnrstn_data_tunnel_services_manager', 
-                                                        $this);
+                self::$_R['kivotos']->R['dtsm'] = $this->return_registered_resource(
+                                                         'new',
+                                                         'crnrstn_data_tunnel_services_manager',
+                                                         $this);
                  */
 
             break;
@@ -35962,10 +36169,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * $this->oCRNRSTN_TRM = new crnrstn_ui_tunnel_response_manager($this);
                  *
                  *
-                self::$R['kivotos']->R['ui_trm'] = $this->return_registered_resource(
-                                                          'new',
-                                                          'crnrstn_ui_tunnel_response_manager',
-                                                          $this);
+                self::$_R['kivotos']->R['ui_trm'] = $this->return_registered_resource(
+                                                           'new',
+                                                           'crnrstn_ui_tunnel_response_manager',
+                                                           $this);
                  */
 
             break;
@@ -35985,9 +36192,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * $this->oCRNRSTN_LANG_MGR = new crnrstn_multi_language_manager($this);
                  *
                  *
-                self::$R['kivotos']->R['lang_mgr'] = $this->return_registered_resource(
-                                                            'new',
-                                                            'crnrstn_multi_language_manager');
+                self::$_R['kivotos']->R['lang_mgr'] = $this->return_registered_resource(
+                                                             'new',
+                                                             'crnrstn_multi_language_manager');
 
                 */
 
@@ -36012,10 +36219,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *
                  * self::$oCRNRSTN_RRS_MAP = new crnrstn_response_return_serialization_map($oCRNRSTN);
                  *
-                self::$R['kivotos']->R['rrs_map'] = $this->return_registered_resource(
-                                                    'new',
-                                                    'crnrstn_response_return_serialization_map',
-                                                    $this);
+                self::$_R['kivotos']->R['rrs_map'] = $this->return_registered_resource(
+                                                     'new',
+                                                     'crnrstn_response_return_serialization_map',
+                                                     $this);
                  */
 
             break;
@@ -36121,10 +36328,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *
                  * $this->oMYSQLI_CONN_MGR = new crnrstn_mysqli_conn_manager($this);
                  *
-                self::$R['kivotos']->R['mysqli_conn_mgr'] = $this->return_registered_resource(
-                                                            'new', 
-                                                            'crnrstn_mysqli_conn_manager', 
-                                                            $this);
+                self::$_R['kivotos']->R['mysqli_conn_mgr'] = $this->return_registered_resource(
+                                                             'new',
+                                                             'crnrstn_mysqli_conn_manager',
+                                                             $this);
 
                 $clr_ssl_msg = 'Instantiating the CRNRSTN :: ' . 
                                'Lightsaber RoCEv2 SOAP Services ' . 
@@ -36171,10 +36378,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * $this->oINTERACT_UI_HTML_MGR = new crnrstn_ui_html_manager($this);
                  *
                  *
-                self::$R['kivotos']->R['ui_html_mgr'] = $this->return_registered_resource(
-                                                               'new', 
-                                                               'crnrstn_ui_html_manager', 
-                                                               $this);
+                self::$_R['kivotos']->R['ui_html_mgr'] = $this->return_registered_resource(
+                                                                'new',
+                                                                'crnrstn_ui_html_manager',
+                                                                $this);
                  */
             break;
             case 'R_cs_controller':
@@ -36683,7 +36890,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             break;
             case 'css_length_units_ARRAY':
 
-                return self::$R['kivotos']->R['ui_html_mgr']->isset_crnrstn_interact_ui_html_mgr('css_length_units_ARRAY');
+                return self::$_R['kivotos']->R['ui_html_mgr']->isset_crnrstn_interact_ui_html_mgr('css_length_units_ARRAY');
 
             break;
             case 'system_file_attributes_master_ARRAY':
@@ -37162,7 +37369,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
 
         /*
-        return self::$R['kivotos']->R['config_mgr']->retrieve_data_value('PHPMailer_debug_mode');
+        return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('PHPMailer_debug_mode');
 
         return $this->get_resource(
                       'PHPMailer_debug_mode', 
@@ -37211,7 +37418,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
 
         /*
-        self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_crnrstn');
+        self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_crnrstn');
 
         return $this->get_resource(
                       'version_crnrstn', 
@@ -37234,7 +37441,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
 
         /*
-        return self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_apache');
+        return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_apache');
 
         return (string) $this->get_resource(
                                'version_apache', 
@@ -37257,7 +37464,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
 
         /* 
-        return self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_linux');
+        return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_linux');
         
         return $this->get_resource(
                       'version_linux', 
@@ -37291,7 +37498,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
 
         /*
-        return self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_apache_sysimg');
+        return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_apache_sysimg');
         
         return $this->get_resource(
                       'version_apache_sysimg', 
@@ -37313,7 +37520,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function version_mysqli()
     {
 
-        //return self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_mysqli');
+        //return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_mysqli');
         return $this->get_resource(
                       'version_mysqli', 
                       0, 
@@ -37332,7 +37539,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
 
         /*
-        return self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_php');
+        return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_php');
 
         return $this->get_resource(
                       'version_php', 
@@ -37354,7 +37561,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function version_openssl()
     {
 
-        //return self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_openssl');
+        //return self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_openssl');
         return $this->get_resource(
                       'version_openssl', 
                       0, 
@@ -37378,7 +37585,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                                        'version_soap', 
                                        0, 'CRNRSTN::RESOURCE::CONFIGURATION');
 
-            /* $tmp_version_soap = self::$R['kivotos']->R['config_mgr']->retrieve_data_value('version_soap');
+            /* $tmp_version_soap = self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('version_soap');
              *
              * error_log(__LINE__ . ' crnrstn $tmp_version_soap=' . $tmp_version_soap);
              * die();
@@ -37580,7 +37787,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function version_mobile_detect()
     {
 
-        return self::$R['kivotos']->R['env']->oHTTP_MGR->oMOBI_DETECT->getScriptVersion();
+        return self::$_R['kivotos']->R['env']->oHTTP_MGR->oMOBI_DETECT->getScriptVersion();
 
     }
 
@@ -37596,7 +37803,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         try{
 
-            //$tmp_soap_defencoding = self::$R['kivotos']->R['config_mgr']->retrieve_data_value('soap_defencoding');
+            //$tmp_soap_defencoding = self::$_R['kivotos']->R['config_mgr']->retrieve_data_value('soap_defencoding');
             $tmp_soap_defencoding = $this->get_resource(
                                            'soap_defencoding', 
                                            0, 
@@ -37799,11 +38006,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $removed_segment_count = 0)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->return_html_favicon_head_meta(
-                                                    $filepath, 
-                                                    $http_path, 
-                                                    $dir_path, 
-                                                    $removed_segment_count);
+        return self::$_R['kivotos']->R['asset_mgr']->return_html_favicon_head_meta(
+                                                     $filepath,
+                                                     $http_path,
+                                                     $dir_path,
+                                                     $removed_segment_count);
 
     }
 
@@ -38000,64 +38207,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $email_channel = false)
     {
 
-        return self::$R['kivotos']->R['usr']->return_sticky_media_link(
-                                              $media_element_key,
-                                              $url,
-                                              $target,
-                                              $email_channel);
-
-    }
-
-    /**
-     * R :: Content pending. 
-     *
-     * @param
-     * @param
-     * @param
-     * @param
-     * @return
-     * @access public
-     *
-     */
-    function return_crnrstn_text_link(
-             $module_key, 
-             $system_asset_constant = 'CRNRSTN_R_MD', 
-             $url_override = NULL, 
-             $resource_constant = 'CRNRSTN_RESOURCE_OPENSOURCE')
-    {
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Where, $resource_constant = CRNRSTN_RESOURCE_OPENSOURCE or 
-         *                             CRNRSTN_RESOURCE_DOCUMENTATION.
-         *
-         * Where, $system_asset_constant CURRENTLY SUPPORTS 
-         *        'CRNRSTN_R_MD' and 'PHP_ELLIPSE'. 
-         *
-         * E.g., when used for native PHP method 
-         * documentation links like:
-         *
-         * echo $this->return_crnrstn_text_link(
-         *             'scandir', 
-         *             'PHP_ELLIPSE', 
-         *             CRNRSTN_RESOURCE_OPENSOURCE);
-         *
-         */
-
-        /*error_log(__LINE__ . ' crnrstn $module_key[' . 
-         *    \strval($module_key) . ']. $system_asset_constant[' . 
-         *    \strval($system_asset_constant) . ']. $url_override[' . 
-         *    \strval($url_override) . ']. $resource_constant[' . 
-         *    \strval($resource_constant) . '].');
-         *
-         */
-        if(is_string($resource_constant)) 
-            // 5 :: Wednesday, July 22, 2026 @ 0718 hrs.
-            $resource_constant = self::$R_data['int_flag'][$resource_constant];
-
-        return self::$R['kivotos']->R['content_src_ctrlr']->return_crnrstn_text_link(
-                                                            $module_key, 
-                                                            $system_asset_constant, 
-                                                            $url_override, 
-                                                            $resource_constant);
+        return self::$_R['kivotos']->R['usr']->return_sticky_media_link(
+                                               $media_element_key,
+                                               $url,
+                                               $target,
+                                               $email_channel);
 
     }
 
@@ -38079,12 +38233,65 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $email_channel = false)
     {
 
-        return self::$R['kivotos']->R['usr']->return_sticky_text_link(
-                                              $media_element_key,
-                                              $url = NULL,
-                                              $target = '_blank',
-                                              $email_channel = false);
+        return self::$_R['kivotos']->R['usr']->return_sticky_text_link(
+                                               $media_element_key,
+                                               $url = NULL,
+                                               $target = '_blank',
+                                               $email_channel = false);
 
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function return_crnrstn_text_link(
+             $module_key,
+             $system_asset_constant = 'CRNRSTN_R_MD',
+             $url_override = NULL,
+             $resource_constant = 'CRNRSTN_RESOURCE_OPENSOURCE')
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Where, $resource_constant = CRNRSTN_RESOURCE_OPENSOURCE or
+         *                             CRNRSTN_RESOURCE_DOCUMENTATION.
+         *
+         * Where, $system_asset_constant CURRENTLY SUPPORTS
+         *        'CRNRSTN_R_MD' and 'PHP_ELLIPSE'.
+         *
+         * E.g., when used for native PHP method
+         * documentation links like:
+         *
+         * echo $this->return_crnrstn_text_link(
+         *             'scandir',
+         *             'PHP_ELLIPSE',
+         *             CRNRSTN_RESOURCE_OPENSOURCE);
+         *
+         */
+
+        /*error_log(__LINE__ . ' crnrstn $module_key[' .
+         *    \strval($module_key) . ']. $system_asset_constant[' .
+         *    \strval($system_asset_constant) . ']. $url_override[' .
+         *    \strval($url_override) . ']. $resource_constant[' .
+         *    \strval($resource_constant) . '].');
+         *
+         */
+        if(is_string($resource_constant))
+            // 5 :: Wednesday, July 22, 2026 @ 0718 hrs.
+            $resource_constant = self::$R_data['int_flag'][$resource_constant];
+
+        return self::$_R['kivotos']->R['content_src_ctrlr']->return_crnrstn_text_link(
+                                                             $module_key,
+                                                             $system_asset_constant,
+                                                             $url_override,
+                                                             $resource_constant);
 
     }
 
@@ -38112,11 +38319,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $fullscreen = true)
     {
 
-        return self::$R['kivotos']->R['usr']->return_youtube_embed(
-                                              $url,
-                                              $width,
-                                              $height,
-                                              $fullscreen);
+        return self::$_R['kivotos']->R['usr']->return_youtube_embed(
+                                               $url,
+                                               $width,
+                                               $height,
+                                               $fullscreen);
 
     }
 
@@ -38233,10 +38440,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * Here is some runtime optimization.
          *
          */
-        $tmp_memory_pointer = self::$R['kivotos']->R['rrs_map']->cache_rw_acceleration(
-                                                                 $data_key, 
-                                                                 $data_type_family, 
-                                                                 $env_key);
+        $tmp_memory_pointer = self::$_R['kivotos']->R['rrs_map']->cache_rw_acceleration(
+                                                                  $data_key,
+                                                                  $data_type_family,
+                                                                  $env_key);
         if(\strlen($tmp_memory_pointer) > 0)
             return $tmp_memory_pointer;
 
@@ -38360,10 +38567,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $is_bit_set = true)
     {
 
-        return self::$R['kivotos']->R['bitflip_mgr']->initialize_serialized_bit(
-                                                      $name, 
-                                                      $integer_constant, 
-                                                      $is_bit_set);
+        return self::$_R['kivotos']->R['bitflip_mgr']->initialize_serialized_bit(
+                                                       $name,
+                                                       $integer_constant,
+                                                       $is_bit_set);
 
     }
 
@@ -38390,10 +38597,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $constant_value = NULL)
     {
 
-        return self::$R['kivotos']->R['bitflip_mgr']->initialize_bit(
-                                                      $constant_nom, 
-                                                      $default_state, 
-                                                      $constant_value);
+        return self::$_R['kivotos']->R['bitflip_mgr']->initialize_bit(
+                                                       $constant_nom,
+                                                       $default_state,
+                                                       $constant_value);
 
     }
 
@@ -38420,9 +38627,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $return_raw_byte_read = false)
     {
 
-        $tmp_int_read = self::$R['kivotos']->R['bitflip_mgr']->is_serialized_bit_set(
-                                                               $name, 
-                                                               $integer_constant);
+        $tmp_int_read = self::$_R['kivotos']->R['bitflip_mgr']->is_serialized_bit_set(
+                                                                $name,
+                                                                $integer_constant);
 
         if($return_raw_byte_read !== false)
             return $tmp_int_read;
@@ -38455,7 +38662,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $return_raw_byte_read = false)
     {
 
-        $tmp_int_read = self::$R['kivotos']->R['bitflip_mgr']->is_bit_set($integer_constant);
+        $tmp_int_read = self::$_R['kivotos']->R['bitflip_mgr']->is_bit_set($integer_constant);
 
         if($return_raw_byte_read !== false)
             return $tmp_int_read;
@@ -38498,10 +38705,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * not initialized. 
          *
          */
-        return self::$R['kivotos']->R['bitflip_mgr']->toggle_serialized_bit(
-                                                      $name, 
-                                                      $integer_constant, 
-                                                      $is_bit_set);
+        return self::$_R['kivotos']->R['bitflip_mgr']->toggle_serialized_bit(
+                                                       $name,
+                                                       $integer_constant,
+                                                       $is_bit_set);
 
     }
 
@@ -38534,9 +38741,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * not initialized. 
          *
          */
-        return self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                      $integer_constant, 
-                                                      $is_bit_set);
+        return self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                       $integer_constant,
+                                                       $is_bit_set);
 
     }
 
@@ -38570,9 +38777,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        return self::$R['kivotos']->R['bitflip_mgr']->serialized_bit_stringin(
-                                                      $name, 
-                                                      $bits_stringin);
+        return self::$_R['kivotos']->R['bitflip_mgr']->serialized_bit_stringin(
+                                                       $name,
+                                                       $bits_stringin);
 
     }
 
@@ -38594,7 +38801,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function bit_stringin($bits_stringin)
     {
 
-        return self::$R['kivotos']->R['bitflip_mgr']->bit_stringin($bits_stringin);
+        return self::$_R['kivotos']->R['bitflip_mgr']->bit_stringin($bits_stringin);
 
     }
 
@@ -38616,7 +38823,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function serialized_bit_stringout($name)
     {
 
-        return self::$R['kivotos']->R['bitflip_mgr']->serialized_bit_stringout($name);
+        return self::$_R['kivotos']->R['bitflip_mgr']->serialized_bit_stringout($name);
 
     }
 
@@ -38637,7 +38844,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function bit_stringout()
     {
 
-        return self::$R['kivotos']->R['bitflip_mgr']->bit_stringout();
+        return self::$_R['kivotos']->R['bitflip_mgr']->bit_stringout();
 
     }
 
@@ -38720,7 +38927,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * $this->oCRNRSTN_BITWISE->read($integer_constant);
          * $this->oCRNRSTN_BITWISE->remove($integer_constant);
          * $this->oCRNRSTN_BITWISE->stringout();
-         * self::$R['kivotos']->R['bitflip_mgr']->set($integer_constant, true);
+         * self::$_R['kivotos']->R['bitflip_mgr']->set($integer_constant, true);
          */
 
         $tmp_array = array();
@@ -38757,9 +38964,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
      */
     function return_system_info($property)
     {
-        if(isset(self::$R['kivotos']->R['bitflip_mgr'])){
+        if(isset(self::$_R['kivotos']->R['bitflip_mgr'])){
 
-            return self::$R['kivotos']->R['bitflip_mgr']->return_system_info($property);
+            return self::$_R['kivotos']->R['bitflip_mgr']->return_system_info($property);
 
         }else{
 
@@ -38946,7 +39153,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             $application_directory = $application_directory_override;
 
         if(!isset($R_framework_directory_override)) 
-            $R_framework_directory= self::$R_data['framework_directory'];
+            $R_framework_directory= self::$R_data['R_framework_directory'];
         else
             $R_framework_directory = $R_framework_directory_override;
 
@@ -39280,7 +39487,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *    $spool_resource = false, 
                  *    $env_key = NULL)
                  *
-                 * self::$R['kivotos']->R['config_mgr']->input_data_value($value, $data_key);
+                 * self::$_R['kivotos']->R['config_mgr']->input_data_value($value, $data_key);
                  * $this->input_data_value($data_value, $data_key);
                  *
                  */
@@ -39406,7 +39613,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * to $this->config_load_system_data(). 
          * 5 :: Tuesday, March 10, 2026 @ 1158 hrs.
          *
-         * $this->global_constants_string_ARRAY = self::$R['kivotos']->R['bitflip_mgr']->return_global_constants_string_ARRAY();
+         * $this->global_constants_string_ARRAY = self::$_R['kivotos']->R['bitflip_mgr']->return_global_constants_string_ARRAY();
          *
          */
 
@@ -39684,7 +39891,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 if(!isset($timezone)){
 
                     $timezone_name = \date_default_timezone_get();
-                    //self::$R['kivotos']->R['config_mgr']->input_data_value($timezone_name, 'timezone_default');
+                    //self::$_R['kivotos']->R['config_mgr']->input_data_value($timezone_name, 'timezone_default');
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * The CRNRSTN :: Lightsaber RoCEv2 
@@ -39752,9 +39959,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * https://www.php.net/manual/en/timezones.php
                  *
                  *
-                 * self::$R['kivotos']->R['config_mgr']->input_data_value(
-                 *                                       $timezone_id, 
-                 *                                       'timezone_default');
+                 * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                 *                                        $timezone_id,
+                 *                                        'timezone_default');
                  *
                  */
 
@@ -39862,9 +40069,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function set_timezone_default($timezone_id)
     {
 
-        self::$R['kivotos']->R['config_mgr']->input_data_value(
-                                              $timezone_id, 
-                                              'timezone_default');
+        self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                                               $timezone_id,
+                                               'timezone_default');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * List of supported 
@@ -40179,7 +40386,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *       5 :: Sunday, May 24, 2026 @ 2045 hrs.
          */
 
-        return self::$R['kivotos']->R['log_output_mgr'];
+        return self::$_R['kivotos']->R['log_output_mgr'];
 
     }
 
@@ -40202,7 +40409,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        self::$R['kivotos']->R['logging']->sync_R_log_output_mgr(self::$R['kivotos']->R['log_output_mgr']);
+        self::$_R['kivotos']->R['logging']->sync_R_log_output_mgr(self::$_R['kivotos']->R['log_output_mgr']);
 
     }
 
@@ -40216,7 +40423,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function return_active_log_silo_keys($output_type = 'R_string')
     {
 
-        return self::$R['kivotos']->R['logging']->return_active_log_silo_keys($output_type);
+        return self::$_R['kivotos']->R['logging']->return_active_log_silo_keys($output_type);
 
     }
 
@@ -40244,14 +40451,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $calling_object)
     {
 
-        self::$R['kivotos']->R['logging']->get_error_log_trace(
-                                           $output_profile, 
-                                           $output_profile_override_meta, 
-                                           $log_silo_profile, 
-                                           $line_num, 
-                                           $method, 
-                                           $file, 
-                                           $calling_object);
+        self::$_R['kivotos']->R['logging']->get_error_log_trace(
+                                            $output_profile,
+                                            $output_profile_override_meta,
+                                            $log_silo_profile,
+                                            $line_num,
+                                            $method,
+                                            $file,
+                                            $calling_object);
 
     }
 
@@ -40762,13 +40969,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $CRNRSTN_SOAP_ACTION_TYPE)
     {
 
-        return self::$R['kivotos']->R['env']->isAuthorized_SOAP_request(
-                                              $CRNRSTN_SOAP_SVC_AUTH_KEY,
-                                              $USERNAME,
-                                              $PASSWORD,
-                                              $CRNRSTN_SOAP_SVC_REQUESTED_RESOURCES,
-                                              $CRNRSTN_SOAP_SVC_METHOD_REQUESTED,
-                                              $CRNRSTN_SOAP_ACTION_TYPE);
+        return self::$_R['kivotos']->R['env']->isAuthorized_SOAP_request(
+                                               $CRNRSTN_SOAP_SVC_AUTH_KEY,
+                                               $USERNAME,
+                                               $PASSWORD,
+                                               $CRNRSTN_SOAP_SVC_REQUESTED_RESOURCES,
+                                               $CRNRSTN_SOAP_SVC_METHOD_REQUESTED,
+                                               $CRNRSTN_SOAP_ACTION_TYPE);
 
     }
 
@@ -40826,17 +41033,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * is a mapped resource request. 
          *
          */
-        if($this->rrs_map_is_asset_return() == true){
-
-            /*error_log(__LINE__ . 
-             *    ' crnrstn FIRE BYPASS :: RRS Map ' . 
-             *    'Application Acceleration [' . 
-             *    __METHOD__ . '].');
+        if($this->rrs_map_is_asset_return() == true)
+            /* error_log(__LINE__ .
+             *     ' crnrstn FIRE BYPASS :: RRS Map ' .
+             *     'Application Acceleration [' .
+             *     __METHOD__ . '].');
              *
              */
             return true;
-
-        }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * TODO :: We need to move
@@ -40844,11 +41048,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *         behind admin
          *         login creds.
          *
-         *error_log(__LINE__ . 
-         *' crnrstn - [' . 
-         *$env_key . '][' . 
-         *$crnrstn_resource_config_file_path . ']');
-         *$this->soap_permissions_file_path_ARRAY[self::$R_data['R_cluster_id']][hash($this->R_data['hmac']['options']['server'][$this->R_data['hmac']['default'][self::$R_data['int_flag']['R_integer']]], $env_key)][] = $crnrstn_resource_config_file_path;
+         * error_log(__LINE__ .
+         *     ' crnrstn - [' .
+         *     $env_key . '][' .
+         *     $crnrstn_resource_config_file_path . ']');
+         *
+         * $this->soap_permissions_file_path_ARRAY[self::$R_data['R_cluster_id']][hash($this->R_data['hmac']['options']['server'][$this->R_data['hmac']['default'][self::$R_data['int_flag']['R_integer']]], $env_key)][] = $crnrstn_resource_config_file_path;
          *
          */
 
@@ -40992,21 +41197,21 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                      */
                     $tmp_theme_style = self::$R_data['R_interact_ui_theme'];
                     
-                    /* self::$R['kivotos']->R['config_mgr']->input_data_value(
-                     *                                    $dir_path, 
-                     *                                    'crnrstn_favicon_asset_map_dir_root', 
-                     *                                    'CRNRSTN::RESOURCE::ASSET_PATH');
+                    /* self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                     *                                        $dir_path,
+                     *                                        'crnrstn_favicon_asset_map_dir_root',
+                     *                                        'CRNRSTN::RESOURCE::ASSET_PATH');
                      *
                      */
-                    self::$R['kivotos']->R['config_mgr']->input_data_value(
-                                                          $crnrstn_resource_config_file_path, 
-                                                          'crnrstn_system_defaults_config_file_path', 
-                                                          'CRNRSTN::RESOURCE::ASSET_PATH', 
-                                                          0, 
-                                                          self::$R_data['int_flag']['R_channel_RUNTIME'], 
-                                                          NULL, 
-                                                          false, 
-                                                          $env_key);
+                    self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                                                           $crnrstn_resource_config_file_path,
+                                                           'crnrstn_system_defaults_config_file_path',
+                                                           'CRNRSTN::RESOURCE::ASSET_PATH',
+                                                           0,
+                                                           self::$R_data['int_flag']['R_channel_RUNTIME'],
+                                                           NULL,
+                                                           false,
+                                                           $env_key);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * // Commented out this  
@@ -41667,15 +41872,15 @@ output   * start              N/Y    N/N     ---       ---        ---          -
  *
  *            if(is_file($crnrstn_resource_config_file_path)){
  *
- *                self::$R['kivotos']->R['config_mgr']->input_data_value(
- *                                                      $crnrstn_resource_config_file_path, 
- *                                                      'crnrstn_analytics_config_file_path', 
- *                                                      NULL, 
- *                                                      NULL, 
- *                                                      self::$R_data['int_flag']['R_channel_RUNTIME'], 
- *                                                      60, 
- *                                                      false, 
- *                                                      $env_key);
+ *                self::$_R['kivotos']->R['config_mgr']->input_data_value(
+ *                                                       $crnrstn_resource_config_file_path,
+ *                                                       'crnrstn_analytics_config_file_path',
+ *                                                       NULL,
+ *                                                       NULL,
+ *                                                       self::$R_data['int_flag']['R_channel_RUNTIME'],
+ *                                                       60,
+ *                                                       false,
+ *                                                       $env_key);
  *
  *                //
  *                // Acquire a file
@@ -41873,15 +42078,15 @@ output   * start              N/Y    N/N     ---       ---        ---          -
  *
  *            if(is_file($crnrstn_resource_config_file_path)){
  *
- *                self::$R['kivotos']->R['config_mgr']->input_data_value(
- *                                                      $crnrstn_resource_config_file_path, 
- *                                                      'crnrstn_engagement_config_file_path', 
- *                                                      NULL, 
- *                                                      NULL, 
- *                                                      self::$R_data['int_flag']['R_channel_RUNTIME'], 
- *                                                      60, 
- *                                                      false, 
- *                                                      $env_key);
+ *                self::$_R['kivotos']->R['config_mgr']->input_data_value(
+ *                                                       $crnrstn_resource_config_file_path,
+ *                                                       'crnrstn_engagement_config_file_path',
+ *                                                       NULL,
+ *                                                       NULL,
+ *                                                       self::$R_data['int_flag']['R_channel_RUNTIME'],
+ *                                                       60,
+ *                                                       false,
+ *                                                       $env_key);
  *
  *                //
  *                // Acquire a file
@@ -42594,7 +42799,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
  *          $profile_meta = NULL)
  * {
  *
- *        self::$R['kivotos']->R['bitflip_mgr']->initialize_bit($CRNRSTN_log_silo_profile, true);
+ *        self::$_R['kivotos']->R['bitflip_mgr']->initialize_bit($CRNRSTN_log_silo_profile, true);
  *
  *        self::$system_logging_output_profile_ARRAY[self::$R_data['R_cluster_id']][CRNRSTN_LOG_ALL][] = $CRNRSTN_log_silo_profile;
  *
@@ -43338,17 +43543,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * performance acceleration boost. 
          *
          */
-        if($this->config_is_valid_detected_env($env_key) == true){
-
-            self::$R['kivotos']->R['mysqli_conn_mgr']->add_database_table_profile(
-                                                       $env_key, 
-                                                       $table_prefix, 
-                                                       $logs_rollover_mode, 
-                                                       $storage_engine, 
-                                                       $collation, 
-                                                       $max_log_table_records);
-
-        }
+        if($this->config_is_valid_detected_env($env_key) == true)
+            self::$_R['kivotos']->R['mysqli_conn_mgr']->add_database_table_profile(
+                                                        $env_key,
+                                                        $table_prefix,
+                                                        $logs_rollover_mode,
+                                                        $storage_engine,
+                                                        $collation,
+                                                        $max_log_table_records);
 
     }
 
@@ -43660,13 +43862,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * 5 :: Thursday, August 4, 2022 @ 0450 hrs.
                  * Last Modified: Saturday, August 8, 2026 @ 1411 hrs.
                  *
-                 * self::$R['kivotos']->R['mysqli_conn_mgr']->add_connection(
-                 *                                            $env_key, 
-                 *                                            $host, 
-                 *                                            $un, 
-                 *                                            $pwd, 
-                 *                                            $db, 
-                 *                                            $port);
+                 * self::$_R['kivotos']->R['mysqli_conn_mgr']->add_connection(
+                 *                                             $env_key,
+                 *                                             $host,
+                 *                                             $un,
+                 *                                             $pwd,
+                 *                                             $db,
+                 *                                             $port);
                  */
 
             }
@@ -46794,7 +46996,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * $oCRNRSTN->config_custom_error_handler();
          *
          */
-        if($tmp_result = self::$R['kivotos']->R['performance_regulator']->crnrstn_custom_error_handler())
+        if($tmp_result = self::$_R['kivotos']->R['performance_regulator']->crnrstn_custom_error_handler())
             return $this->apply_CRNRSTN_asErrorHandler($tmp_result);
 
         return true;
@@ -47202,20 +47404,20 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              */
             $spool_channel = self::$R_data['int_flag'][$spool_channel];
 
-        if(isset(self::$R['kivotos']->R['logging']))
+        if(isset(self::$_R['kivotos']->R['logging']))
             // 5 :: Saturday, May 16, 2026 @ 0311 hrs.
-            return self::$R['kivotos']->R['logging']->error_log(
-                                                      $message_str, 
-                                                      $syslog_level, 
-                                                      $error_reporting_level, 
-                                                      $line_num, 
-                                                      $method, 
-                                                      $file, 
-                                                      $token, 
-                                                      $spool, 
-                                                      $spool_channel,
-                                                      $syslog_prefix,
-                                                      $syslog_prefix_passthrough);
+            return self::$_R['kivotos']->R['logging']->error_log(
+                                                       $message_str,
+                                                       $syslog_level,
+                                                       $error_reporting_level,
+                                                       $line_num,
+                                                       $method,
+                                                       $file,
+                                                       $token,
+                                                       $spool,
+                                                       $spool_channel,
+                                                       $syslog_prefix,
+                                                       $syslog_prefix_passthrough);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * TODO :: Delete this temp syslog() 
@@ -47417,24 +47619,24 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                    JSON data type to be used
                    for the JSON data.
 
-                $oJSON = self::$R['kivotos']->R['json']->build(
-                                                         __METHOD__, 
-                                                         $data_000, 
-                                                         $data_001, 
-                                                         $data_002, 
-                                                         $data_003, 
-                                                         $data_004, 
-                                                         $data_005, 
-                                                         $data_006, 
-                                                         $data_007, 
-                                                         $data_008, 
-                                                         $data_009, 
-                                                         $data_010, 
-                                                         $data_011, 
-                                                         $data_012, 
-                                                         $data_013, 
-                                                         $data_014, 
-                                                         $data_n);
+                $oJSON = self::$_R['kivotos']->R['json']->build(
+                                                          __METHOD__,
+                                                          $data_000,
+                                                          $data_001,
+                                                          $data_002,
+                                                          $data_003,
+                                                          $data_004,
+                                                          $data_005,
+                                                          $data_006,
+                                                          $data_007,
+                                                          $data_008,
+                                                          $data_009,
+                                                          $data_010,
+                                                          $data_011,
+                                                          $data_012,
+                                                          $data_013,
+                                                          $data_014,
+                                                          $data_n);
 
                 //class crnrstn_xml{
                 class crnrstn_json{
@@ -47562,7 +47764,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * 5 :: Monday, May 11, 2026 @ 0508 hrs.
                  *
                  */
-                if(!isset(self::$R['kivotos']->R['json'])){
+                if(!isset(self::$_R['kivotos']->R['json'])){
 
                     /*
                     error_log('[lnum ' . 
@@ -47749,7 +47951,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         Source: https://www.php.net/manual/en/function.syslog.php
         Source: https://datatracker.ietf.org/doc/html/rfc3164
-        5 :: Thursday, April 30 2026 @ 1539 hrs.
+        5 :: Thursday, April 30, 2026 @ 1539 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
          *
@@ -47847,7 +48049,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         * lights bowl *
         * cracks open another can of Sweetwater® 420 
           with my K-bar Happy 128th Birthday to K-bar, btw. *
-        5 :: Thursday, April 30 2026 @ 1620 hrs.
+        5 :: Thursday, April 30, 2026 @ 1620 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
         CRNRSTN :: Lightsaber RoCEv2 
@@ -47881,7 +48083,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         'CRNRSTN_LOG_SOAP'               => 8056
 
 
-        5 :: Thursday, April 30 2026 @ 1631 hrs.
+        5 :: Thursday, April 30, 2026 @ 1631 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
         The New CRNRSTN :: Lightsaber 
@@ -47894,7 +48096,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             self::$R_data['int_flag']['CRNRSTN_SYSTEM_TEST']  => 3 
 
 
-        5 :: Thursday, April 30 2026 @ 1652 hrs.
+        5 :: Thursday, April 30, 2026 @ 1652 hrs.
 
 
         The New CRNRSTN :: Lightsaber 
@@ -48304,19 +48506,19 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          */
 
         /*
-        if(isset(self::$R['kivotos']->R['logging'])){
+        if(isset(self::$_R['kivotos']->R['logging'])){
 
-            $tmp_oLog = self::$R['kivotos']->R['logging']->error_log(
-                                                           $message_str, 
-                                                           $syslog_level, 
-                                                           $error_reporting_level, 
-                                                           $line_num, 
-                                                           $method, 
-                                                           $file, 
-                                                           $token, 
-                                                           $spool);
+            $tmp_oLog = self::$_R['kivotos']->R['logging']->error_log(
+                                                            $message_str,
+                                                            $syslog_level,
+                                                            $error_reporting_level,
+                                                            $line_num,
+                                                            $method,
+                                                            $file,
+                                                            $token,
+                                                            $spool);
 
-            if(is_object($tmp_oLog))
+            if(\is_object($tmp_oLog))
                 $this->oLog_output_ARRAY[] = $tmp_oLog;
 
             return true;
@@ -48476,17 +48678,17 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     function error_log_clear($message_token = NULL){
         // 5 :: Tuesday, May 12, 2026 @ 0845 hrs.
 
-        if(isset(self::$R['kivotos']->R['logging']))
+        if(isset(self::$_R['kivotos']->R['logging']))
             // 5 :: Friday, May 22, 2026 @ 1107 hrs.
-            return self::$R['kivotos']->R['logging']->error_log_clear($message_token);
+            return self::$_R['kivotos']->R['logging']->error_log_clear($message_token);
 
         if(isset($message_token)){
 
             if(isset(self::$R_data['spool']['err_message_queue_push'][$message_token])){
 
                 //array_splice(self::$R_data['spool']['err_message_queue_push']['message_token'], 0); // Clear all tokens?
-                array_splice(self::$R_data['spool']['err_message_queue_push'][$message_token]['message'], 0);
-                array_splice(self::$R_data['spool']['err_message_queue_push'][$message_token]['data_authorization_profile'], 0);
+                \array_splice(self::$R_data['spool']['err_message_queue_push'][$message_token]['message'], 0);
+                \array_splice(self::$R_data['spool']['err_message_queue_push'][$message_token]['data_authorization_profile'], 0);
 
             }
 
@@ -48497,7 +48699,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             if(isset($_SESSION['CRNRSTN_ERROR_PREFIX_' . 
                 self::$R_data['R_cluster_id']]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'])){
 
-                array_splice($_SESSION['CRNRSTN_ERROR_PREFIX_' . 
+                \array_splice($_SESSION['CRNRSTN_ERROR_PREFIX_' .
                     self::$R_data['R_cluster_id']]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'], 
                     0);
 
@@ -48549,14 +48751,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        if(isset(self::$R['kivotos']->R['logging']))
+        if(isset(self::$_R['kivotos']->R['logging']))
             // 5 :: Friday, May 22, 2026 @ 1109 hrs.
-            return self::$R['kivotos']->R['logging']->clr_ssl_syslog_prefix(
-                                                      $line_num, 
-                                                      $file, 
-                                                      $method, 
-                                                      $prefix_override,
-                                                      $syslog_prefix_passthrough);
+            return self::$_R['kivotos']->R['logging']->clr_ssl_syslog_prefix(
+                                                       $line_num,
+                                                       $file,
+                                                       $method,
+                                                       $prefix_override,
+                                                       $syslog_prefix_passthrough);
 
         if(\strlen(\trim($syslog_prefix_passthrough)) < 1){
 
@@ -48631,11 +48833,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         if(\is_string($reporting_mode)) 
             $reporting_mode = self::$R_data['int_flag'][$reporting_mode];
 
-        if(isset(self::$R['kivotos']->R['session_mgr']))
-            return self::$R['kivotos']->R['session_mgr']->session_runtime(
-                                                          $reporting_mode, 
-                                                          $finite_express_mode, 
-                                                          $decimal);
+        if(isset(self::$_R['kivotos']->R['session_mgr']))
+            return self::$_R['kivotos']->R['session_mgr']->session_runtime(
+                                                           $reporting_mode,
+                                                           $finite_express_mode,
+                                                           $decimal);
 
         if(!isset($_SESSION['R_cluster_id_starttime']))
             $_SESSION['R_cluster_id_starttime'] = $this->microtime_float();
@@ -48755,7 +48957,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         // Peace out on this process. 
         return true;
 
-        if(!isset(self::$R['kivotos']->R['logging'])){
+        if(!isset(self::$_R['kivotos']->R['logging'])){
 
             // 5 :: Thursday, April 23, 2026 @ 0040 hrs.
             self::$R_data['spool']['err_message_queue_push']['message_serial'][]             = $message_serial;
@@ -48766,10 +48968,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         }
 
-        return self::$R['kivotos']->R['logging']->err_message_queue_push(
-                                                  $message_serial, 
-                                                  $message, 
-                                                  $data_authorization_profile);
+        return self::$_R['kivotos']->R['logging']->err_message_queue_push(
+                                                   $message_serial,
+                                                   $message,
+                                                   $data_authorization_profile);
 
     }
 
@@ -48814,10 +49016,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         // Peace out on this process. 
         return $message_override;
  
-        return self::$R['kivotos']->R['logging']->err_message_queue_retrieve(
-                                                  $message_override, 
-                                                  $message_serial, 
-                                                  $index);
+        return self::$_R['kivotos']->R['logging']->err_message_queue_retrieve(
+                                                   $message_override,
+                                                   $message_serial,
+                                                   $index);
 
     }
 
@@ -48860,7 +49062,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         // Peace out on this process. 
         return true;
 
-        return self::$R['kivotos']->R['logging']->err_message_queue_clear($message_serial);
+        return self::$_R['kivotos']->R['logging']->err_message_queue_clear($message_serial);
 
     }
 
@@ -48903,7 +49105,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         // Peace out on this process. 
         return -1;
 
-        return self::$R['kivotos']->R['logging']->err_message_count($message_serial);
+        return self::$_R['kivotos']->R['logging']->err_message_count($message_serial);
 
     }
 
@@ -49211,7 +49413,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                                           __FUNCTION__ . 
                                           '_integer_mode', 
                                           $R_debug_mode_override, 
-                                          'R_debug_mode_override', 
+                                          'R_debug_mode',
                                           'CRNRSTN::RESOURCE::CONFIGURATION', 
                                           0)))
                 {
@@ -49984,7 +50186,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        return self::$R['kivotos']->R['ip_mgr']->authorizeEnvAccess();
+        return self::$_R['kivotos']->R['ip_mgr']->authorizeEnvAccess();
 
     }
 
@@ -51163,13 +51365,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                    __FILE__, 
                    $token);
 
-            self::$R['kivotos']->R['mysqli_conn_mgr']->add_connection(
-                                                       $env_key, 
-                                                       $db_host_or_file_path, 
-                                                       $un, 
-                                                       $pwd, 
-                                                       $db, 
-                                                       $port);
+            self::$_R['kivotos']->R['mysqli_conn_mgr']->add_connection(
+                                                        $env_key,
+                                                        $db_host_or_file_path,
+                                                        $un,
+                                                        $pwd,
+                                                        $db,
+                                                        $port);
 
         }
 
@@ -51239,11 +51441,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                        __FILE__, 
                        $token);
 
-                self::$R['kivotos']->R['mysqli_conn_mgr']->config_add_data_wp(
-                                                           $env_key, 
-                                                           $data_key, 
-                                                           $data_value, 
-                                                           $data_type_family);
+                self::$_R['kivotos']->R['mysqli_conn_mgr']->config_add_data_wp(
+                                                            $env_key,
+                                                            $data_key,
+                                                            $data_value,
+                                                            $data_type_family);
 
             }
 
@@ -51478,9 +51680,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * $this->oCRNRSTN_ENV = new crnrstn_environment($this);
                  *
                  *
-                self::$R['kivotos']->R['env'] = $this->return_registered_resource(
-                                                       'new',
-                                                       'crnrstn_environment');
+                self::$_R['kivotos']->R['env'] = $this->return_registered_resource(
+                                                        'new',
+                                                        'crnrstn_environment');
                  */
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -51489,7 +51691,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * class object. 
                  *
                  *
-                self::$R['kivotos']->R['usr'] = self::$R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
+                self::$_R['kivotos']->R['usr'] = self::$_R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
                  */
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -51500,7 +51702,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * so that data can be received. 
                  *
                  */
-                self::$R['kivotos']->R['config_mgr']->initialize_multi_channel_environment_key();
+                self::$_R['kivotos']->R['config_mgr']->initialize_multi_channel_environment_key();
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -51578,7 +51780,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config/_config.defaults' . 
                        '/_crnrstn.system_settings.inc.php');
 
@@ -51612,7 +51814,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config/config.database.sql' . 
                        '/crnrstn.db_sql_silo.inc.php');
 
@@ -51631,7 +51833,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config/' . 
                        'config.database.secure/' . 
                        '_crnrstn.db.config.inc.php');
@@ -51646,7 +51848,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config/' . 
                        'config.wp.secure/' . 
                        '_crnrstn.wp_config.inc.php');
@@ -51668,7 +51870,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config' . 
                        '/config.encryption.secure' . 
                        '/_crnrstn.encryption.inc.php');
@@ -51683,7 +51885,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config' . 
                        '/config.resource_wildcards.secure' . 
                        '/_crnrstn.resource_wildcards.inc.php');
@@ -51700,7 +51902,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config' . 
                        '/config.system_resource.secure' . 
                        '/_crnrstn.system_resource.inc.php');
@@ -51718,7 +51920,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config' . 
                        '/config.seo_analytics.secure' . 
                        '/_crnrstn.analytics.inc.php');
@@ -51736,7 +51938,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config' . 
                        '/config.seo_engagement.secure' . 
                        '/_crnrstn.engagement.inc.php');
@@ -51751,7 +51953,7 @@ print_r($tmp_channel_ARRAY, true) .
                        $env_key, 
                        self::$R_data['CRNRSTN_ROOT'] . 
                        '/' . 
-                       self::$R_data['framework_directory'] . 
+                       self::$R_data['R_framework_directory'] .
                        '/_config' . 
                        '/config.social_media_meta.secure' . 
                        '/_crnrstn.social_media_meta.inc.php');
@@ -51795,7 +51997,7 @@ print_r($tmp_channel_ARRAY, true) .
     private function replay_config_initialization_spool()
     {
 
-        self::$R['kivotos']->R['performance_regulator']->replay_config_initialization_spool();
+        self::$_R['kivotos']->R['performance_regulator']->replay_config_initialization_spool();
 
     }
 
@@ -51809,7 +52011,7 @@ print_r($tmp_channel_ARRAY, true) .
     private function initialize_http_get_params()
     {
 
-        self::$R['kivotos']->R['env']->initialize_http_get_params();
+        self::$_R['kivotos']->R['env']->initialize_http_get_params();
 
     }
 
@@ -53124,7 +53326,7 @@ print_r($tmp_channel_ARRAY, true) .
             'meta/php/config_custom_error_handler' => 'config_custom_error_handler', 'meta/php/config_set_timezone_default' => 'config_set_timezone_default',
             'meta/php/config_set_ui_theme_style' => 'config_set_ui_theme_style', 'meta/php/data_decrypt' => 'data_decrypt', 'meta/php/data_encrypt' => 'data_encrypt',
             'meta/php/delete_all_cookies' => 'delete_all_cookies', 'meta/php/delete_cookie' => 'delete_cookie', 'meta/php/device_type' => 'device_type',
-            'meta/php/device_type_bit' => 'device_type_bit', 'meta/php/error_log' => 'error_log', 'meta/php/format_bytes' => 'format_bytes',
+            'meta/php/device_type_bit' => 'device_type_bit', 'meta/php/error_log' => 'error_log', 'meta/php/return_bytes' => 'return_bytes',
             'meta/php/generate_new_key' => 'generate_new_key', 'meta/php/get_cookie' => 'get_cookie', 'meta/php/get_disk_free_space' => 'get_disk_free_space',
             'meta/php/get_disk_performance_metric' => 'get_disk_performance_metric', 'meta/php/get_disk_size' => 'get_disk_size',
             'meta/php/get_headers' => 'get_headers', 'meta/php/get_mobile_browsers' => 'get_mobile_browsers', 'meta/php/get_mobile_devices' => 'get_mobile_devices',
@@ -53178,7 +53380,7 @@ print_r($tmp_channel_ARRAY, true) .
             'config_set_timezone_default' => 'CONFIG_SET_TIMEZONE_DEFAULT_SOCIAL_META_PREVIEW', 'config_set_ui_theme_style' => 'CONFIG_SET_UI_THEME_STYLE_SOCIAL_META_PREVIEW',
             'data_decrypt' => 'DATA_DECRYPT_SOCIAL_META_PREVIEW', 'data_encrypt' => 'DATA_ENCRYPT_SOCIAL_META_PREVIEW', 'delete_all_cookies' => 'DELETE_ALL_COOKIES_SOCIAL_META_PREVIEW',
             'delete_cookie' => 'DELETE_COOKIE_SOCIAL_META_PREVIEW', 'device_type' => 'DEVICE_TYPE_SOCIAL_META_PREVIEW', 'device_type_bit' => 'DEVICE_TYPE_BIT_SOCIAL_META_PREVIEW',
-            'error_log' => 'ERROR_LOG_SOCIAL_META_PREVIEW', 'format_bytes' => 'FORMAT_BYTES_SOCIAL_META_PREVIEW', 'generate_new_key' => 'GENERATE_NEW_KEY_SOCIAL_META_PREVIEW',
+            'error_log' => 'ERROR_LOG_SOCIAL_META_PREVIEW', 'return_bytes' => 'FORMAT_BYTES_SOCIAL_META_PREVIEW', 'generate_new_key' => 'GENERATE_NEW_KEY_SOCIAL_META_PREVIEW',
             'get_cookie' => 'GET_COOKIE_SOCIAL_META_PREVIEW', 'get_disk_free_space' => 'GET_DISK_FREE_SPACE_SOCIAL_META_PREVIEW', 'get_disk_performance_metric' => 'GET_DISK_PERFORMANCE_METRIC_SOCIAL_META_PREVIEW',
             'get_disk_size' => 'GET_DISK_SIZE_SOCIAL_META_PREVIEW', 'get_headers' => 'GET_HEADERS_SOCIAL_META_PREVIEW', 'get_mobile_browsers' => 'GET_MOBILE_BROWSERS_SOCIAL_META_PREVIEW',
             'get_mobile_devices' => 'GET_MOBILE_DEVICES_SOCIAL_META_PREVIEW', 'get_mobile_os' => 'GET_MOBILE_OS_SOCIAL_META_PREVIEW', 'get_resource' => 'GET_RESOURCE_SOCIAL_META_PREVIEW',
@@ -53494,7 +53696,7 @@ print_r($tmp_channel_ARRAY, true) .
          * search). not for display. 
          *
          */
-        $tmp_sauce .= self::$R['kivotos']->R['ui_html_mgr']->sauce($resource);
+        $tmp_sauce .= self::$_R['kivotos']->R['ui_html_mgr']->sauce($resource);
 
         return $tmp_sauce;
 
@@ -53934,12 +54136,12 @@ print_r($tmp_channel_ARRAY, true) .
                 ']. $data_authorization_profile[' . 
                 $data_authorization_profile . 
                 '].');
-            $tmp_return = self::$R['kivotos']->R['config_mgr']->retrieve_data_value(
-                                                                $data_key, 
-                                                                $data_type_family, 
-                                                                $index, 
-                                                                $env_key, 
-                                                                $data_authorization_profile);
+            $tmp_return = self::$_R['kivotos']->R['config_mgr']->retrieve_data_value(
+                                                                 $data_key,
+                                                                 $data_type_family,
+                                                                 $index,
+                                                                 $env_key,
+                                                                 $data_authorization_profile);
 
             if($tmp_return != $this->session_salt())
                 return $tmp_return;
@@ -54017,7 +54219,7 @@ print_r($tmp_channel_ARRAY, true) .
  *
  *             $tmp_channel = $this->return_channel_name($tmp_channel_ARRAY[$ch_index]);
  *
- *             self::$R['kivotos']->R['rrs_map']->ini_rrs_map_set('channel_bytes', $tmp_channel);
+ *             self::$_R['kivotos']->R['rrs_map']->ini_rrs_map_set('channel_bytes', $tmp_channel);
  *
  *         }
  *
@@ -54101,11 +54303,11 @@ print_r($tmp_channel_ARRAY, true) .
              $index = 0)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->get_ddo_resource_pointer(
-                                                     $ddo_memory_pointer, 
-                                                     $data_key, 
-                                                     $data_type_family, 
-                                                     $index);
+        return self::$_R['kivotos']->R['config_mgr']->get_ddo_resource_pointer(
+                                                      $ddo_memory_pointer,
+                                                      $data_key,
+                                                      $data_type_family,
+                                                      $index);
 
     }
 
@@ -54136,12 +54338,12 @@ print_r($tmp_channel_ARRAY, true) .
          *         5 :: Thursday, January 4, 2024 @ 0158 hrs.
          *
          */
-        self::$R['kivotos']->R['config_mgr']->initialize_ddo_resource_pointer(
-                                              $ddo_memory_pointer, 
-                                              $data_key, 
-                                              $channel, 
-                                              $index, 
-                                              $ttl);
+        self::$_R['kivotos']->R['config_mgr']->initialize_ddo_resource_pointer(
+                                               $ddo_memory_pointer,
+                                               $data_key,
+                                               $channel,
+                                               $index,
+                                               $ttl);
 
     }
 
@@ -54164,10 +54366,10 @@ print_r($tmp_channel_ARRAY, true) .
             self::$env_key_config_ARRAY[self::$R_data['R_cluster_id']][self::$env_key_hash_config_ARRAY[self::$R_data['R_cluster_id']]] . 
             '].');
 
-        return self::$R['kivotos']->R['config_mgr']->retrieve_data_count(
-                                                     $data_key, 
-                                                     $data_type_family, 
-                                                     self::$env_key_config_ARRAY[self::$R_data['R_cluster_id']][self::$env_key_hash_config_ARRAY[self::$R_data['R_cluster_id']]]);
+        return self::$_R['kivotos']->R['config_mgr']->retrieve_data_count(
+                                                      $data_key,
+                                                      $data_type_family,
+                                                      self::$env_key_config_ARRAY[self::$R_data['R_cluster_id']][self::$env_key_hash_config_ARRAY[self::$R_data['R_cluster_id']]]);
 
     }
 
@@ -54199,10 +54401,10 @@ print_r($tmp_channel_ARRAY, true) .
          */
         $this->env_key($env_key);
 
-        return self::$R['kivotos']->R['config_mgr']->isset_data_key(
-                                                     $data_key, 
-                                                     $data_type_family, 
-                                                     $env_key);
+        return self::$_R['kivotos']->R['config_mgr']->isset_data_key(
+                                                      $data_key,
+                                                      $data_type_family,
+                                                      $env_key);
 
     }
 
@@ -54220,9 +54422,9 @@ print_r($tmp_channel_ARRAY, true) .
              $data_key)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->input_data_value(
-                                                     $data_value, 
-                                                     $data_key);
+        return self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                                                      $data_value,
+                                                      $data_key);
 
     }
 
@@ -55048,10 +55250,10 @@ print_r($tmp_channel_ARRAY, true) .
          * input [BOOLEAN] 
          *
          */
-        return self::$R['kivotos']->R['config_mgr']->set_channel_config(
-                                                     $channel_constant, 
-                                                     $attribute_name, 
-                                                     $data);
+        return self::$_R['kivotos']->R['config_mgr']->set_channel_config(
+                                                      $channel_constant,
+                                                      $attribute_name,
+                                                      $data);
 
     }
 
@@ -55083,9 +55285,9 @@ print_r($tmp_channel_ARRAY, true) .
          * input [BOOLEAN]
          *
          */
-        return self::$R['kivotos']->R['config_mgr']->get_channel_config(
-                                                     $channel_constant, 
-                                                     $attribute_name);
+        return self::$_R['kivotos']->R['config_mgr']->get_channel_config(
+                                                      $channel_constant,
+                                                      $attribute_name);
 
     }
 
@@ -55119,10 +55321,10 @@ print_r($tmp_channel_ARRAY, true) .
          * input [BOOLEAN]
          *
          */
-        return self::$R['kivotos']->R['config_mgr']->isset_channel_config(
-                                                     $channel_constant, 
-                                                     $attribute_name, 
-                                                     $return_type);
+        return self::$_R['kivotos']->R['config_mgr']->isset_channel_config(
+                                                      $channel_constant,
+                                                      $attribute_name,
+                                                      $return_type);
 
     }
 
@@ -55140,9 +55342,9 @@ print_r($tmp_channel_ARRAY, true) .
              $return_type = CRNRSTN_BOOLEAN)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->is_channel_active(
-                                                     $channel_constant, 
-                                                     $return_type);
+        return self::$_R['kivotos']->R['config_mgr']->is_channel_active(
+                                                      $channel_constant,
+                                                      $return_type);
 
     }
 
@@ -55209,13 +55411,13 @@ print_r($tmp_channel_ARRAY, true) .
          * Logging Services Layer. 
          *
          */
-        return self::$R['kivotos']->R['logging']->get_system_logging_config(
-                                                  $channel, 
-                                                  $R_index_000, 
-                                                  $R_index_001, 
-                                                  $R_index_002, 
-                                                  $R_index_003, 
-                                                  $initialize);
+        return self::$_R['kivotos']->R['logging']->get_system_logging_config(
+                                                   $channel,
+                                                   $R_index_000,
+                                                   $R_index_001,
+                                                   $R_index_002,
+                                                   $R_index_003,
+                                                   $initialize);
 
     }
 
@@ -55237,9 +55439,9 @@ print_r($tmp_channel_ARRAY, true) .
             // 5 :: Tuesday, July 21, 2026 @ 0643 hrs.
             $output_format = self::$R_data['int_flag'][$output_format];
 
-        return self::$R['kivotos']->R['config_mgr']->authorized_channel_ids(
-                                                     $channel_data, 
-                                                     $output_format);
+        return self::$_R['kivotos']->R['config_mgr']->authorized_channel_ids(
+                                                      $channel_data,
+                                                      $output_format);
 
     }
 
@@ -55361,12 +55563,12 @@ print_r($tmp_channel_ARRAY, true) .
          * input [BOOLEAN]
          *
          */
-        return self::$R['kivotos']->R['config_mgr']->get_channel_config(
-                                                     $channel, 
-                                                     $R_index_000, 
-                                                     $R_index_001, 
-                                                     $R_index_002, 
-                                                     $R_index_003);
+        return self::$_R['kivotos']->R['config_mgr']->get_channel_config(
+                                                      $channel,
+                                                      $R_index_000,
+                                                      $R_index_001,
+                                                      $R_index_002,
+                                                      $R_index_003);
 
     }
 
@@ -55442,13 +55644,13 @@ print_r($tmp_channel_ARRAY, true) .
 
         }
 
-        $data = self::$R['kivotos']->R['rrs_map']->channel_authorization_data_reporting_sync(
-                                                   $data, 
-                                                   $data_key, 
-                                                   $data_type_family, 
-                                                   $channel, 
-                                                   $data_authorization_profile, 
-                                                   $cache_storage);
+        $data = self::$_R['kivotos']->R['rrs_map']->channel_authorization_data_reporting_sync(
+                                                    $data,
+                                                    $data_key,
+                                                    $data_type_family,
+                                                    $channel,
+                                                    $data_authorization_profile,
+                                                    $cache_storage);
 
     }
 
@@ -55474,7 +55676,7 @@ print_r($tmp_channel_ARRAY, true) .
              */
             $channel = self::$R_data['int_flag'][$channel];
 
-        return self::$R['kivotos']->R['config_mgr']->get_channel_config($channel, 'total_channel_bytes');
+        return self::$_R['kivotos']->R['config_mgr']->get_channel_config($channel, 'total_channel_bytes');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Please see, 
@@ -55866,7 +56068,7 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_GET
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit($tmp_channel_encryption, true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit($tmp_channel_encryption, true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -55938,13 +56140,13 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_POST
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                                       $this->get_channel_config(
-                                                                              $channel, 
-                                                                              'ENCRYPTION', 
-                                                                              'PROFILE', 
-                                                                              self::$R_data['int_flag']['R_integer']), 
-                                                                       true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                                        $this->get_channel_config(
+                                                                               $channel,
+                                                                               'ENCRYPTION',
+                                                                               'PROFILE',
+                                                                               self::$R_data['int_flag']['R_integer']),
+                                                                        true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -56011,13 +56213,13 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_COOKIE
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                                       $this->get_channel_config(
-                                                                              $channel, 
-                                                                              'ENCRYPTION', 
-                                                                              'PROFILE', 
-                                                                              self::$R_data['int_flag']['R_integer']), 
-                                                                       true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                                        $this->get_channel_config(
+                                                                               $channel,
+                                                                               'ENCRYPTION',
+                                                                               'PROFILE',
+                                                                               self::$R_data['int_flag']['R_integer']),
+                                                                        true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -56084,13 +56286,13 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_SESSION
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                                       $this->get_channel_config(
-                                                                              $channel, 
-                                                                              'ENCRYPTION', 
-                                                                              'PROFILE', 
-                                                                              self::$R_data['int_flag']['R_integer']), 
-                                                                       true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                                        $this->get_channel_config(
+                                                                               $channel,
+                                                                               'ENCRYPTION',
+                                                                               'PROFILE',
+                                                                               self::$R_data['int_flag']['R_integer']),
+                                                                        true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -56157,13 +56359,13 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_DATABASE
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                                       $this->get_channel_config(
-                                                                              $channel, 
-                                                                              'ENCRYPTION', 
-                                                                              'PROFILE', 
-                                                                              self::$R_data['int_flag']['R_integer']), 
-                                                                       true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                                        $this->get_channel_config(
+                                                                               $channel,
+                                                                               'ENCRYPTION',
+                                                                               'PROFILE',
+                                                                               self::$R_data['int_flag']['R_integer']),
+                                                                        true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -56232,13 +56434,13 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_TUNNEL
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                                       $this->get_channel_config(
-                                                                              $channel, 
-                                                                              'ENCRYPTION', 
-                                                                              'PROFILE', 
-                                                                              self::$R_data['int_flag']['R_integer']), 
-                                                                       true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                                        $this->get_channel_config(
+                                                                               $channel,
+                                                                               'ENCRYPTION',
+                                                                               'PROFILE',
+                                                                               self::$R_data['int_flag']['R_integer']),
+                                                                        true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -56305,13 +56507,13 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_SOAP
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                                       $this->get_channel_config(
-                                                                              $channel, 
-                                                                              'ENCRYPTION', 
-                                                                              'PROFILE', 
-                                                                              self::$R_data['int_flag']['R_integer']), 
-                                                                       true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                                        $this->get_channel_config(
+                                                                               $channel,
+                                                                               'ENCRYPTION',
+                                                                               'PROFILE',
+                                                                               self::$R_data['int_flag']['R_integer']),
+                                                                        true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -56378,13 +56580,13 @@ print_r($tmp_channel_ARRAY, true) .
                                  * R_encrypt_FILE
                                  *
                                  */
-                                self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(
-                                                                       $this->get_channel_config(
-                                                                              $channel, 
-                                                                              'ENCRYPTION', 
-                                                                              'PROFILE', 
-                                                                              self::$R_data['int_flag']['R_integer']), 
-                                                                       true);
+                                self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(
+                                                                        $this->get_channel_config(
+                                                                               $channel,
+                                                                               'ENCRYPTION',
+                                                                               'PROFILE',
+                                                                               self::$R_data['int_flag']['R_integer']),
+                                                                        true);
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * CRNRSTN :: Lightsaber RoCEv2 
@@ -56521,7 +56723,7 @@ print_r($tmp_channel_ARRAY, true) .
          * profile. 
          *
          */
-        return self::$R['kivotos']->R['rrs_map']->config_init_channel_map();
+        return self::$_R['kivotos']->R['rrs_map']->config_init_channel_map();
 
     }
 
@@ -56547,7 +56749,7 @@ print_r($tmp_channel_ARRAY, true) .
                                   'config_channel_data_translate().' . 
                                   '</code></pre>';
 
-        self::$R['kivotos']->R['config_mgr']->config_channel_data_translate();
+        self::$_R['kivotos']->R['config_mgr']->config_channel_data_translate();
 
     }
 
@@ -56561,7 +56763,7 @@ print_r($tmp_channel_ARRAY, true) .
     function config_init_rrs_map_max_report_length()
     {
 
-        return self::$R['kivotos']->R['rrs_map']->config_init_rrs_map_max_report_length();
+        return self::$_R['kivotos']->R['rrs_map']->config_init_rrs_map_max_report_length();
 
     }
 
@@ -56797,14 +56999,10 @@ print_r($tmp_channel_ARRAY, true) .
          * Quick runtime check.
          *
          */
-        if(self::$R['kivotos']->R['env']->isset_hmac_algorithm_profile(
-                                          $data_key,
-                                          $data_type_family) == true)
-        {
-
+        if(self::$_R['kivotos']->R['env']->isset_hmac_algorithm_profile(
+                                           $data_key,
+                                           $data_type_family) == true)
             return true;
-
-        }
 
         $tmp_hmac_algorithm = strtolower(trim($data));
 
@@ -56874,10 +57072,10 @@ print_r($tmp_channel_ARRAY, true) .
                      * algorithm profile. 
                      *
                      */
-                    self::$R['kivotos']->R['env']->set_hmac_algorithm_profile(
-                                                   $hash_name,
-                                                   $data_key,
-                                                   $data_type_family);
+                    self::$_R['kivotos']->R['env']->set_hmac_algorithm_profile(
+                                                    $hash_name,
+                                                    $data_key,
+                                                    $data_type_family);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * CRNRSTN :: Lightsaber RoCEv2 
@@ -56942,10 +57140,10 @@ print_r($tmp_channel_ARRAY, true) .
              $graceful_degrade = true)
     {
 
-        return self::$R['kivotos']->R['env']->get_openssl_cipher_profile(
-                                              $data_key,
-                                              $data_type_family,
-                                              $graceful_degrade);
+        return self::$_R['kivotos']->R['env']->get_openssl_cipher_profile(
+                                               $data_key,
+                                               $data_type_family,
+                                               $graceful_degrade);
 
     }
 
@@ -56971,7 +57169,7 @@ print_r($tmp_channel_ARRAY, true) .
          * Quick runtime check. 
          *
          */
-        if(self::$R['kivotos']->R['env']->isset_openssl_cipher_profile($data_key, $data_type_family) == true)
+        if(self::$_R['kivotos']->R['env']->isset_openssl_cipher_profile($data_key, $data_type_family) == true)
             return true;
 
         $tmp_cipher = strtolower(trim($data));
@@ -56998,7 +57196,7 @@ print_r($tmp_channel_ARRAY, true) .
              */
             if(self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['cipher']['default'][self::$R_data['int_flag']['R_integer']] == -1){
 
-                if(!isset(self::$R['kivotos']->R['env'])){
+                if(!isset(self::$_R['kivotos']->R['env'])){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Return an instantiation of
@@ -57013,9 +57211,9 @@ print_r($tmp_channel_ARRAY, true) .
                      * $this->oCRNRSTN_ENV = new crnrstn_environment($this);
                      *
                      *
-                    self::$R['kivotos']->R['env'] = $this->return_registered_resource(
-                                                           'new',
-                                                           'crnrstn_environment');
+                    self::$_R['kivotos']->R['env'] = $this->return_registered_resource(
+                                                            'new',
+                                                            'crnrstn_environment');
                      */
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -57023,7 +57221,7 @@ print_r($tmp_channel_ARRAY, true) .
                      * CLR-SSL USER class object. 
                      *
                      *
-                    self::$R['kivotos']->R['usr'] = self::$R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
+                    self::$_R['kivotos']->R['usr'] = self::$_R['kivotos']->R['env']->return_ENV_oCRNRSTN_USR();
                      */
 
                 }
@@ -57033,7 +57231,7 @@ print_r($tmp_channel_ARRAY, true) .
                  * OpenSSL ciphers. 
                  *
                  */
-                self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['server'] = self::$R['kivotos']->R['env']->openssl_get_cipher_methods(false, false);
+                self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['options']['server'] = self::$_R['kivotos']->R['env']->openssl_get_cipher_methods(false, false);
 
             }
 
@@ -57070,10 +57268,10 @@ print_r($tmp_channel_ARRAY, true) .
                      * OpenSSL cipher profile. 
                      *
                      */
-                    self::$R['kivotos']->R['env']->set_openssl_cipher_profile(
-                                                   $cipher_name,
-                                                   $data_key,
-                                                   $data_type_family);
+                    self::$_R['kivotos']->R['env']->set_openssl_cipher_profile(
+                                                    $cipher_name,
+                                                    $data_key,
+                                                    $data_type_family);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * The CRNRSTN :: Lightsaber RoCEv2 
@@ -57311,16 +57509,16 @@ print_r($tmp_channel_ARRAY, true) .
          * 5 :: Sunday, December 3, 2023 @ 2116 hrs.
          *
          */
-        return self::$R['kivotos']->R['performance_regulator']->config_ugc_input_clean_data(
-                                                                $data_profile,
-                                                                $data,
-                                                                $data_key,
-                                                                $data_type_family,
-                                                                $index,
-                                                                $data_authorization_profile,
-                                                                $ttl,
-                                                                $spool_resource,
-                                                                $env_key);
+        return self::$_R['kivotos']->R['performance_regulator']->config_ugc_input_clean_data(
+                                                                 $data_profile,
+                                                                 $data,
+                                                                 $data_key,
+                                                                 $data_type_family,
+                                                                 $index,
+                                                                 $data_authorization_profile,
+                                                                 $ttl,
+                                                                 $spool_resource,
+                                                                 $env_key);
 
     }
 
@@ -61937,15 +62135,15 @@ print_r($tmp_channel_ARRAY, true) .
              $env_key = NULL)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->input_data_value(
-                                                     $data_value, 
-                                                     $data_key, 
-                                                     $data_type_family, 
-                                                     $index, 
-                                                     $data_authorization_profile, 
-                                                     $ttl, 
-                                                     $spool_resource, 
-                                                     $env_key);
+        return self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                                                      $data_value,
+                                                      $data_key,
+                                                      $data_type_family,
+                                                      $index,
+                                                      $data_authorization_profile,
+                                                      $ttl,
+                                                      $spool_resource,
+                                                      $env_key);
 
     }
 
@@ -62127,7 +62325,7 @@ print_r($tmp_channel_ARRAY, true) .
                    self::$R_data['int_flag']['CRNRSTN_RESOURCE_ALL'], 
                    self::$R_data['CRNRSTN_ROOT'] . 
                    '/' . 
-                   self::$R_data['framework_directory'] . 
+                   self::$R_data['R_framework_directory'] .
                    '/_config/_config.defaults' . 
                    '/_crnrstn.load.inc.php');
 
@@ -62310,7 +62508,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                 include_once(self::$R_data['CRNRSTN_ROOT'] . 
                     '/' . 
-                    self::$R_data['framework_directory'] . 
+                    self::$R_data['R_framework_directory'] .
                     '/ui/docs/interstitials' . 
                     '/_config_config_enter_configuration_serial_help.php');
 
@@ -62321,7 +62519,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                 include_once(self::$R_data['CRNRSTN_ROOT'] . 
                     '/' . 
-                    self::$R_data['framework_directory'] . 
+                    self::$R_data['R_framework_directory'] .
                     '/ui/docs/interstitials' . 
                     '/_config_config_detection_error_help.php');
 
@@ -62377,13 +62575,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             // 5 :: Sunday, July 26, 2026 @ 2155 hrs.
             $encryption_channel = self::$R_data['int_flag'][$encryption_channel];
 
-        return self::$R['kivotos']->R['env']->data_encrypt(
-                                              $data,
-                                              $encryption_channel,
-                                              $cipher_override,
-                                              $secret_key_override,
-                                              $hmac_algorithm_override,
-                                              $options_bitwise_override);
+        return self::$_R['kivotos']->R['env']->data_encrypt(
+                                               $data,
+                                               $encryption_channel,
+                                               $cipher_override,
+                                               $secret_key_override,
+                                               $hmac_algorithm_override,
+                                               $options_bitwise_override);
 
     }
 
@@ -62413,13 +62611,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             // 5 :: Sunday, July 26, 2026 @ 2157 hrs.
             $encryption_channel = self::$R_data['int_flag'][$encryption_channel];
 
-        $tmp_data_decrypted = self::$R['kivotos']->R['env']->data_decrypt(
-                                                             $data,
-                                                             $encryption_channel,
-                                                             $cipher_override,
-                                                             $secret_key_override,
-                                                             $hmac_algorithm_override,
-                                                             $options_bitwise_override);
+        $tmp_data_decrypted = self::$_R['kivotos']->R['env']->data_decrypt(
+                                                              $data,
+                                                              $encryption_channel,
+                                                              $cipher_override,
+                                                              $secret_key_override,
+                                                              $hmac_algorithm_override,
+                                                              $options_bitwise_override);
 
         if(isset(self::$encryptable_data_types_ARRAY[gettype($tmp_data_decrypted)]))
             $this->total_bytes_decrypted += \strlen((string) $tmp_data_decrypted);
@@ -62461,21 +62659,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * 5 :: November 6, 2025 @ 0550 hrs.
          *
          */
-        return self::$R['kivotos']->R['lang_mgr']->multi_lang_content_return(
-                                                   $iso_lang_code,
-                                                   $multi_lang_resource_key,
-                                                   $data_attribute_key,
-                                                   $default_content,
-                                                   $css_style_ARRAY);
+        return self::$_R['kivotos']->R['lang_mgr']->multi_lang_content_return(
+                                                    $iso_lang_code,
+                                                    $multi_lang_resource_key,
+                                                    $data_attribute_key,
+                                                    $default_content,
+                                                    $css_style_ARRAY);
 
     }
-
-/*    function get_lang_copy($data_key){
- *
- *        return self::$R['kivotos']->R['env']->get_lang_copy($data_key);
- *
- *    }
- */
 
     /**
      * R :: Content pending. 
@@ -62495,11 +62686,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $soap_tunnel = false)
     {
 
-        return self::$R['kivotos']->R['mysqli_conn_mgr']->get_resource_wp(
-                                                          $data_key, 
-                                                          $index, 
-                                                          $data_type_family, 
-                                                          $soap_tunnel);
+        return self::$_R['kivotos']->R['mysqli_conn_mgr']->get_resource_wp(
+                                                           $data_key,
+                                                           $index,
+                                                           $data_type_family,
+                                                           $soap_tunnel);
 
     }
 
@@ -62602,9 +62793,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              */
             $module_permissions_profile = self::$R_data['int_flag'][$module_permissions_profile];
 
-        return self::$R['kivotos']->R['usr']->ui_module_out(
-                                              $module,
-                                              $module_permissions_profile);
+        return self::$_R['kivotos']->R['usr']->ui_module_out(
+                                               $module,
+                                               $module_permissions_profile);
 
     }
 
@@ -62656,6 +62847,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $R_str_replacements[]  = '&reg;';
         $R_str_replacements[]  = '&copy;';
         $R_str_replacements[]  = '&oacute;';
+        $session_salt          = $this->session_salt();
 
         switch($this->gettype($R_resp, self::$R_data['int_flag']['R_integer'])){
             case self::$R_data['int_flag']['R_array']:
@@ -62679,7 +62871,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 $data               = $R_resp;
                 $data_resource_name = \get_class($R_resp);
 
-                if(self::$R['kivotos']->isset_kivotos($data_resource_name)){
+                if(self::$_R['kivotos']->isset_kivotos($data_resource_name)){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Extract the data from
@@ -62689,7 +62881,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      * 5 :: Friday, August 14, 2026 @ 0837 hrs.
                      *
                      */
-                    $R_resp = self::$R['kivotos']->get_kivotos('R_kivotos_meta', $data_resource_name);
+                    $R_resp = self::$_R['kivotos']->get_kivotos('R_kivotos_meta', $data_resource_name);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the CLR-SSL
@@ -62715,11 +62907,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      *
                      */
                     if(!($R_resp = _crnrstn_native_resource_registry(
-                        'ping',
-                        $this,
-                        NULL,
-                        \get_class($R_resp),
-                        self::$R_data['R_debug_mode'])))
+                                   'ping',
+                                   $this,
+                                   NULL,
+                                   \get_class($R_resp),
+                                   self::$R_data['R_debug_mode'])))
                     {
 
                         $clr_ssl_msg = 'CLR-SSL resource ' .
@@ -62767,7 +62959,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                 $data_resource_name = $R_resp;
 
-                if(self::$R['kivotos']->isset_kivotos($data_resource_name)){
+                if(self::$_R['kivotos']->isset_kivotos($data_resource_name)){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Extract the data from
@@ -62777,7 +62969,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      * 5 :: Friday, August 14, 2026 @ 0839 hrs.
                      *
                      */
-                    $R_resp = self::$R['kivotos']->get_kivotos('R_resp', $data_resource_name);
+                    $R_resp = self::$_R['kivotos']->get_kivotos('R_resp', $data_resource_name);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the CLR-SSL
@@ -62790,7 +62982,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      *
                      */
                     $mem_ptr                    = $R_resp['clr_ssl_resource']['memory_pointer'][0];
-                    $R_resp[$mem_ptr]['data'][] = self::$R['kivotos']->R[self::$R_data['R_kivotos_index'][$data_resource_name]['public_key']];
+                    $R_resp[$mem_ptr]['data'][] = self::$_R['kivotos']->R[self::$R_data['R_kivotos_index'][$data_resource_name]['public_key']];
 
                 }else{
 
@@ -62803,11 +62995,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      *
                      */
                     if(!($R_resp = _crnrstn_native_resource_registry(
-                        'ping',
-                        $this,
-                        NULL,
-                        $resource,
-                        self::$R_data['R_debug_mode'])))
+                                   'ping',
+                                   $this,
+                                   NULL,
+                                   $resource,
+                                   self::$R_data['R_debug_mode'])))
                     {
 
                         $clr_ssl_msg = 'CLR-SSL resource ' .
@@ -62904,7 +63096,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         $calling_location      = \str_replace(
                                  $R_str_patterns, 
-                                 $R_str_replacements, 
+                                 $R_str_replacements,
                                  $calling_location);
 
         $data_resource_title   = \str_replace(
@@ -62912,11 +63104,26 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                  $R_str_replacements,
                                  $R_resp[$mem_ptr]['title']['TEXT']);
 
-        if(isset($R_resp[$mem_ptr]['data'][0]))
-            $data_resource_name = \str_replace(
-                                  $R_str_patterns,
-                                  $R_str_replacements,
-                                  \get_class($R_resp[$mem_ptr]['data'][0]));
+        if(isset($R_resp[$mem_ptr]['data'][0])){
+
+            switch($this->gettype($R_resp[$mem_ptr]['data'][0], self::$R_data['int_flag']['R_integer'])){
+                case self::$R_data['int_flag']['R_object']:
+
+                        $data_resource_name = \str_replace(
+                                              $R_str_patterns,
+                                              $R_str_replacements,
+                                              \get_class($R_resp[$mem_ptr]['data'][0]));
+
+                break;
+                default:
+
+                    $data_resource_name = $R_resp[$mem_ptr]['data_resource_name'][0];
+
+                break;
+
+            }
+
+        }
 
         $data_software_company = \str_replace(
                                  $R_str_patterns,
@@ -62930,106 +63137,116 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         $report_html = '<html lang="en">
     <head>
-        <title>CRNRSTN :: Lightsaber SOAP Services Layer v' . 
+        <title>' . $this->get_crnrstn('CLR_SSL_long_TEXT') . ' v' .
             $this->version_crnrstn() . 
             '</title>
-        <link rel="shortcut icon" type="image/x-icon" href="' . 
+        <meta name="hostname" content="' . $_SERVER['SERVER_NAME'] . '" />
+        <meta name="expected-hostname" content="' . $_SERVER['SERVER_NAME'] . '" />
+        <meta name="description" lang="en" content="A CLR-SSL Resource Registry Data ' .
+        'Output Report for ' . $R_resp[$mem_ptr]['title']['TEXT'] .'">
+        <link rel="shortcut icon" type="image/x-icon" href="' .
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/imgs/favicon/system/crnrstn' . 
-            '/favicon.ico?crnrstn_0010111011=favicon.ico&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            '/favicon.ico?' .
+            $session_salt . '=favicon.ico&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/imgs/favicon/system/crnrstn/favicon.ico') . '"/>
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
-            '/ui/css/crnrstn.main_desktop.css' . 
-            '?crnrstn_0010111011=crnrstn.main_desktop.css' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            self::$R_data['R_framework_directory'] .
+            '/ui/css/crnrstn.main_desktop.css?' .
+            $session_salt . '=crnrstn.main_desktop.css' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/css/crnrstn.main_desktop.css') . '">
         <script type="application/json" src="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
-            'jquery-4.0.0.min.map?crnrstn_0010111011=jquery-4.0.0.min.map' .
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            'jquery-4.0.0.min.map?' .
+            $session_salt . '=jquery-4.0.0.min.map' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
                    'jquery-4.0.0.min.map') . '"></script>
         <script type="text/javascript" src="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
-            'jquery-4.0.0.min.js?crnrstn_0010111011=jquery-4.0.0.min.js' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            'jquery-4.0.0.min.js?' .
+            $session_salt . '=jquery-4.0.0.min.js' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
                    'jquery-4.0.0.min.js') . '"></script>
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/js/_lib/frameworks/lightbox.js' . 
-            '/2.12.0/dist/css/lightbox.min.css' . 
-            '?crnrstn_0010111011=lightbox.min.css' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            '/2.12.0/dist/css/lightbox.min.css?' .
+            $session_salt . '=lightbox.min.css' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/_lib/frameworks/lightbox.js' . 
                    '/2.12.0/dist/css/lightbox.min.css') . '">
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
-            'jquery-ui.theme.min.css' . 
-            '?crnrstn_0010111011=jquery-ui-1.14.2/jquery-ui.theme.min.css' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            'jquery-ui.theme.min.css?' .
+            $session_salt . '=jquery-ui-1.14.2/jquery-ui.theme.min.css' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
                    'jquery-ui.theme.min.css') . '">
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/js/_lib/frameworks/jquery_ui/1.14.2' . 
-            '/jquery-ui.structure.min.css' . 
-            '?crnrstn_0010111011=jquery-ui-1.14.2/jquery-ui.structure.min.css' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            '/jquery-ui.structure.min.css?' .
+            $session_salt . '=jquery-ui-1.14.2/jquery-ui.structure.min.css' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/_lib/frameworks/jquery_ui/1.14.2' . 
                    '/jquery-ui.structure.min.css') . '">
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
-            'jquery-ui.min.css?crnrstn_0010111011=jquery-ui-1.14.2/jquery-ui.min.css' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            'jquery-ui.min.css?' .
+            $session_salt . '=jquery-ui-1.14.2/jquery-ui.min.css' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
                    'jquery-ui.min.css') . '">
         <script type="text/javascript" src="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
+            self::$R_data['R_framework_directory'] .
             '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
-            'jquery-ui.min.js?crnrstn_0010111011=jquery-ui-1.14.2/jquery-ui.min.js' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            'jquery-ui.min.js?' .
+            $session_salt . '=jquery-ui-1.14.2/jquery-ui.min.js' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
                    'jquery-ui.min.js') . '"></script>
         <script type="text/javascript" src="' . 
             self::$R_data['directory_shift'] . '/' . 
-            self::$R_data['framework_directory'] . 
-            '/ui/js/crnrstn.main.js?crnrstn_0010111011=crnrstn.main.js' . 
-            '&R_cache='  . 
-            $this->file_url_cache_id(self::$R_data['framework_path_root'] . 
+            self::$R_data['R_framework_directory'] .
+            '/ui/js/crnrstn.main.js?' .
+            $session_salt . '=crnrstn.main.js' .
+            '&R_cache=' .
+            $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                    '/ui/js/crnrstn.main.js') . '"></script>
     </head>
     <body>
         <div class="R_report_message_container">
             <a href="http://evifweb.jony5.com" target="_blank"><img src="' .
                 self::$R_data['directory_shift'] . '/' .
-                self::$R_data['framework_directory'] .
+                self::$R_data['R_framework_directory'] .
                 '/ui/imgs/png/system/crnrstn_R_lg.png?' .
-                'crnrstn_0010111011=crnrstn_R_lg&R_cache='  .
-                $this->file_url_cache_id(self::$R_data['framework_path_root'] .
+                $session_salt . '=crnrstn_R_lg&R_cache=' .
+                $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                 '/ui/imgs/png/system/crnrstn_R_lg.png') . '" ' .
             'width="14" height="19" alt="CRNRSTN ::" title="CRNRSTN ::"' .
             '></a> :: [' .
@@ -63043,10 +63260,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         <div class="R_report_stone_pillar">
             <img src="' .
                 self::$R_data['directory_shift'] . '/' .
-                self::$R_data['framework_directory'] .
+                self::$R_data['R_framework_directory'] .
                 '/ui/imgs/png/system/r_stone_giant_pillar.png?' .
-                'crnrstn_0010111011=r_stone_giant_pillar&R_cache='  .
-                $this->file_url_cache_id(self::$R_data['framework_path_root'] .
+                $session_salt . '=r_stone_giant_pillar&R_cache=' .
+                $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                 '/ui/imgs/png/system/r_stone_giant_pillar.png') . '" ' .
             'width="190" height="959" alt="CRNRSTN ::" title="CRNRSTN ::" ' .
             ' style="padding-left:20px;">
@@ -63257,10 +63474,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             <a href="http://evifweb.jony5.com" target="_blank">
                 <img src="' .
                 self::$R_data['directory_shift'] . '/' .
-                self::$R_data['framework_directory'] .
+                self::$R_data['R_framework_directory'] .
                 '/ui/imgs/png/system/5.png?' .
-            'crnrstn_0010111011=5&R_cache='  .
-                $this->file_url_cache_id(self::$R_data['framework_path_root'] .
+                $session_salt . '=5&R_cache=' .
+                $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                 '/ui/imgs/png/system/5.png') . '" ' .
             'width="70" height="70" alt="5" title="5" ' .
             'style="padding:20px;"></a>
@@ -63268,11 +63485,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             'target="_blank">
                 <img src="' .
                 self::$R_data['directory_shift'] . '/' .
-                self::$R_data['framework_directory'] .
+                self::$R_data['R_framework_directory'] .
                 '/ui/imgs/png/system' .
-                '/crnrstn_logo_lg.png?crnrstn_0010111011=crnrstn_logo_lg' .
-                '&R_cache='  .
-                $this->file_url_cache_id(self::$R_data['framework_path_root'] .
+                '/crnrstn_logo_lg.png?' .
+                $session_salt . '=crnrstn_logo_lg' .
+                '&R_cache=' .
+                $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                 '/ui/imgs/png/system/crnrstn_logo_lg.png') .
                 '" width="117" height="70" ' .
                 'alt="CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer v' .
@@ -63284,10 +63502,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             'target="_blank">
                 <img src="' .
                 self::$R_data['directory_shift'] . '/' .
-                self::$R_data['framework_directory'] .
+                self::$R_data['R_framework_directory'] .
                 '/ui/imgs/png/system' .
-                '/stache.png?crnrstn_0010111011=stache&R_cache='  .
-                $this->file_url_cache_id(self::$R_data['framework_path_root'] .
+                '/stache.png?' .
+                $session_salt . '=stache&R_cache=' .
+                $this->file_url_cache_id(self::$R_data['R_framework_path'] .
                 '/ui/imgs/png/system/crnrstn_logo_lg.png') .
                 '" width="124" height="40" alt="stache" title="stache" ' .
             'style="padding:35px 20px 35px 20px"></a>
@@ -63313,7 +63532,42 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     $report_html .= '    </body>
 </html>';
 
-        return $report_html;
+        if($text_output === true)
+            return $report_html;
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Set the response headers.
+         *
+         *
+         * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
+         *
+         * "00"..."00"..."00"...Oh,
+         * Oh, Oh, Oh. You know what I mean.
+         *
+         * Yeah, you know what I mean:
+         * "Oh, Oh, Oh"...
+         * Yeah, you know what
+         * I mean..."Oh"...yeah. ;)
+         *
+         */
+        $this->set_response_headers(
+               'Content-Type: text/html; charset=utf-8',
+               $this->return_bytes(
+                      $report_html,
+                      0,
+                      NULL,
+                      false,
+                      true,
+                      true,
+                      true));
+        /*
+        $this->set_response_headers(
+               'Content-Type: text/html; charset=utf-8',
+               $this->data_reporting_bytes($report_html));
+
+        */
+
+        die($report_html);
 
         /*
         R :: [2026-08-08 04:30:18.180639] 
@@ -63393,7 +63647,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
         // 5 :: Tuesday, August 11, 2026 @ 2257 hrs.
 
-        $R_style_data = array();
         $R_style_data = \func_get_args();
 
         if(!isset(self::$R_data['dom_support']['row_style'][self::$R_data['R_cluster_id']][$row_id])){
@@ -63541,7 +63794,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $html_out = '<!DOCTYPE html>
 <html lang="' . $this->iso_language_html() . '">
 <head>
-    <title>CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer. The CLR-SSL.</title>
+    <title>' . $this->get_crnrstn('CLR_SSL_long_TEXT') . '.' .
+    ' The CLR-SSL.</title>
     ' . $this->system_output_head_html(self::$R_data['int_flag']['CRNRSTN_CSS_MAIN_DESKTOP']) . '
 </head>
 <body>
@@ -63858,7 +64112,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function get_user_agent()
     {
 
-        return self::$R['kivotos']->R['env']->get_user_agent();
+        return self::$_R['kivotos']->R['env']->get_user_agent();
 
     }
 
@@ -63872,7 +64126,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function get_mobile_devices()
     {
 
-        return self::$R['kivotos']->R['env']->get_mobile_devices();
+        return self::$_R['kivotos']->R['env']->get_mobile_devices();
 
     }
 
@@ -63886,7 +64140,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function get_tablet_devices()
     {
 
-        return self::$R['kivotos']->R['env']->get_tablet_devices();
+        return self::$_R['kivotos']->R['env']->get_tablet_devices();
 
     }
 
@@ -63900,7 +64154,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function get_mobile_browsers()
     {
 
-        return self::$R['kivotos']->R['env']->get_browsers();
+        return self::$_R['kivotos']->R['env']->get_browsers();
 
     }
 
@@ -63915,7 +64169,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function get_mobile_os()
     {
 
-        return self::$R['kivotos']->R['env']->get_mobile_os();
+        return self::$_R['kivotos']->R['env']->get_mobile_os();
 
     }
 
@@ -63935,9 +64189,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $magic_method = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->oHTTP_MGR->is_mobile(
-                                                         $tablet_is_mobile,
-                                                         $magic_method);
+        return self::$_R['kivotos']->R['env']->oHTTP_MGR->is_mobile(
+                                                          $tablet_is_mobile,
+                                                          $magic_method);
 
     }
 
@@ -63956,9 +64210,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $magic_method = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->oHTTP_MGR->is_tablet(
-                                                         $mobile_is_tablet,
-                                                         $magic_method);
+        return self::$_R['kivotos']->R['env']->oHTTP_MGR->is_tablet(
+                                                          $mobile_is_tablet,
+                                                          $magic_method);
 
     }
 
@@ -63972,7 +64226,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function set_desktop()
     {
 
-        return self::$R['kivotos']->R['env']->oHTTP_MGR->set_desktop();
+        return self::$_R['kivotos']->R['env']->oHTTP_MGR->set_desktop();
 
     }
 
@@ -63987,7 +64241,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function set_mobile($magic_method = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->oHTTP_MGR->set_mobile($magic_method);
+        return self::$_R['kivotos']->R['env']->oHTTP_MGR->set_mobile($magic_method);
 
     }
 
@@ -64002,7 +64256,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function set_tablet($magic_method = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->oHTTP_MGR->set_tablet($magic_method);
+        return self::$_R['kivotos']->R['env']->oHTTP_MGR->set_tablet($magic_method);
 
     }
 
@@ -64017,7 +64271,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function set_mobile_custom($magic_method = 'isMobile()')
     {
 
-        return self::$R['kivotos']->R['env']->oHTTP_MGR->set_mobile_custom($magic_method);
+        return self::$_R['kivotos']->R['env']->oHTTP_MGR->set_mobile_custom($magic_method);
 
     }
 
@@ -64045,14 +64299,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $httponly = false)
     {
 
-        return self::$R['kivotos']->R['env']->add_cookie(
-                                              $name,
-                                              $value,
-                                              $expires_or_options,
-                                              $path,
-                                              $domain,
-                                              $secure,
-                                              $httponly);
+        return self::$_R['kivotos']->R['env']->add_cookie(
+                                               $name,
+                                               $value,
+                                               $expires_or_options,
+                                               $path,
+                                               $domain,
+                                               $secure,
+                                               $httponly);
 
     }
 
@@ -64080,14 +64334,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $httponly = false)
    {
 
-        return self::$R['kivotos']->R['env']->add_raw_cookie(
-                                              $name,
-                                              $value,
-                                              $expires_or_options,
-                                              $path,
-                                              $domain,
-                                              $secure,
-                                              $httponly);
+        return self::$_R['kivotos']->R['env']->add_raw_cookie(
+                                               $name,
+                                               $value,
+                                               $expires_or_options,
+                                               $path,
+                                               $domain,
+                                               $secure,
+                                               $httponly);
 
     }
 
@@ -64102,7 +64356,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function delete_all_cookies($path = '')
     {
 
-        return self::$R['kivotos']->R['env']->delete_all_cookies($path);
+        return self::$_R['kivotos']->R['env']->delete_all_cookies($path);
 
     }
 
@@ -64120,7 +64374,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $path = '')
     {
 
-        return self::$R['kivotos']->R['env']->delete_cookie($name, $path);
+        return self::$_R['kivotos']->R['env']->delete_cookie($name, $path);
 
     }
 
@@ -64135,7 +64389,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function get_cookie($name)
     {
 
-        return self::$R['kivotos']->R['env']->get_cookie($name);
+        return self::$_R['kivotos']->R['env']->get_cookie($name);
 
     }
 
@@ -65362,10 +65616,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                     if(!isset($this->html_head_build_flag_ARRAY[$tmp_framework_resource])){
 
                         $this->html_head_build_flag_ARRAY[$tmp_framework_resource] = 1;
-                        $tmp_head_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                      $tmp_framework_resource, 
-                                                                                      false, 
-                                                                                      $tmp_framework_is_dev_mode);
+                        $tmp_head_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                       $tmp_framework_resource,
+                                                                                       false,
+                                                                                       $tmp_framework_is_dev_mode);
 
                     }
 
@@ -65413,10 +65667,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                                             $data_type_family);
 
                         $this->html_head_build_flag_ARRAY[$tmp_framework_resource] = 1;
-                        $tmp_head_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                      $tmp_framework_resource, 
-                                                                                      false, 
-                                                                                      $tmp_framework_is_dev_mode);
+                        $tmp_head_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                       $tmp_framework_resource,
+                                                                                       false,
+                                                                                       $tmp_framework_is_dev_mode);
 
                     }
 
@@ -65841,10 +66095,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 {
 
                     $this->html_footer_build_flag_ARRAY[$tmp_framework_resource] = 1;
-                    $tmp_footer_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                    $tmp_framework_resource, 
-                                                                                    false, 
-                                                                                    $tmp_framework_is_dev_mode);
+                    $tmp_footer_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                     $tmp_framework_resource,
+                                                                                     false,
+                                                                                     $tmp_framework_is_dev_mode);
 
                 }
 
@@ -65894,10 +66148,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                                     $tmp_device_bit = $this->device_type_bit();
                                     $this->html_head_build_flag_ARRAY[$tmp_device_bit] = 1;
-                                    $tmp_footer_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                                    $tmp_device_bit, 
-                                                                                                    false, 
-                                                                                                    $tmp_framework_is_dev_mode);
+                                    $tmp_footer_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                                     $tmp_device_bit,
+                                                                                                     false,
+                                                                                                     $tmp_framework_is_dev_mode);
 
                                 }
 
@@ -65911,10 +66165,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                 {
 
                                     $this->html_head_build_flag_ARRAY[self::$R_data['int_flag']['CRNRSTN_JS_MAIN']] = 1;
-                                    $tmp_footer_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                                    self::$R_data['int_flag']['CRNRSTN_JS_MAIN'], 
-                                                                                                    false, 
-                                                                                                    $tmp_framework_is_dev_mode);
+                                    $tmp_footer_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                                     self::$R_data['int_flag']['CRNRSTN_JS_MAIN'],
+                                                                                                     false,
+                                                                                                     $tmp_framework_is_dev_mode);
 
                                 }
 
@@ -65960,10 +66214,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                                     $tmp_device_bit = $this->device_type_bit();
                                     $this->html_head_build_flag_ARRAY[$tmp_device_bit] = 1;
-                                    $tmp_footer_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                                    $tmp_device_bit, 
-                                                                                                    false, 
-                                                                                                    $tmp_framework_is_dev_mode);
+                                    $tmp_footer_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                                     $tmp_device_bit,
+                                                                                                     false,
+                                                                                                     $tmp_framework_is_dev_mode);
 
                                 }
 
@@ -65978,10 +66232,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                         'OUT CRNRSTN_RESOURCE_DOCUMENTATION.');
 
                                     $this->html_head_build_flag_ARRAY[CRNRSTN_JS_MAIN] = 1;
-                                    $tmp_footer_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                                    self::$R_data['int_flag']['CRNRSTN_JS_MAIN'], 
-                                                                                                    false, 
-                                                                                                    $tmp_framework_is_dev_mode);
+                                    $tmp_footer_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                                     self::$R_data['int_flag']['CRNRSTN_JS_MAIN'],
+                                                                                                     false,
+                                                                                                     $tmp_framework_is_dev_mode);
 
                                 }
 
@@ -66181,10 +66435,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     $tmp_device_bit = $this->device_type_bit();
                     $this->html_head_build_flag_ARRAY[$tmp_device_bit] = 1;
-                    $tmp_footer_html_output .= self::$R['kivotos']->R['asset_mgr']->return_html_head_asset(
-                                                                                    $tmp_device_bit, 
-                                                                                    false, 
-                                                                                    $tmp_framework_is_dev_mode);
+                    $tmp_footer_html_output .= self::$_R['kivotos']->R['asset_mgr']->return_html_head_asset(
+                                                                                     $tmp_device_bit,
+                                                                                     false,
+                                                                                     $tmp_framework_is_dev_mode);
 
                 }
 
@@ -66299,7 +66553,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $tmp_str = '
     ' . $this->html_version_burn('HTML META MODULE');
 
-        //$tmp_module_page_key = self::$R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
+        //$tmp_module_page_key = self::$_R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Only load 
@@ -66510,10 +66764,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      $footer_html_output = false)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->mapped_resource_html_output(
-                                                    $resource_ARRAY, 
-                                                    $asset_hash, 
-                                                    $footer_html_output);
+        return self::$_R['kivotos']->R['asset_mgr']->mapped_resource_html_output(
+                                                     $resource_ARRAY,
+                                                     $asset_hash,
+                                                     $footer_html_output);
 
     }
 
@@ -66576,7 +66830,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
         $R_iframe_endpoint = self::$R_data['R_paths']['HTTPS']['APPLICATION']['uri'] .
-                             self::$R_data['framework_directory'] . '/' .
+                             self::$R_data['R_framework_directory'] . '/' .
                              'ui' . '/' .
                              'iframe' . '/';
 
@@ -66605,9 +66859,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * 5 :: Thursday, February 12, 2026 @ 2326 hrs.
          *
          */
-        $tmp_dom_iframe_http = $tmp_dom_iframe_http . 
-                               '?crnrstn_iframe=' . 
-                               $dom_proxy_id;
+        $R_iframe_endpoint = $R_iframe_endpoint .
+                             '?crnrstn_iframe=' .
+                             $dom_proxy_id;
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Initialize the 
@@ -66673,13 +66927,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
       title="CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer (CLR-SSL)"
       width="0"
       height="0"
-      src="' . $tmp_dom_iframe_http . '">
+      src="' . $R_iframe_endpoint . '">
     </iframe>';
 
     }
 
     /**
-     * R :: Content pending. 
+     * R :: SOAP Data Tunnel Layer form integrations packet generation with fresh content checksums.
      *
      * @param
      * @return
@@ -66714,7 +66968,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             case self::$R_data['int_flag']['R_channel_PSSDTLA']:
             default:
 
-                return $this->data_encrypt(self::$R['kivotos']->R['ui_trm']->return_crnrstn_data_packet_json($packet_type));
+                return $this->data_encrypt(self::$_R['kivotos']->R['ui_trm']->return_crnrstn_data_packet_json($packet_type));
 
             break;
 
@@ -66736,9 +66990,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $output_format = 'HTML')
     {
 
-        return self::$R['kivotos']->R['usr']->ui_content_module_out(
-                                              $resource_constant,
-                                              $output_format);
+        return self::$_R['kivotos']->R['usr']->ui_content_module_out(
+                                               $resource_constant,
+                                               $output_format);
 
     }
 
@@ -66756,9 +67010,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $crnrstn_form_handle = NULL)
     {
 
-        return self::$R['kivotos']->R['usr']->ui_content_module_out(
-                                              $resource_constant,
-                                              $crnrstn_form_handle);
+        return self::$_R['kivotos']->R['usr']->ui_content_module_out(
+                                               $resource_constant,
+                                               $crnrstn_form_handle);
 
     }
 
@@ -66773,9 +67027,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function form_integration_html_packet_output($crnrstn_form_handle)
     {
 
-        return self::$R['kivotos']->R['usr']->ui_content_module_out(
-                                              self::$R_data['int_flag']['CRNRSTN_PSSDTLA_PACKET'],
-                                              $crnrstn_form_handle);
+        return self::$_R['kivotos']->R['usr']->ui_content_module_out(
+                                               self::$R_data['int_flag']['CRNRSTN_PSSDTLA_PACKET'],
+                                               $crnrstn_form_handle);
 
     }
 
@@ -66852,7 +67106,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *       5 :: Sunday, June 21, 2026 @ "01" 0234 hrs.
          *
          *       "01010101...split the atom...Oh, 
-         *       Oh, Oh, Oh. You know what I mean."
+         *       Oh, Oh, Oh. You know what I mean. 
          *
          *       Yeah, you know what I mean: 
          *       "Oh, Oh, Oh"... 
@@ -66874,7 +67128,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *       5 :: Sunday, June 21, 2026 @ "01" 0234 hrs.
          *
          *       "01010101...split the atom...Oh, 
-         *       Oh, Oh, Oh. You know what I mean."
+         *       Oh, Oh, Oh. You know what I mean. 
          *
          *       Yeah, you know what I mean: 
          *       "Oh, Oh, Oh"... 
@@ -66897,7 +67151,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             $total_index++;
             $str_out .= $R_data_000 . '::';
-            $str_units[] = $var_0;
+            $str_units[] = $R_data_000;
 
         }
 
@@ -67143,10 +67397,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $index = 0)
     {
 
-        return self::$R['kivotos']->R['performance_regulator']->isset_crnrstn_spool(
-                                                                $data_attribute,
-                                                                $ddo_memory_pointer,
-                                                                $index);
+        return self::$_R['kivotos']->R['performance_regulator']->isset_crnrstn_spool(
+                                                                 $data_attribute,
+                                                                 $ddo_memory_pointer,
+                                                                 $index);
 
     }
 
@@ -69239,7 +69493,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
         $tmp_profile_key = 'CRNRSTN::SYSTEM::ANALYTICS';
-        $tmp_profile_cnt = self::$R['kivotos']->R['config_mgr']->system_profile_return_count($tmp_profile_key);
+        $tmp_profile_cnt = self::$_R['kivotos']->R['config_mgr']->system_profile_return_count($tmp_profile_key);
 
         /*error_log(__LINE__ . 
          *    ' crnrstn ANALYTICS $tmp_profile_cnt=[' . 
@@ -69250,7 +69504,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         for($i = 0; $i < $tmp_profile_cnt; $i++){
 
-            $tmp_data_key = self::$R['kivotos']->R['config_mgr']->system_profile_return_data_key($tmp_profile_key, $i);
+            $tmp_data_key = self::$_R['kivotos']->R['config_mgr']->system_profile_return_data_key($tmp_profile_key, $i);
 
             $tmp_str_out .= $this->get_resource($tmp_data_key, 0, $data_type_family);
             /*error_log(__LINE__ . 
@@ -69297,7 +69551,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
         $tmp_profile_key = 'CRNRSTN::SYSTEM::ENGAGEMENT';
-        $tmp_profile_cnt = self::$R['kivotos']->R['config_mgr']->system_profile_return_count($tmp_profile_key);
+        $tmp_profile_cnt = self::$_R['kivotos']->R['config_mgr']->system_profile_return_count($tmp_profile_key);
 
         /*error_log(__LINE__ . 
          *    ' crnrstn PRE-EXISTING ARCH-> $tmp_profile_cnt=[' . 
@@ -69334,7 +69588,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * 5 :: Tuesday, May 23, 2023 @ 2303 hrs.
              *
              */
-            $tmp_data_key = self::$R['kivotos']->R['config_mgr']->system_profile_return_data_key($tmp_profile_key, $i);
+            $tmp_data_key = self::$_R['kivotos']->R['config_mgr']->system_profile_return_data_key($tmp_profile_key, $i);
 
             /*error_log(__LINE__ . 
              *    ' crnrstn PRE-EXISTING ARCH-> $tmp_data_key[' . 
@@ -69410,15 +69664,15 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
 
-        return self::$R['kivotos']->R['env']->system_output_file_html(
-                                              $file_path,
-                                              $output_mode,
-                                              $width,
-                                              $height,
-                                              $hyperlink,
-                                              $alt,
-                                              $title,
-                                              $target);
+        return self::$_R['kivotos']->R['env']->system_output_file_html(
+                                               $file_path,
+                                               $output_mode,
+                                               $width,
+                                               $height,
+                                               $hyperlink,
+                                               $alt,
+                                               $title,
+                                               $target);
 
     }
 
@@ -69448,15 +69702,15 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $target = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->download_file_system(
-                                              $file_path,
-                                              $output_mode,
-                                              $width,
-                                              $height,
-                                              $hyperlink,
-                                              $alt,
-                                              $title,
-                                              $target);
+        return self::$_R['kivotos']->R['env']->download_file_system(
+                                               $file_path,
+                                               $output_mode,
+                                               $width,
+                                               $height,
+                                               $hyperlink,
+                                               $alt,
+                                               $title,
+                                               $target);
 
     }
 
@@ -69486,15 +69740,15 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $target = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->details_file_system(
-                                              $file_path,
-                                              $output_mode,
-                                              $width,
-                                              $height,
-                                              $hyperlink,
-                                              $alt,
-                                              $title,
-                                              $target);
+        return self::$_R['kivotos']->R['env']->details_file_system(
+                                               $file_path,
+                                               $output_mode,
+                                               $width,
+                                               $height,
+                                               $hyperlink,
+                                               $alt,
+                                               $title,
+                                               $target);
 
     }
 
@@ -69563,14 +69817,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          */
         if($this->config_is_valid_detected_env($env_key) == true){
 
-            self::$R['kivotos']->R['env']->config_integrate_file_system(
-                                           $env_key,
-                                           $http_path,
-                                           $dir_path,
-                                           $data_authorization_profile,
-                                           $ttl,
-                                           $host,
-                                           $excluded_file_ext_ARRAY);
+            self::$_R['kivotos']->R['env']->config_integrate_file_system(
+                                            $env_key,
+                                            $http_path,
+                                            $dir_path,
+                                            $data_authorization_profile,
+                                            $ttl,
+                                            $host,
+                                            $excluded_file_ext_ARRAY);
 
         }
 
@@ -69671,30 +69925,30 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     $data_type_family = 'CRNRSTN::RESOURCE::SEO_ANALYTICS';
 
-                    self::$R['kivotos']->R['config_mgr']->input_data_value(
-                                                          $data_value, 
-                                                          $data_key, 
-                                                          $data_type_family, 
-                                                          NULL, 
-                                                          self::$R_data['int_flag']['R_channel_RUNTIME'], 
-                                                          NULL, 
-                                                          false, 
-                                                          $env_key);
-                    self::$R['kivotos']->R['config_mgr']->input_data_value(
-                                                          $is_enabled, 
-                                                          $data_key . '::' . 'ANALYTICS_ENABLED', 
-                                                          $data_type_family, 
-                                                          NULL, 
-                                                          self::$R_data['int_flag']['R_channel_RUNTIME'], 
-                                                          NULL, 
-                                                          false, 
-                                                          $env_key);
+                    self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                                                           $data_value,
+                                                           $data_key,
+                                                           $data_type_family,
+                                                           NULL,
+                                                           self::$R_data['int_flag']['R_channel_RUNTIME'],
+                                                           NULL,
+                                                           false,
+                                                           $env_key);
+                    self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                                                           $is_enabled,
+                                                           $data_key . '::' . 'ANALYTICS_ENABLED',
+                                                           $data_type_family,
+                                                           NULL,
+                                                           self::$R_data['int_flag']['R_channel_RUNTIME'],
+                                                           NULL,
+                                                           false,
+                                                           $env_key);
 
                     if($is_enabled == true){
 
-                        self::$R['kivotos']->R['config_mgr']->system_profile_map_data_key(
-                                                              'CRNRSTN::SYSTEM::ANALYTICS', 
-                                                              $data_key);
+                        self::$_R['kivotos']->R['config_mgr']->system_profile_map_data_key(
+                                                               'CRNRSTN::SYSTEM::ANALYTICS',
+                                                               $data_key);
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * CRNRSTN :: Lightsaber Icy 
@@ -69703,7 +69957,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                          * Management Services Layer. 
                          *
                          */
-                        self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(self::$R_data['int_flag']['CRNRSTN_WEB_ANALYTICS'], true);
+                        self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(self::$R_data['int_flag']['CRNRSTN_WEB_ANALYTICS'], true);
 
                     }
 
@@ -69969,9 +70223,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                          *
                          */
 
-                        self::$R['kivotos']->R['config_mgr']->system_profile_map_data_key(
-                                                              'CRNRSTN::SYSTEM::ENGAGEMENT', 
-                                                              $data_key);
+                        self::$_R['kivotos']->R['config_mgr']->system_profile_map_data_key(
+                                                               'CRNRSTN::SYSTEM::ENGAGEMENT',
+                                                               $data_key);
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * CRNRSTN :: Lightsaber Icy 
@@ -69980,7 +70234,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                          * Management Services Layer. 
                          *
                          */
-                        self::$R['kivotos']->R['bitflip_mgr']->toggle_bit(self::$R_data['int_flag']['CRNRSTN_WEB_ENGAGEMENT'], true);
+                        self::$_R['kivotos']->R['bitflip_mgr']->toggle_bit(self::$R_data['int_flag']['CRNRSTN_WEB_ENGAGEMENT'], true);
 
                         /* error_log(__LINE__ . 
                          *    ' crnrstn TOGGLE ME [' . 
@@ -70647,42 +70901,42 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  *                      0, 
                  *                      'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
                  *
-                 * self::$R['kivotos']->R['config_mgr']->input_data_value(
-                 *                                       $encrypt_cipher, 
-                 *                                       'encrypt_cipher', 
-                 *                                       $data_type_family, 
-                 *                                       NULL, 
-                 *                                       self::$R_data['int_flag']['R_channel_RUNTIME'], 
-                 *                                       NULL, 
-                 *                                       false, 
-                 *                                       $env_key);
-                 * self::$R['kivotos']->R['config_mgr']->input_data_value(
-                 *                                       openssl_digest($encrypt_secret_key, $tmp_digest, true), 
-                 *                                       'encrypt_secret_key', 
-                 *                                       $data_type_family, 
-                 *                                       NULL, 
-                 *                                       self::$R_data['int_flag']['R_channel_RUNTIME'], 
-                 *                                       NULL, 
-                 *                                       false, 
-                 *                                       $env_key);
-                 * self::$R['kivotos']->R['config_mgr']->input_data_value(
-                 *                                       $encrypt_options, 
-                 *                                       'encrypt_options', 
-                 *                                       $data_type_family, 
-                 *                                       NULL, 
-                 *                                       self::$R_data['int_flag']['R_channel_RUNTIME'], 
-                 *                                       NULL, 
-                 *                                       false, 
-                 *                                       $env_key);
-                 * self::$R['kivotos']->R['config_mgr']->input_data_value(
-                 *                                       $hmac_alg, 
-                 *                                       'hmac_alg', 
-                 *                                       $data_type_family, 
-                 *                                       NULL, 
-                 *                                       self::$R_data['int_flag']['R_channel_RUNTIME'], 
-                 *                                       NULL, 
-                 *                                       false, 
-                 *                                       $env_key);
+                 * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                 *                                        $encrypt_cipher,
+                 *                                        'encrypt_cipher',
+                 *                                        $data_type_family,
+                 *                                        NULL,
+                 *                                        self::$R_data['int_flag']['R_channel_RUNTIME'],
+                 *                                        NULL,
+                 *                                        false,
+                 *                                        $env_key);
+                 * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                 *                                        openssl_digest($encrypt_secret_key, $tmp_digest, true),
+                 *                                        'encrypt_secret_key',
+                 *                                        $data_type_family,
+                 *                                        NULL,
+                 *                                        self::$R_data['int_flag']['R_channel_RUNTIME'],
+                 *                                        NULL,
+                 *                                        false,
+                 *                                        $env_key);
+                 * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                 *                                        $encrypt_options,
+                 *                                        'encrypt_options',
+                 *                                        $data_type_family,
+                 *                                        NULL,
+                 *                                        self::$R_data['int_flag']['R_channel_RUNTIME'],
+                 *                                        NULL,
+                 *                                        false,
+                 *                                        $env_key);
+                 * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                 *                                        $hmac_alg,
+                 *                                        'hmac_alg',
+                 *                                        $data_type_family,
+                 *                                        NULL,
+                 *                                        self::$R_data['int_flag']['R_channel_RUNTIME'],
+                 *                                        NULL,
+                 *                                        false,
+                 *                                        $env_key);
                  *
                  * $this->error_log($data_type_title . 
                  *        ' encryption initialized ' . 
@@ -71587,11 +71841,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * 5 :: Thursday, May 21, 2026 @ 0229 hrs.
          *
          */
-        return self::$R['kivotos']->R['finite_expression']->incarnate(
-                                                            $mode, 
-                                                            $sys_ts, 
-                                                            $delta_secs_input, 
-                                                            $format_override);
+        return self::$_R['kivotos']->R['finite_expression']->incarnate(
+                                                             $mode,
+                                                             $sys_ts,
+                                                             $delta_secs_input,
+                                                             $format_override);
 
     }
 
@@ -71768,12 +72022,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $delta_secs = $ts - $secs;
 
         $bit = array(
-            self::$lang_content_ARRAY['Y'] => $delta_secs / 31556926 % 12,
-            self::$lang_content_ARRAY['W'] => $delta_secs / 604800 % 52,
-            self::$lang_content_ARRAY['D'] => $delta_secs / 86400 % 7,
-            self::$lang_content_ARRAY['H'] => $delta_secs / 3600 % 24,
-            self::$lang_content_ARRAY['M'] => $delta_secs / 60 % 60,
-            self::$lang_content_ARRAY['S'] => $delta_secs % 60
+            self::$lang_struct_time['Y'] => $delta_secs / 31556926 % 12,
+            self::$lang_struct_time['W'] => $delta_secs / 604800 % 52,
+            self::$lang_struct_time['D'] => $delta_secs / 86400 % 7,
+            self::$lang_struct_time['H'] => $delta_secs / 3600 % 24,
+            self::$lang_struct_time['M'] => $delta_secs / 60 % 60,
+            self::$lang_struct_time['S'] => $delta_secs % 60
         );
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -71784,7 +72038,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * configuration. 
          *
          * error_log('(146) Y->' . 
-         *     self::$lang_content_ARRAY['Y']); // shows 1...not y...
+         *     self::$lang_struct_time['Y']); // shows 1...not y...
          *
          */
 
@@ -71799,9 +72053,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * for time granularity. 
                  *
                  */
-                if($k == self::$lang_content_ARRAY['Y'] || 
-                    $k == self::$lang_content_ARRAY['W'] || 
-                    ($k == self::$lang_content_ARRAY['D'] && 
+                if($k == self::$lang_struct_time['Y'] ||
+                    $k == self::$lang_struct_time['W'] ||
+                    ($k == self::$lang_struct_time['D'] &&
                         $v > 1))
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Return the 
@@ -71825,7 +72079,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             if(sizeof($ret) == 0)
                 $ret[] = 'just now.';
             else
-                $ret[] = self::$lang_content_ARRAY['AGO'];
+                $ret[] = self::$lang_struct_time['AGO'];
 
         return \join(' ', $ret);
 
@@ -71878,19 +72132,19 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                $token);
 
         $bit = array(
-               self::$lang_content_ARRAY['Y'] => $delta_secs / 31556926 % 12,
-               self::$lang_content_ARRAY['W'] => $delta_secs / 604800 % 52,
-               self::$lang_content_ARRAY['D'] => $delta_secs / 86400 % 7,
-               self::$lang_content_ARRAY['H'] => $delta_secs / 3600 % 24,
-               self::$lang_content_ARRAY['M'] => $delta_secs / 60 % 60,
-               self::$lang_content_ARRAY['S'] => ($delta_secs % 60) + $microsecs);
+               self::$lang_struct_time['Y'] => $delta_secs / 31556926 % 12,
+               self::$lang_struct_time['W'] => $delta_secs / 604800 % 52,
+               self::$lang_struct_time['D'] => $delta_secs / 86400 % 7,
+               self::$lang_struct_time['H'] => $delta_secs / 3600 % 24,
+               self::$lang_struct_time['M'] => $delta_secs / 60 % 60,
+               self::$lang_struct_time['S'] => ($delta_secs % 60) + $microsecs);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Let's confirm 
          * the language operation. 
          *
          *error_log('(146) Y->' . 
-         *    self::$lang_content_ARRAY['Y']); // shows 1...not y...
+         *    self::$lang_struct_time['Y']); // shows 1...not y...
          *
          */
 
@@ -71906,9 +72160,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * time granularity. 
                  *
                  */
-                if($k == self::$lang_content_ARRAY['Y'] || 
-                    $k == self::$lang_content_ARRAY['W'] || 
-                    ($k == self::$lang_content_ARRAY['D'] && 
+                if($k == self::$lang_struct_time['Y'] ||
+                    $k == self::$lang_struct_time['W'] ||
+                    ($k == self::$lang_struct_time['D'] &&
                         $v > 1))
                 {
 
@@ -71938,7 +72192,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             if(sizeof($ret) == 0)
                 $ret[] = 'just now.';
             else
-                $ret[] = self::$lang_content_ARRAY['AGO'];
+                $ret[] = self::$lang_struct_time['AGO'];
 
         return join(' ', $ret);
 
@@ -72045,21 +72299,21 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         );
 
         $bit_singular = array(
-            '0' => ' ' . self::$lang_content_ARRAY['YEAR'], 
-            '1' => ' ' . self::$lang_content_ARRAY['WEEK'], 
-            '2' => ' ' . self::$lang_content_ARRAY['DAY'], 
-            '3' => ' ' . self::$lang_content_ARRAY['HOUR'], 
-            '4' => ' ' . self::$lang_content_ARRAY['MINUTE'], 
-            '5' => ' ' . self::$lang_content_ARRAY['SECOND']
+            '0' => ' ' . self::$lang_struct_time['YEAR'],
+            '1' => ' ' . self::$lang_struct_time['WEEK'],
+            '2' => ' ' . self::$lang_struct_time['DAY'],
+            '3' => ' ' . self::$lang_struct_time['HOUR'],
+            '4' => ' ' . self::$lang_struct_time['MINUTE'],
+            '5' => ' ' . self::$lang_struct_time['SECOND']
         );
 
         $bit_plural = array(
-            '0' => ' ' . self::$lang_content_ARRAY['YEARS'], 
-            '1' => ' ' . self::$lang_content_ARRAY['WEEKS'], 
-            '2' => ' ' . self::$lang_content_ARRAY['DAYS'], 
-            '3' => ' ' . self::$lang_content_ARRAY['HOURS'], 
-            '4' => ' ' . self::$lang_content_ARRAY['MINUTES'], 
-            '5' => ' ' . self::$lang_content_ARRAY['SECONDS']
+            '0' => ' ' . self::$lang_struct_time['YEARS'],
+            '1' => ' ' . self::$lang_struct_time['WEEKS'],
+            '2' => ' ' . self::$lang_struct_time['DAYS'],
+            '3' => ' ' . self::$lang_struct_time['HOURS'],
+            '4' => ' ' . self::$lang_struct_time['MINUTES'],
+            '5' => ' ' . self::$lang_struct_time['SECONDS']
         );
 
         foreach($bit as $k => $v){
@@ -72098,7 +72352,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         if(isset($ret)){
 
-            array_splice($ret, count($ret) - 1, 0, self::$lang_content_ARRAY['AND']);
+            array_splice($ret, count($ret) - 1, 0, self::$lang_struct_time['AND']);
 
             $tmp_output = trim(join(' ', $ret));
 
@@ -72223,21 +72477,21 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         );
 
         $bit_singular = array(
-            '0' => ' ' . self::$lang_content_ARRAY['YEAR'], 
-            '1' => ' ' . self::$lang_content_ARRAY['WEEK'], 
-            '2' => ' ' . self::$lang_content_ARRAY['DAY'], 
-            '3' => ' ' . self::$lang_content_ARRAY['HOUR'], 
-            '4' => ' ' . self::$lang_content_ARRAY['MINUTE'], 
-            '5' => ' ' . self::$lang_content_ARRAY['SECOND']
+            '0' => ' ' . self::$lang_struct_time['YEAR'],
+            '1' => ' ' . self::$lang_struct_time['WEEK'],
+            '2' => ' ' . self::$lang_struct_time['DAY'],
+            '3' => ' ' . self::$lang_struct_time['HOUR'],
+            '4' => ' ' . self::$lang_struct_time['MINUTE'],
+            '5' => ' ' . self::$lang_struct_time['SECOND']
         );
 
         $bit_plural = array(
-            '0' => ' ' . self::$lang_content_ARRAY['YEARS'], 
-            '1' => ' ' . self::$lang_content_ARRAY['WEEKS'], 
-            '2' => ' ' . self::$lang_content_ARRAY['DAYS'], 
-            '3' => ' ' . self::$lang_content_ARRAY['HOURS'], 
-            '4' => ' ' . self::$lang_content_ARRAY['MINUTES'], 
-            '5' => ' ' . self::$lang_content_ARRAY['SECONDS']
+            '0' => ' ' . self::$lang_struct_time['YEARS'],
+            '1' => ' ' . self::$lang_struct_time['WEEKS'],
+            '2' => ' ' . self::$lang_struct_time['DAYS'],
+            '3' => ' ' . self::$lang_struct_time['HOURS'],
+            '4' => ' ' . self::$lang_struct_time['MINUTES'],
+            '5' => ' ' . self::$lang_struct_time['SECONDS']
         );
 
         foreach($bit as 
@@ -72282,8 +72536,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
  *
  */
 
-        \array_splice($ret, count($ret) - 1, 0, self::$lang_content_ARRAY['AND']);
-        $ret[] = self::$lang_content_ARRAY['AGO'];
+        \array_splice($ret, count($ret) - 1, 0, self::$lang_struct_time['AND']);
+        $ret[] = self::$lang_struct_time['AGO'];
 
         return \join(' ', $ret);
 
@@ -73841,12 +74095,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $index = 0)
     {
 
-        if(!isset(self::$R['kivotos']->R['env']))
+        if(!isset(self::$_R['kivotos']->R['env']))
             return NULL;
 
-        return self::$R['kivotos']->R['env']->return_client_header_value(
-                                              $header_attribute,
-                                              $index);
+        return self::$_R['kivotos']->R['env']->return_client_header_value(
+                                               $header_attribute,
+                                               $index);
 
     }
 
@@ -73863,27 +74117,27 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         /*
         $tmp_ARRAY[$i]['locale_identifier>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('locale_identifier', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('locale_identifier', $i);
         $tmp_ARRAY[$i]['region_variant>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('region_variant', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('region_variant', $i);
         $tmp_ARRAY[$i]['factor_weighting>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('factor_weighting', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('factor_weighting', $i);
         $tmp_ARRAY[$i]['iso_language_nomination>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_language_nomination', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_language_nomination', $i);
         $tmp_ARRAY[$i]['native_nomination>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('native_nomination', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('native_nomination', $i);
         $tmp_ARRAY[$i]['iso_639-1_2002>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_639-1_2002', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_639-1_2002', $i);
         $tmp_ARRAY[$i]['iso_639-2_1998>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_639-2_1998', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_639-2_1998', $i);
         $tmp_ARRAY[$i]['iso_639-3_2007>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_639-3_2007', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('iso_639-3_2007', $i);
         $tmp_ARRAY[$i]['locale_identifier>'] = 
-           self::$R['kivotos']->R['lang_mgr']->return_lang_pref_data('locale_identifier', $i);
+           self::$_R['kivotos']->R['lang_mgr']->return_lang_pref_data('locale_identifier', $i);
 
         */
 
-        return self::$R['kivotos']->R['ui_trm']->ssdtl_response_http_language_preference($output_type);
+        return self::$_R['kivotos']->R['ui_trm']->ssdtl_response_http_language_preference($output_type);
 
     }
 
@@ -73897,7 +74151,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function return_crnrstn_language_manager()
     {
 
-        return self::$R['kivotos']->R['lang_mgr'];
+        return self::$_R['kivotos']->R['lang_mgr'];
 
     }
 
@@ -73972,15 +74226,23 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          */
 
         switch($key_name){
+            case 'thumb_dir_name':
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * 5 :: Saturday, August 22, 2026 @ 0615 hrs.
+                 *
+                 */
+                return $this->generate_new_key(25);
+
+            break;
             case 'dom_proxy_id':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * 5 :: Monday, August 4=10, 2026 @ 1402 hrs.
+                 * 5 :: Monday, August 4, 2026 @ 1402 hrs.
                  *
                  */
                 return $this->generate_new_key(
-                              32, 
-                              -4, 
-                              true, 
+                              32,
+                              -4,
+                              true,
                               'sha256');
 
             break;
@@ -74476,7 +74738,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         if(!isset($len)){
 
-            if(isset(self::$R['kivotos']->R['config_mgr'])){
+            if(isset(self::$_R['kivotos']->R['config_mgr'])){
 
                 $len = $this->get_resource(
                               'R_salt_default_length', 
@@ -74804,7 +75066,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function return_lang_content_ARRAY()
     {
 
-        return self::$lang_content_ARRAY;
+        return self::$lang_struct_time;
 
     }
 
@@ -74818,26 +75080,26 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     private function initialize_language()
     {
 
-        self::$lang_content_ARRAY['YEAR'] = 'year';
-        self::$lang_content_ARRAY['YEARS'] = 'years';
-        self::$lang_content_ARRAY['Y'] = 'y';
-        self::$lang_content_ARRAY['WEEK'] = 'week';
-        self::$lang_content_ARRAY['WEEKS'] = 'weeks';
-        self::$lang_content_ARRAY['W'] = 'w';
-        self::$lang_content_ARRAY['DAY'] = 'day';
-        self::$lang_content_ARRAY['DAYS'] = 'days';
-        self::$lang_content_ARRAY['D'] = 'd';
-        self::$lang_content_ARRAY['HOUR'] = 'hour';
-        self::$lang_content_ARRAY['HOURS'] = 'hours';
-        self::$lang_content_ARRAY['H'] = 'h';
-        self::$lang_content_ARRAY['MINUTE'] = 'minute';
-        self::$lang_content_ARRAY['MINUTES'] = 'minutes';
-        self::$lang_content_ARRAY['M'] = 'm';
-        self::$lang_content_ARRAY['SECOND'] = 'second';
-        self::$lang_content_ARRAY['SECONDS'] = 'seconds';
-        self::$lang_content_ARRAY['S'] = 's';
-        self::$lang_content_ARRAY['AND'] = 'and';
-        self::$lang_content_ARRAY['AGO'] = 'ago';
+        self::$lang_struct_time['YEAR'] = 'year';
+        self::$lang_struct_time['YEARS'] = 'years';
+        self::$lang_struct_time['Y'] = 'y';
+        self::$lang_struct_time['WEEK'] = 'week';
+        self::$lang_struct_time['WEEKS'] = 'weeks';
+        self::$lang_struct_time['W'] = 'w';
+        self::$lang_struct_time['DAY'] = 'day';
+        self::$lang_struct_time['DAYS'] = 'days';
+        self::$lang_struct_time['D'] = 'd';
+        self::$lang_struct_time['HOUR'] = 'hour';
+        self::$lang_struct_time['HOURS'] = 'hours';
+        self::$lang_struct_time['H'] = 'h';
+        self::$lang_struct_time['MINUTE'] = 'minute';
+        self::$lang_struct_time['MINUTES'] = 'minutes';
+        self::$lang_struct_time['M'] = 'm';
+        self::$lang_struct_time['SECOND'] = 'second';
+        self::$lang_struct_time['SECONDS'] = 'seconds';
+        self::$lang_struct_time['S'] = 's';
+        self::$lang_struct_time['AND'] = 'and';
+        self::$lang_struct_time['AGO'] = 'ago';
 
     }
 
@@ -74923,14 +75185,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
          *
          */
-        self::$R['kivotos']->R['logging']->catch_exception(
-                                           $exception_obj, 
-                                           $syslog_level, 
-                                           $method, 
-                                           $namespace, 
-                                           $output_profile, 
-                                           $output_profile_override_meta, 
-                                           $wcr_override_pipe);
+        self::$_R['kivotos']->R['logging']->catch_exception(
+                                            $exception_obj,
+                                            $syslog_level,
+                                            $method,
+                                            $namespace,
+                                            $output_profile,
+                                            $output_profile_override_meta,
+                                            $wcr_override_pipe);
 
     }
 
@@ -75076,7 +75338,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             Source: https://www.php.net/manual/en/function.syslog.php
             Source: https://datatracker.ietf.org/doc/html/rfc3164
-            5 :: Thursday, April 30 2026 @ 1539 hrs.
+            5 :: Thursday, April 30, 2026 @ 1539 hrs.
 
              */
             switch($log_priority){
@@ -75917,11 +76179,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $to_plaid = false)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->get_link_data(
-                                                     $data_type, 
-                                                     $url, 
-                                                     $unit_test, 
-                                                     $to_plaid);
+        return self::$_R['kivotos']->R['config_mgr']->get_link_data(
+                                                      $data_type,
+                                                      $url,
+                                                      $unit_test,
+                                                      $to_plaid);
 
     }
 
@@ -76649,7 +76911,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         </script>';
 
         $tmp_top_link_str    = '';
-        $tmp_module_page_key = self::$R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
+        $tmp_module_page_key = self::$_R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
         if(\strlen($tmp_module_page_key) > 0){
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -77091,7 +77353,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         </script>';
 
         $tmp_top_link_str    = '';
-        $tmp_module_page_key = self::$R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
+        $tmp_module_page_key = self::$_R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
         if(\strlen($tmp_module_page_key) > 0){
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -77590,7 +77852,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         </script>';
 
         $tmp_top_link_str    = '';
-        $tmp_module_page_key = self::$R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
+        $tmp_module_page_key = self::$_R['kivotos']->R['dtsm']->return_received_data('crnrstn_interact_ui_link_text_click');
         if(\strlen($tmp_module_page_key) > 0){
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -77813,13 +78075,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         */
 
-        if(isset(self::$R['kivotos']->R['content_src_ctrlr'])){
-
-            return self::$R['kivotos']->R['content_src_ctrlr']->return_int_const_profile(
-                                                                $resource_constant, 
-                                                                $attribute);
-
-        }
+        if(isset(self::$_R['kivotos']->R['content_src_ctrlr']))
+            return self::$_R['kivotos']->R['content_src_ctrlr']->return_int_const_profile(
+                                                                 $resource_constant,
+                                                                 $attribute);
 
         $R_theme_data = array();
         switch($resource_constant){
@@ -78264,7 +78523,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
 
         // = $content_injection . '<img src = "">';
-        return self::$R['kivotos']->R['env']->system_base64_integrations_clear_content_prefix($dir_filepath);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_clear_content_prefix($dir_filepath);
 
     }
 
@@ -78283,9 +78542,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
 
         // = $content_injection . '<img src = "">';
-        return self::$R['kivotos']->R['env']->system_base64_integrations_init_content_prefix(
-                                              $dir_filepath,
-                                              $content_prefix);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_init_content_prefix(
+                                               $dir_filepath,
+                                               $content_prefix);
 
     }
 
@@ -78301,7 +78560,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
 
         // = '<img src = "">' . $content_injection;
-        return self::$R['kivotos']->R['env']->system_base64_integrations_clear_content_append($dir_filepath);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_clear_content_append($dir_filepath);
 
     }
 
@@ -78320,9 +78579,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
 
         // = '<img src = "">' . $content_injection;
-        return self::$R['kivotos']->R['env']->system_base64_integrations_init_content_append(
-                                              $dir_filepath,
-                                              $content_append);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_init_content_append(
+                                               $dir_filepath,
+                                               $content_append);
 
     }
 
@@ -78338,7 +78597,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
 
         // = '<img src = "" ' . $content_injection . '>';
-        return self::$R['kivotos']->R['env']->system_base64_integrations_clear_content_injection($dir_filepath);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_clear_content_injection($dir_filepath);
 
     }
 
@@ -78357,9 +78616,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
 
         // = '<img src = "" ' . $content_injection . '>';
-        return self::$R['kivotos']->R['env']->system_base64_integrations_init_content_injection(
-                                              $dir_filepath,
-                                              $content_injection);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_init_content_injection(
+                                               $dir_filepath,
+                                               $content_injection);
 
     }
 
@@ -78395,14 +78654,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $image_output_mode = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->return_img(
-                                              $dir_filepath,
-                                              $width,
-                                              $height,
-                                              $alt,
-                                              $title,
-                                              $link,
-                                              $target);
+        return self::$_R['kivotos']->R['env']->return_img(
+                                               $dir_filepath,
+                                               $width,
+                                               $height,
+                                               $alt,
+                                               $title,
+                                               $link,
+                                               $target);
 
     }
 
@@ -78444,14 +78703,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $target = '')
     {
 
-        return self::$R['kivotos']->R['env']->system_base64_integrations_file_heal(
-                                              $dir_filepath,
-                                              $width,
-                                              $height,
-                                              $alt,
-                                              $title,
-                                              $link,
-                                              $target);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_file_heal(
+                                               $dir_filepath,
+                                               $width,
+                                               $height,
+                                               $alt,
+                                               $title,
+                                               $link,
+                                               $target);
 
     }
 
@@ -78482,9 +78741,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $inline_style = '')
     {
 
-        return self::$R['kivotos']->R['env']->system_base64_integrations_file_css_heal(
-                                              $dir_filepath,
-                                              $inline_style);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_file_css_heal(
+                                               $dir_filepath,
+                                               $inline_style);
 
     }
 
@@ -78522,13 +78781,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $onmouseup = '')
     {
 
-        return self::$R['kivotos']->R['env']->system_base64_integrations_file_js_heal(
-                                              $dir_filepath,
-                                              $onclick,
-                                              $onmouseover,
-                                              $onmouseout,
-                                              $onmousedown,
-                                              $onmouseup);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_file_js_heal(
+                                               $dir_filepath,
+                                               $onclick,
+                                               $onmouseover,
+                                               $onmouseout,
+                                               $onmousedown,
+                                               $onmouseup);
 
     }
 
@@ -78568,14 +78827,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $target = '')
     {
 
-        return self::$R['kivotos']->R['env']->system_base64_integrations_file_sync(
-                                              $dir_filepath,
-                                              $width,
-                                              $height,
-                                              $alt,
-                                              $title,
-                                              $link,
-                                              $target);
+        return self::$_R['kivotos']->R['env']->system_base64_integrations_file_sync(
+                                               $dir_filepath,
+                                               $width,
+                                               $height,
+                                               $alt,
+                                               $title,
+                                               $link,
+                                               $target);
 
     }
 
@@ -78643,9 +78902,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *       5 :: Wednesday, July 22, 2026 @ 0559 hrs.
          *
          */
-        return self::$R['kivotos']->R['env']->system_base64_integrate(
-                                              $dir_path,
-                                              $img_batch_size);
+        return self::$_R['kivotos']->R['env']->system_base64_integrate(
+                                               $dir_path,
+                                               $img_batch_size);
 
     }
 
@@ -78678,13 +78937,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * any necessary adjustments.
              *
              */
-            return self::$R['kivotos']->R['env']->system_base64_synchronize($data_key);
+            return self::$_R['kivotos']->R['env']->system_base64_synchronize($data_key);
 
         }
 
-        return self::$R['kivotos']->R['env']->system_base64_synchronize_batch(
-                                              $data_key,
-                                              $img_batch_size);
+        return self::$_R['kivotos']->R['env']->system_base64_synchronize_batch(
+                                               $data_key,
+                                               $img_batch_size);
 
     }
 
@@ -78708,8 +78967,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * initialization. 
          *
          */
-        if(isset(self::$R['kivotos']->R['ip_mgr']))
-            return self::$R['kivotos']->R['ip_mgr']->clientIpAddress();
+        if(isset(self::$_R['kivotos']->R['ip_mgr']))
+            return self::$_R['kivotos']->R['ip_mgr']->clientIpAddress();
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Just do 
@@ -78813,17 +79072,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          */
         $v4mapped_prefix_hex = '00000000000000000000ffff';
 
-        if(version_compare(phpversion(), '5.4', '<')){
-
+        if(version_compare(phpversion(), '5.4', '<'))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * PHP version isn't 
              * high enough. 
              *
              */
             $v4mapped_prefix_bin = pack('H*', $v4mapped_prefix_hex);
-
-        }else{
-
+        else
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Or more readable when 
              * using PHP >= 5.4. 
@@ -78831,16 +79087,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              */
             $v4mapped_prefix_bin = hex2bin($v4mapped_prefix_hex);
 
-        }
-
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Parse. 
          * $addr = $_SERVER['REMOTE_ADDR'];
          *
          */
         $addr_bin = inet_pton($ip);
-        if($addr_bin === FALSE){
-
+        if($addr_bin === FALSE)
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Unparsable? How 
              * did they connect?!?  
@@ -78848,21 +79101,16 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              */
             die('Invalid IP address');
 
-        }
-
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Check prefix. 
          *
          */
-        if(substr($addr_bin, 0, \strlen($v4mapped_prefix_bin)) == $v4mapped_prefix_bin){
-
+        if(substr($addr_bin, 0, \strlen($v4mapped_prefix_bin)) == $v4mapped_prefix_bin)
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Strip prefix. 
              *
              */
             $addr_bin = substr($addr_bin, \strlen($v4mapped_prefix_bin));
-
-        }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Convert back to 
@@ -78884,9 +79132,23 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
      * @access public
      *
      */
-    function return_record_count($query_key)
+    function __________return_record_count($query_key)
     {
 
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Fatal error: Declaration of
+         * CRNRSTN\crnrstn_database_crnrstn::
+         * return_record_count($oCRNRSTN_MySQLi,
+         * $result_handle, $batch_key, $result_set_key)
+         * must be compatible with CRNRSTN\crnrstn::
+         * return_record_count($query_key) in
+         * C:\xampp\htdocs\_R\class\database
+         * \crnrstn.database_crnrstn.class.php
+         * on line 515
+         *
+         * 5 :: Sunday, August 16, 2026 @ 0718 hrs.
+         *
+         */
         return 0;
 
     }
@@ -78898,8 +79160,21 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
      * @access public
      *
      */
-    function isset_query_result_set_key()
+    function ___________isset_query_result_set_key()
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Fatal error: Declaration of
+         * CRNRSTN\crnrstn_sql_profile_manager::
+         * isset_query_result_set_key($result_set_key)
+         * must be compatible with
+         * CRNRSTN\crnrstn::isset_query_result_set_key()
+         * in C:\xampp\htdocs\_R\class\database
+         * \crnrstn.sql_profile_manager.class.php
+         * on line 535
+         *
+         * 5 :: Sunday, August 16, 2026 @ 0714 hrs.
+         *
+         */
 
         return false;
 
@@ -78943,13 +79218,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     if($json_out == true){
 
-                        $db_resp_out = self::$R['kivotos']->R['database']->return_database_value(
-                                                                           $oCRNRSTN_MySQLi, 
-                                                                           $result_handle, 
-                                                                           $batch_key, 
-                                                                           $result_set_key, 
-                                                                           $fieldname, 
-                                                                           $pos);
+                        $db_resp_out = self::$_R['kivotos']->R['database']->return_database_value(
+                                                                            $oCRNRSTN_MySQLi,
+                                                                            $result_handle,
+                                                                            $batch_key,
+                                                                            $result_set_key,
+                                                                            $fieldname,
+                                                                            $pos);
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * SOURCE :: https://www.php.net/manual/en/json.constants.php
@@ -78962,13 +79237,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     }else{
 
-                        return self::$R['kivotos']->R['database']->return_database_value(
-                                                                   $oCRNRSTN_MySQLi, 
-                                                                   $result_handle, 
-                                                                   $batch_key, 
-                                                                   $result_set_key, 
-                                                                   $fieldname, 
-                                                                   $pos);
+                        return self::$_R['kivotos']->R['database']->return_database_value(
+                                                                    $oCRNRSTN_MySQLi,
+                                                                    $result_handle,
+                                                                    $batch_key,
+                                                                    $result_set_key,
+                                                                    $fieldname,
+                                                                    $pos);
 
                     }
 
@@ -79103,9 +79378,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             // 5 :: Tuesday, July 21, 2026 @ 0740 hrs.
             $output_mode = self::$R_data['int_flag'][$output_mode];
 
-        return self::$R['kivotos']->R['env']->return_component_branding_creative(
-                                              $strip_formatting,
-                                              $output_mode);
+        return self::$_R['kivotos']->R['env']->return_component_branding_creative(
+                                               $strip_formatting,
+                                               $output_mode);
 
     }
 
@@ -79135,15 +79410,15 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $meta_params_ARRAY = array())
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->return_img_html(
-                                                    $str, 
-                                                    $width, 
-                                                    $height, 
-                                                    $alt, 
-                                                    $title, 
-                                                    $url, 
-                                                    $target, 
-                                                    $meta_params_ARRAY);
+        return self::$_R['kivotos']->R['asset_mgr']->return_img_html(
+                                                     $str,
+                                                     $width,
+                                                     $height,
+                                                     $alt,
+                                                     $title,
+                                                     $url,
+                                                     $target,
+                                                     $meta_params_ARRAY);
 
     }
 
@@ -79763,11 +80038,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * Multi-Channel Decoupled Data 
              * Object (MC-DDO) Services Layer.
              *
-             * self::$R['kivotos']->R['config_mgr']->input_data_value(
-             *                                       $this->ini_set_ARRAY[$option], 
-             *                                       $option, 
-             *                                       'CRNRSTN::RESOURCE::PHP_INI', 
-             *                                       0);
+             * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+             *                                        $this->ini_set_ARRAY[$option],
+             *                                        $option,
+             *                                        'CRNRSTN::RESOURCE::PHP_INI',
+             *                                        0);
              *
              * return $this->ini_set_ARRAY[$option];
              *
@@ -79845,11 +80120,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * TODO :: Load PHP_INI global 
                  *         into CRNRSTN :: DDO cache. 
                  *
-                 *         self::$R['kivotos']->R['config_mgr']->input_data_value(
-                 *                                               $ini_value, 
-                 *                                               $option, 
-                 *                                               'CRNRSTN::RESOURCE::PHP_INI', 
-                 *                                               0);
+                 *         self::$_R['kivotos']->R['config_mgr']->input_data_value(
+                 *                                                $ini_value,
+                 *                                                $option,
+                 *                                                'CRNRSTN::RESOURCE::PHP_INI',
+                 *                                                0);
                  *         5 :: Tuesday, May 23, 2023 @ 0542 hrs.
                  *
                  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -80037,11 +80312,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * not necessarily 
              * expected...or needed. 
              *
-             * self::$R['kivotos']->R['config_mgr']->input_data_value(
-             *                                       $ini_value, 
-             *                                       $option, 
-             *                                       'CRNRSTN::RESOURCE::PHP_INI', 
-             *                                       0);
+             * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+             *                                        $ini_value,
+             *                                        $option,
+             *                                        'CRNRSTN::RESOURCE::PHP_INI',
+             *                                        0);
              *
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * The CRNRSTN :: Lightsaber RoCEv2 
@@ -80163,7 +80438,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *   for unknown types). 
          *
          */
-        if(is_string($output_type))
+        if(\is_string($output_type))
             // 5 :: Tuesday, July 21, 2026 @ 0647 hrs.
             $output_type = self::$R_data['int_flag'][$output_type];
 
@@ -80176,43 +80451,43 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * self::$R_data['R_datatype_master'] = array(
          * 'string'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_string'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_string',           
-         *                                  'PHP_NATIVE'      => 'string'),
+         *                                  'PHP_NATIVE'                           => 'string'),
          * 'int'                   => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_int'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_int',
-         *                                  'PHP_NATIVE'      => 'int'),
+         *                                  'PHP_NATIVE'                           => 'int'),
          * 'integer'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_integer'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_integer',
-         *                                  'PHP_NATIVE'      => 'integer'),
+         *                                  'PHP_NATIVE'                           => 'integer'),
          * 'bool'                  => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_bool'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_bool',
-         *                                  'PHP_NATIVE'      => 'bool'),
+         *                                  'PHP_NATIVE'                           => 'bool'),
          * 'boolean'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_boolean'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_boolean',
-         *                                  'PHP_NATIVE'      => 'boolean'),
+         *                                  'PHP_NATIVE'                           => 'boolean'),
          * 'float'                 => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_float'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_float',
-         *                                  'PHP_NATIVE'      => 'float'),
+         *                                  'PHP_NATIVE'                           => 'float'),
          * 'double'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_double'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_double',
-         *                                  'PHP_NATIVE'      => 'double'),
+         *                                  'PHP_NATIVE'                           => 'double'),
          * 'array'                 => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_array'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_array',
-         *                                  'PHP_NATIVE'      => 'array'),
+         *                                  'PHP_NATIVE'                           => 'array'),
          * 'object'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_object'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_object',
-         *                                  'PHP_NATIVE'      => 'object'),
+         *                                  'PHP_NATIVE'                           => 'object'),
          * 'resource'              => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_resource',
-         *                                  'PHP_NATIVE'      => 'resource'),
+         *                                  'PHP_NATIVE'                           => 'resource'),
          * 'resource (closed)'     => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource_closed'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_resource_closed',
-         *                                  'PHP_NATIVE'      => 'resource (closed)'),
+         *                                  'PHP_NATIVE'                           => 'resource (closed)'),
          * 'unknown type'          => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_unknown_type'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_unknown_type',
-         *                                  'PHP_NATIVE'      => 'unknown type'),
+         *                                  'PHP_NATIVE'                           => 'unknown type'),
          * 'NULL'                  => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_null'],
          *                                  self::$R_data['int_flag']['R_string']  => 'R_null',
-         *                                  'PHP_NATIVE'      => 'NULL'));
+         *                                  'PHP_NATIVE'                           => 'NULL'));
          *
          */
 
@@ -80228,11 +80503,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             // 5 :: Thursday, May 28, 2026 @ 0720 hrs.
             $tmp_output_type_int = self::$R_data['R_datatype_master'][$tmp_type][self::$R_data['int_flag']['R_integer']];
 
-            if($tmp_output_type_int == self::$R_data['int_flag']['R_string']){
-
+            if($tmp_output_type_int == self::$R_data['int_flag']['R_string'])
                 $constant = \strtoupper($constant);
-
-            }
 
         }else{
             // 5 :: Friday, May 1, 2026 @ 0614 hrs.
@@ -80244,8 +80516,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         switch($constant){
             case 'str':
             case 'string':
-            //case 'CRNRSTN_STRING':
-            //case CRNRSTN_STRING:
             case 'R_string':
             case self::$R_data['int_flag']['R_string']:
 
@@ -80258,13 +80528,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80272,15 +80538,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_string';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'string';
 
@@ -80290,8 +80554,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'int':
-            //case 'CRNRSTN_INT':
-            //case CRNRSTN_INT:
             case 'R_int':
             case self::$R_data['int_flag']['R_int']:
 
@@ -80304,13 +80566,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
-                    //case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
+                    case 'integer':
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80318,15 +80576,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_int';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'int';
 
@@ -80336,8 +80592,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'integer':
-            //case 'CRNRSTN_INTEGER':
-            //case CRNRSTN_INTEGER:
             case 'R_integer':
             case self::$R_data['int_flag']['R_integer']:
 
@@ -80350,13 +80604,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80364,15 +80614,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_integer';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'integer';
 
@@ -80382,8 +80630,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'bool':
-            //case 'CRNRSTN_BOOL':
-            //case CRNRSTN_BOOL:
             case 'R_bool':
             case self::$R_data['int_flag']['R_bool']:
 
@@ -80396,13 +80642,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80410,15 +80652,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_bool';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'bool';
 
@@ -80428,8 +80668,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'boolean':
-            //case 'CRNRSTN_BOOLEAN':
-            //case CRNRSTN_BOOLEAN:
             case 'R_boolean':
             case self::$R_data['int_flag']['R_boolean']:
 
@@ -80442,13 +80680,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80456,15 +80690,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_boolean';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'boolean';
 
@@ -80474,8 +80706,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'float':
-            //case 'CRNRSTN_FLOAT':
-            //case CRNRSTN_FLOAT:
             case 'R_float':
             case self::$R_data['int_flag']['R_float']:
 
@@ -80488,13 +80718,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80502,15 +80728,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_float';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'float';
 
@@ -80520,8 +80744,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'double':
-            //case 'CRNRSTN_DOUBLE':
-            //case CRNRSTN_DOUBLE:
             case 'R_double':
             case self::$R_data['int_flag']['R_double']:
 
@@ -80534,13 +80756,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80548,15 +80766,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_double';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'double';
 
@@ -80566,8 +80782,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'array':
-            //case 'CRNRSTN_ARRAY':
-            //case CRNRSTN_ARRAY:
             case 'R_array':
             case self::$R_data['int_flag']['R_array']:
 
@@ -80580,13 +80794,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80594,15 +80804,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_array';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'array';
 
@@ -80612,8 +80820,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'object':
-            //case 'CRNRSTN_OBJECT':
-            //case CRNRSTN_OBJECT:
             case 'R_object':
             case self::$R_data['int_flag']['R_object']:
 
@@ -80626,13 +80832,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80640,15 +80842,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_object';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'object';
 
@@ -80658,8 +80858,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'resource':
-            //case 'CRNRSTN_RESOURCE':
-            //case CRNRSTN_RESOURCE:
             case 'R_resource':
             case self::$R_data['int_flag']['R_resource']:
 
@@ -80672,13 +80870,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80686,15 +80880,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_resource';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'resource';
 
@@ -80704,8 +80896,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
             break;
             case 'resource (closed)':
-            //case 'CRNRSTN_RESOURCE_CLOSED':
-            //case CRNRSTN_RESOURCE_CLOSED:
             case 'R_resource_closed':
             case self::$R_data['int_flag']['R_resource_closed']:
 
@@ -80718,13 +80908,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80732,15 +80918,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_resource_closed';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'resource (closed)';
 
@@ -80760,8 +80944,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  *
                  */
             case 'NULL':
-            //case 'CRNRSTN_NULL':
-            //case CRNRSTN_NULL:
             case 'R_null':
             case self::$R_data['int_flag']['R_null']:
 
@@ -80774,13 +80956,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80788,15 +80966,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_null';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'NULL';
 
@@ -80805,8 +80981,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_MIXED':
-            //case CRNRSTN_MIXED:
             case 'R_mixed':
             case self::$R_data['int_flag']['R_mixed']:
 
@@ -80819,13 +80993,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80833,15 +81003,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_mixed';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'mixed';
 
@@ -80850,8 +81018,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_ICY_BITMASK':
-            //case CRNRSTN_ICY_BITMASK:
             case 'R_icy_bitmask':
             case self::$R_data['int_flag']['R_icy_bitmask']:
 
@@ -80864,13 +81030,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80878,15 +81040,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_icy_bitmask';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return self::$R_data['int_flag']['R_icy_bitmask'];
 
@@ -80895,8 +81055,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_SOAP_TUNNEL':
-            //case CRNRSTN_SOAP_TUNNEL:
             case 'R_soap_tunnel':
             case self::$R_data['int_flag']['R_soap_tunnel']:
 
@@ -80909,13 +81067,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80923,15 +81077,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_soap_tunnel';
 
                     default:
-                        //PHP_NATIVE.
+                        // PHP_NATIVE.
 
                         return self::$R_data['int_flag']['R_soap_tunnel'];
 
@@ -80940,8 +81092,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_PROD_MIN_JS_CSS':
-            //case CRNRSTN_PROD_MIN_JS_CSS:
             case 'R_js_css_min_mode':
             case self::$R_data['int_flag']['R_js_css_min_mode']:
 
@@ -80954,13 +81104,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -80968,15 +81114,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_js_css_min_mode';
 
                     default:
-                        //PHP_NATIVE.
+                        // PHP_NATIVE.
 
                         return (int) self::$R_data['int_flag']['R_js_css_min_mode'];
 
@@ -80985,8 +81129,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_CSS_LIB_ASSET_MAPPING':
-            //case CRNRSTN_CSS_LIB_ASSET_MAPPING:
             case 'R_fs_map_css_lib':
             case self::$R_data['int_flag']['R_fs_map_css_lib']:
 
@@ -80999,13 +81141,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -81013,15 +81151,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_fs_map_css_lib';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return self::$R_data['int_flag']['R_fs_map_css_lib'];
 
@@ -81044,13 +81180,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  */
                 switch($output_type){
                     case 'int':
-                    //case 'CRNRSTN_INT':
-                    //case CRNRSTN_INT:
                     case 'R_int':
                     case self::$R_data['int_flag']['R_int']:
                     case 'integer':
-                    //case 'CRNRSTN_INTEGER':
-                    //case CRNRSTN_INTEGER:
                     case 'R_integer':
                     case self::$R_data['int_flag']['R_integer']:
 
@@ -81058,15 +81190,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     case 'str':
                     case 'string':
-                    //case 'CRNRSTN_STRING':
-                    //case CRNRSTN_STRING:
                     case 'R_string':
                     case self::$R_data['int_flag']['R_string']:
 
                             return 'R_unknown_type';
 
                     default:
-                        //PHP_NATIVE. 
+                        // PHP_NATIVE. 
 
                         return 'unknown type';
 
@@ -81137,7 +81267,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *       5 :: Saturday, April 25, 2026 @ 1049 hrs.
          *
          */
-        if(is_string($return_data_type))
+        if(\is_string($return_data_type))
             // 5 :: Tuesday, July 21, 2026 @ 0423 hrs.
             $return_data_type = self::$R_data['int_flag'][$return_data_type];
 
@@ -81244,16 +81374,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
         switch($architecture){
-            //case 'CRNRSTN_CSS_LIB_ASSET_MAPPING':
-            //case CRNRSTN_CSS_LIB_ASSET_MAPPING:
             case 'R_fs_map_css_lib':
             case self::$R_data['int_flag']['R_fs_map_css_lib']:
-            //case 'CRNRSTN_PROD_MIN_JS_CSS':
-            //case CRNRSTN_PROD_MIN_JS_CSS:
             case 'R_js_css_min_mode':
             case self::$R_data['int_flag']['R_js_css_min_mode']:
-            //case 'CRNRSTN_ICY_BITMASK':
-            //case CRNRSTN_ICY_BITMASK:
             case 'R_icy_bitmask':
             case self::$R_data['int_flag']['R_icy_bitmask']:
 
@@ -81348,12 +81472,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_BOOL_IS_HTML':
-            //case CRNRSTN_BOOL_IS_HTML:
             case 'R_bool_is_html':
             case self::$R_data['int_flag']['R_bool_is_html']:
-            //case 'CRNRSTN_SOAP_TUNNEL':
-            //case CRNRSTN_SOAP_TUNNEL:
             case 'R_soap_tunnel':
             case self::$R_data['int_flag']['R_soap_tunnel']:
             default:
@@ -81415,8 +81535,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
         switch($architecture){
-            //case 'CRNRSTN_SOAP_TUNNEL':
-            //case CRNRSTN_SOAP_TUNNEL:
             case 'R_soap_tunnel':
             case self::$R_data['int_flag']['R_soap_tunnel']:
 
@@ -81512,8 +81630,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_BOOL_IS_HTML':
-            //case CRNRSTN_BOOL_IS_HTML:
             case 'R_bool_is_html':
             case self::$R_data['int_flag']['R_bool_is_html']:
 
@@ -81567,8 +81683,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_PROD_MIN_JS_CSS':
-            //case CRNRSTN_PROD_MIN_JS_CSS:
             case 'R_js_css_min_mode':
             case self::$R_data['int_flag']['R_js_css_min_mode']:
 
@@ -81623,8 +81737,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 }
 
             break;
-            //case 'CRNRSTN_CSS_LIB_ASSET_MAPPING':
-            //case CRNRSTN_CSS_LIB_ASSET_MAPPING:
             case 'R_fs_map_css_lib':
             case self::$R_data['int_flag']['R_fs_map_css_lib']:
 
@@ -84722,7 +84834,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     private function base64_output_mode_conversion(&$output_mode_override)
     {
 
-        self::$R['kivotos']->R['rrs_map']->base64_output_mode_conversion($output_mode_override);
+        self::$_R['kivotos']->R['rrs_map']->base64_output_mode_conversion($output_mode_override);
 
     }
 
@@ -84932,15 +85044,15 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * static file storage 
          * and retrieval architecture. 
          * 
-         * return self::$R['kivotos']->R['asset_mgr']->return_system_image(
-         *                                             $system_asset_constant,  
-         *                                             $width,  
-         *                                             $height,  
-         *                                             $hyperlink,  
-         *                                             $alt,  
-         *                                             $title,  
-         *                                             $target,  
-         *                                             $output_mode);
+         * return self::$_R['kivotos']->R['asset_mgr']->return_system_image(
+         *                                              $system_asset_constant,
+         *                                              $width,
+         *                                              $height,
+         *                                              $hyperlink,
+         *                                              $alt,
+         *                                              $title,
+         *                                              $target,
+         *                                              $output_mode);
          *
          */
 
@@ -84970,10 +85082,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $this->cache_meta_ARRAY['source'] = __FUNCTION__;
         //$this->cache_meta_ARRAY['url_params_ARRAY'] = $url_params_ARRAY;
 
-        return self::$R['kivotos']->R['asset_mgr']->return_creative(
-                                                    $media_element_key, 
-                                                    $output_mode, 
-                                                    $creative_mode);
+        return self::$_R['kivotos']->R['asset_mgr']->return_creative(
+                                                     $media_element_key,
+                                                     $output_mode,
+                                                     $creative_mode);
 
     }
 
@@ -85055,14 +85167,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $output_mode = NULL)
     {
 
-        return self::$R['kivotos']->R['rrs_map']->initialize_request(
-                                                  $request_ugc_val, 
-                                                  $asset_family, 
-                                                  $asset_meta_key, 
-                                                  $asset_meta_path, 
-                                                  $asset_meta_ARRAY, 
-                                                  $raw_output_mode, 
-                                                  $output_mode);
+        return self::$_R['kivotos']->R['rrs_map']->initialize_request(
+                                                   $request_ugc_val,
+                                                   $asset_family,
+                                                   $asset_meta_key,
+                                                   $asset_meta_path,
+                                                   $asset_meta_ARRAY,
+                                                   $raw_output_mode,
+                                                   $output_mode);
 
     }
 
@@ -85077,7 +85189,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function add_cache_channel($name)
     {
 
-        self::$R['kivotos']->R['rrs_map']->add_cache_channel($name);
+        self::$_R['kivotos']->R['rrs_map']->add_cache_channel($name);
 
     }
 
@@ -85092,7 +85204,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function return_isactive_channels()
     {
 
-        return self::$R['kivotos']->R['rrs_map']->return_isactive_channels();
+        return self::$_R['kivotos']->R['rrs_map']->return_isactive_channels();
 
     }
 
@@ -85241,7 +85353,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * Return Serialization Map. 
          *
          */
-        return self::$R['kivotos']->R['rrs_map']->rrs_map_is_asset_return();
+        return self::$_R['kivotos']->R['rrs_map']->rrs_map_is_asset_return();
 
     }
 
@@ -85290,19 +85402,19 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * cache active? 
          *
          */
-        return self::$R['kivotos']->R['rrs_map']->runtime_rrs_cache_is_active(
-                                                  $output_method,
-                                                  $output_mode,
-                                                  $R_data_000,
-                                                  $R_data_001,
-                                                  $R_data_002,
-                                                  $R_data_003,
-                                                  $R_data_004,
-                                                  $R_data_005,
-                                                  $R_data_006,
-                                                  $R_data_007,
-                                                  $R_data_008,
-                                                  $R_data_009);
+        return self::$_R['kivotos']->R['rrs_map']->runtime_rrs_cache_is_active(
+                                                   $output_method,
+                                                   $output_mode,
+                                                   $R_data_000,
+                                                   $R_data_001,
+                                                   $R_data_002,
+                                                   $R_data_003,
+                                                   $R_data_004,
+                                                   $R_data_005,
+                                                   $R_data_006,
+                                                   $R_data_007,
+                                                   $R_data_008,
+                                                   $R_data_009);
 
     }
 
@@ -85393,11 +85505,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                 */
 
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0, 
-                                  $var_1);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0,
+                                                    $var_1);
 
             break;
             case 'return_file_http_string':
@@ -85407,10 +85519,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * $var_0 = $url
                  *
                  */
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0);
 
             break;
             case 'return_image_html_wrapped_image_base64':
@@ -85430,20 +85542,20 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * $var_10 = $image_string
                  *
                  */
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0, 
-                                  $var_1, 
-                                  $var_2, 
-                                  $var_3, 
-                                  $var_4, 
-                                  $var_5, 
-                                  $var_6, 
-                                  $var_7, 
-                                  $var_8, 
-                                  $var_9, 
-                                  $var_10);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0,
+                                                    $var_1,
+                                                    $var_2,
+                                                    $var_3,
+                                                    $var_4,
+                                                    $var_5,
+                                                    $var_6,
+                                                    $var_7,
+                                                    $var_8,
+                                                    $var_9,
+                                                    $var_10);
 
             break;
             case 'return_image_html_wrapped':
@@ -85463,20 +85575,20 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * $var_10 = $image_string
                  *
                  */
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0, 
-                                  $var_1, 
-                                  $var_2, 
-                                  $var_3, 
-                                  $var_4, 
-                                  $var_5, 
-                                  $var_6, 
-                                  $var_7, 
-                                  $var_8, 
-                                  $var_9, 
-                                  $var_10);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0,
+                                                    $var_1,
+                                                    $var_2,
+                                                    $var_3,
+                                                    $var_4,
+                                                    $var_5,
+                                                    $var_6,
+                                                    $var_7,
+                                                    $var_8,
+                                                    $var_9,
+                                                    $var_10);
 
             break;
             case 'return_js_css_string_output':
@@ -85489,13 +85601,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * $var_3 = $is_dev_mode[boolean]
                  *
                  */
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0, 
-                                  $var_1, 
-                                  $var_2, 
-                                  $var_3);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0,
+                                                    $var_1,
+                                                    $var_2,
+                                                    $var_3);
 
             break;
             case 'return_asset_data':
@@ -85508,13 +85620,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * $var_3 = $asset_meta_path
                  *
                  */
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0, 
-                                  $var_1, 
-                                  $var_2, 
-                                  $var_3);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0,
+                                                    $var_1,
+                                                    $var_2,
+                                                    $var_3);
 
             break;
             case 'return_css_string_output':
@@ -85527,12 +85639,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * $var_2 = $is_dev_mode[boolean]
                  *
                  */
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0, 
-                                  $var_1, 
-                                  $var_2);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0,
+                                                    $var_1,
+                                                    $var_2);
 
             break;
             case 'return_file_byte_chunked_buffer_output':
@@ -85551,12 +85663,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  *    $file_extension)
                  *
                  */
-                self::$R_rrs_map->initialize_response_map_cache(
-                                  $output_method, 
-                                  $output_mode, 
-                                  $var_0, 
-                                  $var_1, 
-                                  $var_2);
+                self::$_R['kivotos']->R['rrs_map']->initialize_response_map_cache(
+                                                    $output_method,
+                                                    $output_mode,
+                                                    $var_0,
+                                                    $var_1,
+                                                    $var_2);
 
             break;
             default:
@@ -85607,9 +85719,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $output_mode = NULL)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->return_file_http_string(
-                                                    $url, 
-                                                    $output_mode);
+        return self::$_R['kivotos']->R['asset_mgr']->return_file_http_string(
+                                                     $url,
+                                                     $output_mode);
 
     }
 
@@ -85643,17 +85755,17 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $tmp_filename_override = NULL)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->return_image_html_wrapped(
-                                                    $tmp_filename, 
-                                                    $tmp_width, 
-                                                    $tmp_height, 
-                                                    $tmp_alt, 
-                                                    $tmp_title, 
-                                                    $tmp_link, 
-                                                    $tmp_target, 
-                                                    $tmp_asset_family, 
-                                                    $tmp_output_mode, 
-                                                    $tmp_filename_override);
+        return self::$_R['kivotos']->R['asset_mgr']->return_image_html_wrapped(
+                                                     $tmp_filename,
+                                                     $tmp_width,
+                                                     $tmp_height,
+                                                     $tmp_alt,
+                                                     $tmp_title,
+                                                     $tmp_link,
+                                                     $tmp_target,
+                                                     $tmp_asset_family,
+                                                     $tmp_output_mode,
+                                                     $tmp_filename_override);
 
     }
 
@@ -85675,11 +85787,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $is_dev_mode)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->return_js_css_string_output(
-                                                    $js_integer_constant, 
-                                                    $css_integer_constant, 
-                                                    $footer_html_output, 
-                                                    $is_dev_mode);
+        return self::$_R['kivotos']->R['asset_mgr']->return_js_css_string_output(
+                                                     $js_integer_constant,
+                                                     $css_integer_constant,
+                                                     $footer_html_output,
+                                                     $is_dev_mode);
 
     }
 
@@ -85717,17 +85829,17 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             // 5 :: Tuesday, July 21, 2026 @ 0722 hrs.
             $output_mode = self::$R_data['int_flag'][$output_mode];
 
-        return self::$R['kivotos']->R['asset_mgr']->asset_data_meta(
-                                                    $asset_data_key, 
-                                                    $asset_family, 
-                                                    $width_override, 
-                                                    $height_override, 
-                                                    $link_override, 
-                                                    $alt_override, 
-                                                    $title_override, 
-                                                    $target_override, 
-                                                    $path, 
-                                                    $output_mode);
+        return self::$_R['kivotos']->R['asset_mgr']->asset_data_meta(
+                                                     $asset_data_key,
+                                                     $asset_family,
+                                                     $width_override,
+                                                     $height_override,
+                                                     $link_override,
+                                                     $alt_override,
+                                                     $title_override,
+                                                     $target_override,
+                                                     $path,
+                                                     $output_mode);
 
     }
 
@@ -85749,15 +85861,15 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             // 5 :: Tuesday, July 21, 2026 @ 0722 hrs.
             $output_mode = self::$R_data['int_flag'][$output_mode];
 
-        return self::$R['kivotos']->R['asset_mgr']->asset_data(
-                                                    $request_ugc_value, 
-                                                    NULL, 
-                                                    NULL, 
-                                                    NULL, 
-                                                    NULL, 
-                                                    NULL, 
-                                                    NULL, 
-                                                    $output_mode);
+        return self::$_R['kivotos']->R['asset_mgr']->asset_data(
+                                                     $request_ugc_value,
+                                                     NULL,
+                                                     NULL,
+                                                     NULL,
+                                                     NULL,
+                                                     NULL,
+                                                     NULL,
+                                                     $output_mode);
 
     }
 
@@ -85792,12 +85904,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              */
             $channel = self::$R_data['int_flag'][$channel];
 
-        return self::$R['kivotos']->R['asset_mgr']->return_asset_data(
-                                                    $request_ugc_value, 
-                                                    $request_family, 
-                                                    $asset_meta_key, 
-                                                    $asset_meta_path, 
-                                                    $channel);
+        return self::$_R['kivotos']->R['asset_mgr']->return_asset_data(
+                                                     $request_ugc_value,
+                                                     $request_family,
+                                                     $asset_meta_key,
+                                                     $asset_meta_path,
+                                                     $channel);
 
     }
 
@@ -85817,10 +85929,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $is_dev_mode)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->return_css_string_output(
-                                                    $const, 
-                                                    $footer_html_output, 
-                                                    $is_dev_mode);
+        return self::$_R['kivotos']->R['asset_mgr']->return_css_string_output(
+                                                     $const,
+                                                     $footer_html_output,
+                                                     $is_dev_mode);
 
     }
 
@@ -85840,10 +85952,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $is_dev_mode)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->return_js_string_output(
-                                                    $const, 
-                                                    $footer_html_output, 
-                                                    $is_dev_mode);
+        return self::$_R['kivotos']->R['asset_mgr']->return_js_string_output(
+                                                     $const,
+                                                     $footer_html_output,
+                                                     $is_dev_mode);
 
     }
 
@@ -85902,24 +86014,24 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         }else{
 
-            $tmp_filepath = self::$R_rrs_map->rrs_map_data_cache_return(
-                                              'filepath', 
-                                              $output_mode);
-            $tmp_filename = self::$R_rrs_map->rrs_map_data_cache_return(
-                                              'filename', 
-                                              $output_mode);
-            $tmp_file_extension = self::$R_rrs_map->rrs_map_data_cache_return(
-                                                    'file_ext', 
-                                                    $output_mode);
+            $tmp_filepath = self::$_R['kivotos']->R['rrs_map']->rrs_map_data_cache_return(
+                                                                'filepath',
+                                                                $output_mode);
+            $tmp_filename = self::$_R['kivotos']->R['rrs_map']->rrs_map_data_cache_return(
+                                                                'filename',
+                                                                $output_mode);
+            $tmp_file_extension = self::$_R['kivotos']->R['rrs_map']->rrs_map_data_cache_return(
+                                                                      'file_ext',
+                                                                      $output_mode);
 
         }
 
-        self::$R['kivotos']->R['asset_mgr']->return_file_byte_chunked_buffer_output(
-                                             $tmp_filepath, 
-                                             $tmp_filename, 
-                                             $tmp_file_extension, 
-                                             $output_mode, 
-                                             $channel);
+        self::$_R['kivotos']->R['asset_mgr']->return_file_byte_chunked_buffer_output(
+                                              $tmp_filepath,
+                                              $tmp_filename,
+                                              $tmp_file_extension,
+                                              $output_mode,
+                                              $channel);
 
     }
 
@@ -85941,11 +86053,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $response_serial = NULL)
     {
 
-        return self::$R_rrs_map->rrs_map_data_cache_return(
-                                 $name, 
-                                 $filename, 
-                                 $asset_family, 
-                                 $response_serial);
+        return self::$_R['kivotos']->R['rrs_map']->rrs_map_data_cache_return(
+                                                   $name,
+                                                   $filename,
+                                                   $asset_family,
+                                                   $response_serial);
 
     }
 
@@ -85959,7 +86071,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function return_response_map_asset_meta_path()
     {
 
-        return self::$R_rrs_map->return_response_map_asset_meta_path();
+        return self::$_R['kivotos']->R['rrs_map']->return_response_map_asset_meta_path();
 
     }
 
@@ -85973,7 +86085,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     function return_response_map_asset_meta_key()
     {
 
-        return self::$R_rrs_map->return_response_map_asset_meta_key();
+        return self::$_R['kivotos']->R['rrs_map']->return_response_map_asset_meta_key();
 
     }
 
@@ -85994,10 +86106,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
         // $data_override = [filename] ...or even a map key.
 
-        return self::$R_rrs_map->return_response_map_ugc_value(
-                                 $data_override, 
-                                 $raw_output_mode, 
-                                 $output_mode);
+        return self::$_R['kivotos']->R['rrs_map']->return_response_map_ugc_value(
+                                                   $data_override,
+                                                   $raw_output_mode,
+                                                   $output_mode);
 
     }
 
@@ -86016,14 +86128,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             // 5 :: Tuesday, July 21, 2026 @ 0718 hrs.
             $channel = self::$R_data['int_flag'][$channel];
 
-        return self::$R_rrs_map->return_crnrstn_asset_family($channel);
+        return self::$_R['kivotos']->R['rrs_map']->return_crnrstn_asset_family($channel);
 
     }
 
 /*
  *    function spooled_response_output(){
  *
- *        return self::$R_rrs_map->spooled_response_output();
+ *        return self::$_R['kivotos']->R['rrs_map']->spooled_response_output();
  *
  *    }
  *
@@ -86090,6 +86202,107 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
     }
 
+    //
+    // SOURCE :: https://www.php.net/manual/en/function.password-hash.php
+    /**
+     * R :: Content pending.
+     *
+     * @return
+     * @access public
+     *
+     */
+    function benchmark_bestPasswordHashCost()
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Method benchmark_bestPasswordHashCost
+         * was moved from crnrstn_user
+         * to crnrstn.
+         * 5 :: Friday, August 21, 2026 @ 0607 hrs.
+         *
+         */
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * This code will benchmark your
+         * server to determine how high
+         * of a cost you can afford.
+         *
+         * You want to set the highest cost
+         * that you can without slowing down
+         * you server too much.
+         *
+         * 8-10 is a good baseline, and more
+         * is good if your servers are
+         * fast enough. The code below aims
+         * for ≤ 50 milliseconds stretching
+         * time, which is a good baseline
+         * for systems handling
+         * interactive logins.
+         *
+         */
+        $timeTarget = 0.05; // 50 milliseconds
+
+        $cost = 8;
+        do{
+
+            $cost++;
+            $start = microtime(true);
+            password_hash("test", PASSWORD_BCRYPT, ["cost" => $cost]);
+            $end = microtime(true);
+
+        }while(($end - $start) < $timeTarget);
+
+        $clr_ssl_msg = 'Load test complete for ' .
+                       'password hash option ' .
+                       'strength. Appropriate Cost = ' .
+                        $cost;
+        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token = array(
+                 'token'                   => $msg_token,
+                 'token_generation_date'   => $token_generation_date,
+                 'request_type'            => __METHOD__,
+                 'code'                    => 200,
+                 'clr_ssl_msg'             => $clr_ssl_msg);
+        $this->error_log(
+               $clr_ssl_msg,
+               \LOG_DEBUG,
+               \E_NOTICE,
+               __LINE__,
+               __METHOD__,
+               __FILE__,
+               $token);
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function validate_pwd_hash_login(
+             $user_submitted_password,
+             $database_result_pwd_hash)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Method validate_pwd_hash_login
+         * was moved from crnrstn_user
+         * to crnrstn.
+         * 5 :: Friday, August 21, 2026 @ 0600 hrs.
+         *
+         */
+
+        return password_verify(
+               $user_submitted_password,
+               $database_result_pwd_hash);
+
+    }
+
     /**
      * R :: Content pending. 
      *
@@ -86109,10 +86322,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          */
 
         switch(strtolower($path_type)){
-            case 'framework_directory':
+            case 'R_framework_directory':
                 // 5 :: Friday, July 19, 2024 @ 0418 hrs.
 
-                return self::$R_data['framework_directory'];
+                return self::$R_data['R_framework_directory'];
 
             case 'application_directory':
                 // 5 :: Friday, July 19, 2024 @ 0418 hrs.
@@ -86225,7 +86438,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 if(isset(self::$R_data['R_cluster_id'])){
                     // 5 :: Thursday, May 28, 2026 @ 0846 hrs.
 
-                    self::$R_data['R_paths']['framework_directory']   = self::$R_data['framework_directory'];
+                    self::$R_data['R_paths']['R_framework_directory'] = self::$R_data['R_framework_directory'];
                     self::$R_data['R_paths']['application_directory'] = self::$R_data['application_directory'];
 
                 }
@@ -86478,19 +86691,19 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             case 'total_bytes_processed[r]':
                 //Read
 
-                return self::$R_rrs_map->byte_reporting(
-                                         'total_bytes_processed[r]', 
-                                         $channel, 
-                                         $source);
+                return self::$_R['kivotos']->R['rrs_map']->byte_reporting(
+                                                           'total_bytes_processed[r]',
+                                                           $channel,
+                                                           $source);
 
             break;
             case 'channel_bytes_processed[r]':
                 //Read
 
-                return self::$R_rrs_map->byte_reporting(
-                                         'channel_bytes_processed[r]', 
-                                         $channel, 
-                                         $source);
+                return self::$_R['kivotos']->R['rrs_map']->byte_reporting(
+                                                           'channel_bytes_processed[r]',
+                                                           $channel,
+                                                           $source);
 
             break;
             case 'total_bytes_processed[w]':
@@ -86506,10 +86719,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      * storage. 
                      *
                      */
-                    $tmp_total_bytes_processed[$ch_channel] = self::$R_rrs_map->byte_reporting(
-                                                                                'total_bytes_processed[r]', 
-                                                                                $ch_channel, 
-                                                                                $source);
+                    $tmp_total_bytes_processed[$ch_channel] = self::$_R['kivotos']->R['rrs_map']->byte_reporting(
+                                                                                                  'total_bytes_processed[r]',
+                                                                                                  $ch_channel,
+                                                                                                  $source);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Increment bytes 
@@ -86518,11 +86731,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      */
                     $tmp_total_bytes_processed[$ch_channel] += (int) $data_len;
 
-                    self::$R_rrs_map->byte_reporting(
-                                      'total_bytes_processed[w]', 
-                                      $ch_channel, 
-                                      $source, 
-                                      $tmp_total_bytes_processed);
+                    self::$_R['kivotos']->R['rrs_map']->byte_reporting(
+                                                        'total_bytes_processed[w]',
+                                                        $ch_channel,
+                                                        $source,
+                                                        $tmp_total_bytes_processed);
 
                 }
 
@@ -86536,10 +86749,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      * storage. 
                  *
                  */
-                $tmp_total_bytes_processed = self::$R_rrs_map->byte_reporting(
-                                                               'channel_bytes_processed[r]', 
-                                                               $channel, 
-                                                               $source);
+                $tmp_total_bytes_processed = self::$_R['kivotos']->R['rrs_map']->byte_reporting(
+                                                                                 'channel_bytes_processed[r]',
+                                                                                 $channel,
+                                                                                 $source);
 
                 $tmp_total_bytes = $tmp_total_bytes_processed[$channel];
                 $tmp_total_bytes += $data_len;
@@ -86560,11 +86773,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  *die();
                  *
                  */
-                self::$R_rrs_map->byte_reporting(
-                                  'channel_bytes_processed[w]', 
-                                  $channel, 
-                                  $source, 
-                                  $tmp_total_bytes_processed);
+                self::$_R['kivotos']->R['rrs_map']->byte_reporting(
+                                                    'channel_bytes_processed[w]',
+                                                    $channel,
+                                                    $source,
+                                                    $tmp_total_bytes_processed);
 
             break;
 
@@ -86730,123 +86943,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                    __FILE__, 
                    $token);
 
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                Description
-             * LOG_EMERG            => 'system is unusable.'
-             * LOG_ALERT            => 'action must be
-             *                          taken immediately'
-             * LOG_CRIT             => 'critical conditions'
-             * LOG_ERR              => 'error conditions'
-             * LOG_WARNING          => 'warning conditions'
-             * LOG_NOTICE           => 'normal, but
-             *                          significant, condition'
-             * LOG_INFO             => 'informational message'
-             * LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
-
             throw new \Exception($clr_ssl_msg);
 
         }catch(\Exception $e){
@@ -86982,8 +87078,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         $bytes = 0;
 
-        if(!isset(self::$R_data['R_datatype_master'])){
-
+        if(!isset(self::$R_data['R_datatype_master']))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * The CLR-SSL is not yet 
              * ready, so we shall step 
@@ -86997,8 +87092,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              *
              */
             return $this->initialization_series_data_reporting_bytes($data);
-
-        } 
 
         switch($this->gettype($data, self::$R_data['int_flag']['R_integer'])){
             case self::$R_data['int_flag']['R_string']:
@@ -87261,7 +87354,6 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
      * @access public
      *
      */
-    //function format_bytes(
     function return_bytes(
              $data, 
              $precision_override = 2, 
@@ -88211,10 +88303,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $dec_point = '.', 
              $thou_separate = ',')
     {
+        // 5 :: Friday, July 5, 2024 @ 0106 hrs.
 
         if($dec_places > 0){
 
-            return number_format(
+            return \number_format(
                    $number, 
                    $dec_places, 
                    $dec_point, 
@@ -88230,26 +88323,21 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * stm555 at hotmail dot com
              *
              */
-            $broken_number = explode($dec_point, $number);
-            if(isset($broken_number[1])){
-
-                return number_format(
+            $broken_number = \explode($dec_point, $number);
+            if(isset($broken_number[1]))
+                return \number_format(
                        $broken_number[0], 
                        0, 
                        $dec_point, 
                        $thou_separate) . 
                        $dec_point . 
                        $broken_number[1];
-
-            }else{
-
-                return number_format(
+            else
+                return \number_format(
                        $broken_number[0], 
                        0, 
                        $dec_point, 
                        $thou_separate);
-
-            }
 
         }
 
@@ -88276,17 +88364,17 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     {
 
         switch($theme_profile){
-            case CRNRSTN_UI_GLASS_DARK_COPY:
-            case CRNRSTN_UI_GLASS_LIGHT_COPY:
-            case CRNRSTN_UI_TERMINAL:
-            case CRNRSTN_UI_WOOD:
-            case CRNRSTN_UI_PHP:
-            case CRNRSTN_UI_HTML:
-            case CRNRSTN_UI_DARKNIGHT:
-            case CRNRSTN_UI_DAYLIGHT:
-            case CRNRSTN_UI_FEATHER:
-            case CRNRSTN_UI_GREYSKY:
-            case CRNRSTN_UI_RANDOM:
+            case self::$R_data['int_flag']['CRNRSTN_UI_GLASS_DARK_COPY']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_GLASS_LIGHT_COPY']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_TERMINAL']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_WOOD']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_PHP']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_HTML']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_DARKNIGHT']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_DAYLIGHT']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_FEATHER']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_GREYSKY']:
+            case self::$R_data['int_flag']['CRNRSTN_UI_RANDOM']:
             default:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -88433,17 +88521,15 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $length = 1)
     {
 
-        $tmp = preg_split('~~u', $str, -1, PREG_SPLIT_NO_EMPTY);
+        $tmp = \preg_split('~~u', $str, -1, PREG_SPLIT_NO_EMPTY);
 
         if($length > 1){
 
-            $chunks = array_chunk($tmp, $length);
+            $chunks = \array_chunk($tmp, $length);
 
-            foreach($chunks as $i => $chunk){
-
-                $chunks[$i] = join('', (array)$chunk);
-
-            }
+            foreach($chunks as
+                    $i => $chunk)
+                $chunks[$i] = \join('', (array)$chunk);
 
             $tmp = $chunks;
 
@@ -88507,12 +88593,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              *
              */
             $post_max_size = $this->parse_size($this->ini_get('post_max_size'));
-            $upload_max = $this->parse_size($this->ini_get('upload_max_filesize'));
+            $upload_max    = $this->parse_size($this->ini_get('upload_max_filesize'));
 
         }else{
 
             $post_max_size = $this->parse_size(ini_get('post_max_size'));
-            $upload_max = $this->parse_size(ini_get('upload_max_filesize'));
+            $upload_max    = $this->parse_size(ini_get('upload_max_filesize'));
 
         }
 
@@ -88523,11 +88609,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * post_max_size. 
              *
              */
-            if($post_max_size > 0){
-
+            if($post_max_size > 0)
                 $max_size = $post_max_size;
-
-            }
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * If upload_max_size 
@@ -88538,11 +88621,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * no limit. 
              *
              */
-            if($upload_max > 0 && $upload_max < $max_size){
-
+            if($upload_max > 0 && $upload_max < $max_size)
                 $max_size = $upload_max;
-
-            }
 
         }
 
@@ -88567,7 +88647,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * the size. 
          *
          */
-        $unit = preg_replace('/[^bkmgtpezy]/i', '', $size);
+        $unit = \preg_replace('/[^bkmgtpezy]/i', '', $size);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Remove the non-numeric 
@@ -88575,10 +88655,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * the size. 
          *
          */
-        $size = preg_replace('/[^0-9\.]/', '', $size);
+        $size = \preg_replace('/[^0-9\.]/', '', $size);
 
-        if($unit){
-
+        if($unit)
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Find the position of the 
              * unit in the ordered string 
@@ -88587,13 +88666,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * multiply a kilobyte. 
              *
              */
-            return round($size * pow(1024, stripos('bkmgtpezy', $unit[0])));
-
-        }else{
-
-            return round($size);
-
-        }
+            return \round($size * \pow(1024, \stripos('bkmgtpezy', $unit[0])));
+        else
+            return \round($size);
 
     }
 
@@ -88628,9 +88703,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              $oElectrum_STATS)
     {
 
-        $continue_process = false;
+        $continue_process            = false;
         $tmp_stats_DESTINATION_ARRAY = array();
-        $tmp_stats_dest_path = '';
+        $tmp_stats_dest_path         = '';
         #$tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH']
         #$tmp_stats_DESTINATION_ARRAY['MKSUB_DIR']
         #$tmp_stats_DESTINATION_ARRAY['DESTINATION_FILEPATH']
@@ -88645,23 +88720,23 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *                                          $oEndpoint_serial_SOURCE,
          *                                          $oEndpoint_serial_DESTINATION);
          *
-         * self::$R['kivotos']->R['usr']->error_log(
-         *                                'oWheel :: Run ' .
-         *                                'ftp_mksubdirs=>[ftp_root_dir_path=' .
-         *                                $ftp_root_dir_path .
-         *                                '][tmp_mksubdir_destination_path=' .
-         *                                $tmp_mksubdir_destination_path .
-         *                                ']',
-         *                                __LINE__,
-         *                                __METHOD__,
-         *                                __FILE__,
-         *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+         * self::$_R['kivotos']->R['usr']->error_log(
+         *                                 'oWheel :: Run ' .
+         *                                 'ftp_mksubdirs=>[ftp_root_dir_path=' .
+         *                                 $ftp_root_dir_path .
+         *                                 '][tmp_mksubdir_destination_path=' .
+         *                                 $tmp_mksubdir_destination_path .
+         *                                 ']',
+         *                                 __LINE__,
+         *                                 __METHOD__,
+         *                                 __FILE__,
+         *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
          *
          */
 
-        if(is_dir($file_source_path)){
+        if(\is_dir($file_source_path)){
 
-            /* self::$R['kivotos']->R['usr']->error_log(
+            /* self::$_R['kivotos']->R['usr']->error_log(
              *                                'oWheel :: Run ' .
              *                                'ftp_mksubdirs=>[source_filepath=' .
              *                                $file_source_path.']',
@@ -88694,66 +88769,61 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                 '] Not a dir. crnrstn die().');
             die();
 
-            if(isset($SOURCE_filePath_ORIGINAL)){
-
+            if(isset($SOURCE_filePath_ORIGINAL))
                 $SOURCE_filepath_for_DESTINATION = $SOURCE_filePath_ORIGINAL;
-
-            }else{
-
+            else
                 $SOURCE_filepath_for_DESTINATION = $file_source_path;
-
-            }
 
             $tmp_slashChar = $this->return_slashChar($tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH']);
 
-            $tmp_split_ARRAY = explode(
+            $tmp_split_ARRAY = \explode(
                                $tmp_slashChar, 
                                $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH']);
 
-            $tmp_split_cnt = sizeof($tmp_split_ARRAY);
+            $tmp_split_cnt = \sizeof($tmp_split_ARRAY);
 
-            $tmp_dir_split_ARRAY = explode(
+            $tmp_dir_split_ARRAY = \explode(
                                    $tmp_split_ARRAY[$tmp_split_cnt - 2], 
                                    $tmp_stats_DESTINATION_ARRAY['DESTINATION_FILEPATH']);
 
-            $tmp_dir_sect_ARRAY = explode(
+            $tmp_dir_sect_ARRAY = \explode(
                                   $tmp_slashChar, 
                                   $tmp_dir_split_ARRAY[1]);
 
-            $tmp_sect_cnt = sizeof($tmp_dir_sect_ARRAY);
+            $tmp_sect_cnt = \sizeof($tmp_dir_sect_ARRAY);
 
             #$tmp_dir_sect_ARRAY[$tmp_sect_cnt-2] = wethrbug
-            $tmp_dest_file_section_ARRAY = explode(
+            $tmp_dest_file_section_ARRAY = \explode(
                                            $tmp_dir_sect_ARRAY[$tmp_sect_cnt - 2], 
                                            $SOURCE_filepath_for_DESTINATION);
 
             //[tmp_dir_split_ARRAY[1]=/a_custom_folder_name/20201013_16-52-26/wethrbug/
-            $tmp_sect_array = explode(
+            $tmp_sect_array = \explode(
                               $tmp_slashChar, 
                               $tmp_dir_split_ARRAY[1]);
 
-            $tmp_cnt = sizeof($tmp_sect_array);
+            $tmp_cnt = \sizeof($tmp_sect_array);
 
             $tmp_cut_dir = $tmp_sect_array[$tmp_cnt - 2];
 
-            $tmp_source_sect_ARRAY = explode(
+            $tmp_source_sect_ARRAY = \explode(
                                      $tmp_cut_dir, 
                                      $file_source_path);
 
             //$tmp_dir = dirname($tmp_source_sect_ARRAY[1]);
 
-            $tmp_file_dest = rtrim(
+            $tmp_file_dest = \rtrim(
                              $tmp_dir_split_ARRAY[1], 
                              $tmp_slashChar) . 
                              $tmp_dest_file_section_ARRAY[1];
 
-            $tmp_file_cap = basename($tmp_file_dest);
+            $tmp_file_cap = \basename($tmp_file_dest);
 
-            $tmp_file_dirpath_final = rtrim(
+            $tmp_file_dirpath_final = \rtrim(
                                       $tmp_file_dest, 
                                       $tmp_file_cap);
 
-            $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] = rtrim(
+            $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] = \rtrim(
                                                            $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'], 
                                                            $tmp_slashChar);
 
@@ -88762,60 +88832,60 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              */
 
             $tmp_dfile = $tmp_stats_dest_path;
-            $tmp_dfile = rtrim($tmp_dfile, $tmp_slashChar);
+            $tmp_dfile = \rtrim($tmp_dfile, $tmp_slashChar);
 
-            /* self::$R['kivotos']->R['usr']->error_log(
-             *                                'oWheel :: SLASH CHAR = ' .
-             *                                $tmp_slashChar,
-             *                                __LINE__,
-             *                                __METHOD__,
-             *                                __FILE__,
-             *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+            /* self::$_R['kivotos']->R['usr']->error_log(
+             *                                 'oWheel :: SLASH CHAR = ' .
+             *                                 $tmp_slashChar,
+             *                                 __LINE__,
+             *                                 __METHOD__,
+             *                                 __FILE__,
+             *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
              */
 
-            $tmp_dfile_array = explode(
+            $tmp_dfile_array = \explode(
                                $tmp_slashChar, 
                                $tmp_stats_DESTINATION_ARRAY['DESTINATION_FILEPATH']);
-            $tmp_dfile_sect_cnt = sizeof($tmp_dfile_array);
+            $tmp_dfile_sect_cnt = \sizeof($tmp_dfile_array);
 
-            /* self::$R['kivotos']->R['usr']->error_log(
-             *                                'oWheel :: EXPLODE [' .
-             *                                $tmp_stats_DESTINATION_ARRAY['DESTINATION_FILEPATH'] . '] ON ' .
-             *                                $tmp_dfile_sect_cnt,
-             *                                __LINE__,
-             *                                __METHOD__,
-             *                                __FILE__,
-             *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+            /* self::$_R['kivotos']->R['usr']->error_log(
+             *                                 'oWheel :: EXPLODE [' .
+             *                                 $tmp_stats_DESTINATION_ARRAY['DESTINATION_FILEPATH'] . '] ON ' .
+             *                                 $tmp_dfile_sect_cnt,
+             *                                 __LINE__,
+             *                                 __METHOD__,
+             *                                 __FILE__,
+             *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
              */
 
-            $tmp_dfile_bi_path_ARRAY = explode(
+            $tmp_dfile_bi_path_ARRAY = \explode(
                                        $tmp_dfile_array[$tmp_dfile_sect_cnt - 2], 
                                        $SOURCE_filepath_for_DESTINATION);
 
             $tmp_dfile .= $tmp_dfile_bi_path_ARRAY[1];
 
-            /* self::$R['kivotos']->R['usr']->error_log(
-             *                                'oWheel :: Run ftp_mksubdirs=> [DESTINATION_FILEPATH]=' .
-             *                                $tmp_stats_DESTINATION_ARRAY['DESTINATION_FILEPATH'] .
-             *                                ' | [FTP_DIR_PATH]=' .
-             *                                $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] .
-             *                                ' on tmp_split_ARRAY[tmp_split_cnt - 2]=' .
-             *                                $tmp_split_ARRAY[$tmp_split_cnt - 2],
-             *                                __LINE__,
-             *                                __METHOD__,
-             *                                __FILE__,
-             *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+            /* self::$_R['kivotos']->R['usr']->error_log(
+             *                                 'oWheel :: Run ftp_mksubdirs=> [DESTINATION_FILEPATH]=' .
+             *                                 $tmp_stats_DESTINATION_ARRAY['DESTINATION_FILEPATH'] .
+             *                                 ' | [FTP_DIR_PATH]=' .
+             *                                 $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] .
+             *                                 ' on tmp_split_ARRAY[tmp_split_cnt - 2]=' .
+             *                                 $tmp_split_ARRAY[$tmp_split_cnt - 2],
+             *                                 __LINE__,
+             *                                 __METHOD__,
+             *                                 __FILE__,
+             *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
              *
-             * self::$R['kivotos']->R['usr']->error_log(
-             *                                'oWheel :: Run ftp_mksubdirs @ ' .
-             *                                $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] .
-             *                                ' for =>[' .
-             *                                $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] .
-             *                                $tmp_file_dirpath_final,
-             *                                __LINE__,
-             *                                __METHOD__,
-             *                                __FILE__,
-             *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+             * self::$_R['kivotos']->R['usr']->error_log(
+             *                                 'oWheel :: Run ftp_mksubdirs @ ' .
+             *                                 $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] .
+             *                                 ' for =>[' .
+             *                                 $tmp_stats_DESTINATION_ARRAY['FTP_DIR_PATH'] .
+             *                                 $tmp_file_dirpath_final,
+             *                                 __LINE__,
+             *                                 __METHOD__,
+             *                                 __FILE__,
+             *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
              */
 
             if($this->ftp_mksubdirs(
@@ -88825,18 +88895,18 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                       $tmp_file_dirpath_final) == true)
             {
 
-                /* self::$R['kivotos']->R['usr']->error_log(
-                 *                                'oWheel :: ftp_mksubdirs ' .
-                 *                                'SUCCESS',
-                 *                                __LINE__,
-                 *                                __METHOD__,
-                 *                                __FILE__,
-                 *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+                /* self::$_R['kivotos']->R['usr']->error_log(
+                 *                                 'oWheel :: ftp_mksubdirs ' .
+                 *                                 'SUCCESS',
+                 *                                 __LINE__,
+                 *                                 __METHOD__,
+                 *                                 __FILE__,
+                 *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
                  */
 
             }else{
 
-                $error = error_get_last();
+                $error = \error_get_last();
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * We use FTP_CHDIR to see 
@@ -88846,79 +88916,76 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * to get FTP_CHDIR errors here. 
                  *
                  */
-                $pos_ignore_err = strpos($error['message'], 'ftp_chdir()');
-                if($pos_ignore_err == false){
-
-                    self::$R['kivotos']->R['usr']->error_log('oWheel :: ftp_mksubdirs ' .
-                                                   'ERROR :: ' .
-                                                   $error['message'],
-                                                   __LINE__,
-                                                   __METHOD__,
-                                                   __FILE__,
-                                                   'CRNRSTN_oELECTRUM_FILE_TRANSFER');
-
-                }
+                $pos_ignore_err = \strpos($error['message'], 'ftp_chdir()');
+                if($pos_ignore_err == false)
+                    self::$_R['kivotos']->R['usr']->error_log('oWheel :: ftp_mksubdirs ' .
+                                                    'ERROR :: ' .
+                                                    $error['message'],
+                                                    __LINE__,
+                                                    __METHOD__,
+                                                    __FILE__,
+                                                    'CRNRSTN_oELECTRUM_FILE_TRANSFER');
 
             }
 
-            if(substr($tmp_dfile, -1) == $tmp_slashChar){
+            if(\substr($tmp_dfile, -1) == $tmp_slashChar){
 
-                $tmp_dfile = rtrim($tmp_dfile, $tmp_slashChar) . $tmp_slashChar;
-                $tmp_dfile_fname = basename($SOURCE_filepath_for_DESTINATION);
+                $tmp_dfile = \rtrim($tmp_dfile, $tmp_slashChar) . $tmp_slashChar;
+                $tmp_dfile_fname = \basename($SOURCE_filepath_for_DESTINATION);
                 $tmp_dfile = $tmp_dfile . $tmp_dfile_fname;
 
             }
 
-            /* self::$R['kivotos']->R['usr']->error_log('oWheel :: SEE [' .
-             *                                $SOURCE_filepath_for_DESTINATION .
-             *                                ']. Now run ftp_put LOCAL FILE=>[' .
-             *                                $SOURCE_filepath_for_DESTINATION .
-             *                                '] to DEST FILE=>[' . $tmp_dfile .
-             *                                ']',
-             *                                __LINE__,
-             *                                __METHOD__,
-             *                                __FILE__,
-             *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+            /* self::$_R['kivotos']->R['usr']->error_log('oWheel :: SEE [' .
+             *                                 $SOURCE_filepath_for_DESTINATION .
+             *                                 ']. Now run ftp_put LOCAL FILE=>[' .
+             *                                 $SOURCE_filepath_for_DESTINATION .
+             *                                 '] to DEST FILE=>[' . $tmp_dfile .
+             *                                 ']',
+             *                                 __LINE__,
+             *                                 __METHOD__,
+             *                                 __FILE__,
+             *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
              */
 
-            if(ftp_put(
-               $ftp_stream_target, 
-               $tmp_dfile, 
-               $SOURCE_filepath_for_DESTINATION, 
-               FTP_BINARY))
+            if(\ftp_put(
+                $ftp_stream_target,
+                $tmp_dfile,
+                $SOURCE_filepath_for_DESTINATION,
+                FTP_BINARY))
             {
 
                 $continue_process = true;
 
-                /* self::$R['kivotos']->R['usr']->error_log(
-                 *                                'oWheel FF - 2/2 ' .
-                 *                                '(or DF 1 of 1) :: Successfully ' .
-                 *                                'uploaded LOCAL FILE=>[' .
-                 *                                $SOURCE_filepath_for_DESTINATION .
-                 *                                '] to DEST FILE=>[' .
-                 *                                $tmp_dfile . ']',
-                 *                                __LINE__,
-                 *                                __METHOD__,
-                 *                                __FILE__,
-                 *                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+                /* self::$_R['kivotos']->R['usr']->error_log(
+                 *                                 'oWheel FF - 2/2 ' .
+                 *                                 '(or DF 1 of 1) :: Successfully ' .
+                 *                                 'uploaded LOCAL FILE=>[' .
+                 *                                 $SOURCE_filepath_for_DESTINATION .
+                 *                                 '] to DEST FILE=>[' .
+                 *                                 $tmp_dfile . ']',
+                 *                                 __LINE__,
+                 *                                 __METHOD__,
+                 *                                 __FILE__,
+                 *                                 'CRNRSTN_oELECTRUM_FILE_TRANSFER');
                  */
 
             }else{
 
-                $error = error_get_last();
-                self::$R['kivotos']->R['usr']->error_log('oWheel FF - 2/2 (or ' .
-                                               'DF 1 of 1) :: ERROR uploading ' .
-                                               'LOCAL FILE=>[' .
-                                               $SOURCE_filepath_for_DESTINATION .
-                                               '] to DEST FILE=>[' .
-                                               $tmp_dfile . '] :: ' .
-                                               $error['message'],
-                                               __LINE__,
-                                               __METHOD__,
-                                               __FILE__,
-                                               'CRNRSTN_oELECTRUM_FILE_TRANSFER');
+                $error = \error_get_last();
+                self::$_R['kivotos']->R['usr']->error_log('oWheel FF - 2/2 (or ' .
+                                                'DF 1 of 1) :: ERROR uploading ' .
+                                                'LOCAL FILE=>[' .
+                                                $SOURCE_filepath_for_DESTINATION .
+                                                '] to DEST FILE=>[' .
+                                                $tmp_dfile . '] :: ' .
+                                                $error['message'],
+                                                __LINE__,
+                                                __METHOD__,
+                                                __FILE__,
+                                                'CRNRSTN_oELECTRUM_FILE_TRANSFER');
 
-                $this->is_error_on_transfer = true;
+                $this->is_error_on_transfer      = true;
                 $this->error_on_transfer_message = $error['message'] . 
                                                    ' <= Error experienced ' . 
                                                    'while pushing local file [' . 
@@ -89543,9 +89610,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
                                                                  'DISTRIB_CODENAME'    => '', 
                                                                  'DISTRIB_DESCRIPTION' => '');
 
-        /*self::$R['kivotos']->R['config_mgr']->input_data_value(
-         *                                      $tmp_version_linux, 
-         *                                      'version_linux');
+        /*self::$_R['kivotos']->R['config_mgr']->input_data_value(
+         *                                       $tmp_version_linux,
+         *                                       'version_linux');
          *
          */
 
@@ -89634,9 +89701,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
                                                                          '.' . 
                                                                          $version[1];
 
-            /* self::$R['kivotos']->R['config_mgr']->input_data_value(
-             *                                       $tmp_version_apache_sysimg, 
-             *                                       'version_apache_sysimg');
+            /* self::$_R['kivotos']->R['config_mgr']->input_data_value(
+             *                                        $tmp_version_apache_sysimg,
+             *                                        'version_apache_sysimg');
              *
              */
 
@@ -89697,9 +89764,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
             //$tmp_version_apache_sysimg = (double) $version[0];
             self::$R_data['operating_system']['version_apache_sysimg'] = (double) $version[0];
 
-            /* self::$R['kivotos']->R['config_mgr']->input_data_value(
-             *                                       $tmp_version_apache_sysimg, 
-             *                                       'version_apache_sysimg');
+            /* self::$_R['kivotos']->R['config_mgr']->input_data_value(
+             *                                        $tmp_version_apache_sysimg,
+             *                                        'version_apache_sysimg');
              *
              */
 
@@ -89776,9 +89843,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
                                                                   '.' . 
                                                                   $patch;
 
-            /* self::$R['kivotos']->R['config_mgr']->input_data_value(
-             *                                       $tmp_version_apache, 
-             *                                       'version_apache');
+            /* self::$_R['kivotos']->R['config_mgr']->input_data_value(
+             *                                        $tmp_version_apache,
+             *                                        'version_apache');
              *
              */
 
@@ -89843,9 +89910,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
                                                                   '.' . 
                                                                   $version[1];
 
-            /* self::$R['kivotos']->R['config_mgr']->input_data_value(
-             *                                       $tmp_version_apache, 
-             *                                       'version_apache');
+            /* self::$_R['kivotos']->R['config_mgr']->input_data_value(
+             *                                        $tmp_version_apache,
+             *                                        'version_apache');
              *
              */
 
@@ -90325,9 +90392,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
              * 5
              * 
              * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * self::$R['kivotos']->R['config_mgr']->input_data_value(
-             *                                       $tmp_version_php, 
-             *                                       'version_php');
+             * self::$_R['kivotos']->R['config_mgr']->input_data_value(
+             *                                        $tmp_version_php,
+             *                                        'version_php');
              *
              * Then, we used to 
              * send data to the 
@@ -91220,9 +91287,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
              $exclude_ecb = true)
     {
 
-        return self::$R['kivotos']->R['env']->openssl_get_md_methods(
-                                              $exclude_weak,
-                                              $exclude_ecb);
+        return self::$_R['kivotos']->R['env']->openssl_get_md_methods(
+                                               $exclude_weak,
+                                               $exclude_ecb);
 
     }
 
@@ -91242,10 +91309,10 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
              $data_type_family = 'CRNRSTN::RESOURCE')
     {
 
-        self::$R['kivotos']->R['env']->set_openssl_digest_profile(
-                                       $openssl_cipher_profile,
-                                       $data_key,
-                                       $data_type_family);
+        self::$_R['kivotos']->R['env']->set_openssl_digest_profile(
+                                        $openssl_cipher_profile,
+                                        $data_key,
+                                        $data_type_family);
 
     }
 
@@ -91265,10 +91332,10 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
              $data_type_family = 'CRNRSTN::RESOURCE')
     {
 
-        return self::$R['kivotos']->R['env']->set_openssl_cipher_profile(
-                                              $openssl_cipher_profile,
-                                              $data_key,
-                                              $data_type_family);
+        return self::$_R['kivotos']->R['env']->set_openssl_cipher_profile(
+                                               $openssl_cipher_profile,
+                                               $data_key,
+                                               $data_type_family);
 
     }
 
@@ -91286,9 +91353,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
              $exclude_ecb = true)
     {
 
-        self::$R['kivotos']->R['usr']->openssl_get_cipher_methods(
-                                       $exclude_weak,
-                                       $exclude_ecb);
+        self::$_R['kivotos']->R['env']->openssl_get_cipher_methods(
+                                        $exclude_weak,
+                                        $exclude_ecb);
 
     }
 
@@ -91623,9 +91690,9 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
  *
  *                    $tmp_found_digest_match = true;
  *                    self::$openssl_preferred_digest = $sys_digest_method;
- *                    //self::$R['kivotos']->R['config_mgr']->input_data_value(
- *                    //                                      self::$openssl_preferred_digest, 
- *                    //                                      'openssl_preferred_digest');
+ *                    //self::$_R['kivotos']->R['config_mgr']->input_data_value(
+ *                    //                                       self::$openssl_preferred_digest,
+ *                    //                                       'openssl_preferred_digest');
  *
  *                    //
  *                    // Wednesday, October 18, 2023 @ 0405 hrs.
@@ -91787,10 +91854,10 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
              $crnrstn_response_profile_key = NULL)
     {
 
-        return self::$R['kivotos']->R['env']->proper_response_return(
-                                              $response,
-                                              $header_options_array,
-                                              $crnrstn_response_profile_key);
+        return self::$_R['kivotos']->R['env']->proper_response_return(
+                                               $response,
+                                               $header_options_array,
+                                               $crnrstn_response_profile_key);
 
     }
 
@@ -91819,7 +91886,7 @@ Date :: Thursday, August 25, 2022 @ 0948 hrs. ::
     function process_for_filename($filename)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->process_for_filename($filename);
+        return self::$_R['kivotos']->R['asset_mgr']->process_for_filename($filename);
 
     }
 
@@ -92498,7 +92565,8 @@ $http_status_codes[$response_code] . '</div>
 
         echo $str;
 
-        exit();
+        exit(0);
+
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -92562,7 +92630,7 @@ $http_status_codes[$response_code] . '</div>
          * 5 :: Thursday, November 23, 2023 @ 0158 hrs.
          *
          */
-        return self::$R['kivotos']->R['config_mgr']->oCRNRSTN_DDO->return_total_bytes_stored();
+        return self::$_R['kivotos']->R['config_mgr']->oCRNRSTN_DDO->return_total_bytes_stored();
 
     }
 
@@ -92577,7 +92645,7 @@ $http_status_codes[$response_code] . '</div>
     function isvalid_ssdtla_session_data($data_key)
     {
 
-        return self::$R['kivotos']->R['session_mgr']->isvalid_ssdtla_session_data($data_key);
+        return self::$_R['kivotos']->R['session_mgr']->isvalid_ssdtla_session_data($data_key);
 
     }
 
@@ -92592,7 +92660,7 @@ $http_status_codes[$response_code] . '</div>
     function get_ssdtla_session_resource($data_key)
     {
 
-        return self::$R['kivotos']->R['session_mgr']->get_ssdtla_session_resource($data_key);
+        return self::$_R['kivotos']->R['session_mgr']->get_ssdtla_session_resource($data_key);
 
     }
 
@@ -92683,14 +92751,14 @@ $http_status_codes[$response_code] . '</div>
                  * Basic storage. 
                  *
                  */
-                self::$R['kivotos']->R['env']->add_ssdtla_resource(
-                                               $data_key,
-                                               $data_value,
-                                               $data_type_family,
-                                               $data_authorization_profile,
-                                               $index,
-                                               $ttl,
-                                               $spool_resource);
+                self::$_R['kivotos']->R['env']->add_ssdtla_resource(
+                                                $data_key,
+                                                $data_value,
+                                                $data_type_family,
+                                                $data_authorization_profile,
+                                                $index,
+                                                $ttl,
+                                                $spool_resource);
 
             break;
             default:
@@ -92804,7 +92872,7 @@ $http_status_codes[$response_code] . '</div>
             // Where $session_acceleration_key = file path + ?hash?.
             if(isset($session_acceleration_key)){
 
-                if(isset(self::$R_rrs_map)){
+                if(isset(self::$_R['kivotos']->R['rrs_map'])){
 
                     //if($this->isvalid_ssdtla_session_data($tmp_key) == true){
                     if($this->isset_resource(
@@ -93145,16 +93213,11 @@ $http_status_codes[$response_code] . '</div>
  
         }
 
-        if(!isset($this->total_bytes_hashed_ARRAY[$algorithm_override])){
-
+        if(!isset($this->total_bytes_hashed_ARRAY[$algorithm_override]))
             $this->total_bytes_hashed_ARRAY[$algorithm_override] = 0;
 
-        }
-
-        if($runtime_acceleration == true){
-
-            if(isset($this->hash_acceleration_ARRAY[$data])){
-
+        if($runtime_acceleration == true)
+            if(isset($this->hash_acceleration_ARRAY[$data]))
                 /*error_log(__LINE__ . 
                  *    ' crnrstn HOT RUNTIME ' . 
                  *    'STRAIGHT RETURN [' . 
@@ -93163,10 +93226,6 @@ $http_status_codes[$response_code] . '</div>
                  *
                  */
                 return $this->hash_acceleration_ARRAY[$data];
-
-            }
-
-        }
 
         $this->total_bytes_hashed_ARRAY[$algorithm_override] += $this->return_cache_bytes_size($data);
 
@@ -93184,28 +93243,8 @@ $http_status_codes[$response_code] . '</div>
 
         }
 
-        /*error_log(__LINE__ . 
-         *    ' crnrstn **SLOW** HASH ' . 
-         *    'RETURN algorithm[' . 
-         *    $algorithm_override . 
-         *    ']. hash_val[' . 
-         *    $tmp_hash_val . ']. [' . 
-         *    $data . '].');
-         *
-         */
-
-        if($runtime_acceleration == true){
-
-            /*error_log(__LINE__ . 
-             *    ' crnrstn **NEUTRAL** ' . 
-             *    'HASH RUNTIME STORE [' . 
-             *    $tmp_hash_val . 
-             *    '].');
-             *
-             */
+        if($runtime_acceleration == true)
             $this->hash_acceleration_ARRAY[$data] = $tmp_hash_val;
-
-        }
 
         return $tmp_hash_val;
 
@@ -93384,9 +93423,9 @@ $http_status_codes[$response_code] . '</div>
              $retbytes = true)
     {
 
-        return self::$R['kivotos']->R['asset_mgr']->readfile_chunked(
-                                                    $filename, 
-                                                    $retbytes);
+        return self::$_R['kivotos']->R['asset_mgr']->readfile_chunked(
+                                                     $filename,
+                                                     $retbytes);
 
     }
 
@@ -93536,112 +93575,6 @@ $http_status_codes[$response_code] . '</div>
                                __FILE__, 
                                $token);
 
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * Syslog Levels:
-                         * Constant                Description
-                         * \LOG_EMERG            => 'system is unusable.'
-                         * \LOG_ALERT            => 'action must be
-                         *                          taken immediately'
-                         * \LOG_CRIT             => 'critical conditions'
-                         * \LOG_ERR              => 'error conditions'
-                         * \LOG_WARNING          => 'warning conditions'
-                         * \LOG_NOTICE           => 'normal, but
-                         *                          significant, condition'
-                         * \LOG_INFO             => 'informational message'
-                         * \LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
-
                     }
 
                 }else{
@@ -93674,112 +93607,6 @@ $http_status_codes[$response_code] . '</div>
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
 
                 }
 
@@ -93978,7 +93805,7 @@ $http_status_codes[$response_code] . '</div>
          * 5 :: Tuesday, October 3, 2023 @ 2019 hrs.
          *
          */
-        return self::$R['kivotos']->R['performance_regulator']->is_valid_zipcode($zipcode);
+        return self::$_R['kivotos']->R['performance_regulator']->is_valid_zipcode($zipcode);
 
     }
 
@@ -94981,15 +94808,15 @@ $http_status_codes[$response_code] . '</div>
          * 5 :: Sunday, September 17, 2023 @ 0751 hrs.
          *
          */
-        return self::$R['kivotos']->R['asset_mgr']->fwrite(
-                                                    $file_data, 
-                                                    $file_path, 
-                                                    $file_permissions, 
-                                                    $length_override, 
-                                                    $stream_override, 
-                                                    $job_title, 
-                                                    $job_description, 
-                                                    $channel);
+        return self::$_R['kivotos']->R['asset_mgr']->fwrite(
+                                                     $file_data,
+                                                     $file_path,
+                                                     $file_permissions,
+                                                     $length_override,
+                                                     $stream_override,
+                                                     $job_title,
+                                                     $job_description,
+                                                     $channel);
 
     }
 
@@ -95041,11 +94868,11 @@ $http_status_codes[$response_code] . '</div>
          * 5 :: Sunday, September 17, 2023 @ 0750 hrs.
          *
          */
-        return self::$R['kivotos']->R['asset_mgr']->mkdir(
-                                                    $directory, 
-                                                    $permissions_override, 
-                                                    $recursive_perms_override, 
-                                                    $context);
+        return self::$_R['kivotos']->R['asset_mgr']->mkdir(
+                                                     $directory,
+                                                     $permissions_override,
+                                                     $recursive_perms_override,
+                                                     $context);
 
     }
 
@@ -95076,13 +94903,13 @@ $http_status_codes[$response_code] . '</div>
          * PHP native scandir(). 
          *
          */
-        return self::$R['kivotos']->R['asset_mgr']->better_scandir(
-                                                    $directory, 
-                                                    $sorting_order, 
-                                                    $context, 
-                                                    $secondary_asort, 
-                                                    $descending_arsort, 
-                                                    $channel);
+        return self::$_R['kivotos']->R['asset_mgr']->better_scandir(
+                                                     $directory,
+                                                     $sorting_order,
+                                                     $context,
+                                                     $secondary_asort,
+                                                     $descending_arsort,
+                                                     $channel);
 
     }
 
@@ -95218,9 +95045,9 @@ $http_status_codes[$response_code] . '</div>
              $data_value)
     {
 
-        return self::$R['kivotos']->R['session_mgr']->set_session_resource(
-                                                      $data_key, 
-                                                      $data_value);
+        return self::$_R['kivotos']->R['session_mgr']->set_session_resource(
+                                                       $data_key,
+                                                       $data_value);
 
     }
 
@@ -95235,7 +95062,7 @@ $http_status_codes[$response_code] . '</div>
     function get_session_resource($data_key)
     {
 
-        return self::$R['kivotos']->R['session_mgr']->get_session_resource($data_key);
+        return self::$_R['kivotos']->R['session_mgr']->get_session_resource($data_key);
 
     }
 
@@ -95250,7 +95077,7 @@ $http_status_codes[$response_code] . '</div>
     function isset_session_resource($data_key)
     {
 
-        return self::$R['kivotos']->R['session_mgr']->isset_session_resource($data_key);
+        return self::$_R['kivotos']->R['session_mgr']->isset_session_resource($data_key);
 
     }
 
@@ -95543,18 +95370,16 @@ $http_status_codes[$response_code] . '</div>
     function rrs_map_total_cache_bytes($channel = NULL)
     {
 
-        return self::$R_rrs_map->rrs_map_total_cache_bytes($channel);
+        return self::$_R['kivotos']->R['rrs_map']->rrs_map_total_cache_bytes($channel);
 
     }
 
-/*
- *    function rrs_map_cache_sync_is_active()
+/*    function rrs_map_cache_sync_is_active()
  *    {
  *
- *        return self::$R_rrs_map->rrs_map_cache_sync_is_active();
+ *        return self::$_R['kivotos']->R['rrs_map']->rrs_map_cache_sync_is_active();
  *
  *    }
- *
  */
 
     /**
@@ -95599,14 +95424,14 @@ $http_status_codes[$response_code] . '</div>
                      *             $return_type = CRNRSTN_BOOLEAN);
                      *
                      */
-                    if(self::$R_rrs_map->get_channel_config($channel, 'cache_is_active') == true){
+                    if(self::$_R['kivotos']->R['rrs_map']->get_channel_config($channel, 'cache_is_active') == true){
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Extract RRS 
                          * Map data. 
                          *
                          */
-                        $cache_ARRAY = self::$R_rrs_map->return_cache_data($channel);
+                        $cache_ARRAY = self::$_R['kivotos']->R['rrs_map']->return_cache_data($channel);
 
                     }else{
 
@@ -95665,7 +95490,7 @@ $http_status_codes[$response_code] . '</div>
         }
 
         $cache_ARRAY       = array();
-        $tmp_channel_ARRAY = self::$R_rrs_map->return_cache_channels();
+        $tmp_channel_ARRAY = self::$_R['kivotos']->R['rrs_map']->return_cache_channels();
 
         foreach($tmp_channel_ARRAY as 
             $index => $channel)
@@ -95677,16 +95502,16 @@ $http_status_codes[$response_code] . '</div>
                 break;
                 case self::$R_data['int_flag']['R_channel_RUNTIME']:
 
-                    /*if(self::$R_rrs_map->xxxxxxxxx($channel . 
-                     *   '_cache_is_active'))
-                     *{
+                    /* if(self::$_R['kivotos']->R['rrs_map']->xxxxxxxxx($channel .
+                     *        '_cache_is_active'))
+                     * {
                      *
                      *
                      * Extract RRS 
                      * Map data. 
                      *
                      */
-                    $cache_ARRAY = self::$R_rrs_map->return_cache_data($channel);
+                    $cache_ARRAY = self::$_R['kivotos']->R['rrs_map']->return_cache_data($channel);
 
                 break;
                 case self::$R_data['int_flag']['R_channel_COOKIE']:
@@ -95737,15 +95562,14 @@ $http_status_codes[$response_code] . '</div>
     function deactivate_destruct_rrs_map_sync()
     {
 
-        self::$R_rrs_map->deactivate_destruct_rrs_map_sync();
+        self::$_R['kivotos']->R['rrs_map']->deactivate_destruct_rrs_map_sync();
 
     }
 
-/*
- *    function cache_rrs_map_meta($attribute)
+/*    function cache_rrs_map_meta($attribute)
  *    {
  *
- *        self::$R_rrs_map->cache_rrs_map_meta($attribute);
+ *        self::$_R['kivotos']->R['rrs_map']->cache_rrs_map_meta($attribute);
  *
  *    }
  *
@@ -95767,10 +95591,10 @@ $http_status_codes[$response_code] . '</div>
              $value = '')
     {
 
-        self::$R_rrs_map->ini_cache_rrs_map_meta(
-                          $attribute, 
-                          $ugc_value, 
-                          $value);
+        self::$_R['kivotos']->R['rrs_map']->ini_cache_rrs_map_meta(
+                                            $attribute,
+                                            $ugc_value,
+                                            $value);
 
     }
 
@@ -95806,10 +95630,10 @@ $http_status_codes[$response_code] . '</div>
          * CRNRSTN :: PLAID.
          *
          */
-        $CRNRSTN_PLAID_RESPONSE_RETURN = self::$R_rrs_map->plaid(
-                                                           $channel, 
-                                                           $salt_ugc_override, 
-                                                           $output_mode);
+        $CRNRSTN_PLAID_RESPONSE_RETURN = self::$_R['kivotos']->R['rrs_map']->plaid(
+                                                                             $channel,
+                                                                             $salt_ugc_override,
+                                                                             $output_mode);
         if(\strlen($CRNRSTN_PLAID_RESPONSE_RETURN) > 0){
 
             echo $CRNRSTN_PLAID_RESPONSE_RETURN;
@@ -95866,9 +95690,9 @@ $http_status_codes[$response_code] . '</div>
              $data_authorization_profile)
     {
 
-        return self::$R['kivotos']->R['config_mgr']->channel_access_is_authorized(
-                                                     $channel, 
-                                                     $data_authorization_profile);
+        return self::$_R['kivotos']->R['config_mgr']->channel_access_is_authorized(
+                                                      $channel,
+                                                      $data_authorization_profile);
 
     }
 
@@ -95932,7 +95756,7 @@ $http_status_codes[$response_code] . '</div>
          * All runtime data.
          *
          * $tmp_str_out .= 'START_RUNTIME::' . 
-         *                 print_r(self::$R_rrs_map->cache_ARRAY, true);
+         *                 print_r(self::$_R['kivotos']->R['rrs_map']->cache_ARRAY, true);
          *
          */
 
@@ -97809,7 +97633,7 @@ $http_status_codes[$response_code] . '</div>
     {
         // 5 :: Thursday, July 9, 2026 @ 0447 hrs.
 
-        return self::$R['kivotos']->R['content_src_ctrlr']->load_page($module_page_key);
+        return self::$_R['kivotos']->R['content_src_ctrlr']->load_page($module_page_key);
 
     }
 
@@ -97825,7 +97649,7 @@ $http_status_codes[$response_code] . '</div>
     {
         // 5 :: Thursday, July 9, 2026 @ 0450 hrs.
 
-        return self::$R['kivotos']->R['content_src_ctrlr']->return_sauce($resource);
+        return self::$_R['kivotos']->R['content_src_ctrlr']->return_sauce($resource);
 
     }
 
@@ -97860,7 +97684,8 @@ $http_status_codes[$response_code] . '</div>
             $tmp_str_out .= '<!DOCTYPE html>
 <html lang="' . $this->iso_language_html() . '">
 <head>
-    <title>CRNRSTN :: v' . self::$R_data['version_crnrstn'] . '</title>
+    <title>' . $this->get_crnrstn('CLR_SSL_long_TEXT') .
+    ' v' . self::$R_data['version_crnrstn'] . '</title>
     '. $this->system_output_head_html(self::$R_data['int_flag']['CRNRSTN_CSS_MAIN_DESKTOP']) . '
 
 </head>
@@ -98034,15 +97859,15 @@ $http_status_codes[$response_code] . '</div>
              */
             $return_data_type = self::$R_data['int_flag'][$return_data_type];
 
-        return self::$R['kivotos']->R['config_mgr']->channel_report(
-                                                     $channel_constant, 
-                                                     $channel_report_queue, 
-                                                     $return_data_type, 
-                                                     $php_logo_height, 
-                                                     $to_plaid, 
-                                                     $is_HTML, 
-                                                     $report_delimiter_TEXT, 
-                                                     $report_delimiter_HTML);
+        return self::$_R['kivotos']->R['config_mgr']->channel_report(
+                                                      $channel_constant,
+                                                      $channel_report_queue,
+                                                      $return_data_type,
+                                                      $php_logo_height,
+                                                      $to_plaid,
+                                                      $is_HTML,
+                                                      $report_delimiter_TEXT,
+                                                      $report_delimiter_HTML);
 
     }
 
@@ -98756,6 +98581,38 @@ $http_status_codes[$response_code] . '</div>
     }
 
     /**
+     * R :: Content pending.
+     *
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function soa_object_registration($public_key = 'R_core')
+    {
+        // 5 :: Sunday, August 23, 2026 @ 2154 hrs.
+
+        return self::$_R['kivotos']['soap_access_mgr']->soa_object_registration($public_key);
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function soa_method_registration($public_key = 'R_core')
+    {
+        // 5 :: Sunday, August 23, 2026 @ 2221 hrs.
+
+        return self::$_R['kivotos']['soap_access_mgr']->soa_method_registration($public_key);
+
+    }
+
+    /**
      * R :: Content pending. 
      *
      * @param
@@ -99063,24 +98920,24 @@ $http_status_codes[$response_code] . '</div>
          * 1) Unmodified PHP headers_list() Output:
          *
          *    $header_array = array('Content-Language: en', 
-         *                       'Content-Type: text/html; charset=UTF-8', 
-         *                       'Date: Tue, Aug 4 2026 23:18:13 EDT', 
-         *                       'Expires: Tue, Aug 11 2026 23:18:13 EDT', 
-         *                       'Last-Modified: Tue, 4 Aug 2026 23:18:13 EDT', 
-         *                       'X-Powered-By[: CRNRSTN :: Lightsaber v2.00.0001', 
-         *                       'Content-length: 1921', 
-         *                       'Cache-Control: max-age=604800');
+         *                          'Content-Type: text/html; charset=UTF-8',
+         *                          'Date: Tue, Aug 4 2026 23:18:13 EDT',
+         *                          'Expires: Tue, Aug 11 2026 23:18:13 EDT',
+         *                          'Last-Modified: Tue, 4 Aug 2026 23:18:13 EDT',
+         *                          'X-Powered-By[: CRNRSTN :: Lightsaber v2.00.0001',
+         *                          'Content-length: 1921',
+         *                          'Cache-Control: max-age=604800');
          *
          * 2) Name Value Pairs:
          *
          *    $header_array = array('Content-Language' => 'en', 
-         *                       'Content-Type'     => 'text/html; charset=utf-8', 
-         *                       'Date'             => 'Wed, Aug 5 2026 0:00:00 EDT', 
-         *                       'Expires'          => 'Wed, Aug 12 2026 0:00:00 EDT', 
-         *                       'Last-Modified'    => 'Wed, 5 Aug 2026 0:00:00 EDT', 
-         *                       'X-Powered-By'     => 'CRNRSTN :: Lightsaber v2.00.0001', 
-         *                       'Content-length'   => '1921', 
-         *                       'Cache-Control'    => 'max-age=604800');
+         *                          'Content-Type'     => 'text/html; charset=utf-8',
+         *                          'Date'             => 'Wed, Aug 5 2026 0:00:00 EDT',
+         *                          'Expires'          => 'Wed, Aug 12 2026 0:00:00 EDT',
+         *                          'Last-Modified'    => 'Wed, 5 Aug 2026 0:00:00 EDT',
+         *                          'X-Powered-By'     => 'CRNRSTN :: Lightsaber v2.00.0001',
+         *                          'Content-length'   => '1921',
+         *                          'Cache-Control'    => 'max-age=604800');
          * 
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * [Wed Aug 05 00:00:00.219482 2026] [:error] [pid 124824] [client 172.16.225.1:64401] 
@@ -99169,10 +99026,11 @@ $http_status_codes[$response_code] . '</div>
                      $overwrite_existing = true)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied from the CRNRSTN :: 
-         * HTTP Manager.  
-         * 
-         * 
+         * Copied the method,
+         * initialization_series_add_header_attribute,
+         * from the CRNRSTN :: HTTP Manager class
+         * to crnrstn, and refactored it for 2026.
+         *
          * 5 :: Case of the Monday's, August 3, 2026 @ 1114 hrs.
          *
          */
@@ -99209,9 +99067,10 @@ $http_status_codes[$response_code] . '</div>
     function initialization_series_header_options_apply()
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied from the CRNRSTN :: 
-         * HTTP Manager and refactored. 
-         * for 2026. 
+         * Copied the method,
+         * initialization_series_header_options_apply,
+         * from the CRNRSTN :: HTTP Manager class
+         * to crnrstn, and refactored it for 2026.
          * 
          * 5 :: Case of the Monday's, August 3, 2026 @ 1128 hrs.
          *
@@ -99244,9 +99103,12 @@ $http_status_codes[$response_code] . '</div>
     function initialization_series_get_headers($return_type = 'R_array')
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied from the CRNRSTN :: 
+         * Copied the method,
+         * initialization_series_get_headers,
+         * from the CRNRSTN ::
          * HTTP Manager public function 
          * get_headers($returnType = 'R_array'){}
+         * to crnrstn.
          * 
          * 
          * 5 :: Case of the Monday's, August 3, 2026 @ 1135 hrs.
@@ -99307,8 +99169,8 @@ $http_status_codes[$response_code] . '</div>
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied the method iso_language_profile 
-         * from crnrstn_multi_language_manager 
-         * into crnrstn and into the CLR-SSL 
+         * from the crnrstn_multi_language_manager
+         * class into crnrstn, and into the CLR-SSL
          * Initialization Series as 
          * initialization_series_iso_language_profile() 
          * in order to support the HTTP Response 
@@ -99340,6 +99202,763 @@ $http_status_codes[$response_code] . '</div>
     }
 
     /**
+     * R :: Content pending.
+     *
+     * Recycle the $spice_salt_mem_ptr
+     * for a specific resource if the
+     * object, function or runtime exe
+     * needs > 16 inputs for the method
+     * call, and then call compound_ointment
+     * multiple times to locally address the
+     * +16 inputs behind the same
+     * $spice_salt_mem_ptr / $resource_name for
+     * the anointing of that resource.
+     *
+     * @param &$spice_salt_mem_ptr
+     * @param $resource_name
+     * @param $R_data_000
+     * @param $R_data_015
+     * @return
+     * @access private
+     *
+     */
+    private function initialization_series_compound_ointment(
+                     &$spice_salt_mem_ptr = NULL,
+                     $resource_name = NULL,
+                     $R_data_000 = NULL, $R_data_001 = NULL,
+                     $R_data_002 = NULL, $R_data_003 = NULL,
+                     $R_data_004 = NULL, $R_data_005 = NULL,
+                     $R_data_006 = NULL, $R_data_007 = NULL,
+                     $R_data_008 = NULL, $R_data_009 = NULL,
+                     $R_data_010 = NULL, $R_data_011 = NULL,
+                     $R_data_012 = NULL, $R_data_013 = NULL,
+                     $R_data_014 = NULL, $R_data_015 = NULL)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Copied the compound_ointment
+         * method and the anoint CLR-SSL
+         * Resource Registry architecture
+         * from the crnrstn_registry_assistant class
+         * object definition to crnrstn.
+         * 5 :: Thursday, August 20, 2026 @ 0543 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added &$spice_salt_mem_ptr = NULL as
+         *       the first method input to the
+         *       initialization_series_compound_ointment
+         *       method, and set a default for
+         *       $resource_name = NULL.
+         *       5 :: Saturday, August 22, 2026 @ 0047 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Removed the $combine_calls = false
+         *       method input from the method,
+         *       initialization_series_compound_ointment.
+         *       5 :: Saturday, August 22, 2026 @ 0148 hrs.
+         *
+         */
+
+        $args     = \func_get_args();
+        $num_args = \sizeof($args);
+
+        if(!isset($spice_salt_mem_ptr))
+            // 5 :: Monday, June 8, 2026 @ 0243 hrs.
+            $spice_salt_mem_ptr = $this->generate_key('compound_ointment_spice_salt');
+
+        self::$R_data['anoint']['compound_ointment']['resource_key'][]               = $resource_name;
+        self::$R_data['anoint']['compound_ointment']['spice_salt'][$resource_name][] = $spice_salt_mem_ptr;
+        self::$R_data['anoint']['compound_ointment']['isset'][$resource_name]        = 1;
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Compound the input data into the
+         * object, function or runtime executable's
+         * compounded ointment for the proper
+         * anointing of resource, $resource_name.
+         *
+         *
+         * 5 :: Saturday, August 22, 2026 @ 0014 hrs.
+         * Stops to roll a joint.
+         *
+         */
+        for($i = 1; $i < $num_args - 1; $i++)
+            // 5 :: Thursday, August 20, 2026 @ 0600 hrs.
+            self::$R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][] = $args[$i];
+
+        // 5 :: Monday, June 8, 2026 @ 0212 hrs.
+        return NULL;
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param $resource_name
+     * @param $R_data_000
+     * @param $R_data_015
+     * @return
+     * @access private
+     *
+     */
+    private function initialization_series_anoint(
+                     $resource_name,
+                     &$R_data_000 = NULL, &$R_data_001 = NULL,
+                     &$R_data_002 = NULL, &$R_data_003 = NULL,
+                     &$R_data_004 = NULL, &$R_data_005 = NULL,
+                     &$R_data_006 = NULL, &$R_data_007 = NULL,
+                     &$R_data_008 = NULL, &$R_data_009 = NULL,
+                     &$R_data_010 = NULL, &$R_data_011 = NULL,
+                     &$R_data_012 = NULL, &$R_data_013 = NULL,
+                     &$R_data_014 = NULL, &$R_data_015 = NULL)
+    {
+        // 5 :: Thursday, August 20, 2026 @ 0615 hrs.
+
+        $check_for_concat = true;
+
+        /*
+        // 5 :: Monday, June 8, 2026 @ 0243 hrs.
+        $spice_salt_mem_ptr = $this->generate_key('compound_ointment_spice_salt');
+        self::$R_data['anoint']['compound_ointment']['resource_key'][]       = $resource_key;
+        self::$R_data['anoint']['compound_ointment']['spice_salt'][]         = $spice_salt_mem_ptr;
+        self::$R_data['anoint']['compound_ointment']['isset'][$resource_key] = 1;
+
+        for($i = 1; $i < $num_args; $i++)
+            // 5 :: Thursday, August 20, 2026 @ 0600 hrs.
+            self::$R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][] = $args[$i];
+
+        */
+
+        switch($this->gettype($resource_name, self::$R_data['int_flag']['R_integer'])){
+            case self::$R_data['int_flag']['R_object']:
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * The resource name is an object, so
+                 * we will programmatically acquire the
+                 * class name, and pass it on as string.
+                 *
+                 *
+                 * 5 :: Thursday, August 20, 2026 @ 0617 hrs.
+                 *
+                 */
+                $resource_name    = \get_class($resource_name);
+                $check_for_concat = false;
+            case self::$R_data['int_flag']['R_string']:
+
+                if($check_for_concat){
+
+                    // Is the data concatenated?
+                    $pos_comma = \strpos($resource_name, ',');
+                    $pos_pipe  = \strpos($resource_name, '|');
+
+                    if($pos_comma !== false)
+                        $delimiter = ',';
+                    else
+                        if($pos_pipe !== false)
+                            $delimiter = '|';
+
+                    if(isset($delimiter)){
+
+                        $res_names = \explode($delimiter, $resource_name);
+                        $cnt       = \sizeof($res_names);
+
+                        for($i = 0; $i < $cnt; $i++)
+                        {
+
+                            if(!($R_resp = _crnrstn_native_resource_registry(
+                                           'return',
+                                           $this,
+                                           NULL,
+                                           $res_names[$i],
+                                           self::$R_data['R_debug_mode'])))
+                            {
+
+                                $clr_ssl_msg = 'CLR-SSL resource ' .
+                                               'initialization failure: ' .
+                                               $res_names[$i];
+                                // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => __METHOD__,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg);
+                                $this->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_ALERT,
+                                    \E_ERROR,
+                                    __LINE__,
+                                    __METHOD__,
+                                    __FILE__,
+                                    $token);
+
+                            }else{
+
+                                $mem_ptr = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+
+                                switch($i){
+                                    case 0:
+
+                                        $R_data_000 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 1:
+
+                                        $R_data_001 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 2:
+
+                                        $R_data_002 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 3:
+
+                                        $R_data_003 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 4:
+
+                                        $R_data_004 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 5:
+
+                                        $R_data_005 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 6:
+
+                                        $R_data_006 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 7:
+
+                                        $R_data_007 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 8:
+
+                                        $R_data_008 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 9:
+
+                                        $R_data_009 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 10:
+
+                                        $R_data_010 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 11:
+
+                                        $R_data_011 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 12:
+
+                                        $R_data_012 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 13:
+
+                                        $R_data_013 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 14:
+
+                                        $R_data_014 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+                                    case 15:
+
+                                        $R_data_015 = $R_resp[$mem_ptr]['data'][0];
+
+                                    break;
+
+                                }
+
+                            }
+
+                        }
+
+                        return NULL;
+
+                    }
+
+                }
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Requesting one (1)
+                 * resource from the CLR-SSL
+                 * Resource Registry.
+                 *
+                 */
+                if(!($R_resp = _crnrstn_native_resource_registry(
+                               'return',
+                               $this,
+                               NULL,
+                               $resource_name,
+                               self::$R_data['R_debug_mode'])))
+                {
+
+                    $clr_ssl_msg = 'CLR-SSL resource ' .
+                                   'initialization failure: ' .
+                                   $resource_name;
+                    // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __METHOD__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                        $clr_ssl_msg,
+                        \LOG_ALERT,
+                        \E_ERROR,
+                        __LINE__,
+                        __METHOD__,
+                        __FILE__,
+                        $token);
+
+                echo '[mthd ' . __METHOD__ . '] [lnum ' . __LINE__ . '] ' . $clr_ssl_msg;
+                die();
+                }else{
+
+                    $mem_ptr = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+                    $R_data_000 = $R_resp[$mem_ptr]['data'][0];
+
+                }
+
+
+            break;
+            case self::$R_data['int_flag']['R_array']:
+                // 5 :: Thursday, August 20, 2026 @ 0657 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Array Structure A: array('resource_name0', 'resource_name1', ...)
+                 * Array Structure B: array('resource_name0' => 'val', 'resource_name1' => 'val', ...)
+                 *
+                 */
+
+                $i = 0;
+                foreach($resource_name as
+                        $index => $val)
+                {
+
+                    // Array Structure A
+                    if(\is_int($index))
+                        $res_name = $val;
+                    else
+                        // Array Structure B
+                        $res_name = $index;
+
+                    if(!($R_resp = _crnrstn_native_resource_registry(
+                                   'return',
+                                   $this,
+                                   NULL,
+                                   $res_name,
+                                   self::$R_data['R_debug_mode'])))
+                    {
+
+                        $clr_ssl_msg = 'CLR-SSL resource ' .
+                                       'initialization failure: ' .
+                                       $res_name;
+                        // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __METHOD__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $this->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ALERT,
+                            \E_ERROR,
+                            __LINE__,
+                            __METHOD__,
+                            __FILE__,
+                            $token);
+
+                    }else{
+
+                        $mem_ptr = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+
+                        switch($i){
+                            case 0:
+
+                                $R_data_000 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 1:
+
+                                $R_data_001 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 2:
+
+                                $R_data_002 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 3:
+
+                                $R_data_003 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 4:
+
+                                $R_data_004 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 5:
+
+                                $R_data_005 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 6:
+
+                                $R_data_006 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 7:
+
+                                $R_data_007 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 8:
+
+                                $R_data_008 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 9:
+
+                                $R_data_009 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 10:
+
+                                $R_data_010 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 11:
+
+                                $R_data_011 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 12:
+
+                                $R_data_012 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 13:
+
+                                $R_data_013 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 14:
+
+                                $R_data_014 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+                            case 15:
+
+                                $R_data_015 = $R_resp[$mem_ptr]['data'][0];
+
+                            break;
+
+                        }
+
+                        $i++;
+
+                    }
+
+                }
+
+                return NULL;
+
+            break;
+
+        }
+
+        return NULL;
+
+    }
+
+    private function initialization_series_compound_ointment_extract(
+                     $resource_name,
+                     $input_position = 0,
+                     $input_default = NULL)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Thursday, August 20, 2026 @ 0749 hrs.
+         *
+         * Note: $resource_name occupies
+         *       $input_position zero (0),
+         *       so the zed (0) __construct()
+         *       input is at 1, not 0.
+         *
+         */
+        $input_position++;
+
+        if(!isset(self::$R_data['anoint']['compound_ointment']['isset'][$resource_name]))
+            // 5 :: Thursday, August 20, 2026 @ 0755 hrs.
+            return $input_default;
+
+        $cnt                = \sizeof(self::$R_data['anoint']['compound_ointment']['spice_salt'][$resource_name]);
+        $spice_salt_mem_ptr = self::$R_data['anoint']['compound_ointment']['spice_salt'][$resource_name][$cnt - 1];
+
+        if(!isset(self::$R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][$input_position]))
+            // 5 :: Thursday, August 20, 2026 @ 0821 hrs.
+            return $input_default;
+
+        return self::$R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][$input_position];
+
+        /*
+        Compound Ointment Data Structure:
+        R_data['anoint']['compound_ointment']['resource_key'][]               = $resource_name;
+        R_data['anoint']['compound_ointment']['spice_salt'][$resource_name][] = $spice_salt_mem_ptr;
+        R_data['anoint']['compound_ointment']['isset'][$resource_name]        = 1;
+        R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][]          = $args[$i];
+
+        */
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function initialization_series_anoint_eval(
+             $resource_name,
+             &$R_resp = NULL)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Added the method,
+         * initialization_series_anoint_eval(),
+         * to the CLR-SSL.
+         * 5 :: Saturday, August 22, 2026 @ 2358 hrs.
+         *
+         */
+
+        $check_for_concat = true;
+
+        if(!isset($R_resp))
+            $R_resp = array();
+
+        /*
+        // 5 :: Monday, June 8, 2026 @ 0243 hrs.
+        $spice_salt_mem_ptr = $this->generate_key('compound_ointment_spice_salt');
+        self::$R_data['anoint']['compound_ointment']['resource_key'][]       = $resource_key;
+        self::$R_data['anoint']['compound_ointment']['spice_salt'][]         = $spice_salt_mem_ptr;
+        self::$R_data['anoint']['compound_ointment']['isset'][$resource_key] = 1;
+
+        for($i = 1; $i < $num_args; $i++)
+            // 5 :: Thursday, August 20, 2026 @ 0600 hrs.
+            self::$R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][] = $args[$i];
+
+        */
+
+        switch($this->gettype($resource_name, self::$R_data['int_flag']['R_integer'])){
+            case self::$R_data['int_flag']['R_object']:
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * The resource name is an object, so
+                 * we will programmatically acquire the
+                 * class name, and pass it on as string.
+                 *
+                 *
+                 * 5 :: Thursday, August 20, 2026 @ 0617 hrs.
+                 *
+                 */
+                $resource_name    = \get_class($resource_name);
+                $check_for_concat = false;
+            case self::$R_data['int_flag']['R_string']:
+
+                if($check_for_concat){
+
+                    // Is the data concatenated?
+                    $pos_comma = \strpos($resource_name, ',');
+                    $pos_pipe  = \strpos($resource_name, '|');
+
+                    if($pos_comma !== false)
+                        $delimiter = ',';
+                    else
+                        if($pos_pipe !== false)
+                            $delimiter = '|';
+
+                    if(isset($delimiter)){
+
+                        $res_names = \explode($delimiter, $resource_name);
+                        $cnt       = \sizeof($res_names);
+
+                        for($i = 0; $i < $cnt; $i++)
+                        {
+
+                            if(!($R_resp = _crnrstn_native_resource_registry(
+                                           'evaluate',
+                                           $this,
+                                           NULL,
+                                           $res_names[$i],
+                                           self::$R_data['R_debug_mode'])))
+                            {
+
+                                $clr_ssl_msg = 'CLR-SSL resource ' .
+                                               'evaluation failure: ' .
+                                               $res_names[$i];
+                                // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => __METHOD__,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg);
+                                $this->error_log(
+                                       $clr_ssl_msg,
+                                       \LOG_ALERT,
+                                       \E_ERROR,
+                                       __LINE__,
+                                       __METHOD__,
+                                       __FILE__,
+                                       $token);
+
+                            }else{
+
+                                $R_resp[] = $R_resp;
+
+                            }
+
+                        }
+
+                        return NULL;
+
+                    }
+
+                }
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Requesting one (1)
+                 * resource from the CLR-SSL
+                 * Resource Registry.
+                 *
+                 */
+                if(!($R_resp = _crnrstn_native_resource_registry(
+                               'evaluate',
+                               $this,
+                               NULL,
+                               $resource_name,
+                               self::$R_data['R_debug_mode'])))
+                {
+
+                    $clr_ssl_msg = 'CLR-SSL resource ' .
+                                   'evaluation failure: ' .
+                                   $resource_name;
+                    // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __METHOD__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                           $clr_ssl_msg,
+                           \LOG_ALERT,
+                           \E_ERROR,
+                           __LINE__,
+                           __METHOD__,
+                           __FILE__,
+                           $token);
+
+                }
+
+            break;
+            case self::$R_data['int_flag']['R_array']:
+                // 5 :: Thursday, August 20, 2026 @ 0657 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Array Structure A: array('resource_name0', 'resource_name1', ...)
+                 * Array Structure B: array('resource_name0' => 'val', 'resource_name1' => 'val', ...)
+                 *
+                 */
+
+                $i = 0;
+                foreach($resource_name as
+                        $index => $val)
+                {
+
+                    // Array Structure A
+                    if(\is_int($index))
+                        $res_name = $val;
+                    else
+                        // Array Structure B
+                        $res_name = $index;
+
+                    if(!($R_resp = _crnrstn_native_resource_registry(
+                                   'evaluate',
+                                   $this,
+                                   NULL,
+                                   $res_name,
+                                   self::$R_data['R_debug_mode'])))
+                    {
+
+                        $clr_ssl_msg = 'CLR-SSL resource ' .
+                                       'evaluation failure: ' .
+                                       $res_name;
+                        // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __METHOD__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $this->error_log(
+                               $clr_ssl_msg,
+                               \LOG_ALERT,
+                               \E_ERROR,
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               $token);
+
+                    }else{
+
+                        $R_resp[] = $R_resp;
+
+                    }
+
+                }
+
+                return NULL;
+
+            break;
+
+        }
+
+        return NULL;
+
+    }
+
+    /**
      * R :: Content pending. 
      *
      * @return
@@ -99349,7 +99968,7 @@ $http_status_codes[$response_code] . '</div>
     function __destruct()
     {
 
-        if(isset(self::$R['kivotos']->R['logging']))
+        if(isset(self::$_R['kivotos']->R['logging']))
             $this->output_agg_destruct_str();
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -99508,7 +100127,7 @@ $http_status_codes[$response_code] . '</div>
          *
          */
 
-/*        if(isset(self::$R['kivotos']->R['config_mgr']->oCRNRSTN_DDO)){
+/*        if(isset(self::$_R['kivotos']->R['config_mgr']->oCRNRSTN_DDO)){
  *
  *            //$this->oLog_output_ARRAY[] = $this->error_log(
  *            //                                    'goodbye crnrstn :: ' . 
@@ -99516,7 +100135,7 @@ $http_status_codes[$response_code] . '</div>
  *            //                                    ' called. [rtime ' . 
  *            //                                    $this->wall_time() . 
  *            //                                    ' secs][bytes_stored ' . 
- *            //                                    $this->return_bytes(self::$R['kivotos']->R['config_mgr']->oCRNRSTN_DDO->return_total_bytes_stored('TEXT'), 5) .
+ *            //                                    $this->return_bytes(self::$_R['kivotos']->R['config_mgr']->oCRNRSTN_DDO->return_total_bytes_stored('TEXT'), 5) .
  *            //                                    '][bytes_hashed ' . 
  *            //                                    print_r($this->total_bytes_hashed_ARRAY, true) . 
  *            //                                    '].', 
@@ -99530,7 +100149,7 @@ $http_status_codes[$response_code] . '</div>
  *            //    __METHOD__ . 
  *            //    ' called. [rtime ' . 
  *            //    $this->wall_time() . ' secs][bytes_stored ' . 
- *            //    $this->return_bytes(self::$R['kivotos']->R['config_mgr']->oCRNRSTN_DDO->return_total_bytes_stored('TEXT'), 5) .
+ *            //    $this->return_bytes(self::$_R['kivotos']->R['config_mgr']->oCRNRSTN_DDO->return_total_bytes_stored('TEXT'), 5) .
  *            //    '][bytes_hashed ' . 
  *            //    print_r($this->total_bytes_hashed_ARRAY, true) . 
  *            //    '].');

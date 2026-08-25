@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.123 2010/04/26 20:15:08 snichol Exp $
 
@@ -271,7 +273,18 @@ class wsdl extends nusoap_base {
         if (isset($wsdl_props['scheme']) && ($wsdl_props['scheme'] == 'http' || $wsdl_props['scheme'] == 'https')) {
             $this->debug('getting WSDL http(s) URL ' . $wsdl);
         	// get wsdl
-	        $tr = new soap_transport_http($wsdl, $this->curl_options, $this->use_curl);
+	        //$tr = new soap_transport_http($wsdl, $this->curl_options, $this->use_curl);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Thursday, August 20, 2026 @ 1853 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'soap_transport_http',
+                   $wsdl,
+                   $this->curl_options,
+                   $this->use_curl);
+            $this->anoint(
+                   'soap_transport_http',
+                   $tr);
 			$tr->request_method = 'GET';
 			$tr->useSOAPAction = false;
 			if($this->proxyhost && $this->proxyport){
@@ -370,7 +383,19 @@ class wsdl extends nusoap_base {
         	$this->debug('Parsing WSDL schema');
             // $this->debug("startElement for $name ($attrs[name]). status = $this->status (".$this->getLocalPart($name).")");
             $this->status = 'schema';
-            $this->currentSchema = new nusoap_xmlschema('', '', $this->namespaces);
+            //$this->currentSchema = new nusoap_xmlschema('', '', $this->namespaces);
+            $spice_salt_mem_ptr = NULL;
+            // 5 :: Thursday, August 20, 2026 @ 1900 hrs.
+            $this->compound_ointment(
+                   $spice_salt_mem_ptr,
+                   'nusoap_xmlschema',
+                   '',
+                   '',
+                   $this->namespaces);
+            $this->anoint(
+                   'nusoap_xmlschema',
+                   $this->currentSchema);
+                   $this->anoint_eval('XMLSchema');
             $this->currentSchema->schemaStartElement($parser, $name, $attrs);
             $this->appendDebug($this->currentSchema->getDebug());
             $this->currentSchema->clearDebug();

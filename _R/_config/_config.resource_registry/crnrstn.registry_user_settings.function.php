@@ -296,7 +296,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return mixed 
  * @access public
  *
@@ -342,7 +342,7 @@ function _crnrstn_registry_user_settings(
             return array('crnrstn_registry_user::load_res__crnrstn_native_resource_registry' => 1);
 
         break;
-//        case 'framework_directory':
+//        case 'R_framework_directory':
 //
 //            //return '_lightbox_helper';
 //            return '_crnrstn';
@@ -974,7 +974,7 @@ function _crnrstn_registry_user_settings(
             // Configuration resource
             // basic path initialization.
             $tmp_slsh                       = DIRECTORY_SEPARATOR;
-            $tmp_path                       = CRNRSTN_ROOT . $tmp_slsh . $oLightbox_Helper->get_data('framework_directory') . $tmp_slsh;
+            $tmp_path                       = CRNRSTN_ROOT . $tmp_slsh . $oLightbox_Helper->get_data('R_framework_directory') . $tmp_slsh;
             $tmp_dir_root_config            = $tmp_path . '_config' . $tmp_slsh . 'config.lightbox_helper' . $tmp_slsh;
             $tmp_dir_root_crnrstn           = $tmp_path . 'class' . $tmp_slsh . 'crnrstn' . $tmp_slsh;
             $tmp_dir_root_environment       = $tmp_path . 'class' . $tmp_slsh . 'environment' . $tmp_slsh;

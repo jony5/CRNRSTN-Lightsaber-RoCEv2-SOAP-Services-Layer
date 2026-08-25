@@ -348,7 +348,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -20228,8 +20228,8 @@ class crnrstn_response_return_serialization_map extends crnrstn
      */
     function __destruct()
     {
-
-        if($this->rrs_map_get('runtime_cache_is_active') == true){
+        if(1==2){
+        //if($this->rrs_map_get('runtime_cache_is_active') == true){
 
             //$this->destruct_output .= print_r(self::$cache_ARRAY, true);
 

@@ -263,8 +263,8 @@ namespace CRNRSTN;
  *                     64 bit or something.
  *
  *                     I'm sure that's enough
- *                     enough bits for
- *                     anything...I hope :D.
+ *                     bits for anything...
+ *                     I hope :D.
  *
  *                     *Not infinite, sorry.
  *

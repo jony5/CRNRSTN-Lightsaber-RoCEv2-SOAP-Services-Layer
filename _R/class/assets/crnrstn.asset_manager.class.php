@@ -145,6 +145,8 @@
 #
 class crnrstn_asset_manager 
 {
+    public $R       = array();
+    private $R_data = array();
 
     public $oCRNRSTN_LOGGING;
 	private static $oUser;
@@ -183,8 +185,10 @@ class crnrstn_asset_manager
 		            $oENV, 
 		            $oDB)
 	{
-
-		self::$oUser = $oUSER;
+        //$this->R['usr']
+        //$this->R['env']
+        //$this->R['db']
+		$this->R['usr'] = $oUSER;
 		self::$oEnv = $oENV;
 		self::$oData = $oDB;
 
@@ -257,8 +261,8 @@ class crnrstn_asset_manager
 		 *
 		 */
 		self::$oData->processUserRequest(
-			          'sync_asset_storage_reporting', 
-			          self::$oUser, 
+			          'sync_asset_storage_reporting',
+                      $this->R['usr'],
 			          self::$oEnv, 
 			          $this);
 
@@ -325,8 +329,8 @@ class crnrstn_asset_manager
 		 *
 		 */
 		self::$file_sync_raw_out_array = self::$oData->processUserRequest(
-			                                           'init_file_storage_report_sync', 
-			                                           self::$oUser, 
+			                                           'init_file_storage_report_sync',
+                                                       $this->R['usr'],
 			                                           self::$oEnv, 
 			                                           $this);
 		/**
@@ -656,28 +660,45 @@ class crnrstn_asset_manager
 		// services manager 
 		// class object.
 
-        //
-        // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-        // Return an instantiation of 
-        // The CRNRSTN :: Lightsaber 
-        // RoCEv2 SOAP Services Layer 
-        // (CLR-SSL) SOAP Manager. 
-        //
-        //
-        // 5 :: Monday, July 15, 2024 @ 1937 hrs.
-        //
-        // $this->soapManager = new crnrstn_soap_manager(
-        //                          self::$oEnv, 
-        //                          'WSDL_URI', 
-        //                          'WSDL_CACHE_TTL', 
-        //                          'NUSOAP_USECURL');
-        $this->soapManager = $this->return_registered_resource(
-        	                        'new', 
-        	                        'crnrstn_soap_manager', 
-        	                        self::$oEnv, 
-        	                        'WSDL_URI', 
-        	                        'WSDL_CACHE_TTL', 
-        	                        'NUSOAP_USECURL');
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Return an instantiation of
+         * The CRNRSTN :: Lightsaber
+         * RoCEv2 SOAP Services Layer
+         * (CLR-SSL) SOAP Manager.
+         *
+         *
+         * 5 :: Monday, July 15, 2024 @ 1937 hrs.
+         *
+         * $this->soapManager = new crnrstn_soap_manager(
+         *                          self::$oEnv,
+         *                          'WSDL_URI',
+         *                          'WSDL_CACHE_TTL',
+         *                          'NUSOAP_USECURL');
+         *
+         * CLR-SSL Resource Registry
+         * Prototyping (2024-2026):
+         * $this->soapManager = $this->return_registered_resource(
+         *	                           'new',
+         *	                           'crnrstn_soap_manager',
+         *	                           self::$oEnv,
+         *	                           'WSDL_URI',
+         *	                           'WSDL_CACHE_TTL',
+         *	                           'NUSOAP_USECURL');
+         *
+         */
+
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Saturday, August 22, 2026 @ 0618 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'crnrstn_soap_content_memory_cache',
+               $this->R['env'],
+               'WSDL_URI',
+               'WSDL_CACHE_TTL',
+               'NUSOAP_USECURL');
+        $this->anoint(
+               'crnrstn_soap_content_memory_cache',
+               $this->soapManager);
 
 		//
 		// Initialize params 
@@ -695,11 +716,11 @@ class crnrstn_asset_manager
 
 		self::$methodName = 'assetAccessGrantReq';
 
-		self::$oUser->soap_status = $this->soapManager->returnContent(
-			                                            self::$methodName, 
-			                                            self::$params);
+        $this->R['usr']->soap_status = $this->soapManager->returnContent(
+			                                               self::$methodName,
+			                                               self::$params);
 
-		return self::$oUser->soap_status;
+		return $this->R['usr']->soap_status;
 
 	}
 
@@ -729,8 +750,7 @@ class crnrstn_asset_manager
 
 		if($tmp_paramString == ''){
 			
-			/**
-             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+			/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * HOOOSTON, VE HAFF PROBLEM!
              * https://www.wired.com/2011/04/alt-text-spacecraft/
              *
@@ -859,43 +879,61 @@ class crnrstn_asset_manager
 		switch(self::$newAssetStatus){
 			case 'processed=success':
 							
-				//
-				// Fire off web service 
-				// request to sync 
-				// primary database 
-				// on primary server. 
-				//
-				// Instantiate a web 
-				// services manager 
-				// class object.
-		        //
-		        // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-		        // Return an instantiation of
-		        // The CRNRSTN :: Lightsaber RoCEv2 SOAP
-		        // Services Layer (CLR-SSL) SOAP Manager
-			    // class object.
-		        //
-		        //
-		        // 5 :: Monday, July 15, 2024 @ 1942 hrs.
-		        //
-		        // $this->soapManager = new crnrstn_soap_manager(
-		        //                          self::$oEnv, 
-		        //                          'WSDL_URI', 
-		        //                          'WSDL_CACHE_TTL', 
-		        //                          'NUSOAP_USECURL');
-		        $this->soapManager = $this->return_registered_resource(
-		        	                        'new', 
-		        	                        'crnrstn_soap_manager', 
-		        	                        self::$oEnv, 
-		        	                        'WSDL_URI', 
-		        	                        'WSDL_CACHE_TTL', 
-		        	                        'NUSOAP_USECURL');
+				/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+				 * Fire off web service
+				 * request to sync
+				 * primary database
+				 * on primary server.
+				 *
+				 * Instantiate a web
+				 * services manager
+				 * class object.
+		         *
+		         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+		         * Return an instantiation of
+		         * The CRNRSTN :: Lightsaber RoCEv2 SOAP
+		         * Services Layer (CLR-SSL) SOAP Manager
+			     * class object.
+		         *
+		         *
+		         * 5 :: Monday, July 15, 2024 @ 1942 hrs.
+		         *
+		         * $this->soapManager = new crnrstn_soap_manager(
+		         *                          self::$oEnv,
+		         *                          'WSDL_URI',
+		         *                          'WSDL_CACHE_TTL',
+		         *                          'NUSOAP_USECURL');
+                 *
+                 * CLR-SSL Resource Registry
+                 * Prototyping (2024-2026):
+                 * $this->soapManager = $this->return_registered_resource(
+                 *	                           'new',
+                 *	                           'crnrstn_soap_manager',
+                 *	                           self::$oEnv,
+                 *	                           'WSDL_URI',
+                 *	                           'WSDL_CACHE_TTL',
+                 *	                           'NUSOAP_USECURL');
+				 *
+                 */
+
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Saturday, August 22, 2026 @ 0630 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_soap_content_memory_cache',
+                       $this->R['env'],
+                       'WSDL_URI',
+                       'WSDL_CACHE_TTL',
+                       'NUSOAP_USECURL');
+                $this->anoint(
+                       'crnrstn_soap_content_memory_cache',
+                       $this->soapManager);
 
 				error_log('[' . __CLASS__ . '] [lnum ' . 
 					__LINE__ . 
-					'] processNewAsset() building SOAP request...' . 
+					'] processNewAsset() building SOAP request...' .
 
-					self::$oUser->retrieve_Form_Data('STREAM_CONTENT'));
+                    $this->R['usr']->retrieve_Form_Data('STREAM_CONTENT'));
 
 				//
 				// Initialize params for 
@@ -906,19 +944,19 @@ class crnrstn_asset_manager
 				// stream specific data. 
 				self::$params = array('oUploadAssetInfo' =>
 					array('ASSET_ID'         => $this->assetParams['ASSET_ID'],
-					'ASSET_TYPE'             => self::$oUser->retrieve_Form_Data('ASSET_TYPE'),
-                    'SPECIALTY_TYPE'         => self::$oUser->retrieve_Form_Data('SPECIALTY_TYPE'),
-					'KIVOTOS_ID'             => self::$oUser->retrieve_Form_Data('KIVOTOS_ID'),
-					'CLIENT_ID'              => self::$oUser->retrieve_Form_Data('CLIENT_ID'),
+					'ASSET_TYPE'             => $this->R['usr']->retrieve_Form_Data('ASSET_TYPE'),
+                    'SPECIALTY_TYPE'         => $this->R['usr']->retrieve_Form_Data('SPECIALTY_TYPE'),
+					'KIVOTOS_ID'             => $this->R['usr']->retrieve_Form_Data('KIVOTOS_ID'),
+					'CLIENT_ID'              => $this->R['usr']->retrieve_Form_Data('CLIENT_ID'),
 					'STREAM_ID'              => $this->assetParams['STREAM_ID'],
-                    'I_FEED_STREAM_ID'       => self::$oUser->retrieve_Form_Data('I_FEED_STREAM_ID'),
-					'USER_ID'                => self::$oUser->retrieve_Form_Data('USER_ID'),
-					'CHANNEL'                => self::$oUser->retrieve_Form_Data('CHANNEL'),
-					'STREAM_CONTENT'         => self::$oUser->retrieve_Form_Data('STREAM_CONTENT'),
-                    'STREAM_MENTIONS_EID'    => self::$oUser->retrieve_Form_Data('STREAM_MENTIONS_EID'),
-					'REMOTE_ADDR'            => self::$oUser->retrieve_Form_Data('REMOTE_ADDR'),
-					'ASSET_DLOAD_ENDPOINT'   => self::$oUser->retrieve_Form_Data('ASSET_DLOAD_ENDPOINT'),
-					'ASSET_PREVIEW_ENDPOINT' => self::$oUser->retrieve_Form_Data('ASSET_PREVIEW_ENDPOINT'),
+                    'I_FEED_STREAM_ID'       => $this->R['usr']->retrieve_Form_Data('I_FEED_STREAM_ID'),
+					'USER_ID'                => $this->R['usr']->retrieve_Form_Data('USER_ID'),
+					'CHANNEL'                => $this->R['usr']->retrieve_Form_Data('CHANNEL'),
+					'STREAM_CONTENT'         => $this->R['usr']->retrieve_Form_Data('STREAM_CONTENT'),
+                    'STREAM_MENTIONS_EID'    => $this->R['usr']->retrieve_Form_Data('STREAM_MENTIONS_EID'),
+					'REMOTE_ADDR'            => $this->R['usr']->retrieve_Form_Data('REMOTE_ADDR'),
+					'ASSET_DLOAD_ENDPOINT'   => $this->R['usr']->retrieve_Form_Data('ASSET_DLOAD_ENDPOINT'),
+					'ASSET_PREVIEW_ENDPOINT' => $this->R['usr']->retrieve_Form_Data('ASSET_PREVIEW_ENDPOINT'),
 					'ASSET_UPLOAD_STATUS'    => $this->assetParams['ASSET_UPLOAD_STATUS'],
 					'FILE_NAME'              => $this->assetParams['TARGET_FILE_NAME'],
 					'FILE_EXT'               => $this->assetParams['FILE_EXT'],
@@ -930,10 +968,10 @@ class crnrstn_asset_manager
 					'FILE_SIZE'              => $this->assetParams['FILE_SIZE'],
                     'FILE_MD5'               => $this->assetParams['FILE_MD5'],
 					'FILE_SHA1'              => $this->assetParams['FILE_SHA1'],
-					'NAME'                   => self::$oUser->retrieve_Form_Data('NAME'),
-					'DESCRIPTION'            => self::$oUser->retrieve_Form_Data('DESCRIPTION'),
-					'PREVIOUS_VERSIONS'      => self::$oUser->retrieve_Form_Data('PREVIOUS_VERSIONS'),
-					'LANGCODE'               => self::$oUser->retrieve_Form_Data('LANGCODE')
+					'NAME'                   => $this->R['usr']->retrieve_Form_Data('NAME'),
+					'DESCRIPTION'            => $this->R['usr']->retrieve_Form_Data('DESCRIPTION'),
+					'PREVIOUS_VERSIONS'      => $this->R['usr']->retrieve_Form_Data('PREVIOUS_VERSIONS'),
+					'LANGCODE'               => $this->R['usr']->retrieve_Form_Data('LANGCODE')
 					)
 				);
 
@@ -960,9 +998,9 @@ class crnrstn_asset_manager
 
 				self::$methodName = 'saveNewAsset';
 
-				self::$oUser->soap_status = $this->soapManager->returnContent(
-					                                            self::$methodName, 
-					                                            self::$params);
+                $this->R['usr']->soap_status = $this->soapManager->returnContent(
+					                                               self::$methodName,
+					                                               self::$params);
 
 				//
 				// The physical file has 
@@ -971,8 +1009,8 @@ class crnrstn_asset_manager
 				// Sync the local database 
 				// log on the asset server. 
 				self::$oData->processUserRequest(
-					          'log_asset_transmission', 
-					          self::$oUser, 
+					          'log_asset_transmission',
+                              $this->R['usr'],
 					          self::$oEnv, 
 					          $this);
 			
@@ -980,12 +1018,13 @@ class crnrstn_asset_manager
 				// Return user to 
 				// appropriate 
 				// location on site. 
-				switch(self::$oUser->retrieve_Form_Data('ASSET_TYPE')){
+				switch($this->R['usr']->retrieve_Form_Data('ASSET_TYPE')){
 					case 'BRIEF':
                     case 'CREATIVE':
                     case 'REPORT':
 
-						 $tmp_redirect[0] = 'kid=' . self::$oUser->retrieve_Form_Data('KIVOTOS_ID');
+						 $tmp_redirect[0] = 'kid=' .
+                                            $this->R['usr']->retrieve_Form_Data('KIVOTOS_ID');
 
 					break;
 					default:
@@ -1001,15 +1040,14 @@ class crnrstn_asset_manager
 			break;
 			default:
 				
-				/**
-	             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+				/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
 	             * HOOOSTON, VE HAFF PROBLEM!
 	             * https://www.wired.com/2011/04/alt-text-spacecraft/
 	             *
 	             */
 				throw new Exception('There was an error ' . 
-					'processing the new file, ' . 
-					self::$oUser->retrieve_Form_Data('NAME'));
+					'processing the new file, ' .
+                    $this->R['usr']->retrieve_Form_Data('NAME'));
 
 			break;
 			
@@ -1034,37 +1072,55 @@ class crnrstn_asset_manager
 		switch(self::$newAssetStatus){
 			case 'processed=success':
 
-				//
-				// Fire off a web services 
-				// request to sync the primary 
-				// database on the primary server. 
-				// 
-				// Instantiate a web 
-				// services manager 
-				// class object.
-				//
-				// # C # R # N # R # S # T # N # :: # L # I # G # H # T
-				// Return an instantiation of
-				// The CRNRSTN :: Lightsaber RoCEv2 SOAP
-				// Services Layer (CLR-SSL) SOAP Manager 
-			    // class object.
-				//
-				//
-				// 5 :: Monday, July 15, 2024 @ 1942 hrs.
-				//
-				// $this->soapManager = new crnrstn_soap_manager(
-				//                          self::$oEnv, 
-				//                          'WSDL_URI', 
-				//                          'WSDL_CACHE_TTL', 
-				//                          'NUSOAP_USECURL');
-				$this->soapManager = $this->return_registered_resource(
-					                        'new', 
-					                        'crnrstn_soap_manager', 
-					                        self::$oEnv, 
-					                        'WSDL_URI', 
-					                        'WSDL_CACHE_TTL', 
-					                        'NUSOAP_USECURL');
-				
+				/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+				 * Fire off a web services
+				 * request to sync the primary
+				 * database on the primary server.
+				 *
+				 * Instantiate a web
+				 * services manager
+				 * class object.
+				 *
+				 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+				 * Return an instantiation of
+				 * The CRNRSTN :: Lightsaber RoCEv2 SOAP
+				 * Services Layer (CLR-SSL) SOAP Manager
+			     * class object.
+				 *
+				 *
+				 * 5 :: Monday, July 15, 2024 @ 1942 hrs.
+				 *
+				 * $this->soapManager = new crnrstn_soap_manager(
+				 *                          self::$oEnv,
+				 *                          'WSDL_URI',
+				 *                          'WSDL_CACHE_TTL',
+				 *                          'NUSOAP_USECURL');
+                 *
+                 * CLR-SSL Resource Registry
+                 * Prototyping (2024-2026):
+                 * $this->soapManager = $this->return_registered_resource(
+                 *	                           'new',
+                 *	                           'crnrstn_soap_manager',
+                 *	                           self::$oEnv,
+                 *	                           'WSDL_URI',
+                 *	                           'WSDL_CACHE_TTL',
+                 *	                           'NUSOAP_USECURL');
+				 *
+                 */
+
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Saturday, August 22, 2026 @ 0631 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_soap_content_memory_cache',
+                       $this->R['env'],
+                       'WSDL_URI',
+                       'WSDL_CACHE_TTL',
+                       'NUSOAP_USECURL');
+                $this->anoint(
+                       'crnrstn_soap_content_memory_cache',
+                       $this->soapManager);
+
 				//
 				// Check for same domain 
 				// session cache of 
@@ -1082,7 +1138,7 @@ class crnrstn_asset_manager
 					// previous_versions 
 					// form post data. 
 					$tmp_pb_array = self::$oEnv->oSESSION_MGR->getSessionParam('PREVIOUS_VERSIONS');
-					$tmp_pv = $tmp_pb_array[1] . self::$oUser->retrieve_Form_Data('PREVIOUS_VERSIONS');
+					$tmp_pv       = $tmp_pb_array[1] . $this->R['usr']->retrieve_Form_Data('PREVIOUS_VERSIONS');
 
 					error_log('[' . __CLASS__ . '] [lnum ' . 
 						__LINE__ . 
@@ -1099,7 +1155,7 @@ class crnrstn_asset_manager
 
 				}else{
 
-					$tmp_pv = self::$oUser->retrieve_Form_Data('PREVIOUS_VERSIONS');
+					$tmp_pv = $this->R['usr']->retrieve_Form_Data('PREVIOUS_VERSIONS');
 
 					error_log('[' . __CLASS__ . '] [lnum ' . 
 						__LINE__ . 
@@ -1114,14 +1170,14 @@ class crnrstn_asset_manager
 				// for SOAP object request. 
 				self::$params = array('oUploadAssetInfo' =>
 					array('ASSET_ID'         => $this->assetParams['ASSET_ID'],
-					'ASSET_TYPE'             => self::$oUser->retrieve_Form_Data('ASSET_TYPE'),
-					'KIVOTOS_ID'             => self::$oUser->retrieve_Form_Data('KIVOTOS_ID'),
-					'CLIENT_ID'              => self::$oUser->retrieve_Form_Data('CLIENT_ID'),
-					'USER_ID'                => self::$oUser->retrieve_Form_Data('USER_ID'),
-					'CHANNEL'                => self::$oUser->retrieve_Form_Data('CHANNEL'),
-					'REMOTE_ADDR'            => self::$oUser->retrieve_Form_Data('REMOTE_ADDR'),
-					'ASSET_DLOAD_ENDPOINT'   => self::$oUser->retrieve_Form_Data('ASSET_DLOAD_ENDPOINT'),
-					'ASSET_PREVIEW_ENDPOINT' => self::$oUser->retrieve_Form_Data('ASSET_PREVIEW_ENDPOINT'),
+					'ASSET_TYPE'             => $this->R['usr']->retrieve_Form_Data('ASSET_TYPE'),
+					'KIVOTOS_ID'             => $this->R['usr']->retrieve_Form_Data('KIVOTOS_ID'),
+					'CLIENT_ID'              => $this->R['usr']->retrieve_Form_Data('CLIENT_ID'),
+					'USER_ID'                => $this->R['usr']->retrieve_Form_Data('USER_ID'),
+					'CHANNEL'                => $this->R['usr']->retrieve_Form_Data('CHANNEL'),
+					'REMOTE_ADDR'            => $this->R['usr']->retrieve_Form_Data('REMOTE_ADDR'),
+					'ASSET_DLOAD_ENDPOINT'   => $this->R['usr']->retrieve_Form_Data('ASSET_DLOAD_ENDPOINT'),
+					'ASSET_PREVIEW_ENDPOINT' => $this->R['usr']->retrieve_Form_Data('ASSET_PREVIEW_ENDPOINT'),
 					'ASSET_UPLOAD_STATUS'    => $this->assetParams['ASSET_UPLOAD_STATUS'],
 					'FILE_NAME'              => $this->assetParams['TARGET_FILE_NAME'],
 					'FILE_EXT'               => $this->assetParams['FILE_EXT'],
@@ -1133,19 +1189,19 @@ class crnrstn_asset_manager
 					'FILE_SIZE'              => $this->assetParams['FILE_SIZE'],
 					'FILE_MD5'               => $this->assetParams['FILE_MD5'],
 					'FILE_SHA1'              => $this->assetParams['FILE_SHA1'],
-					'NAME'                   => self::$oUser->retrieve_Form_Data('NAME'),
-					'DESCRIPTION'            => self::$oUser->retrieve_Form_Data('DESCRIPTION'),
+					'NAME'                   => $this->R['usr']->retrieve_Form_Data('NAME'),
+					'DESCRIPTION'            => $this->R['usr']->retrieve_Form_Data('DESCRIPTION'),
 					'PREVIOUS_VERSIONS'      => $tmp_pv,
-					'FLAG_AS_REPLACED'       => self::$oUser->retrieve_Form_Data('FLAG_AS_REPLACED'),
-					'LANGCODE'               => self::$oUser->retrieve_Form_Data('LANGCODE')
+					'FLAG_AS_REPLACED'       => $this->R['usr']->retrieve_Form_Data('FLAG_AS_REPLACED'),
+					'LANGCODE'               => $this->R['usr']->retrieve_Form_Data('LANGCODE')
 					)
 				);
 
 				self::$methodName = 'saveAssetUpdate';
 
-				self::$oUser->soap_status = $this->soapManager->returnContent(
-					                                            self::$methodName, 
-					                                            self::$params);
+                $this->R['usr']->soap_status = $this->soapManager->returnContent(
+					                                               self::$methodName,
+					                                               self::$params);
 						
 				//
 				// The physical file has 
@@ -1156,8 +1212,8 @@ class crnrstn_asset_manager
 				// database log on 
 				// asset server. 
 				self::$oData->processUserRequest(
-					          'log_asset_transmission', 
-					          self::$oUser, 
+					          'log_asset_transmission',
+                              $this->R['usr'],
 					          self::$oEnv, 
 					          $this);
 
@@ -1165,12 +1221,12 @@ class crnrstn_asset_manager
 				// Return user to 
 				// appropriate location 
 				// on site. 
-				switch(self::$oUser->retrieve_Form_Data('ASSET_TYPE')){
+				switch($this->R['usr']->retrieve_Form_Data('ASSET_TYPE')){
 					case 'BRIEF':
                     case 'CREATIVE':
                     case 'REPORT':
 
-						 $tmp_redirect[0] = 'kid=' . self::$oUser->retrieve_Form_Data('KIVOTOS_ID');
+						 $tmp_redirect[0] = 'kid=' . $this->R['usr']->retrieve_Form_Data('KIVOTOS_ID');
 
 					break;
 					default:
@@ -1186,15 +1242,14 @@ class crnrstn_asset_manager
 			break;
 			default:
 				
-				/**
-	             * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+				/*  # C # R # N # R # S # T # N # :: # L # I # G # H # T
 	             * HOOOSTON, VE HAFF PROBLEM!
 	             * https://www.wired.com/2011/04/alt-text-spacecraft/
 	             *
 	             */
 				throw new Exception('There was an error ' . 
-					'processing the update to the file, ' . 
-					self::$oUser->retrieve_Form_Data('NAME'));
+					'processing the update to the file, ' .
+                    $this->R['usr']->retrieve_Form_Data('NAME'));
 				
 				
 			break;
@@ -1263,8 +1318,8 @@ class crnrstn_asset_manager
 
 		}
 				
-		$tmp_client_dir = substr(self::$oUser->retrieve_Form_Data('CLIENT_ID'), 0, -25);
-		$tmp_assetSerial = self::$oUser->generateNewKey(50);
+		$tmp_client_dir  = substr($this->R['usr']->retrieve_Form_Data('CLIENT_ID'), 0, -25);
+		$tmp_assetSerial = $this->R['usr']->generateNewKey(50);
 
 		$tmp_name = explode('.', $_FILES['assetfile']['name']);
 
@@ -1319,10 +1374,10 @@ class crnrstn_asset_manager
 			//
             // Process file 
             // based on type. 
-            switch(self::$oUser->retrieve_Form_Data('ASSET_TYPE')){
+            switch($this->R['usr']->retrieve_Form_Data('ASSET_TYPE')){
                 case 'STREAM':
 
-                    $this->assetParams['STREAM_ID'] = self::$oUser->generateNewKey(100);
+                    $this->assetParams['STREAM_ID'] = $this->R['usr']->generateNewKey(100);
 
                     //
                     // If stream attachment 
@@ -1333,7 +1388,7 @@ class crnrstn_asset_manager
                         	'] I think asset ' . 
                         	'can be resized.');
 
-                        $this->assetParams['ASSET_ID'] = self::$oUser->generateNewKey(70);
+                        $this->assetParams['ASSET_ID']         = $this->R['usr']->generateNewKey(70);
                         $this->assetParams['TARGET_FILE_NAME'] = $tmp_assetSerial . '.' . 
                                                                  $this->assetParams['FILE_EXT'];
 
@@ -1434,7 +1489,7 @@ class crnrstn_asset_manager
                                 // Break out 
                                 // smaller thumbs. 
                                 $img = $this->assetParams['IMAGE_CREATE_FUNC']($this->assetParams['TARGET_THUMB_FULL_FILE']);
-                                list($original_width, $original_height) = getimagesize($this->assetParams['TARGET_THUMB_FULL_FILE']);
+                                list($original_width, $original_height) = \getimagesize($this->assetParams['TARGET_THUMB_FULL_FILE']);
 
                                 if($original_height > $original_width){
 
@@ -1462,17 +1517,11 @@ class crnrstn_asset_manager
 
                                     */
 
-                                    //
                                     // Large.
-                                    if($original_width > self::$thumb_size_LG){
-
+                                    if($original_width > self::$thumb_size_LG)
                                         $newWidth = self::$thumb_size_LG;
-
-                                    }else{
-
+                                    else
                                         $newWidth = $original_width;
-
-                                    }
 
                                     $newHeight = ($original_height / $original_width) * $newWidth;
                                     $tmp = imagecreatetruecolor($newWidth, $newHeight);
@@ -1488,11 +1537,8 @@ class crnrstn_asset_manager
                                     	$original_width, 
                                     	$original_height);
 
-                                    if(file_exists($this->assetParams['TARGET_THUMB_LARGE_FILE'])){
-
+                                    if(file_exists($this->assetParams['TARGET_THUMB_LARGE_FILE']))
                                         unlink($this->assetParams['TARGET_THUMB_LARGE_FILE']);
-
-                                    }
 
                                     if(!$this->assetParams['IMAGE_SAVE_FUNC']($tmp, $this->assetParams['TARGET_THUMB_LARGE_FILE'])){
 
@@ -1514,17 +1560,11 @@ class crnrstn_asset_manager
                                         	$this->assetParams['FILE_SIZE'] . 
                                         	'].');
 
-                                        //
                                         // Medium.
-                                        if($original_width>self::$thumb_size_MED){
-
+                                        if($original_width>self::$thumb_size_MED)
                                             $newWidth = self::$thumb_size_MED;
-
-                                        }else{
-
+                                        else
                                             $newWidth = $original_width;
-
-                                        }
 
                                         $newHeight = ($original_height / $original_width) * $newWidth;
                                         $tmp = imagecreatetruecolor($newWidth, $newHeight);
@@ -1540,11 +1580,8 @@ class crnrstn_asset_manager
                                         	$original_width, 
                                         	$original_height);
 
-                                        if(file_exists($this->assetParams['TARGET_THUMB_MEDIUM_FILE'])){
-
-                                            unlink($this->assetParams['TARGET_THUMB_MEDIUM_FILE']);
-
-                                        }
+                                        if(\file_exists($this->assetParams['TARGET_THUMB_MEDIUM_FILE']))
+                                            \unlink($this->assetParams['TARGET_THUMB_MEDIUM_FILE']);
 
                                         if(!$this->assetParams['IMAGE_SAVE_FUNC']($tmp, $this->assetParams['TARGET_THUMB_MEDIUM_FILE'])){
 
@@ -1567,17 +1604,11 @@ class crnrstn_asset_manager
                                             	$this->assetParams['FILE_SIZE'] . 
                                             	'].');
 
-                                            //
                                             // Small.
-                                            if($original_width > self::$thumb_size_SM){
-
+                                            if($original_width > self::$thumb_size_SM)
                                                 $newWidth = self::$thumb_size_SM;
-
-                                            }else{
-
+                                            else
                                                 $newWidth = $original_width;
-
-                                            }
 
                                             $newHeight = ($original_height / $original_width) * $newWidth;
                                             $tmp = imagecreatetruecolor($newWidth, $newHeight);
@@ -1592,11 +1623,8 @@ class crnrstn_asset_manager
                                             	$original_width, 
                                             	$original_height);
 
-                                            if(file_exists($this->assetParams['TARGET_THUMB_SMALL_FILE'])){
-
-                                                unlink($this->assetParams['TARGET_THUMB_SMALL_FILE']);
-
-                                            }
+                                            if(\file_exists($this->assetParams['TARGET_THUMB_SMALL_FILE']))
+                                                \unlink($this->assetParams['TARGET_THUMB_SMALL_FILE']);
 
                                             if(!$this->assetParams['IMAGE_SAVE_FUNC']($tmp, $this->assetParams['TARGET_THUMB_SMALL_FILE'])){
 
@@ -1625,17 +1653,11 @@ class crnrstn_asset_manager
 
                                 }else{
 
-                                    //
                                     // Large.
-                                    if($original_height>self::$thumb_size_LG){
-
+                                    if($original_height>self::$thumb_size_LG)
                                         $newHeight = self::$thumb_size_LG;
-
-                                    }else{
-
+                                    else
                                         $newHeight = $original_height;
-
-                                    }
 
                                     $newWidth = ($original_width / $original_height) * $newHeight;
                                     $tmp = imagecreatetruecolor($newWidth, $newHeight);
@@ -1651,11 +1673,8 @@ class crnrstn_asset_manager
                                     	$original_width, 
                                     	$original_height);
 
-                                    if(file_exists($this->assetParams['TARGET_THUMB_LARGE_FILE'])){
-
+                                    if(file_exists($this->assetParams['TARGET_THUMB_LARGE_FILE']))
                                         unlink($this->assetParams['TARGET_THUMB_LARGE_FILE']);
-
-                                    }
 
                                     if(!$this->assetParams['IMAGE_SAVE_FUNC']($tmp, $this->assetParams['TARGET_THUMB_LARGE_FILE'])){
 
@@ -1681,15 +1700,10 @@ class crnrstn_asset_manager
 
                                         //
                                         // Medium. 
-                                        if($original_height > self::$thumb_size_MED){
-
+                                        if($original_height > self::$thumb_size_MED)
                                             $newHeight = self::$thumb_size_MED;
-
-                                        }else{
-
+                                        else
                                             $newHeight = $original_height;
-
-                                        }
 
                                         $newWidth = ($original_width / $original_height) * $newHeight;
                                         $tmp = imagecreatetruecolor($newWidth, $newHeight);
@@ -1705,11 +1719,8 @@ class crnrstn_asset_manager
                                         	$original_width, 
                                         	$original_height);
 
-                                        if(file_exists($this->assetParams['TARGET_THUMB_MEDIUM_FILE'])){
-
+                                        if(file_exists($this->assetParams['TARGET_THUMB_MEDIUM_FILE']))
                                             unlink($this->assetParams['TARGET_THUMB_MEDIUM_FILE']);
-
-                                        }
 
                                         if(!$this->assetParams['IMAGE_SAVE_FUNC']($tmp, $this->assetParams['TARGET_THUMB_MEDIUM_FILE'])){
 
@@ -1745,7 +1756,7 @@ class crnrstn_asset_manager
                                             }
 
                                             $newWidth = ($original_width / $original_height) * $newHeight;
-                                            $tmp = imagecreatetruecolor($newWidth, $newHeight);
+                                            $tmp      = imagecreatetruecolor($newWidth, $newHeight);
                                             imagecopyresampled($tmp, 
                                             	$img, 
                                             	0, 
@@ -1757,11 +1768,8 @@ class crnrstn_asset_manager
                                             	$original_width, 
                                             	$original_height);
 
-                                            if(file_exists($this->assetParams['TARGET_THUMB_SMALL_FILE'])){
-
+                                            if(file_exists($this->assetParams['TARGET_THUMB_SMALL_FILE']))
                                                 unlink($this->assetParams['TARGET_THUMB_SMALL_FILE']);
-
-                                            }
 
                                             if(!$this->assetParams['IMAGE_SAVE_FUNC']($tmp, $this->assetParams['TARGET_THUMB_SMALL_FILE'])){
 
@@ -1779,7 +1787,7 @@ class crnrstn_asset_manager
                                                 error_log('[' . __CLASS__ . '] [lnum ' . 
                                                 	__LINE__ . 
                                                 	'] filesize[' . 
-                                                	filesize($this->assetParams['TARGET_THUMB_SMALL_FILE']) . 
+                                                	\filesize($this->assetParams['TARGET_THUMB_SMALL_FILE']) .
                                                 	'] totalfilesize[' . 
                                                 	$this->assetParams['FILE_SIZE'] . 
                                                 	'].');
@@ -1795,11 +1803,8 @@ class crnrstn_asset_manager
                                 //
                                 // If result not 
                                 // set, we have success. 
-                                if(self::$newAssetStatus == ''){
-
+                                if(self::$newAssetStatus == '')
                                     self::$newAssetStatus = 'processed=success';
-
-                                }
 
                             }
 
@@ -1819,10 +1824,10 @@ class crnrstn_asset_manager
                                              $tmp_client_dir . DIRECTORY_SEPARATOR . 
                                              $tmp_assetSerial . '.' . 
                                              $this->assetParams['FILE_EXT'];
-                        $this->assetParams['ASSET_ID'] = self::$oUser->generateNewKey(70);
+                        $this->assetParams['ASSET_ID']         = $this->R['usr']->generateNewKey(70);
                         $this->assetParams['TARGET_FILE_NAME'] = $tmp_assetSerial . '.' . 
                                                                  $this->assetParams['FILE_EXT'];
-                        $this->assetParams['FILE_SIZE'] = filesize($_FILES['assetfile']['tmp_name']);
+                        $this->assetParams['FILE_SIZE']        = \filesize($_FILES['assetfile']['tmp_name']);
                         $this->assetParams['TARGET_FILE_PATH'] = self::$oEnv->getEnvParam('DOCUMENT_ROOT') . 
                                                                  self::$oEnv->getEnvParam('DOCUMENT_ROOT_DIR') . DIRECTORY_SEPARATOR . 
                                                                  'assets' . DIRECTORY_SEPARATOR . 
@@ -1830,10 +1835,9 @@ class crnrstn_asset_manager
                                                                  $tmp_client_dir . DIRECTORY_SEPARATOR . 
                                                                  $tmp_assetSerial . '.' . 
                                                                  $this->assetParams['FILE_EXT'];
-
-                        $this->assetParams['TARGET_THUMB_LARGE_FILE'] = '';
+                        $this->assetParams['TARGET_THUMB_LARGE_FILE']  = '';
                         $this->assetParams['TARGET_THUMB_MEDIUM_FILE'] = '';
-                        $this->assetParams['TARGET_THUMB_SMALL_FILE'] = '';
+                        $this->assetParams['TARGET_THUMB_SMALL_FILE']  = '';
 
                         if(move_uploaded_file($_FILES['assetfile']['tmp_name'], self::$TARGET_FILE)){
 
@@ -1878,10 +1882,10 @@ class crnrstn_asset_manager
                     self::$TARGET_FILE = self::$UPLOAD_DIR.$tmp_client_dir . DIRECTORY_SEPARATOR . 
                                          $tmp_assetSerial . '.' . 
                                          $this->assetParams['FILE_EXT'];
-                    $this->assetParams['ASSET_ID'] = self::$oUser->generateNewKey(70);
+                    $this->assetParams['ASSET_ID']         = $this->R['usr']->generateNewKey(70);
                     $this->assetParams['TARGET_FILE_NAME'] = $tmp_assetSerial . '.' . 
                                                              $this->assetParams['FILE_EXT'];
-                    $this->assetParams['FILE_SIZE'] = filesize($_FILES['assetfile']['tmp_name']);
+                    $this->assetParams['FILE_SIZE']        = \filesize($_FILES['assetfile']['tmp_name']);
                     $this->assetParams['TARGET_FILE_PATH'] = self::$oEnv->getEnvParam('DOCUMENT_ROOT') . 
                                                              self::$oEnv->getEnvParam('DOCUMENT_ROOT_DIR') . DIRECTORY_SEPARATOR . 
                                                              'assets' . DIRECTORY_SEPARATOR . 
@@ -1894,15 +1898,10 @@ class crnrstn_asset_manager
                     $this->assetParams['TARGET_THUMB_MEDIUM_FILE'] = '';
                     $this->assetParams['TARGET_THUMB_SMALL_FILE'] = '';
 
-                    if(move_uploaded_file($_FILES['assetfile']['tmp_name'], self::$TARGET_FILE)){
-
+                    if(move_uploaded_file($_FILES['assetfile']['tmp_name'], self::$TARGET_FILE))
                         self::$newAssetStatus = 'processed=success';
-
-                    }else{
-
+                    else
                         self::$newAssetStatus = 'processed=error';
-
-                    }
 
                 break;
                 case 'CREATIVE':
@@ -1926,20 +1925,20 @@ class crnrstn_asset_manager
 
                     error_log('[' . __CLASS__ . '] [lnum ' . 
                     	__LINE__ . 
-                    	'] SPECIALTY_TYPE->' . 
-                    	self::$oUser->retrieve_Form_Data('SPECIALTY_TYPE'));
+                    	'] SPECIALTY_TYPE->' .
+                        $this->R['usr']->retrieve_Form_Data('SPECIALTY_TYPE'));
 
-                    switch (self::$oUser->retrieve_Form_Data('SPECIALTY_TYPE')){
+                    switch($this->R['usr']->retrieve_Form_Data('SPECIALTY_TYPE')){
                         case 'BANNER_CREATIVE':
 
                             self::$TARGET_FILE = self::$UPLOAD_DIR . 
                                                  $tmp_client_dir . DIRECTORY_SEPARATOR . 
                                                  $tmp_assetSerial . '.' . 
                                                  $this->assetParams['FILE_EXT'];
-                            $this->assetParams['ASSET_ID'] = self::$oUser->generateNewKey(70);
+                            $this->assetParams['ASSET_ID']         = $this->R['usr']->generateNewKey(70);
                             $this->assetParams['TARGET_FILE_NAME'] = $tmp_assetSerial . '.' . 
                                                                      $this->assetParams['FILE_EXT'];
-                            $this->assetParams['FILE_SIZE'] = filesize($_FILES['assetfile']['tmp_name']);
+                            $this->assetParams['FILE_SIZE']        = filesize($_FILES['assetfile']['tmp_name']);
                             $this->assetParams['TARGET_FILE_PATH'] = self::$oEnv->getEnvParam('DOCUMENT_ROOT') . 
                                                                      self::$oEnv->getEnvParam('DOCUMENT_ROOT_DIR') . DIRECTORY_SEPARATOR . 
                                                                      'assets' . DIRECTORY_SEPARATOR . 
@@ -1947,20 +1946,14 @@ class crnrstn_asset_manager
                                                                      $tmp_client_dir . DIRECTORY_SEPARATOR . 
                                                                      $tmp_assetSerial . '.' . 
                                                                      $this->assetParams['FILE_EXT'];
-
-                            $this->assetParams['TARGET_THUMB_LARGE_FILE'] = '';
+                            $this->assetParams['TARGET_THUMB_LARGE_FILE']  = '';
                             $this->assetParams['TARGET_THUMB_MEDIUM_FILE'] = '';
-                            $this->assetParams['TARGET_THUMB_SMALL_FILE'] = '';
+                            $this->assetParams['TARGET_THUMB_SMALL_FILE']  = '';
 
-                            if(move_uploaded_file($_FILES['assetfile']['tmp_name'], self::$TARGET_FILE)){
-
+                            if(move_uploaded_file($_FILES['assetfile']['tmp_name'], self::$TARGET_FILE))
                                 self::$newAssetStatus = 'processed=success';
-
-                            }else{
-
+                            else
                                 self::$newAssetStatus = 'processed=error';
-
-                            }
 
                         break;
                         case 'EMAIL_CREATIVE':
@@ -1978,7 +1971,7 @@ class crnrstn_asset_manager
                                 	__LINE__ . 
                                 	'] I think asset can be resized.');
 
-                                $this->assetParams['ASSET_ID'] = self::$oUser->generateNewKey(70);
+                                $this->assetParams['ASSET_ID']         = $this->R['usr']->generateNewKey(70);
                                 $this->assetParams['TARGET_FILE_NAME'] = $tmp_assetSerial . '.' . 
                                                                          $this->assetParams['FILE_EXT'];
 
@@ -2445,10 +2438,10 @@ class crnrstn_asset_manager
                                                      $tmp_client_dir . DIRECTORY_SEPARATOR . 
                                                      $tmp_assetSerial . '.' . 
                                                      $this->assetParams['FILE_EXT'];
-                                $this->assetParams['ASSET_ID'] = self::$oUser->generateNewKey(70);
+                                $this->assetParams['ASSET_ID']         = $this->R['usr']->generateNewKey(70);
                                 $this->assetParams['TARGET_FILE_NAME'] = $tmp_assetSerial . '.' . 
                                                                          $this->assetParams['FILE_EXT'];
-                                $this->assetParams['FILE_SIZE'] = filesize($_FILES['assetfile']['tmp_name']);
+                                $this->assetParams['FILE_SIZE']        = \filesize($_FILES['assetfile']['tmp_name']);
                                 $this->assetParams['TARGET_FILE_PATH'] = self::$oEnv->getEnvParam('DOCUMENT_ROOT') . 
                                                                          self::$oEnv->getEnvParam('DOCUMENT_ROOT_DIR') . DIRECTORY_SEPARATOR . 
                                                                          'assets' . DIRECTORY_SEPARATOR . 
@@ -2504,10 +2497,10 @@ class crnrstn_asset_manager
 			throw new Exception('Invalid file extension[.' . 
 				$this->assetParams['FILE_EXT'].'] or mime-type[' . 
 				$this->assetParams['FILE_MIME_TYPE'] . 
-				'] based on asset type of ' . 
-				self::$oUser->retrieve_Form_Data('ASSET_TYPE') . 
-				' by userid[' . 
-				self::$oUser->retrieve_Form_Data('USER_ID') . 
+				'] based on asset type of ' .
+                $this->R['usr']->retrieve_Form_Data('ASSET_TYPE') .
+				' by userid[' .
+                $this->R['usr']->retrieve_Form_Data('USER_ID') .
 				'].');
 
 		}
@@ -2528,7 +2521,7 @@ class crnrstn_asset_manager
 	    //
         // Generate dir name 
         // for thumbs. 
-        $tmp_thumb_dir       = self::$oUser->generateNewKey(25);
+        $tmp_thumb_dir       = $this->R['usr']->generate_Key('thumb_dir_name');
         $tmp_thumb_full_dir  = 'full';
         $tmp_thumb_lg_dir    = 'lg';
         $tmp_thumb_med_dir   = 'med';
@@ -2673,30 +2666,47 @@ class crnrstn_asset_manager
 		            $mime)
 	{
 
-        //
-        // Better integrity for 
-        // asset validation 
-        // starts here. 
-		//
-		// # C # R # N # R # S # T # N # :: # L # I # G # H # T
-		// Return an instantiation of
-		// The CRNRSTN :: Lightsaber RoCEv2 SOAP
-		// Services Layer (CLR-SSL) 
-		// Asset Validator.
-		//
-		//
-		// 5 :: Monday, July 15, 2024 @ 1943 hrs.
-		//
-		// $assetVal = new asset_validator(
-		//                 self::$oUser->retrieve_Form_Data('ASSET_TYPE'), 
-		//                 $ext, 
-		//                 $mime);
-        $assetVal = $this->return_registered_resource(
-        	               'new', 
-        	               'crnrstn_asset_validator', 
-        	               self::$oUser->retrieve_Form_Data('ASSET_TYPE'), 
-        	               $ext, 
-        	               $mime);
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Better integrity for
+         * asset validation
+         * starts here.
+		 *
+		 *
+		 * Return an instantiation of
+		 * The CRNRSTN :: Lightsaber RoCEv2 SOAP
+		 * Services Layer (CLR-SSL)
+		 * Asset Validator.
+		 *
+		 *
+		 * 5 :: Monday, July 15, 2024 @ 1943 hrs.
+		 *
+		 * $assetVal = new asset_validator(
+		 *                 self::$oUser->retrieve_Form_Data('ASSET_TYPE'),
+		 *                 $ext,
+		 *                 $mime);
+         *
+         * CLR-SSL Resource Registry
+         * Prototyping (2024-2026):
+         * $assetVal = $this->return_registered_resource(
+         *	                  'new',
+         *	                  'crnrstn_asset_validator',
+         *	                  self::$oUser->retrieve_Form_Data('ASSET_TYPE'),
+         *	                  $ext,
+         *	                  $mime);
+         *
+         */
+
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Saturday, August 22, 2026 @ 0633 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'crnrstn_asset_validator',
+               self::$oUser->retrieve_Form_Data('ASSET_TYPE'),
+               $ext,
+               $mime);
+        $this->anoint(
+               'crnrstn_asset_validator',
+               $assetVal);
 
         return $assetVal->isValid();
 

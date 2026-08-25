@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.123 2010/04/26 20:15:08 snichol Exp $
 
@@ -67,7 +69,15 @@ nusoap-general@lists.sourceforge.net
 * @version  $Id: class.wsdlcache.php,v 1.7 2007/04/17 16:34:03 snichol Exp $
 * @access public 
 */
-class nusoap_wsdlcache {
+class nusoap_wsdlcache extends crnrstn
+{
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: We modified the nusoap_wsdlcache
+     *       class object by adding an
+     *       extension of the crnrstn object.
+     *       5 :: Thursday, August 20, 2026 @ 2103 hrs.
+     *
+     */
 	/**
 	 *	@var resource
 	 *	@access private
@@ -121,13 +131,41 @@ class nusoap_wsdlcache {
 	}
 
 	/**
-	* adds debug data to the class level debug string
-	*
-	* @param    string $string debug data
-	* @access   private
-	*/
-	function debug($string){
-		$this->debug_str .= get_class($this).": $string\n";
+	 * adds debug data to the class level debug string
+	 *
+	 * @param    string $string debug data
+	 * @access   private
+	 */
+	function debug($string)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Thursday, August 20, 2026 @ 2058 hrs.
+         *
+         * $this->debug_str .= get_class($this).": $string\n";
+         *
+         */
+
+        $clr_ssl_msg = \get_class($this) .
+                       ": $string\n";
+        // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+        $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token = array(
+                 'token'                   => $msg_token,
+                 'token_generation_date'   => $token_generation_date,
+                 'request_type'            => __METHOD__,
+                 'code'                    => 200,
+                 'clr_ssl_msg'             => $clr_ssl_msg);
+        $this->error_log(
+               $clr_ssl_msg,
+               \LOG_ALERT,
+               \E_ERROR,
+               __LINE__,
+               __METHOD__,
+               __FILE__,
+               $token);
+
 	}
 
 	/**

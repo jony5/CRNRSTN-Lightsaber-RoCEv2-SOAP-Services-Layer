@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.123 2010/04/26 20:15:08 snichol Exp $
 
@@ -264,7 +266,16 @@ class nusoap_server extends nusoap_base {
 				$this->debug('Use existing wsdl instance from ' . $this->externalWSDLURL);
 			} else {
 				$this->debug('Create wsdl from ' . $wsdl);
-				$this->wsdl = new wsdl($wsdl);
+				//$this->wsdl = new wsdl($wsdl);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Thursday, August 20, 2026 @ 0859 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'wsdl',
+                       $wsdl);
+                $this->anoint(
+                       'wsdl',
+                       $this->wsdl);
 				$this->externalWSDLURL = $wsdl;
 			}
 			$this->appendDebug($this->wsdl->getDebug());
@@ -323,7 +334,16 @@ class nusoap_server extends nusoap_base {
 				$this->debug('Use existing wsdl instance from ' . $this->externalWSDLURL);
 			} else {
 				$this->debug('Create wsdl from ' . $wsdl);
-				$this->wsdl = new wsdl($wsdl);
+				//$this->wsdl = new wsdl($wsdl);
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Thursday, August 20, 2026 @ 0925 hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'wsdl',
+                       $wsdl);
+                $this->anoint(
+                       'wsdl',
+                       $this->wsdl);
 				$this->externalWSDLURL = $wsdl;
 			}
 			$this->appendDebug($this->wsdl->getDebug());
@@ -977,7 +997,20 @@ class nusoap_server extends nusoap_base {
 		}
 		$this->debug('Use encoding: ' . $this->xml_encoding . ' when creating nusoap_parser');
 		// parse response, get soap parser obj
-		$parser = new nusoap_parser($data,$this->xml_encoding,'',$this->decode_utf8);
+		//$parser = new nusoap_parser($data,$this->xml_encoding,'',$this->decode_utf8);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 0926 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_parser',
+               $data,
+               $this->xml_encoding,
+               '',
+               $this->decode_utf8);
+        $this->anoint(
+               'nusoap_parser',
+               $parser);
+        $this->anoint_eval('soap_parser');
 		// parser debug
 		$this->debug("parser debug: \n".$parser->getDebug());
 		// if fault occurred during message parsing
@@ -1137,7 +1170,20 @@ class nusoap_server extends nusoap_base {
 		if ($faultdetail == '' && $this->debug_flag) {
 			$faultdetail = $this->getDebug();
 		}
-		$this->fault = new nusoap_fault($faultcode,$faultactor,$faultstring,$faultdetail);
+		//$this->fault = new nusoap_fault($faultcode,$faultactor,$faultstring,$faultdetail);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 0929 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_fault',
+               $faultcode,
+               $faultactor,
+               $faultstring,
+               $faultdetail);
+        $this->anoint(
+               'nusoap_fault',
+               $this->fault);
+        $this->anoint_eval('soap_fault');
 		$this->fault->soap_defencoding = $this->soap_defencoding;
 	}
 
@@ -1196,7 +1242,15 @@ class nusoap_server extends nusoap_base {
             $schemaTargetNamespace = $namespace;
         }
         
-		$this->wsdl = new wsdl;
+		//$this->wsdl = new wsdl;
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1852 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'wsdl');
+        $this->anoint(
+               'wsdl',
+               $this->wsdl);
 		$this->wsdl->serviceName = $serviceName;
         $this->wsdl->endpoint = $endpoint;
 		$this->wsdl->namespaces['tns'] = $namespace;
@@ -1205,7 +1259,19 @@ class nusoap_server extends nusoap_base {
 		if ($schemaTargetNamespace != $namespace) {
 			$this->wsdl->namespaces['types'] = $schemaTargetNamespace;
 		}
-        $this->wsdl->schemas[$schemaTargetNamespace][0] = new nusoap_xmlschema('', '', $this->wsdl->namespaces);
+        //$this->wsdl->schemas[$schemaTargetNamespace][0] = new nusoap_xmlschema('', '', $this->wsdl->namespaces);
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Thursday, August 20, 2026 @ 1853 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'nusoap_xmlschema',
+               '',
+               '',
+               $this->wsdl->namespaces);
+        $this->anoint(
+               'nusoap_xmlschema',
+               $this->wsdl->schemas[$schemaTargetNamespace][0]);
+               $this->anoint_eval('XMLSchema');
         if ($style == 'document') {
 	        $this->wsdl->schemas[$schemaTargetNamespace][0]->schemaInfo['elementFormDefault'] = 'qualified';
         }

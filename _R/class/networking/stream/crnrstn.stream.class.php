@@ -305,7 +305,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @package CRNRSTN
  */
 class crnrstn_stream
@@ -320,6 +320,58 @@ class crnrstn_stream
      */
     function __construct()
     {
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function get_url_content($url)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Method get_url_content
+         * was moved from crnrstn_user
+         * to crnrstn_stream.
+         * 5 :: Friday, August 21, 2026 @ 0628 hrs.
+         *
+         */
+
+        // https://www.php.net/manual/en/function.curl-init.php
+        $opts = array(
+            'http' => array (
+                'method'=>"POST",
+                'header'=>
+                    "Accept-language: en\r\n".
+                    "Content-type: application/x-www-form-urlencoded\r\n",
+                'content'=>http_build_query(array('foo'=>'bar'))
+            )
+        );
+
+        $context = stream_context_create($opts);
+
+        $fp = fopen($url, 'r', false, $context);
+
+        $contents = '';
+
+        //
+        // SOURCE :: https://stackoverflow.com/questions/3308388/fopen-returns-resource-id-4
+        // COMMENT :: https://stackoverflow.com/a/3308463
+        // AUTHOR :: PHPology :: https://stackoverflow.com/users/383633/phpology
+        // https://www.php.net/manual/en/function.fread.php
+        while(!feof($fp)){
+
+            $contents .= fread($fp, 8192);
+
+        }
+
+        fclose($fp);
+
+        return $contents;
 
     }
 

@@ -269,7 +269,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @param int $R_data contains the value of the CLR-SSL debug mode.
  * @access public
  * 

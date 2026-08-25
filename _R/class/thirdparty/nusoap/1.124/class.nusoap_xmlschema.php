@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,7 +40,7 @@ http://www.nusphere.com
 */
 
 /*
- *	Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
  *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
  *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
@@ -50,6 +52,25 @@ http://www.nusphere.com
  *	RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
  *	RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
  */
+
+/* load classes
+
+// necessary classes
+require_once('class.soapclient.php');
+require_once('class.soap_val.php');
+require_once('class.soap_parser.php');
+require_once('class.soap_fault.php');
+
+// transport classes
+require_once('class.soap_transport_http.php');
+
+// optional add-on classes
+require_once('class.xmlschema.php');
+require_once('class.wsdl.php');
+
+// server class
+require_once('class.soap_server.php');*/
+
 
 /**
  * parses an XML Schema, allows access to it's data, other utility methods.
@@ -171,16 +192,13 @@ class nusoap_xmlschema extends nusoap_base
             // Set the options for parsing the XML data.
             xml_parser_set_option($this->parser, XML_OPTION_CASE_FOLDING, 0);
 
-            // Set the object for the parser.
-            xml_set_object($this->parser, $this);
-
             // Set the element handlers for the parser.
             if ($type == "schema") {
-                xml_set_element_handler($this->parser, 'schemaStartElement', 'schemaEndElement');
-                xml_set_character_data_handler($this->parser, 'schemaCharacterData');
+                xml_set_element_handler($this->parser, [$this, 'schemaStartElement'], [$this, 'schemaEndElement']);
+                xml_set_character_data_handler($this->parser, [$this, 'schemaCharacterData']);
             } elseif ($type == "xml") {
-                xml_set_element_handler($this->parser, 'xmlStartElement', 'xmlEndElement');
-                xml_set_character_data_handler($this->parser, 'xmlCharacterData');
+                xml_set_element_handler($this->parser, [$this, 'xmlStartElement'], [$this, 'xmlEndElement']);
+                xml_set_character_data_handler($this->parser, [$this, 'xmlCharacterData']);
             }
 
             // Parse the XML file.
@@ -195,7 +213,7 @@ class nusoap_xmlschema extends nusoap_base
                 $this->setError($errstr);
             }
 
-            xml_parser_free($this->parser);
+            (PHP_VERSION_ID < 80000) && xml_parser_free($this->parser);
             unset($this->parser);
         } else {
             $this->debug('no xml passed to parseString()!!');
@@ -697,7 +715,7 @@ class nusoap_xmlschema extends nusoap_base
             $el .= " xmlns:$nsp=\"$ns\"";
         }
 
-      return $el . ">\n" . $xml . "</$schemaPrefix:schema>\n";
+        return $el . ">\n" . $xml . "</$schemaPrefix:schema>\n";
     }
 
     /**
@@ -890,7 +908,7 @@ class nusoap_xmlschema extends nusoap_base
                 // if array
             } elseif ($typeDef['phpType'] == 'array') {
                 $buffer .= '<table>';
-              $buffer .= str_repeat ("
+                $buffer .= str_repeat ("
 					<tr><td align='right'>array item (type: $typeDef[arrayType]):</td>
 					<td><input type='text' name='parameters[" . $name . "][]'></td></tr>", 3);
                 $buffer .= '</table>';

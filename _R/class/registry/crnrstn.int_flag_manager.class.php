@@ -298,7 +298,7 @@ namespace CRNRSTN;
  *                     5
  *
  *                     Thursday, February 12, 2026 @ 2143 hrs.
- *                     Last Modifed: Thursday, February 12, 2026 @ 2158 hrs.
+ *                     Last Modified: Thursday, February 12, 2026 @ 2158 hrs.
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
@@ -313,7 +313,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -939,7 +939,7 @@ class crnrstn_int_flag_manager
 
 
     5 :: Friday, February 13, 2026 @ 2332 hrs.
-    Last Modifed: Friday, May 8, 2026 @ 2003 hrs.
+    Last Modified: Friday, May 8, 2026 @ 2003 hrs.
 
     */
 

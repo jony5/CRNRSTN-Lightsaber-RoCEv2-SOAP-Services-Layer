@@ -334,7 +334,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -427,14 +427,15 @@ class crnrstn_content_source_controller extends crnrstn
      *
      */
 
+    public $R       = array();
+    private $R_data = array();
+
     protected $R_ui_assembler;
 
     public $page_path;
     public $module_key;
     public $iso_lang_code;
     private static $page_serial;
-
-    private $R_data = array();
 
     protected $link_build_track_ARRAY    = array();
     protected $content_sauce_ARRAY       = array();
@@ -468,22 +469,23 @@ class crnrstn_content_source_controller extends crnrstn
          *
          */
         $this->R_data['int_flag'] = $this->get_crnrstn('int_flag');
+        $this->R['ui_assembler']  = $R_ui_assembler;
 
         /*
-        if(!\is_object($R_ui_assembler)){
+        if(!\is_object($this->R['ui_assembler'])){
 
             $clr_ssl_msg = '@TODO :: Remove this report output after ' .
                 'checking that the ' .
                 $this->return_bytes(
-                    $R_ui_assembler,
+                    $this->R['ui_assembler'],
                     2,
                     NULL,
                     true,
                     false,
                     true) .
                 ' (' .
-                \gettype($R_ui_assembler) . ') ' .
-                \print_r($R_ui_assembler, true) .
+                \gettype($this->R['ui_assembler']) . ') ' .
+                \print_r($this->R['ui_assembler'], true) .
                 ' data we are receiving from the ' .
                 'CLR-SSL Resource Registry is the ' . 
                 'crnrstn_ui_content_assembler, and all is well.';
@@ -508,12 +510,12 @@ class crnrstn_content_source_controller extends crnrstn
 
             echo '<br><pre><code>[mthd ' .
                 __METHOD__ . '] [lnum ' .
-                __LINE__ . '] $R_ui_assembler = ' .
-                \gettype($R_ui_assembler) .
+                __LINE__ . '] $this->R['ui_assembler'] = ' .
+                \gettype($this->R['ui_assembler']) .
                 '.</code></pre>';
 
             $html_out = $this->clr_ssl_registry_resource_report(
-                $R_ui_assembler,
+                $this->R['ui_assembler'],
                 $clr_ssl_msg,
                 true,
                 __LINE__,
@@ -526,7 +528,7 @@ class crnrstn_content_source_controller extends crnrstn
              * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
              *
              * "00"..."00"..."00"...Oh,
-             * Oh, Oh, Oh. You know what I mean."
+             * Oh, Oh, Oh. You know what I mean.
              *
              * Yeah, you know what I mean:
              * "Oh, Oh, Oh"...
@@ -545,15 +547,15 @@ class crnrstn_content_source_controller extends crnrstn
             $clr_ssl_msg = '@TODO :: Remove this report output after ' .
                 'checking that the ' .
                 $this->return_bytes(
-                    $R_ui_assembler,
+                    $this->R['ui_assembler'],
                     2,
                     NULL,
                     true,
                     false,
                     true) .
                 ' (' .
-                \gettype($R_ui_assembler) . ') ' .
-                \get_class($R_ui_assembler) .
+                \gettype($this->R['ui_assembler']) . ') ' .
+                \get_class($this->R['ui_assembler']) .
                 ' data we are receiving from the ' .
                 'CLR-SSL Resource Registry is the ' . 
                 'crnrstn_ui_content_assembler, and all is well.';
@@ -577,7 +579,7 @@ class crnrstn_content_source_controller extends crnrstn
                 $token);
 
             $html_out = $this->clr_ssl_registry_resource_report(
-                $R_ui_assembler,
+                $this->R['ui_assembler'],
                 $clr_ssl_msg,
                 true,
                 __LINE__,
@@ -590,7 +592,7 @@ class crnrstn_content_source_controller extends crnrstn
              * 5 :: Wednesday, August 5, 2026 @ "00" 0100 hrs.
              *
              * "00"..."00"..."00"...Oh,
-             * Oh, Oh, Oh. You know what I mean."
+             * Oh, Oh, Oh. You know what I mean.
              *
              * Yeah, you know what I mean:
              * "Oh, Oh, Oh"...
@@ -606,14 +608,13 @@ class crnrstn_content_source_controller extends crnrstn
 
         }
         */
-        $this->R_ui_assembler = $R_ui_assembler;
 
-        $this->page_path  = $this->R_ui_assembler->return_page_path();
+        $this->page_path  = $this->R['ui_assembler']->return_page_path();
         $this->module_key = $module_key;
 
         $clr_ssl_msg = 'Initializing ' . __CLASS__ . ' with (' . 
-                       \gettype($R_ui_assembler) . 
-                       ') ' . get_class($R_ui_assembler) . 
+                       \gettype($this->R['ui_assembler']) .
+                       ') ' . get_class($this->R['ui_assembler']) .
                        ' at the endpoint ['. $this->page_path . 
                        '].';
         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -868,7 +869,7 @@ Removed: Sunday, June 28, 2026 @ 1829 hrs.
         $tmp_related_array[0] = 'is_tablet';
         $tmp_related_array[1] = 'set_mobile';
         $tmp_related_array[2] = 'set_tablet';
-        $this->R_ui_assembler->add_page_element(self::$page_serial, 'RELATED_METHODS', $tmp_related_array);
+        $this->R['ui_assembler']->add_page_element(self::$page_serial, 'RELATED_METHODS', $tmp_related_array);
 
         */
         $tmp_ARRAY = array();
@@ -1828,8 +1829,8 @@ Removed: Sunday, June 28, 2026 @ 1829 hrs.
 
             }
 
-            if(($this->is_bit_set(self::$R_data['int_flag']['R_fs_map']) > 0) || 
-                ($this->is_bit_set(self::$R_data['int_flag']['R_fs_map_proxy']) > 0))
+            if(($this->is_bit_set($this->R_data['int_flag']['R_fs_map']) > 0) ||
+                ($this->is_bit_set($this->R_data['int_flag']['R_fs_map_proxy']) > 0))
             {
 
                 $tmp_img_url = $tmp_map_http;
@@ -2283,7 +2284,7 @@ Removed: Sunday, June 28, 2026 @ 1829 hrs.
     {
         // 5 :: Wednesday, August 14, 2024 @ 2313 hrs.
 
-        $this->R_ui_assembler->initialize_page_content($module_key_override);
+        $this->R['ui_assembler']->initialize_page_content($module_key_override);
 
     }
 
@@ -2306,11 +2307,11 @@ Removed: Sunday, June 28, 2026 @ 1829 hrs.
     {
         // 5 :: Wednesday, August 14, 2024 @ 2312 hrs.
 
-        $this->R_ui_assembler->add_page_element(
-                               $serial, 
-                               $key, 
-                               $data_ARRAY, 
-                               $output_type);
+        $this->R['ui_assembler']->add_page_element(
+                                  $serial,
+                                  $key,
+                                  $data_ARRAY,
+                                  $output_type);
 
     }
 
@@ -2330,7 +2331,7 @@ Removed: Sunday, June 28, 2026 @ 1829 hrs.
 
 /*    public function returnLoadedBitch(){
  *
- *        return $this->R_ui_assembler;
+ *        return $this->R['ui_assembler'];
  *
  *    }
  */
@@ -2458,7 +2459,6 @@ Removed: Sunday, June 28, 2026 @ 1829 hrs.
      */
     function return_integer_constant_profiles($module_key = NULL)
     {
-
         /*
         system_theme_style_constants_ARRAY = 
         array(
@@ -3440,7 +3440,7 @@ CRNRSTN_PROXY_ELECTRUM
 CRNRSTN_PROXY_AUTHENTICATE
 
 CRNRSTN_UI_INTERACT
-self::$R_data['int_flag']['R_authorize_all']
+$this->R_data['int_flag']['R_authorize_all']
 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_DATABASE
 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_SSDTLA
 CRNRSTN_AUTHORIZE & CRNRSTN_CHANNEL_PSSDTLA

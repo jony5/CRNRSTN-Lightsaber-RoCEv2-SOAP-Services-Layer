@@ -362,7 +362,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -514,18 +514,51 @@ class crnrstn_environment extends crnrstn
      *       for self::$R_usr initialization. 
      *       5 :: Sunday, July 26, 2026 @ 2016 hrs.
      *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Deleted return_oCRNRSTN_USR() method.
+     * 5 :: Sunday, July 26, 2026 @ 2024 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Deleted the following methods
+     *       in order to get behind the
+     *       crnrstn_environment's extension
+     *       of crnrstn and to remove
+     *       unrelated-to-CLR-SSL clutter:
+     *
+     *       - initRuntimeConfig()
+     *       - return_set_bits()
+     *       - openssl_get_md_methods()
+     *       - openssl_get_cipher_methods()
+     *       - hello_world()
+     *       - get_resource_count()
+     *       - retrieve_data_value()
+     *       - system_resource_constants_ARRAY()
+     *       - consume_form_integration_packet()
+     *
+     *       Fatal error: Declaration of
+     *       CRNRSTN\crnrstn_environment::
+     *       return_set_bits($constants_int_ARRAY)
+     *       must be compatible with
+     *       CRNRSTN\crnrstn::return_set_bits(
+     *       $integer_constants_ARRAY,
+     *       $first_match = false) in
+     *       C:\xampp\htdocs\_R\class\environment
+     *       \crnrstn.environment.class.php
+     *       on line 9094
+     *
+     *       5 :: Friday, August 21, 2026 @ 0906 hrs.
+     *
      */
 
+    public $R       = array();
     private $R_data = array();
 
-    private static $R_cookie;
-    private static $R_http;
     private static $R_log_output_mgr;
 
     private static $env_key;
     private static $env_key_hash;
 
-    private static $lang_content_ARRAY = array();
+    private static $lang_struct_time = array();
     private static $system_logging_output_profile_ARRAY = array();
     private static $sys_logging_meta_ARRAY = array();
 
@@ -540,7 +573,6 @@ class crnrstn_environment extends crnrstn
     private static $openssl_digest_profile_ARRAY = array();
     private static $system_resource_constants_ARRAY = array();
     public $system_theme_style_constants_ARRAY = array();
-    private static $weighted_elements_keys_ARRAY = array();
     public $soap_permissions_file_path_ARRAY = array();
 
     private static $requestProtocol;
@@ -587,12 +619,13 @@ class crnrstn_environment extends crnrstn
              $R_usr)
     {
 
-        $this->R_data['int_flag']        = $this->get_crnrstn('int_flag');
-        $this->R['kivotos']->R['ui_trm'] = $R_ui_trm;
-        $this->R['kivotos']->R['usr']    = $R_usr;
+        $this->R_data['int_flag'] = $this->get_crnrstn('int_flag');
+        $this->R['ui_trm']        = $R_ui_trm;
+        $this->R['usr']           = $R_usr;
 
-        self::$env_key            = $this->return_env_key();
-        self::$env_key_hash       = $this->return_env_key(true);
+        self::$env_key            = $this->return_env_key();     // Deprecated key.
+        self::$env_key_hash       = $this->return_env_key(true); // Deprecated hash.
+
         $this->system_hash_algo   = $this->system_hash_algo();
         $this->operating_system   = $this->operating_system;
         $this->process_id         = $this->process_id;
@@ -604,8 +637,7 @@ class crnrstn_environment extends crnrstn
          */
         $this->init_encrypt_profile();
         self::$system_resource_constants_ARRAY = $this->system_resource_constants_ARRAY();
-        self::$weighted_elements_keys_ARRAY    = $this->weighted_elements_keys_ARRAY;
-        self::$lang_content_ARRAY              = $this->return_lang_content_ARRAY();
+        self::$lang_struct_time              = $this->return_lang_content_ARRAY();
         $this->ini_set_ARRAY                   = $this->ini_set_ARRAY;
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -760,869 +792,187 @@ class crnrstn_environment extends crnrstn
         $this->anoint(
                'crnrstn_http_manager|' . 
                'crnrstn_cookie_manager', 
-               self::$R_http, 
-               self::$R_cookie);
+               $this->R['http_mgr'],
+               $this->R['cookie_mgr']);
 
-        error_log('[lnum ' . 
-            __LINE__ . '] [mthd ' . 
-            __METHOD__ . '] (' . 
-            \gettype(self::$R_http) . ')' . 
-            \get_class(self::$R_http) . ' and (' . 
-            \gettype(self::$R_cookie) . ')' . 
-            \get_class(self::$R_cookie) . '.');
 
-        $clr_ssl_msg = ' (' . 
-                       \gettype(self::$R_http) . ')' . 
-                       \get_class(self::$R_http) . ' and (' . 
-                       \gettype(self::$R_cookie) . ')' . 
-                       \get_class(self::$R_cookie) . '.';
-        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-        $token = array(
-                 'token'                   => $msg_token, 
-                 'token_generation_date'   => $token_generation_date, 
-                 'request_type'            => __METHOD__, 
-                 'code'                    => 200, 
-                 'clr_ssl_msg'             => $clr_ssl_msg);
-        $this->error_log(
-               $clr_ssl_msg, 
-               \LOG_DEBUG, 
-               \E_NOTICE, 
-               __LINE__, 
-               __METHOD__, 
-               __FILE__, 
-               $token);
+        return true;
 
-        die();
+        //
+        // TODO :: DO NOT RUN THIS AGAIN...UNLESS YOU CAN
+        //         FIGURE SOMETHING ELSE OUT...OR JUST
+        //         CRUSH THIS PROPER. Thursday, December 7, 2023 @ 0352 hrs.
+        // FLASH WILD CARD RESOURCES OBJECT ARRAY TO ENVIRONMENTAL CLASS OBJECT
+        //$this->initializeWildCardResource();
 
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * UNTIL WE GET SESSION 
-         * MGMT NAILED DOWN 
-         * (well, DATABASE, COOKIE, 
-         * SSDTLA, PSSDTLA,... 
-         * AND SESSION) THIS 
-         * WILL ALWAYS EVALUATE 
-         * TO TRUE. NO SESSION 
-         * PINGS, YET. 
-         * 
-         * RUNTIME OPERATION GOES 
-         * FROM 0-100 WITH NO
-         * SESSION CACHE ASSISTANCE 
-         * AND IS UP TO 1 SECOND 
-         * FASTER ON PAGE LOADS! 
-         * 
-         * ...AND THIS LOW-LEVEL 
-         * REFACTORING OPERATION IS 
-         * NOT EVEN COMPLETE, YET!
-         *
-         *
-         * 5 :: August 20, 2022 @ 0418 hrs.
-         *
-         */
-        if(!($instanceType == 'session_initialization_ping')){
+        //
+        // INITIALIZE ERROR
+        // REPORTING FOR
+        // THIS ENVIRONMENT.
+        $this->initializeErrorReporting();
 
-            try{
+        //
+        // INITIALIZE ENVIRONMENTAL
+        // LOGGING BEHAVIOR.
+        $this->initEnvLoggingProfile();
 
+        //
+        // INITIALIZE IP
+        // ADDRESS RESTRICTIONS
+        // from grantExclusiveAccess().
+        if(isset($this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]))
+            $this->initExclusiveAccess();
+
+        //
+        // INITIALIZE IP
+        // ADDRESS RESTRICTIONS
+        // from denyAccess().
+        if(isset($this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]))
+            $this->initDenyAccess();
+
+        //
+        // INITIALIZE ADMINISTRATOR ACCESS.
+        if(isset($this->add_admin_creds_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]))
+            $this->initAdminAccess();
+
+        //
+        // BEFORE ALLOCATING
+        // ADDITIONAL MEMORY
+        // RESOURCES, PROCESS
+        // IP AUTHENTICATION.
+        if(isset($this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]) ||
+            isset($this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]))
+        {
+
+            $clr_ssl_msg = 'We have IP restrictions to ' .
+                           'process and apply for CRNRSTN :: Cluster ID [' .
+                           $this->R_data['R_cluster_id'] .
+                           '] and environment key [' .
+                           self::$env_key_hash . '].';
+            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+            $token = array(
+                     'token'                   => $msg_token,
+                     'token_generation_date'   => $token_generation_date,
+                     'request_type'            => __METHOD__,
+                     'code'                    => 200,
+                     'clr_ssl_msg'             => $clr_ssl_msg);
+            $this->error_log(
+                   $clr_ssl_msg,
+                   \LOG_DEBUG,
+                   \E_NOTICE,
+                   __LINE__,
+                   __METHOD__,
+                   __FILE__,
+                   $token);
+
+            if(!($this->authorize_ip_access()) == true){
+            //if(!($this->oCRNRSTN_IPSECURITY_MGR->authorizeEnvAccess($this, self::$env_key_hash) == true)){
+                error_log(__LINE__ . ' env authorizeEnvAccess() DENIED ON env_key=[' . self::$env_key . ']. die();');
+
+                die();
                 //
-                // DETERMINE KEY DESIGNATING 
-                // THE RUNNING ENVIRONMENT, 
-                // WHERE KEY = hash(env key) 
-                if(self::$env_key_hash == ''){
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * WE DON'T HAVE THE 
-                     * ENVIRONMENT DETECTED. 
-                     * THROW EXCEPTION. 
-                     *
-                     *
-                     * HOOOSTON, VE HAFF PROBLEM!
-                     * https://www.wired.com/2011/04/alt-text-spacecraft/
-                     *
-                     */
-                    //throw new Exception('CRNRSTN :: environmental configuration error :: unable to detect environment on server ' . $_SERVER['SERVER_NAME'] . ' (' . $_SERVER['SERVER_ADDR'] . ').');
-                    $this->oLog_output_ARRAY[] = $this->error_log('CRNRSTN :: environmental configuration error :: unable to detect environment on server ' . $_SERVER['SERVER_NAME'] . ' (' . $_SERVER['SERVER_ADDR'] . ').', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_DEBUG, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                          taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                          significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
-
-                    $this->system_terminate('config_detection_error_help');
-
-                    //error_log(__LINE__ . ' env ' . __METHOD__ . ' going out on 503.');
-                    //$this->return_server_response_code(503, $this->return_CRNRSTN_ASCII_ART());
-                    exit();
-
-                }else{
-
-                    //
-                    // TODO :: DO NOT RUN THIS AGAIN...UNLESS YOU CAN
-                    //         FIGURE SOMETHING ELSE OUT...OR JUST
-                    //         CRUSH THIS PROPER. Thursday, December 7, 2023 @ 0352 hrs.
-                    // FLASH WILD CARD RESOURCES OBJECT ARRAY TO ENVIRONMENTAL CLASS OBJECT
-                    //$this->initializeWildCardResource();
-
-                    //
-                    // WE HAVE SELECTED 
-                    // ENVIRONMENT KEY. 
-                    // 
-                    // INITIALIZE CONFIG 
-                    // KEY AND ENV KEY.
-                    // 
-                    // FLASH CONFIG KEY 
-                    // AND ENV KEY TO SESSION.
-                    $this->initRuntimeConfig();
-
-                    //
-                    // INITIALIZE ERROR 
-                    // REPORTING FOR 
-                    // THIS ENVIRONMENT. 
-                    $this->initializeErrorReporting();
-
-                    //
-                    // INITIALIZE ENVIRONMENTAL 
-                    // LOGGING BEHAVIOR. 
-                    $this->initEnvLoggingProfile();
-
-                    //
-                    // INITIALIZE IP 
-                    // ADDRESS RESTRICTIONS 
-                    // from grantExclusiveAccess(). 
-                    if(isset($this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash])){
-
-                        $this->initExclusiveAccess();
-
-                    }
-
-                    //
-                    // INITIALIZE IP 
-                    // ADDRESS RESTRICTIONS 
-                    // from denyAccess(). 
-                    if(isset($this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash])){
-
-                        $this->initDenyAccess();
-
-                    }
-
-                    //
-                    // INITIALIZE ADMINISTRATOR ACCESS.
-                    if(isset($this->add_admin_creds_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash])){
-
-                        $this->initAdminAccess();
-
-                    }
-
-                    //
-                    // BEFORE ALLOCATING 
-                    // ADDITIONAL MEMORY 
-                    // RESOURCES, PROCESS 
-                    // IP AUTHENTICATION. 
-                    if(isset($this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]) || 
-                        isset($this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]))
-                    {
-                        //error_log(__LINE__ . ' env env_key=[' . self::$env_key . ']. die();');
-
-                        $this->oLog_output_ARRAY[] = $this->error_log('We have IP restrictions to process and apply for CRNRSTN :: Cluster ID [' . $this->R_data['R_cluster_id'] . '] and environment key [' . self::$env_key_hash . '].', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                        //error_log(__LINE__ . ' env env_key=[' . self::$env_key . ']. die();');
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
-                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                        $token = array(
-                                 'token'                   => $msg_token, 
-                                 'token_generation_date'   => $token_generation_date, 
-                                 'request_type'            => __METHOD__, 
-                                 'code'                    => 200, 
-                                 'clr_ssl_msg'             => $clr_ssl_msg);
-                        $this->error_log(
-                               $clr_ssl_msg, 
-                               \LOG_DEBUG, 
-                               \E_NOTICE, 
-                               __LINE__, 
-                               __METHOD__, 
-                               __FILE__, 
-                               $token);
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                Description
-                         * LOG_EMERG            => 'system is unusable.'
-                         * LOG_ALERT            => 'action must be
-                         *                          taken immediately'
-                         * LOG_CRIT             => 'critical conditions'
-                         * LOG_ERR              => 'error conditions'
-                         * LOG_WARNING          => 'warning conditions'
-                         * LOG_NOTICE           => 'normal, but
-                         *                          significant, condition'
-                         * LOG_INFO             => 'informational message'
-                         * LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
-
-                        if(!($this->authorize_ip_access()) == true){
-                        //if(!($this->oCRNRSTN_IPSECURITY_MGR->authorizeEnvAccess($this, self::$env_key_hash) == true)){
-                            error_log(__LINE__ . ' env authorizeEnvAccess() DENIED ON env_key=[' . self::$env_key . ']. die();');
-
-                            die();
-                            //
-                            // WE COULD PERHAPS USE A MORE GRACEFUL WAY TO TRANSITION TO ERR...BUT THIS WORKS
-                            // THE METHOD return_server_response_code() CONTAINS SOME CUSTOM HTML FOR OUTPUT IF YOU WANT TO TWEAK ITS DESIGN
-                            // PERHAPS SOME FUTURE RELEASE OF CRNRSTN CAN--
-                            $this->return_server_response_code(403, $this->return_CRNRSTN_ASCII_ART());
-                            exit();
-
-                        }
-
-                    }else{
-
-                        $this->oLog_output_ARRAY[] = $this->error_log('There are NO IP restrictions to process and apply for CRNRSTN :: Cluster ID [' . $this->R_data['R_cluster_id'] . '] and environment key [' . self::$env_key_hash . '].', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
-                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                        $token = array(
-                                 'token'                   => $msg_token, 
-                                 'token_generation_date'   => $token_generation_date, 
-                                 'request_type'            => __METHOD__, 
-                                 'code'                    => 200, 
-                                 'clr_ssl_msg'             => $clr_ssl_msg);
-                        $this->error_log(
-                               $clr_ssl_msg, 
-                               \LOG_DEBUG, 
-                               \E_NOTICE, 
-                               __LINE__, 
-                               __METHOD__, 
-                               __FILE__, 
-                               $token);
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                Description
-                         * LOG_EMERG            => 'system is unusable.'
-                         * LOG_ALERT            => 'action must be
-                         *                          taken immediately'
-                         * LOG_CRIT             => 'critical conditions'
-                         * LOG_ERR              => 'error conditions'
-                         * LOG_WARNING          => 'warning conditions'
-                         * LOG_NOTICE           => 'normal, but
-                         *                          significant, condition'
-                         * LOG_INFO             => 'informational message'
-                         * LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
-
-                    }
-
-                    //
-                    // TODO :: THIS IS CHANGING
-                    //
-                    // INITIALIZE SOAP 
-                    // AUTHORIZATION PROFILES 
-                    // FOR THIS ENVIRONMENT. 
-                    //$this->initSOAPAuthorizationProfiles();
-
-                    //
-                    // TODO :: THIS IS CHANGING
-                    //
-                    // INITIALIZE WORDPRESS 
-                    // CONFIGURATION PROFILE(S) 
-                    // FOR THIS ENVIRONMENT.
-                    //$this->init_wp_config();
-
-                    //
-                    // TODO :: THIS IS CHANGING
-                    //
-                    // INITIALIZE ANALYTICS 
-                    // CONFIGURATION PROFILE(S) 
-                    // FOR THIS ENVIRONMENT. 
-                    //$this->init_analytics_config();
-
-                    //
-                    // TODO :: THIS IS CHANGING 
-                    //
-                    // INITIALIZE ENGAGEMENT 
-                    // TRACKING CONFIGURATION 
-                    // PROFILE(S) FOR 
-                    // THIS ENVIRONMENT. 
-                    //$this->init_engagement_config();
-
-                    //
-                    // INITIALIZE INTERACT 
-                    // UI PROFILE. 
-                    $this->init_ui_interact_profile();
-
-                    //$this->system_output_footer_html(CRNRSTN_SOAP_TUNNEL, true);
-
-                    /**
-                    DATA HANDLING ARCHITECTURES
-                    -----
-                    G :: HTTP $_GET REQUEST.
-                    P :: HTTP $_POST REQUEST.
-                    H :: PHP SERVER SESSION ($_SESSION SUPER GLOBAL ARRAY).
-                    S :: CRNRSTN :: SSDTLA PACKET (SOAP WRAPPED ENCRYPTED PSSDTLA PACKET. THE BROWSER WILL TALK LIKE A SERVER).
-                    J :: CRNRSTN :: PSSDTLA PACKET (OPENSSL ENCRYPTED JSON OBJECT).
-                    C :: CARRIER PIGEON (AVIAN OF HOMING VARIANT)...OR BROWSER COOKIE...
-                    D :: DATABASE (MySQLi CONNECTION).
-                    R :: RUNTIME.
-                    O :: SIMPLE OBJECT ACCESS PROTOCOL (NuSOAP 0.9.5, SOAP 1.1).
-                    F :: SERVER LOCAL FILE SYSTEM.
-
-                    GPHSJCDROF
-
-                    */
-
-//                    //
-//                    // INITIALIZE CRNRSTN :: SOAP Services DATA TUNNEL LAYER PACKET - DSJPC
-//                    // Note: DATABASE DATA STORAGE FORMAT WILL SHADOW/SUPPORT USE OF (S) AND (P)
-//                    // ON A SESSION TO SESSION BASIS.
-//                    $this->init_ssdtla_session_data_packet();
-
-                }
-
-            }catch(Exception $e){
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Exception handling performed 
-                 * by the Logging Services Layer 
-                 * of the CRNRSTN :: Lightsaber 
-                 * RoCEv2 SOAP Services 
-                 * Layer (CLR-SSL). 
-                 *
-                 * Allow the CLR-SSL to handle 
-                 * this exception per the 
-                 * configured logging profile of 
-                 * the running application on 
-                 * this server. 
-                 *
-                 *
-                 * 5
-                 *
-                 * Sunday, June 30, 2024 @ 1542 hrs.
-                 * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
-                 *
-                 */
-                $this->catch_exception(
-                        $e, 
-                        LOG_ERR, 
-                        __METHOD__, 
-                        __NAMESPACE__);
-
-                return false;
+                // WE COULD PERHAPS USE A MORE GRACEFUL WAY TO TRANSITION TO ERR...BUT THIS WORKS
+                // THE METHOD return_server_response_code() CONTAINS SOME CUSTOM HTML FOR OUTPUT IF YOU WANT TO TWEAK ITS DESIGN
+                // PERHAPS SOME FUTURE RELEASE OF CRNRSTN CAN--
+                $this->return_server_response_code(403, $this->return_CRNRSTN_ASCII_ART());
+                exit();
 
             }
 
         }else{
 
-            //
-            // THIS IS A SIMPLE 
-            // CONFIG CHECK. 
-            $this->oLog_output_ARRAY[] = $this->error_log(
-                                                __METHOD__ . 
-                                                ' performing simple config check ' . 
-                                                'prior to loading of define_env_resource() ' . 
-                                                'in the CRNRSTN :: config file . ', 
-                                                __LINE__, 
-                                                __METHOD__, 
-                                                __FILE__, 
-                                                $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-
-            $clr_ssl_msg = 'Maximum storage usage at ' . 
-                           'ANY destination LOCAL (note FTP is not ' . 
-                           'monitored) directory for this ' . 
-                           'CRNRSTN :: Electrum process is being ' . 
-                           'set to ' . 
-                           $maxStorageUse . '%.';
+            $clr_ssl_msg = 'There are NO IP restrictions to ' .
+                           'process and apply for CRNRSTN :: Cluster ID [' .
+                           $this->R_data['R_cluster_id'] .
+                           '] and environment key [' .
+                           self::$env_key_hash . '].';
             // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
                          'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
             $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
             $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __METHOD__, 
-                     'code'                    => 200, 
+                     'token'                   => $msg_token,
+                     'token_generation_date'   => $token_generation_date,
+                     'request_type'            => __METHOD__,
+                     'code'                    => 200,
                      'clr_ssl_msg'             => $clr_ssl_msg);
             $this->error_log(
-                   $clr_ssl_msg, 
-                   \LOG_DEBUG, 
-                   \E_NOTICE, 
-                   __LINE__, 
-                   __METHOD__, 
-                   __FILE__, 
+                   $clr_ssl_msg,
+                   \LOG_DEBUG,
+                   \E_NOTICE,
+                   __LINE__,
+                   __METHOD__,
+                   __FILE__,
                    $token);
 
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                Description
-             * LOG_EMERG            => 'system is unusable.'
-             * LOG_ALERT            => 'action must be
-             *                          taken immediately'
-             * LOG_CRIT             => 'critical conditions'
-             * LOG_ERR              => 'error conditions'
-             * LOG_WARNING          => 'warning conditions'
-             * LOG_NOTICE           => 'normal, but
-             *                          significant, condition'
-             * LOG_INFO             => 'informational message'
-             * LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
-
         }
+
+        //
+        // TODO :: THIS IS CHANGING
+        //
+        // INITIALIZE SOAP
+        // AUTHORIZATION PROFILES
+        // FOR THIS ENVIRONMENT.
+        //$this->initSOAPAuthorizationProfiles();
+
+        //
+        // TODO :: THIS IS CHANGING
+        //
+        // INITIALIZE WORDPRESS
+        // CONFIGURATION PROFILE(S)
+        // FOR THIS ENVIRONMENT.
+        //$this->init_wp_config();
+
+        //
+        // TODO :: THIS IS CHANGING
+        //
+        // INITIALIZE ANALYTICS
+        // CONFIGURATION PROFILE(S)
+        // FOR THIS ENVIRONMENT.
+        //$this->init_analytics_config();
+
+        //
+        // TODO :: THIS IS CHANGING
+        //
+        // INITIALIZE ENGAGEMENT
+        // TRACKING CONFIGURATION
+        // PROFILE(S) FOR
+        // THIS ENVIRONMENT.
+        //$this->init_engagement_config();
+
+        //
+        // INITIALIZE INTERACT
+        // UI PROFILE.
+        $this->init_ui_interact_profile();
+
+        //$this->system_output_footer_html(CRNRSTN_SOAP_TUNNEL, true);
+
+        /**
+        DATA HANDLING ARCHITECTURES
+        -----
+        G :: HTTP $_GET REQUEST.
+        P :: HTTP $_POST REQUEST.
+        H :: PHP SERVER SESSION ($_SESSION SUPER GLOBAL ARRAY).
+        S :: CRNRSTN :: SSDTLA PACKET (SOAP WRAPPED ENCRYPTED PSSDTLA PACKET. THE BROWSER WILL TALK LIKE A SERVER).
+        J :: CRNRSTN :: PSSDTLA PACKET (OPENSSL ENCRYPTED JSON OBJECT).
+        C :: CARRIER PIGEON (AVIAN OF HOMING VARIANT)...OR BROWSER COOKIE...
+        D :: DATABASE (MySQLi CONNECTION).
+        R :: RUNTIME.
+        O :: SIMPLE OBJECT ACCESS PROTOCOL (NuSOAP 0.9.5, SOAP 1.1).
+        F :: SERVER LOCAL FILE SYSTEM.
+
+        GPHSJCDROF
+
+        */
+
+        //
+        // INITIALIZE CRNRSTN :: SOAP Services DATA TUNNEL LAYER PACKET - DSJPC
+        // Note: DATABASE DATA STORAGE FORMAT WILL SHADOW/SUPPORT USE OF (S) AND (P)
+        // ON A SESSION TO SESSION BASIS.
+        //$this->init_ssdtla_session_data_packet();
 
     }
 
@@ -1640,7 +990,7 @@ class crnrstn_environment extends crnrstn
         switch($data_type){
             case 'get_channel_system_parameters_ARRAY':
 
-                return self::$R_http->config_load_static_application_data($data_type);
+                return $this->R['http_mgr']->config_load_static_application_data($data_type);
 
             break;
             case 'timezone_syntax_ARRAY':
@@ -1934,86 +1284,6 @@ class crnrstn_environment extends crnrstn
 
     }
 
-    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE :: https://aloneonahill.com/blog/if-php-were-british/
-     * AUTHOR :: https://aloneonahill.com/blog/about-dave/
-     *
-     */
-    /**
-     * R :: Content pending. 
-     *
-     * @param
-     * @return
-     * @access public
-     *
-     */
-    function hello_world($is_bastard = true)
-    {
-
-        try{
-
-            if($is_bastard == true){
-
-                $str = 'Hello World.'; // bastard dialect
-
-            }else{
-
-                $str = 'Good morrow, fellow ' . 
-                       'subjects of the crown.';
-
-            }
-
-            error_log('[lnum ' . __LINE__ . '] ' . 
-                get_class() . ' exception! ' . 
-                $str);
-            throw new Exception('CRNRSTN :: v' . 
-                $this->version_crnrstn() . ' :: ' . 
-                $str . ' This is an exception handling test from ' . 
-                $_SERVER['SERVER_NAME'] . ' (' . 
-                $_SERVER['SERVER_ADDR'] . ').');
-
-            if($this->is_bit_set($this->R_data['int_flag']['CRNRSTN_SCREEN_TEXT']) == true){
-
-                $str .= '<br><br>' . $this->bit_stringout();
-
-            }
-
-            return $str;
-
-        }catch(Exception $e){
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Exception handling performed 
-             * by the Logging Services Layer 
-             * of the CRNRSTN :: Lightsaber 
-             * RoCEv2 SOAP Services 
-             * Layer (CLR-SSL). 
-             *
-             * Allow the CLR-SSL to handle 
-             * this exception per the 
-             * configured logging profile of 
-             * the running application on 
-             * this server. 
-             *
-             *
-             * 5
-             *
-             * Sunday, June 30, 2024 @ 1542 hrs.
-             * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
-             *
-             */
-            $this->catch_exception(
-                   $e, 
-                   LOG_ERR, 
-                   __METHOD__, 
-                   __NAMESPACE__);
-
-            return false;
-
-        }
-
-    }
-
     /**
      * R :: Content pending. 
      *
@@ -2187,24 +1457,10 @@ class crnrstn_environment extends crnrstn
      * @access public
      *
      */
-    function system_resource_constants_ARRAY()
-    {
-
-        return $this->system_resource_constants_ARRAY();
-
-    }
-
-    /**
-     * R :: Content pending. 
-     *
-     * @return
-     * @access public
-     *
-     */
     function initialize_http_get_params()
     {
 
-        self::$R_http->initialize_http_get_params();
+        $this->R['http_mgr']->initialize_http_get_params();
 
     }
 
@@ -2230,27 +1486,34 @@ class crnrstn_environment extends crnrstn
     /**
      * R :: Content pending. 
      *
-     * @return
-     * @access public
-     *
-     */
-    function consume_form_integration_packet()
-    {
-
-        return self::$R_http->consume_form_integration_packet();
-
-    }
-
-    /**
-     * R :: Content pending. 
-     *
      * @param
      * @return
      * @access public
      *
      */
-    function client_request_listen($listener_profile)
+    function client_request_listen($listener_profile = 'PSSDTLA')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a default value for the
+         *       client_request_listen method input,
+         *       $listener_profile = 'PSSDTLA' so as
+         *       to align to the use of this method
+         *       by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       client_request_listen($listener_profile)
+         *       must be compatible with
+         *       CRNRSTN\crnrstn::client_request_listen(
+         *       $listener_profile = 'PSSDTLA') in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 1742
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0858 hrs.
+         *
+         */
 
         switch($listener_profile){
             //case CRNRSTN_ASSET_MAPPING:
@@ -2259,20 +1522,10 @@ class crnrstn_environment extends crnrstn
                 //
                 // END OF CRNRSTN :: 
                 // ENVIRONMENTAL CONFIG 
-                // OPERATION. 
-                $this->oLog_output_ARRAY[] = $this->error_log('You have reached the end ' . 
-                                                    'of the CRNRSTN :: environmental ' . 
-                                                    'detection and configuration process.', 
-                                                    __LINE__, 
-                                                    __METHOD__, 
-                                                    __FILE__, 
-                                                    $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                // OPERATION.
+                $clr_ssl_msg = 'You have reached the end ' .
+                               'of the CRNRSTN :: environmental ' .
+                               'detection and configuration process.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -2292,134 +1545,8 @@ class crnrstn_environment extends crnrstn
                        __FILE__, 
                        $token);
 
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                          taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                          significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-                $this->oLog_output_ARRAY[] = $this->error_log('CRNRSTN :: is now ' . 
-                                                    'listening for requests.', 
-                                                    __LINE__, 
-                                                    __METHOD__, 
-                                                    __FILE__, 
-                                                    $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'CRNRSTN :: is now ' .
+                               'listening for requests.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -2439,136 +1566,12 @@ class crnrstn_environment extends crnrstn
                        __FILE__, 
                        $token);
 
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-                error_log('[lnum ' . 
-                    __LINE__ . 
-                    '] [mthd ' . 
-                    __METHOD__ . '] calling self::$R_http->' . 
-                    'client_request_listen(' . 
-                    $listener_profile . 
-                    ').');
-
-                return self::$R_http->client_request_listen($listener_profile);
+                return $this->R['http_mgr']->client_request_listen($listener_profile);
 
             break;
             case 'RRS_MAP':
 
-                return self::$R_http->client_request_listen($listener_profile);
+                return $this->R['http_mgr']->client_request_listen($listener_profile);
 
             break;
             case 'SSDTLA':
@@ -2579,13 +1582,9 @@ class crnrstn_environment extends crnrstn
                 // END OF CRNRSTN :: 
                 // ENVIRONMENTAL CONFIG 
                 // OPERATION.
-                $this->oLog_output_ARRAY[] = $this->error_log('You have reached the end of the CRNRSTN :: environmental detection and configuration process.', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'You have reached the end ' .
+                               'of the CRNRSTN :: environmental ' .
+                               'detection and configuration process.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -2605,130 +1604,7 @@ class crnrstn_environment extends crnrstn
                        __FILE__, 
                        $token);
 
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-
-                $this->oLog_output_ARRAY[] = $this->error_log('CRNRSTN :: is now listening for requests.', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'CRNRSTN :: is now listening for requests.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -2748,127 +1624,7 @@ class crnrstn_environment extends crnrstn
                        __FILE__, 
                        $token);
 
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-
-                //error_log('[lnum ' . __LINE__ . 
-                //    '] [mthd ' . __METHOD__ . '] env calling self::$R_http->' . 
-                //    'client_request_listen.');
-                return self::$R_http->client_request_listen($listener_profile);
+                return $this->R['http_mgr']->client_request_listen($listener_profile);
 
             break;
 
@@ -2888,7 +1644,7 @@ class crnrstn_environment extends crnrstn
     function isset_crnrstn_services_http()
     {
 
-        return self::$R_http->isset_crnrstn_services_http();
+        return $this->R['http_mgr']->isset_crnrstn_services_http();
 
     }
 
@@ -3140,21 +1896,11 @@ class crnrstn_environment extends crnrstn
             break;
             default:
 
-                $this->error_log('The requested UI content ' . 
-                       'module...honoring the provided ' . 
-                       'integer constant, "' . 
-                       $integer_constant . 
-                       '", could not be found.', 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $this->R_data['int_flag']['CRNRSTN_BARNEY']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'The requested UI content ' .
+                               'module...honoring the provided ' .
+                               'integer constant, "' .
+                               $integer_constant .
+                               '", could not be found.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -3173,123 +1919,6 @@ class crnrstn_environment extends crnrstn
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
                 return '';
 
@@ -4645,20 +3274,9 @@ requirements related to returning the content for this request.
         $tmp_str_out_HTML = '';
         $tmp_str_out_TEXT = '';
 
-        $this->error_log('SOCIAL MEDIA META ' . 
-               'PERFORMANCE REPORTING READY ' . 
-               'FOR 1ST PASS LOGIC REVIEW.', 
-               __LINE__, 
-               __METHOD__, 
-               __FILE__, 
-               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-
-        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                       'ANY destination LOCAL (note FTP is not ' . 
-                       'monitored) directory for this ' . 
-                       'CRNRSTN :: Electrum process is being ' . 
-                       'set to ' . 
-                       $maxStorageUse . '%.';
+        $clr_ssl_msg = 'Social media meta ' .
+                       'performance reporting is ready ' .
+                       'for 1st pass logic review.';
         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -4677,123 +3295,6 @@ requirements related to returning the content for this request.
                __METHOD__, 
                __FILE__, 
                $token);
-
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * $this->error_log_clear($msg_token);
-         *
-         * $this->error_log(
-         *        $clr_ssl_msg, 
-         *        \LOG_ERR, 
-         *        \E_ERROR, 
-         *        __LINE__, 
-         *        __METHOD__, 
-         *        __FILE__, 
-         *        $token, 
-         *        true, 
-         *        'R_channel_SESSION');
-         *
-         * Syslog Levels:
-         * Constant                Description
-         * LOG_EMERG            => 'system is unusable.'
-         * LOG_ALERT            => 'action must be
-         *                          taken immediately'
-         * LOG_CRIT             => 'critical conditions'
-         * LOG_ERR              => 'error conditions'
-         * LOG_WARNING          => 'warning conditions'
-         * LOG_NOTICE           => 'normal, but
-         *                          significant, condition'
-         * LOG_INFO             => 'informational message'
-         * LOG_DEBUG            => 'debug-level message'
-         *
-         * Error Reporting:
-         * Value   Constant                     Description Note
-         * 1       \E_ERROR (int)               Fatal run-time errors. 
-         *                                      These indicate errors that 
-         *                                      can not be recovered from, 
-         *                                      such as a memory allocation 
-         *                                      problem. Execution of the 
-         *                                      script is halted.
-         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-         *                                      errors). Execution of the 
-         *                                      script is not halted.
-         * 4       \E_PARSE (int)               Compile-time parse errors. 
-         *                                      Parse errors should only be 
-         *                                      generated by the parser.
-         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-         *                                      that the script encountered 
-         *                                      something that could 
-         *                                      indicate an error, but 
-         *                                      could also happen in the 
-         *                                      normal course of running 
-         *                                      a script.
-         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like an 
-         *                                      E_ERROR, except it is 
-         *                                      generated by the core 
-         *                                      of PHP.
-         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-         *                                      errors) that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like 
-         *                                      an E_WARNING, except it 
-         *                                      is generated by the 
-         *                                      core of PHP.
-         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-         *                                      This is like an E_ERROR, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-         *                                      (non-fatal errors). This 
-         *                                      is like an E_WARNING, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 256     \E_USER_ERROR (int)          User-generated error 
-         *                                      message. This is like 
-         *                                      an E_ERROR, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 512     \E_USER_WARNING (int)        User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_WARNING, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-         *                                      message. This is like an 
-         *                                      E_NOTICE, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-         *                                      changes to your code which 
-         *                                      will ensure the best 
-         *                                      interoperability and forward 
-         *                                      compatibility of your code.
-         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-         *                                      It indicates that a probably 
-         *                                      dangerous error occurred, 
-         *                                      but did not leave the Engine 
-         *                                      in an unstable state. If the 
-         *                                      error is not caught by a user 
-         *                                      defined handle (see also 
-         *                                      set_error_handler()), the 
-         *                                      application aborts as it was 
-         *                                      an E_ERROR.
-         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-         *                                      this to receive warnings 
-         *                                      about code that will not work 
-         *                                      in future versions.
-         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_DEPRECATED, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 32767   \E_ALL (int)                 All errors, warnings, 
-         *                                      and notices.
-         */
 
         $tmp_data_type_family = 'CRNRSTN::RESOURCE::GENERAL_SETTINGS::META';
         $tmp_meta_cnt = $this->get_resource_count('HTML_HEAD_CRNRSTN_META', $tmp_data_type_family);
@@ -5333,23 +3834,6 @@ requirements related to returning the content for this request.
 
     }
 
-    /* Deleted return_oCRNRSTN_USR() method.
-     * 5 :: Sunday, July 26, 2026 @ 2024 hrs.
-     *
-     * @return
-     * @access public
-     *
-     *
-    function return_oCRNRSTN_USR()
-    {
-
-        //return $this->R['kivotos']->R['usr'];
-        return $this->R['kivotos']->R['usr'];
-
-    }
-
-    */
-
     /**
      * R :: Content pending. 
      *
@@ -5360,7 +3844,7 @@ requirements related to returning the content for this request.
     function ssdtla_enabled()
     {
 
-        return self::$R_http->ssdtla_enabled();
+        return $this->R['http_mgr']->ssdtla_enabled();
 
     }
 
@@ -5379,12 +3863,42 @@ requirements related to returning the content for this request.
      */
     function add_ssdtla_resource(
              $data_key, 
-             $data_value, 
-             $data_type_family, 
-             $data_authorization_profile, 
-             $index, 
-             $ttl)
+             $data_value,
+             $data_type_family = 'CRNRSTN::RESOURCE',
+             $data_authorization_profile = NULL,
+             $index = NULL,
+             $ttl = NULL,
+             $spool_resource = false)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added the $spool_resource = false
+         *       input to the add_ssdtla_resource
+         *       method and set defaults for
+         *       $data_type_family = 'CRNRSTN::RESOURCE',
+         *       $data_authorization_profile = NULL,
+         *       $index = NULL, and $ttl = NULL,
+         *       so as to align to the use of this
+         *       method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       add_ssdtla_resource($data_key, $data_value,
+         *       $data_type_family, $data_authorization_profile,
+         *       $index, $ttl) must be compatible with
+         *       CRNRSTN\crnrstn::add_ssdtla_resource($data_key,
+         *       $data_value, $data_type_family =
+         *       'CRNRSTN::R...',
+         *       $data_authorization_profile = null,
+         *       $index = null, $ttl = null,
+         *       $spool_resource = false) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 4032
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0951 hrs.
+         *
+         */
 
         switch($data_authorization_profile){
             case $this->R_data['int_flag']['R_authorize'] & 
@@ -5399,7 +3913,8 @@ requirements related to returning the content for this request.
                                      $data_type_family, 
                                      $data_authorization_profile, 
                                      $index, 
-                                     $ttl);
+                                     $ttl,
+                                     $spool_resource);
 
             break;
             case $this->R_data['int_flag']['R_authorize_all']:
@@ -5417,7 +3932,8 @@ requirements related to returning the content for this request.
                                      $data_type_family, 
                                      $data_authorization_profile, 
                                      $index, 
-                                     $ttl);
+                                     $ttl,
+                                     $spool_resource);
 
                 //
                 // BASIC RUNTIME 
@@ -5626,12 +4142,34 @@ requirements related to returning the content for this request.
      */
     function return_client_header_value(
              $header_attribute, 
-             $index)
+             $index = 0)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added return_client_header_value
+         *       method input parameter default
+         *       value $index = 0 so as
+         *       to align to the
+         *       use of this method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       return_client_header_value(
+         *       $header_attribute, $index) must be
+         *       compatible with CRNRSTN\crnrstn::
+         *       return_client_header_value(
+         *       $header_attribute, $index = 0) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 4279
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0932 hrs.
+         *
+         */
 
-        return self::$R_http->return_client_header_value(
-                              $header_attribute, 
-                              $index);
+        return $this->R['http_mgr']->return_client_header_value(
+                                     $header_attribute,
+                                     $index);
 
     }
 
@@ -5648,7 +4186,7 @@ requirements related to returning the content for this request.
 
         if(is_array($transport_protocol)){
 
-            return self::$R_http->issetHTTP($transport_protocol);
+            return $this->R['http_mgr']->issetHTTP($transport_protocol);
 
         }
 
@@ -5670,7 +4208,7 @@ requirements related to returning the content for this request.
 
         }
 
-        return self::$R_http->issetHTTP($super_global);
+        return $this->R['http_mgr']->issetHTTP($super_global);
 
     }
 
@@ -5815,13 +4353,25 @@ requirements related to returning the content for this request.
 
                 }else{
 
-                    error_log('[lnum ' . 
-                        __LINE__ . ']' . 
-                        ' [mthd ' . 
-                        __METHOD__ . 
-                        '] NOT A WP CONFIG FILE [' . 
-                        $wp_config_file_path . 
-                        ']');
+                    $clr_ssl_msg = 'Not a WordPress config file.';
+                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                        'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                        'token'                   => $msg_token,
+                        'token_generation_date'   => $token_generation_date,
+                        'request_type'            => __METHOD__,
+                        'code'                    => 200,
+                        'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                        $clr_ssl_msg,
+                        \LOG_DEBUG,
+                        \E_NOTICE,
+                        __LINE__,
+                        __METHOD__,
+                        __FILE__,
+                        $token);
 
                 }
 
@@ -5841,24 +4391,13 @@ requirements related to returning the content for this request.
 
                         //
                         // EXTRACT PROFILE 
-                        // FROM FILE. 
-                        $this->oLog_output_ARRAY[] = $this->error_log('We have a file to include ' . 
-                                                            'and process for the initialization ' . 
-                                                            'of WordPress profiles authorized to ' . 
-                                                            'connect to CRNRSTN :: [' . 
-                                                            $this->soap_permissions_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] . 
-                                                            '].', 
-                                                            __LINE__, 
-                                                            __METHOD__, 
-                                                            __FILE__, 
-                                                            $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
+                        // FROM FILE.
+                        $clr_ssl_msg = 'We have a file to include ' .
+                                       'and process for the initialization ' .
+                                       'of WordPress profiles authorized to ' .
+                                       'connect to CRNRSTN :: [' .
+                                       $this->soap_permissions_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] .
+                                       '].';
                         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -5878,136 +4417,31 @@ requirements related to returning the content for this request.
                                __FILE__, 
                                $token);
 
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                Description
-                         * LOG_EMERG            => 'system is unusable.'
-                         * LOG_ALERT            => 'action must be
-                         *                          taken immediately'
-                         * LOG_CRIT             => 'critical conditions'
-                         * LOG_ERR              => 'error conditions'
-                         * LOG_WARNING          => 'warning conditions'
-                         * LOG_NOTICE           => 'normal, but
-                         *                          significant, condition'
-                         * LOG_INFO             => 'informational message'
-                         * LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
-
                         include_once($wp_config_file_path);
 
                         $this->oCRNRSTN_WCR_ARRAY[$this->R_data['R_cluster_id']][$this->R_data['int_flag']['CRNRSTN_LOG_ALL']][] = $oCRNRSTN_oWCR_ARRAY;
 
                     }else{
 
-                        error_log('[lnum ' . 
-                            __LINE__ . ']' . 
-                            ' [mthd ' . 
-                            __METHOD__ . 
-                            '] NOT A WP CONFIG FILE [' . 
-                            $wp_config_file_path . 
-                            ']');
+                        $clr_ssl_msg = 'Not a WordPress config file.';
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                            'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                            'token'                   => $msg_token,
+                            'token_generation_date'   => $token_generation_date,
+                            'request_type'            => __METHOD__,
+                            'code'                    => 200,
+                            'clr_ssl_msg'             => $clr_ssl_msg);
+                        $this->error_log(
+                            $clr_ssl_msg,
+                            \LOG_DEBUG,
+                            \E_NOTICE,
+                            __LINE__,
+                            __METHOD__,
+                            __FILE__,
+                            $token);
 
                     }
 
@@ -6015,18 +4449,7 @@ requirements related to returning the content for this request.
 
             }else{
 
-                error_log('[lnum ' . 
-                    __LINE__ . ']' .
-                    ' [mthd ' . 
-                    __METHOD__ . 
-                    '] NO WP CONFIG.');
-
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'NO WordPress config.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -6045,123 +4468,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
             }
 
@@ -6191,25 +4497,14 @@ requirements related to returning the content for this request.
 
                     //
                     // EXTRACT PROFILE 
-                    // FROM FILE. 
-                    $this->oLog_output_ARRAY[] = $this->error_log('We have a file to ' . 
-                                                        'include and process for the ' . 
-                                                        'initialization of analytics ' . 
-                                                        'SEO profiles from the ' . 
-                                                        'CRNRSTN :: configuration file [' . 
-                                                        $this->analytics_config_file_path_ARRAY[$this->R_data['R_cluster_id']][$this->hash($this->R_data['int_flag']['CRNRSTN_RESOURCE_ALL'])][$key] . 
-                                                        '].', 
-                                                        __LINE__, 
-                                                        __METHOD__, 
-                                                        __FILE__, 
-                                                        $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+                    // FROM FILE.
+                    $clr_ssl_msg = 'We have a file to ' .
+                                   'include and process for the ' .
+                                   'initialization of analytics ' .
+                                   'SEO profiles from the ' .
+                                   'CRNRSTN :: configuration file [' .
+                                   $this->analytics_config_file_path_ARRAY[$this->R_data['R_cluster_id']][$this->hash($this->R_data['int_flag']['CRNRSTN_RESOURCE_ALL'])][$key] .
+                                   '].';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -6228,124 +4523,6 @@ requirements related to returning the content for this request.
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
-
 
                     include_once($analytics_config_file_path);
 
@@ -6380,23 +4557,13 @@ requirements related to returning the content for this request.
 
                         //
                         // EXTRACT PROFILE 
-                        // FROM FILE. 
-                        $this->oLog_output_ARRAY[] = $this->error_log('We have a file to include ' . 
-                                                            'and process for the initialization ' . 
-                                                            'of analytics SEO profiles from the ' . 
-                                                            'CRNRSTN :: configuration file [' . 
-                                                            $this->analytics_config_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] . 
-                                                            '].', 
-                                                            __LINE__, 
-                                                            __METHOD__, 
-                                                            __FILE__, 
-                                                            $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
+                        // FROM FILE.
+                        $clr_ssl_msg = 'We have a file to include ' .
+                                       'and process for the initialization ' .
+                                       'of analytics SEO profiles from the ' .
+                                       'CRNRSTN :: configuration file [' .
+                                       $this->analytics_config_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] .
+                                       '].';
                         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -6415,123 +4582,6 @@ requirements related to returning the content for this request.
                                __METHOD__, 
                                __FILE__, 
                                $token);
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                 Description
-                         * \LOG_EMERG            => 'system is unusable.'
-                         * \LOG_ALERT            => 'action must be
-                         *                           taken immediately'
-                         * \LOG_CRIT             => 'critical conditions'
-                         * \LOG_ERR              => 'error conditions'
-                         * \LOG_WARNING          => 'warning conditions'
-                         * \LOG_NOTICE           => 'normal, but
-                         *                           significant, condition'
-                         * \LOG_INFO             => 'informational message'
-                         * \LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
 
                         include_once($analytics_config_file_path);
 
@@ -6539,18 +4589,10 @@ requirements related to returning the content for this request.
 
                     }else{
 
-                        error_log(__LINE__ . 
-                            ' env NOT AN ANALYTICS ' . 
-                            'SEO CONFIG FILE [' . 
-                            $analytics_config_file_path . 
-                            '].');
-
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
+                        $clr_ssl_msg = 'Not an analytics ' .
+                                       'SEO config file [' .
+                                       $analytics_config_file_path .
+                                       '].';
                         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -6570,140 +4612,13 @@ requirements related to returning the content for this request.
                                __FILE__, 
                                $token);
 
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                Description
-                         * \LOG_EMERG            => 'system is unusable.'
-                         * \LOG_ALERT            => 'action must be
-                         *                           taken immediately'
-                         * \LOG_CRIT             => 'critical conditions'
-                         * \LOG_ERR              => 'error conditions'
-                         * \LOG_WARNING          => 'warning conditions'
-                         * \LOG_NOTICE           => 'normal, but
-                         *                           significant, condition'
-                         * \LOG_INFO             => 'informational message'
-                         * \LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
-
-
                     }
 
                 }
 
             }else{
 
-                error_log(__LINE__ . 
-                    ' env NO ANALYTICS ' . 
-                    'SEO CONFIGURED.');
-
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'No analytyics SEO configured.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -6722,123 +4637,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
             }
 
@@ -6860,9 +4658,9 @@ requirements related to returning the content for this request.
              $transport_protocol = NULL)
     {
 
-        return self::$R_http->return_form_submitted_value(
-                              $getpost_input_name, 
-                              $transport_protocol);
+        return $this->R['http_mgr']->return_form_submitted_value(
+                                     $getpost_input_name,
+                                     $transport_protocol);
 
     }
 
@@ -7400,23 +5198,12 @@ requirements related to returning the content for this request.
                      * from file. 
                      *
                      */
-                    $this->oLog_output_ARRAY[] = $this->error_log('We have a file to include ' . 
-                                                        'and process for the initialization ' . 
-                                                        'of engagement tag profiles from the ' . 
-                                                        'CRNRSTN :: configuration file [' . 
-                                                        $this->engagement_config_file_path_ARRAY[$this->R_data['R_cluster_id']][$this->hash($this->R_data['int_flag']['CRNRSTN_RESOURCE_ALL'])][$key] . 
-                                                        '].', 
-                                                        __LINE__, 
-                                                        __METHOD__, 
-                                                        __FILE__, 
-                                                        $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+                    $clr_ssl_msg = 'We have a file to include ' .
+                                   'and process for the initialization ' .
+                                   'of engagement tag profiles from the ' .
+                                   'CRNRSTN :: configuration file [' .
+                                   $this->engagement_config_file_path_ARRAY[$this->R_data['R_cluster_id']][$this->hash($this->R_data['int_flag']['CRNRSTN_RESOURCE_ALL'])][$key] .
+                                   '].';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -7435,123 +5222,6 @@ requirements related to returning the content for this request.
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
 
                     include_once($engagement_config_file_path);
 
@@ -7559,18 +5229,10 @@ requirements related to returning the content for this request.
 
                 }else{
 
-                    error_log(__LINE__ . 
-                        ' env NOT AN ENGAGEMENT ' . 
-                        'TRACKING CONFIG FILE [' . 
-                        $engagement_config_file_path . 
-                        '].');
-
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+                    $clr_ssl_msg = 'NOT AN ENGAGEMENT ' .
+                                   'TRACKING CONFIG FILE [' .
+                                   $engagement_config_file_path .
+                                   '].';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -7589,124 +5251,6 @@ requirements related to returning the content for this request.
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
-
 
                 }
 
@@ -7730,23 +5274,13 @@ requirements related to returning the content for this request.
                          * from file. 
                          *
                          */
-                        $this->oLog_output_ARRAY[] = $this->error_log('We have a file to ' . 
-                                                            'include and process for the ' . 
-                                                            'initialization of engagement ' . 
-                                                            'tag profiles from the CRNRSTN :: ' . 
-                                                            'configuration file [' . 
-                                                            $this->engagement_config_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] . 
-                                                            '].', 
-                                                            __LINE__, 
-                                                            __METHOD__, 
-                                                            __FILE__, 
-                                                            $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
+                        $clr_ssl_msg = 'We have a file to ' .
+                                       'include and process for the ' .
+                                       'initialization of engagement ' .
+                                       'tag profiles from the CRNRSTN :: ' .
+                                       'configuration file [' .
+                                       $this->engagement_config_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] .
+                                       '].';
                         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -7765,124 +5299,6 @@ requirements related to returning the content for this request.
                                __METHOD__, 
                                __FILE__, 
                                $token);
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                 Description
-                         * \LOG_EMERG            => 'system is unusable.'
-                         * \LOG_ALERT            => 'action must be
-                         *                           taken immediately'
-                         * \LOG_CRIT             => 'critical conditions'
-                         * \LOG_ERR              => 'error conditions'
-                         * \LOG_WARNING          => 'warning conditions'
-                         * \LOG_NOTICE           => 'normal, but
-                         *                           significant, condition'
-                         * \LOG_INFO             => 'informational message'
-                         * \LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
-
 
                         include_once($engagement_config_file_path);
 
@@ -7936,13 +5352,13 @@ requirements related to returning the content for this request.
                      * from file. 
                      *
                      */
-                    $this->oLog_output_ARRAY[] = $this->error_log('We have a file to include and process for the initialization of endpoint profiles authorized to connect to the CRNRSTN :: SOAP Services layer [' . $this->soap_permissions_file_path_ARRAY[$this->R_data['R_cluster_id']][$this->hash($this->R_data['int_flag']['CRNRSTN_RESOURCE_ALL'])][$key] . '].', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+                    $clr_ssl_msg = 'We have a file to include ' .
+                                   'and process for the initialization ' .
+                                   'of endpoint profiles authorized to ' .
+                                   'connect to the CRNRSTN :: SOAP ' .
+                                   'Services layer [' .
+                                   $this->soap_permissions_file_path_ARRAY[$this->R_data['R_cluster_id']][$this->hash($this->R_data['int_flag']['CRNRSTN_RESOURCE_ALL'])][$key] .
+                                   '].';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -7961,123 +5377,6 @@ requirements related to returning the content for this request.
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
 
                     //include_once($this->soap_permissions_file_path_ARRAY[$this->hash($this->R_data['R_cluster_id'])][self::$env_key_hash][$key]);
                     include_once($soap_config_file_path);
@@ -8110,23 +5409,13 @@ requirements related to returning the content for this request.
                          * from file. 
                          *
                          */
-                        $this->oLog_output_ARRAY[] = $this->error_log('We have a file to include ' . 
-                                                            'and process for the initialization ' . 
-                                                            'of endpoint profiles authorized to ' . 
-                                                            'connect to the CRNRSTN :: SOAP ' . 
-                                                            'Services layer [' . 
-                                                            $this->soap_permissions_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] . 
-                                                            '].', 
-                                                            __LINE__, 
-                                                            __METHOD__, 
-                                                            __FILE__, 
-                                                            CRNRSTN_SETTINGS_CRNRSTN);
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
+                        $clr_ssl_msg = 'We have a file to include ' .
+                                       'and process for the initialization ' .
+                                       'of endpoint profiles authorized to ' .
+                                       'connect to the CRNRSTN :: SOAP ' .
+                                       'Services layer [' .
+                                       $this->soap_permissions_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key] .
+                                       '].';
                         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -8145,123 +5434,6 @@ requirements related to returning the content for this request.
                                __METHOD__, 
                                __FILE__, 
                                $token);
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                 Description
-                         * \LOG_EMERG            => 'system is unusable.'
-                         * \LOG_ALERT            => 'action must be
-                         *                           taken immediately'
-                         * \LOG_CRIT             => 'critical conditions'
-                         * \LOG_ERR              => 'error conditions'
-                         * \LOG_WARNING          => 'warning conditions'
-                         * \LOG_NOTICE           => 'normal, but
-                         *                           significant, condition'
-                         * \LOG_INFO             => 'informational message'
-                         * \LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
 
                         //include_once($this->soap_permissions_file_path_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash][$key]);
                         include_once($soap_config_file_path);
@@ -8939,22 +6111,12 @@ requirements related to returning the content for this request.
                      * $this->initialize_bit($int_const_profile, true);
                      *
                      */
-                    $this->error_log('CRNRSTN :: LOGGING PROFILE [' . 
-                           strval($int_const_profile) . 
-                           '] INIT BY-PASS FIRED - CRNRSTN ' . 
-                           'ICY_BITMASK LOG PROFILE INITIALIZATION. ' . 
-                           __METHOD__ . ' called. [rtime ' . 
-                           $this->wall_time() . ' secs]', 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+
+                    $clr_ssl_msg = 'CRNRSTN :: Logging profile [' .
+                                   \strval($int_const_profile) .
+                                   '] Initialization by-pass fired - CRNRSTN ' .
+                                   'ICY_BITMASK log profile initialization. ' .
+                                   __METHOD__ . ' called.';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -8974,274 +6136,31 @@ requirements related to returning the content for this request.
                            __FILE__, 
                            $token);
 
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
-
                 }
 
             }
 
-            error_log('[lnum ' . __LINE__ . 
-                '] [' . __CLASS__ . 
-                '] Re-arch CLR-SSL Logging ' . 
-                'Mgmt. See use of ' . 
-                'sync_to_environment() twice in oENV.');
-
-            $clr_ssl_msg = 'Maximum storage usage at ' . 
-                           'ANY destination LOCAL (note FTP is not ' . 
-                           'monitored) directory for this ' . 
-                           'CRNRSTN :: Electrum process is being ' . 
-                           'set to ' . 
-                           $maxStorageUse . '%.';
+            $clr_ssl_msg = 'TODO :: Re-arch CLR-SSL Logging ' .
+                           'Mgmt. See use of ' .
+                           'sync_to_environment() twice in oENV.';
             // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
                          'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
             $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
             $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __METHOD__, 
-                     'code'                    => 200, 
+                     'token'                   => $msg_token,
+                     'token_generation_date'   => $token_generation_date,
+                     'request_type'            => __METHOD__,
+                     'code'                    => 200,
                      'clr_ssl_msg'             => $clr_ssl_msg);
             $this->error_log(
-                   $clr_ssl_msg, 
-                   \LOG_DEBUG, 
-                   \E_NOTICE, 
-                   __LINE__, 
-                   __METHOD__, 
-                   __FILE__, 
+                   $clr_ssl_msg,
+                   \LOG_DEBUG,
+                   \E_NOTICE,
+                   __LINE__,
+                   __METHOD__,
+                   __FILE__,
                    $token);
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                 Description
-             * \LOG_EMERG            => 'system is unusable.'
-             * \LOG_ALERT            => 'action must be
-             *                           taken immediately'
-             * \LOG_CRIT             => 'critical conditions'
-             * \LOG_ERR              => 'error conditions'
-             * \LOG_WARNING          => 'warning conditions'
-             * \LOG_NOTICE           => 'normal, but
-             *                           significant, condition'
-             * \LOG_INFO             => 'informational message'
-             * \LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
 
             //
             // NOW THAT WE HAVE 
@@ -9263,190 +6182,16 @@ requirements related to returning the content for this request.
      * @access private
      *
      */
-    private function initRuntimeConfig()
-    {
-
-        //$this->oSESSION_MGR->oCRNRSTN_SESSION_DDO->add(
-        //                                           self::$env_key_hash, 
-        //                                           'CRNRSTN_' . $this->R_data['R_cluster_id'] . 'CRNRSTN_ENV_KEY_CRC');
-
-        //
-        // INITIALIZE CONFIG 
-        // AND ENV KEYS. 
-        //$_SESSION['R_cluster_id'] = $this->R_data['R_cluster_id'];  # MOVED TO CRNRSTN __construct() @ ~line 105
-        //$_SESSION['CRNRSTN_' . $this->R_data['R_cluster_id']]['CRNRSTN_ENV_KEY_CRC'] = self::$env_key_hash;
-        $clr_ssl_msg = 'Initialize session[' . 
-                       session_id() . 
-                       '] with CRNRSTN :: Cluster ID [' . 
-                       $this->R_data['R_cluster_id'] . 
-                       '] and environmental resource key [' . 
-                       self::$env_key_hash . 
-                       '].';
-        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-        $token = array(
-                 'token'                   => $msg_token, 
-                 'token_generation_date'   => $token_generation_date, 
-                 'request_type'            => __METHOD__, 
-                 'code'                    => 200, 
-                 'clr_ssl_msg'             => $clr_ssl_msg);
-        $this->error_log(
-               $clr_ssl_msg, 
-               \LOG_DEBUG, 
-               \E_NOTICE, 
-               __LINE__, 
-               __METHOD__, 
-               __FILE__, 
-               $token);
-
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * $this->error_log_clear($msg_token);
-         *
-         * $this->error_log(
-         *        $clr_ssl_msg, 
-         *        \LOG_ERR, 
-         *        \E_ERROR, 
-         *        __LINE__, 
-         *        __METHOD__, 
-         *        __FILE__, 
-         *        $token, 
-         *        true, 
-         *        'R_channel_SESSION');
-         *
-         * Syslog Levels:
-         * Constant                 Description
-         * \LOG_EMERG            => 'system is unusable.'
-         * \LOG_ALERT            => 'action must be
-         *                           taken immediately'
-         * \LOG_CRIT             => 'critical conditions'
-         * \LOG_ERR              => 'error conditions'
-         * \LOG_WARNING          => 'warning conditions'
-         * \LOG_NOTICE           => 'normal, but
-         *                           significant, condition'
-         * \LOG_INFO             => 'informational message'
-         * \LOG_DEBUG            => 'debug-level message'
-         *
-         * Error Reporting:
-         * Value   Constant                     Description Note
-         * 1       \E_ERROR (int)               Fatal run-time errors. 
-         *                                      These indicate errors that 
-         *                                      can not be recovered from, 
-         *                                      such as a memory allocation 
-         *                                      problem. Execution of the 
-         *                                      script is halted.
-         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-         *                                      errors). Execution of the 
-         *                                      script is not halted.
-         * 4       \E_PARSE (int)               Compile-time parse errors. 
-         *                                      Parse errors should only be 
-         *                                      generated by the parser.
-         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-         *                                      that the script encountered 
-         *                                      something that could 
-         *                                      indicate an error, but 
-         *                                      could also happen in the 
-         *                                      normal course of running 
-         *                                      a script.
-         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like an 
-         *                                      E_ERROR, except it is 
-         *                                      generated by the core 
-         *                                      of PHP.
-         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-         *                                      errors) that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like 
-         *                                      an E_WARNING, except it 
-         *                                      is generated by the 
-         *                                      core of PHP.
-         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-         *                                      This is like an E_ERROR, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-         *                                      (non-fatal errors). This 
-         *                                      is like an E_WARNING, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 256     \E_USER_ERROR (int)          User-generated error 
-         *                                      message. This is like 
-         *                                      an E_ERROR, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 512     \E_USER_WARNING (int)        User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_WARNING, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-         *                                      message. This is like an 
-         *                                      E_NOTICE, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-         *                                      changes to your code which 
-         *                                      will ensure the best 
-         *                                      interoperability and forward 
-         *                                      compatibility of your code.
-         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-         *                                      It indicates that a probably 
-         *                                      dangerous error occurred, 
-         *                                      but did not leave the Engine 
-         *                                      in an unstable state. If the 
-         *                                      error is not caught by a user 
-         *                                      defined handle (see also 
-         *                                      set_error_handler()), the 
-         *                                      application aborts as it was 
-         *                                      an E_ERROR.
-         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-         *                                      this to receive warnings 
-         *                                      about code that will not work 
-         *                                      in future versions.
-         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_DEPRECATED, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 32767   \E_ALL (int)                 All errors, warnings, 
-         *                                      and notices.
-         */
-
-    }
-
-    /**
-     * R :: Content pending. 
-     *
-     * @return
-     * @access private
-     *
-     */
     private function initializeErrorReporting()
     {
 
         if(isset($this->env_err_reporting_profile_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash])){
         //if($this->isset_resource('data_value', 'err_reporting_profile', 'CRNRSTN::RESOURCE::CONFIGURATION') == true){
 
-            $this->oLog_output_ARRAY[] = $this->error_log('Initialize server ' . 
-                                                'error_reporting() to [' . 
-                                                $this->env_err_reporting_profile_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] . 
-                                                '].', 
-                                                __LINE__, 
-                                                __METHOD__, 
-                                                __FILE__, 
-                                                $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-            $clr_ssl_msg = 'Maximum storage usage at ' . 
-                           'ANY destination LOCAL (note FTP is not ' . 
-                           'monitored) directory for this ' . 
-                           'CRNRSTN :: Electrum process is being ' . 
-                           'set to ' . 
-                           $maxStorageUse . '%.';
+            $clr_ssl_msg = 'Initialize server ' .
+                           'error_reporting() to [' .
+                           $this->env_err_reporting_profile_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] .
+                           '].';
             // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
             $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                          'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -9465,123 +6210,6 @@ requirements related to returning the content for this request.
                    __METHOD__, 
                    __FILE__, 
                    $token);
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                Description
-             * LOG_EMERG            => 'system is unusable.'
-             * LOG_ALERT            => 'action must be
-             *                          taken immediately'
-             * LOG_CRIT             => 'critical conditions'
-             * LOG_ERR              => 'error conditions'
-             * LOG_WARNING          => 'warning conditions'
-             * LOG_NOTICE           => 'normal, but
-             *                          significant, condition'
-             * LOG_INFO             => 'informational message'
-             * LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
 
             error_reporting((int) $this->env_err_reporting_profile_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]);
 
@@ -9612,22 +6240,12 @@ requirements related to returning the content for this request.
             //
             // EXTRACT ACCESS-BY-IP 
             // AUTHORIZATION PROFILE 
-            // FROM FILE. 
-            $this->oLog_output_ARRAY[] = $this->error_log('We have a file to include ' . 
-                                                'and process for exclusive access IP ' . 
-                                                'restrictions at [' . 
-                                                $this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] . 
-                                                '].', 
-                                                __LINE__, 
-                                                __METHOD__, 
-                                                __FILE__, 
-                                                $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-            $clr_ssl_msg = 'Maximum storage usage at ' . 
-                           'ANY destination LOCAL (note FTP is not ' . 
-                           'monitored) directory for this ' . 
-                           'CRNRSTN :: Electrum process is being ' . 
-                           'set to ' . 
-                           $maxStorageUse . '%.';
+            // FROM FILE.
+            $clr_ssl_msg = 'We have a file to include ' .
+                           'and process for exclusive access IP ' .
+                           'restrictions at [' .
+                           $this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] .
+                           '].';
             // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
             $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                          'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -9647,123 +6265,6 @@ requirements related to returning the content for this request.
                    __FILE__, 
                    $token);
 
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                 Description
-             * \LOG_EMERG            => 'system is unusable.'
-             * \LOG_ALERT            => 'action must be
-             *                           taken immediately'
-             * \LOG_CRIT             => 'critical conditions'
-             * \LOG_ERR              => 'error conditions'
-             * \LOG_WARNING          => 'warning conditions'
-             * \LOG_NOTICE           => 'normal, but
-             *                           significant, condition'
-             * \LOG_INFO             => 'informational message'
-             * \LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
-
             include_once($this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]);
 
         }else{
@@ -9773,20 +6274,10 @@ requirements related to returning the content for this request.
             // IP DATA TO PROCESS? 
             if($this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] != ''){
 
-                $this->oLog_output_ARRAY[] = $this->error_log('Process grant exclusive ' . 
-                                                    'access IP[' . 
-                                                    $this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] . 
-                                                    '] for this connection.', 
-                                                    __LINE__, 
-                                                    __METHOD__, 
-                                                    __FILE__, 
-                                                    $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'Process grant exclusive ' .
+                               'access IP[' .
+                               $this->grant_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] .
+                               '] for this connection.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -9805,123 +6296,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
                 $this->oCRNRSTN_IPSECURITY_MGR->grantAccessWKey(
                                                 self::$env_key_hash, 
@@ -9948,22 +6322,12 @@ requirements related to returning the content for this request.
             //
             // EXTRACT ACCESS-BY-IP 
             // AUTHORIZATION PROFILE 
-            // FROM FILE. 
-            $this->oLog_output_ARRAY[] = $this->error_log('We have a file to ' . 
-                                                'include and process for deny ' . 
-                                                'access IP restrictions at [' . 
-                                                $this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] . 
-                                                '].', 
-                                                __LINE__, 
-                                                __METHOD__, 
-                                                __FILE__, 
-                                                $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-            $clr_ssl_msg = 'Maximum storage usage at ' . 
-                           'ANY destination LOCAL (note FTP is not ' . 
-                           'monitored) directory for this ' . 
-                           'CRNRSTN :: Electrum process is being ' . 
-                           'set to ' . 
-                           $maxStorageUse . '%.';
+            // FROM FILE.
+            $clr_ssl_msg = 'We have a file to ' .
+                           'include and process for deny ' .
+                           'access IP restrictions at [' .
+                           $this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] .
+                           '].';
             // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
             $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                          'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -9983,142 +6347,15 @@ requirements related to returning the content for this request.
                    __FILE__, 
                    $token);
 
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                 Description
-             * \LOG_EMERG            => 'system is unusable.'
-             * \LOG_ALERT            => 'action must be
-             *                           taken immediately'
-             * \LOG_CRIT             => 'critical conditions'
-             * \LOG_ERR              => 'error conditions'
-             * \LOG_WARNING          => 'warning conditions'
-             * \LOG_NOTICE           => 'normal, but
-             *                           significant, condition'
-             * \LOG_INFO             => 'informational message'
-             * \LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
-
             include_once($this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]);
 
         }else{
 
             if($this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] != ''){
 
-                $this->oLog_output_ARRAY[] = $this->error_log('Process deny access IP[' . 
-                                                    $this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] . 
-                                                    '] for this connection.', 
-                                                    __LINE__, 
-                                                    __METHOD__, 
-                                                    __FILE__, 
-                                                    $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'Process deny access IP[' .
+                               $this->deny_accessIP_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash] .
+                               '] for this connection.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -10137,123 +6374,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
                 $this->oCRNRSTN_IPSECURITY_MGR->denyAccessWKey(
                                                 self::$env_key_hash, 
@@ -10496,22 +6616,13 @@ requirements related to returning the content for this request.
                     // RETRIEVE DATA.
                     // self::$oCRNRSTN_CONFIG_MGR->input_data_value($encrypt_cipher, 'encrypt_cipher','CRNRSTN::RESOURCE::TUNNEL_ENCRYPTION',NULL, 'R_channel_RUNTIME', $env_key);
                     $data_type_family = 'CRNRSTN::RESOURCE::TUNNEL_ENCRYPTION';
-                    $this->error_log('Unknown encryption channel ' . 
-                           'constant provided to ' . 
-                           __METHOD__ .
-                           '. A base-line Tunnel ' . 
-                           'encryption profile ' . 
-                           'has been applied.', 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           'CRNRSTN_SETTINGS_CRNRSTN');
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+
+                    $clr_ssl_msg = 'Unknown encryption channel ' .
+                                   'constant provided to ' .
+                                   __METHOD__ .
+                                   '. A base-line Tunnel ' .
+                                   'encryption profile ' .
+                                   'has been applied.';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -10530,132 +6641,6 @@ requirements related to returning the content for this request.
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
-
-                    error_log(
-                        __LINE__ . ' ' . 
-                        __METHOD__ . 
-                        ' Unknown encryption channel ' . 
-                        'constant provided to ' . 
-                        __FUNCTION__ . 
-                        '. Tunnel encryption profile ' . 
-                        'has been applied.');
 
                 break;
 
@@ -10795,123 +6780,6 @@ requirements related to returning the content for this request.
                        __FILE__, 
                        $token);
 
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-
                 return $data;
 
             }
@@ -11017,13 +6885,11 @@ requirements related to returning the content for this request.
                     // RETRIEVE DATA
                     // self::$oCRNRSTN_CONFIG_MGR->input_data_value($encrypt_cipher, 'encrypt_cipher','CRNRSTN::RESOURCE::TUNNEL_ENCRYPTION', NULL, 'R_channel_RUNTIME', $env_key);
                     $data_type_family = 'CRNRSTN::RESOURCE::TUNNEL_ENCRYPTION';
-                    $this->error_log('Unknown decryption channel constant provided to ' . __METHOD__ .'. Tunnel encryption profile has been applied.', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+
+                    $clr_ssl_msg = 'Unknown decryption channel ' .
+                                   'constant provided to ' .
+                                   __METHOD__ . '. Tunnel encryption ' .
+                                   'profile has been applied.';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -11042,123 +6908,6 @@ requirements related to returning the content for this request.
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
 
                 break;
 
@@ -11269,13 +7018,10 @@ requirements related to returning the content for this request.
                 $tmp_param_err_str_ARRAY = $this->return_regression_stripe_ARRAY('MISSING_STRING_DATA', $tmp_stripe_key_ARRAY, $secret_key, $cipher, $hmac_algorithm);
 
                 $tmp_param_missing_str = $tmp_param_err_str_ARRAY['string'];
-                $this->error_log('Decryption of data aborted due to missing of parameters. ' . $tmp_param_missing_str, __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+
+                $clr_ssl_msg = 'Decryption of data aborted due ' .
+                               'to missing of parameters. ' .
+                               $tmp_param_missing_str;
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -11295,127 +7041,7 @@ requirements related to returning the content for this request.
                        __FILE__, 
                        $token);
 
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-
-//                die();
-
-                //
-                // NO ENCRYPTION. RETURN VAL
+                // No encryption. Return value.
                 return $data;
 
             }
@@ -11753,21 +7379,12 @@ requirements related to returning the content for this request.
                 //                             'R_channel_RUNTIME', 
                 //                             $env_key);
                 $data_type_family = 'CRNRSTN::RESOURCE::TUNNEL_ENCRYPTION';
-                $this->error_log('Unknown encryption channel ' . 
-                       'constant provided to ' . 
-                       __METHOD__ . 
-                       '. Tunnel encryption ' . 
-                       'profile has been applied.', 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+
+                $clr_ssl_msg = 'Unknown encryption channel ' .
+                               'constant provided to ' .
+                               __METHOD__ .
+                               '. Tunnel encryption ' .
+                               'profile has been applied.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -11786,124 +7403,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-
 
             break;
 
@@ -12187,21 +7686,12 @@ requirements related to returning the content for this request.
                 //                             'R_channel_RUNTIME', 
                 //                             $env_key);
                 $data_type_family = 'CRNRSTN::RESOURCE::TUNNEL_ENCRYPTION';
-                $this->error_log('Unknown encryption channel ' . 
-                       'constant provided to ' . 
-                       __METHOD__ .
-                       '. Tunnel encryption ' . 
-                       'profile has been applied.', 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+
+                $clr_ssl_msg = 'Unknown encryption channel ' .
+                               'constant provided to ' .
+                               __METHOD__ .
+                               '. Tunnel encryption ' .
+                               'profile has been applied.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -12220,123 +7710,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
             break;
 
@@ -12463,15 +7836,39 @@ requirements related to returning the content for this request.
      *
      */
     function proper_response_return(
-             $response, 
-             $header_options_array, 
-             $crnrstn_response_profile_key)
+             $response = NULL,
+             $header_options_array = NULL,
+             $crnrstn_response_profile_key = NULL)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added proper_response_return
+         *       method input parameter defaults,
+         *       $response = NULL,
+         *       $header_options_array = NULL, and
+         *       $crnrstn_response_profile_key = NULL
+         *       so as to align to the use of this
+         *       method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       system_base64_synchronize(
+         *       $data_key = null) must be compatible
+         *       with CRNRSTN\crnrstn::
+         *       system_base64_synchronize(
+         *       $data_key = null, $img_batch_size = 5) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 9980
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0947 hrs.
+         *
+         */
 
-        return self::$R_http->proper_response_return(
-                              $response, 
-                              $header_options_array, 
-                              $crnrstn_response_profile_key);
+        return $this->R['http_mgr']->proper_response_return(
+                                     $response,
+                                     $header_options_array,
+                                     $crnrstn_response_profile_key);
 
     }
 
@@ -12484,10 +7881,28 @@ requirements related to returning the content for this request.
      * @access private
      *
      */
-    private function define_wildcard_resource(
+    private function return_wildcard_resource(
                      $key, 
                      $data_authorization_profile = 'R_channel_RUNTIME')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Renamed the define_wildcard_resource
+         *       method to return_wildcard_resource
+         *       to avoid conflict with our extension
+         *       of crnrstn:
+         *
+         *       Fatal error: Access level to
+         *       CRNRSTN\crnrstn_environment::
+         *       define_wildcard_resource() must be
+         *       public (as in class CRNRSTN\crnrstn) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 8043
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0945 hrs.
+         *
+         */
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Return an instantiation of 
@@ -12532,11 +7947,8 @@ requirements related to returning the content for this request.
 
         }else{
 
-            if(!!$this->wildCardResource_filePath_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash]){
-
+            if(!!$this->wildCardResource_filePath_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash])
                 $this->wildCardResource_filePath = $this->wildCardResource_filePath_ARRAY[$this->R_data['R_cluster_id']][self::$env_key_hash];
-
-            }
 
         }
 
@@ -12546,25 +7958,13 @@ requirements related to returning the content for this request.
 
             if($this->is_file($this->wildCardResource_filePath)){
 
-                //
-                // INITIALIZE WILDCARD 
-                // RESOURCES.
-                $this->oLog_output_ARRAY[] = $this->error_log('Storing initialized ' . 
-                                                    'Wild Card Resources at [' . 
-                                                    $this->wildCardResource_filePath . 
-                                                    '] in memory for this environment [' . 
-                                                    self::$env_key_hash . 
-                                                    '].', 
-                                                    __LINE__, 
-                                                    __METHOD__, 
-                                                    __FILE__, 
-                                                    $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                // Initialize Wildcard Resources.
+                $clr_ssl_msg = 'Storing initialized ' .
+                               'Wild Card Resources at [' .
+                               $this->wildCardResource_filePath .
+                               '] in memory for this environment [' .
+                               self::$env_key_hash .
+                               '].';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -12583,123 +7983,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
                 include_once($this->wildCardResource_filePath);
 
@@ -12776,15 +8059,15 @@ requirements related to returning the content for this request.
         // ENSURE ALL SIGNATURE 
         // HEADERS ARE IN PLACE 
         // AND CONTINUE. 
-        self::$R_http->header_options_add($tmp_crnrstn_signature_headers_ARRAY);
+        $this->R['http_mgr']->header_options_add($tmp_crnrstn_signature_headers_ARRAY);
 
         //
         // ADD PRE-EXISTING HEADER 
         // OPTIONS AFTER DEFAULT 
         // FOR OVERWRITE. 
-        self::$R_http->header_options_add($tmp_curr_headers_ARRAY);
+        $this->R['http_mgr']->header_options_add($tmp_curr_headers_ARRAY);
 
-        self::$R_http->header_options_apply();
+        $this->R['http_mgr']->header_options_apply();
 
         //
         // Source: http://php.net/manual/en/function.http-response-code.php
@@ -12973,58 +8256,6 @@ requirements related to returning the content for this request.
         echo $str;
 
         exit();
-
-    }
-
-    /**
-     * R :: Content pending. 
-     *
-     * @param
-     * @param
-     * @param
-     * @return
-     * @access public
-     *
-     */
-    function get_resource_count(
-             $data_key, 
-             $data_type_family, 
-             $env_key)
-    {
-
-        return $this->get_resource_count(
-                      $data_key, 
-                      $data_type_family, 
-                      $env_key);
-
-    }
-
-    /**
-     * R :: Content pending. 
-     *
-     * @param
-     * @param
-     * @param
-     * @param
-     * @param
-     * @return
-     * @access public
-     *
-     */
-    function retrieve_data_value(
-             $data_key, 
-             $data_type_family = 'CRNRSTN::RESOURCE', 
-             $index = NULL, 
-             $env_key = NULL, 
-             $soap_transport = false)
-    {
-
-        return $this->retrieve_data_value(
-                      $data_key, 
-                      $data_type_family, 
-                      $index, 
-                      $env_key, 
-                      $soap_transport);
 
     }
 
@@ -13365,21 +8596,11 @@ requirements related to returning the content for this request.
 
                 }else{
 
-                    $this->error_log('The wild card resource (i.e. WCR), "' . 
-                           $wildCardKey . 
-                           '", has been requested, but no WCR ' . 
-                           'of the kind has been configured ' . 
-                           'for this environment.', 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
-                           $this->R_data['int_flag']['CRNRSTN_BARNEY']);
-                    $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                   'ANY destination LOCAL (note FTP is not ' . 
-                                   'monitored) directory for this ' . 
-                                   'CRNRSTN :: Electrum process is being ' . 
-                                   'set to ' . 
-                                   $maxStorageUse . '%.';
+                    $clr_ssl_msg = 'The wild card resource (i.e. WCR), "' .
+                                   $wildCardKey .
+                                   '", has been requested, but no WCR ' .
+                                   'of the kind has been configured ' .
+                                   'for this environment.';
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                     $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -13398,124 +8619,6 @@ requirements related to returning the content for this request.
                            __METHOD__, 
                            __FILE__, 
                            $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * $this->error_log_clear($msg_token);
-                     *
-                     * $this->error_log(
-                     *        $clr_ssl_msg, 
-                     *        \LOG_ERR, 
-                     *        \E_ERROR, 
-                     *        __LINE__, 
-                     *        __METHOD__, 
-                     *        __FILE__, 
-                     *        $token, 
-                     *        true, 
-                     *        'R_channel_SESSION');
-                     *
-                     * Syslog Levels:
-                     * Constant                 Description
-                     * \LOG_EMERG            => 'system is unusable.'
-                     * \LOG_ALERT            => 'action must be
-                     *                           taken immediately'
-                     * \LOG_CRIT             => 'critical conditions'
-                     * \LOG_ERR              => 'error conditions'
-                     * \LOG_WARNING          => 'warning conditions'
-                     * \LOG_NOTICE           => 'normal, but
-                     *                           significant, condition'
-                     * \LOG_INFO             => 'informational message'
-                     * \LOG_DEBUG            => 'debug-level message'
-                     *
-                     * Error Reporting:
-                     * Value   Constant                     Description Note
-                     * 1       \E_ERROR (int)               Fatal run-time errors. 
-                     *                                      These indicate errors that 
-                     *                                      can not be recovered from, 
-                     *                                      such as a memory allocation 
-                     *                                      problem. Execution of the 
-                     *                                      script is halted.
-                     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                     *                                      errors). Execution of the 
-                     *                                      script is not halted.
-                     * 4       \E_PARSE (int)               Compile-time parse errors. 
-                     *                                      Parse errors should only be 
-                     *                                      generated by the parser.
-                     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                     *                                      that the script encountered 
-                     *                                      something that could 
-                     *                                      indicate an error, but 
-                     *                                      could also happen in the 
-                     *                                      normal course of running 
-                     *                                      a script.
-                     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like an 
-                     *                                      E_ERROR, except it is 
-                     *                                      generated by the core 
-                     *                                      of PHP.
-                     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                     *                                      errors) that occur 
-                     *                                      during PHP's initial 
-                     *                                      startup. This is like 
-                     *                                      an E_WARNING, except it 
-                     *                                      is generated by the 
-                     *                                      core of PHP.
-                     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                     *                                      This is like an E_ERROR, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                     *                                      (non-fatal errors). This 
-                     *                                      is like an E_WARNING, 
-                     *                                      except it is generated 
-                     *                                      by the Zend Scripting Engine.
-                     * 256     \E_USER_ERROR (int)          User-generated error 
-                     *                                      message. This is like 
-                     *                                      an E_ERROR, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 512     \E_USER_WARNING (int)        User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_WARNING, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                     *                                      message. This is like an 
-                     *                                      E_NOTICE, except it is 
-                     *                                      generated in PHP code by 
-                     *                                      using the PHP function 
-                     *                                      trigger_error().
-                     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                     *                                      changes to your code which 
-                     *                                      will ensure the best 
-                     *                                      interoperability and forward 
-                     *                                      compatibility of your code.
-                     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                     *                                      It indicates that a probably 
-                     *                                      dangerous error occurred, 
-                     *                                      but did not leave the Engine 
-                     *                                      in an unstable state. If the 
-                     *                                      error is not caught by a user 
-                     *                                      defined handle (see also 
-                     *                                      set_error_handler()), the 
-                     *                                      application aborts as it was 
-                     *                                      an E_ERROR.
-                     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                     *                                      this to receive warnings 
-                     *                                      about code that will not work 
-                     *                                      in future versions.
-                     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                     *                                      message. This is like an 
-                     *                                      E_DEPRECATED, except it 
-                     *                                      is generated in PHP code 
-                     *                                      by using the PHP function 
-                     *                                      trigger_error().
-                     * 32767   \E_ALL (int)                 All errors, warnings, 
-                     *                                      and notices.
-                     */
-
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * HOOOSTON, VE HAFF PROBLEM!
@@ -13712,42 +8815,6 @@ requirements related to returning the content for this request.
 
     }
 
-    /**
-     * R :: Content pending. 
-     *
-     * @param
-     * @return
-     * @access public
-     *
-     */
-    function return_set_bits($constants_int_ARRAY)
-    {
-
-        //$this->oCRNRSTN_BITWISE->set($integer_constant);
-        //$this->oCRNRSTN_BITWISE->toggle($integer_constant);
-        //$this->oCRNRSTN_BITWISE->read($integer_constant);
-        //$this->oCRNRSTN_BITWISE->remove($integer_constant)
-        //$this->oCRNRSTN_BITWISE->stringout()
-        //$this->set($integer_constant, true);
-
-        $tmp_array = array();
-
-        foreach($constants_int_ARRAY as 
-            $key => $int_constant)
-        {
-
-            if($this->is_bit_set($int_constant) == true){
-
-                $tmp_array[] = $int_constant;
-
-            }
-
-        }
-
-        return $tmp_array;
-
-    }
-
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * SOURCE   :: https://www.php.net/manual/en/function.base64-encode.php
      * AUTHOR   :: https://www.php.net/manual/en/function.base64-encode.php#105200
@@ -13799,7 +8866,7 @@ requirements related to returning the content for this request.
     function find_filesize($file)
     {
 
-       if(\strtoupper(\substr(PHP_OS, 0, 3)) == 'WIN')
+        if(\stripos(PHP_OS, 'WIN') === 0){
 
             exec('for %I in ("' . $file . '") do @echo %~zI', $output);
             $return = $output[0];
@@ -13841,10 +8908,10 @@ requirements related to returning the content for this request.
              $httpHeaders = null)
     {
 
-        return self::$R_http->is(
-                              $key, 
-                              $userAgent, 
-                              $httpHeaders);
+        return $this->R['http_mgr']->is(
+                                     $key,
+                                     $userAgent,
+                                     $httpHeaders);
 
     }
 
@@ -14120,14 +9187,46 @@ requirements related to returning the content for this request.
      */
     function system_output_file_html(
              $file_path, 
-             $output_mode, 
-             $width, 
-             $height, 
-             $hyperlink, 
-             $alt, 
-             $title, 
-             $target)
+             $output_mode = NULL,
+             $width = NULL,
+             $height = NULL,
+             $hyperlink = NULL,
+             $alt = NULL,
+             $title = NULL,
+             $target = NULL,
+             $is_text_anchor_link = false)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a new
+         *       system_output_file_html method input
+         *       parameter, $is_text_anchor_link = false,
+         *       and added default values for
+         *       $output_mode = NULL, $width = NULL,
+         *       $height = NULL, $hyperlink = NULL,
+         *       $alt = NULL, $title = NULL, and
+         *       $target = NULL so as to align to the
+         *       use of this method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       system_output_file_html($file_path,
+         *       $output_mode, $width, $height,
+         *       $hyperlink, $alt, $title, $target)
+         *       must be compatible with
+         *       CRNRSTN\crnrstn::system_output_file_html(
+         *       $file_path, $output_mode = null,
+         *       $width = null, $height = null,
+         *       $hyperlink = null, $alt = null,
+         *       $title = null, $target = null,
+         *       $is_text_anchor_link = false) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 9307
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0926 hrs.
+         *
+         */
 
         $tmp_html_out = '';
         $tmp_is_unit_test = false;
@@ -14289,14 +9388,10 @@ requirements related to returning the content for this request.
 
                         //
                         // FAIL QUIETLY.
-                        $this->error_log('Unable to locate the file resource associated with the provided file path of [' . $file_path . '].', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
-                        error_log(__LINE__ . ' crnrstn Unable to locate the file resource associated with the provided file path of [' . $file_path . '].');
-                        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                                       'ANY destination LOCAL (note FTP is not ' . 
-                                       'monitored) directory for this ' . 
-                                       'CRNRSTN :: Electrum process is being ' . 
-                                       'set to ' . 
-                                       $maxStorageUse . '%.';
+                        $clr_ssl_msg = 'Unable to locate the file ' .
+                                       'resource associated with the ' .
+                                       'provided file path of [' .
+                                       $file_path . '].';
                         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -14315,123 +9410,6 @@ requirements related to returning the content for this request.
                                __METHOD__, 
                                __FILE__, 
                                $token);
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * $this->error_log_clear($msg_token);
-                         *
-                         * $this->error_log(
-                         *        $clr_ssl_msg, 
-                         *        \LOG_ERR, 
-                         *        \E_ERROR, 
-                         *        __LINE__, 
-                         *        __METHOD__, 
-                         *        __FILE__, 
-                         *        $token, 
-                         *        true, 
-                         *        'R_channel_SESSION');
-                         *
-                         * Syslog Levels:
-                         * Constant                 Description
-                         * \LOG_EMERG            => 'system is unusable.'
-                         * \LOG_ALERT            => 'action must be
-                         *                           taken immediately'
-                         * \LOG_CRIT             => 'critical conditions'
-                         * \LOG_ERR              => 'error conditions'
-                         * \LOG_WARNING          => 'warning conditions'
-                         * \LOG_NOTICE           => 'normal, but
-                         *                           significant, condition'
-                         * \LOG_INFO             => 'informational message'
-                         * \LOG_DEBUG            => 'debug-level message'
-                         *
-                         * Error Reporting:
-                         * Value   Constant                     Description Note
-                         * 1       \E_ERROR (int)               Fatal run-time errors. 
-                         *                                      These indicate errors that 
-                         *                                      can not be recovered from, 
-                         *                                      such as a memory allocation 
-                         *                                      problem. Execution of the 
-                         *                                      script is halted.
-                         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                         *                                      errors). Execution of the 
-                         *                                      script is not halted.
-                         * 4       \E_PARSE (int)               Compile-time parse errors. 
-                         *                                      Parse errors should only be 
-                         *                                      generated by the parser.
-                         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                         *                                      that the script encountered 
-                         *                                      something that could 
-                         *                                      indicate an error, but 
-                         *                                      could also happen in the 
-                         *                                      normal course of running 
-                         *                                      a script.
-                         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like an 
-                         *                                      E_ERROR, except it is 
-                         *                                      generated by the core 
-                         *                                      of PHP.
-                         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                         *                                      errors) that occur 
-                         *                                      during PHP's initial 
-                         *                                      startup. This is like 
-                         *                                      an E_WARNING, except it 
-                         *                                      is generated by the 
-                         *                                      core of PHP.
-                         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                         *                                      This is like an E_ERROR, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                         *                                      (non-fatal errors). This 
-                         *                                      is like an E_WARNING, 
-                         *                                      except it is generated 
-                         *                                      by the Zend Scripting Engine.
-                         * 256     \E_USER_ERROR (int)          User-generated error 
-                         *                                      message. This is like 
-                         *                                      an E_ERROR, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 512     \E_USER_WARNING (int)        User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_WARNING, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                         *                                      message. This is like an 
-                         *                                      E_NOTICE, except it is 
-                         *                                      generated in PHP code by 
-                         *                                      using the PHP function 
-                         *                                      trigger_error().
-                         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                         *                                      changes to your code which 
-                         *                                      will ensure the best 
-                         *                                      interoperability and forward 
-                         *                                      compatibility of your code.
-                         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                         *                                      It indicates that a probably 
-                         *                                      dangerous error occurred, 
-                         *                                      but did not leave the Engine 
-                         *                                      in an unstable state. If the 
-                         *                                      error is not caught by a user 
-                         *                                      defined handle (see also 
-                         *                                      set_error_handler()), the 
-                         *                                      application aborts as it was 
-                         *                                      an E_ERROR.
-                         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                         *                                      this to receive warnings 
-                         *                                      about code that will not work 
-                         *                                      in future versions.
-                         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                         *                                      message. This is like an 
-                         *                                      E_DEPRECATED, except it 
-                         *                                      is generated in PHP code 
-                         *                                      by using the PHP function 
-                         *                                      trigger_error().
-                         * 32767   \E_ALL (int)                 All errors, warnings, 
-                         *                                      and notices.
-                         */
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * HOOOSTON, VE HAFF PROBLEM!
@@ -14787,13 +9765,44 @@ requirements related to returning the content for this request.
      */
     function config_integrate_file_system(
              $env_key, 
-             $http_path, 
-             $dir_path, 
-             $data_authorization_profile, 
-             $ttl, 
-             $host, 
-             $excluded_file_ext_ARRAY)
+             $http_path,
+             $dir_path = NULL,
+             $data_authorization_profile = 'R_authorize & R_channel_RUNTIME',
+             $ttl = 60,
+             $host = 'localhost',
+             $excluded_file_ext_ARRAY = NULL)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added config_integrate_file_system
+         *       method input parameter default
+         *       values for $dir_path = NULL,
+         *       $data_authorization_profile =
+         *       'R_authorize & R_channel_RUNTIME',
+         *       $ttl = 60, $host = 'localhost', and
+         *       $excluded_file_ext_ARRAY = NULL so as
+         *       to align to the
+         *       use of this method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       config_integrate_file_system($env_key,
+         *       $http_path, $dir_path,
+         *       $data_authorization_profile, $ttl,
+         *       $host, $excluded_file_ext_ARRAY)
+         *       must be compatible with
+         *       CRNRSTN\crnrstn::config_integrate_file_system(
+         *       $env_key, $http_path, $dir_path = null,
+         *       $data_authorization_profile = 'R_authoriz...',
+         *       $ttl = 60, $host = 'localhost',
+         *       $excluded_file_ext_ARRAY = null) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 9884
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0932 hrs.
+         *
+         */
 
         //
         // Sunday, June 4, 2023 @ 1726 hrs.
@@ -14827,8 +9836,32 @@ requirements related to returning the content for this request.
      * @access public
      *
      */
-    function system_base64_synchronize($data_key = NULL)
+    function system_base64_synchronize(
+             $data_key = NULL,
+             $img_batch_size = 5)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added system_base64_synchronize
+         *       method input parameter,
+         *       $img_batch_size = 5, so as
+         *       to align to the use of this
+         *       method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       system_base64_synchronize(
+         *       $data_key = null) must be compatible
+         *       with CRNRSTN\crnrstn::
+         *       system_base64_synchronize(
+         *       $data_key = null, $img_batch_size = 5) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 9980
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0940 hrs.
+         *
+         */
 
         return $this->R_asset_mgr->system_base64_synchronize($data_key);
 
@@ -14902,20 +9935,11 @@ requirements related to returning the content for this request.
                        __LINE__, 
                        __METHOD__, 
                        __FILE__);
-                $this->error_log('CRNRSTN :: BASE64 ' . 
-                       'services scanning ' . 
-                       'system images: ' . 
-                       $dir_filepath, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       $this->R_data['int_flag']['CRNRSTN_BARNEY']);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+
+                $clr_ssl_msg = 'CRNRSTN :: BASE64 ' .
+                               'services scanning ' .
+                               'system images: ' .
+                               $dir_filepath;
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -14934,123 +9958,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
                 $tmp_scraped_filename_ARRAY = $this->better_scandir($dir_filepath);
 
@@ -15099,20 +10006,8 @@ requirements related to returning the content for this request.
                  *        '.');
                  *
                  */
-                $this->print_r(
-                       'NOT READABLE DIRECTORY: ' . 
-                       $dir_filepath, 
-                       'is_readable().', 
-                       NULL, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__);
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'Not a readable directory: ' .
+                               $dir_filepath;
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -15131,123 +10026,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
             }
 
@@ -15267,21 +10045,8 @@ requirements related to returning the content for this request.
              *        'file system.');
              *
              */
-            $this->print_r(
-                  'NOT A DIRECTORY: ' . 
-                  $dir_filepath, 
-                  'is_dir(). ', 
-                  NULL, 
-                  __LINE__, 
-                  __METHOD__, 
-                  __FILE__);
-
-            $clr_ssl_msg = 'Maximum storage usage at ' . 
-                           'ANY destination LOCAL (note FTP is not ' . 
-                           'monitored) directory for this ' . 
-                           'CRNRSTN :: Electrum process is being ' . 
-                           'set to ' . 
-                           $maxStorageUse . '%.';
+            $clr_ssl_msg = 'Not a directory: ' .
+                           $dir_filepath;
             // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
             $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                          'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -15301,142 +10066,12 @@ requirements related to returning the content for this request.
                    __FILE__, 
                    $token);
 
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                 Description
-             * \LOG_EMERG            => 'system is unusable.'
-             * \LOG_ALERT            => 'action must be
-             *                           taken immediately'
-             * \LOG_CRIT             => 'critical conditions'
-             * \LOG_ERR              => 'error conditions'
-             * \LOG_WARNING          => 'warning conditions'
-             * \LOG_NOTICE           => 'normal, but
-             *                           significant, condition'
-             * \LOG_INFO             => 'informational message'
-             * \LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
-
             if($this->is_file($dir_filepath) && 
                 \strlen($dir_filepath) > 0)
             {
 
-                $this->print_r(
-                       'THIS IS A FILE: ' . 
-                       $dir_filepath, 
-                       'is_file(). ', 
-                       NULL, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__);
-
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'This is a file: ' .
+                               $dir_filepath;
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -15455,142 +10090,11 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
-
 
             }else{
 
-                $this->print_r(
-                       'NOT A FILE: ' . 
-                       $dir_filepath, 
-                       'is_file(). ', 
-                       NULL, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__);
-
-                $clr_ssl_msg = 'Maximum storage usage at ' . 
-                               'ANY destination LOCAL (note FTP is not ' . 
-                               'monitored) directory for this ' . 
-                               'CRNRSTN :: Electrum process is being ' . 
-                               'set to ' . 
-                               $maxStorageUse . '%.';
+                $clr_ssl_msg = 'Not a file: ' .
+                               $dir_filepath;
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -15609,123 +10113,6 @@ requirements related to returning the content for this request.
                        __METHOD__, 
                        __FILE__, 
                        $token);
-
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * $this->error_log_clear($msg_token);
-                 *
-                 * $this->error_log(
-                 *        $clr_ssl_msg, 
-                 *        \LOG_ERR, 
-                 *        \E_ERROR, 
-                 *        __LINE__, 
-                 *        __METHOD__, 
-                 *        __FILE__, 
-                 *        $token, 
-                 *        true, 
-                 *        'R_channel_SESSION');
-                 *
-                 * Syslog Levels:
-                 * Constant                 Description
-                 * \LOG_EMERG            => 'system is unusable.'
-                 * \LOG_ALERT            => 'action must be
-                 *                           taken immediately'
-                 * \LOG_CRIT             => 'critical conditions'
-                 * \LOG_ERR              => 'error conditions'
-                 * \LOG_WARNING          => 'warning conditions'
-                 * \LOG_NOTICE           => 'normal, but
-                 *                           significant, condition'
-                 * \LOG_INFO             => 'informational message'
-                 * \LOG_DEBUG            => 'debug-level message'
-                 *
-                 * Error Reporting:
-                 * Value   Constant                     Description Note
-                 * 1       \E_ERROR (int)               Fatal run-time errors. 
-                 *                                      These indicate errors that 
-                 *                                      can not be recovered from, 
-                 *                                      such as a memory allocation 
-                 *                                      problem. Execution of the 
-                 *                                      script is halted.
-                 * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-                 *                                      errors). Execution of the 
-                 *                                      script is not halted.
-                 * 4       \E_PARSE (int)               Compile-time parse errors. 
-                 *                                      Parse errors should only be 
-                 *                                      generated by the parser.
-                 * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-                 *                                      that the script encountered 
-                 *                                      something that could 
-                 *                                      indicate an error, but 
-                 *                                      could also happen in the 
-                 *                                      normal course of running 
-                 *                                      a script.
-                 * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like an 
-                 *                                      E_ERROR, except it is 
-                 *                                      generated by the core 
-                 *                                      of PHP.
-                 * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-                 *                                      errors) that occur 
-                 *                                      during PHP's initial 
-                 *                                      startup. This is like 
-                 *                                      an E_WARNING, except it 
-                 *                                      is generated by the 
-                 *                                      core of PHP.
-                 * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-                 *                                      This is like an E_ERROR, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-                 *                                      (non-fatal errors). This 
-                 *                                      is like an E_WARNING, 
-                 *                                      except it is generated 
-                 *                                      by the Zend Scripting Engine.
-                 * 256     \E_USER_ERROR (int)          User-generated error 
-                 *                                      message. This is like 
-                 *                                      an E_ERROR, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 512     \E_USER_WARNING (int)        User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_WARNING, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 1024    \E_USER_NOTICE (int)         User-generated notice 
-                 *                                      message. This is like an 
-                 *                                      E_NOTICE, except it is 
-                 *                                      generated in PHP code by 
-                 *                                      using the PHP function 
-                 *                                      trigger_error().
-                 * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-                 *                                      changes to your code which 
-                 *                                      will ensure the best 
-                 *                                      interoperability and forward 
-                 *                                      compatibility of your code.
-                 * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-                 *                                      It indicates that a probably 
-                 *                                      dangerous error occurred, 
-                 *                                      but did not leave the Engine 
-                 *                                      in an unstable state. If the 
-                 *                                      error is not caught by a user 
-                 *                                      defined handle (see also 
-                 *                                      set_error_handler()), the 
-                 *                                      application aborts as it was 
-                 *                                      an E_ERROR.
-                 * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-                 *                                      this to receive warnings 
-                 *                                      about code that will not work 
-                 *                                      in future versions.
-                 * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-                 *                                      message. This is like an 
-                 *                                      E_DEPRECATED, except it 
-                 *                                      is generated in PHP code 
-                 *                                      by using the PHP function 
-                 *                                      trigger_error().
-                 * 32767   \E_ALL (int)                 All errors, warnings, 
-                 *                                      and notices.
-                 */
 
             }
 
@@ -15867,13 +10254,9 @@ requirements related to returning the content for this request.
             $tmp_dir_path_JPEG = $tmp_jpeg_path_ARRAY[$ii];
 
             //$this->print_r('Scanning Images: ' . $tmp_dir_path_PNG, 'Image Processing.', NULL, __LINE__, __METHOD__, __FILE__);
-            $this->error_log('CRNRSTN :: BASE64 services scanning system images: ' . $tmp_dir_path_PNG, __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_BARNEY']);
-            $clr_ssl_msg = 'Maximum storage usage at ' . 
-                           'ANY destination LOCAL (note FTP is not ' . 
-                           'monitored) directory for this ' . 
-                           'CRNRSTN :: Electrum process is being ' . 
-                           'set to ' . 
-                           $maxStorageUse . '%.';
+            $clr_ssl_msg = 'CRNRSTN :: BASE64 services ' .
+                           'scanning system images: ' .
+                           $tmp_dir_path_PNG;
             // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
             $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                          'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -15892,123 +10275,6 @@ requirements related to returning the content for this request.
                    __METHOD__, 
                    __FILE__, 
                    $token);
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                Description
-             * LOG_EMERG            => 'system is unusable.'
-             * LOG_ALERT            => 'action must be
-             *                          taken immediately'
-             * LOG_CRIT             => 'critical conditions'
-             * LOG_ERR              => 'error conditions'
-             * LOG_WARNING          => 'warning conditions'
-             * LOG_NOTICE           => 'normal, but
-             *                          significant, condition'
-             * LOG_INFO             => 'informational message'
-             * LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
 
             $tmp_scraped_filename_PNG_ARRAY = $this->better_scandir($tmp_dir_path_PNG);
 
@@ -16039,123 +10305,6 @@ requirements related to returning the content for this request.
                    __METHOD__, 
                    __FILE__, 
                    $token);
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * $this->error_log_clear($msg_token);
-             *
-             * $this->error_log(
-             *        $clr_ssl_msg, 
-             *        \LOG_ERR, 
-             *        \E_ERROR, 
-             *        __LINE__, 
-             *        __METHOD__, 
-             *        __FILE__, 
-             *        $token, 
-             *        true, 
-             *        'R_channel_SESSION');
-             *
-             * Syslog Levels:
-             * Constant                Description
-             * LOG_EMERG            => 'system is unusable.'
-             * LOG_ALERT            => 'action must be
-             *                          taken immediately'
-             * LOG_CRIT             => 'critical conditions'
-             * LOG_ERR              => 'error conditions'
-             * LOG_WARNING          => 'warning conditions'
-             * LOG_NOTICE           => 'normal, but
-             *                          significant, condition'
-             * LOG_INFO             => 'informational message'
-             * LOG_DEBUG            => 'debug-level message'
-             *
-             * Error Reporting:
-             * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
-             *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
-             *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
-             *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
-             *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
-             *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
-             *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
-             *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
-             *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
-             *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
-             *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
-             *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
-             *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
-             *                                      and notices.
-             */
 
             $tmp_scraped_filename_JPEG_ARRAY = $this->better_scandir($tmp_dir_path_JPEG);
 
@@ -16288,15 +10437,9 @@ requirements related to returning the content for this request.
 
         }
 
-        $this->print_r('Processed Images [' . 
-               \print_r($tmp_processed_filename_ARRAY, true) . 
-               '].', 'Image Processing.', NULL, __LINE__, __METHOD__, __FILE__);
-        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                       'ANY destination LOCAL (note FTP is not ' . 
-                       'monitored) directory for this ' . 
-                       'CRNRSTN :: Electrum process is being ' . 
-                       'set to ' . 
-                       $maxStorageUse . '%.';
+        $clr_ssl_msg = 'Processed Images [' .
+                       \print_r($tmp_processed_filename_ARRAY, true) .
+                       '].';
         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -16316,124 +10459,6 @@ requirements related to returning the content for this request.
                __FILE__, 
                $token);
 
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * $this->error_log_clear($msg_token);
-         *
-         * $this->error_log(
-         *        $clr_ssl_msg, 
-         *        \LOG_ERR, 
-         *        \E_ERROR, 
-         *        __LINE__, 
-         *        __METHOD__, 
-         *        __FILE__, 
-         *        $token, 
-         *        true, 
-         *        'R_channel_SESSION');
-         *
-         * Syslog Levels:
-         * Constant                Description
-         * LOG_EMERG            => 'system is unusable.'
-         * LOG_ALERT            => 'action must be
-         *                          taken immediately'
-         * LOG_CRIT             => 'critical conditions'
-         * LOG_ERR              => 'error conditions'
-         * LOG_WARNING          => 'warning conditions'
-         * LOG_NOTICE           => 'normal, but
-         *                          significant, condition'
-         * LOG_INFO             => 'informational message'
-         * LOG_DEBUG            => 'debug-level message'
-         *
-         * Error Reporting:
-         * Value   Constant                     Description Note
-         * 1       \E_ERROR (int)               Fatal run-time errors. 
-         *                                      These indicate errors that 
-         *                                      can not be recovered from, 
-         *                                      such as a memory allocation 
-         *                                      problem. Execution of the 
-         *                                      script is halted.
-         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-         *                                      errors). Execution of the 
-         *                                      script is not halted.
-         * 4       \E_PARSE (int)               Compile-time parse errors. 
-         *                                      Parse errors should only be 
-         *                                      generated by the parser.
-         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-         *                                      that the script encountered 
-         *                                      something that could 
-         *                                      indicate an error, but 
-         *                                      could also happen in the 
-         *                                      normal course of running 
-         *                                      a script.
-         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like an 
-         *                                      E_ERROR, except it is 
-         *                                      generated by the core 
-         *                                      of PHP.
-         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-         *                                      errors) that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like 
-         *                                      an E_WARNING, except it 
-         *                                      is generated by the 
-         *                                      core of PHP.
-         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-         *                                      This is like an E_ERROR, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-         *                                      (non-fatal errors). This 
-         *                                      is like an E_WARNING, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 256     \E_USER_ERROR (int)          User-generated error 
-         *                                      message. This is like 
-         *                                      an E_ERROR, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 512     \E_USER_WARNING (int)        User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_WARNING, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-         *                                      message. This is like an 
-         *                                      E_NOTICE, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-         *                                      changes to your code which 
-         *                                      will ensure the best 
-         *                                      interoperability and forward 
-         *                                      compatibility of your code.
-         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-         *                                      It indicates that a probably 
-         *                                      dangerous error occurred, 
-         *                                      but did not leave the Engine 
-         *                                      in an unstable state. If the 
-         *                                      error is not caught by a user 
-         *                                      defined handle (see also 
-         *                                      set_error_handler()), the 
-         *                                      application aborts as it was 
-         *                                      an E_ERROR.
-         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-         *                                      this to receive warnings 
-         *                                      about code that will not work 
-         *                                      in future versions.
-         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_DEPRECATED, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 32767   \E_ALL (int)                 All errors, warnings, 
-         *                                      and notices.
-         */
-
-
         return true;
 
     }
@@ -16448,7 +10473,7 @@ requirements related to returning the content for this request.
     function return_lang_content_ARRAY()
     {
 
-        return self::$lang_content_ARRAY;
+        return self::$lang_struct_time;
 
     }
 
@@ -16482,7 +10507,7 @@ requirements related to returning the content for this request.
     function header_signature_options_return()
     {
 
-        return self::$R_http->header_signature_options_return();
+        return $this->R['http_mgr']->header_signature_options_return();
 
     }
 
@@ -16497,12 +10522,34 @@ requirements related to returning the content for this request.
      */
     function header_options_add(
              $header_array, 
-             $overwrite_existing)
+             $overwrite_existing = true)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a default value for the
+         *       header_options_add method input,
+         *       $overwrite_existing = true in order
+         *       to align to the use of this
+         *       method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       header_options_add($header_array,
+         *       $overwrite_existing) must be
+         *       compatible with CRNRSTN\crnrstn::
+         *       header_options_add($header_array,
+         *       $overwrite_existing = true) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 10740
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0901 hrs.
+         *
+         */
 
-        self::$R_http->header_options_add(
-                       $header_array, 
-                       $overwrite_existing);
+        $this->R['http_mgr']->header_options_add(
+                              $header_array,
+                              $overwrite_existing);
 
     }
 
@@ -16516,7 +10563,7 @@ requirements related to returning the content for this request.
     function header_options_apply()
     {
 
-        self::$R_http->header_options_apply();
+        $this->R['http_mgr']->header_options_apply();
 
     }
 
@@ -16528,10 +10575,35 @@ requirements related to returning the content for this request.
      * @access public
      *
      */
-    function get_headers($return_type)
+    function get_headers($return_type = 'R_array')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a default value for the
+         *       get_headers method input,
+         *       $return_type = 'R_array' so as to
+         *       align to the use of this method
+         *       by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       get_headers($return_type) must
+         *       be compatible with
+         *       CRNRSTN\crnrstn::get_headers(
+         *       $return_type = 'R_array') in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 10795
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0903 hrs.
+         *
+         */
 
-        return self::$R_http->get_headers($return_type);
+        if(\is_string($return_type))
+            // 5 :: Friday, August 21, 2026 @ 0904 hrs.
+            $return_type = $this->R_data['int_flag'][$return_type];
+
+        return $this->R['http_mgr']->get_headers($return_type);
 
     }
 
@@ -16545,7 +10617,7 @@ requirements related to returning the content for this request.
     function get_user_agent()
     {
 
-        return self::$R_http->get_user_agent();
+        return $this->R['http_mgr']->get_user_agent();
 
     }
 
@@ -16559,7 +10631,7 @@ requirements related to returning the content for this request.
     function get_mobile_devices()
     {
 
-        return self::$R_http->get_mobile_devices();
+        return $this->R['http_mgr']->get_mobile_devices();
 
     }
 
@@ -16573,7 +10645,7 @@ requirements related to returning the content for this request.
     function get_tablet_devices()
     {
 
-        return self::$R_http->get_tablet_devices();
+        return $this->R['http_mgr']->get_tablet_devices();
 
     }
 
@@ -16587,7 +10659,7 @@ requirements related to returning the content for this request.
     function get_browsers()
     {
 
-        return self::$R_http->get_browsers();
+        return $this->R['http_mgr']->get_browsers();
 
     }
 
@@ -16601,7 +10673,7 @@ requirements related to returning the content for this request.
     function get_mobile_os()
     {
 
-        return self::$R_http->get_mobile_os();
+        return $this->R['http_mgr']->get_mobile_os();
 
     }
 
@@ -16621,22 +10693,48 @@ requirements related to returning the content for this request.
      */
     function add_cookie(
              $name, 
-             $value, 
-             $expires_or_options, 
-             $path, 
-             $domain, 
-             $secure, 
-             $httponly)
+             $value = '',
+             $expires_or_options = 0,
+             $path = '',
+             $domain = '',
+             $secure = false,
+             $httponly = false)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a default values for the
+         *       add_cookie method inputs,
+         *       $value = '', $expires_or_options = 0,
+         *       $path = '', $domain = '',
+         *       $secure = false, and $httponly = false
+         *       so as to align to the
+         *       use of this method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::add_cookie(
+         *       $name, $value, $expires_or_options,
+         *       $path, $domain, $secure, $httponly)
+         *       must be compatible with
+         *       CRNRSTN\crnrstn::add_cookie($name,
+         *       $value = '', $expires_or_options = 0,
+         *       $path = '', $domain = '',
+         *       $secure = false, $httponly = false) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 10726
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0915 hrs.
+         *
+         */
 
-        return self::$R_cookie->addCookie(
-                                $name, 
-                                $value, 
-                                $expires_or_options, 
-                                $path, 
-                                $domain, 
-                                $secure, 
-                                $httponly);
+        return $this->R['cookie_mgr']->addCookie(
+                                       $name,
+                                       $value,
+                                       $expires_or_options,
+                                       $path,
+                                       $domain,
+                                       $secure,
+                                       $httponly);
 
     }
 
@@ -16656,22 +10754,49 @@ requirements related to returning the content for this request.
      */
     function add_raw_cookie(
              $name, 
-             $value, 
-             $expires_or_options, 
-             $path, 
-             $domain, 
-             $secure, 
-             $httponly)
+             $value = '',
+             $expires_or_options = 0,
+             $path = '',
+             $domain = '',
+             $secure = false,
+             $httponly = false)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a default values for the
+         *       add_raw_cookie method inputs,
+         *       $value = '', $expires_or_options = 0,
+         *       $path = '', $domain = '',
+         *       $secure = false, and $httponly = false
+         *       so as to align to the
+         *       use of this method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       add_raw_cookie($name, $value,
+         *       $expires_or_options, $path, $domain,
+         *       $secure, $httponly) must be compatible
+         *       with
+         *       CRNRSTN\crnrstn::add_raw_cookie($name,
+         *       $value = '', $expires_or_options = 0,
+         *       $path = '', $domain = '', $secure = false,
+         *       $httponly = false) in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 10787
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0919 hrs.
+         *
+         */
 
-        return self::$R_cookie->addRawCookie(
-                                $name, 
-                                $value, 
-                                $expires_or_options, 
-                                $path, 
-                                $domain, 
-                                $secure, 
-                                $httponly);
+        return $this->R['cookie_mgr']->addRawCookie(
+                                       $name,
+                                       $value,
+                                       $expires_or_options,
+                                       $path,
+                                       $domain,
+                                       $secure,
+                                       $httponly);
 
     }
 
@@ -16683,10 +10808,29 @@ requirements related to returning the content for this request.
      * @access public
      *
      */
-    function delete_all_cookies($path)
+    function delete_all_cookies($path = '')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a default value for the
+         *       delete_all_cookies method input,
+         *       $path = '' so as to align to the
+         *       use of this method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       delete_all_cookies($path) must be
+         *       compatible with CRNRSTN\crnrstn::
+         *       delete_all_cookies($path = '') in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 10843
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0919 hrs.
+         *
+         */
 
-        return self::$R_cookie->deleteAllCookies($path);
+        return $this->R['cookie_mgr']->deleteAllCookies($path);
 
     }
 
@@ -16700,13 +10844,33 @@ requirements related to returning the content for this request.
      *
      */
     function delete_cookie(
-             $name, 
-             $path)
+             $name,
+             $path = '')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added a default value for the
+         *       delete_cookie method input,
+         *       $path = '' so as to align to the
+         *       use of this method by crnrstn:
+         *
+         *       Fatal error: Declaration of
+         *       CRNRSTN\crnrstn_environment::
+         *       delete_cookie($name, $path) must be
+         *       compatible with
+         *       CRNRSTN\crnrstn::delete_cookie(
+         *       $name, $path = '') in
+         *       C:\xampp\htdocs\_R\class\environment
+         *       \crnrstn.environment.class.php
+         *       on line 10878
+         *
+         *
+         *       5 :: Friday, August 21, 2026 @ 0922 hrs.
+         *
+         */
 
-        return self::$R_cookie->deleteCookie(
-                                $name, 
-                                $path);
+        return $this->R['cookie_mgr']->deleteCookie(
+                                       $name,
+                                       $path);
 
     }
 
@@ -16721,7 +10885,7 @@ requirements related to returning the content for this request.
     function get_cookie($name)
     {
 
-        return self::$R_cookie->getCookie($name);
+        return $this->R['cookie_mgr']->getCookie($name);
 
     }
 
@@ -16735,24 +10899,9 @@ requirements related to returning the content for this request.
     function __destruct()
     {
 
-        $this->oLog_output_ARRAY[] = $this->error_log('goodbye crnrstn :: ' . 
-                                            __CLASS__ . '::' . 
-                                            __METHOD__ . 
-                                            ' called. [rtime ' . 
-                                            $this->wall_time() . 
-                                            ' secs][bytes_encrypted ' . 
-                                            $this->return_bytes($this->total_bytes_encrypted, 5) . 
-                                            '].', 
-                                            __LINE__, 
-                                            __METHOD__, 
-                                            __FILE__, 
-                                            $this->R_data['int_flag']['CRNRSTN_BARNEY']);
-        $clr_ssl_msg = 'Maximum storage usage at ' . 
-                       'ANY destination LOCAL (note FTP is not ' . 
-                       'monitored) directory for this ' . 
-                       'CRNRSTN :: Electrum process is being ' . 
-                       'set to ' . 
-                       $maxStorageUse . '%.';
+        $clr_ssl_msg = '[bytes_encrypted ' .
+                        $this->return_bytes($this->total_bytes_encrypted, 5) .
+                        '] goodbye crnrstn.';
         // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
         $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
                      'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -16771,124 +10920,6 @@ requirements related to returning the content for this request.
                __METHOD__, 
                __FILE__, 
                $token);
-
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * $this->error_log_clear($msg_token);
-         *
-         * $this->error_log(
-         *        $clr_ssl_msg, 
-         *        \LOG_ERR, 
-         *        \E_ERROR, 
-         *        __LINE__, 
-         *        __METHOD__, 
-         *        __FILE__, 
-         *        $token, 
-         *        true, 
-         *        'R_channel_SESSION');
-         *
-         * Syslog Levels:
-         * Constant                Description
-         * LOG_EMERG            => 'system is unusable.'
-         * LOG_ALERT            => 'action must be
-         *                          taken immediately'
-         * LOG_CRIT             => 'critical conditions'
-         * LOG_ERR              => 'error conditions'
-         * LOG_WARNING          => 'warning conditions'
-         * LOG_NOTICE           => 'normal, but
-         *                          significant, condition'
-         * LOG_INFO             => 'informational message'
-         * LOG_DEBUG            => 'debug-level message'
-         *
-         * Error Reporting:
-         * Value   Constant                     Description Note
-         * 1       \E_ERROR (int)               Fatal run-time errors. 
-         *                                      These indicate errors that 
-         *                                      can not be recovered from, 
-         *                                      such as a memory allocation 
-         *                                      problem. Execution of the 
-         *                                      script is halted.
-         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-         *                                      errors). Execution of the 
-         *                                      script is not halted.
-         * 4       \E_PARSE (int)               Compile-time parse errors. 
-         *                                      Parse errors should only be 
-         *                                      generated by the parser.
-         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-         *                                      that the script encountered 
-         *                                      something that could 
-         *                                      indicate an error, but 
-         *                                      could also happen in the 
-         *                                      normal course of running 
-         *                                      a script.
-         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like an 
-         *                                      E_ERROR, except it is 
-         *                                      generated by the core 
-         *                                      of PHP.
-         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-         *                                      errors) that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like 
-         *                                      an E_WARNING, except it 
-         *                                      is generated by the 
-         *                                      core of PHP.
-         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-         *                                      This is like an E_ERROR, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-         *                                      (non-fatal errors). This 
-         *                                      is like an E_WARNING, 
-         *                                      except it is generated 
-         *                                      by the Zend Scripting Engine.
-         * 256     \E_USER_ERROR (int)          User-generated error 
-         *                                      message. This is like 
-         *                                      an E_ERROR, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 512     \E_USER_WARNING (int)        User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_WARNING, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-         *                                      message. This is like an 
-         *                                      E_NOTICE, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
-         *                                      trigger_error().
-         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-         *                                      changes to your code which 
-         *                                      will ensure the best 
-         *                                      interoperability and forward 
-         *                                      compatibility of your code.
-         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-         *                                      It indicates that a probably 
-         *                                      dangerous error occurred, 
-         *                                      but did not leave the Engine 
-         *                                      in an unstable state. If the 
-         *                                      error is not caught by a user 
-         *                                      defined handle (see also 
-         *                                      set_error_handler()), the 
-         *                                      application aborts as it was 
-         *                                      an E_ERROR.
-         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-         *                                      this to receive warnings 
-         *                                      about code that will not work 
-         *                                      in future versions.
-         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_DEPRECATED, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
-         *                                      trigger_error().
-         * 32767   \E_ALL (int)                 All errors, warnings, 
-         *                                      and notices.
-         */
-
 
     }
 

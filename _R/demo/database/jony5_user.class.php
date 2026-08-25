@@ -2694,8 +2694,7 @@ class jony5_user
 
                 default:
 
-                    /**
-                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * HOOOSTON, VE HAFF PROBLEM!
                      * https://www.wired.com/2011/04/alt-text-spacecraft/
                      *

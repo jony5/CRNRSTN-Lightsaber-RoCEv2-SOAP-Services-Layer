@@ -1,5 +1,7 @@
 <?php
 
+namespace CRNRSTN;
+
 /*
 $Id: nusoap.php,v 1.124 2010/04/26 20:15:08 snichol Exp $
 
@@ -38,18 +40,37 @@ http://www.nusphere.com
 */
 
 /*
- *  Some of the standards implemented in whole or part by NuSOAP:
+ *	Some of the standards implmented in whole or part by NuSOAP:
  *
- *  SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
- *  WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
- *  SOAP Messages With Attachments (http://www.w3.org/TR/SOAP-attachments)
- *  XML 1.0 (http://www.w3.org/TR/2006/REC-xml-20060816/)
- *  Namespaces in XML 1.0 (http://www.w3.org/TR/2006/REC-xml-names-20060816/)
- *  XML Schema 1.0 (http://www.w3.org/TR/xmlschema-0/)
- *  RFC 2045 Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
- *  RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
- *  RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
+ *	SOAP 1.1 (http://www.w3.org/TR/2000/NOTE-SOAP-20000508/)
+ *	WSDL 1.1 (http://www.w3.org/TR/2001/NOTE-wsdl-20010315)
+ *	SOAP Messages With Attachments (http://www.w3.org/TR/SOAP-attachments)
+ *	XML 1.0 (http://www.w3.org/TR/2006/REC-xml-20060816/)
+ *	Namespaces in XML 1.0 (http://www.w3.org/TR/2006/REC-xml-names-20060816/)
+ *	XML Schema 1.0 (http://www.w3.org/TR/xmlschema-0/)
+ *	RFC 2045 Multipurpose Internet Mail Extensions (MIME) Part One: Format of Internet Message Bodies
+ *	RFC 2068 Hypertext Transfer Protocol -- HTTP/1.1
+ *	RFC 2617 HTTP Authentication: Basic and Digest Access Authentication
  */
+
+/* load classes
+
+// necessary classes
+require_once('class.soapclient.php');
+require_once('class.soap_val.php');
+require_once('class.soap_parser.php');
+require_once('class.soap_fault.php');
+
+// transport classes
+require_once('class.soap_transport_http.php');
+
+// optional add-on classes
+require_once('class.xmlschema.php');
+require_once('class.wsdl.php');
+
+// server class
+require_once('class.soap_server.php');*/
+
 
 /**
  * Contains information for a SOAP fault.
@@ -121,16 +142,16 @@ class nusoap_fault extends nusoap_base
             $ns_string .= "\n  xmlns:$k=\"$v\"";
         }
 
-      return '<?xml version="1.0" encoding="' . $this->soap_defencoding . '"?>' .
-       '<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"' . $ns_string . ">\n" .
-       '<SOAP-ENV:Body>' .
-       '<SOAP-ENV:Fault>' .
-       $this->serialize_val($this->faultcode, 'faultcode') .
-       $this->serialize_val($this->faultstring, 'faultstring') .
-       $this->serialize_val($this->faultactor, 'faultactor') .
-       $this->serialize_val($this->faultdetail, 'detail') .
-       '</SOAP-ENV:Fault>' .
-       '</SOAP-ENV:Body>' .
-       '</SOAP-ENV:Envelope>';
+        return '<?xml version="1.0" encoding="' . $this->soap_defencoding . '"?>' .
+            '<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"' . $ns_string . ">\n" .
+            '<SOAP-ENV:Body>' .
+            '<SOAP-ENV:Fault>' .
+            $this->serialize_val($this->faultcode, 'faultcode') .
+            $this->serialize_val($this->faultstring, 'faultstring') .
+            $this->serialize_val($this->faultactor, 'faultactor') .
+            $this->serialize_val($this->faultdetail, 'detail') .
+            '</SOAP-ENV:Fault>' .
+            '</SOAP-ENV:Body>' .
+            '</SOAP-ENV:Envelope>';
     }
 }

@@ -285,7 +285,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -306,7 +306,8 @@ class crnrstn_ui_html_manager extends crnrstn
      *
      */
 
-    protected $oCRNRSTN_UI_ASSEMBLER;
+    public $R       = array();
+    private $R_data = array();
 
     public $page_serial;
     private static $css_length_units_ARRAY = array();
@@ -320,12 +321,15 @@ class crnrstn_ui_html_manager extends crnrstn
      * @access public
      *
      */
-    function __construct()
+    function __construct($R_ui_assembler)
     {
 
-        //
-        // PAGE CONTENT AGGREGATION.
-        $this->oCRNRSTN_UI_ASSEMBLER = new crnrstn_ui_content_assembler();
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * CLR-SSL web page
+         * content aggregation.
+         *
+         */
+        $this->R['ui_assembler'] = $R_ui_assembler;
 
         //
         // SOURCE :: https://www.w3schools.com/cssref/css_units.php
@@ -2350,7 +2354,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     function sauce($resource)
     {
 
-	    return $this->oCRNRSTN_UI_ASSEMBLER->sauce($resource);
+	    return $this->R['ui_assembler']->sauce($resource);
 
     }
 
@@ -2365,15 +2369,18 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     function out_ui_module_html_system_documentation_page($module_key_override = NULL)
     {
 
-	    error_log(__LINE__ . ' ui html $module_key_override[' . $module_key_override . '].');
-        $this->page_serial = $this->oCRNRSTN_UI_ASSEMBLER->initialize_page_content($module_key_override);
+	    //error_log(__LINE__ . ' ui html $module_key_override[' . $module_key_override . '].');
+        $this->page_serial = $this->R['ui_assembler']->initialize_page_content($module_key_override);
 
-        //die();
-        //
-        // SEARCH INTEGRATION
-        //$this->oCRNRSTN_UI_ASSEMBLER->index_page();
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Content indexing for
+         * CLR-SSL web page content
+         * search integrations.
+         *
+         */
+        $this->R['ui_assembler']->index_page();
 
-        $tmp_html_out = $this->oCRNRSTN_UI_ASSEMBLER->return_page_html($this->page_serial);
+        $tmp_html_out = $this->R['ui_assembler']->return_page_html($this->page_serial);
 
         return $tmp_html_out;
 

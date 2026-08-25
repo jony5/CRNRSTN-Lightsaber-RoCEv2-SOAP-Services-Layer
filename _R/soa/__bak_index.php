@@ -646,7 +646,7 @@ function getMethodContent($soapRequest){
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -662,7 +662,7 @@ function getMethodContent_PlusNav($soapRequest){
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -678,7 +678,7 @@ function getClassContent($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -694,7 +694,7 @@ function getClassContent_PlusNav($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 
 	//
@@ -710,7 +710,7 @@ function getNavContent($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -726,7 +726,7 @@ function getToolTip($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -742,7 +742,7 @@ function getCommInsertStatus($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -758,7 +758,7 @@ function isValidLoginData($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -774,7 +774,7 @@ function trkDwnld($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -790,7 +790,7 @@ function resetPassword($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -806,7 +806,7 @@ function resetPassword2($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -822,7 +822,7 @@ function toggleLikeLink($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -838,7 +838,7 @@ function triggerActivationEmail($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -854,7 +854,7 @@ function isUnUnique($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -870,7 +870,7 @@ function creatNewUser($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -886,7 +886,7 @@ function updateUserSettings($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -902,7 +902,7 @@ function updateUserProfile($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -918,7 +918,7 @@ function searchResultsSuggest($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -935,7 +935,7 @@ function postUserComment($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -951,7 +951,7 @@ function postUserCommentReply($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -967,7 +967,7 @@ function updateUserComment($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -983,7 +983,7 @@ function retrieveUserAccnt_PlusNav($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -999,7 +999,7 @@ function retrieveUserAccnt($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1015,7 +1015,7 @@ function getUserCommentbyID($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1031,7 +1031,7 @@ function deleteUserComment($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1047,7 +1047,7 @@ function getAllToolTips($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1064,7 +1064,7 @@ function submitExamples($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1080,7 +1080,7 @@ function getClassComments($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1096,7 +1096,7 @@ function getMethodComments($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1112,7 +1112,7 @@ function getSearchResultsFull($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1128,7 +1128,7 @@ function postUserFeedback($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1144,7 +1144,7 @@ function activateNewUser($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//
@@ -1160,7 +1160,7 @@ function logActivity($soapRequest) {
 	//
 	// INSTANTIATE A WEB SERVICES MANAGER CLASS OBJECT.
 	if(!isset($oSERVICE_MGR)){
-		$oSERVICE_MGR = new crnrstn_soa_endpoint_request_manager($_SESSION['oCRNRSTN_ENV']);
+		$oSERVICE_MGR = new crnrstn_soap_request_manager($_SESSION['oCRNRSTN_ENV']);
 	}
 	
 	//

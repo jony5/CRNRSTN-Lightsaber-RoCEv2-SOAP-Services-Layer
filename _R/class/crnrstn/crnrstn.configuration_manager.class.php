@@ -298,7 +298,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -378,6 +378,9 @@ class crnrstn_configuration_manager extends crnrstn
         $this->R_data['R_cluster_id']    = $this->get_crnrstn('R_cluster_id');
         $this->R_data['R_node_id']       = $this->get_crnrstn('R_node_id');
         $this->R_data['R_kivotos_index'] = $this->get_kivotos('R_kivotos_index');
+        $this->R['kivotos']              = $this->R_data_write(
+                                                  __METHOD__,
+                                                  'R_kivotos');
 
         // $this->initialize_resource('crnrstn_method_manager', $R_method_manager);
         // $this->initialize_resource('crnrstn_link_manager', $R_link_manager);
@@ -421,8 +424,26 @@ class crnrstn_configuration_manager extends crnrstn
                  *
                  * self::$oCRNRSTN_METHOD_MGR = new crnrstn_method_manager($this->oCRNRSTN);
                  *
-                 * self::$oCRNRSTN_METHOD_MGR = $this->return_registered_resource('new', 'crnrstn_method_manager');
+                 * self::$oCRNRSTN_METHOD_MGR = $this->return_registered_resource(
+                 *                                     'new',
+                 *                                     'crnrstn_method_manager');
+                 *
                  */
+
+                /*
+                CLR-SSL Resource Registry Prototyping (2024-2026):
+
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Thursday, August 20, 2026 @ xxxx hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_bitmask');
+                $this->anoint(
+                       'crnrstn_bitmask',
+                       $R_bitmask);
+
+                */
+
                 $this->R['kivotos']->R['method_manager'] = $data;
 
             break;
@@ -441,8 +462,24 @@ class crnrstn_configuration_manager extends crnrstn
                  * self::$oCRNRSTN_LINK_MGR = new crnrstn_link_manager($this->oCRNRSTN);
                  * 5 :: Monday, November 13, 2023 @ 1816 hrs. and 20 secs.
                  *
-                 * $this->oCRNRSTN_LINK_MGR = $this->return_registered_resource('new', 'crnrstn_link_manager');
+                 * $this->oCRNRSTN_LINK_MGR = $this->return_registered_resource(
+                 *                                   'new',
+                 *                                   'crnrstn_link_manager');
+                 *
                  */
+                /*
+                CLR-SSL Resource Registry Prototyping (2024-2026):
+
+                $spice_salt_mem_ptr = NULL;
+                // 5 :: Thursday, August 20, 2026 @ xxxx hrs.
+                $this->compound_ointment(
+                       $spice_salt_mem_ptr,
+                       'crnrstn_bitmask');
+                $this->anoint(
+                       'crnrstn_bitmask',
+                       $R_bitmask);
+
+                */
                 $this->R['kivotos']->R['link_manager'] = $data;
 
             break;

@@ -290,7 +290,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -298,76 +298,93 @@ namespace CRNRSTN;
 class crnrstn_registry_assistant extends crnrstn 
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * Edit: We modified the crnrstn_registry_assistant 
-     *       class object by applying an 
-     *       extension of the crnrstn object, 
-     *       by deleting the 
-     *       __construct($oCRNRSTN) input 
-     *       parameter with its public 
-     *       definition, and by removing the 
-     *       object assignment to the 
-     *       public $oCRNRSTN variable from 
-     *       Tuesday, August 6, 2024 @ 0327 hrs. 
+     * Edit: We modified the crnrstn_registry_assistant
+     *       class object by applying an
+     *       extension of the crnrstn object,
+     *       by deleting the
+     *       __construct($oCRNRSTN) input
+     *       parameter with its public
+     *       definition, and by removing the
+     *       object assignment to the
+     *       public $oCRNRSTN variable from
+     *       Tuesday, August 6, 2024 @ 0327 hrs.
      *       5 :: Tuesday, March 31, 2026 @ 1403 hrs.
      *
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * Edit: Added the following input 
-     *       parameters to the 
+     * Edit: Added the following input
+     *       parameters to the
      *       crnrstn_registry_assistant
      *       __construct() method:
      *
-     *       - $application_directory         = '', 
-     *       - $R_framework_directory         = '_crnrstn', 
-     *       - $R_hmac_algorithm_override     = NULL, 
-     *       - $R_debug_mode_override         = NULL, 
-     *       - $PHPMailer_debug_mode_override = NULL, 
-     *       - $WordPress_debug_mode_override = NULL, 
-     *       - $R_ascii_art                   = NULL, 
-     *       - $R_file_sys_int_mgr            = NULL, 
-     *       - $R_logging                     = NULL, 
-     *       - $R_session_mgr                 = NULL, 
-     *       - $R_bitflip_mgr                 = NULL, 
-     *       - $R_ip_mgr                      = NULL, 
-     *       - $R_finite_expression           = NULL, 
+     *       - $application_directory         = '',
+     *       - $R_framework_directory         = '_crnrstn',
+     *       - $R_hmac_algorithm_override     = NULL,
+     *       - $R_debug_mode_override         = NULL,
+     *       - $PHPMailer_debug_mode_override = NULL,
+     *       - $WordPress_debug_mode_override = NULL,
+     *       - $R_ascii_art                   = NULL,
+     *       - $R_file_sys_int_mgr            = NULL,
+     *       - $R_logging                     = NULL,
+     *       - $R_session_mgr                 = NULL,
+     *       - $R_bitflip_mgr                 = NULL,
+     *       - $R_ip_mgr                      = NULL,
+     *       - $R_finite_expression           = NULL,
      *       - $R_json                        = NULL, and
      *       - $R_xml                         = NULL.
      *
      *       5 :: Wednesday, June 10, 2026 @ 1502 hrs.
      *
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * Edit: Modified the input 
-     *       parameters for the 
-     *       crnrstn_registry_assistant 
+     * Edit: Modified the input
+     *       parameters for the
+     *       crnrstn_registry_assistant
      *       __construct() method:
      *
-     *       Removed: 
-     *       - $R_ascii_art                   = NULL, 
-     *       - $R_file_sys_int_mgr            = NULL, 
-     *       - $R_logging                     = NULL, 
-     *       - $R_session_mgr                 = NULL, 
-     *       - $R_bitflip_mgr                 = NULL, 
-     *       - $R_ip_mgr                      = NULL, 
-     *       - $R_finite_expression           = NULL, 
+     *       Removed:
+     *       - $R_ascii_art                   = NULL,
+     *       - $R_file_sys_int_mgr            = NULL,
+     *       - $R_logging                     = NULL,
+     *       - $R_session_mgr                 = NULL,
+     *       - $R_bitflip_mgr                 = NULL,
+     *       - $R_ip_mgr                      = NULL,
+     *       - $R_finite_expression           = NULL,
      *       - $R_json                        = NULL, and
      *       - $R_xml                         = NULL.
      *
-     *       Added: 
+     *       Added:
      *       - $R_odata                       = NULL.
      *
      *       5 :: Wednesday, June 10, 2026 @ 2001 hrs.
      *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Deleted 1) the object variable
+     *       definitions for $R_file_sys_int_mgr,
+     *       $R_logging, $R_session_mgr,
+     *       $R_registry_usr, $R_bitflip_mgr,
+     *       $R_ip_mgr, $R_finite_expression,
+     *       $R_json, and $R_xml and 2) removed
+     *       the class __construct() input
+     *       parameter, $R_odata = NULL.
+     *       5 :: Friday, August 21, 2026 @ 2348 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Added the parameter
+     *       definitions for:
+     *       private $R      = array();
+     *       private $R_data = array();
+     *       5 :: Friday, August 21, 2026 @ 2355 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Changed the scope of parameter
+     *       visibility for $R from private
+     *       to public in order to make space
+     *       for CLR-SSL SOAP integrations.
+     *       5 :: Sunday, August 23, 2026 @ 2329 hrs.
+     *
      */
 
-    private static $R_ascii_art;
-    private static $R_file_sys_int_mgr;
-    private static $R_logging;
-    private static $R_session_mgr;
-    private static $R_registry_usr;
-    private static $R_bitflip_mgr;
-    private static $R_ip_mgr;
-    private static $R_finite_expression;
-    private static $R_json;
-    private static $R_xml;
+    public $R       = array();
+    private $R_data = array();
 
     /**
      * R :: Content pending. 
@@ -389,8 +406,7 @@ class crnrstn_registry_assistant extends crnrstn
              $R_hmac_algorithm_override = NULL, 
              $R_debug_mode_override = NULL, 
              $PHPMailer_debug_mode_override = NULL, 
-             $WordPress_debug_mode_override = NULL, 
-             $R_odata = NULL)
+             $WordPress_debug_mode_override = NULL)
     {
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -414,7 +430,7 @@ class crnrstn_registry_assistant extends crnrstn
          * Last Modified: Sunday, March 15, 2026 @ "01" 2345 hrs.
          *
          * "01010101...split the atom...Oh, 
-         * Oh, Oh, Oh. You know what I mean."
+         * Oh, Oh, Oh. You know what I mean. 
          *
          * Yeah, you know what I mean: 
          * "Oh, Oh, Oh"... 
@@ -430,27 +446,27 @@ class crnrstn_registry_assistant extends crnrstn
             {
 
                 // 5 :: Wednesday, June 10, 2026 @ 2001 hrs.
-                $clr_ssl_msg = __CLASS__ . 
-                               ' Receiving: ' . 
-                           \print_r($index, true) . 
+                $clr_ssl_msg = __CLASS__ .
+                               ' Receiving: ' .
+                           \print_r($index, true) .
                            '(' . \gettype($index) . ').';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token = array(
-                         'token'                   => $msg_token, 
-                         'token_generation_date'   => $token_generation_date, 
-                         'request_type'            => __METHOD__, 
-                         'code'                    => 200, 
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
                          'clr_ssl_msg'             => $clr_ssl_msg);
                 $this->error_log(
-                       $clr_ssl_msg, 
-                       \LOG_NOTICE, 
-                       \E_NOTICE, 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
+                       $clr_ssl_msg,
+                       \LOG_NOTICE,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
                        $token);
 
             }
@@ -477,8 +493,7 @@ class crnrstn_registry_assistant extends crnrstn
              $request_type, 
              $R_resp, 
              $R_debug_mode, 
-             $clr_ssl_sandbox, 
-             $R_resp_exe)
+             $clr_ssl_sandbox)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied the springs_of_Elim() 
@@ -578,7 +593,7 @@ class crnrstn_registry_assistant extends crnrstn
              &$R_data_010 = NULL, &$R_data_011 = NULL, 
              &$R_data_012 = NULL, &$R_data_013 = NULL, 
              &$R_data_014 = NULL, &$R_data_015 = NULL)
-     {
+    {
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied the method, anoint, 
@@ -632,11 +647,11 @@ class crnrstn_registry_assistant extends crnrstn
         die();
 
          if(!($R_resp = _crnrstn_native_resource_registry(
-                               'return', 
-                               $this, 
-                               'new', 
-                               $resource_name, 
-                               $this->get_crnrstn('R_debug_mode'))))
+                        'return',
+                        $this,
+                        'new',
+                        $resource_name,
+                        $this->get_crnrstn('R_debug_mode'))))
         {
 
             $clr_ssl_msg = 'Resource not found: ' . 
@@ -689,7 +704,7 @@ class crnrstn_registry_assistant extends crnrstn
             __FILE__, 
             $token);
 
-     }
+    }
 
     /**
      * R :: Content pending. 
@@ -701,8 +716,8 @@ class crnrstn_registry_assistant extends crnrstn
      *
      */
     function anoint_eval(
-            $resource_name, 
-            &$R_resp = NULL)
+             $resource_name,
+             &$R_resp = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied the method, anoint_eval, 
@@ -749,64 +764,288 @@ class crnrstn_registry_assistant extends crnrstn
 
         // Where, $resource_name = 'crnrstn_http_manager|crnrstn_session_manager||';
 
-         if($this->is_ssl()){
+        $check_for_concat = true;
 
-            \error_log('[lnum ' . 
-                __LINE__ . '] [mthd ' . 
-                __METHOD__ .
-                '] This is SSL. Enjoy your online shopping ' . 
-                $resource_name . '.');
+        if(!isset($R_resp))
+            $R_resp = array();
 
-         }else{
+        /*
+        // 5 :: Monday, June 8, 2026 @ 0243 hrs.
+        $spice_salt_mem_ptr = $this->generate_key('compound_ointment_spice_salt');
+        self::$R_data['anoint']['compound_ointment']['resource_key'][]       = $resource_key;
+        self::$R_data['anoint']['compound_ointment']['spice_salt'][]         = $spice_salt_mem_ptr;
+        self::$R_data['anoint']['compound_ointment']['isset'][$resource_key] = 1;
 
-            \error_log('[lnum ' . 
-                __LINE__ . '] [mthd ' . 
-                __METHOD__ . 
-                '] This is not SSL. Enjoy ' . 
-                'your high school project with ' . 
-                $resource_name . '.');
+        for($i = 1; $i < $num_args; $i++)
+            // 5 :: Thursday, August 20, 2026 @ 0600 hrs.
+            self::$R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][] = $args[$i];
 
-         }
+        */
 
-         if(!($R_resp = _crnrstn_native_resource_registry(
-                               'ping', 
-                               $this, 
-                               'new', 
-                               $resource_name, 
-                               $this->get_crnrstn('R_debug_mode'))))
-        {
+        switch($this->gettype($resource_name, $this->R_data['int_flag']['R_integer'])){
+            case $this->R_data['int_flag']['R_object']:
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * The resource name is an object, so
+                 * we will programmatically acquire the
+                 * class name, and pass it on as string.
+                 *
+                 *
+                 * 5 :: Thursday, August 20, 2026 @ 0617 hrs.
+                 *
+                 */
+                $resource_name    = \get_class($resource_name);
+                $check_for_concat = false;
+            case $this->R_data['int_flag']['R_string']:
 
-            $clr_ssl_msg = 'Resource not found: ' . 
-                           $resource_name . '.';
-            // 5 :: Monxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = '2d598ce94e890fffdc759c5cff2f3a26' . 
-                         'ec77dad5e59b3a719e75a45a8aa581ce' . 
-                         '009002301bd65f5fa81d080252518c74' . 
-                         'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token = array(
-                     'token'                 => $msg_token, 
-                     'token_generation_date' => $token_generation_date, 
-                     'request_type'          => $request_type, 
-                     'code'                  => 200, 
-                     'clr_ssl_msg'           => $clr_ssl_msg,
-                     'resource_name'         => $resource_name);
-            $R->error_log(
-                $clr_ssl_msg, 
-                \LOG_ALERT, 
-                \E_ERROR, 
-                __LINE__, 
-                __FUNCTION__, 
-                __FILE__, 
-                $token);
+                if($check_for_concat){
+
+                    // Is the data concatenated?
+                    $pos_comma = \strpos($resource_name, ',');
+                    $pos_pipe  = \strpos($resource_name, '|');
+
+                    if($pos_comma !== false)
+                        $delimiter = ',';
+                    else
+                        if($pos_pipe !== false)
+                            $delimiter = '|';
+
+                    if(isset($delimiter)){
+
+                        $res_names = \explode($delimiter, $resource_name);
+                        $cnt       = \sizeof($res_names);
+
+                        for($i = 0; $i < $cnt; $i++)
+                        {
+
+                            if(!($R_resp = _crnrstn_native_resource_registry(
+                                           'evaluate',
+                                           $this,
+                                           NULL,
+                                           $res_names[$i],
+                                           $this->R_data['R_debug_mode'])))
+                            {
+
+                                $clr_ssl_msg = 'CLR-SSL resource ' .
+                                               'evaluation failure: ' .
+                                               $res_names[$i];
+                                // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                                $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => __METHOD__,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg);
+                                $this->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_ALERT,
+                                    \E_ERROR,
+                                    __LINE__,
+                                    __METHOD__,
+                                    __FILE__,
+                                    $token);
+
+                            }else{
+
+                                $R_resp[] = $R_resp;
+
+                            }
+
+                        }
+
+                        return NULL;
+
+                    }
+
+                }
+
+                // Requesting one (1) resource from the CLR-SSL.
+                if(!($R_resp = _crnrstn_native_resource_registry(
+                               'evaluate',
+                               $this,
+                               NULL,
+                               $resource_name,
+                               $this->R_data['R_debug_mode'])))
+                {
+
+                    $clr_ssl_msg = 'CLR-SSL resource ' .
+                                   'evaluation failure: ' .
+                                   $resource_name;
+                    // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __METHOD__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                           $clr_ssl_msg,
+                           \LOG_ALERT,
+                           \E_ERROR,
+                           __LINE__,
+                           __METHOD__,
+                           __FILE__,
+                           $token);
+
+                }else{
+
+                    $R_resp[] = $R_resp;
+
+                }
+
+            break;
+            case $this->R_data['int_flag']['R_array']:
+                // 5 :: Thursday, August 20, 2026 @ 0657 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Array Structure A: array('resource_name0', 'resource_name1', ...)
+                 * Array Structure B: array('resource_name0' => 'val', 'resource_name1' => 'val', ...)
+                 *
+                 */
+
+                $i = 0;
+                foreach($resource_name as
+                        $index => $val)
+                {
+
+                    // Array Structure A
+                    if(\is_int($index))
+                        $res_name = $val;
+                    else
+                        // Array Structure B
+                        $res_name = $index;
+
+                    if(!($R_resp = _crnrstn_native_resource_registry(
+                                   'evaluate',
+                                   $this,
+                                   NULL,
+                                   $res_name,
+                                   $this->R_data['R_debug_mode'])))
+                    {
+
+                        $clr_ssl_msg = 'CLR-SSL resource ' .
+                                       'evaluation failure: ' .
+                                       $res_name;
+                        // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __METHOD__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $this->error_log(
+                               $clr_ssl_msg,
+                               \LOG_ALERT,
+                               \E_ERROR,
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               $token);
+
+                    }else{
+
+                        $R_resp[] = $R_resp;
+
+                    }
+
+                }
+
+                return NULL;
+
+            break;
 
         }
+
+        return NULL;
 
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
+     * @param $resource_name
+     * @param $R_data_000
+     * @param $R_data_015
+     * @param $R_odata
+     * @return
+     * @access public
+     *
+     */
+    function return_anointed_resource($resource_name)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Copied the method,
+         * return_anointed_resource, to
+         * the crnrstn_registry_assistant
+         * from the crnrstn_registry_user.
+         * 5 :: Tuesday, June 2, 2026 @ 0555 hrs.
+         *
+         */
+
+        switch($resource_name){
+            case __NAMESPACE__ . '\crnrstn_OAuth':
+            case 'crnrstn_OAuth':
+            case 'gabriel_oauth':
+                // 5 :: Tuesday, June 2, 2026 @ 0623 hrs.
+
+                $PHPMailer = NULL;
+
+                $this->anoint('crnrstn_PHPMailer', $PHPMailer);
+
+                $PHPMailer->setOAuth();
+                $resource_output = $PHPMailer->getOAuth();
+
+                // 5 :: Tuesday, June 2, 2026 @ 0623 hrs.
+                return $resource_output;
+
+            break;
+
+        }
+
+        $R_resp = NULL;
+
+        if(isset(self::$R['kivotos']->R['registry_usr']))
+            // 5 :: Tuesday, June 2, 2026 @ 0600 hrs.
+            self::$R['kivotos']->R['registry_usr']->anoint(
+                $resource_name,
+                $R_resp);
+        else
+            // 5 :: Thursday, August 20, 2026 @ 0607 hrs.
+            $this->initialization_series_anoint(
+                $resource_name,
+                $R_resp);
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Return the anointed resource.
+         * 5 :: Tuesday, June 2, 2026 @ 0555 hrs.
+         *
+         */
+        return $R_resp;
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * Recycle the $spice_salt_mem_ptr
+     * for a specific resource if the
+     * if the object, function or runtime exe
+     * needs > 16 inputs for the method
+     * call, and then call compound_ointment
+     * multiple times to locally address the
+     * +16 inputs behind the same
+     * $spice_salt_mem_ptr / $resource_name for
+     * the anointing of that resource.
+     *
+     * @param &$spice_salt_mem_ptr
      * @param $resource_name
      * @param $R_data_000
      * @param $R_data_015
@@ -816,7 +1055,8 @@ class crnrstn_registry_assistant extends crnrstn
      *
      */
     function compound_ointment(
-             $resource_name, 
+             &$spice_salt_mem_ptr = NULL,
+             $resource_name = NULL,
              $R_data_000 = NULL, $R_data_001 = NULL, 
              $R_data_002 = NULL, $R_data_003 = NULL, 
              $R_data_004 = NULL, $R_data_005 = NULL, 
@@ -824,8 +1064,7 @@ class crnrstn_registry_assistant extends crnrstn
              $R_data_008 = NULL, $R_data_009 = NULL, 
              $R_data_010 = NULL, $R_data_011 = NULL, 
              $R_data_012 = NULL, $R_data_013 = NULL, 
-             $R_data_014 = NULL, $R_data_015 = NULL, 
-             $combine_calls = false)
+             $R_data_014 = NULL, $R_data_015 = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied compound_ointment 
@@ -844,52 +1083,54 @@ class crnrstn_registry_assistant extends crnrstn
          *       $combine_calls = false as input. 
          *       5 :: Monday, June 8, 2026 @ 0229 hrs.
          *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added &$spice_salt_mem_ptr = NULL as
+         *       the first input parameter for the
+         *       compound_ointment method, and set
+         *       a default for $resource_name = NULL.
+         *       5 :: Saturday, August 22, 2026 @ "00" 0100 hrs.
+         *
+         *       "00"..."00"..."00"...Oh,
+         *       Oh, Oh, Oh. You know what I mean.
+         *
+         *       Yeah, you know what I mean:
+         *       "Oh, Oh, Oh"...
+         *       Yeah, you know what
+         *       I mean..."Oh"...yeah. ;)
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Removed the $combine_calls = false
+         *       method input from the method,
+         *       compound_ointment.
+         *       5 :: Saturday, August 22, 2026 @ 0149 hrs.
+         *
          */
 
-        if($combine_calls === true){
-            // 5 :: Monday, June 8, 2026 @ 0223 hrs.
+        $args     = \func_get_args();
+        $num_args = \sizeof($args);
 
-            foreach(self::$R_data['anoint']['compound_ointment']['resource_name'] as 
-                $index => $res_name)
-            {
-
-                if($resource_name == $res_name){
-
-                    $spice_salt = self::$R_data['anoint']['compound_ointment']['spice_salt'][$index];
-
-                    break 1;
-
-                }
-                
-            }
-
-        }
-
-        if(!isset($spice_salt)){
+        if(!isset($spice_salt_mem_ptr))
             // 5 :: Monday, June 8, 2026 @ 0243 hrs.
+            $spice_salt_mem_ptr = $this->generate_key('compound_ointment_spice_salt');
 
-            $spice_salt = $this->generate_key('compound_ointment_spice_salt'); 
-            self::$R_data['anoint']['compound_ointment']['resource_key'][] = $resource_key;
-            self::$R_data['anoint']['compound_ointment']['spice_salt'][]   = $spice_salt;
+        $this->R_data['anoint']['compound_ointment']['resource_key'][]               = $resource_name;
+        $this->R_data['anoint']['compound_ointment']['spice_salt'][$resource_name][] = $spice_salt_mem_ptr;
+        $this->R_data['anoint']['compound_ointment']['isset'][$resource_name]        = 1;
 
-        }
-
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_000;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_001;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_002;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_003;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_004;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_005;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_006;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_007;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_008;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_009;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_010;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_011;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_012;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_013;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_014;
-        self::$R_data['anoint']['compound_ointment'][$spice_salt][] = $R_data_015;
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Compound the input data into the
+         * object, function or runtime executable's
+         * compounded ointment for the proper
+         * anointing of resource, $resource_name.
+         *
+         *
+         * 5 :: Saturday, August 22, 2026 @ 0014 hrs.
+         * Stops to roll a joint.
+         *
+         */
+        for($i = 1; $i < $num_args; $i++)
+            // 5 :: Thursday, August 20, 2026 @ 0600 hrs.
+            $this->R_data['anoint']['compound_ointment'][$spice_salt_mem_ptr][] = $args[$i];
 
         // 5 :: Monday, June 8, 2026 @ 0212 hrs.
         return NULL;

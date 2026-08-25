@@ -31,9 +31,23 @@
  *       \CRNRSTN\crnrstn_PHPMailer. 
  *       5 :: Tuesday, June 16, 2026 @ 0138 hrs.
  *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Edit: Modified the PHPMailer namespace
+ *       from \CRNRSTN\crnrstn_PHPMailer to
+ *       \CRNRSTN.
+ *
+ *       Fatal error: Uncaught Error:
+ *       Class "CRNRSTN\crnrstn_PHPMailer\crnrstn"
+ *       not found in C:\xampp\htdocs\_R\class
+ *       \thirdparty\phpmailer\src
+ *       \crnrstn_SMTP.php:45
+ *
+ *       5 :: Thursday, August 20, 2026 @ 2156 hrs.
+ *
+ *
  */
 
-namespace CRNRSTN\crnrstn_PHPMailer;
+namespace CRNRSTN;
 
 /**
  * PHPMailer RFC821 SMTP email transport class.
@@ -299,7 +313,7 @@ class crnrstn_SMTP extends crnrstn
          * 5 ::
          *
          * Tuesday, July 1, 2024 @ 0851 hrs.
-         * Last Modifed: Friday, March 13, 2026 @ 1422 hrs.
+         * Last Modified: Friday, March 13, 2026 @ 1422 hrs.
          *
          */
         $this->error_log($str, $line_num, $method, $file, CRNRSTN_GABRIEL);

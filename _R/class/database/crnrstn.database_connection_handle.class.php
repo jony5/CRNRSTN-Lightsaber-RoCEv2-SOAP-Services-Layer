@@ -307,12 +307,12 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
  */
-class crnrstn_database_connection_handle extends crnrstn_user 
+class crnrstn_database_connection_handle extends crnrstn
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Edit: We modified the crnrstn_database_connection_handle 
@@ -325,6 +325,17 @@ class crnrstn_database_connection_handle extends crnrstn_user
      *       object assignment to the 
      *       public $oCRNRSTN_USR variable. 
      *       5 :: Wednesday, June 17, 2026 @ 2212 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: We changed the
+     *       crnrstn_database_connection_handle
+     *       class object definition so that it
+     *       extends crnrstn and not the
+     *       crnrstn_user class object as we
+     *       restart CLR-SSL Database Services
+     *       Layer integrations development
+     *       from scratch.
+     *       5 :: Sunday, August 16, 2026 @ 0508 hrs.
      *
      */
 

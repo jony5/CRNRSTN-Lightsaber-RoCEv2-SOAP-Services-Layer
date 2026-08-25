@@ -489,7 +489,7 @@ namespace CRNRSTN;
  * @license https://crnrstn.jony5.com/licensing/ MIT
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb :: Corporate Sponsor.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @return object 
  * @access public
  *
@@ -2990,8 +2990,7 @@ class crnrstn_logging extends crnrstn
          */
         $init_profile_pack_ARRAY = $this->return_sys_logging_init_profile_pack();
 
-        /**
-		 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
 		 * Return an instantiation of 
 		 * The CRNRSTN :: Lightsaber RoCEv2 
 		 * SOAP Services Layer (CLR-SSL) Wild 
@@ -3005,14 +3004,23 @@ class crnrstn_logging extends crnrstn
          *                                  $init_profile_pack_ARRAY, 
          *                                  $this->oCRNRSTN);
          *
+         * self::$R_log_output_mgr = $this->return_registered_resource(
+         *                                  'new',
+         *                                  'crnrstn_logging_output_profile_manager',
+         *                                  $init_profile_pack_ARRAY);
          */
-        self::$R_log_output_mgr = $this->return_registered_resource(
-        	                             'new', 
-        	                             'crnrstn_logging_output_profile_manager', 
-        	                             $init_profile_pack_ARRAY);
 
-        /**
-         *error_log('[lnum ' . 
+        $spice_salt_mem_ptr = NULL;
+        // 5 :: Friday, August 21, 2026 @ 0112 hrs.
+        $this->compound_ointment(
+               $spice_salt_mem_ptr,
+               'crnrstn_logging_output_profile_manager',
+               $init_profile_pack_ARRAY);
+        $this->anoint(
+               'crnrstn_logging_output_profile_manager',
+               self::$R_log_output_mgr);
+
+        /*error_log('[lnum ' .
          *    __LINE__ . '] [mthd ' . 
          *    __METHOD__ . 
          *    '] ' . get_class() . 
@@ -3044,11 +3052,8 @@ class crnrstn_logging extends crnrstn
         $tmp_exception_systemtime = $this->return_micro_time();
 
         $exception_method_trim    = $exception_method;
-        if(isset($exception_method)){
-
+        if(isset($exception_method))
             $exception_method_trim = trim($exception_method);
-
-        }
 
         if(isset($exception_method_trim)){
 
@@ -3074,6 +3079,7 @@ class crnrstn_logging extends crnrstn
 
         }
 
+        /*
         $this->error_log('[rtime ' . 
         	   $tmp_exception_runtime . ' secs] [' . 
         	   $method . ' ' . 
@@ -3085,6 +3091,33 @@ class crnrstn_logging extends crnrstn
         	   __FILE__, 
         	   CRNRSTN_LOG_ALL);
 
+        */
+
+        $clr_ssl_msg = '[rtime ' .
+                       $tmp_exception_runtime . ' secs] [' .
+                       $method . ' ' .
+                       $tmp_exception_method . '] [lnum ' .
+                       $tmp_exception_linenum . '] ' .
+                       $tmp_exception_msg;
+        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+            'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token = array(
+            'token'                   => $msg_token,
+            'token_generation_date'   => $token_generation_date,
+            'request_type'            => __METHOD__,
+            'code'                    => 200,
+            'clr_ssl_msg'             => $clr_ssl_msg);
+        $this->error_log(
+            $clr_ssl_msg,
+            \LOG_ERR,
+            \E_ERROR,
+            __LINE__,
+            __METHOD__,
+            __FILE__,
+            $token);
+
         $tmp_exception_output_str = $tmp_exception_systemtime . ' [rtime ' . 
                                     $tmp_exception_runtime . ' secs] [' . 
                                     $method . ' ' . 
@@ -3093,9 +3126,9 @@ class crnrstn_logging extends crnrstn
                                     $tmp_exception_msg;
 
         switch($tmp_source_method){
-            case 'crnrstn_soa_endpoint_request_manager::takeTheKingsHighway':
+            case 'crnrstn_soap_request_manager::takeTheKingsHighway':
 
-                $tmp_pos_SOAP_req = strpos($tmp_exception_msg, 'a SOAP request '); //a SOAP request
+                $tmp_pos_SOAP_req = \strpos($tmp_exception_msg, 'a SOAP request '); //a SOAP request
 
                 if($tmp_pos_SOAP_req !== false){
 
@@ -3154,8 +3187,7 @@ class crnrstn_logging extends crnrstn
             break;
             default:
 
-                /**
-                 * $tmp_exception_method = $exception_method . '()';
+                /* $tmp_exception_method = $exception_method . '()';
                  * $method = 'methd';
                  */
 
@@ -3443,7 +3475,7 @@ class crnrstn_logging extends crnrstn
                                     $tmp_exception_msg;
 
         switch($tmp_source_method){
-            case 'crnrstn_soa_endpoint_request_manager::takeTheKingsHighway':
+            case 'crnrstn_soap_request_manager::takeTheKingsHighway':
 
                 /**
                  * $http_status_codes = array(
@@ -4336,7 +4368,7 @@ class crnrstn_logging extends crnrstn
 
         Source: https://www.php.net/manual/en/function.syslog.php
         Source: https://datatracker.ietf.org/doc/html/rfc3164
-        5 :: Thursday, April 30 2026 @ 1539 hrs.
+        5 :: Thursday, April 30, 2026 @ 1539 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
          *
@@ -4434,7 +4466,7 @@ class crnrstn_logging extends crnrstn
         * lights bowl *
         * cracks open another can of Sweetwater® 420 
           with my K-bar Happy 128th Birthday to K-bar, btw. *
-        5 :: Thursday, April 30 2026 @ 1620 hrs.
+        5 :: Thursday, April 30, 2026 @ 1620 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
         CRNRSTN :: Lightsaber RoCEv2 
@@ -4468,7 +4500,7 @@ class crnrstn_logging extends crnrstn
         'CRNRSTN_LOG_SOAP'               => 8056
 
 
-        5 :: Thursday, April 30 2026 @ 1631 hrs.
+        5 :: Thursday, April 30, 2026 @ 1631 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
         The New CRNRSTN :: Lightsaber 
@@ -4480,7 +4512,7 @@ class crnrstn_logging extends crnrstn
             'CRNRSTN_DEBUG_SYSLOG,'         => 1 
 
 
-        5 :: Thursday, April 30 2026 @ 1652 hrs.
+        5 :: Thursday, April 30, 2026 @ 1652 hrs.
 
 
         The New CRNRSTN :: Lightsaber 
