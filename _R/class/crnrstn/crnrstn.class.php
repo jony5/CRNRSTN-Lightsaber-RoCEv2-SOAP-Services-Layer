@@ -2242,27 +2242,6 @@ class crnrstn
         self::$R_data['nusoap_wsdlcache[cache_lifetime]'] = 0;
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Initialize directory 
-         * data for private static 
-         * application and 
-         * framework parameters. 
-         *
-         * $this->R_data['application_directory']
-         * $this->R_data['R_framework_directory']
-         * $this->R_data['R_framework_path']
-         *
-         *
-         * 5 ::
-         *
-         * Friday, October 24, 2025 @ 1202 hrs.
-         *
-         */
-        //$this->initialize_application_folders(
-        //       $application_directory, 
-        //       $R_framework_directory, 
-        //       $R_hmac_algorithm_override);
-
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Configuration resource 
          * basic path initialization. 
          *
@@ -62843,7 +62822,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * 5 :: Saturday, August 8, 2026 @ 0749 hrs.
                  *
                  */
-                $mem_ptr                    = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+                $mem_ptr = $R_resp['clr_ssl_resource']['memory_pointer'][0];
 
             break;
             case self::$R_data['int_flag']['R_object']:
@@ -62891,31 +62870,31 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                    'ping',
                                    $this,
                                    NULL,
-                                   \get_class($R_resp),
+                                   $data_resource_name,
                                    self::$R_data['R_debug_mode'])))
                     {
 
                         $clr_ssl_msg = 'CLR-SSL resource ' .
-                            'ping failure: ' .
-                            \get_class($R_resp);
+                                       'ping failure: ' .
+                                       $data_resource_name;
                         // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
-                            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
                         $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
                         $token = array(
-                            'token'                   => $msg_token,
-                            'token_generation_date'   => $token_generation_date,
-                            'request_type'            => __METHOD__,
-                            'code'                    => 200,
-                            'clr_ssl_msg'             => $clr_ssl_msg);
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __METHOD__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
                         $this->error_log(
-                            $clr_ssl_msg,
-                            \LOG_ALERT,
-                            \E_ERROR,
-                            __LINE__,
-                            __METHOD__,
-                            __FILE__,
-                            $token);
+                               $clr_ssl_msg,
+                               \LOG_ALERT,
+                               \E_ERROR,
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               $token);
 
                     }else{
 
@@ -62940,7 +62919,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                 $data_resource_name = $R_resp;
 
-                if(self::$_R['kivotos']->isset_kivotos($data_resource_name)){
+                if(self::$_R['kivotos']->isset_kivotos($R_resp)){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Extract the data from
@@ -62979,7 +62958,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                    'ping',
                                    $this,
                                    NULL,
-                                   $resource,
+                                   $data_resource_name,
                                    self::$R_data['R_debug_mode'])))
                     {
 

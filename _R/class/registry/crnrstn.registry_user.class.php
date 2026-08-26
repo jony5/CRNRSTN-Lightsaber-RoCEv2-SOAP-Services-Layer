@@ -415,6 +415,7 @@ class crnrstn_registry_user
     private static $hmac_hash_algorithm_ARRAY = array();
     private static $hmac_algorithm = 'sha256';
     private static $openssl_cipher = 'aes-192-ofb';
+    private static $channel_syntax_ARRAY = array();
     private static $lang_struct_time = array();
     private static $system_default_logging_output_profile;
 
@@ -935,21 +936,21 @@ class crnrstn_registry_user
                     self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_SYSTEM_TEST'];
                     self::$R_data['nusoap_debug_flag'] = true;
 
-                    break;
+                break;
                 case '2':
                 case 2:
 
                     self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_SYSLOG'];
                     self::$R_data['nusoap_debug_flag'] = true;
 
-                    break;
+                break;
                 case '1':
                 case 1:
 
                     self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_ON'];
                     self::$R_data['nusoap_debug_flag'] = true;
 
-                    break;
+                break;
                 case '0':
                 case 0:
                 default:
@@ -957,7 +958,7 @@ class crnrstn_registry_user
                     self::$R_data['R_debug_mode']      = self::$R_data['int_flag']['CRNRSTN_DEBUG_OFF'];
                     self::$R_data['nusoap_debug_flag'] = false;
 
-                    break;
+                break;
 
             }
 
@@ -1167,27 +1168,6 @@ class crnrstn_registry_user
         self::$R_data['nusoap_wsdlcache[cache_lifetime]'] = 0;
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Initialize directory 
-         * data for private static 
-         * application and 
-         * framework parameters. 
-         *
-         * self::$R_data['application_directory']
-         * self::$R_data['R_framework_directory']
-         * self::$R_data['R_framework_path']
-         *
-         *
-         * 5 ::
-         *
-         * Friday, October 24, 2025 @ 1202 hrs.
-         *
-         */
-        //$this->initialize_application_folders(
-        //       $application_directory, 
-        //       $R_framework_directory, 
-        //       $R_hmac_algorithm_override);
-
-        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Configuration resource 
          * basic path initialization. 
          *
@@ -1385,10 +1365,6 @@ class crnrstn_registry_user
 
             }
 
-            echo '<br>[mthd ' .
-                __METHOD__ . '] [lnum ' .
-                __LINE__ . '] Finished clr_ssl_initialize.';
-            die();
         }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1602,11 +1578,8 @@ class crnrstn_registry_user
         switch($loading_architecture){
             case self::$R_data['int_flag']['R_load_1_to_1_request']:
 
-                if(isset(self::$R_data['evaluated_resources'][$resource_name])){
-
+                if(isset(self::$R_data['evaluated_resources'][$resource_name]))
                     return false;
-
-                }
 
                 self::$R_data['evaluated_resources'][$resource_name] = 1;
 
@@ -1631,11 +1604,7 @@ class crnrstn_registry_user
                             $loading_architecture, 
                             $resource_name,
                             $eval_ttl)))
-                {
-
                     return false;
-
-                }
 
                 return true;
 
@@ -1805,7 +1774,7 @@ class crnrstn_registry_user
                             if(!(isset(self::$R_data['spool']['evaluated_resources']['clr_ssl_load_approved'][$loading_architecture][$resource_name])))
                             {
 
-                                self::$R_data['spool']['evaluated_resources']['clr_ssl_load_approved'][$loading_architecture][$resource_name] = 1;
+                                self::$R_data['spool']['evaluated_resources']['clr_ssl_load_approved'][$loading_architecture][$resource_name]       = 1;
                                 self::$R_data['spool']['evaluated_resources']['clr_ssl_load_approved']['timestamp_microtime_float'][$resource_name] = $this->microtime_float();
 
                                 $clr_ssl_msg = 'The CLR-SSL Registry Resource, ' . 
@@ -2890,7 +2859,8 @@ class crnrstn_registry_user
                                                                  'R_channel_FILE'                     => 0,
                                                                  'R_channel_FORM'                     => 0,
                                                                  'R_channel_RDMA'                     => 0,
-                                                                 'R_channel_OERSL'                    => 0,'CRNRSTN_LOG_NONE' => 0,
+                                                                 'R_channel_OERSL'                    => 0,
+                                                                 'CRNRSTN_LOG_NONE'                   => 0,
                                                                  'CRNRSTN_LOG_ALL'                    => 0,
                                                                  'CRNRSTN_LOG_PROXY'                  => 0,
                                                                  'CRNRSTN_LOG_DEFAULT'                => 0,
@@ -4933,7 +4903,7 @@ class crnrstn_registry_user
                  * 5 :: Saturday, August 8, 2026 @ 0749 hrs.
                  *
                  */
-                $mem_ptr                    = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+                $mem_ptr = $R_resp['clr_ssl_resource']['memory_pointer'][0];
 
             break;
             case self::$R_data['int_flag']['R_object']:
@@ -4981,31 +4951,31 @@ class crnrstn_registry_user
                                    'ping',
                                    $this,
                                    NULL,
-                                   \get_class($R_resp),
+                                   $data_resource_name,
                                    self::$R_data['R_debug_mode'])))
                     {
 
                         $clr_ssl_msg = 'CLR-SSL resource ' .
-                            'ping failure: ' .
-                            \get_class($R_resp);
+                                       'ping failure: ' .
+                                       $data_resource_name;
                         // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
-                            'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
                         $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
                         $token = array(
-                            'token'                   => $msg_token,
-                            'token_generation_date'   => $token_generation_date,
-                            'request_type'            => __METHOD__,
-                            'code'                    => 200,
-                            'clr_ssl_msg'             => $clr_ssl_msg);
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __METHOD__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
                         $this->error_log(
-                            $clr_ssl_msg,
-                            \LOG_ALERT,
-                            \E_ERROR,
-                            __LINE__,
-                            __METHOD__,
-                            __FILE__,
-                            $token);
+                               $clr_ssl_msg,
+                               \LOG_ALERT,
+                               \E_ERROR,
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               $token);
 
                     }else{
 
@@ -5069,13 +5039,13 @@ class crnrstn_registry_user
                                    'ping',
                                    $this,
                                    NULL,
-                                   $resource,
+                                   $data_resource_name,
                                    self::$R_data['R_debug_mode'])))
                     {
 
                         $clr_ssl_msg = 'CLR-SSL resource ' .
                             'initialization failure: ' .
-                            $resource;
+                            $data_resource_name;
                         // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
                             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
