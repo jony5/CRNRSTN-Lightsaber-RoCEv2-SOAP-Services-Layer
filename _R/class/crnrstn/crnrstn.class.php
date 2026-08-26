@@ -34434,7 +34434,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             case 'timestamp_to_iso8601[timestamp]':
                 // 5 :: Tuesday, June 2, 2026 @ 1135 hrs.
 
-                if(!issset(self::$R_data[$name]))
+                if(!isset(self::$R_data[$name]))
                     // Return current Unix timestamp.
                     return time();
 
@@ -47393,7 +47393,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        if(is_string($spool_channel))
+        if(\is_string($spool_channel))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Convert CLR-SSL channel data 
              * to integer. 
@@ -47448,7 +47448,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                        $syslog_level, 
                        $line_num, 
                        $error_reporting_level, 
-                       'R :: [Warning DEPRECATED ]', 
+                       'R :: [Warning DEPRECATED. ' .
+                       'Also, the data will not be logged to ' .
+                       'the database.]',
                        $syslog_prefix_passthrough), 
                 \LOG_CONS | 
                 \LOG_NDELAY | 
@@ -47510,7 +47512,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     $_SESSION['CRNRSTN_ERROR_PREFIX_' . 
                     self::$R_data['R_cluster_id']]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'][] = $message_str;
 
-                    return count($_SESSION['CRNRSTN_ERROR_PREFIX_' . 
+                    return \count($_SESSION['CRNRSTN_ERROR_PREFIX_' .
                         self::$R_data['R_cluster_id']]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID']);
 
                 break;
@@ -47522,7 +47524,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     self::$R_data['spool']['err_message_queue_push'][$token['token']]['message'][]                    = $message_str;
                     self::$R_data['spool']['err_message_queue_push'][$token['token']]['data_authorization_profile'][] = $spool_channel;
 
-                    return count(self::$R_data['spool']['err_message_queue_push'][$token['token']]['message']);
+                    return \count(self::$R_data['spool']['err_message_queue_push'][$token['token']]['message']);
 
                 break;
 
@@ -47591,7 +47593,43 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             case self::$R_data['int_flag']['CRNRSTN_SYSTEM_TEST']:
             case self::$R_data['int_flag']['CRNRSTN_DEBUG_ON']:
 
-                return true; // Silence "[Database Integrations Pending] ...". // 2026-06-13 11:24:14.81572 
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Tonight's assignment. We begin the
+                 * implementation of the CLR-SSL Database
+                 * Services Layer in support of error
+                 * logging for the CLR-SSL Logging
+                 * Services Layer.
+                 *
+                 *
+                 * 5 :: Tuesday, August 25, 2026 @ 2217 hrs.
+                 * Last Modified: Tuesday, August 25, 2026 @ 2237 hrs.
+                 * Took a few in to get a
+                 * righteous rip on the bong...
+                 * then come back, and finish
+                 * the thought, above.
+                 */
+                if(isset(self::$_R['kivotos']->R['crnrstn_database_crnrstn']))
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * The CLR-SSL Logging Services
+                     * Layer architecture is
+                     * directly integrated into the
+                     * CLR-SSL Database Services Layer.
+                     *
+                     *
+                     * 5 :: Tuesday, August 25, 2026 @ 2251 hrs.
+                     */
+                    self::$_R['kivotos']->R['crnrstn_database_crnrstn']->error_log(
+                                                                         $message_str,
+                                                                         $syslog_level,
+                                                                         $error_reporting_level,
+                                                                         $line_num,
+                                                                         $method,
+                                                                         $file,
+                                                                         $token,
+                                                                         $spool,
+                                                                         $spool_channel,
+                                                                         $syslog_prefix,
+                                                                         $syslog_prefix_passthrough);
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                 5 :: Sunday, May 10, 2026 @ 1842 hrs.
@@ -47757,80 +47795,26 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  */
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Do we spool the message until the 
-                 * CLR-SSL is ready to process JSON?
+                 * Spool the error_log until the
+                 * CLR-SSL Database Services Layer
+                 * is ready to process the data.
                  *
                  *
                  * 5 :: Monday, May 11, 2026 @ 0508 hrs.
                  *
                  */
-                if(!isset(self::$_R['kivotos']->R['json'])){
-
-                    /*
-                    error_log('[lnum ' . 
-                        __LINE__ . '] [mthd ' . 
-                        __METHOD__ . '] [rtime ' . 
-                        $this->wall_time() . ' secs] ' . 
-                        'R_json is not ready. date [' . 
-                        print_r(\gettimeofday(), true) . '] ' . 
-                        'R_debug_mode[' . 
-                        self::$R_data['R_debug_mode'] . '] ' . 
-                        'phpmailer_debug_mode[' . 
-                        self::$R_data['phpmailer_debug_mode'] . '] ' . 
-                        '$message_str [' . 
-                        \strval($message_str) . '] ' . 
-                        '$syslog_level [' . 
-                        \strval($syslog_level) . '] ' . 
-                        '$error_reporting_level [' . 
-                        \strval($error_reporting_level) . '] ' . 
-                        '$line_num [' . 
-                        \strval($line_num) . '] ' . 
-                        '$method [' . 
-                        \strval($method) . '] ' . 
-                        '$token [' . 
-                        print_r($token, true) . '] ' . 
-                        '$spool [' . 
-                        \strval($spool) . '].' );
-
-                    */
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOURCE  :: https://stackoverflow.com/questions/4915753/how-can-i-remove-three-characters-at-the-end-of-a-string-in-php
-                     * AUTHOR  :: bensiu :: https://stackoverflow.com/users/367878/bensiu
-                     * COMMENT :: https://stackoverflow.com/a/4915787
-                     *
-                     */
-                    $message_str_elipse = '...';
-                    if(\strlen($message_str ) < 31){
-
-                        $message_str_elipse = '';
-
-                    }
-
-                    //$message_str = \trim(\substr($message_str, 0, 34));
-                    $message_str = \trim(\substr($message_str, 0, 0));
-                    $message_str = $message_str . $message_str_elipse;
-                    $message_str = '[Database Integrations Pending] ' . 
-                                   $message_str;
-                    \openlog(
-                        $this->clr_ssl_syslog_prefix(
-                               $line_num, 
-                               $file, 
-                               $method, 
-                               $syslog_prefix, 
-                               $syslog_prefix_passthrough), 
-                        \LOG_CONS | 
-                        \LOG_NDELAY | 
-                        \LOG_NOWAIT | 
-                        \LOG_PID | 
-                        \LOG_PERROR, 
-                        \LOG_SYSLOG);
-                    \syslog($syslog_level, $message_str);
-                    \closelog();
-
-                    return true;
-
-                }
+                return $this->error_log(
+                              $message_str,
+                              $syslog_level,
+                              $error_reporting_level,
+                              $line_num,
+                              $method,
+                              $file,
+                              $token,
+                              true,
+                              $spool_channel,
+                              $syslog_prefix,
+                              $syslog_prefix_passthrough);
 
                 /*
                 error_log('[lnum ' . 
@@ -47867,11 +47851,8 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *
                  */
                 $message_str_elipse = '...';
-                if(\strlen($message_str ) < 31){
-
+                if(\strlen($message_str ) < 31)
                     $message_str_elipse = '';
-
-                }
 
                 //$message_str = \trim(\substr($message_str, 0, 34));
                 $message_str = \trim(\substr($message_str, 0, 0));

@@ -529,6 +529,7 @@ class crnrstn_logging extends crnrstn
      *
      */
 
+    private static $_R = array();
     private $R_data = array();
     private static $R_log_output_mgr;
     private static $config_serial;
@@ -571,7 +572,8 @@ class crnrstn_logging extends crnrstn
          * 5 :: Wednesday, July 29, 2026 @ 0357 hrs.
          *
     	 */
-        $this->R_data['int_flag'] = $this->get_crnrstn('int_flag');
+        $this->R_data['int_flag']     = $this->get_crnrstn('int_flag');
+        $this->R_data['R_debug_mode'] = $this->get_crnrstn('R_debug_mode');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * This is a working-but-untested 
@@ -717,33 +719,20 @@ class crnrstn_logging extends crnrstn
         'CRNRSTN_LOG_PSSDTLA & CRNRSTN_LOG_DATABASE' => $this->R_data['int_flag']['CRNRSTN_LOG_PSSDTLA'] & $this->R_data['int_flag']['CRNRSTN_LOG_DATABASE'],
         'CRNRSTN_LOG_SOAP & CRNRSTN_LOG_DATABASE' => $this->R_data['int_flag']['CRNRSTN_LOG_SOAP'] & $this->R_data['int_flag']['CRNRSTN_LOG_DATABASE']);
 
-        self::$mem_salt = $this->salt(32, '01');
-
-//        if(isset($oCRNRSTN)){
-//
-//            //$log_silo_profile = $this->log_silo_profile;
-//            $log_silo_profile = $this->get_crnrstn('log_silo_profile');
-//
-//        }
-
-        $this->tmp_starttime = $this->start_time(true);
-        $this->tmp_starttime_ARRAY = explode('.', $this->tmp_starttime);
-        $this->tmp_precise_timestamp = date(
+        $this->tmp_starttime         = $this->start_time(true);
+        $this->tmp_starttime_ARRAY   = \explode('.', $this->tmp_starttime);
+        $this->tmp_precise_timestamp = \date(
         	                           'Y-m-d H:i:s', 
         	                           $this->tmp_starttime_ARRAY[0]);
 
-        if(isset($this->tmp_starttime_ARRAY[1])){
-
+        if(isset($this->tmp_starttime_ARRAY[1]))
             $this->tmp_precise_timestamp .= '.' . $this->tmp_starttime_ARRAY[1];
 
-        }
-
-        /**
-         * error_log('[lnum ' . 
+        /* error_log('[lnum ' .
          *    __LINE__ . '] [mthd ' . 
          *    __METHOD__ . 
          *    '] [' . 
-         *    print_r($this->tmp_starttime_ARRAY, true) . '].');
+         *    \print_r($this->tmp_starttime_ARRAY, true) . '].');
          *
          */
 
@@ -751,7 +740,7 @@ class crnrstn_logging extends crnrstn
 
         //$this->log_silo_profile = CRNRSTN_SETTINGS_CRNRSTN;
 
-        /**
+        /*
         $tmp_log_silo_array = explode('|', $this->log_silo_profile);
 
         $tmp_log_silo_cnt = sizeof($tmp_log_silo_array);
@@ -762,7 +751,6 @@ class crnrstn_logging extends crnrstn
                  ($tmp_log_silo_array[$i] == ''))
             {
 
-                //
                 // Trace all log data.
                 $tmp_silo_checksum = crc32('*');
                 $this->active_silo_ARRAY[$tmp_silo_checksum] = 1;
@@ -778,7 +766,6 @@ class crnrstn_logging extends crnrstn
 
                 if($pos_exclusionChar!==false){
 
-                    //
                     // Remove tilde char.
                     $tmp_excusion_silo = $this->proper_replace('~', '', $tmp_log_silo_array[$i]);
                     $tmp_excusion_silo_checksum = crc32(trim($tmp_excusion_silo));
@@ -788,17 +775,19 @@ class crnrstn_logging extends crnrstn
 
                     $tmp_silo_checksum = crc32(trim($tmp_log_silo_array[$i]));
                     $this->active_silo_ARRAY[$tmp_silo_checksum] = 1;
-                    /**
-			         * error_log('[lnum ' . 
+
+                    /* error_log('[lnum ' .
 			         *    __LINE__ . '] [mthd ' . 
 			         *    __METHOD__ . 
 			         *    '] active silo=' . $tmp_log_silo_array[$i].'[' . $tmp_silo_checksum.']');
-			         */
-                //}
+			         *
+                }
 
-            //}
+            }
 
-        //}
+        }
+
+        */
 
 	    $clr_ssl_msg = 'TODO :: Replay and clear anything ' . 
 	                   'in the crnrstn error_log spool.';
@@ -837,12 +826,12 @@ class crnrstn_logging extends crnrstn
      *
      */
     function set_crnrstn_logging(
-    	            $name, 
-    	            $value = NULL, 
-    	            $R_index_000 = NULL, 
-    	            $R_index_001 = NULL, 
-    	            $R_index_002 = NULL, 
-    	            $R_index_003 = NULL)
+             $name,
+             $value = NULL,
+             $R_index_000 = NULL,
+             $R_index_001 = NULL,
+             $R_index_002 = NULL,
+             $R_index_003 = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Renamed the 
@@ -905,23 +894,12 @@ class crnrstn_logging extends crnrstn
     function is_valid_output_profile($output_profile_constant)
     {
 
-        if(!is_numeric($output_profile_constant)){
-
-            if(isset(self::$output_profile_ARRAY['OUTPUT_PROFILE'][$this->R_data['int_flag']['R_string']][$output_profile_constant])){
-
+        if(!is_numeric($output_profile_constant))
+            if(isset(self::$output_profile_ARRAY['OUTPUT_PROFILE'][$this->R_data['int_flag']['R_string']][$output_profile_constant]))
                 return true;
-
-            }
-
-        }else{
-
-            if(isset(self::$output_profile_ARRAY['OUTPUT_PROFILE'][$this->R_data['int_flag']['R_integer']][$output_profile_constant])){
-
+        else
+            if(isset(self::$output_profile_ARRAY['OUTPUT_PROFILE'][$this->R_data['int_flag']['R_integer']][$output_profile_constant]))
                 return true;
-
-            }
-
-        }
 
         return false;
 
@@ -937,9 +915,29 @@ class crnrstn_logging extends crnrstn
      *
      */
     function system_message_channel_constant(
-    	            $message_serial, 
-    	            $index = NULL)
+             $message_serial,
+             $index = NULL)
     {
+
+        $clr_ssl_msg = 'Dev Note. Please review this architecture.';
+        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+            'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token = array(
+            'token'                   => $msg_token,
+            'token_generation_date'   => $token_generation_date,
+            'request_type'            => __METHOD__,
+            'code'                    => 200,
+            'clr_ssl_msg'             => $clr_ssl_msg);
+        $this->error_log(
+            $clr_ssl_msg,
+            \LOG_DEBUG,
+            \E_NOTICE,
+            __LINE__,
+            __METHOD__,
+            __FILE__,
+            $token);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * What channel is the 
@@ -949,8 +947,8 @@ class crnrstn_logging extends crnrstn
          * $tmp_channel_int = $this->system_message_channel_constant($message_serial);
          *
          */
-        self::$system_error_message_serialization_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial][$message_serial][$tmp_err_message_memory_serial] = '';
-        self::$system_error_message_channel_map_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial][$message_serial][$tmp_err_message_memory_serial] = '';
+        self::$system_error_message_serialization_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial][$message_serial][$message_serial] = '';
+        self::$system_error_message_channel_map_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial][$message_serial][$message_serial]   = '';
 
         return 'R_channel_SESSION';
 
@@ -972,18 +970,32 @@ class crnrstn_logging extends crnrstn
              $index = 0)
     {
 
+        $clr_ssl_msg = '[DEPRECATED] err_message_queue_retrieve ' .
+                       'is a deprecated architecture.';
+        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+            'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        $token = array(
+            'token'                   => $msg_token,
+            'token_generation_date'   => $token_generation_date,
+            'request_type'            => __METHOD__,
+            'code'                    => 200,
+            'clr_ssl_msg'             => $clr_ssl_msg);
+        $this->error_log(
+            $clr_ssl_msg,
+            \LOG_DEBUG,
+            \E_NOTICE,
+            __LINE__,
+            __METHOD__,
+            __FILE__,
+            $token);
 
-        if(isset($message_override)){
-
+        if(isset($message_override))
             return $message_override;
 
-        }
-
-        if(!isset($message_serial)){
-
+        if(!isset($message_serial))
             $message_serial = 'SYSTEM_ID';
-
-        }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * What channel is the 
@@ -991,19 +1003,19 @@ class crnrstn_logging extends crnrstn
          * stored in? 
          *
          */
-        $tmp_channel_int = $this->system_message_channel_constant($message_serial, $index);
-
+        $tmp_channel_int               = $this->system_message_channel_constant($message_serial, $index);
+        $R_cluster_id                  = $this->get_crnrstn('R_cluster_id');
         $tmp_err_message_memory_serial = $this->system_message_memory_serial();
 
         switch($tmp_channel_int){
-            case 'R_channel_SESSION':
+            case $this->R_data['int_flag']['R_channel_SESSION']:
 
-                $_SESSION['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial] = $message_override;
+                $_SESSION['CRNRSTN_ERROR_PREFIX_' . $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial] = $message_override;
 
-                return count($_SESSION['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]['CRNRSTN_EXCEPTION_PREFIX']);
+                return \count($_SESSION['CRNRSTN_ERROR_PREFIX_' . $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX']);
 
             break;
-            case 'R_channel_RUNTIME':
+            case $this->R_data['int_flag']['R_channel_RUNTIME']:
             default:
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * case 'R_channel_GET':
@@ -1037,10 +1049,10 @@ class crnrstn_logging extends crnrstn
 				 *
 				 */
 
-                self::$system_error_message_queue_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial][] = $tmp_err_message_memory_serial;
+                self::$system_error_message_queue_ARRAY['CRNRSTN_ERROR_PREFIX_' .$R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial][] = $tmp_err_message_memory_serial;
 
                 self::$system_error_message_serialization_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial][$message_serial][$tmp_err_message_memory_serial] = '';
-                self::$system_error_message_channel_map_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial][$message_serial][$tmp_err_message_memory_serial] = '';
+                self::$system_error_message_channel_map_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial][$message_serial][$tmp_err_message_memory_serial]   = '';
 
                 return count(self::$system_error_message_serialization_ARRAY['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]);
 
@@ -1048,13 +1060,10 @@ class crnrstn_logging extends crnrstn
 
         }
 
-        if(!isset($_SESSION['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]['CRNRSTN_EXCEPTION_PREFIX'])){
+        if(!isset($_SESSION['CRNRSTN_ERROR_PREFIX_' . $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX'])){
 
-            if(isset($message_override)){
-
+            if(isset($message_override))
                 return $message_override;
-
-            }
 
         }else{
 
@@ -1064,13 +1073,10 @@ class crnrstn_logging extends crnrstn
              * of error message. 
              *
         	 */
-            if(isset($_SESSION['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial])){
+            if(isset($_SESSION['CRNRSTN_ERROR_PREFIX_' . $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial]))
+                return $_SESSION['CRNRSTN_ERROR_PREFIX_' . $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial];
 
-                return $_SESSION['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]['CRNRSTN_EXCEPTION_PREFIX'][$message_serial];
-
-            }
-
-            return $_SESSION['CRNRSTN_ERROR_PREFIX_' . self::$config_serial]['CRNRSTN_EXCEPTION_PREFIX']['CRNRSTN_ERR_DEFAULT'];
+            return $_SESSION['CRNRSTN_ERROR_PREFIX_' . $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX']['CRNRSTN_ERR_DEFAULT'];
 
         }
 
@@ -1083,13 +1089,10 @@ class crnrstn_logging extends crnrstn
          * (e.g., mkdir(), fopen(),...etc.).
          *
          */
-        if($is_exception == true){
-
+        if($is_exception == true)
             return 'There was an error, but the ' . 
                    'CRNRSTN :: error message queue ' . 
                    'is empty. We know, however, that ';
-
-        }
 
         return '';
 
@@ -1133,50 +1136,23 @@ class crnrstn_logging extends crnrstn
         	isset($R_index_001) && 
         	isset($R_index_002) && 
         	isset($R_index_003))
-        {
-
-            if(isset($logging_output_profile[$R_index_000][$R_index_001][$R_index_002][$R_index_003])){
-
+            if(isset($logging_output_profile[$R_index_000][$R_index_001][$R_index_002][$R_index_003]))
                 return $logging_output_profile[$R_index_000][$R_index_001][$R_index_002][$R_index_003];
-
-            }
-
-        }
 
         if(isset($R_index_000) && 
         	isset($R_index_001) && 
         	isset($R_index_002))
-        {
-
-            if(isset($logging_output_profile[$R_index_000][$R_index_001][$R_index_002])){
-
+            if(isset($logging_output_profile[$R_index_000][$R_index_001][$R_index_002]))
                 return $logging_output_profile[$R_index_000][$R_index_001][$R_index_002];
-
-            }
-
-        }
 
         if(isset($R_index_000) && 
         	isset($R_index_001))
-        {
-
-            if(isset($logging_output_profile[$R_index_000][$R_index_001])){
-
+            if(isset($logging_output_profile[$R_index_000][$R_index_001]))
                 return $logging_output_profile[$R_index_000][$R_index_001];
 
-            }
-
-        }
-
-        if(isset($R_index_000)){
-
-            if(isset($logging_output_profile[$R_index_000])){
-
+        if(isset($R_index_000))
+            if(isset($logging_output_profile[$R_index_000]))
                 return $logging_output_profile[$R_index_000];
-
-            }
-
-        }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Return the entire 
@@ -1205,12 +1181,12 @@ class crnrstn_logging extends crnrstn
      *
      */
     function get_system_logging_config(
-    	            $logging_output_profile, 
-    	            $R_index_000 = NULL, 
-    	            $R_index_001 = NULL, 
-    	            $R_index_002 = NULL, 
-    	            $R_index_003 = NULL,
-                    $initialize = false)
+             $logging_output_profile,
+             $R_index_000 = NULL,
+             $R_index_001 = NULL,
+             $R_index_002 = NULL,
+             $R_index_003 = NULL,
+             $initialize = false)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Renamed the 
@@ -1264,1407 +1240,1387 @@ class crnrstn_logging extends crnrstn
          *
     	 */
 
-        try{
-
-            if(is_array($logging_output_profile)){
-
-                return $this->logging_config(
-                	          $logging_output_profile, 
-                	          $R_index_000, 
-                	          $R_index_001, 
-                	          $R_index_002, 
-                	          $R_index_003);
-
-            }
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Get channel 
-             * meta data. 
-             *
-             */
-            switch($logging_output_profile){
-                case CRNRSTN_LOG_EMAIL:
-                case 'CRNRSTN_LOG_EMAIL':
-                case 'crnrstn_log_email':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_EMAIL;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_EMAIL';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                    'HTML' => 'C<span style="color:#F00;">R' . 
-                                                              '</span>NRSTN :: Logging by Email',
-                                                    'TEXT' => 'CRNRSTN :: Logging by Email'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                            'HTML' => 'Return C<span style="color:#F00;">R' . 
-                                                                      '</span>NRSTN :: logging output via email.',
-                                                            'TEXT' => 'Return CRNRSTN :: logging output via email.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case 'CRNRSTN_LOG_EMAIL_PROXY':
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_EMAIL:
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_EMAIL;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_EMAIL';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                    'HTML' => 'C<span style="color:#F00;">R' . 
-                                                              '</span>NRSTN :: Logging by Email (Proxy)',
-                                                    'TEXT' => 'CRNRSTN :: Logging by Email (Proxy)'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                            'HTML' => 'Return C<span style="color:#F00;">R' . 
-                                                                      '</span>NRSTN :: logging output ' . 
-                                                                      'via email through proxy that ' . 
-                                                                      'sits on top of a NuSOAP v' . 
-                                                                      $this->version_soap() . ' powered SOAP ' . 
-                                                                      'services layer that was developed by ' . 
-                                                                      'e<span style="color:#F00;">V</span>' . 
-                                                                      'ifweb&reg; under the latest version of ' . 
-                                                                      'the MIT License.',
-                                                            'TEXT' => 'Return CRNRSTN :: logging output ' . 
-                                                                      'via email through proxy that ' . 
-                                                                      'sits on top of a NuSOAP v' . 
-                                                                      $this->version_soap() . 
-                                                                      ' powered SOAP services layer that was ' . 
-                                                                      'developed by eVifweb® under the latest ' . 
-                                                                      'version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_FILE:
-                case 'CRNRSTN_LOG_FILE':
-                case 'crnrstn_log_file':
-                case 'R_channel_FILE':
-                case 'crnrstn_channel_file':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_FILE;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_FILE';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Logging to File',
-                                                 'TEXT' => 'CRNRSTN :: Logging to File'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Send C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: logging output to file.',
-                                                        'TEXT' => 'Send CRNRSTN :: logging output to file.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE:
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Logging to File (Proxy).',
-                                                 'TEXT' => 'CRNRSTN :: Logging to File (Proxy).'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Send C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'logging output to file by way of proxy that ' . 
-                                                                  'sits on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was developed ' . 
-                                                                  'by e<span style="color:#F00;">V</span>ifweb&reg; ' . 
-                                                                  'under the latest version of the MIT License.',
-                                                        'TEXT' => 'Send CRNRSTN :: logging output to file ' . 
-                                                                  'by way of proxy that sits on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was ' . 
-                                                                  'developed by eVifweb® under the latest ' . 
-                                                                  'version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_FILE_FTP:
-                case 'CRNRSTN_LOG_FILE_FTP':
-                case 'crnrstn_log_file_ftp':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_FILE_FTP;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_FILE_FTP';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: FTP/SFTP Logging to File',
-                                                 'TEXT' => 'CRNRSTN :: FTP/SFTP Logging to File'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Send log file output to ' . 
-                                                                  'a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: FTP/SFTP logging endpoint.',
-                                                        'TEXT' => 'Send log file output to a CRNRSTN :: FTP/SFTP ' . 
-                                                                  'logging endpoint.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE_FTP:
-                case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE_FTP':
-                case 'crnrstn_log_file_ftp_proxy':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE_FTP;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE_FTP';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: FTP/SFTP Logging to File (Proxy)',
-                                                 'TEXT' => 'CRNRSTN :: FTP/SFTP Logging to File (Proxy)'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Send log file output to ' . 
-                                                                  'a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: FTP/SFTP ' . 
-                                                                  'logging endpoint by way of ' . 
-                                                                  'proxy that sits on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was ' . 
-                                                                  'developed by e<span style="color:#F00;">V' . 
-                                                                  '</span>ifweb&reg; under the latest ' . 
-                                                                  'version of the MIT License.',
-                                                        'TEXT' => 'Send log file output to a CRNRSTN :: FTP/SFTP ' . 
-                                                                  'logging endpoint by way of proxy that ' . 
-                                                                  'sits on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was ' . 
-                                                                  'developed by eVifweb® under the latest ' . 
-                                                                  'version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_SCREEN_TEXT:
-                case 'CRNRSTN_LOG_SCREEN_TEXT':
-                case 'crnrstn_log_screen_text':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_SCREEN_TEXT;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_SCREEN_TEXT';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-						                        'HTML' => 'C<span style="color:#F00;">R' . 
-						                                  '</span>NRSTN :: Logging ' . 
-						                                  'to Screen with Text',
-						                        'TEXT' => 'CRNRSTN :: Logging to Screen with Text'
-                    );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-								                        'HTML' => 'Return C<span style="color:#F00;">R' . 
-								                                  '</span>NRSTN :: logging ' . 
-								                                  'output to screen as text.',
-								                        'TEXT' => 'Return CRNRSTN :: logging ' . 
-								                                  'output to screen as text.'
-                    );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_SCREEN:
-                case 'CRNRSTN_LOG_SCREEN':
-                case 'crnrstn_log_screen':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_SCREEN;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_SCREEN';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Logging Output to Screen',
-                                                 'TEXT' => 'CRNRSTN :: Logging Output to Screen'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Return C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: logging output to screen.',
-                                                        'TEXT' => 'Return CRNRSTN :: logging output to screen.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_SCREEN_HTML:
-                case 'CRNRSTN_LOG_SCREEN_HTML':
-                case 'crnrstn_log_screen_html':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_SCREEN_HTML;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_SCREEN_HTML';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Logging to ' . 
-                                                           'Screen with &lt;HTML&gt;',
-                                                 'TEXT' => 'CRNRSTN :: Logging to Screen with <HTML>'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Return C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: logging output ' . 
-                                                                  'to screen as <HTML>.',
-                                                        'TEXT' => 'Return CRNRSTN :: logging output ' . 
-                                                                  'to screen as <HTML>.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_SCREEN_HTML_HIDDEN:
-                case 'CRNRSTN_LOG_SCREEN_HTML_HIDDEN':
-                case 'crnrstn_log_screen_html_hidden':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_SCREEN_HTML_HIDDEN;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_SCREEN_HTML_HIDDEN';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Screen &lt;!-- ' . 
-                                                           'Hidden &lt;HTML&gt --&gt;',
-                                                 'TEXT' => 'CRNRSTN :: Logging to Screen with <!-- ' . 
-                                                           'Hidden <HTML> -->'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Return C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: logging output ' . 
-                                                                  'to screen as hidden &lt;HTML&gt;.',
-                                                        'TEXT' => 'Return CRNRSTN :: logging output ' . 
-                                                                  'to screen as hidden <HTML>.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_DEFAULT:
-                case 'CRNRSTN_LOG_DEFAULT':
-                case 'crnrstn_log_default':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_DEFAULT;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_DEFAULT';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                    'HTML' => 'C<span style="color:#F00;">R' . 
-                                                              '</span>NRSTN :: Native PHP Error Logging',
-                                                    'TEXT' => 'CRNRSTN :: Native PHP Error Logging'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                            'HTML' => 'Return C<span style="color:#F00;">R' . 
-                                                                      '</span>NRSTN :: native PHP ' . 
-                                                                      'error_log() logging output ' . 
-                                                                      'formatted for readability and ' . 
-                                                                      'slightly enriched by ' . 
-                                                                      'e<span style="color:#F00;">V' . 
-                                                                      '</span>ifweb&reg; under the latest ' . 
-                                                                      'version of the MIT License.',
-                                                            'TEXT' => 'Return CRNRSTN :: native PHP ' . 
-                                                                      'error_log() logging output ' . 
-                                                                      'formatted for readability and ' . 
-                                                                      'slightly enriched by eVifweb® ' . 
-                                                                      'under the latest ' . 
-                                                                      'version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DEFAULT:
-                case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DEFAULT':
-                case 'crnrstn_log_default_proxy':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DEFAULT;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DEFAULT';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Native PHP ' . 
-                                                           'Error Logging (Proxy)',
-                                                 'TEXT' => 'CRNRSTN :: Native PHP Error ' . 
-                                                           'Logging (Proxy)'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Return C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: native PHP ' . 
-                                                                  'error_log() logging output ' . 
-                                                                  'formatted for readability and ' . 
-                                                                  'slightly enriched by ' . 
-                                                                  'e<span style="color:#F00;">V' . 
-                                                                  '</span>ifweb&reg;. This output is ' . 
-                                                                  'delivered by proxy that sits ' . 
-                                                                  'on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer ' . 
-                                                                  'that was developed by ' . 
-                                                                  'e<span style="color:#F00;">V' . 
-                                                                  '</span>ifweb&reg; under the latest ' . 
-                                                                  'version of the MIT License.',
-                                                        'TEXT' => 'Return CRNRSTN :: native PHP ' . 
-                                                                  'error_log() logging output ' . 
-                                                                  'formatted for readability and ' . 
-                                                                  'slightly enriched by eVifweb®. ' . 
-                                                                  'This output is delivered by proxy ' . 
-                                                                  'that sits on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer ' . 
-                                                                  'that was developed by eVifweb® ' . 
-                                                                  'under the latest version of ' . 
-                                                                  'the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_ELECTRUM:
-                case 'CRNRSTN_LOG_ELECTRUM':
-                case 'crnrstn_log_electrum':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_ELECTRUM;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_ELECTRUM';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                    'HTML' => 'C<span style="color:#F00;">R</span>NRSTN :: Electrum Logging',
-                                                    'TEXT' => 'CRNRSTN :: Electrum Logging'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Wind Cloud Fire, ' .
-																  'or simply, CRNRSTN :: Electrum, ' .
-																  'is a robust SFTP, FTP, and ' . 
-																  'local directory file movement, ' . 
-																  'file management, and system ' . 
-																  'automation and performance ' . 
-																  'reporting application architecture ' . 
-																  'that provides support for the ' . 
-																  'server\'s file system universe ' . 
-																  'and is powered by SOAP. <br><br>'.
-
-																  'Produce C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Electrum Logging ' . 
-                                                                  'output. This output is delivered on ' . 
-                                                                  'top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was ' . 
-                                                                  'developed by ' . 
-                                                                  'e<span style="color:#F00;">V' . 
-                                                                  '</span>ifweb&reg; under the latest ' . 
-                                                                  'version of the MIT License.',
-                                                        'TEXT' => 'CRNRSTN :: Wind Cloud Fire, ' .
-																  'or simply, CRNRSTN :: Electrum, ' .
-																  'is a robust SFTP, FTP, and ' . 
-																  'local directory file movement, ' . 
-																  'file management, and system ' . 
-																  'automation and performance ' . 
-																  'reporting application architecture ' . 
-																  'that provides support for the ' . 
-																  'server\'s file system universe ' . 
-																  'and is powered by SOAP. 
-
-																  Produce CRNRSTN :: Electrum Logging ' . 
-                                                                  'output. This output is delivered on ' . 
-                                                                  'top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was ' . 
-                                                                  'developed by eVifweb® under the latest ' . 
-                                                                  'version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_ELECTRUM:
-                case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_ELECTRUM':
-                case 'crnrstn_log_electrum_proxy':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_ELECTRUM;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_ELECTRUM';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Electrum Logging (Proxy)',
-                                                 'TEXT' => 'CRNRSTN :: Electrum Logging (Proxy)'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Wind Cloud Fire, ' .
-																  'or simply, CRNRSTN :: Electrum, ' .
-																  'is a robust SFTP, FTP, and ' . 
-																  'local directory file movement, ' . 
-																  'file management, and system ' . 
-																  'automation and performance ' . 
-																  'reporting application architecture ' . 
-																  'that provides support for the ' . 
-																  'server\'s file system universe ' . 
-																  'and is powered by SOAP. <br><br>'.
-
-																  'Produce C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Electrum Logging ' . 
-                                                                  'output by proxy. This output is ' . 
-                                                                  'delivered on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was ' . 
-                                                                  'developed by ' . 
-                                                                  'e<span style="color:#F00;">V' . 
-                                                                  '</span>ifweb&reg; under the latest ' . 
-                                                                  'version of the MIT License.',
-                                                        'TEXT' => 'CRNRSTN :: Wind Cloud Fire, ' .
-																  'or simply, CRNRSTN :: Electrum, ' .
-																  'is a robust SFTP, FTP, and ' . 
-																  'local directory file movement, ' . 
-																  'file management, and system ' . 
-																  'automation and performance ' . 
-																  'reporting application architecture ' . 
-																  'that provides support for the ' . 
-																  'server\'s file system universe ' . 
-																  'and is powered by SOAP. 
-
-																  Produce CRNRSTN :: Electrum Logging ' . 
-                                                                  'output by proxy. This output is ' . 
-                                                                  'delivered on top of a NuSOAP v' . 
-                                                                  $this->version_soap() . 
-                                                                  ' powered SOAP services layer that was ' . 
-                                                                  'developed by eVifweb® under the latest ' . 
-                                                                  'version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_DATABASE:
-                case 'CRNRSTN_LOG_DATABASE':
-                case 'crnrstn_log_database':
-                case 'R_channel_DATABASE':
-                case 'crnrstn_channel_database':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] =
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'R_channel_DATABASE';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Logging to Database',
-                                                 'TEXT' => 'CRNRSTN :: Logging to Database'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Send C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Lightsaber RoCEv2 ' . 
-                                                                  'SOAP Services Layer (CLR-SSL) ' . 
-                                                                  'logging output to the ' . 
-                                                                  'CLR-SSL Database Services Layer.',
-                                                        'TEXT' => 'Send CRNRSTN :: Lightsaber RoCEv2 ' . 
-                                                                  'SOAP Services Layer (CLR-SSL) ' . 
-                                                                  'logging output to the ' . 
-                                                                  'CLR-SSL Database Services Layer.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DATABASE:
-                case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DATABASE':
-                case 'crnrstn_log_database_proxy':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DATABASE;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DATABASE';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: Logging to Database (Proxy)',
-                                                 'TEXT' => 'CRNRSTN :: Logging to Database (Proxy)'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-		                                                'HTML' => 'Send C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Lightsaber RoCEv2 ' . 
-		                                                          'SOAP Services Layer (CLR-SSL) ' . 
-		                                                          'logging output to the ' . 
-		                                                          'CLR-SSL Database Services Layer ' . 
-		                                                          'by proxy on top of a NuSOAP v' . 
-		                                                          $this->version_soap() . 
-		                                                          ' powered SOAP services layer that ' . 
-		                                                          'was developed by ' . 
-		                                                          'e<span style="color:#F00;">V</span>ifweb&reg; ' . 
-		                                                          'under the latest version of ' . 
-		                                                          'the MIT License.',
-		                                                'TEXT' => 'Send CRNRSTN :: Lightsaber RoCEv2 ' . 
-		                                                          'SOAP Services Layer (CLR-SSL) ' . 
-		                                                          'logging output to the ' . 
-		                                                          'CLR-SSL Database Services Layer ' . 
-		                                                          'by proxy on top of a NuSOAP v' . 
-		                                                          $this->version_soap() . 
-		                                                          ' powered SOAP Services layer that was ' . 
-		                                                          'developed by eVifweb® under the latest ' . 
-		                                                          'version of the MIT License.'
-		                                            );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case 'R_channel_SSDTLA':
-                case 'crnrstn_channel_ssdtla':
-                case CRNRSTN_LOG_SSDTLA:
-                case 'CRNRSTN_LOG_SSDTLA':
-                case 'crnrstn_log_ssdtla':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_SSDTLA;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_SSDTLA';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R</span>NRSTN :: Logging by SSDTLA',
-                                                 'TEXT' => 'CRNRSTN :: Logging by SSDTLA'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'C<span style="color:#F00;">R</span>' . 
-                                                                  'NRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (SSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production. <br><br>' .
-
-                                                                  'As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP/IoT (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access to ' . 
-                                                                  'the real-time system performance reporting ' . 
-                                                                  'and session response time telemetry of any ' . 
-                                                                  'server in the entire managed cluster. <br><br>' . 
-
-                                                                  'Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled up to the top according to any ' . 
-                                                                  'specified search or filter criteria. <br><br>' .
-
-                                                                  'Please note that an encrypted SSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via &lt;form&gt; hidden input field, and that ' . 
-                                                                  'this token is actually a CLR-SSL Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer Architecture ' . 
-                                                                  '(PSSDTLA) data packet. The SSDTLA token is ' . 
-                                                                  'an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object)...albeit with a ' . 
-                                                                  'genuine SOAP wrapper to drive the ' . 
-                                                                  'server-server experience between the ' . 
-                                                                  'browser and the server. Fancy! <br><br>
-
-                                                                  So the primary and significant difference between ' . 
-                                                                  'the C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA data packet and the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'PSSDTLA packet is that the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA takes the encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oC<span style="color:#F00;">R</span>NRSTN_JS, ' . 
-                                                                  'when a new soap request (a fresh SSDTLA packet) ' . 
-                                                                  'is returned by the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA itself to the browser in an &lt;XML&gt; ' . 
-                                                                  'document response to an AJAX driven XHR request. <br><br>
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: SSDTLA, developed by ' . 
-                                                                  'e<span style="color:#F00;">V</span>ifweb&reg;, has ' . 
-                                                                  'every browser talking to the server like it ' . 
-                                                                  'is &quot;itself a server&quot; for request ' . 
-                                                                  'authentication at the SOAP services server ' . 
-                                                                  'endpoint and request serialization for UI/UX ' . 
-                                                                  'process synchronization and memory (cache) ' . 
-                                                                  'management at the SOAP client &quot;server&quot;' . 
-                                                                  '...the browser.<br><br>
-
-                                                                  The strategic value of the CLR-SSL SOAP ' . 
-                                                                  'Services Data Tunnel Layer (SSDTLA) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'SSDTLA SOAP packet can be proxied to an active session ' . 
-                                                                  'at any origin or domain controlling server in ' . 
-                                                                  'support of the session authentication services ' . 
-                                                                  'layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. <br><br>
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM.<br><br>
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb&reg; under the ' . 
-                                                                  'latest version of the MIT License.',
-                                                            'TEXT' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'CRNRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (SSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production.
-
-                                                                  As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP/IoT (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access to ' . 
-                                                                  'the real-time system performance reporting ' . 
-                                                                  'and session response time telemetry of any ' . 
-                                                                  'server in the entire managed cluster.
-
-                                                                  Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled up to the top according to any ' . 
-                                                                  'specified search or filter criteria. 
-
-                                                                  Please note that an encrypted SSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via <form> hidden input field, and that ' . 
-                                                                  'this token is actually a CLR-SSL Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer Architecture ' . 
-                                                                  '(PSSDTLA) data packet. The SSDTLA token is ' . 
-                                                                  'an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object)...albeit with a ' . 
-                                                                  'genuine SOAP wrapper to drive the ' . 
-                                                                  'server-server experience between the ' . 
-                                                                  'browser and the server. Fancy! 
-
-                                                                  So the primary and significant difference between ' . 
-                                                                  'the CRNRSTN :: SSDTLA data packet and the ' . 
-                                                                  'CRNRSTN :: PSSDTLA packet is that the ' . 
-                                                                  'CRNRSTN :: SSDTLA takes the ' . 
-                                                                  'encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oCRNRSTN_JS, when a new soap request ' . 
-                                                                  '(a fresh SSDTLA packet) is returned by the ' . 
-                                                                  'CRNRSTN :: SSDTLA itself to the browser in ' . 
-                                                                  'an <XML> document response to an AJAX ' . 
-                                                                  'driven XHR request. 
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the CRNRSTN :: SSDTLA, developed by ' . 
-                                                                  'eVifweb®, has every browser talking to the ' . 
-                                                                  'server like it is "itself a server" for request authentication at the ' . 
-                                                                  'SOAP services server endpoint and request ' . 
-                                                                  'serialization for UI/UX process synchronization ' . 
-                                                                  'and memory (cache) management at the SOAP ' . 
-                                                                  'client "server"...the browser. 
-
-                                                                  The strategic value of the CLR-SSL SOAP ' . 
-                                                                  'Services Data Tunnel Layer (SSDTLA) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'SSDTLA SOAP packet can be proxied to an active session ' . 
-                                                                  'at any origin or domain controlling server in ' . 
-                                                                  'support of the session authentication services ' . 
-                                                                  'layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. 
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM. 
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb® under the ' . 
-                                                                  'latest version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_SSDTLA:
-                case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_SSDTLA':
-                case 'crnrstn_log_ssdtla_proxy':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_SSDTLA;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_SSDTLA';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                'HTML' => 'C<span style="color:#F00;">R</span>NRSTN :: SSDTLA Logging (Proxy)',
-                                                'TEXT' => 'CRNRSTN :: SSDTLA Logging (Proxy)'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'C<span style="color:#F00;">R</span>' . 
-                                                                  'NRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (SSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production. <br><br>' .
-
-                                                                  'As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access, ' . 
-                                                                  'by proxy, to the real-time system performance ' . 
-                                                                  'reporting and session response time telemetry ' . 
-                                                                  'of any server in the entire managed cluster. <br><br>' . 
-
-                                                                  'Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled up to the top according to any ' . 
-                                                                  'specified search or filter criteria.  <br><br>' .
-
-                                                                  'Please note that an encrypted SSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via &lt;form&gt; hidden input field, and that ' . 
-                                                                  'this token is actually a CLR-SSL Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer Architecture ' . 
-                                                                  '(PSSDTLA) data packet. The SSDTLA token is ' . 
-                                                                  'an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object)...albeit with a ' . 
-                                                                  'genuine SOAP wrapper to drive the ' . 
-                                                                  'server-server experience between the ' . 
-                                                                  'browser and the server. Fancy! <br><br>
-
-                                                                  So the primary and significant difference between ' . 
-                                                                  'the C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA data packet and the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'PSSDTLA packet is that the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA takes the encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oC<span style="color:#F00;">R</span>NRSTN_JS, ' . 
-                                                                  'when a new soap request (a fresh SSDTLA packet) ' . 
-                                                                  'is returned by the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA itself to the browser in an &lt;XML&gt; ' . 
-                                                                  'document response to an AJAX driven XHR request. <br><br>
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: SSDTLA, developed by ' . 
-                                                                  'e<span style="color:#F00;">V</span>ifweb&reg;, has ' . 
-                                                                  'every browser talking to the server like it ' . 
-                                                                  'is &quot;itself a server&quot; for request ' . 
-                                                                  'authentication at the SOAP services server ' . 
-                                                                  'endpoint and request serialization for UI/UX ' . 
-                                                                  'process synchronization and memory (cache) ' . 
-                                                                  'management at the SOAP client &quot;server&quot;' . 
-                                                                  '...the browser.<br><br>
-
-                                                                  The strategic value of the CLR-SSL SOAP ' . 
-                                                                  'Services Data Tunnel Layer (SSDTLA) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'SSDTLA SOAP packet can be proxied to an active session ' . 
-                                                                  'at any origin or domain controlling server in ' . 
-                                                                  'support of the session authentication services ' . 
-                                                                  'layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. <br><br>
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM.<br><br>
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb&reg; under the ' . 
-                                                                  'latest version of the MIT License.',
-                                                            'TEXT' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'CRNRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (SSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production.
-
-                                                                  As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access, ' . 
-                                                                  'by proxy, to the real-time system performance ' . 
-                                                                  'reporting and session response time telemetry ' . 
-                                                                  'of any server in the entire managed cluster.
-
-                                                                  Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled up to the top according to any ' . 
-                                                                  'specified search or filter criteria. 
-
-                                                                  Please note that an encrypted SSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via <form> hidden input field, and that ' . 
-                                                                  'this token is actually a CLR-SSL Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer Architecture ' . 
-                                                                  '(PSSDTLA) data packet. The SSDTLA token is ' . 
-                                                                  'an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object)...albeit with a ' . 
-                                                                  'genuine SOAP wrapper to drive the ' . 
-                                                                  'server-server experience between the ' . 
-                                                                  'browser and the server. Fancy! 
-
-                                                                  So the primary and significant difference between ' . 
-                                                                  'the CRNRSTN :: SSDTLA data packet and the ' . 
-                                                                  'CRNRSTN :: PSSDTLA packet is that the ' . 
-                                                                  'CRNRSTN :: SSDTLA takes the ' . 
-                                                                  'encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oCRNRSTN_JS, when a new soap request ' . 
-                                                                  '(a fresh SSDTLA packet) is returned by the ' . 
-                                                                  'CRNRSTN :: SSDTLA itself to the browser in ' . 
-                                                                  'an <XML> document response to an AJAX ' . 
-                                                                  'driven XHR request. 
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the CRNRSTN :: SSDTLA, developed by ' . 
-                                                                  'eVifweb®, has every browser talking to the ' . 
-                                                                  'server like it is "itself a server" for request authentication at the ' . 
-                                                                  'SOAP services server endpoint and request ' . 
-                                                                  'serialization for UI/UX process synchronization ' . 
-                                                                  'and memory (cache) management at the SOAP ' . 
-                                                                  'client "server"...the browser. 
-
-                                                                  The strategic value of the CLR-SSL SOAP ' . 
-                                                                  'Services Data Tunnel Layer (SSDTLA) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'SSDTLA SOAP packet can be proxied to an active session ' . 
-                                                                  'at any origin or domain controlling server in ' . 
-                                                                  'support of the session authentication services ' . 
-                                                                  'layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. 
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM. 
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb® under the ' . 
-                                                                  'latest version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case 'R_channel_PSSDTLA':
-                case CRNRSTN_LOG_PSSDTLA:
-                case 'CRNRSTN_LOG_PSSDTLA':
-                case 'crnrstn_log_pssdtla':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] =
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'R_channel_PSSDTLA';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                 'HTML' => 'C<span style="color:#F00;">R' . 
-                                                           '</span>NRSTN :: PSSDTLA Logging',
-                                                 'TEXT' => 'CRNRSTN :: PSSDTLA Logging'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'C<span style="color:#F00;">R</span>' . 
-                                                                  'NRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (PSSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production. <br><br>' .
-
-                                                                  'As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP/IoT (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access to ' . 
-                                                                  'the real-time system performance reporting ' . 
-                                                                  'and session response time telemetry of any ' . 
-                                                                  'server in the entire managed cluster. <br><br>' . 
-
-                                                                  'Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled to the top according to any ' . 
-                                                                  'specified search or log filter criteria. <br><br>' .
-
-                                                                  'Please note that an encrypted PSSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via &lt;form&gt; hidden input field. ' . 
-                                                                  'The PSSDTLA token is an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object. Nice! <br><br>
-
-                                                                  The primary and significant difference between ' . 
-                                                                  'the C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA data packet and the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'PSSDTLA packet is that the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA takes the encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oC<span style="color:#F00;">R</span>NRSTN_JS, ' . 
-                                                                  'when a new soap request (a fresh SSDTLA packet) ' . 
-                                                                  'is returned by the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA itself to the browser in an &lt;XML&gt; ' . 
-                                                                  'document response to an AJAX driven XHR request. <br><br>
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: SSDTLA, developed by ' . 
-                                                                  'e<span style="color:#F00;">V</span>ifweb&reg;, has ' . 
-                                                                  'every browser talking to the server like it ' . 
-                                                                  'is &quot;itself a server&quot; for request ' . 
-                                                                  'authentication at the SOAP services server ' . 
-                                                                  'endpoint and request serialization for UI/UX ' . 
-                                                                  'process synchronization and memory (cache) ' . 
-                                                                  'management at the SOAP client &quot;server&quot;' . 
-                                                                  '...the browser.<br><br>
-
-                                                                  The strategic value of the CLR-SSL Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer (PSSDTLA) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'PSSDTLA SOAP packet can be proxied to an active ' . 
-                                                                  'session at any origin or domain controlling ' . 
-                                                                  'server in support of the session authentication ' . 
-                                                                  'services layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. <br><br>
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM.<br><br>
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'PSSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb&reg; under the ' . 
-                                                                  'latest version of the MIT License.',
-                                                            'TEXT' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'CRNRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (SSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production.
-
-                                                                  As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP/IoT (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access to ' . 
-                                                                  'the real-time system performance reporting ' . 
-                                                                  'and session response time telemetry of any ' . 
-                                                                  'server in the entire managed cluster.
-
-                                                                  Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled to the top according to any ' . 
-                                                                  'specified search or log filter criteria.
-
-                                                                  Please note that an encrypted PSSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via &lt;form&gt; hidden input field. ' . 
-                                                                  'The PSSDTLA token is an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object. Nice! 
-
-                                                                  The primary and significant difference between ' . 
-                                                                  'the CRNRSTN :: SSDTLA data packet and the ' . 
-                                                                  'CRNRSTN :: PSSDTLA packet is that the ' . 
-                                                                  'CRNRSTN :: SSDTLA takes the ' . 
-                                                                  'encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oCRNRSTN_JS, when a new soap request ' . 
-                                                                  '(a fresh SSDTLA packet) is returned by the ' . 
-                                                                  'CRNRSTN :: SSDTLA itself to the browser in ' . 
-                                                                  'an <XML> document response to an AJAX ' . 
-                                                                  'driven XHR request. 
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the CRNRSTN :: SSDTLA, developed by ' . 
-                                                                  'eVifweb®, has every browser talking to the ' . 
-                                                                  'server like it is "itself a server" for request authentication at the ' . 
-                                                                  'SOAP services server endpoint and request ' . 
-                                                                  'serialization for UI/UX process synchronization ' . 
-                                                                  'and memory (cache) management at the SOAP ' . 
-                                                                  'client "server"...the browser. 
-
-                                                                  The strategic value of the CLR-SSL Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer (PSSDTLA) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'PSSDTLA SOAP packet can be proxied to an active ' . 
-                                                                  'session at any origin or domain controlling ' . 
-                                                                  'server in support of the session authentication ' . 
-                                                                  'services layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. 
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM. 
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'PSSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb® under the ' . 
-                                                                  'latest version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
-
-                break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_PSSDTLA:
-                case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_PSSDTLA':
-                case 'crnrstn_log_pssdtla_proxy':
-
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_integer']] = CRNRSTN_LOG_PROXY & CRNRSTN_LOG_PSSDTLA;
-                    $tmp_channel_ARRAY['SOURCEID'][$this->R_data['int_flag']['R_string']] = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_PSSDTLA';
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['NAME'] = array(
-                                                    'HTML' => 'C<span style="color:#F00;">R' . 
-                                                              '</span>NRSTN :: PSSDTLA Logging (PROXY)',
-                                                    'TEXT' => 'CRNRSTN :: PSSDTLA Logging (PROXY)'
-                                                );
-                    $tmp_channel_ARRAY['DESCRIPTION'] = array(
-                                                        'HTML' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'C<span style="color:#F00;">R</span>' . 
-                                                                  'NRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (PSSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production. <br><br>' .
-
-                                                                  'As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access, ' . 
-                                                                  'by proxy, to the real-time system performance ' . 
-                                                                  'reporting and session response time telemetry ' . 
-                                                                  'of any server in the entire managed cluster. <br><br>' . 
-
-                                                                  'Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled up to the top according to any ' . 
-                                                                  'specified search or filter criteria.  <br><br>' .
-
-                                                                  'Please note that an encrypted PSSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via &lt;form&gt; hidden input field. ' . 
-                                                                  'The PSSDTLA token is an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object. Nice! <br><br>
-
-                                                                  The primary and significant difference between ' . 
-                                                                  'the C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA data packet and the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'PSSDTLA packet is that the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA takes the encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oC<span style="color:#F00;">R</span>NRSTN_JS, ' . 
-                                                                  'when a new soap request (a fresh SSDTLA packet) ' . 
-                                                                  'is returned by the ' . 
-                                                                  'C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA itself to the browser in an &lt;XML&gt; ' . 
-                                                                  'document response to an AJAX driven XHR request. <br><br>
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: SSDTLA, developed by ' . 
-                                                                  'e<span style="color:#F00;">V</span>ifweb&reg;, has ' . 
-                                                                  'every browser talking to the server like it ' . 
-                                                                  'is &quot;itself a server&quot; for request ' . 
-                                                                  'authentication at the SOAP services server ' . 
-                                                                  'endpoint and request serialization for UI/UX ' . 
-                                                                  'process synchronization and memory (cache) ' . 
-                                                                  'management at the SOAP client &quot;server&quot;' . 
-                                                                  '...the browser.<br><br>
-
-                                                                  The strategic value of the CLR-SSL SOAP ' . 
-                                                                  'Services Data Tunnel Layer (SSDTLA) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'SSDTLA SOAP packet can be proxied to an active session ' . 
-                                                                  'at any origin or domain controlling server in ' . 
-                                                                  'support of the session authentication services ' . 
-                                                                  'layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. <br><br>
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM.<br><br>
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'SSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb&reg; under the ' . 
-                                                                  'latest version of the MIT License.',
-                                                            'TEXT' => 'Integrate system logging into the ' . 
-                                                                  'browser via the DOM-supporting ' . 
-                                                                  'CRNRSTN :: Lightsaber RoCEv2 SOAP ' . 
-                                                                  'Services Layer (CLR-SSL) Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer ' . 
-                                                                  'Architecture (PSSDTLA) for a ' . 
-                                                                  'telemetry-rich browsing experience ' .
-                                                                  'in order to investigate web application ' . 
-                                                                  'bottlenecks when they are made manifest ' . 
-                                                                  'during peak traffic times in production.
-
-                                                                  As admin (or with admin assigned ' . 
-                                                                  'user privileges), login via browser to ' . 
-                                                                  'any node/server/IP (including dev environments) ' . 
-                                                                  'in a CLR-SSL managed cluster for access, ' . 
-                                                                  'by proxy, to the real-time system performance ' . 
-                                                                  'reporting and session response time telemetry ' . 
-                                                                  'of any server in the entire managed cluster.
-
-                                                                  Search or setup filters for server runtime logs, ' . 
-                                                                  'and activate verbose debugging on the whole ' . 
-                                                                  'box or just on the admin\'s session. Then ' . 
-                                                                  'the web site can be browsed, page by page, ' . 
-                                                                  'by the admin as the generated log activity ' . 
-                                                                  'is bubbled up to the top according to any ' . 
-                                                                  'specified search or filter criteria. 
-
-                                                                  Please note that an encrypted PSSDTLA data ' . 
-                                                                  'packet is stored in the browser\'s DOM ' . 
-                                                                  'via &lt;form&gt; hidden input field. ' . 
-                                                                  'The PSSDTLA token is an OpenSSL v' . 
-                                                                  $this->version_openssl() . 
-                                                                  ' encrypted JSON object. Nice! 
-
-                                                                  The primary and significant difference between ' . 
-                                                                  'the CRNRSTN :: SSDTLA data packet and the ' . 
-                                                                  'CRNRSTN :: PSSDTLA packet is that the ' . 
-                                                                  'CRNRSTN :: SSDTLA takes the ' . 
-                                                                  'encrypted JSON object and ' . 
-                                                                  'then encapsulates or wraps it within a NuSOAP v' . 
-                                                                  $this->version_soap() . ' powered SOAP object ' . 
-                                                                  'before storing it as static data at the ' . 
-                                                                  'browser in the build of the page HTML or ' . 
-                                                                  'through the CRNRSTN :: JavaScript object, ' . 
-                                                                  'oCRNRSTN_JS, when a new soap request ' . 
-                                                                  '(a fresh SSDTLA packet) is returned by the ' . 
-                                                                  'CRNRSTN :: SSDTLA itself to the browser in ' . 
-                                                                  'an <XML> document response to an AJAX ' . 
-                                                                  'driven XHR request. 
-
-                                                                  Behold both the beauty, power, and simplicity ' . 
-                                                                  'of SOAP; the CRNRSTN :: SSDTLA, developed by ' . 
-                                                                  'eVifweb®, has every browser talking to the ' . 
-                                                                  'server like it is "itself a server" for request authentication at the ' . 
-                                                                  'SOAP services server endpoint and request ' . 
-                                                                  'serialization for UI/UX process synchronization ' . 
-                                                                  'and memory (cache) management at the SOAP ' . 
-                                                                  'client "server"...the browser. 
-
-                                                                  The strategic value of the CLR-SSL Pseudo-SOAP ' . 
-                                                                  'Services Data Tunnel Layer (SSDTL) will have ' . 
-                                                                  'arrived, at least in part, when the browser\'s ' . 
-                                                                  'PSSDTLA SOAP packet can be proxied to an active session ' . 
-                                                                  'at any origin or domain controlling server in ' . 
-                                                                  'support of the session authentication services ' . 
-                                                                  'layer behind a C<span style="color:#F00;">R' . 
-                                                                  '</span>NRSTN :: Messenger session at any ' . 
-                                                                  'edge server. 
-
-                                                                  C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'Messenger could easily become the definitive ' . 
-                                                                  'and MIT Licensed (open source) functional and ' . 
-                                                                  'spiritual successor to what was once ' . 
-                                                                  'Yahoo Instant Messenger, Yahoo IM. 
-
-                                                                  The C<span style="color:#F00;">R</span>NRSTN :: ' . 
-                                                                  'PSSDTLA is a hardened data handling architecture ' . 
-                                                                  'that is protected by OpenSSL v' . 
-                                                                  $this->version_openssl() . ' encryption ' . 
-                                                                  'technology and developed by eVifweb® under the ' . 
-                                                                  'latest version of the MIT License.'
-                                                        );
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']] = -1;
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']] = '-1';
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array(CRNRSTN_AUTHORIZE_ALL => CRNRSTN_AUTHORIZE_ALL);
-                    $tmp_channel_ARRAY['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']] = array('CRNRSTN_AUTHORIZE_ALL' => CRNRSTN_AUTHORIZE_ALL);
+        if(\is_array($logging_output_profile))
+            return $this->logging_config(
+                          $logging_output_profile,
+                          $R_index_000,
+                          $R_index_001,
+                          $R_index_002,
+                          $R_index_003);
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Get channel
+         * meta data.
+         *
+         */
+        switch($logging_output_profile){
+            case 'CRNRSTN_LOG_EMAIL':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL']:
+            case 'crnrstn_log_email':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_EMAIL';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME']        = array(
+                                          'HTML' => 'C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Logging by Email',
+                                          'TEXT' => 'CRNRSTN :: Logging by Email');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: logging output via email.',
+                                          'TEXT' => 'Return CRNRSTN :: logging output via email.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_EMAIL_PROXY':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL_PROXY']:
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_EMAIL':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL']:
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                                          $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_EMAIL';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging by Email (Proxy)',
+                                   'TEXT' => 'CRNRSTN :: Logging by Email (Proxy)');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: logging output ' .
+                                                    'via email through proxy that ' .
+                                                    'sits on top of a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP ' .
+                                                    'services layer that was developed by ' .
+                                                    'e<span style="color:#F00;">V</span>' .
+                                                    'ifweb&reg; under the latest version of ' .
+                                                    'the MIT License.',
+                                          'TEXT' => 'Return CRNRSTN :: logging output ' .
+                                                    'via email through proxy that ' .
+                                                    'sits on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by eVifweb® under the latest ' .
+                                                    'version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'R_channel_FILE':
+            case $this->R_data['int_flag']['R_channel_FILE']:
+            case 'CRNRSTN_LOG_FILE':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_FILE']:
+            case 'crnrstn_log_file':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_FILE'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_FILE';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging to File',
+                                   'TEXT' => 'CRNRSTN :: Logging to File');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Send C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: logging output to file.',
+                                          'TEXT' => 'Send CRNRSTN :: logging output to file.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_FILE']:
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                            $this->R_data['int_flag']['CRNRSTN_LOG_FILE'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging to File (Proxy).',
+                                   'TEXT' => 'CRNRSTN :: Logging to File (Proxy).');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Send C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'logging output to file by way of proxy that ' .
+                                                    'sits on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was developed ' .
+                                                    'by e<span style="color:#F00;">V</span>ifweb&reg; ' .
+                                                    'under the latest version of the MIT License.',
+                                          'TEXT' => 'Send CRNRSTN :: logging output to file ' .
+                                                    'by way of proxy that sits on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by eVifweb® under the latest ' .
+                                                    'version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_FILE_FTP':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_FILE_FTP']:
+            case 'crnrstn_log_file_ftp':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_FILE_FTP'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_FILE_FTP';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: FTP/SFTP Logging to File',
+                                   'TEXT' => 'CRNRSTN :: FTP/SFTP Logging to File');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Send log file output to ' .
+                                                    'a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: FTP/SFTP logging endpoint.',
+                                          'TEXT' => 'Send log file output to a CRNRSTN :: FTP/SFTP ' .
+                                                    'logging endpoint.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE_FTP':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_FILE_FTP']:
+            case 'crnrstn_log_file_ftp_proxy':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                            $this->R_data['int_flag']['CRNRSTN_LOG_FILE_FTP'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_FILE_FTP';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: FTP/SFTP Logging to File (Proxy)',
+                                   'TEXT' => 'CRNRSTN :: FTP/SFTP Logging to File (Proxy)');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Send log file output to ' .
+                                                    'a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: FTP/SFTP ' .
+                                                    'logging endpoint by way of ' .
+                                                    'proxy that sits on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by e<span style="color:#F00;">V' .
+                                                    '</span>ifweb&reg; under the latest ' .
+                                                    'version of the MIT License.',
+                                          'TEXT' => 'Send log file output to a CRNRSTN :: FTP/SFTP ' .
+                                                    'logging endpoint by way of proxy that ' .
+                                                    'sits on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by eVifweb® under the latest ' .
+                                                    'version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_SCREEN_TEXT':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_TEXT']:
+            case 'crnrstn_log_screen_text':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_TEXT'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_SCREEN_TEXT';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging ' .
+                                             'to Screen with Text',
+                                   'TEXT' => 'CRNRSTN :: Logging to Screen with Text');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: logging ' .
+                                                    'output to screen as text.',
+                                          'TEXT' => 'Return CRNRSTN :: logging ' .
+                                                    'output to screen as text.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_SCREEN':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN']:
+            case 'crnrstn_log_screen':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_SCREEN';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging Output to Screen',
+                                   'TEXT' => 'CRNRSTN :: Logging Output to Screen');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: logging output to screen.',
+                                          'TEXT' => 'Return CRNRSTN :: logging output to screen.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_SCREEN_HTML':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML']:
+            case 'crnrstn_log_screen_html':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_SCREEN_HTML';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging to ' .
+                                             'Screen with &lt;HTML&gt;',
+                                   'TEXT' => 'CRNRSTN :: Logging to Screen with <HTML>');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: logging output ' .
+                                                    'to screen as <HTML>.',
+                                          'TEXT' => 'Return CRNRSTN :: logging output ' .
+                                                    'to screen as <HTML>.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_SCREEN_HTML_HIDDEN':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML_HIDDEN']:
+            case 'crnrstn_log_screen_html_hidden':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML_HIDDEN'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_SCREEN_HTML_HIDDEN';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Screen &lt;!-- ' .
+                                             'Hidden &lt;HTML&gt --&gt;',
+                                   'TEXT' => 'CRNRSTN :: Logging to Screen with <!-- ' .
+                                             'Hidden <HTML> -->');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: logging output ' .
+                                                    'to screen as hidden &lt;HTML&gt;.',
+                                          'TEXT' => 'Return CRNRSTN :: logging output ' .
+                                                    'to screen as hidden <HTML>.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_DEFAULT':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_DEFAULT']:
+            case 'crnrstn_log_default':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_DEFAULT'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_DEFAULT';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Native PHP Error Logging',
+                                   'TEXT' => 'CRNRSTN :: Native PHP Error Logging');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: native PHP ' .
+                                                    'error_log() logging output ' .
+                                                    'formatted for readability and ' .
+                                                    'slightly enriched by ' .
+                                                    'e<span style="color:#F00;">V' .
+                                                    '</span>ifweb&reg; under the latest ' .
+                                                    'version of the MIT License.',
+                                          'TEXT' => 'Return CRNRSTN :: native PHP ' .
+                                                    'error_log() logging output ' .
+                                                    'formatted for readability and ' .
+                                                    'slightly enriched by eVifweb® ' .
+                                                    'under the latest ' .
+                                                    'version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DEFAULT':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_DEFAULT']:
+            case 'crnrstn_log_default_proxy':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                            $this->R_data['int_flag']['CRNRSTN_LOG_DEFAULT'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DEFAULT';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Native PHP ' .
+                                             'Error Logging (Proxy)',
+                                   'TEXT' => 'CRNRSTN :: Native PHP Error ' .
+                                             'Logging (Proxy)');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Return C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: native PHP ' .
+                                                    'error_log() logging output ' .
+                                                    'formatted for readability and ' .
+                                                    'slightly enriched by ' .
+                                                    'e<span style="color:#F00;">V' .
+                                                    '</span>ifweb&reg;. This output is ' .
+                                                    'delivered by proxy that sits ' .
+                                                    'on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer ' .
+                                                    'that was developed by ' .
+                                                    'e<span style="color:#F00;">V' .
+                                                    '</span>ifweb&reg; under the latest ' .
+                                                    'version of the MIT License.',
+                                          'TEXT' => 'Return CRNRSTN :: native PHP ' .
+                                                    'error_log() logging output ' .
+                                                    'formatted for readability and ' .
+                                                    'slightly enriched by eVifweb®. ' .
+                                                    'This output is delivered by proxy ' .
+                                                    'that sits on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer ' .
+                                                    'that was developed by eVifweb® ' .
+                                                    'under the latest version of ' .
+                                                    'the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_ELECTRUM':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_ELECTRUM']:
+            case 'crnrstn_log_electrum':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_ELECTRUM'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_ELECTRUM';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R</span>NRSTN :: Electrum Logging',
+                                   'TEXT' => 'CRNRSTN :: Electrum Logging');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Wind Cloud Fire, ' .
+                                                    'or simply, CRNRSTN :: Electrum, ' .
+                                                    'is a robust SFTP, FTP, and ' .
+                                                    'local directory file movement, ' .
+                                                    'file management, and system ' .
+                                                    'automation and performance ' .
+                                                    'reporting application architecture ' .
+                                                    'that provides support for the ' .
+                                                    'server\'s file system universe ' .
+                                                    'and is powered by SOAP. <br><br>'.
+
+                                                    'Produce C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Electrum Logging ' .
+                                                    'output. This output is delivered on ' .
+                                                    'top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by ' .
+                                                    'e<span style="color:#F00;">V' .
+                                                    '</span>ifweb&reg; under the latest ' .
+                                                    'version of the MIT License.',
+                                          'TEXT' => 'CRNRSTN :: Wind Cloud Fire, ' .
+                                                    'or simply, CRNRSTN :: Electrum, ' .
+                                                    'is a robust SFTP, FTP, and ' .
+                                                    'local directory file movement, ' .
+                                                    'file management, and system ' .
+                                                    'automation and performance ' .
+                                                    'reporting application architecture ' .
+                                                    'that provides support for the ' .
+                                                    'server\'s file system universe ' .
+                                                    'and is powered by SOAP. 
+
+                                                    Produce CRNRSTN :: Electrum Logging ' .
+                                                    'output. This output is delivered on ' .
+                                                    'top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by eVifweb® under the latest ' .
+                                                    'version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_ELECTRUM':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_ELECTRUM']:
+            case 'crnrstn_log_electrum_proxy':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                            $this->R_data['int_flag']['CRNRSTN_LOG_ELECTRUM'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_ELECTRUM';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Electrum Logging (Proxy)',
+                                   'TEXT' => 'CRNRSTN :: Electrum Logging (Proxy)');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Wind Cloud Fire, ' .
+                                                    'or simply, CRNRSTN :: Electrum, ' .
+                                                    'is a robust SFTP, FTP, and ' .
+                                                    'local directory file movement, ' .
+                                                    'file management, and system ' .
+                                                    'automation and performance ' .
+                                                    'reporting application architecture ' .
+                                                    'that provides support for the ' .
+                                                    'server\'s file system universe ' .
+                                                    'and is powered by SOAP. <br><br>'.
+
+                                                    'Produce C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Electrum Logging ' .
+                                                    'output by proxy. This output is ' .
+                                                    'delivered on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by ' .
+                                                    'e<span style="color:#F00;">V' .
+                                                    '</span>ifweb&reg; under the latest ' .
+                                                    'version of the MIT License.',
+                                          'TEXT' => 'CRNRSTN :: Wind Cloud Fire, ' .
+                                                    'or simply, CRNRSTN :: Electrum, ' .
+                                                    'is a robust SFTP, FTP, and ' .
+                                                    'local directory file movement, ' .
+                                                    'file management, and system ' .
+                                                    'automation and performance ' .
+                                                    'reporting application architecture ' .
+                                                    'that provides support for the ' .
+                                                    'server\'s file system universe ' .
+                                                    'and is powered by SOAP. 
+
+                                                    Produce CRNRSTN :: Electrum Logging ' .
+                                                    'output by proxy. This output is ' .
+                                                    'delivered on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that was ' .
+                                                    'developed by eVifweb® under the latest ' .
+                                                    'version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'R_channel_DATABASE':
+            case $this->R_data['int_flag']['R_channel_DATABASE']:
+            case 'CRNRSTN_LOG_DATABASE':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_DATABASE']:
+            case 'crnrstn_log_database':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_DATABASE'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_DATABASE';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging to Database',
+                                   'TEXT' => 'CRNRSTN :: Logging to Database');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Send C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Lightsaber RoCEv2 ' .
+                                                    'SOAP Services Layer (CLR-SSL) ' .
+                                                    'logging output to the ' .
+                                                    'CLR-SSL Database Services Layer.',
+                                          'TEXT' => 'Send CRNRSTN :: Lightsaber RoCEv2 ' .
+                                                    'SOAP Services Layer (CLR-SSL) ' .
+                                                    'logging output to the ' .
+                                                    'CLR-SSL Database Services Layer.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DATABASE':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_DATABASE']:
+            case 'crnrstn_log_database_proxy':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                            $this->R_data['int_flag']['CRNRSTN_LOG_DATABASE'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_DATABASE';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: Logging to Database (Proxy)',
+                                   'TEXT' => 'CRNRSTN :: Logging to Database (Proxy)');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Send C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Lightsaber RoCEv2 ' .
+                                                    'SOAP Services Layer (CLR-SSL) ' .
+                                                    'logging output to the ' .
+                                                    'CLR-SSL Database Services Layer ' .
+                                                    'by proxy on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP services layer that ' .
+                                                    'was developed by ' .
+                                                    'e<span style="color:#F00;">V</span>ifweb&reg; ' .
+                                                    'under the latest version of ' .
+                                                    'the MIT License.',
+                                          'TEXT' => 'Send CRNRSTN :: Lightsaber RoCEv2 ' .
+                                                    'SOAP Services Layer (CLR-SSL) ' .
+                                                    'logging output to the ' .
+                                                    'CLR-SSL Database Services Layer ' .
+                                                    'by proxy on top of a NuSOAP v' .
+                                                    $this->version_soap() .
+                                                    ' powered SOAP Services layer that was ' .
+                                                    'developed by eVifweb® under the latest ' .
+                                                    'version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'R_channel_SSDTLA':
+            case $this->R_data['int_flag']['R_channel_SSDTLA']:
+            case 'CRNRSTN_LOG_SSDTLA':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SSDTLA']:
+            case 'crnrstn_log_ssdtla':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_SSDTLA'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_SSDTLA';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R</span>NRSTN :: Logging by SSDTLA',
+                                   'TEXT' => 'CRNRSTN :: Logging by SSDTLA');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'C<span style="color:#F00;">R</span>' .
+                                                    'NRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (SSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production. <br><br>' .
+
+                                                    'As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP/IoT (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access to ' .
+                                                    'the real-time system performance reporting ' .
+                                                    'and session response time telemetry of any ' .
+                                                    'server in the entire managed cluster. <br><br>' .
+
+                                                    'Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled up to the top according to any ' .
+                                                    'specified search or filter criteria. <br><br>' .
+
+                                                    'Please note that an encrypted SSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via &lt;form&gt; hidden input field, and that ' .
+                                                    'this token is actually a CLR-SSL Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer Architecture ' .
+                                                    '(PSSDTLA) data packet. The SSDTLA token is ' .
+                                                    'an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object)...albeit with a ' .
+                                                    'genuine SOAP wrapper to drive the ' .
+                                                    'server-server experience between the ' .
+                                                    'browser and the server. Fancy! <br><br>
+ 
+                                                    So the primary and significant difference between ' .
+                                                    'the C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA data packet and the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'PSSDTLA packet is that the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA takes the encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oC<span style="color:#F00;">R</span>NRSTN_JS, ' .
+                                                    'when a new soap request (a fresh SSDTLA packet) ' .
+                                                    'is returned by the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA itself to the browser in an &lt;XML&gt; ' .
+                                                    'document response to an AJAX driven XHR request. <br><br>
+ 
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: SSDTLA, developed by ' .
+                                                    'e<span style="color:#F00;">V</span>ifweb&reg;, has ' .
+                                                    'every browser talking to the server like it ' .
+                                                    'is &quot;itself a server&quot; for request ' .
+                                                    'authentication at the SOAP services server ' .
+                                                    'endpoint and request serialization for UI/UX ' .
+                                                    'process synchronization and memory (cache) ' .
+                                                    'management at the SOAP client &quot;server&quot;' .
+                                                    '...the browser.<br><br>
+
+                                                    The strategic value of the CLR-SSL SOAP ' .
+                                                    'Services Data Tunnel Layer (SSDTLA) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'SSDTLA SOAP packet can be proxied to an active session ' .
+                                                    'at any origin or domain controlling server in ' .
+                                                    'support of the session authentication services ' .
+                                                    'layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. <br><br>
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM.<br><br>
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb&reg; under the ' .
+                                                    'latest version of the MIT License.',
+                                          'TEXT' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'CRNRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (SSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production.
+  
+                                                    As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP/IoT (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access to ' .
+                                                    'the real-time system performance reporting ' .
+                                                    'and session response time telemetry of any ' .
+                                                    'server in the entire managed cluster.
+
+                                                    Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled up to the top according to any ' .
+                                                    'specified search or filter criteria. 
+
+                                                    Please note that an encrypted SSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via <form> hidden input field, and that ' .
+                                                    'this token is actually a CLR-SSL Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer Architecture ' .
+                                                    '(PSSDTLA) data packet. The SSDTLA token is ' .
+                                                    'an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object)...albeit with a ' .
+                                                    'genuine SOAP wrapper to drive the ' .
+                                                    'server-server experience between the ' .
+                                                    'browser and the server. Fancy! 
+
+                                                    So the primary and significant difference between ' .
+                                                    'the CRNRSTN :: SSDTLA data packet and the ' .
+                                                    'CRNRSTN :: PSSDTLA packet is that the ' .
+                                                    'CRNRSTN :: SSDTLA takes the ' .
+                                                    'encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oCRNRSTN_JS, when a new soap request ' .
+                                                    '(a fresh SSDTLA packet) is returned by the ' .
+                                                    'CRNRSTN :: SSDTLA itself to the browser in ' .
+                                                    'an <XML> document response to an AJAX ' .
+                                                    'driven XHR request. 
+
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the CRNRSTN :: SSDTLA, developed by ' .
+                                                    'eVifweb®, has every browser talking to the ' .
+                                                    'server like it is "itself a server" for ' .
+                                                    'request authentication at the ' .
+                                                    'SOAP services server endpoint and request ' .
+                                                    'serialization for UI/UX process synchronization ' .
+                                                    'and memory (cache) management at the SOAP ' .
+                                                    'client "server"...the browser. 
+
+                                                    The strategic value of the CLR-SSL SOAP ' .
+                                                    'Services Data Tunnel Layer (SSDTLA) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'SSDTLA SOAP packet can be proxied to an active session ' .
+                                                    'at any origin or domain controlling server in ' .
+                                                    'support of the session authentication services ' .
+                                                    'layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. 
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM. 
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb® under the ' .
+                                                    'latest version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_SSDTLA':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_SSDTLA']:
+            case 'crnrstn_log_ssdtla_proxy':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                            $this->R_data['int_flag']['CRNRSTN_LOG_SSDTLA'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_SSDTLA';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R</span>' .
+                                             'NRSTN :: SSDTLA Logging (Proxy)',
+                                   'TEXT' => 'CRNRSTN :: SSDTLA Logging (Proxy)');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'C<span style="color:#F00;">R</span>' .
+                                                    'NRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (SSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production. <br><br>' .
+
+                                                    'As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access, ' .
+                                                    'by proxy, to the real-time system performance ' .
+                                                    'reporting and session response time telemetry ' .
+                                                    'of any server in the entire managed cluster. <br><br>' .
+
+                                                    'Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled up to the top according to any ' .
+                                                    'specified search or filter criteria.  <br><br>' .
+
+                                                    'Please note that an encrypted SSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via &lt;form&gt; hidden input field, and that ' .
+                                                    'this token is actually a CLR-SSL Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer Architecture ' .
+                                                    '(PSSDTLA) data packet. The SSDTLA token is ' .
+                                                    'an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object)...albeit with a ' .
+                                                    'genuine SOAP wrapper to drive the ' .
+                                                    'server-server experience between the ' .
+                                                    'browser and the server. Fancy! <br><br>
+
+                                                    So the primary and significant difference between ' .
+                                                    'the C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA data packet and the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'PSSDTLA packet is that the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA takes the encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oC<span style="color:#F00;">R</span>NRSTN_JS, ' .
+                                                    'when a new soap request (a fresh SSDTLA packet) ' .
+                                                    'is returned by the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA itself to the browser in an &lt;XML&gt; ' .
+                                                    'document response to an AJAX driven XHR request. <br><br>
+
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: SSDTLA, developed by ' .
+                                                    'e<span style="color:#F00;">V</span>ifweb&reg;, has ' .
+                                                    'every browser talking to the server like it ' .
+                                                    'is &quot;itself a server&quot; for request ' .
+                                                    'authentication at the SOAP services server ' .
+                                                    'endpoint and request serialization for UI/UX ' .
+                                                    'process synchronization and memory (cache) ' .
+                                                    'management at the SOAP client &quot;server&quot;' .
+                                                    '...the browser.<br><br>
+
+                                                    The strategic value of the CLR-SSL SOAP ' .
+                                                    'Services Data Tunnel Layer (SSDTLA) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'SSDTLA SOAP packet can be proxied to an active session ' .
+                                                    'at any origin or domain controlling server in ' .
+                                                    'support of the session authentication services ' .
+                                                    'layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. <br><br>
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM.<br><br>
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb&reg; under the ' .
+                                                    'latest version of the MIT License.',
+                                          'TEXT' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'CRNRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (SSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production.
+
+                                                    As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access, ' .
+                                                    'by proxy, to the real-time system performance ' .
+                                                    'reporting and session response time telemetry ' .
+                                                    'of any server in the entire managed cluster.
+
+                                                    Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled up to the top according to any ' .
+                                                    'specified search or filter criteria. 
+
+                                                    Please note that an encrypted SSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via <form> hidden input field, and that ' .
+                                                    'this token is actually a CLR-SSL Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer Architecture ' .
+                                                    '(PSSDTLA) data packet. The SSDTLA token is ' .
+                                                    'an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object)...albeit with a ' .
+                                                    'genuine SOAP wrapper to drive the ' .
+                                                    'server-server experience between the ' .
+                                                    'browser and the server. Fancy! 
+
+                                                    So the primary and significant difference between ' .
+                                                    'the CRNRSTN :: SSDTLA data packet and the ' .
+                                                    'CRNRSTN :: PSSDTLA packet is that the ' .
+                                                    'CRNRSTN :: SSDTLA takes the ' .
+                                                    'encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oCRNRSTN_JS, when a new soap request ' .
+                                                    '(a fresh SSDTLA packet) is returned by the ' .
+                                                    'CRNRSTN :: SSDTLA itself to the browser in ' .
+                                                    'an <XML> document response to an AJAX ' .
+                                                    'driven XHR request. 
+
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the CRNRSTN :: SSDTLA, developed by ' .
+                                                    'eVifweb®, has every browser talking to the ' .
+                                                    'server like it is "itself a server" for ' .
+                                                    'request authentication at the ' .
+                                                    'SOAP services server endpoint and request ' .
+                                                    'serialization for UI/UX process synchronization ' .
+                                                    'and memory (cache) management at the SOAP ' .
+                                                    'client "server"...the browser. 
+
+                                                    The strategic value of the CLR-SSL SOAP ' .
+                                                    'Services Data Tunnel Layer (SSDTLA) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'SSDTLA SOAP packet can be proxied to an active session ' .
+                                                    'at any origin or domain controlling server in ' .
+                                                    'support of the session authentication services ' .
+                                                    'layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. 
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM. 
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb® under the ' .
+                                                    'latest version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'R_channel_PSSDTLA':
+            case $this->R_data['int_flag']['R_channel_PSSDTLA']:
+            case 'CRNRSTN_LOG_PSSDTLA':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PSSDTLA']:
+            case 'crnrstn_log_pssdtla':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PSSDTLA'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PSSDTLA';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']] = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: PSSDTLA Logging',
+                                   'TEXT' => 'CRNRSTN :: PSSDTLA Logging');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'C<span style="color:#F00;">R</span>' .
+                                                    'NRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (PSSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production. <br><br>' .
+
+                                                    'As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP/IoT (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access to ' .
+                                                    'the real-time system performance reporting ' .
+                                                    'and session response time telemetry of any ' .
+                                                    'server in the entire managed cluster. <br><br>' .
+
+                                                    'Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled to the top according to any ' .
+                                                    'specified search or log filter criteria. <br><br>' .
+
+                                                    'Please note that an encrypted PSSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via &lt;form&gt; hidden input field. ' .
+                                                    'The PSSDTLA token is an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object. Nice! <br><br>
+
+                                                    The primary and significant difference between ' .
+                                                    'the C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA data packet and the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'PSSDTLA packet is that the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA takes the encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oC<span style="color:#F00;">R</span>NRSTN_JS, ' .
+                                                    'when a new soap request (a fresh SSDTLA packet) ' .
+                                                    'is returned by the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA itself to the browser in an &lt;XML&gt; ' .
+                                                    'document response to an AJAX driven XHR request. <br><br>
+
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: SSDTLA, developed by ' .
+                                                    'e<span style="color:#F00;">V</span>ifweb&reg;, has ' .
+                                                    'every browser talking to the server like it ' .
+                                                    'is &quot;itself a server&quot; for request ' .
+                                                    'authentication at the SOAP services server ' .
+                                                    'endpoint and request serialization for UI/UX ' .
+                                                    'process synchronization and memory (cache) ' .
+                                                    'management at the SOAP client &quot;server&quot;' .
+                                                    '...the browser.<br><br>
+
+                                                    The strategic value of the CLR-SSL Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer (PSSDTLA) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'PSSDTLA SOAP packet can be proxied to an active ' .
+                                                    'session at any origin or domain controlling ' .
+                                                    'server in support of the session authentication ' .
+                                                    'services layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. <br><br>
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM.<br><br>
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'PSSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb&reg; under the ' .
+                                                    'latest version of the MIT License.',
+                                          'TEXT' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'CRNRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (SSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production.
+
+                                                    As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP/IoT (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access to ' .
+                                                    'the real-time system performance reporting ' .
+                                                    'and session response time telemetry of any ' .
+                                                    'server in the entire managed cluster.
+
+                                                    Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled to the top according to any ' .
+                                                    'specified search or log filter criteria.
+
+                                                    Please note that an encrypted PSSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via &lt;form&gt; hidden input field. ' .
+                                                    'The PSSDTLA token is an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object. Nice! 
+
+                                                    The primary and significant difference between ' .
+                                                    'the CRNRSTN :: SSDTLA data packet and the ' .
+                                                    'CRNRSTN :: PSSDTLA packet is that the ' .
+                                                    'CRNRSTN :: SSDTLA takes the ' .
+                                                    'encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oCRNRSTN_JS, when a new soap request ' .
+                                                    '(a fresh SSDTLA packet) is returned by the ' .
+                                                    'CRNRSTN :: SSDTLA itself to the browser in ' .
+                                                    'an <XML> document response to an AJAX ' .
+                                                    'driven XHR request. 
+
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the CRNRSTN :: SSDTLA, developed by ' .
+                                                    'eVifweb®, has every browser talking to the ' .
+                                                    'server like it is "itself a server" for ' .
+                                                    'request authentication at the ' .
+                                                    'SOAP services server endpoint and request ' .
+                                                    'serialization for UI/UX process synchronization ' .
+                                                    'and memory (cache) management at the SOAP ' .
+                                                    'client "server"...the browser. 
+
+                                                    The strategic value of the CLR-SSL Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer (PSSDTLA) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'PSSDTLA SOAP packet can be proxied to an active ' .
+                                                    'session at any origin or domain controlling ' .
+                                                    'server in support of the session authentication ' .
+                                                    'services layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. 
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM. 
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'PSSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb® under the ' .
+                                                    'latest version of the MIT License.');
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
+
+            break;
+            case 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_PSSDTLA':
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_PSSDTLA']:
+            case 'crnrstn_log_pssdtla_proxy':
+
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_integer']]              = $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                                                                                            $this->R_data['int_flag']['CRNRSTN_LOG_PSSDTLA'];
+                $channel['SOURCEID'][$this->R_data['int_flag']['R_string']]               = 'CRNRSTN_LOG_PROXY & CRNRSTN_LOG_PSSDTLA';
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_integer']] = -1;
+                $channel['ENCRYPTION']['PROFILE'][$this->R_data['int_flag']['R_string']]  = '-1';
+                $channel['NAME'] = array(
+                                   'HTML' => 'C<span style="color:#F00;">R' .
+                                             '</span>NRSTN :: PSSDTLA Logging (PROXY)',
+                                   'TEXT' => 'CRNRSTN :: PSSDTLA Logging (PROXY)');
+                $channel['DESCRIPTION'] = array(
+                                          'HTML' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'C<span style="color:#F00;">R</span>' .
+                                                    'NRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (PSSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production. <br><br>' .
+
+                                                    'As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access, ' .
+                                                    'by proxy, to the real-time system performance ' .
+                                                    'reporting and session response time telemetry ' .
+                                                    'of any server in the entire managed cluster. <br><br>' .
+
+                                                    'Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled up to the top according to any ' .
+                                                    'specified search or filter criteria.  <br><br>' .
+
+                                                    'Please note that an encrypted PSSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via &lt;form&gt; hidden input field. ' .
+                                                    'The PSSDTLA token is an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object. Nice! <br><br>
+
+                                                    The primary and significant difference between ' .
+                                                    'the C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA data packet and the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'PSSDTLA packet is that the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA takes the encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oC<span style="color:#F00;">R</span>NRSTN_JS, ' .
+                                                    'when a new soap request (a fresh SSDTLA packet) ' .
+                                                    'is returned by the ' .
+                                                    'C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA itself to the browser in an &lt;XML&gt; ' .
+                                                    'document response to an AJAX driven XHR request. <br><br>
+
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: SSDTLA, developed by ' .
+                                                    'e<span style="color:#F00;">V</span>ifweb&reg;, has ' .
+                                                    'every browser talking to the server like it ' .
+                                                    'is &quot;itself a server&quot; for request ' .
+                                                    'authentication at the SOAP services server ' .
+                                                    'endpoint and request serialization for UI/UX ' .
+                                                    'process synchronization and memory (cache) ' .
+                                                    'management at the SOAP client &quot;server&quot;' .
+                                                    '...the browser.<br><br>
+
+                                                    The strategic value of the CLR-SSL SOAP ' .
+                                                    'Services Data Tunnel Layer (SSDTLA) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'SSDTLA SOAP packet can be proxied to an active session ' .
+                                                    'at any origin or domain controlling server in ' .
+                                                    'support of the session authentication services ' .
+                                                    'layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. <br><br>
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM.<br><br>
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'SSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb&reg; under the ' .
+                                                    'latest version of the MIT License.',
+                                          'TEXT' => 'Integrate system logging into the ' .
+                                                    'browser via the DOM-supporting ' .
+                                                    'CRNRSTN :: Lightsaber RoCEv2 SOAP ' .
+                                                    'Services Layer (CLR-SSL) Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer ' .
+                                                    'Architecture (PSSDTLA) for a ' .
+                                                    'telemetry-rich browsing experience ' .
+                                                    'in order to investigate web application ' .
+                                                    'bottlenecks when they are made manifest ' .
+                                                    'during peak traffic times in production.
+
+                                                    As admin (or with admin assigned ' .
+                                                    'user privileges), login via browser to ' .
+                                                    'any node/server/IP (including dev environments) ' .
+                                                    'in a CLR-SSL managed cluster for access, ' .
+                                                    'by proxy, to the real-time system performance ' .
+                                                    'reporting and session response time telemetry ' .
+                                                    'of any server in the entire managed cluster.
+
+                                                    Search or setup filters for server runtime logs, ' .
+                                                    'and activate verbose debugging on the whole ' .
+                                                    'box or just on the admin\'s session. Then ' .
+                                                    'the web site can be browsed, page by page, ' .
+                                                    'by the admin as the generated log activity ' .
+                                                    'is bubbled up to the top according to any ' .
+                                                    'specified search or filter criteria. 
+
+                                                    Please note that an encrypted PSSDTLA data ' .
+                                                    'packet is stored in the browser\'s DOM ' .
+                                                    'via &lt;form&gt; hidden input field. ' .
+                                                    'The PSSDTLA token is an OpenSSL v' .
+                                                    $this->version_openssl() .
+                                                    ' encrypted JSON object. Nice! 
+
+                                                    The primary and significant difference between ' .
+                                                    'the CRNRSTN :: SSDTLA data packet and the ' .
+                                                    'CRNRSTN :: PSSDTLA packet is that the ' .
+                                                    'CRNRSTN :: SSDTLA takes the ' .
+                                                    'encrypted JSON object and ' .
+                                                    'then encapsulates or wraps it within a NuSOAP v' .
+                                                    $this->version_soap() . ' powered SOAP object ' .
+                                                    'before storing it as static data at the ' .
+                                                    'browser in the build of the page HTML or ' .
+                                                    'through the CRNRSTN :: JavaScript object, ' .
+                                                    'oCRNRSTN_JS, when a new soap request ' .
+                                                    '(a fresh SSDTLA packet) is returned by the ' .
+                                                    'CRNRSTN :: SSDTLA itself to the browser in ' .
+                                                    'an <XML> document response to an AJAX ' .
+                                                    'driven XHR request. 
+
+                                                    Behold both the beauty, power, and simplicity ' .
+                                                    'of SOAP; the CRNRSTN :: SSDTLA, developed by ' .
+                                                    'eVifweb®, has every browser talking to the ' .
+                                                    'server like it is "itself a server" for ' .
+                                                    'request authentication at the ' .
+                                                    'SOAP services server endpoint and request ' .
+                                                    'serialization for UI/UX process synchronization ' .
+                                                    'and memory (cache) management at the SOAP ' .
+                                                    'client "server"...the browser. 
+
+                                                    The strategic value of the CLR-SSL Pseudo-SOAP ' .
+                                                    'Services Data Tunnel Layer (SSDTL) will have ' .
+                                                    'arrived, at least in part, when the browser\'s ' .
+                                                    'PSSDTLA SOAP packet can be proxied to an active session ' .
+                                                    'at any origin or domain controlling server in ' .
+                                                    'support of the session authentication services ' .
+                                                    'layer behind a C<span style="color:#F00;">R' .
+                                                    '</span>NRSTN :: Messenger session at any ' .
+                                                    'edge server. 
+
+                                                    C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'Messenger could easily become the definitive ' .
+                                                    'and MIT Licensed (open source) functional and ' .
+                                                    'spiritual successor to what was once ' .
+                                                    'Yahoo Instant Messenger, Yahoo IM. 
+
+                                                    The C<span style="color:#F00;">R</span>NRSTN :: ' .
+                                                    'PSSDTLA is a hardened data handling architecture ' .
+                                                    'that is protected by OpenSSL v' .
+                                                    $this->version_openssl() . ' encryption ' .
+                                                    'technology and developed by eVifweb® under the ' .
+                                                    'latest version of the MIT License.');
+                    $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_integer']]    = -1;
+                    $channel['AUTHORIZATION']['PROFILE']['PRIMARY'][$this->R_data['int_flag']['R_string']]     = '-1';
+                    $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_integer']] = array($this->R_data['int_flag']['R_authorize_all'] => $this->R_data['int_flag']['R_authorize_all']);
+                    $channel['AUTHORIZATION']['PROFILE']['AUTHORIZED'][$this->R_data['int_flag']['R_string']]  = array('CRNRSTN_AUTHORIZE_ALL' => $this->R_data['int_flag']['R_authorize_all']);
 
                 break;
                 default:
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * This is CRNRSTN :: Lightsaber 
-                     * RoCEv2 SOAP Services Layer 
-                     * (CLR-SSL) configuration UGC 
-                     * settings input data that will 
-                     * still require input validation. 
+                     * This is CRNRSTN :: Lightsaber
+                     * RoCEv2 SOAP Services Layer
+                     * (CLR-SSL) configuration UGC
+                     * settings input data that will
+                     * still require input validation.
                      *
                      */
                     $tmp_output_profile = $this->get_resource(
-                    	                         'system_logging_output_profile', 
-                    	                         0, 
+                    	                         'system_logging_output_profile',
+                    	                         0,
                     	                         'CRNRSTN::RESOURCE::LOGGING');
 
                     if(!is_numeric($tmp_output_profile)){
 
                         $tmp_int = $this->get_system_logging_config(
-                        	              $tmp_output_profile, 
+                        	              $tmp_output_profile,
                         	              $this->R_data['int_flag']['R_integer']);
 
                         if(!($this->isset_crnrstn(
-                        	        'system_log_output_profile_constants_ARRAY', 
+                        	        'system_log_output_profile_constants_ARRAY',
                         	        $tmp_int) == true))
                         {
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * This is a static hard code of, 
-                             * self::$system_default_logging_output_profile = CRNRSTN_LOG_DEFAULT, 
-                             * in the CRNRSTN :: __construct(). 
+                             * This is a static hard code of,
+                             * self::$system_default_logging_output_profile = CRNRSTN_LOG_DEFAULT,
+                             * in the CRNRSTN :: __construct().
                              *
                              *
                              * 5 :: Sunday, December 3, 2023 @ 0501 hrs.
@@ -2673,29 +2629,25 @@ class crnrstn_logging extends crnrstn
                             $tmp_int = $this->get_crnrstn('system_default_logging_output_profile');
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Just in case, a string 
-                             * value is ever provided 
-                             * to the CRNRSTN :: __construct(). 
+                             * Just in case, a string
+                             * value is ever provided
+                             * to the CRNRSTN :: __construct().
                              *
                              */
                             if(!is_numeric($tmp_int)){
 
                                 $tmp_int = $this->get_system_logging_config(
-                                	              $tmp_int, 
+                                	              $tmp_int,
                                 	              $this->R_data['int_flag']['R_integer']);
 
                                 if(!($this->isset_crnrstn(
-                                	        'system_log_output_profile_constants_ARRAY', 
+                                	        'system_log_output_profile_constants_ARRAY',
                                 	        $tmp_int) == true))
-                                {
-
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * 5 :: Sunday, December 3, 2023 @ 0504 hrs.
                                      *
                                 	 */
-                                    $tmp_int = CRNRSTN_LOG_DEFAULT;
-
-                                }
+                                    $tmp_int = $this->R_data['int_flag']['CRNRSTN_LOG_DEFAULT'];
 
                             }
 
@@ -2703,49 +2655,49 @@ class crnrstn_logging extends crnrstn
 
                     }
 
-                    $clr_ssl_msg = 'CRNRSTN :: could not apply ' . 
-                                   'the CRNRSTN :: Lightsaber ' . 
-                                   'RoCEv2 SOAP Services Layer ' . 
-                                   '(CLR-SSL) Logging Services ' . 
-                                   'Layer log initialization ' . 
-                                   'profile, (' . 
-                                   $this->gettype($logging_output_profile) . ') ' . 
-                                   \strval($logging_output_profile) . 
-                                   ', which was the value that ' . 
-                                   'was provided as method input ' . 
-                                   'to this environment. This will ' . 
-                                   'be manually set to ' . 
+                    $clr_ssl_msg = 'CRNRSTN :: could not apply ' .
+                                   'the CRNRSTN :: Lightsaber ' .
+                                   'RoCEv2 SOAP Services Layer ' .
+                                   '(CLR-SSL) Logging Services ' .
+                                   'Layer log initialization ' .
+                                   'profile, (' .
+                                   $this->gettype($logging_output_profile) . ') ' .
+                                   \strval($logging_output_profile) .
+                                   ', which was the value that ' .
+                                   'was provided as method input ' .
+                                   'to this environment. This will ' .
+                                   'be manually set to ' .
                                    $this->get_system_logging_config(
-                                   	      $tmp_int, 
-                                   	      $this->R_data['int_flag']['R_string']) . 
-                                   '[' . $tmp_int . ']. ' . 
+                                   	      $tmp_int,
+                                   	      $this->R_data['int_flag']['R_string']) .
+                                   '[' . $tmp_int . ']. ' .
                                    $this->data_report(
-                        	              $logging_output_profile, 
+                        	              $logging_output_profile,
                         	              'CRNRSTN :: MC-DDO UGC Input Data Report');
 				    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-				    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+				    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
 				                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 				    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
 				    $token = array(
-				             'token'                   => $msg_token, 
-				             'token_generation_date'   => $token_generation_date, 
-				             'request_type'            => __METHOD__, 
-				             'code'                    => 200, 
+				             'token'                   => $msg_token,
+				             'token_generation_date'   => $token_generation_date,
+				             'request_type'            => __METHOD__,
+				             'code'                    => 200,
 				             'clr_ssl_msg'             => $clr_ssl_msg);
 				    $this->error_log(
-				           $clr_ssl_msg, 
-				           \LOG_WARNING, 
-				           \E_WARNING, 
-				           __LINE__, 
-				          __METHOD__, 
-				           __FILE__, 
+				           $clr_ssl_msg,
+				           \LOG_WARNING,
+				           \E_WARNING,
+				           __LINE__,
+				          __METHOD__,
+				           __FILE__,
 				           $token);
 
                     return $this->get_system_logging_config(
-                    	          $tmp_int, 
-                    	          $R_index_000, 
-                    	          $R_index_001, 
-                    	          $R_index_002, 
+                    	          $tmp_int,
+                    	          $R_index_000,
+                    	          $R_index_001,
+                    	          $R_index_002,
                     	          $R_index_003);
 
                 break;
@@ -2753,53 +2705,16 @@ class crnrstn_logging extends crnrstn
             }
 
             return $this->get_system_logging_config(
-            	          $tmp_channel_ARRAY, 
-            	          $R_index_000, 
-            	          $R_index_001, 
-            	          $R_index_002, 
+            	          $channel,
+            	          $R_index_000,
+            	          $R_index_001,
+            	          $R_index_002,
             	          $R_index_003);
-
-        }catch(Exception $e){
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Exception handling performed 
-             * by the Logging Services Layer 
-             * of the CRNRSTN :: Lightsaber 
-             * RoCEv2 SOAP Services 
-             * Layer (CLR-SSL). 
-             *
-             * Allow the CLR-SSL to handle 
-             * this exception per the 
-             * configured logging profile of 
-             * the running application on 
-             * this server. 
-             *
-             *
-             * 5
-             *
-             * Sunday, June 30, 2024 @ 1607 hrs.
-             * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
-             *
-             */
-            $this->catch_exception(
-            	   $e, 
-            	   LOG_ERR, 
-            	   __METHOD__, 
-            	   __NAMESPACE__);
-
-            /**
-             * Return empty 
-             * string.
-             *
-             */
-            return '';
-
-        }
 
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @return
@@ -2815,11 +2730,11 @@ class crnrstn_logging extends crnrstn
             case 'print_r':
 
                 $this->print_r(
-                       $active_log_silo_flag_ARRAY, 
-                       '', 
-                       NULL, 
-                       __LINE__, 
-                       __METHOD__, 
+                       $active_log_silo_flag_ARRAY,
+                       '',
+                       NULL,
+                       __LINE__,
+                       __METHOD__,
                        __FILE__);
 
             break;
@@ -2828,34 +2743,30 @@ class crnrstn_logging extends crnrstn
                 return $active_log_silo_flag_ARRAY;
 
             break;
-            //case CRNRSTN_STRING:
             case 'R_string':
             case $this->R_data['int_flag']['R_string']:
             default:
 
                 $tmp_str = '';
 
-                foreach($active_log_silo_flag_ARRAY as 
+                foreach($active_log_silo_flag_ARRAY as
                 	$siloKey => $flagset)
-                {
-
                     $tmp_str .= $siloKey . ', ';
 
-                }
-
-                $tmp_str = rtrim($tmp_str,', ');
+                $tmp_str = \rtrim($tmp_str,', ');
 
                 return $tmp_str;
 
             break;
 
         }
+
         return $this->active_log_silo_flag_ARRAY;
 
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @return
@@ -2865,10 +2776,10 @@ class crnrstn_logging extends crnrstn
     function sync_R_log_output_mgr($R_log_output_mgr)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Renamed 
-         *       crnrstn_logging->sync_olog_profile_manager() 
-         *       to 
-         *       sync_R_log_output_mgr(). 
+         * Edit: Renamed
+         *       crnrstn_logging->sync_olog_profile_manager()
+         *       to
+         *       sync_R_log_output_mgr().
          *       5 :: Sunday, May 24, 2026 @ 2054 hrs.
          *
          */
@@ -2878,7 +2789,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -2888,17 +2799,17 @@ class crnrstn_logging extends crnrstn
      *
      */
     function proper_replace(
-             $pattern, 
-             $replacement, 
+             $pattern,
+             $replacement,
              $original_str)
     {
 
-        $pattern_array[0] = $pattern;
+        $pattern_array[0]     = $pattern;
         $replacement_array[0] = $replacement;
 
-        $original_str = str_replace(
-        	            $pattern_array, 
-        	            $replacement_array, 
+        $original_str = \str_replace(
+        	            $pattern_array,
+        	            $replacement_array,
         	            $original_str);
 
         return $original_str;
@@ -2906,7 +2817,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -2920,29 +2831,28 @@ class crnrstn_logging extends crnrstn
      *
      */
     function catch_exception(
-    	     $exception_obj, 
-    	     $syslog_level = LOG_DEBUG, 
-    	     $exception_method = NULL, 
-    	     $namespace = __NAMESPACE__, 
-    	     $profile_override_pipe = NULL, 
-    	     $endpoint_override_pipe = NULL, 
+    	     $exception_obj,
+    	     $syslog_level = LOG_DEBUG,
+    	     $exception_method = NULL,
+    	     $namespace = __NAMESPACE__,
+    	     $profile_override_pipe = NULL,
+    	     $endpoint_override_pipe = NULL,
     	     $wcr_override_pipe = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Changed crnrstn_logging->catch_exception 
-         *       $syslog_constant input parameter 
-         *       to $syslog_level. 
+         * Edit: Changed crnrstn_logging->catch_exception
+         *       $syslog_constant input parameter
+         *       to $syslog_level.
          *       5 :: Friday, May 1, 2026 @ 0056 hrs.
          *
          */
 
-        /**
-         * syslog()
-         * SYSLOG priority is a combination 
-         * of the facility and the level. 
+        /* syslog()
+         * SYSLOG priority is a combination
+         * of the facility and the level.
          *
-         * Possible values are 
-         * (in descending order): 
+         * Possible values are
+         * (in descending order):
          * Constant     Description
          * LOG_EMERG    system is unusable.
          * LOG_ALERT    action must be taken immediately
@@ -2976,12 +2886,17 @@ class crnrstn_logging extends crnrstn
          * 123 - getCode=0
          * 124 - getFile=/var/www/html/crnrstn_v2/_crnrstn/class/environment/crnrstn.environment.inc.php
          * 125 - getLine=403
-         * 126 - getTraceAsString=#0 /var/www/html/crnrstn_v2/_crnrstn/class/user/crnrstn.user.inc.php(6063): crnrstn_environment->getServerArrayVar('CLOWN_TOWN', Object(crnrstn_user))\n#1 /var/www/html/crnrstn_v2/common/inc/footer/footer.inc.php(591): crnrstn_user->get_SERVER_param('CLOWN_TOWN')\n#2 /var/www/html/crnrstn_v2/index.php(132): include_once('/var/www/html/c..')\n#3 {main}
+         * 126 - getTraceAsString=#0 /var/www/html/crnrstn_v2/_crnrstn/class/user
+         *       /crnrstn.user.inc.php(6063): crnrstn_environment->getServerArrayVar(
+         *       'CLOWN_TOWN', Object(crnrstn_user))\n#1 /var/www/html/crnrstn_v2
+         *       /common/inc/footer/footer.inc.php(591): crnrstn_user->get_SERVER_param(
+         *       'CLOWN_TOWN')\n#2 /var/www/html/crnrstn_v2/index.php(132):
+         *       include_once('/var/www/html/c..')\n#3 {main}
          *
          */
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * CRNRSTN :: Deep Embryonic State. 
+         * CRNRSTN :: Deep Embryonic State.
          *
          *$init_profile_pack_ARRAY['sys_logging_profile_ARRAY'] = $array[crc32($this->config_serial)][CRNRSTN_LOG_ALL][];
          *$init_profile_pack_ARRAY['sys_logging_meta_ARRAY'] = $array[crc32($this->config_serial)][CRNRSTN_LOG_ALL][];
@@ -2991,17 +2906,17 @@ class crnrstn_logging extends crnrstn
         $init_profile_pack_ARRAY = $this->return_sys_logging_init_profile_pack();
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-		 * Return an instantiation of 
-		 * The CRNRSTN :: Lightsaber RoCEv2 
-		 * SOAP Services Layer (CLR-SSL) Wild 
-		 * Card Resource Multi-Channel 
-		 * Logging Output Profile Manager. 
+		 * Return an instantiation of
+		 * The CRNRSTN :: Lightsaber RoCEv2
+		 * SOAP Services Layer (CLR-SSL) Wild
+		 * Card Resource Multi-Channel
+		 * Logging Output Profile Manager.
          *
          *
          * 5 :: Monday, July 15, 2024 @ 2100 hrs.
          *
          * $this->oLog_ProfileManager = new crnrstn_logging_oprofile_manager(
-         *                                  $init_profile_pack_ARRAY, 
+         *                                  $init_profile_pack_ARRAY,
          *                                  $this->oCRNRSTN);
          *
          * self::$R_log_output_mgr = $this->return_registered_resource(
@@ -3021,10 +2936,10 @@ class crnrstn_logging extends crnrstn
                self::$R_log_output_mgr);
 
         /*error_log('[lnum ' .
-         *    __LINE__ . '] [mthd ' . 
-         *    __METHOD__ . 
-         *    '] ' . get_class() . 
-         *    '::  init_profile_pack_ARRAY size=' . 
+         *    __LINE__ . '] [mthd ' .
+         *    __METHOD__ .
+         *    '] ' . get_class() .
+         *    '::  init_profile_pack_ARRAY size=' .
          *    print_r($init_profile_pack_ARRAY, true));
          *
          * die();
@@ -3034,9 +2949,9 @@ class crnrstn_logging extends crnrstn
          */
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Do we need to call 
-         * this after constructor 
-         * receives same array? 
+         * Do we need to call
+         * this after constructor
+         * receives same array?
          *
          *
          * 5
@@ -3080,15 +2995,15 @@ class crnrstn_logging extends crnrstn
         }
 
         /*
-        $this->error_log('[rtime ' . 
-        	   $tmp_exception_runtime . ' secs] [' . 
-        	   $method . ' ' . 
-        	   $tmp_exception_method . '] [lnum ' . 
-        	   $tmp_exception_linenum . '] ' . 
-        	   $tmp_exception_msg, 
-        	   __LINE__, 
-        	   __METHOD__, 
-        	   __FILE__, 
+        $this->error_log('[rtime ' .
+        	   $tmp_exception_runtime . ' secs] [' .
+        	   $method . ' ' .
+        	   $tmp_exception_method . '] [lnum ' .
+        	   $tmp_exception_linenum . '] ' .
+        	   $tmp_exception_msg,
+        	   __LINE__,
+        	   __METHOD__,
+        	   __FILE__,
         	   CRNRSTN_LOG_ALL);
 
         */
@@ -3118,11 +3033,11 @@ class crnrstn_logging extends crnrstn
             __FILE__,
             $token);
 
-        $tmp_exception_output_str = $tmp_exception_systemtime . ' [rtime ' . 
-                                    $tmp_exception_runtime . ' secs] [' . 
-                                    $method . ' ' . 
-                                    $tmp_exception_method . '] [lnum ' . 
-                                    $tmp_exception_linenum . '] ' . 
+        $tmp_exception_output_str = $tmp_exception_systemtime . ' [rtime ' .
+                                    $tmp_exception_runtime . ' secs] [' .
+                                    $method . ' ' .
+                                    $tmp_exception_method . '] [lnum ' .
+                                    $tmp_exception_linenum . '] ' .
                                     $tmp_exception_msg;
 
         switch($tmp_source_method){
@@ -3137,11 +3052,11 @@ class crnrstn_logging extends crnrstn
                         'CRNRSTN_SOAP_SVC_USERNAME'         => $_SESSION['CRNRSTN_SOAP_SVC_USERNAME'],
                         'SOAP_SERVICES_AUTH_STATUS'         => 'ACCESS DENIED',
                         'STATUS_CODE'                       => '406',
-                        'STATUS_MESSAGE'                    => 'The CRNRSTN :: Lightsaber ' . 
-                                                               'RoCEv2 SOAP Services Layer (CLR-SSL) ' . 
-                                                               'understood the client request, ' . 
-                                                               'but is unwilling to accept it ' . 
-                                                               'due to the following reason. ' . 
+                        'STATUS_MESSAGE'                    => 'The CRNRSTN :: Lightsaber ' .
+                                                               'RoCEv2 SOAP Services Layer (CLR-SSL) ' .
+                                                               'understood the client request, ' .
+                                                               'but is unwilling to accept it ' .
+                                                               'due to the following reason. ' .
                                                                $tmp_exception_output_str,
                         'ISERROR_CODE'                      => '406',
                         'ISERROR_MESSAGE'                   => '406 Not Acceptable.',
@@ -3151,9 +3066,7 @@ class crnrstn_logging extends crnrstn
                         'SOAP_OPERATION_RUNTIME_SECONDS'    => $tmp_exception_runtime,
                         'DATE_CREATED_SOAP_RESPONSE'        => $this->return_micro_time(),
                         'SERVER_NAME_SOAP_CLIENT'           => $_SERVER['SERVER_NAME'],
-                        'SERVER_ADDRESS_SOAP_CLIENT'        => $_SERVER['SERVER_ADDR']
-
-                    );
+                        'SERVER_ADDRESS_SOAP_CLIENT'        => $_SERVER['SERVER_ADDR']);
 
                 }else{
 
@@ -3162,11 +3075,11 @@ class crnrstn_logging extends crnrstn
                         'CRNRSTN_SOAP_SVC_USERNAME'         => $_SESSION['CRNRSTN_SOAP_SVC_USERNAME'],
                         'SOAP_SERVICES_AUTH_STATUS'         => 'ACCESS DENIED',
                         'STATUS_CODE'                       => '406',
-                        'STATUS_MESSAGE'                    => 'The CRNRSTN :: Lightsaber RoCEv2 ' . 
-                                                               'SOAP Services Layer (CLR-SSL) ' . 
-                                                               'understood the client request, ' . 
-                                                               'but is unwilling to accept it ' . 
-                                                               'due to the following reason. ' . 
+                        'STATUS_MESSAGE'                    => 'The CRNRSTN :: Lightsaber RoCEv2 ' .
+                                                               'SOAP Services Layer (CLR-SSL) ' .
+                                                               'understood the client request, ' .
+                                                               'but is unwilling to accept it ' .
+                                                               'due to the following reason. ' .
                                                                $tmp_exception_output_str,
                         'ISERROR_CODE'                      => '406',
                         'ISERROR_MESSAGE'                   => '406 Not Acceptable.',
@@ -3176,9 +3089,7 @@ class crnrstn_logging extends crnrstn
                         'SOAP_OPERATION_RUNTIME_SECONDS'    => $tmp_exception_runtime,
                         'DATE_CREATED_SOAP_RESPONSE'        => $this->return_micro_time(),
                         'SERVER_NAME_SOAP_CLIENT'           => $_SERVER['SERVER_NAME'],
-                        'SERVER_ADDRESS_SOAP_CLIENT'        => $_SERVER['SERVER_ADDR']
-
-                    );
+                        'SERVER_ADDRESS_SOAP_CLIENT'        => $_SERVER['SERVER_ADDR']);
 
                 }
 
@@ -3196,11 +3107,11 @@ class crnrstn_logging extends crnrstn
         }
 
         self::$R_log_output_mgr->notification_go(
-        	                     $tmp_exception_output_str, 
-        	                     $syslog_level, 
-        	                     $tmp_exception_method, 
-        	                     $tmp_exception_runtime, 
-        	                     $tmp_exception_systemtime, 
+        	                     $tmp_exception_output_str,
+        	                     $syslog_level,
+        	                     $tmp_exception_method,
+        	                     $tmp_exception_runtime,
+        	                     $tmp_exception_systemtime,
         	                     $exception_obj);
 
         return NULL;
@@ -3208,7 +3119,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -3222,28 +3133,27 @@ class crnrstn_logging extends crnrstn
      *
      */
     function __________catch_exception(
-    	            $exception_obj, 
-    	            $syslog_level, 
-    	            $exception_method, 
-    	            $namespace, 
-    	            $profile_override_pipe, 
-    	            $endpoint_override_pipe, 
+    	            $exception_obj,
+    	            $syslog_level,
+    	            $exception_method,
+    	            $namespace,
+    	            $profile_override_pipe,
+    	            $endpoint_override_pipe,
     	            $wcr_override_pipe)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Changed crnrstn_logging->__________catch_exception 
-         *       $syslog_constant input parameter 
-         *       to $syslog_level. 
+         * Edit: Changed crnrstn_logging->__________catch_exception
+         *       $syslog_constant input parameter
+         *       to $syslog_level.
          *       5 :: Friday, May 1, 2026 @ 0114 hrs.
          *
          */
 
-        /**
-         * syslog()
-         * SYSLOG priority is a combination 
-         * of the facility and the level. 
-         * 
-         * Possible values are 
+        /* syslog()
+         * SYSLOG priority is a combination
+         * of the facility and the level.
+         *
+         * Possible values are
          * (in descending order):
          * Constant		  Description
          * LOG_EMERG      system is unusable.
@@ -3278,7 +3188,12 @@ class crnrstn_logging extends crnrstn
          * 123 - getCode=0
          * 124 - getFile=/var/www/html/crnrstn_v2/_crnrstn/class/environment/crnrstn.environment.inc.php
          * 125 - getLine=403
-         * 126 - getTraceAsString=#0 /var/www/html/crnrstn_v2/_crnrstn/class/user/crnrstn.user.inc.php(6063): crnrstn_environment->getServerArrayVar('CLOWN_TOWN', Object(crnrstn_user))\n#1 /var/www/html/crnrstn_v2/common/inc/footer/footer.inc.php(591): crnrstn_user->get_SERVER_param('CLOWN_TOWN')\n#2 /var/www/html/crnrstn_v2/index.php(132): include_once('/var/www/html/c..')\n#3 {main}
+         * 126 - getTraceAsString=#0 /var/www/html/crnrstn_v2/_crnrstn/class/user
+         *       /crnrstn.user.inc.php(6063): crnrstn_environment->getServerArrayVar(
+         *       'CLOWN_TOWN', Object(crnrstn_user))\n#1 /var/www/html/crnrstn_v2
+         *       /common/inc/footer/footer.inc.php(591): crnrstn_user->
+         *       get_SERVER_param('CLOWN_TOWN')\n#2 /var/www/html/crnrstn_v2
+         *       /index.php(132): include_once('/var/www/html/c..')\n#3 {main}
          *
          */
 
@@ -3297,32 +3212,30 @@ class crnrstn_logging extends crnrstn
                  */
                 $init_profile_pack_ARRAY = $this->return_sys_logging_init_profile_pack();
 
-                /**
-				 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-				 * Return an instantiation of 
-				 * The CRNRSTN :: Lightsaber RoCEv2 
-				 * SOAP Services Layer (CLR-SSL) Wild 
-				 * Card Resource Multi-Channel 
-				 * Logging Output Profile Manager. 
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+				 * Return an instantiation of
+				 * The CRNRSTN :: Lightsaber RoCEv2
+				 * SOAP Services Layer (CLR-SSL) Wild
+				 * Card Resource Multi-Channel
+				 * Logging Output Profile Manager.
                  *
                  *
                  * 5 :: Monday, July 15, 2024 @ 2108 hrs.
                  *
                  * $this->oLog_ProfileManager = new crnrstn_logging_oprofile_manager(
-                 *                                  $init_profile_pack_ARRAY, 
+                 *                                  $init_profile_pack_ARRAY,
                  *                                  $this->oCRNRSTN);
                  *
                  */
                 self::$R_log_output_mgr = $this->return_registered_resource(
-                	                             'new', 
-                	                             'crnrstn_logging_output_profile_manager', 
+                	                             'new',
+                	                             'crnrstn_logging_output_profile_manager',
                 	                             $init_profile_pack_ARRAY);
 
-                /**
-		         * error_log('[lnum ' . 
-		         *    __LINE__ . '] [mthd ' . 
-		         *    __METHOD__ . 
-		         *    '] init_profile_pack_ARRAY size=' . 
+                /* error_log('[lnum ' .
+		         *    __LINE__ . '] [mthd ' .
+		         *    __METHOD__ .
+		         *    '] init_profile_pack_ARRAY size=' .
 		         *    print_r($init_profile_pack_ARRAY, true));
 		         *
 		         * die();
@@ -3332,9 +3245,9 @@ class crnrstn_logging extends crnrstn
 		         */
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Do we need to call 
-                 * this after constructor 
-                 * receives same array? 
+                 * Do we need to call
+                 * this after constructor
+                 * receives same array?
                  *
                  */
                 self::$R_log_output_mgr->consume_init_profile_pack($init_profile_pack_ARRAY);
@@ -3342,14 +3255,13 @@ class crnrstn_logging extends crnrstn
             break;
             case 'crnrstn_user':
 
-/**
- *                $oCRNRSTN_ENV = $this->return_oCRNRSTN_ENV();
+/*                $oCRNRSTN_ENV = $this->return_oCRNRSTN_ENV();
  *
  *                //
- *                // Always get fresh 
- *                // logging profile. 
+ *                // Always get fresh
+ *                // logging profile.
  *                //
- *                // It can change before 
+ *                // It can change before
  *                // method call...right?
  *                $init_profile_pack_ARRAY = array();
  *                $init_profile_pack_ARRAY['sys_logging_profile_ARRAY'] = $oCRNRSTN_ENV->return_sys_logging_profile();
@@ -3367,13 +3279,11 @@ class crnrstn_logging extends crnrstn
             break; // DO NOT BREAK.
             case 'crnrstn_environment':
 
-/**
- *
+/*                //
+ *                // Always get fresh
+ *                // logging profile.
  *                //
- *                // Always get fresh 
- *                // logging profile. 
- *                //
- *                // It can change before 
+ *                // It can change before
  *                // method call...right?
  *                $init_profile_pack_ARRAY = array();
  *                $init_profile_pack_ARRAY['sys_logging_profile_ARRAY'] = $this->return_sys_logging_profile();
@@ -3389,11 +3299,10 @@ class crnrstn_logging extends crnrstn
  *                self::$R_log_output_mgr = $this->return_R_log_output_mgr();
  *
  */
-              	/**
-		         * error_log('[lnum ' . 
-		         *    __LINE__ . '] [mthd ' . 
-		         *    __METHOD__ . 
-		         *    '] pack + sys_logging_wcr_ARRAY=' . 
+              	/* error_log('[lnum ' .
+		         *    __LINE__ . '] [mthd ' .
+		         *    __METHOD__ .
+		         *    '] pack + sys_logging_wcr_ARRAY=' .
 		         *    print_r($init_profile_pack_ARRAY, true));
 		         *
 		         * die();
@@ -3405,7 +3314,7 @@ class crnrstn_logging extends crnrstn
         	break;
 
             /**
-             * Mature development. 
+             * Mature development.
              *
         	 */
             default :
@@ -3415,19 +3324,18 @@ class crnrstn_logging extends crnrstn
 
         }
 
-        $tmp_exception_msg       = $exception_obj->getMessage();
+        $tmp_exception_msg        = $exception_obj->getMessage();
         $tmp_exception_linenum    = $exception_obj->getLine();
         $tmp_exception_runtime    = $this->wall_time();
         $tmp_exception_systemtime = $this->return_micro_time();
         $exception_method_trim    = trim($exception_method);
 
-        /**
-         * error_log('[lnum ' . 
-         *    __LINE__ . '] [mthd ' . 
-         *    __METHOD__ . 
-         *    '] my class in logger catch_exception is ' . 
-         *    get_class($oCRNRSTN) . ' $exception_method_trim=' . 
-         *    $exception_method_trim . ' $tmp_exception_msg=' . 
+        /* error_log('[lnum ' .
+         *    __LINE__ . '] [mthd ' .
+         *    __METHOD__ .
+         *    '] my class in logger catch_exception is ' .
+         *    get_class($oCRNRSTN) . ' $exception_method_trim=' .
+         *    $exception_method_trim . ' $tmp_exception_msg=' .
          *    $tmp_exception_msg);
          *
          */
@@ -3456,105 +3364,104 @@ class crnrstn_logging extends crnrstn
 
         }
 
-        $this->error_log('[rtime ' . 
-        	   $tmp_exception_runtime . ' secs] [' . 
-        	   $method . ' ' . 
-        	   $tmp_exception_method . '] [lnum ' . 
-        	   $tmp_exception_linenum . '] ' . 
-        	   $tmp_exception_msg, 
-        	   __LINE__, 
-        	   __METHOD__, 
-        	   __FILE__, 
+        $this->error_log('[rtime ' .
+        	   $tmp_exception_runtime . ' secs] [' .
+        	   $method . ' ' .
+        	   $tmp_exception_method . '] [lnum ' .
+        	   $tmp_exception_linenum . '] ' .
+        	   $tmp_exception_msg,
+        	   __LINE__,
+        	   __METHOD__,
+        	   __FILE__,
         	   CRNRSTN_LOG_ALL);
 
-        $tmp_exception_output_str = $tmp_exception_systemtime . ' [rtime ' . 
-                                    $tmp_exception_runtime . ' secs] [' . 
-                                    $method . ' ' . 
-                                    $tmp_exception_method . '] [lnum ' . 
-                                    $tmp_exception_linenum . '] ' . 
+        $tmp_exception_output_str = $tmp_exception_systemtime . ' [rtime ' .
+                                    $tmp_exception_runtime . ' secs] [' .
+                                    $method . ' ' .
+                                    $tmp_exception_method . '] [lnum ' .
+                                    $tmp_exception_linenum . '] ' .
                                     $tmp_exception_msg;
 
         switch($tmp_source_method){
             case 'crnrstn_soap_request_manager::takeTheKingsHighway':
 
-                /**
-                 * $http_status_codes = array(
-                 *                      100 => 'Continue', 
-                 *                      101 => 'Switching Protocols', 
+                /* $http_status_codes = array(
+                 *                      100 => 'Continue',
+                 *                      101 => 'Switching Protocols',
                  *                      102 => 'Processing',
-                 *                      200 => 'OK', 
-                 *                      201 => 'Created', 
-                 *                      202 => 'Accepted', 
+                 *                      200 => 'OK',
+                 *                      201 => 'Created',
+                 *                      202 => 'Accepted',
                  *                      203 => 'Non-Authoritative Information',
-                 *                      204 => 'No Content', 
-                 *                      205 => 'Reset Content', 
-                 *                      206 => 'Partial Content', 
+                 *                      204 => 'No Content',
+                 *                      205 => 'Reset Content',
+                 *                      206 => 'Partial Content',
                  *                      207 => 'Multi-Status',
-                 *                      300 => 'Multiple Choices', 
-                 *                      301 => 'Moved Permanently', 
-                 *                      302 => 'Found', 
+                 *                      300 => 'Multiple Choices',
+                 *                      301 => 'Moved Permanently',
+                 *                      302 => 'Found',
                  *                      303 => 'See Other',
-                 *                      304 => 'Not Modified', 
-                 *                      305 => 'Use Proxy', 
-                 *                      306 => '(Unused)', 
+                 *                      304 => 'Not Modified',
+                 *                      305 => 'Use Proxy',
+                 *                      306 => '(Unused)',
                  *                      307 => 'Temporary Redirect',
-                 *                      308 => 'Permanent Redirect', 
-                 *                      400 => 'Bad Request', 
-                 *                      401 => 'Unauthorized', 
+                 *                      308 => 'Permanent Redirect',
+                 *                      400 => 'Bad Request',
+                 *                      401 => 'Unauthorized',
                  *                      402 => 'Payment Required',
-                 *                      403 => 'Forbidden', 
-                 *                      404 => 'Not Found', 
-                 *                      405 => 'Method Not Allowed', 
+                 *                      403 => 'Forbidden',
+                 *                      404 => 'Not Found',
+                 *                      405 => 'Method Not Allowed',
                  *                      406 => 'Not Acceptable',
-                 *                      407 => 'Proxy Authentication Required', 
-                 *                      408 => 'Request Timeout', 
-                 *                      409 => 'Conflict', 
+                 *                      407 => 'Proxy Authentication Required',
+                 *                      408 => 'Request Timeout',
+                 *                      409 => 'Conflict',
                  *                      410 => 'Gone',
-                 *                      411 => 'Length Required', 
-                 *                      412 => 'Precondition Failed', 
+                 *                      411 => 'Length Required',
+                 *                      412 => 'Precondition Failed',
                  *                      413 => 'Request Entity Too Large',
-                 *                      414 => 'Request-URI Too Long', 
-                 *                      415 => 'Unsupported Media Type', 
+                 *                      414 => 'Request-URI Too Long',
+                 *                      415 => 'Unsupported Media Type',
                  *                      416 => 'Requested Range Not Satisfiable',
-                 *                      417 => 'Expectation Failed', 
-                 *                      418 => 'I\'m a teapot', 
+                 *                      417 => 'Expectation Failed',
+                 *                      418 => 'I\'m a teapot',
                  *                      419 => 'Authentication Timeout',
-                 *                      420 => 'Enhance Your Calm', 
-                 *                      422 => 'Unprocessable Entity', 
-                 *                      423 => 'Locked', 
+                 *                      420 => 'Enhance Your Calm',
+                 *                      422 => 'Unprocessable Entity',
+                 *                      423 => 'Locked',
                  *                      424 => 'Failed Dependency',
-                 *                      424 => 'Method Failure', 
-                 *                      425 => 'Unordered Collection', 
-                 *                      426 => 'Upgrade Required', 
+                 *                      424 => 'Method Failure',
+                 *                      425 => 'Unordered Collection',
+                 *                      426 => 'Upgrade Required',
                  *                      428 => 'Precondition Required',
-                 *                      429 => 'Too Many Requests', 
-                 *                      431 => 'Request Header Fields Too Large', 
-                 *                      444 => 'No Response', 
+                 *                      429 => 'Too Many Requests',
+                 *                      431 => 'Request Header Fields Too Large',
+                 *                      444 => 'No Response',
                  *                      449 => 'Retry With',
-                 *                      450 => 'Blocked by Windows Parental Controls', 
+                 *                      450 => 'Blocked by Windows Parental Controls',
                  *                      451 => 'Unavailable For Legal Reasons',
-                 *                      494 => 'Request Header Too Large', 
-                 *                      495 => 'Cert Error', 
-                 *                      496 => 'No Cert', 
+                 *                      494 => 'Request Header Too Large',
+                 *                      495 => 'Cert Error',
+                 *                      496 => 'No Cert',
                  *                      497 => 'HTTP to HTTPS',
-                 *                      499 => 'Client Closed Request', 
-                 *                      500 => 'Internal Server Error', 
-                 *                      501 => 'Not Implemented', 
+                 *                      499 => 'Client Closed Request',
+                 *                      500 => 'Internal Server Error',
+                 *                      501 => 'Not Implemented',
                  *                      502 => 'Bad Gateway',
-                 *                      503 => 'Service Unavailable', 
-                 *                      504 => 'Gateway Timeout', 
+                 *                      503 => 'Service Unavailable',
+                 *                      504 => 'Gateway Timeout',
                  *                      505 => 'HTTP Version Not Supported',
-                 *                      506 => 'Variant Also Negotiates', 
-                 *                      507 => 'Insufficient Storage', 
+                 *                      506 => 'Variant Also Negotiates',
+                 *                      507 => 'Insufficient Storage',
                  *                      508 => 'Loop Detected',
-                 *                      509 => 'Bandwidth Limit Exceeded', 
-                 *                      510 => 'Not Extended', 
+                 *                      509 => 'Bandwidth Limit Exceeded',
+                 *                      510 => 'Not Extended',
                  *                      511 => 'Network Authentication Required',
-                 *                      598 => 'Network read timeout error', 
+                 *                      598 => 'Network read timeout error',
                  *                      599 => 'Network connect timeout error');
                  */
 
-                $tmp_pos_SOAP_req = strpos($tmp_exception_msg,'a SOAP request '); //a SOAP request
+                $tmp_pos_SOAP_req = \strpos($tmp_exception_msg,'a SOAP request '); //a SOAP request
 
                 if($tmp_pos_SOAP_req !== false){
 
@@ -3563,12 +3470,12 @@ class crnrstn_logging extends crnrstn
                         'CRNRSTN_SOAP_SVC_USERNAME' => $_SESSION['CRNRSTN_SOAP_SVC_USERNAME'],
                         'SOAP_SERVICES_AUTH_STATUS' => 'ACCESS DENIED',
                         'STATUS_CODE' => '406',
-                        'STATUS_MESSAGE' => 'The CRNRSTN :: Lightsaber ' . 
-                                            'RoCEv2 SOAP Services Layer ' . 
-                                            '(CLR-SSL) understood the ' . 
-                                            'client request, but is ' . 
-                                            'unwilling to accept it due ' . 
-                                            'to the following reason. ' . 
+                        'STATUS_MESSAGE' => 'The CRNRSTN :: Lightsaber ' .
+                                            'RoCEv2 SOAP Services Layer ' .
+                                            '(CLR-SSL) understood the ' .
+                                            'client request, but is ' .
+                                            'unwilling to accept it due ' .
+                                            'to the following reason. ' .
                                             $tmp_exception_output_str,
                         'ISERROR_CODE' => '406',
                         'ISERROR_MESSAGE' => '406 Not Acceptable.',
@@ -3578,8 +3485,7 @@ class crnrstn_logging extends crnrstn
                         'SOAP_OPERATION_RUNTIME_SECONDS' => $tmp_exception_runtime,
                         'DATE_CREATED_SOAP_RESPONSE' => $this->return_micro_time(),
                         'SERVER_NAME_SOAP_CLIENT' => $_SERVER['SERVER_NAME'],
-                        'SERVER_ADDRESS_SOAP_CLIENT' => $_SERVER['SERVER_ADDR']
-                    );
+                        'SERVER_ADDRESS_SOAP_CLIENT' => $_SERVER['SERVER_ADDR']);
 
                 }else{
 
@@ -3588,12 +3494,12 @@ class crnrstn_logging extends crnrstn
                         'CRNRSTN_SOAP_SVC_USERNAME' => $_SESSION['CRNRSTN_SOAP_SVC_USERNAME'],
                         'SOAP_SERVICES_AUTH_STATUS' => 'ACCESS DENIED',
                         'STATUS_CODE' => '406',
-                        'STATUS_MESSAGE' => 'The CRNRSTN :: Lightsaber ' . 
-                                            'RoCEv2 SOAP Services Layer ' . 
-                                            '(CLR-SSL) understood the ' . 
-                                            'client request, but is ' . 
-                                            'unwilling to accept it due ' . 
-                                            'to the following reason. ' . 
+                        'STATUS_MESSAGE' => 'The CRNRSTN :: Lightsaber ' .
+                                            'RoCEv2 SOAP Services Layer ' .
+                                            '(CLR-SSL) understood the ' .
+                                            'client request, but is ' .
+                                            'unwilling to accept it due ' .
+                                            'to the following reason. ' .
                                             $tmp_exception_output_str,
                         'ISERROR_CODE' => '406',
                         'ISERROR_MESSAGE' => '406 Not Acceptable.',
@@ -3603,8 +3509,7 @@ class crnrstn_logging extends crnrstn
                         'SOAP_OPERATION_RUNTIME_SECONDS' => $tmp_exception_runtime,
                         'DATE_CREATED_SOAP_RESPONSE' => $this->return_micro_time(),
                         'SERVER_NAME_SOAP_CLIENT' => $_SERVER['SERVER_NAME'],
-                        'SERVER_ADDRESS_SOAP_CLIENT' => $_SERVER['SERVER_ADDR']
-                    );
+                        'SERVER_ADDRESS_SOAP_CLIENT' => $_SERVER['SERVER_ADDR']);
 
                 }
 
@@ -3613,9 +3518,8 @@ class crnrstn_logging extends crnrstn
             break;
             default:
 
-                /**
-                 *$tmp_exception_method = $exception_method . '()';
-                 *$method = 'methd';
+                /* $tmp_exception_method = $exception_method . '()';
+                 * $method = 'methd';
                  *
                  */
 
@@ -3624,11 +3528,11 @@ class crnrstn_logging extends crnrstn
         }
 
         self::$R_log_output_mgr->notification_go(
-        	                     $tmp_exception_output_str, 
-        	                     $syslog_level, 
-        	                     $tmp_exception_method, 
-        	                     $tmp_exception_runtime, 
-        	                     $tmp_exception_systemtime, 
+        	                     $tmp_exception_output_str,
+        	                     $syslog_level,
+        	                     $tmp_exception_method,
+        	                     $tmp_exception_runtime,
+        	                     $tmp_exception_systemtime,
         	                     $exception_obj);
 
         return NULL;
@@ -3636,47 +3540,46 @@ class crnrstn_logging extends crnrstn
     }
 
 /*
-
-    $clr_ssl_msg = 'CRNRSTN :: is unable to ' . 
-                   'format the input data, ' . 
-                   $interval_str . 
-                   ', to a recognized ' . 
-                   'SQL time interval. ' . 
+    $clr_ssl_msg = 'CRNRSTN :: is unable to ' .
+                   'format the input data, ' .
+                   $interval_str .
+                   ', to a recognized ' .
+                   'SQL time interval. ' .
                    $this->data_report(
-                          $interval_str, 
-                          'CRNRSTN :: MC-DDO Input ' . 
+                          $interval_str,
+                          'CRNRSTN :: MC-DDO Input ' .
                           'Data Report |');
     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
     $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
     $token = array(
-             'token'                   => $msg_token, 
-             'token_generation_date'   => $token_generation_date, 
-             'request_type'            => __METHOD__, 
-             'code'                    => 200, 
+             'token'                   => $msg_token,
+             'token_generation_date'   => $token_generation_date,
+             'request_type'            => __METHOD__,
+             'code'                    => 200,
              'clr_ssl_msg'             => $clr_ssl_msg);
     $this->error_log(
-           $clr_ssl_msg, 
-           \LOG_DEBUG, 
-           \E_NOTICE, 
-           __LINE__, 
-           __METHOD__, 
-           __FILE__, 
+           $clr_ssl_msg,
+           \LOG_DEBUG,
+           \E_NOTICE,
+           __LINE__,
+           __METHOD__,
+           __FILE__,
            $token);
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * $this->error_log_clear($msg_token);
      *
      * $this->error_log(
-     *        $clr_ssl_msg, 
-     *        \LOG_ERR, 
-     *        \E_ERROR, 
-     *        __LINE__, 
-     *        __METHOD__, 
-     *        __FILE__, 
-     *        $token, 
-     *        true, 
+     *        $clr_ssl_msg,
+     *        \LOG_ERR,
+     *        \E_ERROR,
+     *        __LINE__,
+     *        __METHOD__,
+     *        __FILE__,
+     *        $token,
+     *        true,
      *        'R_channel_SESSION');
      *
      * Syslog Levels:
@@ -3694,98 +3597,98 @@ class crnrstn_logging extends crnrstn
      *
      * Error Reporting:
      * Value   Constant                     Description Note
-     * 1       \E_ERROR (int)               Fatal run-time errors. 
-     *                                      These indicate errors that 
-     *                                      can not be recovered from, 
-     *                                      such as a memory allocation 
-     *                                      problem. Execution of the 
+     * 1       \E_ERROR (int)               Fatal run-time errors.
+     *                                      These indicate errors that
+     *                                      can not be recovered from,
+     *                                      such as a memory allocation
+     *                                      problem. Execution of the
      *                                      script is halted.
-     * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-     *                                      errors). Execution of the 
+     * 2       \E_WARNING (int)             Run-time warnings (non-fatal
+     *                                      errors). Execution of the
      *                                      script is not halted.
-     * 4       \E_PARSE (int)               Compile-time parse errors. 
-     *                                      Parse errors should only be 
+     * 4       \E_PARSE (int)               Compile-time parse errors.
+     *                                      Parse errors should only be
      *                                      generated by the parser.
-     * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-     *                                      that the script encountered 
-     *                                      something that could 
-     *                                      indicate an error, but 
-     *                                      could also happen in the 
-     *                                      normal course of running 
+     * 8       \E_NOTICE (int)              Run-time notices. Indicate
+     *                                      that the script encountered
+     *                                      something that could
+     *                                      indicate an error, but
+     *                                      could also happen in the
+     *                                      normal course of running
      *                                      a script.
-     * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-     *                                      during PHP's initial 
-     *                                      startup. This is like an 
-     *                                      E_ERROR, except it is 
-     *                                      generated by the core 
+     * 16      \E_CORE_ERROR (int)          Fatal errors that occur
+     *                                      during PHP's initial
+     *                                      startup. This is like an
+     *                                      E_ERROR, except it is
+     *                                      generated by the core
      *                                      of PHP.
-     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-     *                                      errors) that occur 
-     *                                      during PHP's initial 
-     *                                      startup. This is like 
-     *                                      an E_WARNING, except it 
-     *                                      is generated by the 
+     * 32      \E_CORE_WARNING (int)        Warnings (non-fatal
+     *                                      errors) that occur
+     *                                      during PHP's initial
+     *                                      startup. This is like
+     *                                      an E_WARNING, except it
+     *                                      is generated by the
      *                                      core of PHP.
-     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-     *                                      This is like an E_ERROR, 
-     *                                      except it is generated 
+     * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors.
+     *                                      This is like an E_ERROR,
+     *                                      except it is generated
      *                                      by the Zend Scripting Engine.
-     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-     *                                      (non-fatal errors). This 
-     *                                      is like an E_WARNING, 
-     *                                      except it is generated 
+     * 128     \E_COMPILE_WARNING (int)     Compile-time warnings
+     *                                      (non-fatal errors). This
+     *                                      is like an E_WARNING,
+     *                                      except it is generated
      *                                      by the Zend Scripting Engine.
-     * 256     \E_USER_ERROR (int)          User-generated error 
-     *                                      message. This is like 
-     *                                      an E_ERROR, except it 
-     *                                      is generated in PHP code 
-     *                                      by using the PHP function 
+     * 256     \E_USER_ERROR (int)          User-generated error
+     *                                      message. This is like
+     *                                      an E_ERROR, except it
+     *                                      is generated in PHP code
+     *                                      by using the PHP function
      *                                      trigger_error().
-     * 512     \E_USER_WARNING (int)        User-generated warning 
-     *                                      message. This is like an 
-     *                                      E_WARNING, except it is 
-     *                                      generated in PHP code by 
-     *                                      using the PHP function 
+     * 512     \E_USER_WARNING (int)        User-generated warning
+     *                                      message. This is like an
+     *                                      E_WARNING, except it is
+     *                                      generated in PHP code by
+     *                                      using the PHP function
      *                                      trigger_error().
-     * 1024    \E_USER_NOTICE (int)         User-generated notice 
-     *                                      message. This is like an 
-     *                                      E_NOTICE, except it is 
-     *                                      generated in PHP code by 
-     *                                      using the PHP function 
+     * 1024    \E_USER_NOTICE (int)         User-generated notice
+     *                                      message. This is like an
+     *                                      E_NOTICE, except it is
+     *                                      generated in PHP code by
+     *                                      using the PHP function
      *                                      trigger_error().
-     * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-     *                                      changes to your code which 
-     *                                      will ensure the best 
-     *                                      interoperability and forward 
+     * 2048    \E_STRICT (int)              Enable to have PHP suggest
+     *                                      changes to your code which
+     *                                      will ensure the best
+     *                                      interoperability and forward
      *                                      compatibility of your code.
-     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-     *                                      It indicates that a probably 
-     *                                      dangerous error occurred, 
-     *                                      but did not leave the Engine 
-     *                                      in an unstable state. If the 
-     *                                      error is not caught by a user 
-     *                                      defined handle (see also 
-     *                                      set_error_handler()), the 
-     *                                      application aborts as it was 
+     * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error.
+     *                                      It indicates that a probably
+     *                                      dangerous error occurred,
+     *                                      but did not leave the Engine
+     *                                      in an unstable state. If the
+     *                                      error is not caught by a user
+     *                                      defined handle (see also
+     *                                      set_error_handler()), the
+     *                                      application aborts as it was
      *                                      an E_ERROR.
-     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-     *                                      this to receive warnings 
-     *                                      about code that will not work 
+     * 8192    \E_DEPRECATED (int)          Run-time notices. Enable
+     *                                      this to receive warnings
+     *                                      about code that will not work
      *                                      in future versions.
-     * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-     *                                      message. This is like an 
-     *                                      E_DEPRECATED, except it 
-     *                                      is generated in PHP code 
-     *                                      by using the PHP function 
+     * 16384   \E_USER_DEPRECATED (int)     User-generated warning
+     *                                      message. This is like an
+     *                                      E_DEPRECATED, except it
+     *                                      is generated in PHP code
+     *                                      by using the PHP function
      *                                      trigger_error().
-     * 32767   \E_ALL (int)                 All errors, warnings, 
+     * 32767   \E_ALL (int)                 All errors, warnings,
      *                                      and notices.
      */
 
      // ^ TEMPLATE. 2026-05-18 10:37:28.242035
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -3803,63 +3706,63 @@ class crnrstn_logging extends crnrstn
      *
      */
     function error_log(
-             $message_str = NULL, 
-             $syslog_level = \LOG_DEBUG, 
-             $error_reporting_level = \E_NOTICE, 
-             $line_num = NULL, 
-             $method = NULL, 
-             $file = NULL, 
-             $token = NULL, 
-             $spool = false, 
+             $message_str = NULL,
+             $syslog_level = \LOG_DEBUG,
+             $error_reporting_level = \E_NOTICE,
+             $line_num = NULL,
+             $method = NULL,
+             $file = NULL,
+             $token = NULL,
+             $spool = false,
              $spool_channel = 'R_channel_RUNTIME',
              $syslog_prefix = 'R :: ',
              $syslog_prefix_passthrough = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Copied updated error_log 
+         * Edit: Copied updated error_log
          *       method definition from crnrstn
-         *       during the early phase of the 
-         *       CLR-SSL Logging Services Layer 
-         *       rearchitecture. 
+         *       during the early phase of the
+         *       CLR-SSL Logging Services Layer
+         *       rearchitecture.
          *       5 :: Friday, May 1, 2026 @ 0126 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Re-copied updated error_log 
+         * Edit: Re-copied updated error_log
          *       method definition from crnrstn
-         *       during the latter phase of the 
-         *       CLR-SSL Logging Services Layer 
-         *       rearchitecture restart. 
+         *       during the latter phase of the
+         *       CLR-SSL Logging Services Layer
+         *       rearchitecture restart.
          *       5 :: Saturday, May 16, 2026 @ 0323 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Added $syslog_prefix_passthrough 
-         *       input parameter to crnrstn_logging 
-         *       error_log method to support white 
-         *       label system (syslog) message 
-         *       prefix passthrough. 
+         * Edit: Added $syslog_prefix_passthrough
+         *       input parameter to crnrstn_logging
+         *       error_log method to support white
+         *       label system (syslog) message
+         *       prefix passthrough.
          *       5 :: Friday, May 22, 2026 @ 0449 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Changed the crnrstn_logging 
-         *       error_log method input parameter 
-         *       default for $syslog_level from 
-         *       LOG_INFO to LOG_DEBUG. 
+         * Edit: Changed the crnrstn_logging
+         *       error_log method input parameter
+         *       default for $syslog_level from
+         *       LOG_INFO to LOG_DEBUG.
          *       5 :: Tuesday, June 16, 2026 @ 0201 hrs.
          *
          */
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * TODO :: Delete this temp syslog() 
-         *         deprecated input filter 
-         *         when the previous architecture 
-         *         has been properly sunset. 
+         * TODO :: Delete this temp syslog()
+         *         deprecated input filter
+         *         when the previous architecture
+         *         has been properly sunset.
          *
-         *         We are replacing 
-         *         all occurences of: 
-         *         - err_message_queue_push(), 
-         *         - err_message_queue_retrieve(), 
+         *         We are replacing
+         *         all occurences of:
+         *         - err_message_queue_push(),
+         *         - err_message_queue_retrieve(),
          *         - err_message_queue_clear(), and
-         *         - err_message_count(). 
+         *         - err_message_count().
          *
          *         with
          *
@@ -3874,19 +3777,19 @@ class crnrstn_logging extends crnrstn
 
             \openlog(
                 $this->clr_ssl_syslog_prefix(
-                       $syslog_level, 
-                       $line_num, 
+                       $syslog_level,
+                       $line_num,
                        $error_reporting_level,
-                       'R :: Warning DEPRECATED ', 
-                       $syslog_prefix_passthrough), 
-                \LOG_CONS | 
-                \LOG_NDELAY | 
-                \LOG_NOWAIT | 
-                \LOG_PID | 
-                \LOG_PERROR, 
+                       'R :: Warning DEPRECATED ',
+                       $syslog_prefix_passthrough),
+                \LOG_CONS |
+                \LOG_NDELAY |
+                \LOG_NOWAIT |
+                \LOG_PID |
+                \LOG_PERROR,
                 \LOG_SYSLOG);
             \syslog(
-                $syslog_level, 
+                $syslog_level,
                 $message_str);
             \closelog();
 
@@ -3895,40 +3798,43 @@ class crnrstn_logging extends crnrstn
         }// End of filter.
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Moved crnrstn->error_log 
-         *       $log_silo_key input param to 
-         *       be after $str and renamed it 
-         *       to $syslog_level. 
-         *       Added $error_reporting_level 
-         *       and $token input params to 
-         *       error_log as well. 
+         * Edit: Moved crnrstn->error_log
+         *       $log_silo_key input param to
+         *       be after $str and renamed it
+         *       to $syslog_level.
+         *       Added $error_reporting_level
+         *       and $token input params to
+         *       error_log as well.
          *       5 :: Thursday, April 30, 2026 @ 1616 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Added the $spool input param to 
-         *       the crnrstn->error_log method. 
+         * Edit: Added the $spool input param to
+         *       the crnrstn->error_log method.
          *       5 :: Thursday, April 30, 2026 @ 2355 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Renamed the $str input param to 
-         *       $message_str. 
+         * Edit: Renamed the $str input param to
+         *       $message_str.
          *       5 :: Saturday, May 9, 2026 @ 0630 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Added the $syslog_prefix input param to 
-         *       the crnrstn->error_log method. 
+         * Edit: Added the $syslog_prefix input param to
+         *       the crnrstn->error_log method.
          *       5 :: Saturday, May 9, 2026 @ 1418 hrs.
          *
          */
 
+        if(is_string($spool_channel))
+            $spool_channel = $this->R_data['int_flag'][$spool_channel];
+
         if($spool == true){
 
             switch($spool_channel){
-                case 'R_channel_SESSION':
+                case $this->R_data['int_flag']['R_channel_SESSION']:
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * We currently spool error_log data 
-                     * to the CLR-SSL session channel in 
-                     * order to pass an error prefix 
+                     * We currently spool error_log data
+                     * to the CLR-SSL session channel in
+                     * order to pass an error prefix
                      * string to our custom error handler.
                      *
                      *
@@ -3937,15 +3843,14 @@ class crnrstn_logging extends crnrstn
                      */
 
                     $R_cluster_id = $this->get_crnrstn('R_cluster_id');
+                    $_SESSION['CRNRSTN_ERROR_PREFIX_' .
+                    $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'][] = $message_str;
 
-                    $_SESSION['CRNRSTN_ERROR_PREFIX_' . 
-                    $config_serial]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'][] = $message_str;
-
-                    return count($_SESSION['CRNRSTN_ERROR_PREFIX_' . 
-                        $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID']);
+                    return \count($_SESSION['CRNRSTN_ERROR_PREFIX_' .
+                           $R_cluster_id]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID']);
 
                 break;
-                case 'R_channel_RUNTIME':
+                case $this->R_data['int_flag']['R_channel_RUNTIME']:
                 default:
 
                     // 5 :: Thursday, April 23, 2026 @ 0040 hrs.
@@ -3956,10 +3861,10 @@ class crnrstn_logging extends crnrstn
                     //return count($this->R_data['spool']['err_message_queue_push']['message']);
 
 	                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-	                 * CLR-SSL spooling 
+	                 * CLR-SSL spooling
 	                 * architecture is pending.
 	                 *
-	                 * Error this fact 
+	                 * Error this fact
 	                 * out for now.
 	                 *
 	                 *
@@ -3968,24 +3873,24 @@ class crnrstn_logging extends crnrstn
 	                 */
 	                \openlog(
 	                    $this->clr_ssl_syslog_prefix(
-                               $line_num, 
-                               $file, 
+                               $line_num,
+                               $file,
                                $method,
-                               'R :: [Log Spool Pending] ', 
-                               $syslog_prefix_passthrough), 
-	                    \LOG_CONS | 
-	                    \LOG_NDELAY | 
-	                    \LOG_NOWAIT | 
-	                    \LOG_PID | 
-	                    \LOG_PERROR, 
+                               'R :: [Log Spool Pending] ',
+                               $syslog_prefix_passthrough),
+	                    \LOG_CONS |
+	                    \LOG_NDELAY |
+	                    \LOG_NOWAIT |
+	                    \LOG_PID |
+	                    \LOG_PERROR,
 	                    \LOG_SYSLOG);
 	                \syslog($syslog_level, $message_str);
 	                \closelog();
 
 	                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-	                 * Nothing happened. 
+	                 * Nothing happened.
 	                 *
-	                 * Is not the CLR-SSL spooling 
+	                 * Is not the CLR-SSL spooling
 	                 * architecture still pending?
 	                 *
 	                 */
@@ -3997,8 +3902,8 @@ class crnrstn_logging extends crnrstn
 
         }
 
-        switch($this->get_crnrstn('R_debug_mode')){
-            case CRNRSTN_DEBUG_SYSLOG:
+        switch($this->R_data['R_debug_mode']){
+            case $this->R_data['int_flag']['CRNRSTN_DEBUG_SYSLOG']:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * https://www.php.net/manual/en/function.openlog.php
@@ -4008,29 +3913,29 @@ class crnrstn_logging extends crnrstn
                  *
                  *
                  * LOG_CONS (int)
-                 * If there is an error while 
-                 * sending data to the system 
-                 * logger, write directly to 
+                 * If there is an error while
+                 * sending data to the system
+                 * logger, write directly to
                  * the system console.
-                 * 
+                 *
                  * LOG_NDELAY (int)
-                 * Open the connection to 
+                 * Open the connection to
                  * the logger immediately.
-                 * 
+                 *
                  * LOG_ODELAY (int)
-                 * Delay opening the connection 
-                 * until the first message is 
-                 * logged. This is the 
+                 * Delay opening the connection
+                 * until the first message is
+                 * logged. This is the
                  * default behaviour.
-                 * 
+                 *
                  * LOG_NOWAIT (int)
-                 * 
+                 *
                  * LOG_PERROR (int)
-                 * Additionally log messages 
+                 * Additionally log messages
                  * to STDERR.
-                 * 
-                 * LOG_PID 
-                 * Include the PID with each 
+                 *
+                 * LOG_PID
+                 * Include the PID with each
                  * log message.
                  *
                  * 5 :: Saturday, May 9, 2026 @ 1412 hrs.
@@ -4038,23 +3943,61 @@ class crnrstn_logging extends crnrstn
                  */
                 \openlog(
                     $this->clr_ssl_syslog_prefix(
-                           $line_num, 
-                           $file, 
-                           $method, 
-                           $syslog_prefix, 
-                           $syslog_prefix_passthrough), 
-                    \LOG_CONS | 
-                    \LOG_NDELAY | 
-                    \LOG_NOWAIT | 
-                    \LOG_PID | 
-                    \LOG_PERROR, 
+                           $line_num,
+                           $file,
+                           $method,
+                           $syslog_prefix,
+                           $syslog_prefix_passthrough),
+                    \LOG_CONS |
+                    \LOG_NDELAY |
+                    \LOG_NOWAIT |
+                    \LOG_PID |
+                    \LOG_PERROR,
                     \LOG_SYSLOG);
                 \syslog($syslog_level, $message_str);
                 \closelog();
 
-            case CRNRSTN_DEBUG_ON:
+            case $this->R_data['int_flag']['CRNRSTN_SYSTEM_TEST']:
+            case $this->R_data['int_flag']['CRNRSTN_DEBUG_ON']:
 
-                return true; // Silence "[Database Integrations Pending] ...". // 2026-06-13 11:24:14.81572 
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Tonight's assignment. We begin the
+                 * implementation of the CLR-SSL Database
+                 * Services Layer in support of error
+                 * logging for the CLR-SSL Logging
+                 * Services Layer.
+                 *
+                 *
+                 * 5 :: Tuesday, August 25, 2026 @ 2217 hrs.
+                 * Last Modified: Tuesday, August 25, 2026 @ 2237 hrs.
+                 * Took a few in to get a
+                 * righteous rip on the bong...
+                 * then come back, and finish
+                 * the thought, above.
+                 */
+                if(isset(self::$_R['kivotos']->R['crnrstn_database_crnrstn']))
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * The CLR-SSL Logging Services
+                     * Layer architecture is
+                     * directly integrated into the
+                     * CLR-SSL Database Services Layer.
+                     *
+                     *
+                     * 5 :: Tuesday, August 25, 2026 @ 2251 hrs.
+                     */
+                    self::$_R['kivotos']->R['crnrstn_database_crnrstn']->error_log(
+                                                                         $message_str,
+                                                                         $syslog_level,
+                                                                         $error_reporting_level,
+                                                                         $line_num,
+                                                                         $method,
+                                                                         $file,
+                                                                         $token,
+                                                                         $spool,
+                                                                         $spool_channel,
+                                                                         $syslog_prefix,
+                                                                         $syslog_prefix_passthrough);
+
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                 5 :: Sunday, May 10, 2026 @ 1842 hrs.
@@ -4062,51 +4005,51 @@ class crnrstn_logging extends crnrstn
                 Database
                 SOAP
                 Cache Management Policy
-                   - Unflushed-to-database 
-                     MySQL/JSON messaging 
-                     activity logs. 
-                   - Comprehensive CLR-SSL 
+                   - Unflushed-to-database
+                     MySQL/JSON messaging
+                     activity logs.
+                   - Comprehensive CLR-SSL
                      Rollover policy for all
                      of the nickel-and-dime-me-
                      bound-to-file-system-
-                     status-management flags, 
-                     counters, and resource 
-                     meta aggregations. 
+                     status-management flags,
+                     counters, and resource
+                     meta aggregations.
 
                 CLR-SSL Database Logging:
-                1) Build the system message 
+                1) Build the system message
                    JSON object.
-                2) Make moves to store the 
-                   messaging transaction 
-                   into a MySQL database with 
+                2) Make moves to store the
+                   messaging transaction
+                   into a MySQL database with
                    JSON data type to be used
                    for the JSON data.
 
                 self::$R_json = new crnrstn_json();
                 $oJSON = self::$R_json->build(
-                                        __METHOD__, 
-                                        $data_000, 
-                                        $data_001, 
-                                        $data_002, 
-                                        $data_003, 
-                                        $data_004, 
-                                        $data_005, 
-                                        $data_006, 
-                                        $data_007, 
-                                        $data_008, 
-                                        $data_009, 
-                                        $data_010, 
-                                        $data_011, 
-                                        $data_012, 
-                                        $data_013, 
-                                        $data_014, 
+                                        __METHOD__,
+                                        $data_000,
+                                        $data_001,
+                                        $data_002,
+                                        $data_003,
+                                        $data_004,
+                                        $data_005,
+                                        $data_006,
+                                        $data_007,
+                                        $data_008,
+                                        $data_009,
+                                        $data_010,
+                                        $data_011,
+                                        $data_012,
+                                        $data_013,
+                                        $data_014,
                                         $data_n);
 
                 //class crnrstn_xml{
                 class crnrstn_json{
-    
+
                     function build($key, $data_000, $data_001, $data_002, ...){
-                        
+
                         switch($key){
                             case 'error_log': // error_log JSON
 
@@ -4136,11 +4079,11 @@ class crnrstn_logging extends crnrstn
 
                 }
 
-                R_debug_mode[0] 
-                phpmailer_debug_mode[0] 
-                $message_str [Request received for runtime executable, 
+                R_debug_mode[0]
+                phpmailer_debug_mode[0]
+                $message_str [Request received for runtime executable,
                               /var/www/html/sysops/_crnrstn/class/session
-                              /crnrstn.session_id_start.runtime_exe.php.] 
+                              /crnrstn.session_id_start.runtime_exe.php.]
                 $syslog_level                => 7
                 $error_reporting_level       => 8
                 $line_num                    => 102084
@@ -4153,7 +4096,7 @@ class crnrstn_logging extends crnrstn
                    [token_generation_date]   => 2026-04-30 14:55:58
                    [request_type]            => resource_ping
                    [code]                    => 200
-                   [clr_ssl_msg]             => Request received for runtime executable, 
+                   [clr_ssl_msg]             => Request received for runtime executable,
                                                 /var/www/html/sysops/_crnrstn/class/session
                                                 /crnrstn.session_id_start.runtime_exe.php.
                    [memory_ptr]              => 86226bf72042cedfcac8dde998106ee2158763e1b376602110cb1b9ccb035853
@@ -4163,27 +4106,27 @@ class crnrstn_logging extends crnrstn
                    [auto_obj_mode_enabled]   =>
                    [namespace]               => CRNRSTN
                    [resource_loading_arch]   => 9878
-                   [resource_eval_ttl]       => -1\n    
+                   [resource_eval_ttl]       => -1\n
                    [resource_type]           => RUNTIME_EXECUTABLE
                    [resource_name]           => /var/www/html/sysops/_crnrstn/class/session
                                                 /crnrstn.session_id_start.runtime_exe.php
                    [software_version]        => 2.00.0001
-                   [resource_title]          => The CRNRSTN :: Lightsaber RoCEv2 SOAP Services 
-                                                Layer (CLR-SSL) Session ID Initialization 
+                   [resource_title]          => The CRNRSTN :: Lightsaber RoCEv2 SOAP Services
+                                                Layer (CLR-SSL) Session ID Initialization
                                                 Runtime Executable
                    [software_company]        => eVifweb\xc2\xae development
-                   [copyright]               => Copyright \xc2\xa9 2012-2026 eVifweb\xc2\xae 
+                   [copyright]               => Copyright \xc2\xa9 2012-2026 eVifweb\xc2\xae
                                                 development All Rights Reserved.
                    [license]                 => MIT License
                    [license_url]             => https://crnrstn.jony5.com/licensing/
-                ) ] 
-                $spool []. 
+                ) ]
+                $spool [].
                             -----
-                R_cluster_id                        => CLR-SSL Cluster ID 
+                R_cluster_id                        => CLR-SSL Cluster ID
                                                        stored at $this->R_data['R_cluster_id'].
-                request_id                          => CLR-SSL request id stored 
+                request_id                          => CLR-SSL request id stored
                                                        at $this->R_data['request_id'].
-                request_serial                      => CLR-SSL request serial stored 
+                request_serial                      => CLR-SSL request serial stored
                                                        at $this->R_data['request_serial'].
                 starttime                           => $this->R_data['starttime']
                 starttime_dst                       => $this->R_data['starttime_dst']
@@ -4224,29 +4167,29 @@ class crnrstn_logging extends crnrstn
 
 				// self::$R_json
 
-                error_log('[lnum ' . 
-                    __LINE__ . '] [mthd ' . 
-                    __METHOD__ . '] [rtime ' . 
-                    $this->wall_time() . ' secs] ' . 
-                    'R_json is ready. date [' . 
-                    print_r(\gettimeofday(), true) . '] ' . 
-                    'R_debug_mode[' . 
-                    $this->R_data['R_debug_mode'] . '] ' . 
-                    'phpmailer_debug_mode[' . 
-                    $this->R_data['phpmailer_debug_mode'] . '] ' . 
-                    '$message_str [' . 
-                    \strval($message_str) . '] ' . 
-                    '$syslog_level [' . 
-                    \strval($syslog_level) . '] ' . 
-                    '$error_reporting_level [' . 
-                    \strval($error_reporting_level) . '] ' . 
-                    '$line_num [' . 
-                    \strval($line_num) . '] ' . 
-                    '$method [' . 
-                    \strval($method) . '] ' . 
-                    '$token [' . 
-                    print_r($token, true) . '] ' . 
-                    '$spool [' . 
+                error_log('[lnum ' .
+                    __LINE__ . '] [mthd ' .
+                    __METHOD__ . '] [rtime ' .
+                    $this->wall_time() . ' secs] ' .
+                    'R_json is ready. date [' .
+                    print_r(\gettimeofday(), true) . '] ' .
+                    'R_debug_mode[' .
+                    $this->R_data['R_debug_mode'] . '] ' .
+                    'phpmailer_debug_mode[' .
+                    $this->R_data['phpmailer_debug_mode'] . '] ' .
+                    '$message_str [' .
+                    \strval($message_str) . '] ' .
+                    '$syslog_level [' .
+                    \strval($syslog_level) . '] ' .
+                    '$error_reporting_level [' .
+                    \strval($error_reporting_level) . '] ' .
+                    '$line_num [' .
+                    \strval($line_num) . '] ' .
+                    '$method [' .
+                    \strval($method) . '] ' .
+                    '$token [' .
+                    print_r($token, true) . '] ' .
+                    '$spool [' .
                     \strval($spool) . '].' );
 
                 */
@@ -4266,20 +4209,20 @@ class crnrstn_logging extends crnrstn
                 //$message_str = \trim(\substr($message_str, 0, 34));
                 $message_str = \trim(\substr($message_str, 0, 0));
                 $message_str = $message_str . $message_str_elipse;
-				$message_str = '[Database Integrations Pending] ' . 
+				$message_str = '[Database Integrations Pending] ' .
 				               $message_str;
                 \openlog(
                     $this->clr_ssl_syslog_prefix(
-                           $line_num, 
-                           $file, 
-                           $method, 
-                           $syslog_prefix, 
-                           $syslog_prefix_passthrough), 
-                    \LOG_CONS | 
-                    \LOG_NDELAY | 
-                    \LOG_NOWAIT | 
-                    \LOG_PID | 
-                    \LOG_PERROR, 
+                           $line_num,
+                           $file,
+                           $method,
+                           $syslog_prefix,
+                           $syslog_prefix_passthrough),
+                    \LOG_CONS |
+                    \LOG_NDELAY |
+                    \LOG_NOWAIT |
+                    \LOG_PID |
+                    \LOG_PERROR,
                     \LOG_SYSLOG);
                 \syslog($syslog_level, $message_str);
                 \closelog();
@@ -4287,18 +4230,18 @@ class crnrstn_logging extends crnrstn
                 return true;
 
             break;
-            case CRNRSTN_DEBUG_OFF:
+            case $this->R_data['int_flag']['CRNRSTN_DEBUG_OFF']:
             default:
                 // SILENCE IS GOLDEN.
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * TODO :: Insert (here) a database 
-                 *         driven administrative 
-                 *         override for the application 
-                 *         of debug mode settings changes 
-                 *         in order to support the 
-                 *         management of debugging 
-                 *         settings via web portal. 
+                 * TODO :: Insert (here) a database
+                 *         driven administrative
+                 *         override for the application
+                 *         of debug mode settings changes
+                 *         in order to support the
+                 *         management of debugging
+                 *         settings via web portal.
                  *         5 :: Saturday, May 9, 2026 @ 1430 hrs.
                  *
                  */
@@ -4310,29 +4253,29 @@ class crnrstn_logging extends crnrstn
         }
 
         /*
-        error_log('[mthd ' . 
-            __METHOD__ . '] [lnum ' . 
-            __LINE__ . '] [rtime ' . 
-            $this->wall_time() . ' secs] ' . 
-            'date [' . 
-            print_r(\gettimeofday(), true) . '] ' . 
-            'R_debug_mode[' . 
-            $R_debug_mode_data . '] ' . 
-            'phpmailer_debug_mode[' . 
-            $phpmailer_debug_mode_data . '] ' . 
-            '$message_str [' . 
-            \strval($message_str) . '] ' . 
-            '$syslog_level [' . 
-            \strval($syslog_level) . '] ' . 
-            '$error_reporting_level [' . 
-            \strval($error_reporting_level) . '] ' . 
-            '$line_num [' . 
-            \strval($line_num) . '] ' . 
-            '$method [' . 
-            \strval($method) . '] ' . 
-            '$token [' . 
-            print_r($token, true) . '] ' . 
-            '$spool [' . 
+        error_log('[mthd ' .
+            __METHOD__ . '] [lnum ' .
+            __LINE__ . '] [rtime ' .
+            $this->wall_time() . ' secs] ' .
+            'date [' .
+            print_r(\gettimeofday(), true) . '] ' .
+            'R_debug_mode[' .
+            $R_debug_mode_data . '] ' .
+            'phpmailer_debug_mode[' .
+            $phpmailer_debug_mode_data . '] ' .
+            '$message_str [' .
+            \strval($message_str) . '] ' .
+            '$syslog_level [' .
+            \strval($syslog_level) . '] ' .
+            '$error_reporting_level [' .
+            \strval($error_reporting_level) . '] ' .
+            '$line_num [' .
+            \strval($line_num) . '] ' .
+            '$method [' .
+            \strval($method) . '] ' .
+            '$token [' .
+            print_r($token, true) . '] ' .
+            '$spool [' .
             \strval($spool) . ']. die();' );
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -4374,113 +4317,113 @@ class crnrstn_logging extends crnrstn
          *
          * Error Reporting:
          * Value   Constant                     Description Note
-         * 1       \E_ERROR (int)               Fatal run-time errors. 
-         *                                      These indicate errors that 
-         *                                      can not be recovered from, 
-         *                                      such as a memory allocation 
-         *                                      problem. Execution of the 
+         * 1       \E_ERROR (int)               Fatal run-time errors.
+         *                                      These indicate errors that
+         *                                      can not be recovered from,
+         *                                      such as a memory allocation
+         *                                      problem. Execution of the
          *                                      script is halted.
-         * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-         *                                      errors). Execution of the 
+         * 2       \E_WARNING (int)             Run-time warnings (non-fatal
+         *                                      errors). Execution of the
          *                                      script is not halted.
-         * 4       \E_PARSE (int)               Compile-time parse errors. 
-         *                                      Parse errors should only be 
+         * 4       \E_PARSE (int)               Compile-time parse errors.
+         *                                      Parse errors should only be
          *                                      generated by the parser.
-         * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-         *                                      that the script encountered 
-         *                                      something that could 
-         *                                      indicate an error, but 
-         *                                      could also happen in the 
-         *                                      normal course of running 
+         * 8       \E_NOTICE (int)              Run-time notices. Indicate
+         *                                      that the script encountered
+         *                                      something that could
+         *                                      indicate an error, but
+         *                                      could also happen in the
+         *                                      normal course of running
          *                                      a script.
-         * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like an 
-         *                                      E_ERROR, except it is 
-         *                                      generated by the core 
+         * 16      \E_CORE_ERROR (int)          Fatal errors that occur
+         *                                      during PHP's initial
+         *                                      startup. This is like an
+         *                                      E_ERROR, except it is
+         *                                      generated by the core
          *                                      of PHP.
-         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-         *                                      errors) that occur 
-         *                                      during PHP's initial 
-         *                                      startup. This is like 
-         *                                      an E_WARNING, except it 
-         *                                      is generated by the 
+         * 32      \E_CORE_WARNING (int)        Warnings (non-fatal
+         *                                      errors) that occur
+         *                                      during PHP's initial
+         *                                      startup. This is like
+         *                                      an E_WARNING, except it
+         *                                      is generated by the
          *                                      core of PHP.
-         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-         *                                      This is like an E_ERROR, 
-         *                                      except it is generated 
+         * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors.
+         *                                      This is like an E_ERROR,
+         *                                      except it is generated
          *                                      by the Zend Scripting Engine.
-         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-         *                                      (non-fatal errors). This 
-         *                                      is like an E_WARNING, 
-         *                                      except it is generated 
+         * 128     \E_COMPILE_WARNING (int)     Compile-time warnings
+         *                                      (non-fatal errors). This
+         *                                      is like an E_WARNING,
+         *                                      except it is generated
          *                                      by the Zend Scripting Engine.
-         * 256     \E_USER_ERROR (int)          User-generated error 
-         *                                      message. This is like 
-         *                                      an E_ERROR, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
+         * 256     \E_USER_ERROR (int)          User-generated error
+         *                                      message. This is like
+         *                                      an E_ERROR, except it
+         *                                      is generated in PHP code
+         *                                      by using the PHP function
          *                                      trigger_error().
-         * 512     \E_USER_WARNING (int)        User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_WARNING, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
+         * 512     \E_USER_WARNING (int)        User-generated warning
+         *                                      message. This is like an
+         *                                      E_WARNING, except it is
+         *                                      generated in PHP code by
+         *                                      using the PHP function
          *                                      trigger_error().
-         * 1024    \E_USER_NOTICE (int)         User-generated notice 
-         *                                      message. This is like an 
-         *                                      E_NOTICE, except it is 
-         *                                      generated in PHP code by 
-         *                                      using the PHP function 
+         * 1024    \E_USER_NOTICE (int)         User-generated notice
+         *                                      message. This is like an
+         *                                      E_NOTICE, except it is
+         *                                      generated in PHP code by
+         *                                      using the PHP function
          *                                      trigger_error().
-         * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-         *                                      changes to your code which 
-         *                                      will ensure the best 
-         *                                      interoperability and forward 
+         * 2048    \E_STRICT (int)              Enable to have PHP suggest
+         *                                      changes to your code which
+         *                                      will ensure the best
+         *                                      interoperability and forward
          *                                      compatibility of your code.
-         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-         *                                      It indicates that a probably 
-         *                                      dangerous error occurred, 
-         *                                      but did not leave the Engine 
-         *                                      in an unstable state. If the 
-         *                                      error is not caught by a user 
-         *                                      defined handle (see also 
-         *                                      set_error_handler()), the 
-         *                                      application aborts as it was 
+         * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error.
+         *                                      It indicates that a probably
+         *                                      dangerous error occurred,
+         *                                      but did not leave the Engine
+         *                                      in an unstable state. If the
+         *                                      error is not caught by a user
+         *                                      defined handle (see also
+         *                                      set_error_handler()), the
+         *                                      application aborts as it was
          *                                      an E_ERROR.
-         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-         *                                      this to receive warnings 
-         *                                      about code that will not work 
+         * 8192    \E_DEPRECATED (int)          Run-time notices. Enable
+         *                                      this to receive warnings
+         *                                      about code that will not work
          *                                      in future versions.
-         * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-         *                                      message. This is like an 
-         *                                      E_DEPRECATED, except it 
-         *                                      is generated in PHP code 
-         *                                      by using the PHP function 
+         * 16384   \E_USER_DEPRECATED (int)     User-generated warning
+         *                                      message. This is like an
+         *                                      E_DEPRECATED, except it
+         *                                      is generated in PHP code
+         *                                      by using the PHP function
          *                                      trigger_error().
-         * 32767   \E_ALL (int)                 All errors, warnings, 
+         * 32767   \E_ALL (int)                 All errors, warnings,
          *                                      and notices.
 
         https://www.php.net/manual/en/errorfunc.configuration.php#ini.error-reporting
         https://www.php.net/manual/en/errorfunc.constants.php
         * lights bowl *
-        * cracks open another can of Sweetwater® 420 
+        * cracks open another can of Sweetwater® 420
           with my K-bar Happy 128th Birthday to K-bar, btw. *
         5 :: Thursday, April 30, 2026 @ 1620 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
-        CRNRSTN :: Lightsaber RoCEv2 
-        SOAP Services Layer (CLR-SSL) 
-        Advanced Logging Architecture 
-        Engineering Notes 
+        CRNRSTN :: Lightsaber RoCEv2
+        SOAP Services Layer (CLR-SSL)
+        Advanced Logging Architecture
+        Engineering Notes
 
-        Current CLR-SSL 
-        Debug Modes: 
+        Current CLR-SSL
+        Debug Modes:
         'CRNRSTN_DEBUG_OFF'              => 0
         'CRNRSTN_DEBUG_ERR_LOG'          => 1
         'CRNRSTN_DEBUG_ON'               => 2
 
-        Current CLR-SSL Logging 
+        Current CLR-SSL Logging
         Output Profiles:
         'CRNRSTN_LOG_NONE'               => 42
         'CRNRSTN_LOG_ALL'                => 43
@@ -4503,73 +4446,73 @@ class crnrstn_logging extends crnrstn
         5 :: Thursday, April 30, 2026 @ 1631 hrs.
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
-        The New CRNRSTN :: Lightsaber 
-        RoCEv2 SOAP Services Layer 
-        (CLR-SSL) Advanced Logging 
-        Services Layer Debugging Modes: 
-        'CRNRSTN_DEBUG_OFF'                 => 0 
-        'CRNRSTN_DEBUG_ON'                  => 2 
-            'CRNRSTN_DEBUG_SYSLOG,'         => 1 
+        The New CRNRSTN :: Lightsaber
+        RoCEv2 SOAP Services Layer
+        (CLR-SSL) Advanced Logging
+        Services Layer Debugging Modes:
+        'CRNRSTN_DEBUG_OFF'                 => 0
+        'CRNRSTN_DEBUG_ON'                  => 2
+            'CRNRSTN_DEBUG_SYSLOG,'         => 1
 
 
         5 :: Thursday, April 30, 2026 @ 1652 hrs.
 
 
-        The New CRNRSTN :: Lightsaber 
-        RoCEv2 SOAP Services Layer 
-        (CLR-SSL) Advanced Logging 
-        Services Layer Logging 
-        Output Profile: 
+        The New CRNRSTN :: Lightsaber
+        RoCEv2 SOAP Services Layer
+        (CLR-SSL) Advanced Logging
+        Services Layer Logging
+        Output Profile:
 
          */
         /*
-        [Fri May 08 19:30:16.575350 2026] [:error] [pid 11246] 
-        [client 172.16.225.153:1116] 
-        [lnum 65539] 
-        [mthd CRNRSTN\\crnrstn::error_log] 
-        [rtime 0.00817108 secs] 
+        [Fri May 08 19:30:16.575350 2026] [:error] [pid 11246]
+        [client 172.16.225.153:1116]
+        [lnum 65539]
+        [mthd CRNRSTN\\crnrstn::error_log]
+        [rtime 0.00817108 secs]
 
-        date [Array\n(\n    
-           [sec] => 1778283016\n    
-           [usec] => 575240\n    
-           [minuteswest] => 240\n    
-           [dsttime] => 1\n)\n] 
+        date [Array\n(\n
+           [sec] => 1778283016\n
+           [usec] => 575240\n
+           [minuteswest] => 240\n
+           [dsttime] => 1\n)\n]
 
-        R_debug_mode           [0] 
-        phpmailer_debug_mode   [0] 
+        R_debug_mode           [0]
+        phpmailer_debug_mode   [0]
 
-        $str [Request received for runtime executable, 
+        $str [Request received for runtime executable,
               /var/www/html/sysops/_crnrstn/class/session
-              /crnrstn.session_id_start.runtime_exe.php.] 
-        $syslog_level          [7] 
-        $error_reporting_level [8] 
-        $line_num              [84564] 
-        $method                [CRNRSTN\\_crnrstn_native_resource_registry] 
-        $token [Array\n(\n    
-           [token]                 => fb516165c700b8480557a362f69c8666b64b0b3841143b4df0025fa3b3f0778602392656955c9dc7a11e6593fa2b8aafac46a44b733d76dfe75871ed82dd6255\n    
-           [token_generation_date] => 2026-04-30 14:55:58\n    
-           [request_type]          => resource_ping\n    
-           [code]                  => 200\n    
-           [clr_ssl_msg]           => Request received for runtime executable, 
+              /crnrstn.session_id_start.runtime_exe.php.]
+        $syslog_level          [7]
+        $error_reporting_level [8]
+        $line_num              [84564]
+        $method                [CRNRSTN\\_crnrstn_native_resource_registry]
+        $token [Array\n(\n
+           [token]                 => fb516165c700b8480557a362f69c8666b64b0b3841143b4df0025fa3b3f0778602392656955c9dc7a11e6593fa2b8aafac46a44b733d76dfe75871ed82dd6255\n
+           [token_generation_date] => 2026-04-30 14:55:58\n
+           [request_type]          => resource_ping\n
+           [code]                  => 200\n
+           [clr_ssl_msg]           => Request received for runtime executable,
                                       /var/www/html/sysops/_crnrstn/class/session
-                                      /crnrstn.session_id_start.runtime_exe.php.\n    
-           [memory_ptr]            => 86226bf72042cedfcac8dde998106ee2158763e1b376602110cb1b9ccb035853\n)\n] 
-        $spool []. 
+                                      /crnrstn.session_id_start.runtime_exe.php.\n
+           [memory_ptr]            => 86226bf72042cedfcac8dde998106ee2158763e1b376602110cb1b9ccb035853\n)\n]
+        $spool [].
 
         die();, referer: http://172.16.225.139/sysops/?cache_bust=421092 <- msg_relay.swf request.
 
-        [Sat May 09 10:48:40.802682 2026] [:error] [pid 19130] 
-        [client 172.16.225.153:3116] [lnum 65557] 
-        [mthd CRNRSTN\\crnrstn::error_log] 
-        [rtime 0.00752687 secs] 
-        date [Array\n(\n    
-           [sec] => 1778338120\n    
-           [usec] => 802585\n    
-           [minuteswest] => 240\n    
-           [dsttime] => 1\n)\n] R_debug_mode[0] phpmailer_debug_mode[0] 
-        $message_str [Request received for runtime executable, 
+        [Sat May 09 10:48:40.802682 2026] [:error] [pid 19130]
+        [client 172.16.225.153:3116] [lnum 65557]
+        [mthd CRNRSTN\\crnrstn::error_log]
+        [rtime 0.00752687 secs]
+        date [Array\n(\n
+           [sec] => 1778338120\n
+           [usec] => 802585\n
+           [minuteswest] => 240\n
+           [dsttime] => 1\n)\n] R_debug_mode[0] phpmailer_debug_mode[0]
+        $message_str [Request received for runtime executable,
                       /var/www/html/sysops/_crnrstn/class/session
-                      /crnrstn.session_id_start.runtime_exe.php.] 
+                      /crnrstn.session_id_start.runtime_exe.php.]
         $syslog_level                => 7
         $error_reporting_level       => 8
         $line_num                    => 102084
@@ -4582,7 +4525,7 @@ class crnrstn_logging extends crnrstn
            [token_generation_date]   => 2026-04-30 14:55:58
            [request_type]            => resource_ping
            [code]                    => 200
-           [clr_ssl_msg]             => Request received for runtime executable, 
+           [clr_ssl_msg]             => Request received for runtime executable,
                                         /var/www/html/sysops/_crnrstn/class/session
                                         /crnrstn.session_id_start.runtime_exe.php.
            [memory_ptr]              => 86226bf72042cedfcac8dde998106ee2158763e1b376602110cb1b9ccb035853
@@ -4592,64 +4535,64 @@ class crnrstn_logging extends crnrstn
            [auto_obj_mode_enabled]   =>
            [namespace]               => CRNRSTN
            [resource_loading_arch]   => 9878
-           [resource_eval_ttl]       => -1\n    
+           [resource_eval_ttl]       => -1\n
            [resource_type]           => RUNTIME_EXECUTABLE
            [resource_name]           => /var/www/html/sysops/_crnrstn/class/session
                                         /crnrstn.session_id_start.runtime_exe.php
            [software_version]        => 2.00.0001
-           [resource_title]          => The CRNRSTN :: Lightsaber RoCEv2 SOAP Services 
-                                        Layer (CLR-SSL) Session ID Initialization 
+           [resource_title]          => The CRNRSTN :: Lightsaber RoCEv2 SOAP Services
+                                        Layer (CLR-SSL) Session ID Initialization
                                         Runtime Executable
            [software_company]        => eVifweb\xc2\xae development
-           [copyright]               => Copyright \xc2\xa9 2012-2026 eVifweb\xc2\xae 
+           [copyright]               => Copyright \xc2\xa9 2012-2026 eVifweb\xc2\xae
                                         development All Rights Reserved.
            [license]                 => MIT License
            [license_url]             => https://crnrstn.jony5.com/licensing/
-        ) ] 
-        $spool []. 
+        ) ]
+        $spool [].
 
         die();, referer: http://172.16.225.139/sysops/?cache_bust=698238 <- msg_relay.swf request.
 
-        [Sun May 10 07:43:56.177759 2026] [:error] [pid 24651] [client 172.16.225.153:4166] [lnum 66378] 
-        [mthd CRNRSTN\\crnrstn::error_log] 
-        [rtime 0.00253796 secs] date [Array\n(\n    
-        [sec] => 1778413436\n    
-        [usec] => 177586\n    
-        [minuteswest] => 240\n    
-        [dsttime] => 1\n)\n] 
-        R_debug_mode[0] phpmailer_debug_mode[0] 
-        $message_str [Request received for function definition, _crnrstn_int_return.] 
-        $syslog_level [7] $error_reporting_level [8] 
-        $line_num [4120] $method [CRNRSTN\\crnrstn::registry_boot] 
-        $token [Array\n(\n    
-           [token]                   => ad8083a7da944a28ce3711ba4dafb8835b384d45fac6de5b58a8143813bf28e9eb56e58ab8ed49b1dabd99c6fa75bce3a30cca4e031b462ce5005eb47c8c21cf\n    
+        [Sun May 10 07:43:56.177759 2026] [:error] [pid 24651] [client 172.16.225.153:4166] [lnum 66378]
+        [mthd CRNRSTN\\crnrstn::error_log]
+        [rtime 0.00253796 secs] date [Array\n(\n
+        [sec] => 1778413436\n
+        [usec] => 177586\n
+        [minuteswest] => 240\n
+        [dsttime] => 1\n)\n]
+        R_debug_mode[0] phpmailer_debug_mode[0]
+        $message_str [Request received for function definition, _crnrstn_int_return.]
+        $syslog_level [7] $error_reporting_level [8]
+        $line_num [4120] $method [CRNRSTN\\crnrstn::registry_boot]
+        $token [Array\n(\n
+           [token]                   => ad8083a7da944a28ce3711ba4dafb8835b384d45fac6de5b58a8143813bf28e9eb56e58ab8ed49b1dabd99c6fa75bce3a30cca4e031b462ce5005eb47c8c21cf\n
            [token_generation_date]   => 2026-05-10 04:09:59
            [request_type]            => registry_boot
            [code]                    => 200
-           [clr_ssl_msg]             => Request received for function 
+           [clr_ssl_msg]             => Request received for function
                                         definition, _crnrstn_int_return version 2.00.0001.
            [memory_ptr]              => 6d0bef61bbba9a0c46f54a3def5f18f0e2797e07752d57d7b381fdcdf5da9b02
            [resource_ping_runtime]   => 0.00245404
            [resource_ping_microtime] => 1778413436.177392
            [file_evaluate_enabled]   => 1
-           [auto_obj_mode_enabled]   => 
+           [auto_obj_mode_enabled]   =>
            [namespace]               => CRNRSTN
            [resource_loading_arch]   => 9877
            [resource_eval_ttl]       => -1
            [resource_type]           => FUNCTION_DEFINITION
            [resource_name]           => _crnrstn_int_return
            [software_version]        => 2.00.0001
-           [resource_title]          => The CRNRSTN :: Lightsaber RoCEv2 SOAP 
-                                        Services Layer (CLR-SSL) Integer 
-                                        Constants Return Global Function 
-                                        Definition 
+           [resource_title]          => The CRNRSTN :: Lightsaber RoCEv2 SOAP
+                                        Services Layer (CLR-SSL) Integer
+                                        Constants Return Global Function
+                                        Definition
            [software_company]        => eVifweb\xc2\xae development
-           [copyright]               => Copyright \xc2\xa9 2012-2026 eVifweb\xc2\xae 
+           [copyright]               => Copyright \xc2\xa9 2012-2026 eVifweb\xc2\xae
                                         development All Rights Reserved.
            [license]                 => MIT License
-           [license_url]             => https://crnrstn.jony5.com/licensing/ ) ] 
+           [license_url]             => https://crnrstn.jony5.com/licensing/ ) ]
 
-        $spool []. 
+        $spool [].
 
         die();, referer: http://172.16.225.139/sysops/?cache_bust=167506 <- msg_relay.swf request.
 
@@ -4659,15 +4602,15 @@ class crnrstn_logging extends crnrstn
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
         5 :: Friday, May 8, 2026 @ 2044 hrs.
         CLR-SSL System Status Monitoring
-        and Real-Time Messaging (SS-RTM) 
-        JSON Tokenized Activity Logging  
-        Architecture Design: 
+        and Real-Time Messaging (SS-RTM)
+        JSON Tokenized Activity Logging
+        Architecture Design:
 
         Application Logging States:
-        - 
-        'CRNRSTN_DEBUG_OFF'                  => 0 
-        'CRNRSTN_DEBUG_ON'                   => 2 
-            'CRNRSTN_DEBUG_SYSLOG,'          => 1 
+        -
+        'CRNRSTN_DEBUG_OFF'                  => 0
+        'CRNRSTN_DEBUG_ON'                   => 2
+            'CRNRSTN_DEBUG_SYSLOG,'          => 1
 
         'CRNRSTN_PHPMAILER_DEBUG_OFF'        => 0;
         'CRNRSTN_PHPMAILER_DEBUG_CLIENT'     => 1;
@@ -4716,7 +4659,7 @@ class crnrstn_logging extends crnrstn
         wordpress_debug_mode         => (int) 10052 (int) CRNRSTN_WORDPRESS_DEBUG = 10052. define('WP_DEBUG', false); True/false toggle for On/Off.
         nusoap_debug_mode            => (int) ?
 
-        ----- error_log() input params ----- 
+        ----- error_log() input params -----
         $message_str                 => (string) ''
         $syslog_level                => (int) 7
         $error_reporting_level       => (int) 8
@@ -4771,115 +4714,115 @@ class crnrstn_logging extends crnrstn
               true  = %x74.72.75.65      ; true
 
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
-        ----- CLR-SSL Engineering ----- 
-        High Performance MySQL, Third Edition. 
-        Baron Schwartz, Peter Zaitsev, and 
-        Vadim Tkachenko (pgs. 76-77) 
+        ----- CLR-SSL Engineering -----
+        High Performance MySQL, Third Edition.
+        Baron Schwartz, Peter Zaitsev, and
+        Vadim Tkachenko (pgs. 76-77)
 
-        Copyright © 2012 Baron Schwartz, 
-        Peter Zaitsev, and Vadim Tkachenko. 
+        Copyright © 2012 Baron Schwartz,
+        Peter Zaitsev, and Vadim Tkachenko.
         All rights reserved.
         Printed in the United States of America.
-        Published by O’Reilly Media, Inc., 
-        1005 Gravenstein Highway North, 
+        Published by O’Reilly Media, Inc.,
+        1005 Gravenstein Highway North,
         Sebastopol, CA 95472.
 
-        Profiling Your Application 
+        Profiling Your Application
 
-        You can profile pretty much anything 
-        that consumes time, and this includes 
-        your application. In fact, profiling 
-        your application is generally easier 
-        than profiling your database server, 
-        and much more rewarding. 
+        You can profile pretty much anything
+        that consumes time, and this includes
+        your application. In fact, profiling
+        your application is generally easier
+        than profiling your database server,
+        and much more rewarding.
 
-        Although we’ve started by showing a 
-        profile of a MySQL server’s queries 
-        for the purposes of illustration, 
-        it’s better to try to measure and 
-        profile from the top down. 
+        Although we’ve started by showing a
+        profile of a MySQL server’s queries
+        for the purposes of illustration,
+        it’s better to try to measure and
+        profile from the top down.
 
-        Will Profiling Slow Your Servers? 
+        Will Profiling Slow Your Servers?
 
-        We recommend that you include profiling 
-        code in every new project you start. 
-        It might be hard to inject profiling 
-        code into an existing application, 
-        but it’s easy to include it in 
-        new applications. 
+        We recommend that you include profiling
+        code in every new project you start.
+        It might be hard to inject profiling
+        code into an existing application,
+        but it’s easy to include it in
+        new applications.
 
-        Yes, it will make your application 
-        slower. No, it will make your 
-        application much faster. 
-        Wait, we can explain. Profiling and 
-        routine monitoring add overhead. 
-        The important questions are how much 
-        overhead they add and whether the 
-        extra work is worth the benefit. 
+        Yes, it will make your application
+        slower. No, it will make your
+        application much faster.
+        Wait, we can explain. Profiling and
+        routine monitoring add overhead.
+        The important questions are how much
+        overhead they add and whether the
+        extra work is worth the benefit.
 
-        Many people who design and build 
-        high-performance applications believe 
-        that you should measure everything 
-        you can and just accept the cost of 
-        measurement as a part of your 
-        application’s work. 
+        Many people who design and build
+        high-performance applications believe
+        that you should measure everything
+        you can and just accept the cost of
+        measurement as a part of your
+        application’s work.
 
-        Oracle performance guru Tom Kyte was 
-        famously asked how costly Oracle’s 
-        instrumentation is, and he replied 
-        that the instrumentation makes 
-        it possible to improve performance 
-        by at least 10%. We agree with this 
-        philosophy, and for most applications 
-        that wouldn’t otherwise receive 
-        detailed performance  evaluations 
-        every day, we think the improvement 
-        is likely to be much more than 10%. 
+        Oracle performance guru Tom Kyte was
+        famously asked how costly Oracle’s
+        instrumentation is, and he replied
+        that the instrumentation makes
+        it possible to improve performance
+        by at least 10%. We agree with this
+        philosophy, and for most applications
+        that wouldn’t otherwise receive
+        detailed performance  evaluations
+        every day, we think the improvement
+        is likely to be much more than 10%.
 
-        Even if you don’t agree, it’s a great 
-        idea to build in at least some 
-        lightweight profiling that you can 
-        enable permanently. It’s no fun to 
-        hit a performance bottleneck you 
-        never saw coming, just because you 
-        didn’t build your systems to capture 
-        day-to-day changes in their performance. 
-        Likewise, when you find a problem, 
-        historical data is invaluable. 
+        Even if you don’t agree, it’s a great
+        idea to build in at least some
+        lightweight profiling that you can
+        enable permanently. It’s no fun to
+        hit a performance bottleneck you
+        never saw coming, just because you
+        didn’t build your systems to capture
+        day-to-day changes in their performance.
+        Likewise, when you find a problem,
+        historical data is invaluable.
 
-        You can also use the profiling data 
-        to help you plan hardware purchases, 
-        allocate resources, and predict load 
-        for peak times or seasons. 
+        You can also use the profiling data
+        to help you plan hardware purchases,
+        allocate resources, and predict load
+        for peak times or seasons.
 
-        What do we mean by “lightweight” 
-        profiling? Timing all SQL queries, 
-        plus the total script execution time, 
-        is certainly cheap. And you don’t 
-        have to do it for every page view. 
-        If you have a decent amount of 
-        traffic, you can just profile a 
-        random sample by enabling profiling 
-        in your application’s setup file: 
+        What do we mean by “lightweight”
+        profiling? Timing all SQL queries,
+        plus the total script execution time,
+        is certainly cheap. And you don’t
+        have to do it for every page view.
+        If you have a decent amount of
+        traffic, you can just profile a
+        random sample by enabling profiling
+        in your application’s setup file:
 
         <?php
         $profiling_enabled = rand(0, 100) > 99;
         ?>
 
-        Profiling just 1% of your sessions 
-        should help you find the worst problems. 
-        It’s extremely helpful to do this in 
-        production, because you’ll find things 
-        that you’ll never see elsewhere. 
+        Profiling just 1% of your sessions
+        should help you find the worst problems.
+        It’s extremely helpful to do this in
+        production, because you’ll find things
+        that you’ll never see elsewhere.
 
-        Application Performance 
+        Application Performance
         Profiling Enabling Attributes:
         -----
-        R_cluster_id                        => CLR-SSL Cluster ID 
+        R_cluster_id                        => CLR-SSL Cluster ID
                                                stored at $this->R_data['R_cluster_id'].
-        request_id                          => CLR-SSL request id stored 
+        request_id                          => CLR-SSL request id stored
                                                at $this->R_data['request_id'].
-        request_serial                      => CLR-SSL request serial stored 
+        request_serial                      => CLR-SSL request serial stored
                                                at $this->R_data['request_serial'].
         starttime                           => $this->R_data['starttime']
         starttime_dst                       => $this->R_data['starttime_dst']
@@ -4924,13 +4867,13 @@ class crnrstn_logging extends crnrstn
         if(isset(self::$R_logging)){
 
             $tmp_oLog = self::$R_logging->error_log(
-                                          $message_str, 
-                                          $syslog_level, 
-                                          $error_reporting_level, 
-                                          $line_num, 
-                                          $method, 
-                                          $file, 
-                                          $token, 
+                                          $message_str,
+                                          $syslog_level,
+                                          $error_reporting_level,
+                                          $line_num,
+                                          $method,
+                                          $file,
+                                          $token,
                                           $spool);
 
             if(is_object($tmp_oLog)){
@@ -4944,12 +4887,12 @@ class crnrstn_logging extends crnrstn
         }else{
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Who gets the objectified 
-             * CLR-SSL logging 
-             * architecture? Who needs 
-             * exposure to the SOAP 
-             * services layer of 
-             * the CLR-SSL? 
+             * Who gets the objectified
+             * CLR-SSL logging
+             * architecture? Who needs
+             * exposure to the SOAP
+             * services layer of
+             * the CLR-SSL?
              *
              * Syslog Levels:
              * Constant                Description
@@ -4966,91 +4909,91 @@ class crnrstn_logging extends crnrstn
              *
              * Error Reporting:
              * Value   Constant                     Description Note
-             * 1       \E_ERROR (int)               Fatal run-time errors. 
-             *                                      These indicate errors that 
-             *                                      can not be recovered from, 
-             *                                      such as a memory allocation 
-             *                                      problem. Execution of the 
+             * 1       \E_ERROR (int)               Fatal run-time errors.
+             *                                      These indicate errors that
+             *                                      can not be recovered from,
+             *                                      such as a memory allocation
+             *                                      problem. Execution of the
              *                                      script is halted.
-             * 2       \E_WARNING (int)             Run-time warnings (non-fatal 
-             *                                      errors). Execution of the 
+             * 2       \E_WARNING (int)             Run-time warnings (non-fatal
+             *                                      errors). Execution of the
              *                                      script is not halted.
-             * 4       \E_PARSE (int)               Compile-time parse errors. 
-             *                                      Parse errors should only be 
+             * 4       \E_PARSE (int)               Compile-time parse errors.
+             *                                      Parse errors should only be
              *                                      generated by the parser.
-             * 8       \E_NOTICE (int)              Run-time notices. Indicate 
-             *                                      that the script encountered 
-             *                                      something that could 
-             *                                      indicate an error, but 
-             *                                      could also happen in the 
-             *                                      normal course of running 
+             * 8       \E_NOTICE (int)              Run-time notices. Indicate
+             *                                      that the script encountered
+             *                                      something that could
+             *                                      indicate an error, but
+             *                                      could also happen in the
+             *                                      normal course of running
              *                                      a script.
-             * 16      \E_CORE_ERROR (int)          Fatal errors that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like an 
-             *                                      E_ERROR, except it is 
-             *                                      generated by the core 
+             * 16      \E_CORE_ERROR (int)          Fatal errors that occur
+             *                                      during PHP's initial
+             *                                      startup. This is like an
+             *                                      E_ERROR, except it is
+             *                                      generated by the core
              *                                      of PHP.
-             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal 
-             *                                      errors) that occur 
-             *                                      during PHP's initial 
-             *                                      startup. This is like 
-             *                                      an E_WARNING, except it 
-             *                                      is generated by the 
+             * 32      \E_CORE_WARNING (int)        Warnings (non-fatal
+             *                                      errors) that occur
+             *                                      during PHP's initial
+             *                                      startup. This is like
+             *                                      an E_WARNING, except it
+             *                                      is generated by the
              *                                      core of PHP.
-             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors. 
-             *                                      This is like an E_ERROR, 
-             *                                      except it is generated 
+             * 64      \E_COMPILE_ERROR (int)       Fatal compile-time errors.
+             *                                      This is like an E_ERROR,
+             *                                      except it is generated
              *                                      by the Zend Scripting Engine.
-             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings 
-             *                                      (non-fatal errors). This 
-             *                                      is like an E_WARNING, 
-             *                                      except it is generated 
+             * 128     \E_COMPILE_WARNING (int)     Compile-time warnings
+             *                                      (non-fatal errors). This
+             *                                      is like an E_WARNING,
+             *                                      except it is generated
              *                                      by the Zend Scripting Engine.
-             * 256     \E_USER_ERROR (int)          User-generated error 
-             *                                      message. This is like 
-             *                                      an E_ERROR, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
+             * 256     \E_USER_ERROR (int)          User-generated error
+             *                                      message. This is like
+             *                                      an E_ERROR, except it
+             *                                      is generated in PHP code
+             *                                      by using the PHP function
              *                                      trigger_error().
-             * 512     \E_USER_WARNING (int)        User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_WARNING, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
+             * 512     \E_USER_WARNING (int)        User-generated warning
+             *                                      message. This is like an
+             *                                      E_WARNING, except it is
+             *                                      generated in PHP code by
+             *                                      using the PHP function
              *                                      trigger_error().
-             * 1024    \E_USER_NOTICE (int)         User-generated notice 
-             *                                      message. This is like an 
-             *                                      E_NOTICE, except it is 
-             *                                      generated in PHP code by 
-             *                                      using the PHP function 
+             * 1024    \E_USER_NOTICE (int)         User-generated notice
+             *                                      message. This is like an
+             *                                      E_NOTICE, except it is
+             *                                      generated in PHP code by
+             *                                      using the PHP function
              *                                      trigger_error().
-             * 2048    \E_STRICT (int)              Enable to have PHP suggest 
-             *                                      changes to your code which 
-             *                                      will ensure the best 
-             *                                      interoperability and forward 
+             * 2048    \E_STRICT (int)              Enable to have PHP suggest
+             *                                      changes to your code which
+             *                                      will ensure the best
+             *                                      interoperability and forward
              *                                      compatibility of your code.
-             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error. 
-             *                                      It indicates that a probably 
-             *                                      dangerous error occurred, 
-             *                                      but did not leave the Engine 
-             *                                      in an unstable state. If the 
-             *                                      error is not caught by a user 
-             *                                      defined handle (see also 
-             *                                      set_error_handler()), the 
-             *                                      application aborts as it was 
+             * 4096    \E_RECOVERABLE_ERROR (int)   Catchable fatal error.
+             *                                      It indicates that a probably
+             *                                      dangerous error occurred,
+             *                                      but did not leave the Engine
+             *                                      in an unstable state. If the
+             *                                      error is not caught by a user
+             *                                      defined handle (see also
+             *                                      set_error_handler()), the
+             *                                      application aborts as it was
              *                                      an E_ERROR.
-             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable 
-             *                                      this to receive warnings 
-             *                                      about code that will not work 
+             * 8192    \E_DEPRECATED (int)          Run-time notices. Enable
+             *                                      this to receive warnings
+             *                                      about code that will not work
              *                                      in future versions.
-             * 16384   \E_USER_DEPRECATED (int)     User-generated warning 
-             *                                      message. This is like an 
-             *                                      E_DEPRECATED, except it 
-             *                                      is generated in PHP code 
-             *                                      by using the PHP function 
+             * 16384   \E_USER_DEPRECATED (int)     User-generated warning
+             *                                      message. This is like an
+             *                                      E_DEPRECATED, except it
+             *                                      is generated in PHP code
+             *                                      by using the PHP function
              *                                      trigger_error().
-             * 32767   \E_ALL (int)                 All errors, warnings, 
+             * 32767   \E_ALL (int)                 All errors, warnings,
              *                                      and notices.
              *
              *
@@ -5060,21 +5003,21 @@ class crnrstn_logging extends crnrstn
 
             /*
             $this->error_log(
-                $clr_ssl_msg, 
-                \LOG_DEBUG, 
-                \E_NOTICE, 
-                __LINE__, 
-                __METHOD__, 
-                __FILE__, 
+                $clr_ssl_msg,
+                \LOG_DEBUG,
+                \E_NOTICE,
+                __LINE__,
+                __METHOD__,
+                __FILE__,
                 $token);
 
             //$R_resp[$memory_ptr]['status']['timestamp'][]      = \gettimeofday();
             //$R_resp[$memory_ptr]['status']['runtime'][]        = $this->wall_time();
 
-            error_log($line_num . 
-                ' crnrstn [lnum ' . 
-                __LINE__ . ']. ' . 
-                $message_str . ' [' . 
+            error_log($line_num .
+                ' crnrstn [lnum ' .
+                __LINE__ . ']. ' .
+                $message_str . ' [' .
                 $method . '].');
 
             return true;
@@ -5083,38 +5026,37 @@ class crnrstn_logging extends crnrstn
 
         */
 
-        # # # # # # # # # # # # # # # 
-    	# Start of the 
-    	# previous error_log 
-    	# logics. 
-    	# 
-    	# 
+        # # # # # # # # # # # # # # #
+    	# Start of the
+    	# previous error_log
+    	# logics.
+    	#
+    	#
     	# 5 :: Saturday, May 16, 2026 @ 0236 hrs.
-    	# 
-        # # # # # # # # # # # # # # # 
+    	#
+        # # # # # # # # # # # # # # #
 
-        /*
-         * error_log('[lnum ' . 
-         *    __LINE__ . '] [mthd ' . 
-         *    __METHOD__ . 
-         *    '] $this->R_debug_mode=['  . 
-         *    $this->R_debug_mode . 
+        /* error_log('[lnum ' .
+         *    __LINE__ . '] [mthd ' .
+         *    __METHOD__ .
+         *    '] $this->R_debug_mode=['  .
+         *    $this->R_debug_mode .
          *    ']');
          *
          */
         switch($this->get_crnrstn('R_debug_mode')){
-            case CRNRSTN_DEBUG_SYSLOG:
+            case $this->R_data['int_flag']['CRNRSTN_DEBUG_SYSLOG']:
 
                 if($this->log_silo_resource_authorized($log_silo_profile) !== false){
 
                 /**
-                 * if(($this->oCRNRSTN_BITFLIP_MGR->oCRNRSTN_BITWISE->read($log_silo_profile) || 
-                 *     $this->oCRNRSTN_BITFLIP_MGR->oCRNRSTN_BITWISE->read(CRNRSTN_LOG_ALL) && 
+                 * if(($this->oCRNRSTN_BITFLIP_MGR->oCRNRSTN_BITWISE->read($log_silo_profile) ||
+                 *     $this->oCRNRSTN_BITFLIP_MGR->oCRNRSTN_BITWISE->read(CRNRSTN_LOG_ALL) &&
                  *     !$this->oCRNRSTN_BITFLIP_MGR->oCRNRSTN_BITWISE->read(CRNRSTN_LOG_NONE)))
                  * {
                  *
-                 * if((($this->is_bit_set($log_silo_profile) == true) || 
-                 *     ($this->is_bit_set(CRNRSTN_LOG_ALL) == true) && 
+                 * if((($this->is_bit_set($log_silo_profile) == true) ||
+                 *     ($this->is_bit_set(CRNRSTN_LOG_ALL) == true) &&
                  *     !($this->is_bit_set(CRNRSTN_LOG_NONE) == true)))
                  * {
                  *
@@ -5156,17 +5098,17 @@ class crnrstn_logging extends crnrstn
                 }
 
             break;
-            case CRNRSTN_DEBUG_ON:
+            case $this->R_data['int_flag']['CRNRSTN_DEBUG_ON']:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Log aggregation within 
-                 * CRNRSTN + Log silo support. 
+                 * Log aggregation within
+                 * CRNRSTN + Log silo support.
                  *
                  */
                 if($this->log_silo_resource_authorized($log_silo_profile) !== false){
                 /**
-                 *if((($this->is_bit_set($log_silo_profile) == true) || 
-                 *     ($this->is_bit_set(CRNRSTN_LOG_ALL) == true) && 
+                 *if((($this->is_bit_set($log_silo_profile) == true) ||
+                 *     ($this->is_bit_set(CRNRSTN_LOG_ALL) == true) &&
                  *     !($this->is_bit_set(CRNRSTN_LOG_NONE) == true)))
                  * {
                  *
@@ -5174,25 +5116,25 @@ class crnrstn_logging extends crnrstn
                     $this->active_log_silo_flag_ARRAY[$log_silo_profile] = 1;
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Return an instantiation of 
-                     * the CRNRSTN :: Lightsaber 
-                     * RoCEv2 SOAP Services Layer 
-                     * (CLR-SSL) Logging Services 
-                     * Layer Log Objectification. 
+                     * Return an instantiation of
+                     * the CRNRSTN :: Lightsaber
+                     * RoCEv2 SOAP Services Layer
+                     * (CLR-SSL) Logging Services
+                     * Layer Log Objectification.
                      *
                      *
                      * 5 :: Monday, July 15, 2024 @ 2112 hrs.
                      *
                      * $tmp_oLog = new crnrstn_log(
-                     *                 $this->oCRNRSTN, 
-                     *                 $this->return_micro_time(), 
+                     *                 $this->oCRNRSTN,
+                     *                 $this->return_micro_time(),
                      *                 $log_silo_profile);
                      *
                      */
                     $tmp_oLog = $this->return_registered_resource(
-                    	               'new', 
-                    	               'crnrstn_log', 
-                    	               $this->return_micro_time(), 
+                    	               'new',
+                    	               'crnrstn_log',
+                    	               $this->return_micro_time(),
                     	               $log_silo_profile);
 
                     $tmp_oLog->set_runTime($this->wall_time());
@@ -5212,7 +5154,7 @@ class crnrstn_logging extends crnrstn
                 }
 
             break;
-            case CRNRSTN_DEBUG_OFF:
+            case $this->R_data['int_flag']['CRNRSTN_DEBUG_OFF']:
             default:
                 /**
                  *SILENCE IS GOLDEN.
@@ -5229,7 +5171,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @return
@@ -5239,7 +5181,7 @@ class crnrstn_logging extends crnrstn
     function error_log_clear($message_token = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied method error_log_clear 
+         * Copied method error_log_clear
          * from crnrstn.
          * 5 :: Friday, May 22, 2026 @ 1120 hrs.
          */
@@ -5258,11 +5200,11 @@ class crnrstn_logging extends crnrstn
 
         if(isset($this->R_data['R_cluster_id'])){
 
-            if(isset($_SESSION['CRNRSTN_ERROR_PREFIX_' . 
+            if(isset($_SESSION['CRNRSTN_ERROR_PREFIX_' .
                 $this->R_data['R_cluster_id']]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'])){
 
-                array_splice($_SESSION['CRNRSTN_ERROR_PREFIX_' . 
-                    $this->R_data['R_cluster_id']]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'], 
+                array_splice($_SESSION['CRNRSTN_ERROR_PREFIX_' .
+                    $this->R_data['R_cluster_id']]['CRNRSTN_EXCEPTION_PREFIX']['SYSTEM_ID'],
                     0);
 
             }
@@ -5272,7 +5214,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -5284,21 +5226,21 @@ class crnrstn_logging extends crnrstn
      *
      */
     function clr_ssl_syslog_prefix(
-             $line_num, 
-             $file, 
-             $method = '', 
+             $line_num,
+             $file,
+             $method = '',
              $prefix_override = NULL,
              $syslog_prefix_passthrough = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied the method, clr_ssl_syslog_prefix(), 
-         * to the CLR-SSL Logging Services Layer. 
+         * Copied the method, clr_ssl_syslog_prefix(),
+         * to the CLR-SSL Logging Services Layer.
          * 5 :: Friday, May 22, 2026 @ 0703 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Do we apply a syslog 
-         * prefix white labeling 
-         * overwrite? 
+         * Do we apply a syslog
+         * prefix white labeling
+         * overwrite?
          *
          *
          * 5 :: Friday, May 22, 2026 @ 0655 hrs.
@@ -5313,12 +5255,12 @@ class crnrstn_logging extends crnrstn
 
             }
 
-            $syslog_prefix .= '[' . $this->return_micro_time() . 
+            $syslog_prefix .= '[' . $this->return_micro_time() .
                               '] ';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * String concat __METHOD__ 
-             * only if data exists. 
+             * String concat __METHOD__
+             * only if data exists.
              *
              *
              * 5 :: Wednesday, May 20, 2026 @ 1540 hrs.
@@ -5326,30 +5268,30 @@ class crnrstn_logging extends crnrstn
              */
             if($method != ''){
 
-                $syslog_prefix .= '[mthd ' . 
+                $syslog_prefix .= '[mthd ' .
                                   $method . '] ';
 
             }else{
 
                 if($file != ''){
 
-                    $syslog_prefix .= '[file ' . 
+                    $syslog_prefix .= '[file ' .
                                       $file . '] ';
 
                 }
 
             }
 
-            $syslog_prefix .= '[lnum ' . 
-                              $line_num . '] [rtime ' . 
-                              $this->wall_time() . 
+            $syslog_prefix .= '[lnum ' .
+                              $line_num . '] [rtime ' .
+                              $this->wall_time() .
                               '] ';
 
         }else{
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Apply a syslog prefix 
-             * white labeling overwrite. 
+             * Apply a syslog prefix
+             * white labeling overwrite.
              *
              *
              * 5 :: Friday, May 22, 2026 @ 0655 hrs.
@@ -5364,7 +5306,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @return
@@ -5382,20 +5324,20 @@ class crnrstn_logging extends crnrstn
 
             $tmp_log_silo_ARRAY = $this->get_crnrstn('CRNRSTN_log_silo_profile');
 
-            foreach($tmp_log_silo_ARRAY as 
+            foreach($tmp_log_silo_ARRAY as
             	$silo_index => $tmp_silo_profile)
             {
 
                 switch($tmp_silo_profile){
                     case 'CRNRSTN_LOG_NONE':
-                    case CRNRSTN_LOG_NONE:
+                    case $this->R_data['int_flag']['CRNRSTN_LOG_NONE']:
 
                         $tmp_is_log_none = true;
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * CRNRSTN_LOG_NONE configuration 
-                         * shuts down all CRNRSTN :: 
-                         * Logging output. 
+                         * CRNRSTN_LOG_NONE configuration
+                         * shuts down all CRNRSTN ::
+                         * Logging output.
                          *
                          *
                          * 5 :: Wednesday, December 6, 2023 @ 0834 hrs.
@@ -5405,7 +5347,7 @@ class crnrstn_logging extends crnrstn
 
                     break;
                     case 'CRNRSTN_LOG_ALL':
-                    case CRNRSTN_LOG_ALL:
+                    case $this->R_data['int_flag']['CRNRSTN_LOG_ALL']:
 
                         $tmp_is_log_all = true;
 
@@ -5413,27 +5355,17 @@ class crnrstn_logging extends crnrstn
 
                 }
 
-                if($log_silo_profile == $tmp_silo_profile){
-
+                if($log_silo_profile == $tmp_silo_profile)
                     $tmp_profile_is_authorized = true;
 
-                }
-
             }
 
         }
 
-        if($tmp_is_log_none == false){
-
-            if(($tmp_profile_is_authorized == true) || 
+        if($tmp_is_log_none == false)
+            if(($tmp_profile_is_authorized == true) ||
             	($tmp_is_log_all == true))
-            {
-
                 return true;
-
-            }
-
-        }
 
         return $tmp_profile_is_authorized;
 
@@ -5441,9 +5373,9 @@ class crnrstn_logging extends crnrstn
 
     /*
     public function DELETED__captureNotice(
-                    $logSource, 
-                    $logPriority, 
-                    $msg, 
+                    $logSource,
+                    $logPriority,
+                    $msg,
                     $oLog_output_ARRAY = NULL)
     {
 
@@ -5452,13 +5384,13 @@ class crnrstn_logging extends crnrstn
 		$tmp_key = "";
 
 		/*
-         * error_log('[lnum ' . 
-         *    __LINE__ . '] [mthd ' . 
-         *    __METHOD__ . 
-         *    '] CRNRSTN_CONFIG_SERIALIZATION_HASH=' . 
+         * error_log('[lnum ' .
+         *    __LINE__ . '] [mthd ' .
+         *    __METHOD__ .
+         *    '] CRNRSTN_CONFIG_SERIALIZATION_HASH=' .
          *    $_SESSION['R_cluster_id']);
          *
-          
+
 		if(isset($_SESSION['R_cluster_id'])){
 
 			$tmp_key = $_SESSION['CRNRSTN_' . crc32($_SESSION['R_cluster_id'])]['CRNRSTN_ENV_KEY_CRC'];
@@ -5512,8 +5444,8 @@ class crnrstn_logging extends crnrstn
 						$this->emailDataElements['addAddressEmail'] = trim($value);
 
 						if($this->buildSimpleMessage(
-						          $oLog_output_ARRAY, 
-						          $_SESSION["CRNRSTN_" . crc32($tmp_configserial)]["CRNRSTN_" . $tmp_key]["_CRNRSTN_LOG_PROFILE"], 
+						          $oLog_output_ARRAY,
+						          $_SESSION["CRNRSTN_" . crc32($tmp_configserial)]["CRNRSTN_" . $tmp_key]["_CRNRSTN_LOG_PROFILE"],
 						          $logSource))
 			            {
 
@@ -5532,16 +5464,16 @@ class crnrstn_logging extends crnrstn
 
 								//
 								// Error sending email. Log to default sys.
-								error_log('[lnum ' . 
-									__LINE__ . '] [mthd ' . 
-                                    __METHOD__ . 
-                                    '] Email send to ' . 
-                                    $this->emailDataElements['addAddressEmail'] . 
-                                    ' :: FAIL. Email output dump-> Src: ' . 
-                                    $this->emailDataElements['logSource'] . 
-                                    '|| Priority: ' . 
-                                    $this->emailDataElements['logPriority'] . 
-                                    '|| Msg: ' . 
+								error_log('[lnum ' .
+									__LINE__ . '] [mthd ' .
+                                    __METHOD__ .
+                                    '] Email send to ' .
+                                    $this->emailDataElements['addAddressEmail'] .
+                                    ' :: FAIL. Email output dump-> Src: ' .
+                                    $this->emailDataElements['logSource'] .
+                                    '|| Priority: ' .
+                                    $this->emailDataElements['logPriority'] .
+                                    '|| Msg: ' .
                                     $this->emailDataElements['msg']);
 
                         break;
@@ -5556,10 +5488,10 @@ class crnrstn_logging extends crnrstn
                 case 'SCREEN':
 				case 'SCREEN_HTML':
 
-					print "<br><div style=\"font-family: Arial, " . 
-					      "Helvetica, sans-serif; font-size: 11px; " . 
-					      "font-weight: bold;\">" . 
-					      $this->return_micro_time() . 
+					print "<br><div style=\"font-family: Arial, " .
+					      "Helvetica, sans-serif; font-size: 11px; " .
+					      "font-weight: bold;\">" .
+					      $this->return_micro_time() .
 					      " secs<br>";
 					print $logSource;
 					print "<br>";
@@ -5567,8 +5499,8 @@ class crnrstn_logging extends crnrstn
 					print "<br>";
 					print $msg;
                     $tmp_log_output_ARRAY = $this->compile_log_output(
-                                                   $oLog_output_ARRAY, 
-                                                   'SCREEN_HTML', 
+                                                   $oLog_output_ARRAY,
+                                                   'SCREEN_HTML',
                                                    $logSource);
                     print "</div>";
 
@@ -5585,8 +5517,8 @@ class crnrstn_logging extends crnrstn
 ";
                     print $msg;
                     $tmp_log_output_ARRAY = $this->compile_log_output(
-                                                   $oLog_output_ARRAY, 
-                                                   'SCREEN_HTML_HIDDEN', 
+                                                   $oLog_output_ARRAY,
+                                                   'SCREEN_HTML_HIDDEN',
                                                    $logSource);
 
                 break;
@@ -5602,8 +5534,8 @@ class crnrstn_logging extends crnrstn
 ";
                     print $msg;
                     $tmp_log_output_ARRAY = $this->compile_log_output(
-                                                   $oLog_output_ARRAY, 
-                                                   'SCREEN_TEXT', 
+                                                   $oLog_output_ARRAY,
+                                                   'SCREEN_TEXT',
                                                    $logSource);
 
                 break;
@@ -5612,8 +5544,8 @@ class crnrstn_logging extends crnrstn
                     if(isset($oLog_output_ARRAY)){
 
                         $tmp_log_output_ARRAY = $this->compile_log_output(
-                                                       $oLog_output_ARRAY, 
-                                                       'FILE', 
+                                                       $oLog_output_ARRAY,
+                                                       'FILE',
                                                        $logSource);
 
                     }
@@ -5621,12 +5553,12 @@ class crnrstn_logging extends crnrstn
 					$tmp_file_path = $_SESSION["CRNRSTN_" . crc32($tmp_configserial)]["CRNRSTN_" . $tmp_key]["_CRNRSTN_LOG_ENDPOINT"];
 
 					//
-					// You can customize 
-					// the format of this 
-					// logging output. 
-					$logDataToWrite = $this->return_micro_time() . ' [rtime ' . 
-					                  $this->wall_time().']'.' [mthd ' . 
-					                  $logSource.'] [priority ' . 
+					// You can customize
+					// the format of this
+					// logging output.
+					$logDataToWrite = $this->return_micro_time() . ' [rtime ' .
+					                  $this->wall_time().']'.' [mthd ' .
+					                  $logSource.'] [priority ' .
 					                  $tmp_priority.'] ' . $msg.'
 ';
 
@@ -5638,14 +5570,14 @@ class crnrstn_logging extends crnrstn
 				default:
 
                     $tmp_log_output_ARRAY = $this->compile_log_output(
-                                                   $oLog_output_ARRAY, 
-                                                   'DEFAULT', 
+                                                   $oLog_output_ARRAY,
+                                                   'DEFAULT',
                                                    $logSource);
-                    error_log('[rtime ' . 
-                        $this->wall_time().']'.' [owner ' . 
-                        $this->objectOwner_key.']'.' [mthd ' . 
-                        $logSource.'] [priority ' . 
-                        $tmp_priority.'] ' . 
+                    error_log('[rtime ' .
+                        $this->wall_time().']'.' [owner ' .
+                        $this->objectOwner_key.']'.' [mthd ' .
+                        $logSource.'] [priority ' .
+                        $tmp_priority.'] ' .
                         $msg);
 
                 break;
@@ -5655,17 +5587,17 @@ class crnrstn_logging extends crnrstn
 		}else{
 
 			//
-			// Probably CRNRSTN :: 
-			// initialization error. 
+			// Probably CRNRSTN ::
+			// initialization error.
 			// Just log.
             $tmp_log_output_ARRAY = $this->compile_log_output(
-                                           $oLog_output_ARRAY, 
-                                           'DEFAULT', 
+                                           $oLog_output_ARRAY,
+                                           'DEFAULT',
                                            $logSource);
-            error_log('[rtime ' . 
-                $this->wall_time() . '] [owner ' . 
-                $this->objectOwner_key . ']' . ' [mthd ' . 
-                $logSource . '] [priority ' . 
+            error_log('[rtime ' .
+                $this->wall_time() . '] [owner ' .
+                $this->objectOwner_key . ']' . ' [mthd ' .
+                $logSource . '] [priority ' .
                 $tmp_priority.'] ' . $msg);
 
 		}
@@ -5677,7 +5609,7 @@ class crnrstn_logging extends crnrstn
  */
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -5688,15 +5620,15 @@ class crnrstn_logging extends crnrstn
      *
      */
     private function return_requestSourceStr(
-    	             $line_num, 
-    	             $method, 
-    	             $file, 
+    	             $line_num,
+    	             $method,
+    	             $file,
     	             $logSource)
     {
 
         $str = '';
 
-        if(isset($logSource) && 
+        if(isset($logSource) &&
         	$logSource != '')
         {
 
@@ -5710,27 +5642,27 @@ class crnrstn_logging extends crnrstn
              *
              */
 
-            if(isset($method) && 
+            if(isset($method) &&
             	$method != '')
             {
 
-                $str .= '[mthd ' . 
+                $str .= '[mthd ' .
                         $method . ']';
 
-                if(isset($line_num) && 
+                if(isset($line_num) &&
                 	$line_num != '')
                 {
 
-                    $str .= ' at [lnum ' . 
+                    $str .= ' at [lnum ' .
                             $line_num . ']';
 
                 }else{
 
-                    if(isset($file) && 
+                    if(isset($file) &&
                     	$file != '')
                     {
 
-                        $str .= ' within the [file ' . 
+                        $str .= ' within the [file ' .
                                 $file . ']';
 
                     }
@@ -5739,42 +5671,42 @@ class crnrstn_logging extends crnrstn
 
             }else{
 
-                if(isset($file) && 
+                if(isset($file) &&
                 	$file != '')
                 {
 
-                    if(isset($line_num) && 
+                    if(isset($line_num) &&
                     	$line_num != '')
                     {
 
-                        $str .= '[lnum ' . $line_num . 
-                                '] within the [file ' . 
+                        $str .= '[lnum ' . $line_num .
+                                '] within the [file ' .
                                 $file . ']';
 
                     }else{
 
-                        $str .= 'The [file ' . $file . 
+                        $str .= 'The [file ' . $file .
                                 ']';
 
                     }
 
                 }else{
 
-                    if(isset($line_num) && 
+                    if(isset($line_num) &&
                     	$line_num != '')
                     {
 
-                        $str .= '[lnum ' . $line_num . 
-                                '] of an unknown script on server ' . 
-                                $_SERVER['SERVER_NAME'] . ' (' . 
+                        $str .= '[lnum ' . $line_num .
+                                '] of an unknown script on server ' .
+                                $_SERVER['SERVER_NAME'] . ' (' .
                                 $_SERVER['SERVER_ADDR'] . ')';
 
                     }else{
 
-                        $str .= '[lnum xxx] An unknown ' . 
-                                'script source on server ' . 
-                                $_SERVER['SERVER_NAME'] . ' (' . 
-                                $_SERVER['SERVER_ADDR'] . 
+                        $str .= '[lnum xxx] An unknown ' .
+                                'script source on server ' .
+                                $_SERVER['SERVER_NAME'] . ' (' .
+                                $_SERVER['SERVER_ADDR'] .
                                 ').';
 
                     }
@@ -5790,7 +5722,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -5801,16 +5733,16 @@ class crnrstn_logging extends crnrstn
      *
      */
     private function return_auth_oLog(
-    	             $full_out, 
-    	             $silo_auth_ARRAY, 
-    	             $silo_negation_ARRAY, 
+    	             $full_out,
+    	             $silo_auth_ARRAY,
+    	             $silo_negation_ARRAY,
     	             $oCRNRSTN_USR)
     {
 
-        $oLog_possible_output_ARRAY = $oCRNRSTN_USR->oLog_output_ARRAY;
-        $tmp_silo_neg_cnt = sizeof($silo_negation_ARRAY);
+        $oLog_possible_output_ARRAY = $this->oLog_output_ARRAY;
+        $tmp_silo_neg_cnt           = \sizeof($silo_negation_ARRAY);
 
-        if(($full_out || ($silo_auth_ARRAY == NULL)) && 
+        if(($full_out || ($silo_auth_ARRAY == NULL)) &&
         	$tmp_silo_neg_cnt == 0)
         {
 
@@ -5819,24 +5751,24 @@ class crnrstn_logging extends crnrstn
         }else{
 
             $tmp_oLog_authorized_ARRAY = array();
-            $tmp_oLog_cnt = sizeof($oLog_possible_output_ARRAY);
+            $tmp_oLog_cnt              = sizeof($oLog_possible_output_ARRAY);
 
             for($i = 0; $i < $tmp_oLog_cnt; $i++){
 
                 $tmp_oLog = $oLog_possible_output_ARRAY[$i];
 
-                if(is_object($tmp_oLog)){
+                if(\is_object($tmp_oLog)){
 
                     $tmp_oLog_silo_key = $tmp_oLog->return_silo_profile_array();
 
-                    error_log('[mthd ' . 
-                    	__METHOD__ . 
-                    	'] [lnum ' . 
-                    	__LINE__ . '] logging $tmp_oLog_silo_key[' . 
-                    	print_r($tmp_oLog_silo_key, true) . 
+                    error_log('[mthd ' .
+                    	__METHOD__ .
+                    	'] [lnum ' .
+                    	__LINE__ . '] logging $tmp_oLog_silo_key[' .
+                    	print_r($tmp_oLog_silo_key, true) .
                     	'].');
 
-                    if((isset($tmp_silo_auth_ARRAY[$tmp_oLog_silo_key]) || $full_out) && 
+                    if((isset($tmp_silo_auth_ARRAY[$tmp_oLog_silo_key]) || $full_out) &&
                     	!isset($silo_negation_ARRAY[$tmp_oLog_silo_key]))
                     {
 
@@ -5857,7 +5789,7 @@ class crnrstn_logging extends crnrstn
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
      * @param
      * @param
@@ -5872,20 +5804,20 @@ class crnrstn_logging extends crnrstn
      *
      */
     private function prepare_oLogOut(
-    	             $channel, 
-    	             $log_silo_profiles_pipe, 
-    	             $line_num, 
-    	             $method, 
-    	             $file, 
-    	             $logSource, 
-    	             $oLog_output_ARRAY, 
+    	             $channel,
+    	             $log_silo_profiles_pipe,
+    	             $line_num,
+    	             $method,
+    	             $file,
+    	             $logSource,
+    	             $oLog_output_ARRAY,
     	             $oCRNRSTN_USR)
     {
 
         $tmp_request_source = $this->return_requestSourceStr(
-        	                         $line_num, 
-        	                         $method, 
-        	                         $file, 
+        	                         $line_num,
+        	                         $method,
+        	                         $file,
         	                         $logSource);
 
         if(isset($oLog_output_ARRAY)){
@@ -5894,10 +5826,10 @@ class crnrstn_logging extends crnrstn
 
         }else{
 
-            error_log('[mthd ' . 
-                    	__METHOD__ . 
-                    	'] [lnum ' . 
-                    	__LINE__ . '] log.inc.php die() go ' . 
+            error_log('[mthd ' .
+                    	__METHOD__ .
+                    	'] [lnum ' .
+                    	__LINE__ . '] log.inc.php die() go ' .
                     	'to integer constant arch.');
             die();
 
@@ -5905,8 +5837,8 @@ class crnrstn_logging extends crnrstn
             $tmp_silo_ARRAY = explode('|', $log_silo_profiles_pipe);
             $tmp_authorized_silo_cnt = sizeof($tmp_silo_ARRAY);
 
-            if(in_array('*', $tmp_silo_ARRAY) || 
-            	($tmp_authorized_silo_cnt == 1 && $tmp_silo_ARRAY[0] == '') || 
+            if(in_array('*', $tmp_silo_ARRAY) ||
+            	($tmp_authorized_silo_cnt == 1 && $tmp_silo_ARRAY[0] == '') ||
             	($tmp_authorized_silo_cnt == 0))
             {
 
@@ -5922,37 +5854,37 @@ class crnrstn_logging extends crnrstn
                 $tmp_full_out = false;
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Look to output 
-                 * subset of silo data. 
+                 * Look to output
+                 * subset of silo data.
                  *
             	 */
                 for($i = 0; $i < $tmp_authorized_silo_cnt; $i++){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Check for not. 
+                     * Check for not.
 	                 *
 	            	 */
-                    $pos_silo_tilde = strpos($tmp_silo_ARRAY[$i], '~');
+                    $pos_silo_tilde = \strpos($tmp_silo_ARRAY[$i], '~');
 
                     if($pos_silo_tilde !== false){
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Honor the negation 
-                         * strip ~ and trim. 
+                         * Honor the negation
+                         * strip ~ and trim.
                          *
                     	 */
                         $tmp_clean_silo_negation = $this->proper_replace(
-                        	                              '~', 
-                        	                              '', 
+                        	                              '~',
+                        	                              '',
                         	                              $tmp_silo_ARRAY[$i]);
-                        $tmp_clean_silo_negation = trim($tmp_clean_silo_negation);
+                        $tmp_clean_silo_negation = \trim($tmp_clean_silo_negation);
                         $tmp_silo_negation_ARRAY[$tmp_clean_silo_negation] = 1;
 
                     }else{
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Honor the 
-                         * exclusive inclusion. 
+                         * Honor the
+                         * exclusive inclusion.
                          *
                     	 */
                         $tmp_silo_auth_ARRAY[$tmp_silo_ARRAY[$i]] = 1;
@@ -5963,552 +5895,72 @@ class crnrstn_logging extends crnrstn
 
             }
 
-            $tmp_auth_oLog_ARRAY = $this->return_auth_oLog($tmp_full_out, $tmp_silo_auth_ARRAY, $tmp_silo_negation_ARRAY, $oCRNRSTN_USR);
+            $tmp_auth_oLog_ARRAY = $this->return_auth_oLog(
+                                          $tmp_full_out,
+                                          $tmp_silo_auth_ARRAY,
+                                          $tmp_silo_negation_ARRAY,
+                                          $oCRNRSTN_USR);
 
         }
 
         switch($channel){
-            case CRNRSTN_LOG_EMAIL:
-            case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_EMAIL:
+            case $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL']:
+            case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] &
+                 $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL']:
 
                 $tmp_log_to_email_array = array();
                 $tmp_log_to_email_array['text'] = '';
-                $tmp_log_to_email_array['text'] .= 'Begin log output of ' . 
-                                                   'activity from ' . 
-                                                   'requesting source :: ' . 
+                $tmp_log_to_email_array['text'] .= 'Begin log output of ' .
+                                                   'activity from ' .
+                                                   'requesting source :: ' .
                                                    $tmp_request_source . '
 ';
                 $tmp_log_to_email_array['html'] = '';
-                $tmp_log_to_email_array['html'] .= 'Begin log output of ' . 
-                                                   'activity from ' . 
-                                                   'requesting source :: ' . 
+                $tmp_log_to_email_array['html'] .= 'Begin log output of ' .
+                                                   'activity from ' .
+                                                   'requesting source :: ' .
                                                    $tmp_request_source . '<br>';
 
-                $tmp_log_cnt = sizeof($tmp_auth_oLog_ARRAY);
+                $tmp_log_cnt = \sizeof($tmp_auth_oLog_ARRAY);
                 for($i = 0; $i < $tmp_log_cnt; $i++){
 
                     $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
 
-                    if(is_object($tmp_oLog)){
+                    if(\is_object($tmp_oLog)){
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * We have a valid 
-                         * log for which 
-                         * to prepare output. 
-                         * 
+                         * We have a valid
+                         * log for which
+                         * to prepare output.
+                         *
                          * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
                          *
                     	 */
                         $tmp_transactionTime = $tmp_oLog->get_transactionTime();
-                        $tmp_runTime = $tmp_oLog->get_runTime();
-
-                        $tmp_runFile_raw = $tmp_oLog->get_runFile();
+                        $tmp_runTime         = $tmp_oLog->get_runTime();
+                        $tmp_runFile_raw     = $tmp_oLog->get_runFile();
                         $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
-                        $tmp_lineNumber_raw = $tmp_oLog->get_lineNumber();
-                        $tmp_logMsg_raw = $tmp_oLog->get_logMsg();
-
-                        $tmp_transactionTime_ARRAY = array();
-                        $tmp_runTime_ARRAY = array();
-                        $tmp_classMethodFile_ARRAY = array();
-                        $tmp_lineNumber_ARRAY = array();
-                        $tmp_logMsg_ARRAY = array();
+                        $tmp_lineNumber_raw  = $tmp_oLog->get_lineNumber();
+                        $tmp_logMsg_raw      = $tmp_oLog->get_logMsg();
+                        $tmp_transactionTime_ARRAY =
+                        $tmp_runTime_ARRAY         =
+                        $tmp_classMethodFile_ARRAY =
+                        $tmp_lineNumber_ARRAY      =
+                        $tmp_logMsg_ARRAY          = array();
 
                         $tmp_transactionTime_ARRAY['text'] = $tmp_transactionTime;
                         $tmp_transactionTime_ARRAY['html'] = $tmp_transactionTime;
 
-                        $tmp_runTime_ARRAY['text'] = ' [rtime ' . 
+                        $tmp_runTime_ARRAY['text'] = ' [rtime ' .
                                                      $tmp_runTime . ']';
-                        $tmp_runTime_ARRAY['html'] = ' [rtime ' . 
+                        $tmp_runTime_ARRAY['html'] = ' [rtime ' .
                                                      $tmp_runTime . ']';
 
                         if(isset($tmp_classMethod_raw)){
                             if($tmp_classMethod_raw != ''){
 
-                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' . 
+                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' .
                                                                      $tmp_classMethod_raw . ']';
-                                $tmp_classMethodFile_ARRAY['html'] = ' [mthd ' . 
-                                                                     $tmp_classMethod_raw . ']';
-
-                            }else{
-
-                                if(isset($tmp_runFile_raw)){
-
-                                    if($tmp_runFile_raw != ''){
-
-                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
-                                                                             $tmp_runFile_raw . ']';
-                                        $tmp_classMethodFile_ARRAY['html'] = ' [file ' . 
-                                                                             $tmp_runFile_raw . ']';
-
-                                    }else{
-
-                                        $tmp_classMethodFile_ARRAY['text'] = '';
-                                        $tmp_classMethodFile_ARRAY['html'] = '';
-
-                                    }
-
-                                }else{
-
-                                    $tmp_classMethodFile_ARRAY['text'] = '';
-                                    $tmp_classMethodFile_ARRAY['html'] = '';
-
-                                }
-
-                            }
-
-                        }else{
-
-                            if(isset($tmp_runFile_raw)){
-
-                                if($tmp_runFile_raw != ''){
-
-                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
-                                                                         $tmp_runFile_raw . ']';
-                                    $tmp_classMethodFile_ARRAY['html'] = ' [file ' . 
-                                                                         $tmp_runFile_raw . ']';
-
-                                }else{
-
-                                    $tmp_classMethodFile_ARRAY['text'] = '';
-                                    $tmp_classMethodFile_ARRAY['html'] = '';
-
-                                }
-
-                            }else{
-
-                                $tmp_classMethodFile_ARRAY['text'] = '';
-                                $tmp_classMethodFile_ARRAY['html'] = '';
-
-                            }
-
-                        }
-
-                        if(isset($tmp_lineNumber_raw)){
-
-                            if($tmp_lineNumber_raw != ''){
-
-                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' . 
-                                                                $tmp_lineNumber_raw . ']';
-                                $tmp_lineNumber_ARRAY['html'] = ' [lnum ' . 
-                                                                $tmp_lineNumber_raw . ']';
-
-                            }else{
-
-                                $tmp_lineNumber_ARRAY['text'] = '';
-                                $tmp_lineNumber_ARRAY['html'] = '';
-
-                            }
-
-                        }else{
-
-                            $tmp_lineNumber_ARRAY['text'] = '';
-                            $tmp_lineNumber_ARRAY['html'] = '';
-
-                        }
-
-                        if(isset($tmp_logMsg_raw)){
-
-                            $tmp_logMsg_ARRAY['text'] = ' ' . 
-                                                        $tmp_logMsg_raw . '
-';
-                            $tmp_logMsg_ARRAY['html'] = ' ' . 
-                                                        $tmp_logMsg_raw . '<br>';
-
-                        }else{
-
-                            $tmp_logMsg_ARRAY['text'] = '
-';
-                            $tmp_logMsg_ARRAY['html'] = '<br>';
-
-                        }
-
-                        $tmp_log_to_email_array['text'] .= $tmp_transactionTime_ARRAY['text'] . 
-								                           $tmp_runTime_ARRAY['text'] . 
-								                           $tmp_classMethodFile_ARRAY['text'] . 
-								                           $tmp_lineNumber_ARRAY['text'] . 
-								                           $tmp_logMsg_ARRAY['text'];
-
-                        $tmp_log_to_email_array['html'] .= '<span style="font-family: Arial, ' . 
-                                                           'Helvetica,sans-serif; font-size: ' . 
-                                                           '11px; padding-left:10px;">' . 
-							                               $tmp_transactionTime_ARRAY['html'] . 
-							                               $tmp_runTime_ARRAY['html'] . 
-							                               $tmp_classMethodFile_ARRAY['html'] . 
-							                               $tmp_lineNumber_ARRAY['html'] . 
-							                               $tmp_logMsg_ARRAY['html'] . 
-							                               '</span>';
-
-                    }
-                }
-
-                $tmp_log_to_email_array['text'] .= 'End log output ' . 
-                                                   'of activity from [' . 
-                                                   $channel . 
-                                                   '] Requesting Source :: ' . 
-                                                   $tmp_request_source . '
-';
-                $tmp_log_to_email_array['html'] .= 'End log output of ' . 
-                                                   'activity from [' . 
-                                                   $channel . 
-                                                   '] Requesting Source :: ' . 
-                                                   $tmp_request_source . 
-                                                   '<br>';
-
-                return $tmp_log_to_email_array;
-
-            break;
-            case CRNRSTN_LOG_FILE:
-            case 'R_channel_FILE':
-
-                $tmp_log_to_errorlog_array = array();
-                $tmp_log_to_errorlog_array['text'] = 'Begin log output ' . 
-                                                     'of activity from [' . 
-                                                     $channel . 
-                                                     '] Requesting Source :: ' . 
-                                                     $tmp_request_source . '
-';
-
-                $tmp_log_cnt = sizeof($tmp_auth_oLog_ARRAY);
-
-                for($i = 0; $i < $tmp_log_cnt; $i++){
-
-                    $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
-
-                    if(is_object($tmp_oLog)){
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * We have a valid 
-                         * log for which to 
-                         * prepare output. 
-                         *
-                         * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
-                         *
-                    	 */
-                        $tmp_transactionTime = $tmp_oLog->get_transactionTime();
-                        $tmp_runTime = $tmp_oLog->get_runTime();
-
-                        $tmp_runFile_raw = $tmp_oLog->get_runFile();
-                        $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
-                        $tmp_lineNumber_raw = $tmp_oLog->get_lineNumber();
-                        $tmp_logMsg_raw = $tmp_oLog->get_logMsg();
-
-                        $tmp_transactionTime_ARRAY = array();
-                        $tmp_runTime_ARRAY = array();
-                        $tmp_classMethodFile_ARRAY = array();
-                        $tmp_lineNumber_ARRAY = array();
-                        $tmp_logMsg_ARRAY = array();
-
-                        $tmp_transactionTime_ARRAY['text'] = $tmp_transactionTime;
-
-                        $tmp_runTime_ARRAY['text'] = ' [rtime ' . $tmp_runTime . ']';
-
-                        if(isset($tmp_classMethod_raw)){
-
-                            if($tmp_classMethod_raw != ''){
-
-                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' . 
-                                                                     $tmp_classMethod_raw . ']';
-
-                            }else{
-
-                                if(isset($tmp_runFile_raw)){
-
-                                    if($tmp_runFile_raw != ''){
-
-                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
-                                                                             $tmp_runFile_raw . ']';
-
-                                    }else{
-
-                                        $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                    }
-
-                                }else{
-
-                                    $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }
-
-                        }else{
-
-                            if(isset($tmp_runFile_raw)){
-
-                                if($tmp_runFile_raw != ''){
-
-                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
-                                                                         $tmp_runFile_raw . ']';
-
-                                }else{
-
-                                    $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }else{
-
-                                $tmp_classMethodFile_ARRAY['text'] = '';
-
-                            }
-
-                        }
-
-                        if(isset($tmp_lineNumber_raw)){
-
-                            if($tmp_lineNumber_raw != ''){
-
-                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' . 
-                                                                $tmp_lineNumber_raw . ']';
-
-                            }else{
-
-                                $tmp_lineNumber_ARRAY['text'] = '';
-
-                            }
-
-                        }else{
-
-                            $tmp_lineNumber_ARRAY['text'] = '';
-
-                        }
-
-                        if(isset($tmp_logMsg_raw)){
-
-                            $tmp_logMsg_ARRAY['text'] = ' ' . 
-                                                        $tmp_logMsg_raw . '
-';
-
-                        }else{
-
-                            $tmp_logMsg_ARRAY['text'] = '
-';
-
-                        }
-
-                        $tmp_log_to_errorlog_array['text'] .= $tmp_transactionTime_ARRAY['text'] . 
-								                              $tmp_runTime_ARRAY['text'] . 
-								                              $tmp_classMethodFile_ARRAY['text'] . 
-								                              $tmp_lineNumber_ARRAY['text'] . 
-								                              $tmp_logMsg_ARRAY['text'];
-
-                    }
-
-                }
-
-                $tmp_log_to_errorlog_array['text'] .= 'End log output ' . 
-                                                      'of activity from [' . 
-                                                      $channel . 
-                                                      '] Requesting Source :: ' . 
-                                                      $tmp_request_source . '
-';
-
-                return $tmp_log_to_errorlog_array;
-
-            break;
-            case CRNRSTN_LOG_SCREEN_TEXT:
-
-                $tmp_log_to_errorlog_array = array();
-                $tmp_log_to_errorlog_array['text'] = '';
-                $tmp_log_to_errorlog_array['text'] .= 'Begin log output ' . 
-                                                      'of activity from [' . 
-                                                      $channel . 
-                                                      '] Requesting Source :: ' . 
-                                                      $tmp_request_source . '
-';
-
-                $tmp_log_cnt = sizeof($tmp_auth_oLog_ARRAY);
-                for($i = 0; $i < $tmp_log_cnt; $i++){
-
-                    $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
-
-                    if(is_object($tmp_oLog)){
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * We have a valid 
-                         * log for which to 
-                         * prepare output. 
-                         *
-                         * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
-                         *
-                    	 */
-                        $tmp_transactionTime = $tmp_oLog->get_transactionTime();
-                        $tmp_runTime = $tmp_oLog->get_runTime();
-
-                        $tmp_runFile_raw = $tmp_oLog->get_runFile();
-                        $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
-                        $tmp_lineNumber_raw = $tmp_oLog->get_lineNumber();
-                        $tmp_logMsg_raw = $tmp_oLog->get_logMsg();
-
-                        $tmp_transactionTime_ARRAY = array();
-                        $tmp_runTime_ARRAY = array();
-                        $tmp_classMethodFile_ARRAY = array();
-                        $tmp_lineNumber_ARRAY = array();
-                        $tmp_logMsg_ARRAY = array();
-
-                        $tmp_transactionTime_ARRAY['text'] = $tmp_transactionTime;
-
-                        $tmp_runTime_ARRAY['text'] = ' [rtime ' . 
-                                                     $tmp_runTime . ']';
-
-                        if(isset($tmp_classMethod_raw)){
-
-                            if($tmp_classMethod_raw != ''){
-
-                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' . 
-                                                                     $tmp_classMethod_raw . ']';
-
-                            }else{
-
-                                if(isset($tmp_runFile_raw)){
-
-                                    if($tmp_runFile_raw != ''){
-
-                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
-                                                                             $tmp_runFile_raw . ']';
-
-                                    }else{
-
-                                        $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                    }
-
-                                }else{
-
-                                    $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }
-
-                        }else{
-
-                            if(isset($tmp_runFile_raw)){
-
-                                if($tmp_runFile_raw != ''){
-
-                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
-                                                                         $tmp_runFile_raw . ']';
-
-                                }else{
-
-                                    $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }else{
-
-                                $tmp_classMethodFile_ARRAY['text'] = '';
-
-                            }
-
-                        }
-
-                        if(isset($tmp_lineNumber_raw)){
-
-                            if($tmp_lineNumber_raw != ''){
-
-                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' . 
-                                                                $tmp_lineNumber_raw . ']';
-
-                            }else{
-
-                                $tmp_lineNumber_ARRAY['text'] = '';
-
-                            }
-
-                        }else{
-
-                            $tmp_lineNumber_ARRAY['text'] = '';
-
-                        }
-
-                        if(isset($tmp_logMsg_raw)){
-
-                            $tmp_logMsg_ARRAY['text'] = ' ' . 
-                                                        $tmp_logMsg_raw . '
-';
-
-                        }else{
-
-                            $tmp_logMsg_ARRAY['text'] = '
-';
-
-                        }
-
-                        $tmp_log_to_errorlog_array['text'] .= $tmp_transactionTime_ARRAY['text'] . 
-								                              $tmp_runTime_ARRAY['text'] . 
-								                              $tmp_classMethodFile_ARRAY['text'] . 
-								                              $tmp_lineNumber_ARRAY['text'] . 
-								                              $tmp_logMsg_ARRAY['text'];
-
-                    }
-
-                }
-
-                $tmp_log_to_errorlog_array['text'] .= 'End log output ' . 
-                                                      'of activity from [' . 
-                                                      $channel . 
-                                                      '] Requesting Source :: ' . 
-                                                      $tmp_request_source . '
-';
-
-                return $tmp_log_to_errorlog_array;
-
-            break;
-            case CRNRSTN_LOG_SCREEN:
-            case CRNRSTN_LOG_SCREEN_HTML:
-
-                $tmp_log_to_screen_array = array();
-                $tmp_log_to_screen_array['html'] = '';
-                $tmp_log_to_screen_array['html'] .= '<div style="font-family: ' . 
-                                                    'Arial, Helvetica,sans-serif; ' . 
-                                                    'font-size: 12px; font-weight: ' . 
-                                                    'bold; padding:10px 0 0 5px; ' . 
-                                                    'line-height: 15px;">begin log ' . 
-                                                    'output of activity from ' . 
-                                                    'requesting source :: ' . 
-                                                    $tmp_request_source . '</div>';
-                $tmp_log_cnt = sizeof($tmp_auth_oLog_ARRAY);
-
-                for($i = 0; $i < $tmp_log_cnt; $i++){
-
-                    $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
-
-                    if(is_object($tmp_oLog)){
-
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * We have a valid 
-                         * log for which to 
-                         * prepare output. 
-                         *
-                         * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
-                         *
-                    	 */
-                        $tmp_transactionTime = $tmp_oLog->get_transactionTime();
-                        $tmp_runTime = $tmp_oLog->get_runTime();
-
-                        $tmp_runFile_raw = $tmp_oLog->get_runFile();
-                        $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
-                        $tmp_lineNumber_raw = $tmp_oLog->get_lineNumber();
-                        $tmp_logMsg_raw = $tmp_oLog->get_logMsg();
-
-                        $tmp_transactionTime_ARRAY = array();
-                        $tmp_runTime_ARRAY = array();
-                        $tmp_classMethodFile_ARRAY = array();
-                        $tmp_lineNumber_ARRAY = array();
-                        $tmp_logMsg_ARRAY = array();
-
-                        $tmp_transactionTime_ARRAY['html'] = $tmp_transactionTime;
-
-                        $tmp_runTime_ARRAY['html'] = ' [rtime ' . 
-                                                     $tmp_runTime . ']';
-
-                        if(isset($tmp_classMethod_raw)){
-
-                            if($tmp_classMethod_raw != ''){
-
                                 $tmp_classMethodFile_ARRAY['html'] = ' [mthd ' .
                                                                      $tmp_classMethod_raw . ']';
 
@@ -6518,17 +5970,21 @@ class crnrstn_logging extends crnrstn
 
                                     if($tmp_runFile_raw != ''){
 
-                                        $tmp_classMethodFile_ARRAY['html'] = ' [file ' . 
+                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
+                                                                             $tmp_runFile_raw . ']';
+                                        $tmp_classMethodFile_ARRAY['html'] = ' [file ' .
                                                                              $tmp_runFile_raw . ']';
 
                                     }else{
 
+                                        $tmp_classMethodFile_ARRAY['text'] = '';
                                         $tmp_classMethodFile_ARRAY['html'] = '';
 
                                     }
 
                                 }else{
 
+                                    $tmp_classMethodFile_ARRAY['text'] = '';
                                     $tmp_classMethodFile_ARRAY['html'] = '';
 
                                 }
@@ -6541,17 +5997,21 @@ class crnrstn_logging extends crnrstn
 
                                 if($tmp_runFile_raw != ''){
 
-                                    $tmp_classMethodFile_ARRAY['html'] = ' [file ' . 
+                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
+                                                                         $tmp_runFile_raw . ']';
+                                    $tmp_classMethodFile_ARRAY['html'] = ' [file ' .
                                                                          $tmp_runFile_raw . ']';
 
                                 }else{
 
+                                    $tmp_classMethodFile_ARRAY['text'] = '';
                                     $tmp_classMethodFile_ARRAY['html'] = '';
 
                                 }
 
                             }else{
 
+                                $tmp_classMethodFile_ARRAY['text'] = '';
                                 $tmp_classMethodFile_ARRAY['html'] = '';
 
                             }
@@ -6562,65 +6022,419 @@ class crnrstn_logging extends crnrstn
 
                             if($tmp_lineNumber_raw != ''){
 
-                                $tmp_lineNumber_ARRAY['html'] = ' [lnum ' . 
+                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' .
+                                                                $tmp_lineNumber_raw . ']';
+                                $tmp_lineNumber_ARRAY['html'] = ' [lnum ' .
                                                                 $tmp_lineNumber_raw . ']';
 
                             }else{
 
+                                $tmp_lineNumber_ARRAY['text'] = '';
                                 $tmp_lineNumber_ARRAY['html'] = '';
 
                             }
 
                         }else{
 
+                            $tmp_lineNumber_ARRAY['text'] = '';
                             $tmp_lineNumber_ARRAY['html'] = '';
 
                         }
 
                         if(isset($tmp_logMsg_raw)){
 
-                            $tmp_logMsg_ARRAY['html'] = ' ' . 
+                            $tmp_logMsg_ARRAY['text'] = ' ' .
+                                                        $tmp_logMsg_raw . '
+';
+                            $tmp_logMsg_ARRAY['html'] = ' ' .
                                                         $tmp_logMsg_raw . '<br>';
 
                         }else{
 
+                            $tmp_logMsg_ARRAY['text'] = '
+';
                             $tmp_logMsg_ARRAY['html'] = '<br>';
 
                         }
 
-                        $tmp_log_to_screen_array['html'] .= '<div style="font-family: ' . 
-                                                            'Arial, Helvetica,sans-serif; ' . 
-                                                            'font-size: 11px; padding-left:10px; ' . 
-                                                            'line-height: 17px;">' . 
-                            $tmp_transactionTime_ARRAY['html'] . 
-                            $tmp_runTime_ARRAY['html'] . 
-                            $tmp_classMethodFile_ARRAY['html'] . 
-                            $tmp_lineNumber_ARRAY['html'] . 
-                            $tmp_logMsg_ARRAY['html'] . '</div>';
+                        $tmp_log_to_email_array['text'] .= $tmp_transactionTime_ARRAY['text'] .
+								                           $tmp_runTime_ARRAY['text'] .
+								                           $tmp_classMethodFile_ARRAY['text'] .
+								                           $tmp_lineNumber_ARRAY['text'] .
+								                           $tmp_logMsg_ARRAY['text'];
+
+                        $tmp_log_to_email_array['html'] .= '<span style="font-family: Arial, ' .
+                                                           'Helvetica,sans-serif; font-size: ' .
+                                                           '11px; padding-left:10px;">' .
+							                               $tmp_transactionTime_ARRAY['html'] .
+							                               $tmp_runTime_ARRAY['html'] .
+							                               $tmp_classMethodFile_ARRAY['html'] .
+							                               $tmp_lineNumber_ARRAY['html'] .
+							                               $tmp_logMsg_ARRAY['html'] .
+							                               '</span>';
 
                     }
                 }
 
-                $tmp_log_to_screen_array['html'] .= '<div style="font-family: ' . 
-                                                    'Arial, Helvetica, sans-serif; ' . 
-                                                    'font-size: 12px; font-weight: ' . 
-                                                    'bold; padding:0 0 5px 5px; ' . 
-                                                    'line-height: 15px;">end log ' . 
-                                                    'output of activity from [' . 
-                                                    $channel . 
-                                                    '] Requesting Source :: ' . 
-                                                    $tmp_request_source . 
+                $tmp_log_to_email_array['text'] .= 'End log output ' .
+                                                   'of activity from [' .
+                                                   $channel .
+                                                   '] Requesting Source :: ' .
+                                                   $tmp_request_source . '
+';
+                $tmp_log_to_email_array['html'] .= 'End log output of ' .
+                                                   'activity from [' .
+                                                   $channel .
+                                                   '] Requesting Source :: ' .
+                                                   $tmp_request_source .
+                                                   '<br>';
+
+                return $tmp_log_to_email_array;
+
+            break;
+            case $this->R_data['int_flag']['CRNRSTN_LOG_FILE']:
+            case 'R_channel_FILE':
+
+                $tmp_log_to_errorlog_array         = array();
+                $tmp_log_to_errorlog_array['text'] = 'Begin log output ' .
+                                                     'of activity from [' .
+                                                     $channel .
+                                                     '] Requesting Source :: ' .
+                                                     $tmp_request_source . '
+';
+
+                $tmp_log_cnt = sizeof($tmp_auth_oLog_ARRAY);
+
+                for($i = 0; $i < $tmp_log_cnt; $i++){
+
+                    $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
+
+                    if(\is_object($tmp_oLog)){
+
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * We have a valid
+                         * log for which to
+                         * prepare output.
+                         *
+                         * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
+                         *
+                    	 */
+                        $tmp_transactionTime  = $tmp_oLog->get_transactionTime();
+                        $tmp_runTime          = $tmp_oLog->get_runTime();
+                        $tmp_runFile_raw      = $tmp_oLog->get_runFile();
+                        $tmp_classMethod_raw  = $tmp_oLog->get_classMethod();
+                        $tmp_lineNumber_raw   = $tmp_oLog->get_lineNumber();
+                        $tmp_logMsg_raw       = $tmp_oLog->get_logMsg();
+
+                        $tmp_transactionTime_ARRAY = array();
+                        $tmp_runTime_ARRAY         = array();
+                        $tmp_classMethodFile_ARRAY = array();
+                        $tmp_lineNumber_ARRAY      = array();
+                        $tmp_logMsg_ARRAY          = array();
+
+                        $tmp_transactionTime_ARRAY['text'] = $tmp_transactionTime;
+
+                        $tmp_runTime_ARRAY['text'] = ' [rtime ' .
+                                                     $tmp_runTime . ']';
+
+                        if(isset($tmp_classMethod_raw)){
+
+                            if($tmp_classMethod_raw != '')
+                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' .
+                                                                     $tmp_classMethod_raw . ']';
+                            else
+
+                                if(isset($tmp_runFile_raw))
+                                    if($tmp_runFile_raw != '')
+                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
+                                                                             $tmp_runFile_raw . ']';
+                                    else
+                                        $tmp_classMethodFile_ARRAY['text'] = '';
+                                else
+                                    $tmp_classMethodFile_ARRAY['text'] = '';
+
+                        }else{
+
+                            if(isset($tmp_runFile_raw))
+                                if($tmp_runFile_raw != '')
+                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
+                                                                         $tmp_runFile_raw . ']';
+                                else
+                                    $tmp_classMethodFile_ARRAY['text'] = '';
+                            else
+                                $tmp_classMethodFile_ARRAY['text'] = '';
+
+                        }
+
+                        if(isset($tmp_lineNumber_raw))
+                            if($tmp_lineNumber_raw != '')
+                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' .
+                                                                $tmp_lineNumber_raw . ']';
+                            else
+                                $tmp_lineNumber_ARRAY['text'] = '';
+                        else
+                            $tmp_lineNumber_ARRAY['text'] = '';
+
+                        if(isset($tmp_logMsg_raw))
+                            $tmp_logMsg_ARRAY['text'] = ' ' .
+                                                        $tmp_logMsg_raw . '
+';
+                        else
+                            $tmp_logMsg_ARRAY['text'] = '
+';
+
+                        $tmp_log_to_errorlog_array['text'] .= $tmp_transactionTime_ARRAY['text'] .
+								                              $tmp_runTime_ARRAY['text'] .
+								                              $tmp_classMethodFile_ARRAY['text'] .
+								                              $tmp_lineNumber_ARRAY['text'] .
+								                              $tmp_logMsg_ARRAY['text'];
+
+                    }
+
+                }
+
+                $tmp_log_to_errorlog_array['text'] .= 'End log output ' .
+                                                      'of activity from [' .
+                                                      $channel .
+                                                      '] Requesting Source :: ' .
+                                                      $tmp_request_source . '
+';
+
+                return $tmp_log_to_errorlog_array;
+
+            break;
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_TEXT']:
+
+                $tmp_log_to_errorlog_array = array();
+                $tmp_log_to_errorlog_array['text'] = '';
+                $tmp_log_to_errorlog_array['text'] .= 'Begin log output ' .
+                                                      'of activity from [' .
+                                                      $channel .
+                                                      '] Requesting Source :: ' .
+                                                      $tmp_request_source . '
+';
+
+                $tmp_log_cnt = \sizeof($tmp_auth_oLog_ARRAY);
+                for($i = 0; $i < $tmp_log_cnt; $i++){
+
+                    $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
+
+                    if(\is_object($tmp_oLog)){
+
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * We have a valid
+                         * log for which to
+                         * prepare output.
+                         *
+                         * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
+                         *
+                    	 */
+                        $tmp_transactionTime = $tmp_oLog->get_transactionTime();
+                        $tmp_runTime         = $tmp_oLog->get_runTime();
+                        $tmp_runFile_raw     = $tmp_oLog->get_runFile();
+                        $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
+                        $tmp_lineNumber_raw  = $tmp_oLog->get_lineNumber();
+                        $tmp_logMsg_raw      = $tmp_oLog->get_logMsg();
+
+                        $tmp_transactionTime_ARRAY = array();
+                        $tmp_runTime_ARRAY         = array();
+                        $tmp_classMethodFile_ARRAY = array();
+                        $tmp_lineNumber_ARRAY      = array();
+                        $tmp_logMsg_ARRAY          = array();
+
+                        $tmp_transactionTime_ARRAY['text'] = $tmp_transactionTime;
+
+                        $tmp_runTime_ARRAY['text'] = ' [rtime ' .
+                                                     $tmp_runTime . ']';
+
+                        if(isset($tmp_classMethod_raw)){
+
+                            if($tmp_classMethod_raw != '')
+                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' .
+                                                                     $tmp_classMethod_raw . ']';
+                            else
+                                if(isset($tmp_runFile_raw))
+                                    if($tmp_runFile_raw != '')
+                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
+                                                                             $tmp_runFile_raw . ']';
+                                    else
+                                        $tmp_classMethodFile_ARRAY['text'] = '';
+                                else
+                                    $tmp_classMethodFile_ARRAY['text'] = '';
+
+                        }else{
+
+                            if(isset($tmp_runFile_raw))
+                                if($tmp_runFile_raw != '')
+                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
+                                                                         $tmp_runFile_raw . ']';
+                                else
+                                    $tmp_classMethodFile_ARRAY['text'] = '';
+                            else
+                                $tmp_classMethodFile_ARRAY['text'] = '';
+
+                        }
+
+                        if(isset($tmp_lineNumber_raw))
+                            if($tmp_lineNumber_raw != '')
+                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' .
+                                                                $tmp_lineNumber_raw . ']';
+                            else
+                                $tmp_lineNumber_ARRAY['text'] = '';
+                        else
+                            $tmp_lineNumber_ARRAY['text'] = '';
+
+                        if(isset($tmp_logMsg_raw))
+                            $tmp_logMsg_ARRAY['text'] = ' ' .
+                                                        $tmp_logMsg_raw . '
+';
+                        else
+                            $tmp_logMsg_ARRAY['text'] = '
+';
+
+                        $tmp_log_to_errorlog_array['text'] .= $tmp_transactionTime_ARRAY['text'] .
+								                              $tmp_runTime_ARRAY['text'] .
+								                              $tmp_classMethodFile_ARRAY['text'] .
+								                              $tmp_lineNumber_ARRAY['text'] .
+								                              $tmp_logMsg_ARRAY['text'];
+
+                    }
+
+                }
+
+                $tmp_log_to_errorlog_array['text'] .= 'End log output ' .
+                                                      'of activity from [' .
+                                                      $channel .
+                                                      '] Requesting Source :: ' .
+                                                      $tmp_request_source . '
+';
+
+                return $tmp_log_to_errorlog_array;
+
+            break;
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN']:
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML']:
+
+                $tmp_log_to_screen_array         = array();
+                $tmp_log_to_screen_array['html'] = '';
+                $tmp_log_to_screen_array['html'] .= '<div style="font-family: ' .
+                                                    'Arial, Helvetica,sans-serif; ' .
+                                                    'font-size: 12px; font-weight: ' .
+                                                    'bold; padding:10px 0 0 5px; ' .
+                                                    'line-height: 15px;">begin log ' .
+                                                    'output of activity from ' .
+                                                    'requesting source :: ' .
+                                                    $tmp_request_source . '</div>';
+                $tmp_log_cnt = \sizeof($tmp_auth_oLog_ARRAY);
+
+                for($i = 0; $i < $tmp_log_cnt; $i++){
+
+                    $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
+
+                    if(\is_object($tmp_oLog)){
+
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * We have a valid
+                         * log for which to
+                         * prepare output.
+                         *
+                         * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
+                         *
+                    	 */
+                        $tmp_transactionTime = $tmp_oLog->get_transactionTime();
+                        $tmp_runTime         = $tmp_oLog->get_runTime();
+                        $tmp_runFile_raw     = $tmp_oLog->get_runFile();
+                        $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
+                        $tmp_lineNumber_raw  = $tmp_oLog->get_lineNumber();
+                        $tmp_logMsg_raw      = $tmp_oLog->get_logMsg();
+
+                        $tmp_transactionTime_ARRAY =
+                        $tmp_runTime_ARRAY         =
+                        $tmp_classMethodFile_ARRAY =
+                        $tmp_lineNumber_ARRAY      =
+                        $tmp_logMsg_ARRAY          = array();
+
+                        $tmp_transactionTime_ARRAY['html'] = $tmp_transactionTime;
+
+                        $tmp_runTime_ARRAY['html'] = ' [rtime ' .
+                                                     $tmp_runTime . ']';
+
+                        if(isset($tmp_classMethod_raw)){
+
+                            if($tmp_classMethod_raw != '')
+                                $tmp_classMethodFile_ARRAY['html'] = ' [mthd ' .
+                                                                     $tmp_classMethod_raw . ']';
+                            else
+                                if(isset($tmp_runFile_raw))
+                                    if($tmp_runFile_raw != '')
+                                        $tmp_classMethodFile_ARRAY['html'] = ' [file ' .
+                                                                             $tmp_runFile_raw . ']';
+                                    else
+                                        $tmp_classMethodFile_ARRAY['html'] = '';
+                                else
+                                    $tmp_classMethodFile_ARRAY['html'] = '';
+
+                        }else{
+
+                            if(isset($tmp_runFile_raw))
+                                if($tmp_runFile_raw != '')
+                                    $tmp_classMethodFile_ARRAY['html'] = ' [file ' .
+                                                                         $tmp_runFile_raw . ']';
+                                else
+                                    $tmp_classMethodFile_ARRAY['html'] = '';
+                            else
+                                $tmp_classMethodFile_ARRAY['html'] = '';
+
+                        }
+
+                        if(isset($tmp_lineNumber_raw))
+                            if($tmp_lineNumber_raw != '')
+                                $tmp_lineNumber_ARRAY['html'] = ' [lnum ' .
+                                                                $tmp_lineNumber_raw . ']';
+                            else
+                                $tmp_lineNumber_ARRAY['html'] = '';
+                        else
+                            $tmp_lineNumber_ARRAY['html'] = '';
+
+                        if(isset($tmp_logMsg_raw))
+                            $tmp_logMsg_ARRAY['html'] = ' ' .
+                                                        $tmp_logMsg_raw . '<br>';
+                        else
+                            $tmp_logMsg_ARRAY['html'] = '<br>';
+
+                        $tmp_log_to_screen_array['html'] .= '<div style="font-family: ' .
+                                                            'Arial, Helvetica,sans-serif; ' .
+                                                            'font-size: 11px; padding-left:10px; ' .
+                                                            'line-height: 17px;">' .
+                                                            $tmp_transactionTime_ARRAY['html'] .
+                                                            $tmp_runTime_ARRAY['html'] .
+                                                            $tmp_classMethodFile_ARRAY['html'] .
+                                                            $tmp_lineNumber_ARRAY['html'] .
+                                                            $tmp_logMsg_ARRAY['html'] . '</div>';
+
+                    }
+                }
+
+                $tmp_log_to_screen_array['html'] .= '<div style="font-family: ' .
+                                                    'Arial, Helvetica, sans-serif; ' .
+                                                    'font-size: 12px; font-weight: ' .
+                                                    'bold; padding:0 0 5px 5px; ' .
+                                                    'line-height: 15px;">end log ' .
+                                                    'output of activity from [' .
+                                                    $channel .
+                                                    '] Requesting Source :: ' .
+                                                    $tmp_request_source .
                                                     '</div>';
                 return $tmp_log_to_screen_array;
 
             break;
-            case CRNRSTN_LOG_SCREEN_HTML_HIDDEN:
+            case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML_HIDDEN']:
 
                 $tmp_log_to_html_hidden_array = array();
                 $tmp_log_to_html_hidden_array['text'] = '';
-                $tmp_log_to_html_hidden_array['text'] .= 'Begin log output ' . 
-                                                         'of activity from [' . 
-                                                         $channel . '] Requesting Source :: ' . 
+                $tmp_log_to_html_hidden_array['text'] .= 'Begin log output ' .
+                                                         'of activity from [' .
+                                                         $channel . '] Requesting Source :: ' .
                                                          $tmp_request_source . '
 ';
 
@@ -6632,130 +6446,92 @@ class crnrstn_logging extends crnrstn
                     if(is_object($tmp_oLog)){
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * We have a valid 
-                         * log for which to 
-                         * prepare output. 
+                         * We have a valid
+                         * log for which to
+                         * prepare output.
                          *
                          * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
                          *
                     	 */
                         $tmp_transactionTime = $tmp_oLog->get_transactionTime();
-                        $tmp_runTime = $tmp_oLog->get_runTime();
-
-                        $tmp_runFile_raw = $tmp_oLog->get_runFile();
+                        $tmp_runTime         = $tmp_oLog->get_runTime();
+                        $tmp_runFile_raw     = $tmp_oLog->get_runFile();
                         $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
-                        $tmp_lineNumber_raw = $tmp_oLog->get_lineNumber();
-                        $tmp_logMsg_raw = $tmp_oLog->get_logMsg();
+                        $tmp_lineNumber_raw  = $tmp_oLog->get_lineNumber();
+                        $tmp_logMsg_raw      = $tmp_oLog->get_logMsg();
 
-                        $tmp_transactionTime_ARRAY = array();
-                        $tmp_runTime_ARRAY = array();
-                        $tmp_classMethodFile_ARRAY = array();
-                        $tmp_lineNumber_ARRAY = array();
-                        $tmp_logMsg_ARRAY = array();
+                        $tmp_transactionTime_ARRAY =
+                        $tmp_runTime_ARRAY         =
+                        $tmp_classMethodFile_ARRAY =
+                        $tmp_lineNumber_ARRAY      =
+                        $tmp_logMsg_ARRAY          = array();
 
                         $tmp_transactionTime_ARRAY['text'] = $tmp_transactionTime;
 
-                        $tmp_runTime_ARRAY['text'] = ' [rtime ' . 
+                        $tmp_runTime_ARRAY['text'] = ' [rtime ' .
                                                      $tmp_runTime . ']';
 
                         if(isset($tmp_classMethod_raw)){
-                            if($tmp_classMethod_raw != ''){
 
-                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' . 
+                            if($tmp_classMethod_raw != '')
+                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' .
                                                                      $tmp_classMethod_raw . ']';
+                            else
 
-                            }else{
-
-                                if(isset($tmp_runFile_raw)){
-
-                                    if($tmp_runFile_raw != ''){
-
-                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
+                                if(isset($tmp_runFile_raw))
+                                    if($tmp_runFile_raw != '')
+                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
                                                                              $tmp_runFile_raw . ']';
-
-                                    }else{
+                                    else
 
                                         $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                    }
-
-                                }else{
-
+                                else
                                     $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }
 
                         }else{
 
-                            if(isset($tmp_runFile_raw)){
-
-                                if($tmp_runFile_raw != ''){
-
-                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
+                            if(isset($tmp_runFile_raw))
+                                if($tmp_runFile_raw != '')
+                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
                                                                          $tmp_runFile_raw . ']';
-
-                                }else{
-
+                                else
                                     $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }else{
-
+                            else
                                 $tmp_classMethodFile_ARRAY['text'] = '';
 
-                            }
-
                         }
 
-                        if(isset($tmp_lineNumber_raw)){
-
-                            if($tmp_lineNumber_raw != ''){
-
-                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' . 
+                        if(isset($tmp_lineNumber_raw))
+                            if($tmp_lineNumber_raw != '')
+                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' .
                                                                 $tmp_lineNumber_raw . ']';
-
-                            }else{
-
+                            else
                                 $tmp_lineNumber_ARRAY['text'] = '';
-
-                            }
-
-                        }else{
-
+                        else
                             $tmp_lineNumber_ARRAY['text'] = '';
 
-                        }
-
-                        if(isset($tmp_logMsg_raw)){
-
-                            $tmp_logMsg_ARRAY['text'] = ' ' . 
+                        if(isset($tmp_logMsg_raw))
+                            $tmp_logMsg_ARRAY['text'] = ' ' .
                                                         $tmp_logMsg_raw . '
 ';
-
-                        }else{
-
+                        else
                             $tmp_logMsg_ARRAY['text'] = '
 ';
 
-                        }
-
-                        $tmp_log_to_html_hidden_array['text'] .= $tmp_transactionTime_ARRAY['text'] . 
-									                             $tmp_runTime_ARRAY['text'] . 
-									                             $tmp_classMethodFile_ARRAY['text'] . 
-									                             $tmp_lineNumber_ARRAY['text'] . 
+                        $tmp_log_to_html_hidden_array['text'] .= $tmp_transactionTime_ARRAY['text'] .
+									                             $tmp_runTime_ARRAY['text'] .
+									                             $tmp_classMethodFile_ARRAY['text'] .
+									                             $tmp_lineNumber_ARRAY['text'] .
 									                             $tmp_logMsg_ARRAY['text'];
 
                     }
 
                 }
 
-                $tmp_log_to_html_hidden_array['text'] .= 'End log output ' . 
-                                                         'of activity from [' . 
-                                                         $channel . 
-                                                         '] Requesting Source :: ' . 
+                $tmp_log_to_html_hidden_array['text'] .= 'End log output ' .
+                                                         'of activity from [' .
+                                                         $channel .
+                                                         '] Requesting Source :: ' .
                                                          $tmp_request_source . '
 ';
 
@@ -6768,11 +6544,11 @@ class crnrstn_logging extends crnrstn
              *case 'R_channel_SESSION':
              *
              */
-            case 'R_channel_DATABASE':
-            case 'R_channel_SSDTLA':
-            case 'R_channel_PSSDTLA':
-            case 'R_channel_RUNTIME':
-            case 'R_channel_SOAP':
+            case $this->R_data['int_flag']['R_channel_DATABASE']:
+            case $this->R_data['int_flag']['R_channel_SSDTLA']:
+            case $this->R_data['int_flag']['R_channel_PSSDTLA']:
+            case $this->R_data['int_flag']['R_channel_RUNTIME']:
+            case $this->R_data['int_flag']['R_channel_SOAP']:
             /*case 'R_channel_ALL':
              *case 'R_channel_FORM':
              *
@@ -6780,157 +6556,113 @@ class crnrstn_logging extends crnrstn
             default:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * Default. 
+                 * Default.
 	             *
 	             */
-                $tmp_log_cnt = sizeof($tmp_auth_oLog_ARRAY);
-                if($tmp_log_cnt < 1){
-
+                $tmp_log_cnt = \sizeof($tmp_auth_oLog_ARRAY);
+                if($tmp_log_cnt < 1)
                     return NULL;
 
-                }
-
-                $tmp_log_to_errorlog_array = array();
+                $tmp_log_to_errorlog_array         = array();
                 $tmp_log_to_errorlog_array['text'] = '';
-                $tmp_log_to_errorlog_array['text'] .= 'Begin log output ' . 
-                                                      'of activity from [' . 
-                                                      $channel . 
-                                                      '] Requesting Source :: ' . 
+                $tmp_log_to_errorlog_array['text'] .= 'Begin log output ' .
+                                                      'of activity from [' .
+                                                      $channel .
+                                                      '] Requesting Source :: ' .
                                                       $tmp_request_source . '
 ';
 
-                $tmp_log_cnt = sizeof($tmp_auth_oLog_ARRAY);
+                $tmp_log_cnt = \sizeof($tmp_auth_oLog_ARRAY);
                 for($i = 0; $i < $tmp_log_cnt; $i++){
 
                     $tmp_oLog = $tmp_auth_oLog_ARRAY[$i];
 
-                    if(is_object($tmp_oLog)){
+                    if(\is_object($tmp_oLog)){
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * We have a valid 
-                         * log for which to 
-                         * prepare output. 
+                         * We have a valid
+                         * log for which to
+                         * prepare output.
                          *
                          * $tmp_silo_key = $tmp_oLog->return_silo_profile_array();
                          *
                     	 */
                         $tmp_transactionTime = $tmp_oLog->get_transactionTime();
-                        $tmp_runTime = $tmp_oLog->get_runTime();
-
-                        $tmp_runFile_raw = $tmp_oLog->get_runFile();
+                        $tmp_runTime         = $tmp_oLog->get_runTime();
+                        $tmp_runFile_raw     = $tmp_oLog->get_runFile();
                         $tmp_classMethod_raw = $tmp_oLog->get_classMethod();
-                        $tmp_lineNumber_raw = $tmp_oLog->get_lineNumber();
-                        $tmp_logMsg_raw = $tmp_oLog->get_logMsg();
+                        $tmp_lineNumber_raw  = $tmp_oLog->get_lineNumber();
+                        $tmp_logMsg_raw      = $tmp_oLog->get_logMsg();
 
-                        $tmp_transactionTime_ARRAY = 
-                        $tmp_runTime_ARRAY = 
-                        $tmp_classMethodFile_ARRAY = 
-                        $tmp_lineNumber_ARRAY = 
-                        $tmp_logMsg_ARRAY = array();
+                        $tmp_transactionTime_ARRAY =
+                        $tmp_runTime_ARRAY         =
+                        $tmp_classMethodFile_ARRAY =
+                        $tmp_lineNumber_ARRAY      =
+                        $tmp_logMsg_ARRAY          = array();
 
                         $tmp_transactionTime_ARRAY['text'] = $tmp_transactionTime;
 
-                        $tmp_runTime_ARRAY['text'] = ' [rtime ' . 
+                        $tmp_runTime_ARRAY['text'] = ' [rtime ' .
                                                      $tmp_runTime . ']';
 
                         if(isset($tmp_classMethod_raw)){
 
-                            if($tmp_classMethod_raw != ''){
-
-                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' . 
+                            if($tmp_classMethod_raw != '')
+                                $tmp_classMethodFile_ARRAY['text'] = ' [mthd ' .
                                                                      $tmp_classMethod_raw . ']';
-
-                            }else{
-
-                                if(isset($tmp_runFile_raw)){
-
-                                    if($tmp_runFile_raw != ''){
-
-                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
+                            else
+                                if(isset($tmp_runFile_raw))
+                                    if($tmp_runFile_raw != '')
+                                        $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
                                                                              $tmp_runFile_raw . ']';
-
-                                    }else{
-
+                                    else
                                         $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                    }
-
-                                }else{
-
+                                else
                                     $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }
 
                         }else{
 
-                            if(isset($tmp_runFile_raw)){
-
-                                if($tmp_runFile_raw != ''){
-
-                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' . 
+                            if(isset($tmp_runFile_raw))
+                                if($tmp_runFile_raw != '')
+                                    $tmp_classMethodFile_ARRAY['text'] = ' [file ' .
                                                                          $tmp_runFile_raw . ']';
-
-                                }else{
-
+                                else
                                     $tmp_classMethodFile_ARRAY['text'] = '';
-
-                                }
-
-                            }else{
-
+                            else
                                 $tmp_classMethodFile_ARRAY['text'] = '';
 
-                            }
-
                         }
 
-                        if(isset($tmp_lineNumber_raw)){
-
-                            if($tmp_lineNumber_raw != ''){
-
-                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' . 
+                        if(isset($tmp_lineNumber_raw))
+                            if($tmp_lineNumber_raw != '')
+                                $tmp_lineNumber_ARRAY['text'] = ' [lnum ' .
                                                                 $tmp_lineNumber_raw . ']';
-
-                            }else{
-
+                            else
                                 $tmp_lineNumber_ARRAY['text'] = '';
-
-                            }
-
-                        }else{
-
+                        else
                             $tmp_lineNumber_ARRAY['text'] = '';
 
-                        }
-
-                        if(isset($tmp_logMsg_raw)){
-
-                            $tmp_logMsg_ARRAY['text'] = ' ' . 
+                        if(isset($tmp_logMsg_raw))
+                            $tmp_logMsg_ARRAY['text'] = ' ' .
                                                         $tmp_logMsg_raw . '
 ';
-
-                        }else{
-
+                        else
                             $tmp_logMsg_ARRAY['text'] = '
 ';
 
-                        }
-
-                        $tmp_log_to_errorlog_array['text'] .= $tmp_transactionTime_ARRAY['text'] . 
-								                              $tmp_runTime_ARRAY['text'] . 
-								                              $tmp_classMethodFile_ARRAY['text'] . 
-								                              $tmp_lineNumber_ARRAY['text'] . 
+                        $tmp_log_to_errorlog_array['text'] .= $tmp_transactionTime_ARRAY['text'] .
+								                              $tmp_runTime_ARRAY['text'] .
+								                              $tmp_classMethodFile_ARRAY['text'] .
+								                              $tmp_lineNumber_ARRAY['text'] .
 								                              $tmp_logMsg_ARRAY['text'];
 
                     }
 
                 }
 
-                $tmp_log_to_errorlog_array['text'] .= 'End log output of ' . 
-                                                      'activity from ' . 
-                                                      'requesting source :: ' . 
+                $tmp_log_to_errorlog_array['text'] .= 'End log output of ' .
+                                                      'activity from ' .
+                                                      'requesting source :: ' .
                                                       $tmp_request_source . '
 ';
                 return $tmp_log_to_errorlog_array;
@@ -6956,13 +6688,13 @@ class crnrstn_logging extends crnrstn
      *
      */
     function get_error_log_trace(
-    	            $output_profile, 
-    	            $output_profile_override_meta, 
-    	            $log_silo_profile, 
-    	            $line_num, 
-    	            $method, 
-    	            $file, 
-    	            $oCRNRSTN_USR)
+             $output_profile, 
+             $output_profile_override_meta, 
+             $log_silo_profile, 
+             $line_num, 
+             $method, 
+             $file, 
+             $oCRNRSTN_USR)
     {
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -6980,13 +6712,13 @@ class crnrstn_logging extends crnrstn
          */
         try{
 
-            $oCRNRSTN_USR->error_log('error_LogTrace() action ' . 
+            $this->error_log('error_LogTrace() action ' . 
             	           'to take on profile[' . 
             	           $output_profile . ']', 
             	           __LINE__, 
             	           __METHOD__, 
             	           __FILE__, 
-            	           CRNRSTN_LOG_NONE);
+            	           $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
 
             $tmp_output_log_ARRAY = $this->prepare_oLogOut(
             	                           $output_profile, 
@@ -6999,49 +6731,49 @@ class crnrstn_logging extends crnrstn
             	                           $oCRNRSTN_USR);
 
             switch($output_profile){
-                case CRNRSTN_LOG_EMAIL:
-                    /**
-                     *$tmp_output_log_ARRAY['text']
-                     *$tmp_output_log_ARRAY['html']
+                case $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL']:
+                    /* $tmp_output_log_ARRAY['text']
+                     * $tmp_output_log_ARRAY['html']
                      *
                      */
-                    $oCRNRSTN_USR->error_log('error_LogTrace() action ' . 
-                    	           'to take on profile[' . 
-                    	           $output_profile . ']', 
-                    	           __LINE__, 
-                    	           __METHOD__, 
-                    	           __FILE__, 
-                    	           CRNRSTN_LOG_NONE);
+                    $this->error_log('error_LogTrace() action ' . 
+                    	   'to take on profile[' . 
+                    	   $output_profile . ']', 
+                    	   __LINE__, 
+                    	   __METHOD__, 
+                    	   __FILE__, 
+                    	   $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
 
                 break;
-                case CRNRSTN_LOG_PROXY & CRNRSTN_LOG_EMAIL:
+                case $this->R_data['int_flag']['CRNRSTN_LOG_PROXY'] & 
+                     $this->R_data['int_flag']['CRNRSTN_LOG_EMAIL']:
                     /*$tmp_output_log_ARRAY['text']
                      *$tmp_output_log_ARRAY['html']
                      *
                      */
-                    $oCRNRSTN_USR->error_log('error_LogTrace() action ' . 
+                    $this->error_log('error_LogTrace() action ' . 
                     	           'to take on profile[' . 
                     	           $output_profile . ']', 
                     	           __LINE__, 
                     	           __METHOD__, 
-                    	           __FILE__, 
-                    	           CRNRSTN_LOG_NONE);
+                    	           __FILE__,
+                        $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
 
                 break;
-                case CRNRSTN_LOG_FILE:
-                case 'R_channel_FILE':
+                case $this->R_data['int_flag']['CRNRSTN_LOG_FILE']:
+                case $this->R_data['int_flag']['R_channel_FILE']:
 
                     /*$tmp_output_log_ARRAY['text']
                      *$output_profile_override_meta;
                      *
                      */
-                    $oCRNRSTN_USR->error_log('error_LogTrace() action ' . 
-                    	           'to take on profile[' . 
-                    	           $output_profile . ']', 
-                    	           __LINE__, 
-                    	           __METHOD__, 
-                    	           __FILE__, 
-                    	           CRNRSTN_LOG_NONE);
+                    $this->error_log('error_LogTrace() action ' . 
+                    	   'to take on profile[' . 
+                    	   $output_profile . ']', 
+                    	   __LINE__, 
+                    	   __METHOD__, 
+                    	   __FILE__, 
+                    	   $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
 
                     if(isset($output_profile_override_meta)){
 
@@ -7101,10 +6833,10 @@ class crnrstn_logging extends crnrstn
                          * for append. 
                          *
                          */
-                        if($fp = fopen($output_profile_override_meta, 'a')){
+                        if($fp = \fopen($output_profile_override_meta, 'a')){
 
-                            fwrite($fp, $tmp_output_log_ARRAY['text']);
-                            fclose($fp);
+                            \fwrite($fp, $tmp_output_log_ARRAY['text']);
+                            \fclose($fp);
 
                         }else{
 
@@ -7131,14 +6863,14 @@ class crnrstn_logging extends crnrstn
                              *
                         	 */
 
-                            $tmp_log_profile = $oCRNRSTN_USR->return_loggingProfile();
-                            $tmp_endpoint_profile = $oCRNRSTN_USR->return_endpointProfile(); //$_SESSION["CRNRSTN_" . crc32($tmp_configserial)]["CRNRSTN_" . $tmp_key]["_CRNRSTN_LOG_ENDPOINT"];
+                            $tmp_log_profile      = $this->return_loggingProfile();
+                            $tmp_endpoint_profile = $this->return_endpointProfile(); //$_SESSION["CRNRSTN_" . crc32($tmp_configserial)]["CRNRSTN_" . $tmp_key]["_CRNRSTN_LOG_ENDPOINT"];
 
-                            $tmp_log_profile_ARRAY = explode('|', $tmp_log_profile);
-                            $tmp_endpoint_profile_ARRAY = explode('|', $tmp_endpoint_profile);
+                            $tmp_log_profile_ARRAY      = \explode('|', $tmp_log_profile);
+                            $tmp_endpoint_profile_ARRAY = \explode('|', $tmp_endpoint_profile);
 
-                            $tmp_cnt_log_profile_pipe = sizeof($tmp_log_profile_ARRAY);
-                            $tmp_cnt_endpoint_pipe = sizeof($tmp_endpoint_profile_ARRAY);
+                            $tmp_cnt_log_profile_pipe = \sizeof($tmp_log_profile_ARRAY);
+                            $tmp_cnt_endpoint_pipe    = \sizeof($tmp_endpoint_profile_ARRAY);
 
                             if($tmp_cnt_log_profile_pipe == $tmp_cnt_endpoint_pipe){
 
@@ -7201,48 +6933,48 @@ class crnrstn_logging extends crnrstn
                     }
 
                 break;
-                case CRNRSTN_LOG_SCREEN_TEXT:
+                case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_TEXT']:
                     # $tmp_output_log_ARRAY['text']
-                    $oCRNRSTN_USR->error_log('error_LogTrace() action ' . 
-                    	           'to take on profile[' . 
-                    	           $output_profile . 
-                    	           ']', 
-                    	           __LINE__, 
-                    	           __METHOD__, 
-                    	           __FILE__, 
-                    	           CRNRSTN_LOG_NONE);
+                    $this->error_log('error_LogTrace() action ' . 
+                    	   'to take on profile[' . 
+                    	   $output_profile . 
+                    	   ']', 
+                    	   __LINE__, 
+                    	   __METHOD__, 
+                    	   __FILE__, 
+                    	   $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
 
                     print_r($tmp_output_log_ARRAY['text']);
 
                 break;
-                case CRNRSTN_LOG_SCREEN:
-                case CRNRSTN_LOG_SCREEN_HTML:
+                case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN']:
+                case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML']:
                     # $tmp_output_log_ARRAY['html']
-                    $oCRNRSTN_USR->error_log('error_LogTrace() action ' . 
-                    	           'to take on profile[' . 
-                    	           $output_profile . ']', 
-                    	           __LINE__, 
-                    	           __METHOD__, 
-                    	           __FILE__, 
-                    	           CRNRSTN_LOG_NONE);
+                    $this->error_log('error_LogTrace() action ' . 
+                    	   'to take on profile[' . 
+                    	   $output_profile . ']', 
+                    	   __LINE__, 
+                    	   __METHOD__, 
+                    	   __FILE__,
+                           $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
                     error_log('[mthd ' . 
                     	__METHOD__ . 
                     	'] [lnum ' . 
                     	__LINE__ . '] Why is this still running? ' . 
                     	'...knock it off, mate.');
                     //echo htmlspecialchars(print_r($tmp_output_log_ARRAY['html']));
-                    print_r($tmp_output_log_ARRAY['html']);
+                    \print_r($tmp_output_log_ARRAY['html']);
 
                 break;
-                case CRNRSTN_LOG_SCREEN_HTML_HIDDEN:
+                case $this->R_data['int_flag']['CRNRSTN_LOG_SCREEN_HTML_HIDDEN']:
                     # $tmp_output_log_ARRAY['text']
-                    $oCRNRSTN_USR->error_log('error_LogTrace() action ' . 
+                    $this->error_log('error_LogTrace() action ' . 
                     	           'to take on profile[' . 
                     	           $output_profile . ']', 
                     	           __LINE__, 
                     	           __METHOD__, 
                     	           __FILE__, 
-                    	           CRNRSTN_LOG_NONE);
+                    	           $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
 
                     print_r('
 <!--
@@ -7257,11 +6989,11 @@ class crnrstn_logging extends crnrstn
                  *case 'R_channel_SESSION':
                  *
                  */
-                case 'R_channel_DATABASE':
-                case 'R_channel_SSDTLA':
-                case 'R_channel_PSSDTLA':
-                case 'R_channel_RUNTIME':
-                case 'R_channel_SOAP':
+                case $this->R_data['int_flag']['R_channel_DATABASE']:
+                case $this->R_data['int_flag']['R_channel_SSDTLA']:
+                case $this->R_data['int_flag']['R_channel_PSSDTLA']:
+                case $this->R_data['int_flag']['R_channel_RUNTIME']:
+                case $this->R_data['int_flag']['R_channel_SOAP']:
                 /*case 'R_channel_ALL':
                  *case 'R_channel_FORM':
                  *
@@ -7274,21 +7006,17 @@ class crnrstn_logging extends crnrstn
                      * $tmp_output_log_ARRAY['text']
 	                 *
 	                 */
-                    $oCRNRSTN_USR->error_log('error_LogTrace() action to ' . 
-                    	           'take on DEFAULT=profile[' . 
-                    	           $output_profile . ']', 
-                    	           __LINE__, 
-                    	           __METHOD__, 
-                    	           __FILE__, 
-                    	           CRNRSTN_LOG_NONE);
+                    $this->error_log('error_LogTrace() action to ' . 
+                    	   'take on DEFAULT=profile[' .
+                    	   $output_profile . ']',
+                    	   __LINE__,
+                    	   __METHOD__,
+                    	   __FILE__,
+                    	   $this->R_data['int_flag']['CRNRSTN_LOG_NONE']);
 
                     if(isset($tmp_output_log_ARRAY['text']) && 
                     	($tmp_output_log_ARRAY['text'] != ''))
-                    {
-
                         error_log($tmp_output_log_ARRAY['text']);
-
-                    }
 
                 break;
 
@@ -7316,11 +7044,11 @@ class crnrstn_logging extends crnrstn
              * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
              *
              */
-            $oCRNRSTN_USR->catch_exception(
-            	           $e, 
-            	           LOG_ERR, 
-            	           __METHOD__, 
-            	           __NAMESPACE__);
+            $this->catch_exception(
+                   $e,
+                   LOG_ERR,
+                   __METHOD__,
+                   __NAMESPACE__);
 
             return false;
         }
@@ -7365,10 +7093,10 @@ class crnrstn_logging extends crnrstn
                     // Validate file path 
                     // on file open for 
                     // append. 
-                    if($fp = fopen($output_profile_override_meta, 'a')){
+                    if($fp = \fopen($output_profile_override_meta, 'a')){
 
-                        fwrite($fp, $tmp_output_log_ARRAY['text']);
-                        fclose($fp);
+                        \fwrite($fp, $tmp_output_log_ARRAY['text']);
+                        \fclose($fp);
 
                     }else{
 
@@ -7387,7 +7115,7 @@ class crnrstn_logging extends crnrstn
 
                 }else{
 
-                    $tmp_key = $_SESSION['CRNRSTN_' . crc32($_SESSION['R_cluster_id'])]['CRNRSTN_ENV_KEY_CRC'];
+                    $tmp_key          = $_SESSION['CRNRSTN_' . crc32($_SESSION['R_cluster_id'])]['CRNRSTN_ENV_KEY_CRC'];
                     $tmp_configserial = $_SESSION['R_cluster_id'];
 
                     $tmp_file_path = $_SESSION["CRNRSTN_" . crc32($tmp_configserial)]["CRNRSTN_" . $tmp_key]["_CRNRSTN_LOG_ENDPOINT"];
@@ -7398,8 +7126,8 @@ class crnrstn_logging extends crnrstn
                     // for append. 
                     if($fp = fopen($tmp_file_path, 'a')){
 
-                        fwrite($fp, $tmp_output_log_ARRAY['text']);
-                        fclose($fp);
+                        \fwrite($fp, $tmp_output_log_ARRAY['text']);
+                        \fclose($fp);
 
                     }else{
 
@@ -7407,7 +7135,7 @@ class crnrstn_logging extends crnrstn
                          * HOOOSTON, VE HAFF PROBLEM!
                          * https://www.wired.com/2011/04/alt-text-spacecraft/
                          *
-                         */
+                         *
                         /**
                         throw new Exception('Unable to locate the ' . 
                             'provided path or open/create ' . 
@@ -7423,18 +7151,20 @@ class crnrstn_logging extends crnrstn
             case 'SCREEN_TEXT':
 
                 # $tmp_output_log_ARRAY['text']
-                print_r($tmp_output_log_ARRAY['text']);
+                \print_r($tmp_output_log_ARRAY['text']);
 
             break;
             case 'SCREEN':
             case 'SCREEN_HTML':
+
                 error_log('2224 log - Why is this still running?');
                 # $tmp_output_log_ARRAY['html']
-                echo htmlspecialchars(print_r($tmp_output_log_ARRAY['html']));
+                echo \htmlspecialchars(print_r($tmp_output_log_ARRAY['html']));
 
             break;
             case 'SCREEN_HTML_HIDDEN':
                 # $tmp_output_log_ARRAY['text']
+
                 echo htmlspecialchars(print_r('<!--
 ' . $tmp_output_log_ARRAY['text'] . '
 -->'));
@@ -7446,11 +7176,7 @@ class crnrstn_logging extends crnrstn
                 # $tmp_output_log_ARRAY['text']
                 if(isset($tmp_output_log_ARRAY['text']) && 
                     $tmp_output_log_ARRAY['text']!='')
-                {
-
                     error_log($tmp_output_log_ARRAY['text']);
-
-                }
 
             break;
 
@@ -7466,16 +7192,13 @@ class crnrstn_logging extends crnrstn
                      $logSource)
     {
 
-        if($this->log_output == ''){
-
+        if($this->log_output == '')
             $this->log_output = '** The CRNRSTN :: Lightsaber RoCEv2 ' . 
                                 'SOAP Services Layer configuration ' . 
                                 'file debug mode of "' . 
                                 $this->CRNRSTN_debug_mode . 
                                 '" prevents aggregation of ' . 
                                 'log trace data. **';
-
-        }
 
         $tmp_log_output_ARRAY = $this->compile_log_output(
                                        $oLog_output_ARRAY, 
@@ -7485,8 +7208,8 @@ class crnrstn_logging extends crnrstn
         $this->emailDataElements['subject'] = 'CRNRSTN :: logging ' . 
                                               'notification captured on ' . 
                                               $_SERVER['SERVER_NAME'];
-        $this->emailDataElements['text'] = 'This is a triggered ' . 
-                                           'logging notification from CRNRSTN ::
+        $this->emailDataElements['text']    = 'This is a triggered ' .
+                                              'logging notification from CRNRSTN ::
 
 Information about this notice:
 - - - - - - - - - - - - - - - - - - - -
@@ -7535,15 +7258,9 @@ website administrator.
            $this->emailDataElements['subject'], 
            $this->emailDataElements['text'], 
            $this->emailDataElements['headers']))
-        {
-
             return "success";
-
-        }else{
-
+        else
             return "mailsend error";
-
-        }
 
     }
     */

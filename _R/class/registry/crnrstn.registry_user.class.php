@@ -15163,53 +15163,60 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
      */
     private function config_load_static_application_data()
     {
-        // This method was copied
-        // from The Lightbox Helper
-        // by eVifweb on,
-        //
-        // Wednesday, August 7, 2024 @ 2345 hrs.
-        //
-        //
-        // 5
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * This method was copied
+         * from The Lightbox Helper
+         * by eVifweb on,
+         *
+         * Wednesday, August 7, 2024 @ 2345 hrs.
+         *
+         *
+         * 5
+         *
+         */
 
-        //
-        // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-        // J5, my boy!
-        //
-        // Initialize the runtime
-        // configuration alpha-
-        // to-binary shift crypt
-        // key for the CRNRSTN ::
-        // Lightsaber SOAP
-        // Services Layer.
-        //
-        //
-        // 5 ::
-        //
-        // Taken from CRNRSTN ::: Lightsaber. Tuesday, July 21, 2024 @ 0635 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * J5, my boy!
+         *
+         * Initialize the runtime
+         * configuration alpha-
+         * to-binary shift crypt
+         * key for the CRNRSTN ::
+         * Lightsaber SOAP
+         * Services Layer.
+         *
+         *
+         * 5 ::
+         *
+         * Taken from CRNRSTN ::: Lightsaber. Tuesday, July 21, 2024 @ 0635 hrs.
+         *
+         */
         $this->initialize_alpha_shift_crypt('JFIVEMYBOY');
 
-        //
-        // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-        // J5, my boy!
-        //
-        //
-        // 5
-        //
-        // Sunday, July 21, 2024 @ 0643 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * J5, my boy!
+         *
+         *
+         * 5
+         *
+         * Sunday, July 21, 2024 @ 0643 hrs.
+         *
+         */
         $this->encoder_wheel_integrations();
 
-        //
-        // Initialize application
-        // path resource identifier
-        // array for endpoint
-        // resource identifiers
-        // managed by the CRNRSTN ::
-        // Lightsaber SOAP
-        // Services Layer.
-        //
-        //
-        // 5 :: Wednesday, July 24, 2024 @ 1320 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Initialize application
+         * path resource identifier
+         * array for endpoint
+         * resource identifiers
+         * managed by the CRNRSTN ::
+         * Lightsaber SOAP
+         * Services Layer.
+         *
+         *
+         * 5 :: Wednesday, July 24, 2024 @ 1320 hrs.
+         *
+         */
         self::$ssl_sensitive_paths_ARRAY = array(
             self::$R_data['R_cluster_id'] => array(
             'http'                  => array(0 => 'HTTP',
@@ -15234,80 +15241,79 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                                              1 => 'crnrstn_soap_https'))
         );
 
-        //
-        // Initialize the CRNRSTN ::
-        // Lightsaber SOAP Services
-        // Layer Hypertext Transfer
-        // Protocol (HTTP) connection
-        // certification state as
-        // having an active
-        // (SSL) state.
-        //
-        //
-        // 5
-        //
-        // Sunday, July 21, 2024 @ 0100 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Initialize the CRNRSTN ::
+         * Lightsaber SOAP Services
+         * Layer Hypertext Transfer
+         * Protocol (HTTP) connection
+         * certification state as
+         * having an active
+         * (SSL) state.
+         *
+         *
+         * 5
+         *
+         * Sunday, July 21, 2024 @ 0100 hrs.
+         *
+         */
         self::$hypertext_transfer_protocol_root = 'https://';
 
-        //
-        // Does this connection
-        // actually have an SSL
-        // certificate?
-        //
-        // If there is no cert,
-        // we will make an
-        // adjustment to the URI
-        // string prefix to
-        // arrive at an industry
-        // standard implementation
-        // of accepted protocol
-        // standards for any
-        // returned hypertext
-        // transfer protocol
-        // link, guys and gals.
-        //
-        //
-        // 5 :: Sunday, July 21, 2024 @ 0103 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Does this connection
+         * actually have an SSL
+         * certificate?
+         *
+         * If there is no cert,
+         * we will make an
+         * adjustment to the URI
+         * string prefix to
+         * arrive at an industry
+         * standard implementation
+         * of accepted protocol
+         * standards for any
+         * returned hypertext
+         * transfer protocol
+         * link, guys and gals.
+         *
+         *
+         * 5 :: Sunday, July 21, 2024 @ 0103 hrs.
+         *
+         */
         if(!isset(self::$is_ssl)){
 
-            //
-            // Initialize the CRNRSTN ::
-            // Lightsaber SOAP Services
-            // Layer Hypertext Transfer
-            // Protocol (HTTP) connection
-            // certification state.
-            //
-            //
-            // 5 :: Wednesday, July 24, 2024 @ 1354 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Initialize the CRNRSTN ::
+             * Lightsaber SOAP Services
+             * Layer Hypertext Transfer
+             * Protocol (HTTP) connection
+             * certification state.
+             *
+             *
+             * 5 :: Wednesday, July 24, 2024 @ 1354 hrs.
+             *
+             */
             self::$is_ssl = $this->is_ssl();
 
             if(!(self::$is_ssl !== false)){
 
-                //
-                // The CRNRSTN :: Lightsaber
-                // SOAP Services Layer
-                // Hypertext Transfer
-                // Protocol (HTTP) connection
-                // hypertext transfer protocol
-                // root was created on
-                // Wednesday, July 24, 2024 @ 1541 hrs.
-                //
-                //
-                // 5
-                //
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * The CRNRSTN :: Lightsaber
+                 * SOAP Services Layer
+                 * Hypertext Transfer
+                 * Protocol (HTTP) connection
+                 * hypertext transfer protocol
+                 * root was created on
+                 * Wednesday, July 24, 2024 @ 1541 hrs.
+                 *
+                 *
+                 * 5
+                 *
+                 */
                 self::$hypertext_transfer_protocol_root = 'http://';
 
             }
 
         }
-
-        \error_log('[lnum ' . 
-            __LINE__ . '] [mthd ' . 
-            __METHOD__ .
-            '] Finished: config_load_static_application_data ' . 
-            print_r(self::$ssl_sensitive_paths_ARRAY, true) . 
-            '. hypertext_transfer_protocol_root [' . 
-            print_r(self::$hypertext_transfer_protocol_root, true) . '].');
 
     }
 
@@ -15324,39 +15330,45 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                      $name, 
                      $data_request_bypass = NULL)
     {
-        // This method was copied from The Lightbox Helper
-        // by eVifweb on Wednesday, August 7, 2024 @ 2349 hrs.
-        //
-        // Please note: The switch default case
-        //              statement is the chosen
-        //              use-case for the articulation
-        //              of the initialization of
-        //              the system registry at the
-        //              construction of the object.
-        //
-        //              The CRNRSTN :: Lightsaber SOAP
-        //              Services Layer system registry:
-        //              /_lightbox_helper/_config/_config.resource_registry/crnrstn.native_resource_registry.function.php
-        //
-        //
-        //              5
-        //
-        //              Thursday, July 18, 2024 @ 0711 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * This method was copied from The Lightbox Helper
+         * by eVifweb on Wednesday, August 7, 2024 @ 2349 hrs.
+         *
+         * Please note: The switch default case
+         *              statement is the chosen
+         *              use-case for the articulation
+         *              of the initialization of
+         *              the system registry at the
+         *              construction of the object.
+         *
+         *              The CRNRSTN :: Lightsaber SOAP
+         *              Services Layer system registry:
+         *              /_lightbox_helper/_config/_config.resource_registry/crnrstn.native_resource_registry.function.php
+         *
+         *
+         *              5
+         *
+         *              Thursday, July 18, 2024 @ 0711 hrs.
+         *
+         */
         try{
 
-            // To edit the default system values,
-            //
-            // [Please read as,
-            // to see the _lightbox_helper_by_eVifweb_settings()
-            // global function definition.]
-            //
-            // Please see,
-            // _lightbox_helper/_config/config.lightbox_helper/lightbox_helper.settings.function.php.
-            //
-            //
-            // 5
-            //
-            // Thursday, June 13, 2024 @ 0804 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * To edit the default system values,
+             *
+             * [Please read as,
+             * to see the _lightbox_helper_by_eVifweb_settings()
+             * global function definition.]
+             *
+             * Please see,
+             * _lightbox_helper/_config/config.lightbox_helper/lightbox_helper.settings.function.php.
+             *
+             *
+             * 5
+             *
+             * Thursday, June 13, 2024 @ 0804 hrs.
+             *
+             */
             switch($name){
                 case 'only_access_native_registered_resources_ARRAY':
                     // 5 :: Friday, August 9, 2024 @ 0407 hrs.
@@ -15377,29 +15389,33 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 case 'byte_units_ARRAY':
                     // 5 :: Friday, July 5, 2024 @ 0100 hrs.
 
-                    //
-                    // We store byte units power data with the
-                    // array index, since we don't need any
-                    // additional string meta data where this
-                    // structure is used.
-                    //
-                    // 5 :: Friday, July 5, 2024 @ 0050 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * We store byte units power data with the
+                     * array index, since we don't need any
+                     * additional string meta data where this
+                     * structure is used.
+                     *
+                     * 5 :: Friday, July 5, 2024 @ 0050 hrs.
+                     *
+                     */
                     $tmp_name = 'byte_units_ARRAY[SI_METRIC][STRING_PATTERN][UNITS_EXPONENTIAL_POSITIVE]';
                     self::$R_data['R_byte_units']['SI_Metric']['string_pattern']['units_exponential_positive'] = _crnrstn_registry_user_settings($tmp_name, $this);
 
-                    //
-                    // Initialize ISO/IEC 80000-13
-                    // Information Science and Technology
-                    // quantities and units detection,
-                    // power, and data architecture
-                    // support data structures
-                    // for The Lightbox Helper
-                    // by eVifweb.
-                    //
-                    //
-                    // 5
-                    //
-                    // Friday, July 5, 2024 @ 0056 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize ISO/IEC 80000-13
+                     * Information Science and Technology
+                     * quantities and units detection,
+                     * power, and data architecture
+                     * support data structures
+                     * for The Lightbox Helper
+                     * by eVifweb.
+                     *
+                     *
+                     * 5
+                     *
+                     * Friday, July 5, 2024 @ 0056 hrs.
+                     *
+                     */
                     $tmp_name = 'byte_units_ARRAY[ISO_80000][BASE]';
                     self::$R_data['R_byte_units']['ISO_80000']['base']                                    = _crnrstn_registry_user_settings($tmp_name, $this);
 
@@ -15424,12 +15440,10 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $tmp_name = 'byte_units_ARRAY[ISO_80000][STRING_PATTERN][ISO_UNITS_BYTES]';
                     self::$R_data['R_byte_units']['ISO_80000']['string_pattern']['ISO_units_bytes']       = _crnrstn_registry_user_settings($tmp_name, $this);
 
-                    //
                     // 5 :: Friday, July 5, 2024 @ 0055 hrs.
                     $tmp_name = 'byte_units_ARRAY[SI_METRIC][STRING_PATTERN][SI_UNITS_BYTES]';
                     self::$R_data['R_byte_units']['SI_Metric']['string_pattern']['SI_units_bytes']        = _crnrstn_registry_user_settings($tmp_name, $this);
 
-                    //
                     // 5 :: Friday, July 5, 2024 @ 0101 hrs.
                     $tmp_name = 'byte_units_ARRAY[SI_METRIC][STRING_PATTERN][SI_UNITS_EXPONENTIAL]';
                     self::$R_data['R_byte_units']['SI_Metric']['string_pattern']['SI_units_exponential']  = _crnrstn_registry_user_settings($tmp_name, $this);
@@ -15485,80 +15499,82 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 break;
                 case 'framework_resources':
 
-                    //
-                    // Is this is a
-                    // constructor articulated
-                    // bypass request for
-                    // application initialization?
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Is this is a
+                     * constructor articulated
+                     * bypass request for
+                     * application initialization?
+                     *
+                     */
                     if(isset($data_request_bypass)){
 
                         switch($data_request_bypass){
                             case 'framework_resources':
 
-                                //
-                                //# C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                //
-                                // 100% static (no links) execution.
-                                //
-                                //  ----------------------
-                                //  Load all native
-                                //  registered resources
-                                //  needed to support
-                                //  the object boot
-                                //  sequence, or the
-                                //  object's construction.
-                                //
-                                //  Not that it matters,
-                                //  but, internally, the
-                                //  resource load sequence
-                                //  control architecture
-                                //  that fires for
-                                //  'object_boot' is
-                                //  actually just a
-                                //  system registry
-                                //  resource queue flush
-                                //  method articulation.
-                                //
-                                //  So,...all pre-existing
-                                //  (to boot) resources
-                                //  will be flushed along
-                                //  with the native boot
-                                //  up sequenced
-                                //  registry resources.
-                                //
-                                //  This would only matter if
-                                //  the CRNRSTN :: Lightsaber
-                                //  SOAP Services Layer
-                                //  began supporting something
-                                //  like SESSION or database
-                                //  driven system
-                                //  registry movements.
-                                //
-                                //  Again, this is a fresh
-                                //  boot up, kind people.
-                                //
-                                //
-                                //  5
-                                //
-                                //  Wednesday, July 24, 2024 @ 2148 hrs.
-                                //  ----------------------
-                                //
-                                // Initialize critical configuration
-                                // class and function definition
-                                // file paths and meta for...
-                                //
-                                // The Lightbox Helper
-                                // by eVifweb
-                                //
-                                // This is in
-                                // support of
-                                // the boot up
-                                // of an object.
-                                //
-                                //
-                                // 5
-                                //
-                                // Sunday, July 7, 2024 @ 2208 hrs.
+                                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                 * 100% static (no links) execution.
+                                 *
+                                 * ----------------------
+                                 * Load all native
+                                 * registered resources
+                                 * needed to support
+                                 * the object boot
+                                 * sequence, or the
+                                 * object's construction.
+                                 *
+                                 * Not that it matters,
+                                 * but, internally, the
+                                 * resource load sequence
+                                 * control architecture
+                                 * that fires for
+                                 * 'object_boot' is
+                                 * actually just a
+                                 * system registry
+                                 * resource queue flush
+                                 * method articulation.
+                                 *
+                                 * So,...all pre-existing
+                                 * (to boot) resources
+                                 * will be flushed along
+                                 * with the native boot
+                                 * up sequenced
+                                 * registry resources.
+                                 *
+                                 * This would only matter if
+                                 * the CRNRSTN :: Lightsaber
+                                 * SOAP Services Layer
+                                 * began supporting something
+                                 * like SESSION or database
+                                 * driven system
+                                 * registry movements.
+                                 *
+                                 * Again, this is a fresh
+                                 * boot up, kind people.
+                                 *
+                                 *
+                                 * 5
+                                 *
+                                 * Wednesday, July 24, 2024 @ 2148 hrs.
+                                 * ----------------------
+                                 *
+                                 * Initialize critical configuration
+                                 * class and function definition
+                                 * file paths and meta for...
+                                 *
+                                 * The Lightbox Helper
+                                 * by eVifweb
+                                 *
+                                 * This is in
+                                 * support of
+                                 * the boot up
+                                 * of an object.
+                                 *
+                                 *
+                                 * 5
+                                 *
+                                 * Sunday, July 7, 2024 @ 2208 hrs.
+                                 *
+                                 */
                                 _crnrstn_native_resource_registry('object_boot', $this);
 
                             break;
@@ -15570,9 +15586,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 break;
                 default:
 
-                    //
-                    // Initialize the data load queue
-                    // sequence position tracking integer.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize the data load queue
+                     * sequence position tracking integer.
+                     *
+                     */
                     $tmp_load_queue_pos = 0;
                     $tmp_object_settings_key_ARRAY = array();
 
@@ -15586,43 +15604,46 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     }
 
-                    //
-                    // Load The Lightbox Helper 
-                    // by eVifweb system data 
-                    // global function 
-                    // definition file. 
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Load The Lightbox Helper
+                     * by eVifweb system data
+                     * global function
+                     * definition file.
+                     *
+                     */
                     $tmp_lightbox_helper_system_data_function_file = CRNRSTN_ROOT . DIRECTORY_SEPARATOR .
                     self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK_DIRECTORY'] . DIRECTORY_SEPARATOR . '_config' . DIRECTORY_SEPARATOR .
                     'config.lightbox_helper'. DIRECTORY_SEPARATOR . '_lightbox_helper.system_data.inc.php';
 
-                    if(is_file($tmp_lightbox_helper_system_data_function_file)){
+                    if(\is_file($tmp_lightbox_helper_system_data_function_file)){
 
                         if(!isset(self::$config_file_load_flag_ARRAY[$tmp_lightbox_helper_system_data_function_file])){
 
                             self::$config_file_load_flag_ARRAY[$tmp_lightbox_helper_system_data_function_file] = 1;
 
-                            //
                             // 5 :: Sunday, June 30, 2024 @ 0237 hrs.
                             require_once($tmp_lightbox_helper_system_data_function_file);
 
                         }
 
-                        //
-                        // Initialize The Lightbox Helper
-                        // by eVifweb static system data
-                        // load control array for
-                        // data initialization sequencing
-                        // and control.
-                        //
-                        // Please note: framework_directory (which is
-                        //              no longer listed in the control
-                        //              array below) is initialized
-                        //              from outside this method.
-                        //
-                        //
-                        // 5
-                        //
-                        // Friday, August 9, 2024 @ 0414 hrs.
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Initialize The Lightbox Helper
+                         * by eVifweb static system data
+                         * load control array for
+                         * data initialization sequencing
+                         * and control.
+                         *
+                         * Please note: framework_directory (which is
+                         *              no longer listed in the control
+                         *              array below) is initialized
+                         *              from outside this method.
+                         *
+                         *
+                         * 5
+                         *
+                         * Friday, August 9, 2024 @ 0414 hrs.
+                         *
+                         */
                         $tmp_object_settings_key_ARRAY = array(
                         'only_access_native_registered_resources_ARRAY' => 1, 'salt_length' => 1,
                         'byte_reporting_precision' => 1, 'byte_units_ARRAY' => 1, 'byte_reporting_units' => 1,
@@ -15634,10 +15655,12 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                         foreach($tmp_object_settings_key_ARRAY as $tmp_object_settings_key => $tmp_flag_int){
 
-                            //
-                            // Increment the data load
-                            // queue sequence position
-                            // tracking integer.
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Increment the data load
+                             * queue sequence position
+                             * tracking integer.
+                             *
+                             */
                             $tmp_load_queue_pos++;
                             error_log(__LINE__ . ' ' . __METHOD__ . ' LOADING DATA [' . strval($tmp_object_settings_key) . '].');
 
@@ -15696,16 +15719,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }else{
 
-                //
-                // ...no CRNRSTN :: eh?
-                // You silly...
-                //
-                // Still gonna send it!
-                //
-                //
-                // 5
-                //
-                // Wednesday, June 12, 2024 @ 0152 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * ...no CRNRSTN :: eh?
+                 * You silly...
+                 *
+                 * Still gonna send it!
+                 *
+                 *
+                 * 5
+                 *
+                 * Wednesday, June 12, 2024 @ 0152 hrs.
+                 *
+                 */
                 $this->catch_exception(
                        $e, 
                        LOG_ERR, 
@@ -15854,6 +15879,52 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          *
          */
 
+        $resource_output = NULL;
+
+        switch($resource_name){
+            case __NAMESPACE__ . '\crnrstn_OAuth':
+            case 'crnrstn_OAuth':
+            case 'gabriel_oauth':
+                // 5 :: Tuesday, June 2, 2026 @ 0622 hrs.
+
+                $PHPMailer = NULL;
+
+                if(isset(self::$_R['kivotos']->R['registry_usr'])){
+
+                    self::$_R['kivotos']->R['registry_usr']->anoint('crnrstn_PHPMailer', $PHPMailer);
+
+                    $PHPMailer->setOAuth();
+                    $resource_output = $PHPMailer->getOAuth();
+
+                    return $resource_output;
+
+                }
+
+                $this->anoint('crnrstn_PHPMailer', $PHPMailer);
+
+                $PHPMailer->setOAuth();
+                $resource_output = $PHPMailer->getOAuth();
+
+                // 5 :: Tuesday, June 2, 2026 @ 0622 hrs.
+                return $resource_output;
+
+            break;
+
+        }
+
+        $R_resp = NULL;
+
+        if(isset(self::$_R['kivotos']->R['registry_usr']))
+             // 5 :: Tuesday, June 2, 2026 @ 0600 hrs.
+             self::$_R['kivotos']->R['registry_usr']->anoint(
+                                                     $resource_name,
+                                                     $R_resp);
+        else
+            // 5 :: Thursday, August 20, 2026 @ 0607 hrs.
+            $this->initialization_series_anoint(
+                   $resource_name,
+                   $R_resp);
+
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Return the anointed resource.
          * 5 :: Tuesday, June 2, 2026 @ 0555 hrs.
@@ -15985,7 +16056,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
     function return_registered_resource_meta(
              $name,
              $attribute = NULL, 
-             $R,
+             $R = NULL,
              $background_color_hex = '#FFF',
              $iso_lang_code = 'en',
              $R_debug_mode = CRNRSTN_DEBUG_OFF,
@@ -16189,7 +16260,6 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
     {
         // 5 :: Thursday, August 22, 2024 @ 0345 hrs.
 
-
         error_log('[lnum ' . __LINE__ .
             '] [' . __METHOD__ .
             '] $iso_lang_code[' . $iso_lang_code .
@@ -16257,12 +16327,14 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 break;
                 case 'css_styles':
-                    // 5 :: Monday, August 19, 2024 @ 0740 hrs.
-                    //
-                    // Edit: Added (r) mark and Copyright
-                    //       superscript CSS Tags as well as
-                    //       standardized some CSS nomenclature.
-                    //       5 :: Friday, October 31, 2025 @ 0629 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * 5 :: Monday, August 19, 2024 @ 0740 hrs.
+                     *
+                     * Edit: Added (r) mark and Copyright
+                     *       superscript CSS Tags as well as
+                     *       standardized some CSS nomenclature.
+                     *       5 :: Friday, October 31, 2025 @ 0629 hrs.
+                     */
 
                     if(!isset($background_color_hex)){
 
@@ -16270,17 +16342,19 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     }
 
-                    //
-                    // Check the application
-                    // acceleration memory
-                    // cache layer for
-                    // immediate style
-                    // data return.
-                    //
-                    //
-                    // 5
-                    //
-                    // Monday, August 19, 2024 @ 0754 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Check the application
+                     * acceleration memory
+                     * cache layer for
+                     * immediate style
+                     * data return.
+                     *
+                     *
+                     * 5
+                     *
+                     * Monday, August 19, 2024 @ 0754 hrs.
+                     *
+                     */
                     if(isset(self::$css_styles_ARRAY[self::$config_serial][$background_color_hex])){
 
                         return self::$css_styles_ARRAY[self::$config_serial][$background_color_hex];
@@ -16323,7 +16397,6 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     self::$css_styles_ARRAY[self::$config_serial][$background_color_hex] = $tmp_css_ARRAY;
 
-                    //
                     // 5 :: Monday, August 19, 2024 @ 0742 hrs.
                     return self::$css_styles_ARRAY[self::$config_serial][$background_color_hex];
 
@@ -16391,16 +16464,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }else{
 
-                //
-                // ...no CRNRSTN :: eh?
-                // You silly...
-                //
-                // Still gonna send it!
-                //
-                //
-                // 5
-                //
-                // Wednesday, July 31, 2024 @ 1047 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * ...no CRNRSTN :: eh?
+                 * You silly...
+                 *
+                 * Still gonna send it!
+                 *
+                 *
+                 * 5
+                 *
+                 * Wednesday, July 31, 2024 @ 1047 hrs.
+                 *
+                 */
                 $this->catch_exception(
                        $e, 
                        LOG_ERR, 
@@ -16428,20 +16503,24 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
         try{
 
-            //
-            // Is the registry
-            // loaded into memory.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Is the registry
+             * loaded into memory.
+             *
+             */
             switch($name){
                 case '_crnrstn_native_resource_registry':
 
-                    //
-                    // We will manually load
-                    // this resource if it
-                    // does not exists
-                    // in memory.
-                    //
-                    //
-                    // 5
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * We will manually load
+                     * this resource if it
+                     * does not exists
+                     * in memory.
+                     *
+                     *
+                     * 5
+                     *
+                     */
                     if(!function_exists($name)){
 
                         if(!isset(self::$object_boot_resources)){
@@ -16459,14 +16538,16 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 break;
                 case '_crnrstn_registry_user_settings':
 
-                    //
-                    // We will manually load
-                    // this resource if it
-                    // does not exists
-                    // in memory.
-                    //
-                    //
-                    // 5
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * We will manually load
+                     * this resource if it
+                     * does not exists
+                     * in memory.
+                     *
+                     *
+                     * 5
+                     *
+                     */
                     if(!function_exists($name)){
 
                         if(isset(self::$object_boot_resources)){
@@ -16528,16 +16609,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }else{
 
-                //
-                // ...no CRNRSTN :: eh?
-                // You silly...
-                //
-                // Still gonna send it!
-                //
-                //
-                // 5
-                //
-                // Wednesday, July 31, 2024 @ 1047 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * ...no CRNRSTN :: eh?
+                 * You silly...
+                 *
+                 * Still gonna send it!
+                 *
+                 *
+                 * 5
+                 *
+                 * Wednesday, July 31, 2024 @ 1047 hrs.
+                 *
+                 */
                 $this->catch_exception(
                        $e, 
                        LOG_ERR, 
@@ -16760,82 +16843,90 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
         try{
 
-            //
-            // Configuration resource
-            // basic path initialization.
-            //
-            // Initialize the
-            // application folder.
-            //
-            //
-            // 5
-            //
-            // Tuesday, August 6, 2024 @ 0733 hrs.
-            //
-            // CRNRSTN :: Lightsaber
-            // SOAP Services Layer
-            // system registry root
-            // path initialization.
-            //
-            //
-            // 5
-            //
-            // Friday, August 2, 2024 @ 0512 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Configuration resource
+             * basic path initialization.
+             *
+             * Initialize the
+             * application folder.
+             *
+             *
+             * 5
+             *
+             * Tuesday, August 6, 2024 @ 0733 hrs.
+             *
+             * CRNRSTN :: Lightsaber
+             * SOAP Services Layer
+             * system registry root
+             * path initialization.
+             *
+             *
+             * 5
+             *
+             * Friday, August 2, 2024 @ 0512 hrs.
+             *
+             */
             $tmp_dir_root_config = self::$application_paths_ARRAY[self::$config_serial]['FRAMEWORK']['DIRECTORY'] . 
                                    \DIRECTORY_SEPARATOR . '_config' . 
                                    \DIRECTORY_SEPARATOR . '_config.resource_registry' . \DIRECTORY_SEPARATOR;
 
-            //
-            // The Lightbox Helper
-            // by eVifweb
-            // will load the native
-            // resource registry.
-            //
-            //
-            // 5 :: Friday, July 12, 2024 @ 0640 hrs.
-            // # C # R # N # R # S # T # N # :: # L # I # G # H # T
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * The Lightbox Helper
+             * by eVifweb
+             * will load the native
+             * resource registry.
+             *
+             *
+             * 5 :: Friday, July 12, 2024 @ 0640 hrs.
+             *
+             */
             $tmp_registered_name                = array('_crnrstn_native_resource_registry' => 1);
             $tmp_file_path                      = array($tmp_dir_root_config . 'crnrstn.native_resource_registry.function.php');
             $tmp_load_method                    = 'require_once';
             $tmp_resource_type                  = 'FUNCTION_DEFINITION';
             $tmp_file_hash_algorithm_override   = 'sha256';
 
-            // 1 - Answer the question, are we told to load the
-            //     resource only one time?
-            //      - Check RESOURCE_TYPE.
-            //      - If RESOURCE_TYPE = CLASS_DEFINITION or
-            //        FUNCTION_DEFINITION, only run once. Explicitly.
-            //          - TODO :: Check to see if The Lightbox Helper
-            //            by eVifweb has already loaded the
-            //            configuration resource.
-            //          - TODO :: Check to see if the server runtime
-            //            already registers this resource
-            //            as defined in the system.
-            //      - If RESOURCE_TYPE = RUNTIME_EXECUTABLE should
-            //        load only one time if the LOAD_METHOD is
-            //        require_once or include_once.
-            //          - If LOAD_METHOD = *_once:
-            //               - TODO :: Check to see if The Lightbox Helper
-            //                 by eVifweb has already loaded the
-            //                 configuration resource.
-            //               - TODO :: Check to see if the server runtime
-            //                 already registers this resource
-            //                 as defined in the system.
-            //
-            //
-            // 5
-            //
-            // Thursday, July 11, 2024 @ 0811 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * 1 - Answer the question, are we told to load the
+             *     resource only one time?
+             *      - Check RESOURCE_TYPE.
+             *      - If RESOURCE_TYPE = CLASS_DEFINITION or
+             *        FUNCTION_DEFINITION, only run once. Explicitly.
+             *          - TODO :: Check to see if The Lightbox Helper
+             *            by eVifweb has already loaded the
+             *            configuration resource.
+             *          - TODO :: Check to see if the server runtime
+             *            already registers this resource
+             *            as defined in the system.
+             *      - If RESOURCE_TYPE = RUNTIME_EXECUTABLE should
+             *        load only one time if the LOAD_METHOD is
+             *        require_once or include_once.
+             *          - If LOAD_METHOD = *_once:
+             *               - TODO :: Check to see if The Lightbox Helper
+             *                 by eVifweb has already loaded the
+             *                 configuration resource.
+             *               - TODO :: Check to see if the server runtime
+             *                 already registers this resource
+             *                 as defined in the system.
+             *
+             *
+             * 5
+             *
+             * Thursday, July 11, 2024 @ 0811 hrs.
+             *
+             */
             if($this->is_valid_registered_resource(__METHOD__, $tmp_registered_name, $tmp_file_path, $tmp_load_method, $tmp_resource_type) !== false){
 
-                //
-                // This is a valid resource
-                // for which to be looking
-                // to load the resource
-                // definition file.
-                //
-                //
-                // 5 :: Monday, July 8, 2024 @ 0302 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * This is a valid resource
+                 * for which to be looking
+                 * to load the resource
+                 * definition file.
+                 *
+                 *
+                 * 5 :: Monday, July 8, 2024 @ 0302 hrs.
+                 *
+                 */
                 if(!($this->crnrstn_include_file(__METHOD__, $tmp_file_path, $tmp_load_method, $tmp_file_hash_algorithm_override) !== false)){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -16874,18 +16965,20 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 }
 
-                //
-                // Object vs.
-                // boolean return.
-                //
-                // Return true,
-                // if no initialization
-                // override is present.
-                //
-                //
-                // 5
-                //
-                // Tuesday, August 6, 2024 @ 0751 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Object vs.
+                 * boolean return.
+                 *
+                 * Return true,
+                 * if no initialization
+                 * override is present.
+                 *
+                 *
+                 * 5
+                 *
+                 * Tuesday, August 6, 2024 @ 0751 hrs.
+                 *
+                 */
                 if(isset(self::$object_boot_resources)){
 
                     if(strlen(self::$object_boot_resources) < 1){
@@ -16896,44 +16989,48 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 }
 
-                //
-                // Standardize what is
-                // (or is about to be)
-                // clean delimited
-                // string input data.
-                //
-                // Array data type is
-                // acceptable as input for
-                // $object_boot_resources.
-                //
-                // 5
-                //
-                // Tuesday, August 6, 2024 @ 0759 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Standardize what is
+                 * (or is about to be)
+                 * clean delimited
+                 * string input data.
+                 *
+                 * Array data type is
+                 * acceptable as input for
+                 * $object_boot_resources.
+                 *
+                 * 5
+                 *
+                 * Tuesday, August 6, 2024 @ 0759 hrs.
+                 *
+                 */
                 $this->make_tight_delimited_string(self::$object_boot_resources);
 
-                //
-                // Perform string
-                // delimiter detection.
-                //
-                // Technically, we do
-                // have self::$R_data['string_concat_delimiter_char'], 
-                // but more time needs
-                // to be spent here, and
-                // this is not as critical
-                // of a supporting
-                // architecture when I
-                // cannot yet still even
-                // load a single natively
-                // registered resource
-                // from the CRNRSTN ::
-                // Lightsaber SOAP
-                // Services Layer system
-                // resource registry.
-                //
-                //
-                // 5
-                //
-                // Friday, August 9, 2024 0042 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Perform string
+                 * delimiter detection.
+                 *
+                 * Technically, we do
+                 * have self::$R_data['string_concat_delimiter_char'],
+                 * but more time needs
+                 * to be spent here, and
+                 * this is not as critical
+                 * of a supporting
+                 * architecture when I
+                 * cannot yet still even
+                 * load a single natively
+                 * registered resource
+                 * from the CRNRSTN ::
+                 * Lightsaber SOAP
+                 * Services Layer system
+                 * resource registry.
+                 *
+                 *
+                 * 5
+                 *
+                 * Friday, August 9, 2024 0042 hrs.
+                 *
+                 */
                 $tmp_delimiter_char = '';
                 $tmp_is_delimited_bool = false;
                 $tmp_pos_comma = strpos(self::$object_boot_resources, ',');
@@ -16955,14 +17052,16 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if($tmp_is_delimited_bool !== false){
 
-                    //
-                    // This is
-                    // delimited data.
-                    //
-                    //
-                    // 5
-                    //
-                    // Friday, August 2, 2024 @ 0444 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * This is
+                     * delimited data.
+                     *
+                     *
+                     * 5
+                     *
+                     * Friday, August 2, 2024 @ 0444 hrs.
+                     *
+                     */
                     $tmp_resource_name_ARRAY = explode($tmp_delimiter_char, self::$object_boot_resources);
 
                 }else{
@@ -16972,10 +17071,12 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 }
 
-                //
-                // Register the
-                // system resource
-                // registry request.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Register the
+                 * system resource
+                 * registry request.
+                 *
+                 */
                 foreach($tmp_resource_name_ARRAY as $index => $name){
 
                     error_log('[lnum ' . __LINE__ .
@@ -16984,19 +17085,19 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     '] register request for name[' . strval($name) .
                     '].');
 
-                    //
-                    // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                    //
-                    // Is the requested resource
-                    // registered with the
-                    // CRNRSTN :: Lightsaber
-                    // SOAP Services Layer
-                    // resource registry?
-                    //
-                    //
-                    // 5
-                    //
-                    // Friday, August 9, 2024 @ 0131 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Is the requested resource
+                     * registered with the
+                     * CRNRSTN :: Lightsaber
+                     * SOAP Services Layer
+                     * resource registry?
+                     *
+                     *
+                     * 5
+                     *
+                     * Friday, August 9, 2024 @ 0131 hrs.
+                     *
+                     */
                     if(!$tmp_result = $this->is_valid_registered_resource(__METHOD__, $name)){
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -17021,32 +17122,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     }
 
-                    //
-                    // Register this request
-                    // to load a native
-                    // registered resource.
-                    //
-                    //
-                    // 5
-                    //
-                    // Friday, August 2, 2024 @ 0551 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Register this request
+                     * to load a native
+                     * registered resource.
+                     *
+                     *
+                     * 5
+                     *
+                     * Friday, August 2, 2024 @ 0551 hrs.
+                     *
+                     */
                     $this->register_registered_resource_request('registry_boot', $name, $index);
 
                 }
 
-                //
-                // Articulate the CRNRSTN ::
-                // Lightsaber SOAP Services
-                // Layer system registry.
-                //
-                // Returns true or
-                // an object such
-                // as crnrstn.
-                //
-                //
-                // 5
-                //
-                // Sunday, July 21, 2024 @ 0219 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Articulate the CRNRSTN ::
+                 * Lightsaber SOAP Services
+                 * Layer system registry.
+                 *
+                 * Returns true or
+                 * an object such
+                 * as crnrstn.
+                 *
+                 *
+                 * 5
+                 *
+                 * Sunday, July 21, 2024 @ 0219 hrs.
+                 *
+                 */
                 return _crnrstn_native_resource_registry('object_boot', $this);
 
             }else{
@@ -17059,14 +17164,16 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }
 
-            //
-            // Return false for
-            // file load suppression.
-            //
-            //
-            // 5
-            //
-            // Sunday, July 21, 2024 @ 0219 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Return false for
+             * file load suppression.
+             *
+             *
+             * 5
+             *
+             * Sunday, July 21, 2024 @ 0219 hrs.
+             *
+             */
             return false;
 
         }catch(\Exception $e){
@@ -17101,16 +17208,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }else{
 
-                //
-                // ...no CRNRSTN :: eh?
-                // You silly...
-                //
-                // Still gonna send it!
-                //
-                //
-                // 5
-                //
-                // Wednesday, June 12, 2024 @ 0152 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * ...no CRNRSTN :: eh?
+                 * You silly...
+                 *
+                 * Still gonna send it!
+                 *
+                 *
+                 * 5
+                 *
+                 * Wednesday, June 12, 2024 @ 0152 hrs.
+                 *
+                 */
                 $this->catch_exception(
                        $e, 
                        LOG_ERR, 
@@ -17136,9 +17245,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
     {
         // 5 :: Thursday, August 8, 2024 @ 0215 hrs.
 
-        //
-        // Configuration resource
-        // basic path initialization.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Configuration resource
+         * basic path initialization.
+         *
+         */
         $tmp_path                       = $this->system_path('R_framework_directory') .
                                           \DIRECTORY_SEPARATOR;
         $tmp_dir_root_config            = $tmp_path . 
@@ -17147,79 +17258,94 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                                           '_config.resource_registry' . 
                                           \DIRECTORY_SEPARATOR;
 
-        //
-        // # C # R # N # R # S # T # N # :: # L # I # G # H # T
-        //
-        // CRNRSTN :: Lightsaber RoCEv2 SOAP
-        // Services Layer Registry
-        // User Object Configuration
-        // Function Definition
-        // Resource File.
-        //
-        //
-        // 5
-        //
-        // Thursday, August 8, 2024 @ 0152 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * CRNRSTN :: Lightsaber RoCEv2 SOAP
+         * Services Layer Registry
+         * User Object Configuration
+         * Function Definition
+         * Resource File.
+         *
+         *
+         * 5
+         *
+         * Thursday, August 8, 2024 @ 0152 hrs.
+         *
+         */
         $tmp_registered_name    = array('_crnrstn_registry_user_settings' => 1);
         $tmp_file_path          = $tmp_dir_root_config . 'crnrstn.registry_user_settings.function.php';
         $tmp_load_method        = 'require';
         $tmp_resource_type      = 'FUNCTION_DEFINITION';
         $tmp_file_hash_algorithm_override = self::$hmac_algorithm;
 
-        //
-        // I. Answer the question,
-        //    are we told to load the
-        //    resource only one time?
-        //
-        //      - Check RESOURCE_TYPE.
-        //
-        //      - If RESOURCE_TYPE = CLASS_DEFINITION
-        //        or FUNCTION_DEFINITION, only
-        //        run once. Explicitly.
-        //
-        //          - TODO :: Check to see if
-        //                    The Lightbox Helper
-        //                    by eVifweb has already
-        //                    loaded the configuration
-        //                    resource.
-        //
-        //          - TODO :: Check to see if
-        //                    the server runtime already
-        //                    registers this resource
-        //                    as defined in the system.
-        //
-        //      - If RESOURCE_TYPE = RUNTIME_EXECUTABLE
-        //        should load only one time if the
-        //        LOAD_METHOD is require_once
-        //        or include_once.
-        //
-        //          - If LOAD_METHOD = *_once:
-        //
-        //               - TODO :: Check to see if
-        //                         The Lightbox Helper
-        //                         by eVifweb has already
-        //                         loaded the
-        //                         configuration resource.
-        //
-        //               - TODO :: Check to see if
-        //                         the server runtime
-        //                         already registers this
-        //                         resource as defined in
-        //                         the system.
-        //
-        //
-        // 5
-        //
-        // Thursday, July 11, 2024 @ 0811 hrs.
-        if($this->is_valid_registered_resource(__METHOD__, $tmp_registered_name, $tmp_file_path, $tmp_load_method, $tmp_resource_type) !== false){
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * I. Answer the question,
+         *    are we told to load the
+         *    resource only one time?
+         *
+         *      - Check RESOURCE_TYPE.
+         *
+         *      - If RESOURCE_TYPE = CLASS_DEFINITION
+         *        or FUNCTION_DEFINITION, only
+         *        run once. Explicitly.
+         *
+         *          - TODO :: Check to see if
+         *                    The Lightbox Helper
+         *                    by eVifweb has already
+         *                    loaded the configuration
+         *                    resource.
+         *
+         *          - TODO :: Check to see if
+         *                    the server runtime already
+         *                    registers this resource
+         *                    as defined in the system.
+         *
+         *      - If RESOURCE_TYPE = RUNTIME_EXECUTABLE
+         *        should load only one time if the
+         *        LOAD_METHOD is require_once
+         *        or include_once.
+         *
+         *          - If LOAD_METHOD = *_once:
+         *
+         *               - TODO :: Check to see if
+         *                         The Lightbox Helper
+         *                         by eVifweb has already
+         *                         loaded the
+         *                         configuration resource.
+         *
+         *               - TODO :: Check to see if
+         *                         the server runtime
+         *                         already registers this
+         *                         resource as defined in
+         *                         the system.
+         *
+         *
+         * 5
+         *
+         * Thursday, July 11, 2024 @ 0811 hrs.
+         *
+         */
+        if($this->is_valid_registered_resource(
+                  __METHOD__,
+                  $tmp_registered_name,
+                  $tmp_file_path,
+                  $tmp_load_method,
+                  $tmp_resource_type) !== false)
+        {
 
-            //
-            // We need to define
-            // the function.
-            //
-            //
-            // 5 :: Monday, July 8, 2024 @ 0302 hrs.
-            if(!($this->crnrstn_include_file(__METHOD__, $tmp_file_path, $tmp_load_method, $tmp_file_hash_algorithm_override) !== false)){
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * We need to define
+             * the function.
+             *
+             *
+             * 5 :: Monday, July 8, 2024 @ 0302 hrs.
+             *
+             */
+            if(!($this->crnrstn_include_file(
+                        __METHOD__,
+                        $tmp_file_path,
+                        $tmp_load_method,
+                        $tmp_file_hash_algorithm_override) !== false))
+            {
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Global function 
@@ -17244,49 +17370,66 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }else{
 
             $this->error_log('File load suppressed. The system ' .
-            'file for the definition of ' . $tmp_registered_name . ', ' .
-            $tmp_file_path . ', was not loaded during construction.', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
+                   'file for the definition of ' . $tmp_registered_name . ', ' .
+                   $tmp_file_path . ', was not loaded during construction.',
+                   __LINE__,
+                   __METHOD__,
+                   __FILE__,
+                   self::$R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
         }
 
-        foreach($tmp_registered_name as $tmp_name_str => $index){
+        foreach($tmp_registered_name as
+                $tmp_name_str => $index)
+        {
 
             switch($tmp_resource_type){
                 case 'CLASS_DEFINITION':
 
-                    if(class_exists($tmp_name_str)){
-
+                    if(\class_exists($tmp_name_str))
                         $this->error_log('File load success. Registered class resource: ' .
-                        strval($tmp_name_str) . '.', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
-
-                    }else{
-
+                               \strval($tmp_name_str) . '.',
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               self::$R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
+                    else
                         $this->error_log('File load failed. Class resource: ' .
-                        strval($tmp_name_str) . '.', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
-
-                    }
+                               \strval($tmp_name_str) . '.',
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               self::$R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                 break;
                 case 'FUNCTION_DEFINITION':
 
-                    if(function_exists($tmp_name_str)){
-
+                    if(\function_exists($tmp_name_str))
                         $this->error_log('File load success. Registered function resource: ' .
-                        strval($tmp_name_str) . '.', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
-
-                    }else{
+                               \strval($tmp_name_str) . '.',
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               self::$R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
+                    else
 
                         $this->error_log('File load failed. Function resource: ' .
-                        strval($tmp_name_str) . '.', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
-
-                    }
+                               \strval($tmp_name_str) . '.',
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               self::$R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                 break;
                 case 'RUNTIME_EXECUTABLE':
 
                     $this->error_log('File load success. Registered runtime ' .
-                    'executable resource: ' .
-                    strval($tmp_name_str) . '.', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
+                           'executable resource: ' .
+                           \strval($tmp_name_str) . '.',
+                           __LINE__,
+                           __METHOD__,
+                           __FILE__,
+                           self::$R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                 break;
 
@@ -17315,55 +17458,62 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                      $load_method = 'require', 
                      $resource_type = 'CLASS_DEFINITION')
     {
-        // This method was copied
-        // from the Lightbox Helper
-        // by eVifweb on,
-        //
-        // Wednesday, August 7, 2024 @ 0623 hrs.
-        //
-        //
-        // 5
-        //
-        // Where, $resource_type    = ['FUNCTION_DEFINITION', 'CLASS_DEFINITION', 'RUNTIME_EXECUTABLE'].
-        // Where, $load_method      = ['require', 'require_once', 'include', 'include_once'].
-        //
-        // Configuration Management
-        // by the CRNRSTN :: Lightsaber SOAP
-        // Services Layer.
-        //
-        //
-        // 5 :: Thursday, July 11, 2024 @ 0825 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * This method was copied
+         * from the Lightbox Helper
+         * by eVifweb on,
+         *
+         * Wednesday, August 7, 2024 @ 0623 hrs.
+         *
+         *
+         * 5
+         *
+         * Where, $resource_type    = ['FUNCTION_DEFINITION', 'CLASS_DEFINITION', 'RUNTIME_EXECUTABLE'].
+         * Where, $load_method      = ['require', 'require_once', 'include', 'include_once'].
+         *
+         * Configuration Management
+         * by the CRNRSTN :: Lightsaber SOAP
+         * Services Layer.
+         *
+         *
+         * 5 :: Thursday, July 11, 2024 @ 0825 hrs.
+         *
+         */
         try{
 
-            //
-            // Is the request originator
-            // restricted to accessing
-            // natively registered
-            // resources only?
-            //
-            // Any resources that were
-            // registered at runtime
-            // will be ignored.
-            //
-            //
-            // 5
-            //
-            // Friday, August 9, 2024 @ 0348 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Is the request originator
+             * restricted to accessing
+             * natively registered
+             * resources only?
+             *
+             * Any resources that were
+             * registered at runtime
+             * will be ignored.
+             *
+             *
+             * 5
+             *
+             * Friday, August 9, 2024 @ 0348 hrs.
+             *
+             */
             if(isset(self::$only_access_native_registered_resources_ARRAY[self::$config_serial][$registry_name])){
 
 
 
             }
 
-            //
-            // File path can
-            // be array or
-            // string data type.
-            //
-            // Will string
-            // concatenated data
-            // ever come
-            // through here?
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * File path can
+             * be array or
+             * string data type.
+             *
+             * Will string
+             * concatenated data
+             * ever come
+             * through here?
+             *
+             */
             $tmp_file_path_ARRAY = $file_path;
 
             error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ .
@@ -17409,39 +17559,45 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             $tmp_register_name = $registry_name;
 
-            //
-            // class_exists
-            // (PHP 4, PHP 5, PHP 7, PHP 8)
-            //
-            //
-            // 5
-            //
-            // Friday, July 12, 2024 @ 1130 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * class_exists
+             * (PHP 4, PHP 5, PHP 7, PHP 8)
+             *
+             *
+             * 5
+             *
+             * Friday, July 12, 2024 @ 1130 hrs.
+             *
+             */
             if(!is_array($registry_name)){
 
                 $tmp_register_name = array($registry_name => 1);
 
             }
 
-            //
-            // Key Generation
-            // Support Data
-            // Structure Initialization.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Key Generation
+             * Support Data
+             * Structure Initialization.
+             *
+             */
             $tmp_bypass_preferred = false;
 
-            //
-            // File path can be
-            // of string or array
-            // data type.
-            //
-            // Register name will
-            // always be of array
-            // data type.
-            //
-            //
-            // 5
-            //
-            // Sunday, July 21, 2024 @ 0344 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * File path can be
+             * of string or array
+             * data type.
+             *
+             * Register name will
+             * always be of array
+             * data type.
+             *
+             *
+             * 5
+             *
+             * Sunday, July 21, 2024 @ 0344 hrs.
+             *
+             */
             if(!is_array($file_path)){
 
                 $tmp_ARRAY = array();
@@ -17467,7 +17623,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                      *
                      *
                      * HOOOSTON, VE HAFF PROBLEM!
-                     * https://www.wired.com/2011/04/alt-text-spacecraft/
+                     * https: *www.wired.com/2011/04/alt-text-spacecraft/
                      *
                      */
                     throw new \Exception('Unable to load the system registry definition file, ' .
@@ -17479,23 +17635,27 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }
 
-            //
-            // Return true.
-            //
-            //
-            // 5 :: Saturday, July 20, 2024 @ 2301 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Return true.
+             *
+             *
+             * 5 :: Saturday, July 20, 2024 @ 2301 hrs.
+             *
+             */
             return true;
 
-            //
-            // This preferred array was
-            // taken from CRNRSTN :: Lightsaber
-            // configuration for testing here in
-            // the Lightbox Helper by eVifweb,
-            // and it lives in memory in the
-            // runtime currently.
-            //
-            // Please see,
-            // /lightbox_helper/_config/_config.defaults/crnrstn.settings.function.php
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * This preferred array was
+             * taken from CRNRSTN :: Lightsaber
+             * configuration for testing here in
+             * the Lightbox Helper by eVifweb,
+             * and it lives in memory in the
+             * runtime currently.
+             *
+             * Please see,
+             * /lightbox_helper/_config/_config.defaults/crnrstn.settings.function.php
+             *
+             */
             $tmp_preferred_hash_ARRAY = array('sha256' => 'sha256', 'sha224' => 'sha224',
             'sha384' => 'sha384', 'sha512' => 'sha512', 'sha512-224' => 'sha512-224', 'sha512-256' => 'sha512-256',
             'rsa-sha224' => 'rsa-sha224', 'rsa-sha256' => 'rsa-sha256', 'rsa-sha384' => 'rsa-sha384',
@@ -17511,14 +17671,16 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             $tmp_hash_ARRAY         = hash_algos();
             $tmp_hash_cnt           = sizeof($tmp_hash_ARRAY);
 
-            //
-            // HTML Text CSS
-            // Style Data.
-            //
-            // Some items can
-            // be found with
-            // the system copy
-            // here, _lightbox_helper/_config/_config.resource_registry/crnrstn.native_registered_resource_content_library.function.php
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * HTML Text CSS
+             * Style Data.
+             *
+             * Some items can
+             * be found with
+             * the system copy
+             * here, _lightbox_helper/_config/_config.resource_registry/crnrstn.native_registered_resource_content_library.function.php
+             *
+             */
             $tmp_title_style            = $this->return_dom_style_tag('title_span', '#FFF');
             $tmp_footer_copyright_style = $this->return_dom_style_tag('footer_copyright_span', '#FFF');
             $tmp_timestamp_style        = $this->return_dom_style_tag('timestamp_span', '#FFF');
@@ -17538,7 +17700,6 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             $tmp_line_break_style       = $this->return_dom_style_tag('line_break_div', '#FFF');
             $tmp_hr_style               = $this->return_dom_style_tag('hr_div', '#FFF');
 
-            //
             // Page Meta Initializations.
             $tmp_page_title         = $this->get_crnrstn('CLR_SSL_long_TEXT') . ' Resource Registry';
             $tmp_page_description   = 'The System Resource Registry of the CRNRSTN :: ' .
@@ -17547,9 +17708,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 'definition files along with runtime executables, too.';
             $tmp_page_keywords      = 'CRNRSTN, Lightsaber, eVifweb, 5, PHP, SOAP, web services, Resource Registry, MIT License';
 
-            //
-            // Social Media Preview and
-            // Social Share Integrations.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Social Media Preview and
+             * Social Share Integrations.
+             *
+             */
             $tmp_social_site_name   = $this->get_crnrstn('CLR_SSL_long_TEXT') . ' Resource Registry';
             $tmp_social_title       = 'The System Resource Registry of the CRNRSTN :: ' .
                 'Lightsaber SOAP Services Layer manages runtime ' .
@@ -17573,9 +17736,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             $tmp_canonical          = 'https://lightbox-helper.evifweb.jony5.com/';
             $tmp_social_og_url      = 'https://lightbox-helper.evifweb.jony5.com/';
 
-            //
-            // HTML Page with
-            // Meta Integrations
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * HTML Page with
+             * Meta Integrations.
+             *
+             */
             $tmp_html_page_open     = '<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17629,9 +17794,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             */
 
-            //
-            // Google Analytics Stream
-            // Reporting Integrations.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Google Analytics Stream
+             * Reporting Integrations.
+             *
+             */
             $tmp_google_analytics = '
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-J9L75RXCTN"></script>
@@ -17643,41 +17810,49 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
           gtag(\'config\', \'G-J9L75RXCTN\');
         </script>';
 
-            //
-            // Page Footer with
-            // HTML body close.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Page Footer with
+             * HTML body close.
+             *
+             */
             $tmp_html_footer_close = '
     ' . $tmp_google_analytics . '
 
     </body>
 </html>';
 
-            //
-            // $_GET[] override on the
-            // number of keys to be produced.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * $_GET[] override on the
+             * number of keys to be produced.
+             *
+             */
             if(isset($_GET['key_gen_count'])){
 
                 $tmp_ugc_key_cnt = (int) $_GET['key_gen_count'];
 
-                //
-                // Overwrite the key
-                // count with a new
-                // number of keys.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Overwrite the key
+                 * count with a new
+                 * number of keys.
+                 *
+                 */
                 $tmp_cnt_keys_int = (int) $tmp_ugc_key_cnt * 1;
                 $tmp_cnt_keys_str .= $tmp_cnt_keys_int;        // .= ' ($_GET[] Powered) ';
 
             }
 
-            //
-            // TLDR;
-            // Check $_GET[] to run
-            // all hash algorithms.
-            //
-            // Check for a $_GET[]
-            // override to see if
-            // a by-pass should be run
-            // on the preferred hashes
-            // algorithm array.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * TLDR;
+             * Check $_GET[] to run
+             * all hash algorithms.
+             *
+             * Check for a $_GET[]
+             * override to see if
+             * a by-pass should be run
+             * on the preferred hashes
+             * algorithm array.
+             *
+             */
             if(isset($_GET['run'])){
 
                 $tmp_ugc_run_command = trim(strtolower($_GET['run']));
@@ -17700,23 +17875,25 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }
 
-            //
-            // if(isset($_GET['hash'])){
-            //     self::$openssl_preferred_digest_ARRAY = array('sha256', 'sha224', 'sha384',
-            //                                             'sha512', 'sha512-224', 'sha512-256',
-            //                                             'RSA-SHA224', 'RSA-SHA256', 'RSA-SHA384',
-            //                                             'RSA-SHA512', 'RSA-SHA512/224',
-            //                                             'RSA-SHA512/256', 'md5', 'sha1',
-            //                                             'RSA-MD5', 'RSA-SHA1');
-            //
-            //     $tmp_hash = strtolower((string) $_GET['hash']);
-            //     switch($tmp_hash){
-            //         case 'sha256':
-            //         case 'sha3-256':
-            //         case 'sha512':
-            //         case 'sha512-256':
-            //         case 'rsa-sha256':
-            //         case 'rsa-sha512':
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * if(isset($_GET['hash'])){
+             *     self::$openssl_preferred_digest_ARRAY = array('sha256', 'sha224', 'sha384',
+             *                                             'sha512', 'sha512-224', 'sha512-256',
+             *                                             'RSA-SHA224', 'RSA-SHA256', 'RSA-SHA384',
+             *                                             'RSA-SHA512', 'RSA-SHA512/224',
+             *                                             'RSA-SHA512/256', 'md5', 'sha1',
+             *                                             'RSA-MD5', 'RSA-SHA1');
+             *
+             *     $tmp_hash = strtolower((string) $_GET['hash']);
+             *     switch($tmp_hash){
+             *         case 'sha256':
+             *         case 'sha3-256':
+             *         case 'sha512':
+             *         case 'sha512-256':
+             *         case 'rsa-sha256':
+             *         case 'rsa-sha512':
+             *
+             */
 
             if($tmp_bypass_preferred !== false){
 
@@ -17739,25 +17916,27 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 <div style="padding:0 0 0 20px; ' .
                     'font-family:Arial, Helvetica, sans-serif; font-size:15px;">
                     <pre ' . $tmp_pre_style . '>
-//
-// All system hashes 
-// will be tested. 
-// 
-// This includes testing 
-// the output from weaker 
-// or less suitable for 
-// obtaining strong and 
-// data cryptically secure 
-// serialization for the <span ' . $tmp_crnrstn_style . '>C<span ' . $tmp_crnrstn_R_style . '>R</span>NRSTN ::</span> 
-// <span ' . $tmp_lightsaber_style . '>Lightsaber</span> SOAP 
-// Services Layer. 
-// 
-// The by-pass is <a ' . $tmp_copy_a_style . ' href="' . self::$application_paths_ARRAY[self::$config_serial]['APPLICATION']['HTTP'] . '?key_gen_count=' . $tmp_cnt_keys_int . '&run=' . $tmp_get_param_run_data . '" target="_self">active</a>.
-// 
-// 
-// 5 :: 
-//
-// Monday, July 15, 2024 @ 0723 hrs.</pre>
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * All system hashes 
+ * will be tested. 
+ * 
+ * This includes testing 
+ * the output from weaker 
+ * or less suitable for 
+ * obtaining strong and 
+ * data cryptically secure 
+ * serialization for the <span ' . $tmp_crnrstn_style . '>C<span ' . $tmp_crnrstn_R_style . '>R</span>NRSTN ::</span> 
+ * <span ' . $tmp_lightsaber_style . '>Lightsaber</span> SOAP 
+ * Services Layer. 
+ * 
+ * The by-pass is <a ' . $tmp_copy_a_style . ' href="' . self::$application_paths_ARRAY[self::$config_serial]['APPLICATION']['HTTP'] . '?key_gen_count=' . $tmp_cnt_keys_int . '&run=' . $tmp_get_param_run_data . '" target="_self">active</a>.
+ * 
+ * 
+ * 5 :: 
+ *
+ * Monday, July 15, 2024 @ 0723 hrs
+ *
+ */.</pre>
                 </div>
 
                 ';
@@ -17782,39 +17961,43 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 <div style="padding:0 0 0 20px; ' .
                     'font-family:Arial, Helvetica, sans-serif; font-size:15px;">
                     <pre ' . $tmp_pre_style . '>
-//
-// By restricting internal 
-// system hashes to a set of 
-// hashes that are approved for 
-// use in all of the internal 
-// algorithms that make up 
-// the <span ' . $tmp_crnrstn_style . '>C<span ' . $tmp_crnrstn_R_style . '>R</span>NRSTN ::</span> <span ' . $tmp_lightsaber_style . '>Lightsaber</span>
-// SOAP Services Layer, the 
-// application architecture 
-// is given consistency in 
-// strength for the kinds of 
-// maneuvers that <span ' . $tmp_crnrstn_style . '>C<span ' . $tmp_crnrstn_R_style . '>R</span>NRSTN ::</span> 
-// <span ' . $tmp_lightsaber_style . '>Lightsaber</span> will be back-flip 
-// jumping through hoops 
-// through on the regular 
-// against and doing so 
-// with ease. 
-//
-// The by-pass is <a ' . $tmp_copy_a_style . ' href="' . self::$application_paths_ARRAY[self::$config_serial]['APPLICATION']['HTTP'] . '?key_gen_count=' . $tmp_cnt_keys_int . '&run=' . $tmp_get_param_run_data . '" target="_self">inactive</a>.
-//
-//
-// 5 :: 
-//
-// Monday, July 15, 2024 @ 0723 hrs.</pre>
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * By restricting internal 
+ * system hashes to a set of 
+ * hashes that are approved for 
+ * use in all of the internal 
+ * algorithms that make up 
+ * the <span ' . $tmp_crnrstn_style . '>C<span ' . $tmp_crnrstn_R_style . '>R</span>NRSTN ::</span> <span ' . $tmp_lightsaber_style . '>Lightsaber</span>
+ * SOAP Services Layer, the 
+ * application architecture 
+ * is given consistency in 
+ * strength for the kinds of 
+ * maneuvers that <span ' . $tmp_crnrstn_style . '>C<span ' . $tmp_crnrstn_R_style . '>R</span>NRSTN ::</span> 
+ * <span ' . $tmp_lightsaber_style . '>Lightsaber</span> will be back-flip 
+ * jumping through hoops 
+ * through on the regular 
+ * against and doing so 
+ * with ease. 
+ *
+ * The by-pass is <a ' . $tmp_copy_a_style . ' href="' . self::$application_paths_ARRAY[self::$config_serial]['APPLICATION']['HTTP'] . '?key_gen_count=' . $tmp_cnt_keys_int . '&run=' . $tmp_get_param_run_data . '" target="_self">inactive</a>.
+ *
+ *
+ * 5 :: 
+ *
+ * Monday, July 15, 2024 @ 0723 hrs.
+ *
+ */</pre>
                 </div>
 
                 ';
 
             }
 
-            //
-            // Buffer (HTML)
-            // is out now.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Buffer (HTML)
+             * is out now.
+             *
+             */
             echo $tmp_html_page_open;
 
             echo '<div style="width:100%; text-align:center; margin:0px auto;">
@@ -17890,46 +18073,47 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 for($ii = 0; $ii < $tmp_hash_cnt; $ii++){
 
-                    //
-                    // Do we want to skip
-                    // the application a
-                    // "preferred" hashing
-                    // algorithm filter in
-                    // order to only look
-                    // at everything in the
-                    // system insead of just
-                    // what would be CRNRSTN ::
-                    // Lightsaber approved?
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Do we want to skip
+                     * the application a
+                     * "preferred" hashing
+                     * algorithm filter in
+                     * order to only look
+                     * at everything in the
+                     * system insead of just
+                     * what would be CRNRSTN ::
+                     * Lightsaber approved?
+                     *
+                     */
                     if(!($tmp_bypass_preferred !== false)){
 
-                        //
-                        // If the hash algorithm
-                        // is not listed in
-                        // preferred, please skip
-                        // this one.
-                        //
-                        //
-                        // 5 :: Monday, July 15, 2024 @ 0351 hrs.
-                        if(!(isset($tmp_preferred_hash_ARRAY[$tmp_hash_ARRAY[$ii]]))){
-
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * If the hash algorithm
+                         * is not listed in
+                         * preferred, please skip
+                         * this one.
+                         *
+                         *
+                         * 5 :: Monday, July 15, 2024 @ 0351 hrs.
+                         *
+                         */
+                        if(!(isset($tmp_preferred_hash_ARRAY[$tmp_hash_ARRAY[$ii]])))
                             $tmp_fire_bypass = true;
-
-                        }else{
-
+                        else
                             $tmp_fire_bypass = false;
-
-                        }
 
                     }
 
-                    //
-                    // If we do not fire the CRNRSTN ::
-                    // Lightsaber system preferred hash
-                    // algorithm filterby pass, enter
-                    // this conditional statement.
-                    //
-                    //
-                    // 5 :: Monday, July 15, 2024 @ 0832 hrs.
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * If we do not fire the CRNRSTN ::
+                     * Lightsaber system preferred hash
+                     * algorithm filterby pass, enter
+                     * this conditional statement.
+                     *
+                     *
+                     * 5 :: Monday, July 15, 2024 @ 0832 hrs.
+                     *
+                     */
                     if(!($tmp_fire_bypass !== false)){
 
                         $tmp_key = $this->hash($tmp_raw_key_data_str, $tmp_hash_ARRAY[$ii]);
@@ -17950,13 +18134,19 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                             $tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]]['rtime']       = $this->wall_time();
                             $tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]]['key']         = $tmp_key;
 
-                            //                        $this->error_log('Filtered out algorithm: ' .
-                            //                        strval($tmp_hash_ARRAY[$ii]) . '. [rtime ' .
-                            //                        $tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]]['rtime'] . ' secs].', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
-                            //
-                            //                        echo '<div style="padding:0; color:#333; font-size:14px; font-family: \'Courier New\', Courier, monospace;">Algorithm suppressed: <span style="color:#F90000;">' .
-                            //                        strval($tmp_hash_ARRAY[$ii]) . '</span>. [rtime ' .
-                            //                        $tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]]['rtime'] . ' secs].</div>';
+                            /* $this->error_log('Filtered out algorithm: ' .
+                             *        \strval($tmp_hash_ARRAY[$ii]) . '. [rtime ' .
+                             *        $tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]]['rtime'] .
+                             *        ' secs].', __LINE__, __METHOD__, __FILE__,
+                             *        CRNRSTN_SETTINGS_CRNRSTN);
+                             *
+                             * echo '<div style="padding:0; color:#333; font-size:14px; ' .
+                             *      'font-family: \'Courier New\', Courier, monospace;">' .
+                             *      'Algorithm suppressed: <span style="color:#F90000;">' .
+                             *      \strval($tmp_hash_ARRAY[$ii]) . '</span>. [rtime ' .
+                             *      $tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]]['rtime'] . ' secs].</div>';
+                             *
+                             */
 
                         }
 
@@ -17965,24 +18155,31 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 }
 
                 echo '<h3 style="padding:10px 0 10px 0; margin-bottom:10px; ' .
-                    'font-family:Arial, Helvetica, sans-serif;"><span ' . $tmp_title_style . '>' .
-                    'Begin hash generation output:</span></h3>
-                    <div style="border-top:1px solid #A6A6A6; width:100%; height:1px; line-height:1px;">&nbsp;</div>';
+                     'font-family:Arial, Helvetica, sans-serif;"><span ' .
+                     $tmp_title_style . '>' .
+                     'Begin hash generation output:</span></h3>
+                     <div style="border-top:1px solid #A6A6A6; width:100%; ' .
+                     'height:1px; line-height:1px;">&nbsp;</div>';
 
-                foreach($tmp_key_ARRAY as $algo => $data_ARRAY0){
+                foreach($tmp_key_ARRAY as
+                        $algo => $data_ARRAY0)
+                {
 
                     if(isset($date_str_ARRAY[$algo]['query'])){
 
-                        if(strval($date_str_ARRAY[$algo]['query'] > 0)){
+                        if(\strval($date_str_ARRAY[$algo]['query'] > 0)){
 
                             //if(isset($tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]])){
 
                             //if(isset($tmp_key_ARRAY[$tmp_hash_ARRAY[$ii]]['key'])){
 
-                            echo '<span style="font-size:14px; font-family: \'Courier New\', Courier, monospace;"><span ' . $tmp_copy_style . '>[' .
-                                strval($date_str_ARRAY[$algo]['query']) . '] ' . '[rtime ' . '<span ' . $tmp_timestamp_style . '>' .
-                                strval($data_ARRAY0['rtime']) . '</span> secs] [' .
-                                strval($algo) . '] ' . strval($data_ARRAY0['key']) . '</span></span><br>
+                            echo '<span style="font-size:14px; font-family: \'Courier New\', ' .
+                                 'Courier, monospace;"><span ' . $tmp_copy_style . '>[' .
+                                 \strval($date_str_ARRAY[$algo]['query']) . '] ' .
+                                 '[rtime ' . '<span ' . $tmp_timestamp_style . '>' .
+                                 \strval($data_ARRAY0['rtime']) . '</span> secs] [' .
+                                 \strval($algo) . '] ' . strval($data_ARRAY0['key']) .
+                                '</span></span><br>
                     ';
 
                             //}
@@ -17995,10 +18192,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 }
 
                 echo '
-                    <div style="padding:30px 0 10px 0;">' .
-                    '<span ' . $tmp_copy_style . '>[rtime <span ' . $tmp_timestamp_style . '>' .
-                    $this->wall_time() .
-                    '</span>]</span></div>
+                <div style="padding:30px 0 10px 0;">' .
+                     '<span ' . $tmp_copy_style .
+                     '>[rtime <span ' . $tmp_timestamp_style . '>' .
+                     $this->wall_time() .
+                     '</span>]</span></div>
 
                 ';
 
@@ -18018,9 +18216,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 ';
 
-                //
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                 // Empty the
                 // array.
+                 *
+                 */
                 array_splice($tmp_key_ARRAY, 0);
 
             }
@@ -18038,7 +18238,8 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 </div>
 
                 <div style="text-align:left; padding:10px 0 0 0;">
-                    <a href="https://jony5.com/" target="_blank"><img src="./_lightbox_helper/ui/imgs/png/system/stache.png" ' .
+                    <a href="https://jony5.com/" target="_blank"><img ' .
+                'src="./_lightbox_helper/ui/imgs/png/system/stache.png" ' .
                 'alt="Hi, I\'m Jonathan \'5\' Harris, a ravenous wolf of the ' .
                 'tribe of Benjamin and one of the King\'s two swords, an ' .
                 'eternal son of thunder, and messenger of the church in ' .
@@ -18055,14 +18256,24 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             echo $tmp_html_footer_close;
 
-            $this->error_log('End key generation output test.', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
+            $this->error_log(
+                   'End key generation output test.',
+                   __LINE__,
+                   __METHOD__,
+                   __FILE__,
+                   $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
             die();
 
             foreach($tmp_register_name as $tmp_current_name => $set_flag_int){
 
                 $this->error_log('Checking registry for resource load authorization for,
-                ' . strval($tmp_current_name) . '[' . strval($set_flag_int) . '].', __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
+                       ' . strval($tmp_current_name) . '[' .
+                       \strval($set_flag_int) . '].',
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                 /*
                 [Fri Jul 12 11:52:46.607700 2024] [:error] [pid 85956] [client 172.16.225.1:51660] [rtime 1720799 secs]
@@ -18075,9 +18286,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 $tmp_valid_resource = true;
 
-                //
-                // Light string
-                // data validation.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Light string
+                 * data validation.
+                 *
+                 */
                 if(!is_string($tmp_current_name) && !is_numeric($tmp_current_name)){
 
                     $tmp_err_msg = 'A configuration registry resource request was ' .
@@ -18113,76 +18326,84 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 }else{
 
-                    //
-                    // Is the requested resource
-                    // registered with the system?
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Is the requested resource
+                     * registered with the system?
+                     *
+                     */
                     if(!($this->ping_registered_resources($tmp_current_name) !== false)){
 
-                        //
-                        // The requested resource
-                        // is not registered with
-                        // the system.
-                        //
-                        // Therefore, the requested
-                        // resource is not authorized
-                        // to go to memory.
-                        //
-                        // We will not load any
-                        // PHP file here, friend.
-                        //
-                        // However, system file check
-                        // resources will be given to
-                        // the request sender (for free)
-                        // as a parting gift so that
-                        // they do not have to leave
-                        // with nothing.
-                        //
-                        // 5 :: Friday, July 12, 2024 @ 1303 hrs.
-                        if(is_string($file_path)){
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * The requested resource
+                         * is not registered with
+                         * the system.
+                         *
+                         * Therefore, the requested
+                         * resource is not authorized
+                         * to go to memory.
+                         *
+                         * We will not load any
+                         * PHP file here, friend.
+                         *
+                         * However, system file check
+                         * resources will be given to
+                         * the request sender (for free)
+                         * as a parting gift so that
+                         * they do not have to leave
+                         * with nothing.
+                         *
+                         * 5 :: Friday, July 12, 2024 @ 1303 hrs.
+                         *
+                         */
+                        if(\is_string($file_path)){
 
-                            $tmp_err_msg = 'The (invalid file path) requested resource, ' . $tmp_current_name .
-                                ', is not registered with the system. We will not load any ' .
-                                'PHP file here, friend.';
+                            $tmp_err_msg = 'The (invalid file path) requested resource, ' .
+                                           $tmp_current_name .
+                                           ', is not registered with the system. We will not load any ' .
+                                           'PHP file here, friend.';
 
-                            if(is_file($file_path)){
-
+                            if(\is_file($file_path))
                                 $tmp_err_msg = 'The (valid file path) requested resource, ' . $tmp_current_name .
-                                    ', is not registered with the system. We will not load any ' .
-                                    'PHP file here, friend.';
-
-                            }
+                                               ', is not registered with the system. We will not load any ' .
+                                               'PHP file here, friend.';
 
                         }else{
 
-                            $tmp_err_msg = strval($tmp_current_name) . ', is not registered with the ' .
-                                'system. We will not load any ' .
-                                'PHP file here, friend, nor even could we, with the provided ' .
-                                strval($tmp_current_name) . ' file path ' .
-                                'not being recognized as string data. ' .
-                                $this->return_PHP_exception_trace_pretty(print_r($file_path, true), 'TEXT') .
-                                ', was the file path that was provided. ' . $this->data_report($registry_name);
+                            $tmp_err_msg = \strval($tmp_current_name) . ', is not registered with the ' .
+                                           'system. We will not load any ' .
+                                           'PHP file here, friend, nor even could we, with the provided ' .
+                                           \strval($tmp_current_name) . ' file path ' .
+                                           'not being recognized as string data. ' .
+                                           $this->return_PHP_exception_trace_pretty(
+                                                  print_r($file_path,
+                                                  true),
+                                                  'TEXT') .
+                                           ', was the file path that was provided. ' .
+                                           $this->data_report($registry_name);
 
                         }
 
                     }else{
 
-                        //
-                        // The resource is registered
-                        // with the system.
-                        //
-                        // Resources can be released
-                        // in an attempt to load the
-                        // PHP file, now.
-                        //
-                        //
-                        // 5 :: Friday, July 12, 2024 @ 1320 hrs.
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * The resource is registered
+                         * with the system.
+                         *
+                         * Resources can be released
+                         * in an attempt to load the
+                         * PHP file, now.
+                         *
+                         *
+                         * 5 :: Friday, July 12, 2024 @ 1320 hrs.
+                         *
+                         */
                         switch($resource_type){
                             case 'CLASS_DEFINITION':
 
                                 error_log('[lnum ' . __LINE__ . '] register_name[' . $tmp_current_name . '] $resource_type[' . strval($resource_type) . ']. Success.');
                                 error_log('[lnum ' . __LINE__ . '] load_method[' . $load_method . '] $file_path[' . strval($file_path) . ']. die();');
 
-                                break;//$file_path, $load_method
+                            break;
                             case 'FUNCTION_DEFINITION':
 
                                 error_log('[lnum ' . __LINE__ . '] register_name[' . $tmp_current_name . '] $resource_type[' . strval($resource_type) . ']. Success.');
@@ -18200,56 +18421,60 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                                 $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/_config.resource_registry/crnrstn.native_resource_registry.function.php
 
                                 */
-                                //
-                                // https://www.php.net/manual/en/function.function-exists.php
-                                // function_exists
-                                // (PHP 4, PHP 5, PHP 7, PHP 8)
-                                //
-                                // function_exists — Return true if the given function has been defined
-                                //
-                                // Checks the list of defined functions, both built-in (internal) and user-defined, for function.
-                                //
-                                // Returns true if function exists and is a function, false otherwise.
-                                // 5 :: Friday, July 12, 2024 @ 1244 hrs.
+                                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                 * https://www.php.net/manual/en/function.function-exists.php
+                                 * function_exists
+                                 * (PHP 4, PHP 5, PHP 7, PHP 8)
+                                 *
+                                 * function_exists — Return true if the given function has been defined
+                                 *
+                                 * Checks the list of defined functions, both built-in (internal) and user-defined, for function.
+                                 *
+                                 * Returns true if function exists and is a function, false otherwise.
+                                 * 5 :: Friday, July 12, 2024 @ 1244 hrs.
+                                 *
+                                 */
                                 if(function_exists($tmp_current_name)){
                                     // 5 :: Friday, July 12, 2024 @ 1246 hrs.
 
                                     $tmp_err_append = ', is already defined in memory.';
 
-                                    if(isset($this_is_fancy)){
+                                    if(isset($this_is_fancy))
                                         // 5 :: Friday, July 12, 2024 @ 1246 hrs.
-
-                                        if($this_is_fancy === true){
-
-                                            $tmp_err_append = ', is already defined in memory. Thaaaaanks!';
-
-                                        }
-
-                                    }
+                                        if($this_is_fancy === true)
+                                            $tmp_err_append = ', is already defined ' .
+                                                              'in memory. Thaaaaanks!';
 
                                     $tmp_err_msg = 'Resource request suppressed. The function, ' .
-                                        $tmp_current_name . $tmp_err_append;
+                                                   $tmp_current_name . $tmp_err_append;
 
-                                    $this->error_log($tmp_err_msg, __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
+                                    $this->error_log(
+                                           $tmp_err_msg,
+                                           __LINE__,
+                                           __METHOD__,
+                                           __FILE__,
+                                           $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                                     $tmp_valid_resource = false;
 
                                 }
 
-                                //
-                                // Are we authorized to
-                                // load this
-                                // global function
-                                // definition file?
+                                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                 * Are we authorized to
+                                 * load this
+                                 * global function
+                                 * definition file?
+                                 *
+                                 */
                                 if($tmp_valid_resource !== false){
 
-                                    //
-                                    // Send a "this request
-                                    // is green lit to
-                                    // load this function
-                                    // definition" error_log.
-                                    //
-                                    //
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Send a "this request
+                                     * is green lit to
+                                     * load this function
+                                     * definition" error_log.
+                                     *
+                                     */
                                     $tmp_err_msg = 'System memory check complete. ' .
                                         'Global function definition, ' . strval($tmp_current_name) .
                                         ', is authorized for memory load.';
@@ -18257,12 +18482,14 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                                 }else{
 
-                                    //
-                                    // Send a resource load
-                                    // suppression error_log.
-                                    //
-                                    //
-                                    // 5 :: Friday, July 12, 2024 @ 1441 hrs.
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Send a resource load
+                                     * suppression error_log.
+                                     *
+                                     *
+                                     * 5 :: Friday, July 12, 2024 @ 1441 hrs.
+                                     *
+                                     */
                                     $tmp_err_msg = 'Global function definition ' .
                                         strval($tmp_current_name) . ' suppressed after system memory check completed.';
                                     $this->error_log($tmp_err_msg, __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
@@ -18284,44 +18511,47 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     }
 
-                    //
-                    // https://www.php.net/manual/en/function.class-exists.php
-                    // class_exists
-                    // (PHP 4, PHP 5, PHP 7, PHP 8)
-                    //
-                    // Checks if the class
-                    // has been defined.
-                    //
-                    // This function checks
-                    // whether or not the
-                    // given class has
-                    // been defined.
-                    if(class_exists($tmp_current_name)){
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * https://www.php.net/manual/en/function.class-exists.php
+                     * class_exists
+                     * (PHP 4, PHP 5, PHP 7, PHP 8)
+                     *
+                     * Checks if the class
+                     * has been defined.
+                     *
+                     * This function checks
+                     * whether or not the
+                     * given class has
+                     * been defined.
+                     *
+                     */
+                    if(\class_exists($tmp_current_name)){
                         // 5 :: Friday, July 12, 2024 @ 1218 hrs.
 
                         $tmp_err_append = ', is already defined in memory.';
 
-                        if(isset($this_is_fancy)){
+                        if(isset($this_is_fancy))
                             // 5 :: Friday, July 12, 2024 @ 1222 hrs.
-
-                            if($this_is_fancy === true){
-
+                            if($this_is_fancy === true)
                                 $tmp_err_append = ', is already defined in memory. Thaaaaanks!';
-
-                            }
-
-                        }
 
                         $tmp_err_msg = 'Resource request suppressed. The class, ' .
                             $tmp_current_name . $tmp_err_append;
 
-                        $this->error_log($tmp_err_msg, __LINE__, __METHOD__, __FILE__, CRNRSTN_SETTINGS_CRNRSTN);
+                        $this->error_log(
+                               $tmp_err_msg,
+                               __LINE__,
+                               __METHOD__,
+                               __FILE__,
+                               $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
                         $tmp_valid_resource = false;
 
                     }else{
 
-                        error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ . '] System memory check complete. ' .
+                        error_log('[lnum ' .
+                            __LINE__ . '] [' .
+                            __METHOD__ . '] System memory check complete. ' .
                             'Class, ' . strval($tmp_current_name) .
                             ', is authorized for memory load.');
 
@@ -18331,151 +18561,170 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }
 
-            if($tmp_valid_resource !== false){
-
-                error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ . '] System memory check complete. ' . strval($tmp_current_name) .
-                    ', is authorized to load. ' . $this->return_PHP_exception_trace_pretty(print_r($registry_name, true), 'TEXT') .
-                    ', was the value that was provided. ' . $this->data_report($registry_name));
-
-            }else{
-
-                error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ . '] System memory check skipped. The extracted register name, (' .
-                    $this->gettype($tmp_current_name, 'CRNRSTN_STRING') . ') ' . strval($tmp_current_name) . ' [' .
+            if($tmp_valid_resource !== false)
+                error_log('[lnum ' . __LINE__ . '] [' .
+                    __METHOD__ . '] System memory check complete. ' .
+                    \strval($tmp_current_name) .
+                    ', is authorized to load. ' .
+                    $this->return_PHP_exception_trace_pretty(
+                           \print_r($registry_name, true),
+                           'TEXT') .
+                    ', was the value that was provided. ' .
+                    $this->data_report($registry_name));
+            else
+                error_log('[lnum ' . __LINE__ . '] [' .
+                    __METHOD__ . '] System memory check skipped. The extracted register name, (' .
+                    $this->gettype($tmp_current_name, 'CRNRSTN_STRING') . ') ' .
+                    \strval($tmp_current_name) . ' [' .
                     strval($set_flag_int) . '] was not a recognized string. ' .
-                    $this->return_PHP_exception_trace_pretty(print_r($registry_name, true), 'TEXT') .
-                    ', was the value that was provided. ' . $this->data_report($registry_name));
+                    $this->return_PHP_exception_trace_pretty(
+                           \print_r($registry_name, true),
+                           'TEXT') .
+                    ', was the value that was provided. ' .
+                    $this->data_report($registry_name));
 
-            }
-
-            //
-            // Configuration Management
-            // by The Lightbox Helper by
-            // eVifweb.
-            //
-            // 1 - Answer the question, are we told to load the
-            //     resource only one time?
-            //      - Check RESOURCE_TYPE.
-            //      - If RESOURCE_TYPE = CLASS_DEFINITION or
-            //        FUNCTION_DEFINITION, only run once. Explicitly.
-            //          - TODO :: Check to see if The Lightbox Helper
-            //            by eVifweb has already loaded the
-            //            configuration resource.
-            //          - TODO :: Check to see if the server runtime
-            //            already registers this resource
-            //            as defined in the system.
-            //      - If RESOURCE_TYPE = RUNTIME_EXECUTABLE should
-            //        load only one time if the LOAD_METHOD is
-            //        require_once or include_once.
-            //          - If LOAD_METHOD = *_once:
-            //               - TODO :: Check to see if The Lightbox Helper
-            //                 by eVifweb has already loaded the
-            //                 configuration resource.
-            //               - TODO :: Check to see if the server runtime
-            //                 already registers this resource
-            //                 as defined in the system.
-            //
-            //
-            // 5 :: Thursday, July 11, 2024 @ 0824 hrs.
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Configuration Management
+             * by The Lightbox Helper by
+             * eVifweb.
+             *
+             * 1 - Answer the question, are we told to load the
+             *     resource only one time?
+             *      - Check RESOURCE_TYPE.
+             *      - If RESOURCE_TYPE = CLASS_DEFINITION or
+             *        FUNCTION_DEFINITION, only run once. Explicitly.
+             *          - TODO :: Check to see if The Lightbox Helper
+             *            by eVifweb has already loaded the
+             *            configuration resource.
+             *          - TODO :: Check to see if the server runtime
+             *            already registers this resource
+             *            as defined in the system.
+             *      - If RESOURCE_TYPE = RUNTIME_EXECUTABLE should
+             *        load only one time if the LOAD_METHOD is
+             *        require_once or include_once.
+             *          - If LOAD_METHOD = *_once:
+             *               - TODO :: Check to see if The Lightbox Helper
+             *                 by eVifweb has already loaded the
+             *                 configuration resource.
+             *               - TODO :: Check to see if the server runtime
+             *                 already registers this resource
+             *                 as defined in the system.
+             *
+             *
+             * 5 :: Thursday, July 11, 2024 @ 0824 hrs.
+             *
+             */
             $tmp_is_valid = false;
 
-            error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ . '] Ready. die();');
+            error_log('[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ .
+                ']  Ready. die();');
             die();
             switch($resource_type){
                 case 'CLASS_DEFINITION':
 
-                    if($this->is_loaded_config_resource('framework_runtime_check') !== false){
-
+                    if($this->is_loaded_config_resource('framework_runtime_check') !== false)
                         //self::$registered_resources_loaded_ARRAY;
                         return false;
 
-                    }
-
-                    //if(){
-
-                    if($this->is_loaded_config_resource('framework_session_check') !== false){
-
+                    if($this->is_loaded_config_resource('framework_session_check') !== false)
                         //self::$registered_resources_loaded_ARRAY;
                         return false;
 
-                    }
-
-                    //}
-
-                    break;
+                break;
                 case 'FUNCTION_DEFINITION':
 
 
-                    break;
+                break;
                 case 'RUNTIME_EXECUTABLE':
                 default:
 
 
-                    break;
+                break;
                 case 'SOAP_ENDPOINT':
 
 
-                    break;
+                break;
 
             }
 
-            if(isset(self::$object_boot_ARRAY)){
-
-                if(isset(self::$object_boot_ARRAY['boot_resources'][0][$registry_name])){
-
+            if(isset(self::$object_boot_ARRAY))
+                if(isset(self::$object_boot_ARRAY['boot_resources'][0][$registry_name]))
                     $tmp_is_valid = true;
 
-                }
+            error_log('[mthd ' .
+                __METHOD__ . '] [lnum ' .
+                __LINE__ . '] $registry_name[' .
+                \print_r($registry_name, true) .
+                ']. $file_path[' . \print_r($file_path, true) .
+                ']. $load_method[' . \print_r($load_method, true) .
+                ']. $resource_type[' . \print_r($resource_type, true) . ']. ');
 
-            }
-
-            error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ . '] $registry_name[' . print_r($registry_name, true) .
-                ']. $file_path[' . print_r($file_path, true) . ']. $load_method[' . print_r($load_method, true) .
-                ']. $resource_type[' . print_r($resource_type, true) . ']. ');
-
-            error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ .
-                '] Start configuration loading construct unit test. resource_type[' .
-                strval($resource_type) . ']. ');
-
+            error_log('[mthd ' .
+                __METHOD__ .
+                '][lnum ' .
+                __LINE__ . '] Start configuration ' .
+                'loading construct unit test. ' .
+                'resource_type[' .
+                \strval($resource_type) . ']. ');
 
             /*
-            [Thu Jul 11 02:58:09.320485 2024] [:error] [pid 72513] [client 172.16.225.1:65303] [lnum 1099]
+            [Thu Jul 11 02:58:09.320485 2024] [:error] [pid 72513]
+            [client 172.16.225.1:65303]
+            [lnum 1099]
             [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
             $registry_name[Array\n(\n
                 [_lightbox_helper_load_resource_copy] => 1\n)\n].
 
-            $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/config.lightbox_helper/lightbox_helper.settings.function.php].
+            $file_path[/var/www/html/lightbox_helper
+                       /_lightbox_helper/_config
+                       /config.lightbox_helper
+                       /lightbox_helper.settings.function.php].
 
             $load_method[require].
 
             $resource_type[FUNCTION_DEFINITION].
 
-            [Thu Jul 11 02:58:09.320653 2024] [:error] [pid 72513] [client 172.16.225.1:65303] [lnum 1103]
-            [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load] Start configuration loading construct unit test.
+            [Thu Jul 11 02:58:09.320653 2024] [:error] [pid 72513]
+            [client 172.16.225.1:65303]
+            [lnum 1103]
+            [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+            Start configuration loading construct unit test.
             resource_type[FUNCTION_DEFINITION].
             jony5@localdev:/var/log/apache2$
 
-            [Thu Jul 11 06:40:00.133021 2024] [:error] [pid 80553] [client 172.16.225.1:49539] [lnum 1117]
+            [Thu Jul 11 06:40:00.133021 2024] [:error] [pid 80553]
+            [client 172.16.225.1:49539]
+            [lnum 1117]
             [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
             $registry_name[Array\n(\n
                 [_lightbox_helper_load_resource_copy] => 1\n)\n].
-                $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/config.lightbox_helper/lightbox_helper.settings.function.php].
+                 $file_path[/var/www/html/lightbox_helper
+                 /_lightbox_helper/_config/config.lightbox_helper
+                 /lightbox_helper.settings.function.php].
                 $load_method[require].
                 $resource_type[FUNCTION_DEFINITION].
 
-            [Thu Jul 11 06:40:00.133169 2024] [:error] [pid 80553] [client 172.16.225.1:49539] [lnum 1121]
+            [Thu Jul 11 06:40:00.133169 2024] [:error] [pid 80553]
+            [client 172.16.225.1:49539]
+            [lnum 1121]
             [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
             Start configuration loading construct unit test.
             resource_type[FUNCTION_DEFINITION].
 
-            [Thu Jul 11 06:40:00.133184 2024] [:error] [pid 80553] [client 172.16.225.1:49539] [lnum 1139]
-            [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load] die();
+            [Thu Jul 11 06:40:00.133184 2024] [:error] [pid 80553]
+            [client 172.16.225.1:49539]
+            [lnum 1139]
+            [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
+            die();
             jony5@localdev:/var/log/apache2$
 
             */
 
-            error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ .
-                '] die();');
-
+            error_log('[mthd ' .
+                __METHOD__ .
+                '] [lnum ' . __LINE__ . '] die();');
             die();
             return true;
 
@@ -18511,16 +18760,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }else{
 
-                //
-                // ...no CRNRSTN :: eh?
-                // You silly...
-                //
-                // Still gonna send it!
-                //
-                //
-                // 5
-                //
-                // Wednesday, June 12, 2024 @ 0152 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * ...no CRNRSTN :: eh?
+                 * You silly...
+                 *
+                 * Still gonna send it!
+                 *
+                 *
+                 * 5
+                 *
+                 * Wednesday, June 12, 2024 @ 0152 hrs.
+                 *
+                 */
                 $this->catch_exception(
                        $e, 
                        LOG_ERR, 
@@ -19059,20 +19310,13 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          */
 
         // Can we skip this file check?
-        if($force_file_check !== false){
-
+        if($force_file_check !== false)
             if($this->by_pass_is_file(
                       $file_path, 
                       $resource_name, 
                       $software_version))
-            {
-
                 // 5 :: Tuesday, June 9, 2026 @ 1129 hrs.
                 return true;
-
-            }
-
-        }
 
         if(\is_file($file_path)){
 
@@ -19126,17 +19370,10 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
         if(isset($resource_name) && 
             isset($software_version))
-        {
-
             return isset(self::$R_data['is_file_success'][$software_version][$resource_name]);
 
-        }
-
-        if(isset($resource_name)){
-
+        if(isset($resource_name))
             return isset(self::$R_data['is_file_success'][$resource_name]);
-
-        }
 
         return isset(self::$R_data['is_file_success'][$file_path]);
 
@@ -19192,39 +19429,49 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
         try{
 
-//            //
-//            // Is the CRNRSTN :: Lightsaber
-//            // SOAP Services Layer Registry
-//            // loaded into server memory?
-//            //
-//            //
-//            // 5
-//            //
-//            // Saturday, August 10, 2024 @ 0337 hrs.
-//            if(!isset(self::$_R['registry_assistant'])){
-//
-//                switch($name){
-//                    case 'crnrstn_logging':
-//                        // 5 :: Saturday, August 10, 2024 @ 0348 hrs.
-//
-//                        return new crnrstn_logging($param_0, $param_1);
-//
-//                    break;
-//                    case 'crnrstn_logging_oprofile_manager':
-//                        // 5 :: Saturday, August 10, 2024 @ 0349 hrs.
-//
-//                        return new crnrstn_logging_oprofile_manager($param_0, $param_1);
-//
-//                    break;
-//                    case 'crnrstn_session_manager':
-//                        // 5 :: Monday, August 12, 2024 @ 0153 hrs.
-//
-//                        //public function __construct($oCRNRSTN, $config_serial_override = NULL, $hmac_algorithm_override = NULL, $CRNRSTN_config_salt_override = NULL, $file_modification_resets_configuration = true)
-//                        return new crnrstn_session_manager($param_0, $param_1, $param_2, $param_3, $param_4);
-//
-//                    break;
-//                    default:
-//
+/*            //
+ *            // Is the CRNRSTN :: Lightsaber
+ *            // SOAP Services Layer Registry
+ *            // loaded into server memory?
+ *            //
+ *            //
+ *            // 5
+ *            //
+ *            // Saturday, August 10, 2024 @ 0337 hrs.
+ *            if(!isset(self::$_R['registry_assistant'])){
+ *
+ *                switch($name){
+ *                    case 'crnrstn_logging':
+ *                        // 5 :: Saturday, August 10, 2024 @ 0348 hrs.
+ *
+ *                        return new crnrstn_logging($param_0, $param_1);
+ *
+ *                    break;
+ *                    case 'crnrstn_logging_oprofile_manager':
+ *                        // 5 :: Saturday, August 10, 2024 @ 0349 hrs.
+ *
+ *                        return new crnrstn_logging_oprofile_manager($param_0, $param_1);
+ *
+ *                    break;
+ *                    case 'crnrstn_session_manager':
+ *                        // 5 :: Monday, August 12, 2024 @ 0153 hrs.
+ *
+ *                        //public function __construct(
+ *                                          $oCRNRSTN,
+ *                                          $config_serial_override = NULL,
+ *                                          $hmac_algorithm_override = NULL,
+ *                                          $CRNRSTN_config_salt_override = NULL,
+ *                                          $file_modification_resets_configuration = true)
+ *                        return new crnrstn_session_manager(
+ *                                   $param_0,
+ *                                   $param_1,
+ *                                   $param_2,
+ *                                   $param_3,
+ *                                   $param_4);
+ *
+ *                    break;
+ *                    default:
+ *
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Unable to load the 
                          * system registry or 
@@ -19238,16 +19485,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                          * HOOOSTON, VE HAFF PROBLEM!
                          * https://www.wired.com/2011/04/alt-text-spacecraft/
                          *
-                         */
-//                        throw new \Exception('Unknown resource: ' . strval($name) . '. ' .
-//                        'The CRNRSTN :: Lightsaber SOAP Services ' .
-//                        'Layer system registry is not loaded.');
-//
-//                    break;
-//
-//                }
-//
-//            }
+                         *
+ *                        throw new \Exception('Unknown resource: ' . strval($name) . '. ' .
+ *                            'The CRNRSTN :: Lightsaber RoCEv2 SOAP Services ' .
+ *                            'Layer system registry is not loaded.');
+ *
+ *                    break;
+ *
+ *                }
+ *
+ *            }
+ *
+ */
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Return the requested registered 
@@ -19313,16 +19562,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             }else{
 
-                //
-                // ...no CRNRSTN :: eh?
-                // You silly...
-                //
-                // Still gonna send it!
-                //
-                //
-                // 5
-                //
-                // Wednesday, August 7, 2024 @ 0632 hrs.
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * ...no CRNRSTN :: eh?
+                 * You silly...
+                 *
+                 * Still gonna send it!
+                 *
+                 *
+                 * 5
+                 *
+                 * Wednesday, August 7, 2024 @ 0632 hrs.
+                 *
+                 */
                 $this->catch_exception(
                        $e, 
                        LOG_ERR, 
@@ -19477,14 +19728,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             case 'module_key':
                 // 5 :: Thursday, July 9, 2026 @ 0458 hrs.
 
+                // return self::$_R['kivotos']->R['content_src_ctrlr']->return_page_serial();
                 return self::$_R['kivotos']->R['content_src_ctrlr']->module_key;
 
-            /*
-            case 'module_key':
-                // 5 :: Thursday, July 9, 2026 @ 0501 hrs.
-
-                return self::$_R['kivotos']->R['content_src_ctrlr']->return_page_serial();
-            */
             case 'R_kivotos_index':
 
                 if(isset(self::$_R['kivotos']))
@@ -19672,7 +19918,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             case 'timestamp_to_iso8601[timestamp]':
                 // 5 :: Tuesday, June 2, 2026 @ 1135 hrs.
 
-                if(!issset(self::$R_data[$name]))
+                if(!isset(self::$R_data[$name]))
                     // Return current Unix timestamp.
                     return time();
 
@@ -19924,11 +20170,8 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             case 'system_resource_profile_ARRAY':
 
-                if(isset(self::$system_resource_profile_ARRAY['max_disk_storage_utilization'])){
-
+                if(isset(self::$system_resource_profile_ARRAY['max_disk_storage_utilization']))
                     return self::$system_resource_profile_ARRAY;
-
-                }
 
                 return NULL;
 

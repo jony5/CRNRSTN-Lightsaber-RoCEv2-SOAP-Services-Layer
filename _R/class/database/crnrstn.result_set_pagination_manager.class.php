@@ -262,7 +262,7 @@ namespace CRNRSTN;
  *
  * CLASS DEFINITION :: crnrstn_result_set_pagination_manager
  * CLASS VERSION    :: 1.00.0000
- * DATE             :: July 29, 2020 @ 1834 hrs.
+ * DATE             :: Wednesday, July 29, 2020 @ 1834 hrs.
  * AUTHOR           :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
  * URI              :: http://evifweb.jony5.com/
  * TITLE            :: The CRNRSTN :: Lightsaber

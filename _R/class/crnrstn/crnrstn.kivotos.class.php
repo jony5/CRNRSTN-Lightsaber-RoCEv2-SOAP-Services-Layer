@@ -834,7 +834,7 @@ class crnrstn_kivotos extends crnrstn
         switch($res_name){
             // CLR-SSL :: CORE
             case __NAMESPACE__ . '===\crnrstn_kivotos':
-            case __NAMESPACE__ . 'crnrstn_bitflip_manager':
+            case __NAMESPACE__ . '===\crnrstn_bitflip_manager':
             case __NAMESPACE__ . '===\crnrstn_ip_authorization_manager':
             case __NAMESPACE__ . '===\crnrstn_ascii_art':
             case __NAMESPACE__ . '===\crnrstn_file_system_integrations_manager':
@@ -878,16 +878,16 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\nusoapservermime':
             case __NAMESPACE__ . '===\nusoap_wsdlcache':
             case __NAMESPACE__ . '===\nusoap_xmlschema':
-            case __NAMESPACE__ . '\soapclientmime':
+            case __NAMESPACE__ . '===\soapclientmime':
             case __NAMESPACE__ . '===\soapclient':
-            case __NAMESPACE__ . '\soap_fault':
-            case __NAMESPACE__ . '\soap_parser':
+            case __NAMESPACE__ . '===\soap_fault':
+            case __NAMESPACE__ . '===\soap_parser':
             case __NAMESPACE__ . '\soap_server':
             case __NAMESPACE__ . '===\soap_transport_http':
             case __NAMESPACE__ . '===\soapval':
             case __NAMESPACE__ . '===\wsdlcache':
             case __NAMESPACE__ . '===\wsdl':
-            case __NAMESPACE__ . 'XMLSchema':
+            case __NAMESPACE__ . '===XMLSchema':
             case __NAMESPACE__ . '===\nusoap_server':
             case __NAMESPACE__ . '===\nusoap_client':
 
@@ -915,7 +915,7 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\crnrstn_environment':
             case __NAMESPACE__ . '===\crnrstn_registry_user':
             case __NAMESPACE__ . '===\crnrstn_finite_expression':
-            case __NAMESPACE__ . '\crnrstn':
+            case __NAMESPACE__ . '===\crnrstn':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
                  * ^ Delete this entire case when 
                  *   integration checks for this

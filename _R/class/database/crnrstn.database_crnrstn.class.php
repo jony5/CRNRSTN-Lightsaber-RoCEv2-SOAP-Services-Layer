@@ -262,7 +262,7 @@ namespace CRNRSTN;
  *
  * CLASS DEFINITION :: crnrstn_database_crnrstn
  * CLASS VERSION    :: 1.00.0000
- * DATE             :: July 13, 2020 @ 0448 hrs.
+ * DATE             :: Monday, July 13, 2020 @ 0448 hrs.
  * AUTHOR           :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
  * URI              :: http://evifweb.jony5.com/
  * TITLE            :: The CRNRSTN :: Lightsaber
@@ -306,11 +306,8 @@ namespace CRNRSTN;
 class crnrstn_database_crnrstn extends crnrstn
 {
 
-    public $oCRNRSTN_USR;
-    private static $oQueryManager;
-    private static $oDB_wiring;
-
-    public $crnrstn_db_crnrstn_serial;
+    private static $_R = array();
+    private $R_data    = array();
 
     /**
      * R :: Content pending.
@@ -329,85 +326,137 @@ class crnrstn_database_crnrstn extends crnrstn
          *
          */
 
+        $this->R_data['R_debug_mode']         = $this->get_crnrstn('R_debug_mode');
+        $this->R_data['phpmailer_debug_mode'] = $this->get_crnrstn('phpmailer_debug_mode');
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Acquire an instantiation of
+         * the CLR-SSL MySQL Database
+         * Query Handle Wiring
+         * Class Object from the CLR-SSL
+         * Resource Kivotós Advanced
+         * Object Storage Ark.
+         *
+         * 5 :: Sunday, August 16, 2026 @ 0247 hrs.
+         *
+         */
+        self::$_R['kivotos']['db_wiring'] = $this->kivotos_storage('db_wiring');
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Acquire an instantiation of
+         * the CLR-SSL MySQL Database
+         * Integrations Query Manager
+         * Class Object from the CLR-SSL
+         * Resource Kivotós Advanced
+         * Object Storage Ark for the
+         * CRNRSTN :: Lightsaber MySQL
+         * Database Integrations
+         * Services Layer.
+         *
+         *
+         * 5 :: Tuesday, August 25, 2026 @ 2351 hrs.
+         *
+         * Previously initialized as:
+         * self::$oQueryManager = new crnrstn_sql_manager($this->oCRNRSTN_USR);
+         *
+         */
+        self::$_R['kivotos']['sql_mgr'] = $this->kivotos_storage('sql_mgr');
+
     }
 
-    public function ______pre_clr_ssl_construct($oCRNRSTN_USR)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function error_log(
+             $message_str = NULL,
+             $syslog_level = \LOG_DEBUG,
+             $error_reporting_level = \E_NOTICE,
+             $line_num = NULL,
+             $method = NULL,
+             $file = NULL,
+             $token = NULL,
+             $spool = false,
+             $spool_channel = 'R_channel_RUNTIME',
+             $syslog_prefix = 'R :: ',
+             $syslog_prefix_passthrough = NULL)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * We copied the method
+         * definition for error_log()
+         * from crnrstn to
+         * crnrstn_database_crnrstn.
+         * 5 :: Tuesday, August 25, 2026 @ 2328 hrs.
+         *
+         */
 
-        try{
-
-            $this->oCRNRSTN_USR = $oCRNRSTN_USR;
-            //$this->oCRNRSTN_USR->error_log('[' . 
-            //                     __CLASS__ . 
-            //                     '] READY TO WORK 4 U.', 
-            //                     __LINE__, 
-            //                     __METHOD__, 
-            //                     __FILE__, 
-            //                     CRNRSTN_SETTINGS_CRNRSTN);
-
-//            if(isset($oCRNRSTN_USR)){
-//
-//                $this->oCRNRSTN_USR = $oCRNRSTN_USR;
-//
-//                //
-//                // SERIALIZE OBJECT - LEN32
-//                $this->crnrstn_db_crnrstn_serial = $this->oCRNRSTN_USR->generate_new_key();
-//
-//                //
-//                // INSTANTIATE THE DB WIRING CLASS OBJECT.
-//                self::$oDB_wiring = new crnrstn_database_wiring($this->oCRNRSTN_USR);
-//
-//            }else{
-//
-//
-                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * HOOOSTON, VE HAFF PROBLEM!
-                 * https://www.wired.com/2011/04/alt-text-spacecraft/
-                 *
-                 */
-//                throw new Exception('ERR :: oCRNRSTN_USR is a required parameter for '. __CLASS__ .' :: '. __FUNCTION__ .'.');
-//
-//            }
-//
-//            //
-//            // INSTANTIATE THE QUERY MANAGER CLASS OBJECT.
-//            self::$oQueryManager = new crnrstn_sql_manager($this->oCRNRSTN_USR);
-
-        }catch(Exception $e){
-
-            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Exception handling performed 
-             * by the Logging Services Layer 
-             * of the CRNRSTN :: Lightsaber 
-             * RoCEv2 SOAP Services 
-             * Layer (CLR-SSL). 
-             *
-             * Allow the CLR-SSL to handle 
-             * this exception per the 
-             * configured logging profile of 
-             * the running application on 
-             * this server. 
-             *
-             *
-             * 5
-             *
-             * Sunday, June 30, 2024 @ 1552 hrs.
-             * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
-             *
-             */
-            $this->oCRNRSTN_USR->catch_exception(
-                                 $e, 
-                                 LOG_ERR, 
-                                 __METHOD__, 
-                                 __NAMESPACE__);
-
-        }
+        echo '<br><pre><code>[' . $this->return_micro_time() . '] 
+[mthd ' .
+            __METHOD__ . '] 
+[lnum ' .
+            __LINE__ . '] 
+[rtime ' .
+            $this->wall_time() . ' secs] 
+' .
+'Please log this data to database: 
+date [' .
+    \print_r(\gettimeofday(), true) . '] ' .
+            '
+R_debug_mode[' .
+            self::$R_data['R_debug_mode'] . '] ' .
+            '
+phpmailer_debug_mode[' .
+            self::$R_data['phpmailer_debug_mode'] . '] ' .
+            '
+message_str [' .
+            \strval($message_str) . '] ' .
+            '
+syslog_level [' .
+            \strval($syslog_level) . '] ' .
+            '
+error_reporting_level [' .
+            \strval($error_reporting_level) . '] ' .
+            '
+line_num [' .
+            \strval($line_num) . '] ' .
+            '
+method [' .
+            \strval($method) . '] ' .
+            '
+token [' .
+    \print_r($token, true) . '] ' .
+            '
+spool [' .
+            \strval($spool) . ']</code></pre>';
 
     }
 
-    public function config_load_static_application_data(
-                    $data_type, 
-                    $oCRNRSTN = NULL)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function config_load_static_application_data(
+             $data_type,
+             $oCRNRSTN = NULL)
     {
 
         switch($data_type){
@@ -430,13 +479,26 @@ class crnrstn_database_crnrstn extends crnrstn
     }
 
     //public function return_database_value(
-    public function return_db_value(
-                    $oCRNRSTN_MySQLi, 
-                    $result_handle, 
-                    $batch_key, 
-                    $result_set_key, 
-                    $fieldname, 
-                    $pos)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function return_db_value(
+             $oCRNRSTN_MySQLi,
+             $result_handle,
+             $batch_key,
+             $result_set_key,
+             $fieldname,
+             $pos)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Renamed the method return_database_value()
@@ -457,96 +519,158 @@ class crnrstn_database_crnrstn extends crnrstn
          *
          */
 
-        return self::$oQueryManager->return_db_value(
-                                     self::$oDB_wiring, 
-                                     $oCRNRSTN_MySQLi, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key, 
-                                     $fieldname, 
-                                     $pos);
+        return self::$_R['kivotos']['sql_mgr']->return_db_value(
+                                                self::$_R['kivotos']['db_wiring'],
+                                                $oCRNRSTN_MySQLi,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key,
+                                                $fieldname,
+                                                $pos);
 
     }
 
-
-    public function resultSetMerge(
-                    $oQueryProfileMgr, 
-                    $result_handle, 
-                    $batch_key, 
-                    $result_set_key, 
-                    $target_result_set_key, 
-                    $merge_fields_piped, 
-                    $merge_fields_distinct_val, 
-                    $sequence_fields_piped, 
-                    $sequence_fields_datatype_piped)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function resultSetMerge(
+             $oQueryProfileMgr,
+             $result_handle,
+             $batch_key,
+             $result_set_key,
+             $target_result_set_key,
+             $merge_fields_piped,
+             $merge_fields_distinct_val,
+             $sequence_fields_piped,
+             $sequence_fields_datatype_piped)
     {
 
-        return self::$oQueryManager->resultSetMerge(
-                                     self::$oDB_wiring, 
-                                     $oQueryProfileMgr, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key, 
-                                     $target_result_set_key, 
-                                     $merge_fields_piped, 
-                                     $merge_fields_distinct_val, 
-                                     $sequence_fields_piped, 
-                                     $sequence_fields_datatype_piped);
+        return self::$_R['kivotos']['sql_mgr']->resultSetMerge(
+                                                self::$_R['kivotos']['db_wiring'],
+                                                $oQueryProfileMgr,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key,
+                                                $target_result_set_key,
+                                                $merge_fields_piped,
+                                                $merge_fields_distinct_val,
+                                                $sequence_fields_piped,
+                                                $sequence_fields_datatype_piped);
 
     }
 
-    public function ping_value_existence(
-                    $oCRNRSTN_MySQLi, 
-                    $result_handle, 
-                    $batch_key, 
-                    $result_set_key, 
-                    $fieldname, 
-                    $value)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function ping_value_existence(
+             $oCRNRSTN_MySQLi,
+             $result_handle,
+             $batch_key,
+             $result_set_key,
+             $fieldname,
+             $value)
     {
 
-        return self::$oQueryManager->ping_value_existence(
-                                     self::$oDB_wiring, 
-                                     $oCRNRSTN_MySQLi, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key, 
-                                     $fieldname, 
-                                     $value);
+        return self::$_R['kivotos']['sql_mgr']->ping_value_existence(
+                                                self::$_R['kivotos']['db_wiring'],
+                                                $oCRNRSTN_MySQLi,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key,
+                                                $fieldname,
+                                                $value);
 
     }
 
-    public function pingProfileExistence(
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function pingProfileExistence(
+             $oCRNRSTN_MySQLi,
+             $result_handle,
+             $batch_key,
+             $result_set_key)
+    {
+
+        return self::$_R['kivotos']['sql_mgr']->pingProfileExistence(
+                                                $oCRNRSTN_MySQLi,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key);
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function return_record_count(
                     $oCRNRSTN_MySQLi, 
                     $result_handle, 
                     $batch_key, 
                     $result_set_key)
     {
 
-        return self::$oQueryManager->pingProfileExistence(
-                                     $oCRNRSTN_MySQLi, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key);
+        return self::$_R['kivotos']['sql_mgr']->return_record_count(
+                                                self::$_R['kivotos']['db_wiring'],
+                                                $oCRNRSTN_MySQLi,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key);
 
     }
 
-    public function return_record_count(
-                    $oCRNRSTN_MySQLi, 
-                    $result_handle, 
-                    $batch_key, 
-                    $result_set_key)
-    {
-
-        return self::$oQueryManager->return_record_count(
-                                     self::$oDB_wiring, 
-                                     $oCRNRSTN_MySQLi, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key);
-
-    }
-
-    public function load_previous_record_lookup(
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function load_previous_record_lookup(
                     $oCRNRSTN_MySQLi, 
                     $result_handle, 
                     $batch_key, 
@@ -554,33 +678,57 @@ class crnrstn_database_crnrstn extends crnrstn
                     $lookup_serial)
     {
 
-        self::$oQueryManager->load_previous_record_lookup(
-                              self::$oDB_wiring, 
-                              $oCRNRSTN_MySQLi, 
-                              $result_handle, 
-                              $batch_key, 
-                              $result_set_key, 
-                              $lookup_serial);
+        self::$_R['kivotos']['sql_mgr']->load_previous_record_lookup(
+                                         self::$_R['kivotos']['db_wiring'],
+                                         $oCRNRSTN_MySQLi,
+                                         $result_handle,
+                                         $batch_key,
+                                         $result_set_key,
+                                         $lookup_serial);
 
     }
 
-    public function init_lookup_by_id(
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function init_lookup_by_id(
                     $oCRNRSTN_MySQLi, 
                     $result_handle, 
                     $batch_key, 
                     $result_set_key)
     {
 
-        self::$oQueryManager->init_lookup_by_id(
-                              self::$oDB_wiring, 
-                              $oCRNRSTN_MySQLi, 
-                              $result_handle, 
-                              $batch_key, 
-                              $result_set_key);
+        self::$_R['kivotos']['sql_mgr']->init_lookup_by_id(
+                                         self::$_R['kivotos']['db_wiring'],
+                                         $oCRNRSTN_MySQLi,
+                                         $result_handle,
+                                         $batch_key,
+                                         $result_set_key);
 
     }
 
-    public function add_lookup_field_data(
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function add_lookup_field_data(
                     $oCRNRSTN_MySQLi, 
                     $result_handle, 
                     $batch_key, 
@@ -589,110 +737,174 @@ class crnrstn_database_crnrstn extends crnrstn
                     $field_value)
     {
 
-        return self::$oQueryManager->add_lookup_field_data(
-                                     self::$oDB_wiring, 
-                                     $oCRNRSTN_MySQLi, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key, 
-                                     $field_name, 
-                                     $field_value);
+        return self::$_R['kivotos']['sql_mgr']->add_lookup_field_data(
+                                                self::$_R['kivotos']['db_wiring'],
+                                                $oCRNRSTN_MySQLi,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key,
+                                                $field_name,
+                                                $field_value);
 
     }
 
-    public function keyDataByID(
-                    $oCRNRSTN_MySQLi, 
-                    $result_handle, 
-                    $batch_key, 
-                    $result_set_key, 
-                    $piped_primary_id_fields)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function keyDataByID(
+             $oCRNRSTN_MySQLi,
+             $result_handle,
+             $batch_key,
+             $result_set_key,
+             $piped_primary_id_fields)
     {
 
-        self::$oQueryManager->keyDataByID(
-                              self::$oDB_wiring, 
-                              $oCRNRSTN_MySQLi, 
-                              $result_handle, 
-                              $batch_key, 
-                              $result_set_key, 
-                              $piped_primary_id_fields);
+        self::$_R['kivotos']['sql_mgr']->keyDataByID(
+                                         self::$_R['kivotos']['db_wiring'],
+                                         $oCRNRSTN_MySQLi,
+                                         $result_handle,
+                                         $batch_key,
+                                         $result_set_key,
+                                         $piped_primary_id_fields);
 
     }
 
-    public function retrieve_data_by_id(
-                    $oCRNRSTN_MySQLi, 
-                    $result_handle, 
-                    $batch_key, 
-                    $result_set_key, 
-                    $piped_lookup_fieldname, 
-                    $piped_lookup_id_data)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function retrieve_data_by_id(
+             $oCRNRSTN_MySQLi,
+             $result_handle,
+             $batch_key,
+             $result_set_key,
+             $piped_lookup_fieldname,
+             $piped_lookup_id_data)
     {
 
-        return self::$oQueryManager->retrieve_data_by_id(
-                                     self::$oDB_wiring, 
-                                     $oCRNRSTN_MySQLi, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key, 
-                                     $piped_lookup_fieldname, 
-                                     $piped_lookup_id_data);
+        return self::$_R['kivotos']['sql_mgr']->retrieve_data_by_id(
+                                                self::$_R['kivotos']['db_wiring'],
+                                                $oCRNRSTN_MySQLi,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key,
+                                                $piped_lookup_fieldname,
+                                                $piped_lookup_id_data);
 
     }
 
-    public function process_query($request_serial)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function process_query($request_serial)
     {
 
-        //
-        // DO WE HAVE ANY 
-        // SUBSET TO CONSIDER? 
-        if(self::$oQueryManager->queueValidQuery(
-                                 $request_serial, 
-                                 self::$oDB_wiring))
-        {
-
-            //
-            // SEND TO DATABASE. 
-            return self::$oQueryManager->sendQuery(
-                                         $request_serial, 
-                                         self::$oDB_wiring);
-
-        }
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Do we have any
+         * subset to consider?
+         *
+         */
+        if(self::$_R['kivotos']['sql_mgr']->queueValidQuery(
+                                            $request_serial,
+                                            self::$_R['kivotos']['db_wiring']))
+            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+             * Send to database.
+             *
+             */
+            return self::$_R['kivotos']['sql_mgr']->sendQuery(
+                                                    $request_serial,
+                                                    self::$_R['kivotos']['db_wiring']);
 
         return true;
 
     }
 
-    public function load_database_query(
-                    $oCRNRSTN_MySQLi, 
-                    $result_handle, 
-                    $batch_key, 
-                    $result_set_key, 
-                    $query)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function load_database_query(
+             $oCRNRSTN_MySQLi,
+             $result_handle,
+             $batch_key,
+             $result_set_key,
+             $query)
     {
 
-        //
-        // LOAD QUERY OBJECT 
-        // INTO QUERY MANAGER. 
-        return self::$oQueryManager->load_database_query(
-                                     self::$oDB_wiring, 
-                                     $oCRNRSTN_MySQLi, 
-                                     $result_handle, 
-                                     $batch_key, 
-                                     $result_set_key, 
-                                     $query);
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Load the query object into
+         * the MySQL Database Integrations
+         * Query Manager Class Object of
+         * the CRNRSTN :: Lightsaber MySQL
+         * Database Integrations
+         * Services Layer.
+         *
+         */
+        return self::$_R['kivotos']['sql_mgr']->load_database_query(
+                                                self::$_R['kivotos']['db_wiring'],
+                                                $oCRNRSTN_MySQLi,
+                                                $result_handle,
+                                                $batch_key,
+                                                $result_set_key,
+                                                $query);
 
     }
 
-    public function receive_process_query_param(
-                    $key, 
-                    $val, 
-                    $request_serial)
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function receive_process_query_param(
+             $key,
+             $val,
+             $request_serial)
     {
 
-        //
-        // RECEIVE ANY RESTRICTIONS 
-        // TO THE PROCESSING OF ALL 
-        // (100%) QUERY AVAILABLE FOR 
-        // DIRECT SUBSET ACQUISITION. 
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Receive any restrictions
+         * to the processing of all
+         * (100%) of the query that
+         * are available in memory for
+         * direct subset acquisition.
+         *
+         */
 
         try{
 
@@ -704,10 +916,10 @@ class crnrstn_database_crnrstn extends crnrstn
                 case 'result_handle':
                 case 'query_override':
 
-                    self::$oQueryManager->receive_process_query_param(
-                                          $key, 
-                                          $val, 
-                                          $request_serial);
+                self::$_R['kivotos']['sql_mgr']->receive_process_query_param(
+                                                 $key,
+                                                 $val,
+                                                 $request_serial);
 
                 break;
                 default:
@@ -730,17 +942,17 @@ class crnrstn_database_crnrstn extends crnrstn
         }catch(Exception $e){
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Exception handling performed 
-             * by the Logging Services Layer 
-             * of the CRNRSTN :: Lightsaber 
-             * RoCEv2 SOAP Services 
-             * Layer (CLR-SSL). 
+             * Exception handling performed
+             * by the Logging Services Layer
+             * of the CRNRSTN :: Lightsaber
+             * RoCEv2 SOAP Services
+             * Layer (CLR-SSL).
              *
-             * Allow the CLR-SSL to handle 
-             * this exception per the 
-             * configured logging profile of 
-             * the running application on 
-             * this server. 
+             * Allow the CLR-SSL to handle
+             * this exception per the
+             * configured logging profile of
+             * the running application on
+             * this server.
              *
              *
              * 5
@@ -749,17 +961,24 @@ class crnrstn_database_crnrstn extends crnrstn
              * Last Modified: Friday, February 27, 2026 @ 0233 hrs.
              *
              */
-            $this->oCRNRSTN_USR->catch_exception(
-                                 $e, 
-                                 LOG_ERR, 
-                                 __METHOD__, 
-                                 __NAMESPACE__);
+            $this->catch_exception(
+                   $e,
+                   \LOG_ERR,
+                   __METHOD__,
+                   __NAMESPACE__);
 
         }
 
     }
 
-    public function __destruct()
+    /**
+     * R :: Content pending.
+     *
+     * @return
+     * @access public
+     *
+     */
+    function __destruct()
     {
 
     }

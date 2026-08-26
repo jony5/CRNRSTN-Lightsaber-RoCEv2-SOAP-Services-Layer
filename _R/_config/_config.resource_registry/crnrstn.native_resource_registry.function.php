@@ -153242,7 +153242,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_database_wiring':
                 case 'crnrstn_database_wiring':
-                case 'database_wiring':
+                case 'db_wiring':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the system 
@@ -153252,7 +153252,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'crnrstn_database_wiring';
                     $tmp_file_name                          = 'crnrstn.database_wiring.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'database_wiring';
+                    $tmp_public_key                         = 'db_wiring';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'class' . $os_path_dir_separator_char . 
