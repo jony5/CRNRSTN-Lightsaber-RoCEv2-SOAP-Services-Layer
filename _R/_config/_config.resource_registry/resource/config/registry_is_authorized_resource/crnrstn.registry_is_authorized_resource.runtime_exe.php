@@ -317,4 +317,9 @@ return array(
        __NAMESPACE__ . '\crnrstn_kivotos'            => 1,
        __NAMESPACE__ . '\crnrstn_registry_user'      => 1,
        __NAMESPACE__ . '\crnrstn_registry_assistant' => 1,
-       __NAMESPACE__ . '\obj_with_access_off______0' => 0);
+       __NAMESPACE__ . '\nusoap_server'              => 1,
+       __NAMESPACE__ . '\nusoap_client'              => 1,
+       __NAMESPACE__ . '\wsdl'                       => 1,
+       __NAMESPACE__ . '\nusoap_base'                => 1,
+       __NAMESPACE__ . '\crnrstn_PHPMailer'          => 1);
+//     __NAMESPACE__ . '\obj_with_access_off______0' => 0
