@@ -278,7 +278,7 @@ namespace CRNRSTN;
  */
 
 /* $software_access_mode sets the software 
- * interoperablity of the CLR-SSL 
+ * interoperability level of the CLR-SSL
  * Resource Registry.
  *
  * The CLR-SSL Resource Registry can be

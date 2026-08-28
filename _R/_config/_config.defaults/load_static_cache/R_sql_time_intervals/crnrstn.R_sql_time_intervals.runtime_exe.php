@@ -78,7 +78,7 @@
  *      (v1.0.0)                   my dog and I to you...wherever 
  *                                 and whenever you are. 
  *        Author :: Jonathan '5' Harris, CEO, CTO, Lead Full Stack 
- *                  Developer, and as of Q3 in 2025, Chief Creative 
+ *                  Developer, and as of Q3 in 2025, Chief Creative
  *                  here at eVifweb® 
  *                  jharris@eVifweb.com. eVifweb@gmail.com. 
  *           URI :: https://crnrstn.jony5.com
@@ -258,118 +258,127 @@
 namespace CRNRSTN;
 
 /**
+ * R :: R_sql_time_intervals contains support data structures for parsing SQL temporal intervals from the midst of user generated content.
  * 
- *
- * GLOBAL FUNCTION
- * RESOURCE DEFINITION :: _crnrstn_crypto_rand_secure
- * FUNCTION VERSION    :: 1.00.0000
- * DATE                :: Sunday, September 1, 2024 @ 0435 hrs.
- * AUTHOR              :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
- * URI                 :: http://evifweb.jony5.com
- * TITLE               :: The CRNRSTN :: Lightsaber SOAP
- *                        Services Layer
- *                        Cryptographically Secure
- *                        Random Output Generator Global
- *                        Function Definition
- * DESCRIPTION         :: The CRNRSTN :: Lightsaber SOAP
- *                        Services Layer
- *                        Cryptographically Secure
- *                        Random Output Generator
- *                        (source code by Scott, a PHP
- *                        Developer at COMSOL),
- *                        is the strongest function
- *                        Scott could make for users on
- *                        StackOverflow that satisfies
- *                        the criteria of how to
- *                        generate a random, unique,
- *                        alphanumeric string?
- *
- *                        This is an implemented
- *                        version of Erik's answer
- *                        on the same.
- *
- *                        Erik A. Brandstadmoen
- *                        https://stackoverflow.com/a/1846218
- *
- *                        [Begin Erik A. Brandstadmoen]
- *                        1) Generate a random number
- *                           using your favourite
- *                           random-number generator.
- *
- *                        2) Multiply and divide it
- *                           to get a number matching
- *                           the number of characters
- *                           in your code alphabet.
- *
- *                        3) Get the item at that
- *                           index in your
- *                           code alphabet.
- *
- *                        4) Repeat from 1) until
- *                           you have the length
- *                           you want.
- *
- *                          Erik A. Brandstadmoen
- *                          https://stackoverflow.com/users/25338/erik-a-brandstadmoen
- *
- *                        [End Erik A. Brandstadmoen]
+ * $R_data = array('interval_values' => array(), 'interval_string_patterns' => array());
+ * 
+ * @package CRNRSTN
+ * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
+ * @author Jonathan '5' Harris <jharris@eVifweb.com>
+ * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
+ * @license https://crnrstn.jony5.com/licensing/ MIT
+ * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
+ * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
+ * @param array $R_data contains support data structures for parsing SQL temporal intervals from the midst of user generated content. 
+ * @access public
  *
  *
- *                        _crnrstn_crypto_rand_secure($min, $max),
- *                        works as a drop in
- *                        replacement for rand()
- *                        or mt_rand.
- *
- *                        It uses openssl_random_pseudo_bytes
- *                        to help create a random
- *                        number between $min
- *                        and $max.
- *
- *                        getToken($length) creates
- *                        an alphabet to use within
- *                        the token and then creates
- *                        a string of length $length.
- *
- *                        Source: https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php#104322
- *
- *
- *                        Scott
- *
- *                        SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
- *                        COMMENT :: https://stackoverflow.com/a/13733588
- *                        AUTHOR  :: https://stackoverflow.com/users/1698153/scott
- *
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- *
- * LICENSE          :: MIT | https://crnrstn.jony5.com/licensing/
+ * 5 :: Saturday, June 27, 2026 @ 2253 hrs.
  *
  */
-//
-// SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-// COMMENT :: https://stackoverflow.com/a/13733588
-// AUTHOR  :: https://stackoverflow.com/users/1698153/scott
-//
-//
-// Scott
-//
-function _crnrstn_crypto_rand_secure($min, $max){
-
-    $range = $max - $min;
-
-    if($range < 1) return $min;         // not so random...
-
-    $log    = ceil(log($range, 2));
-    $bytes  = (int) ($log / 8) + 1;     // length in bytes
-    $bits   = (int) $log + 1;           // length in bits
-    $filter = (int) (1 << $bits) - 1;   // set all lower bits to 1
-
-    do{
-
-        $rnd = hexdec(bin2hex(openssl_random_pseudo_bytes($bytes)));
-        $rnd = $rnd & $filter; // discard irrelevant bits
-
-    }while($rnd > $range);
-
-    return $min + $rnd;
-
-}
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Initialize support 
+ * data structures for 
+ * SQL temporal intervals. 
+ *
+ * https://dev.mysql.com/doc/refman/8.0/en/expressions.html
+ *
+ *
+ * 5 :: Wednesday, June 12, 2024 @ 0339 hrs.
+ *
+ */
+$R_data = array(
+          'interval_values'             => array(
+             array('MICROSECOND'        => 'MICROSECONDS'), 
+             array('SECOND'             => 'SECONDS'), 
+             array('MINUTE'             => 'MINUTES'), 
+             array('HOUR'               => 'HOURS'), 
+             array('DAY'                => 'DAYS'), 
+             array('WEEK'               => 'WEEKS'), 
+             array('MONTH'              => 'MONTHS'), 
+             array('QUARTER'            => 'QUARTERS'), 
+             array('YEAR'               => 'YEARS'), 
+             array('SECOND_MICROSECOND' => 'SECONDS.MICROSECONDS'), 
+             array('MINUTE_MICROSECOND' => 'MINUTES:SECONDS.MICROSECONDS'), 
+             array('MINUTE_SECOND'      => 'MINUTES:SECONDS'), 
+             array('HOUR_MICROSECOND'   => 'HOURS:MINUTES:SECONDS.MICROSECONDS'), 
+             array('HOUR_SECOND'        => 'HOURS:MINUTES:SECONDS'), 
+             array('HOUR_MINUTE'        => 'HOURS:MINUTES'), 
+             array('DAY_MICROSECOND'    => 'DAYS HOURS:MINUTES:SECONDS.MICROSECONDS'), 
+             array('DAY_SECOND'         => 'DAYS HOURS:MINUTES:SECONDS'), 
+             array('DAY_MINUTE'         => 'DAYS HOURS:MINUTES'), 
+             array('DAY_HOUR'           => 'DAYS HOURS'), 
+             array('YEAR_MONTH'         => 'YEARS-MONTHS')), 
+          'interval_string_patterns'    => array(
+                 'SECONDS_MICROSECONDS' => 9, 
+                 'SECONDS_MICROSECOND'  => 9, 
+                 'SECOND_MICROSECONDS'  => 9, 
+                 'SECOND_MICROSECOND'   => 9, 
+                 'MINUTES_MICROSECONDS' => 10, 
+                 'MINUTES_MICROSECOND'  => 10, 
+                 'MINUTE_MICROSECONDS'  => 10, 
+                 'MINUTE_MICROSECOND'   => 10, 
+                 'HOURS_MICROSECONDS'   => 12, 
+                 'HOURS_MICROSECOND'    => 12, 
+                 'HOUR_MICROSECONDS'    => 12, 
+                 'HOUR_MICROSECOND'     => 12, 
+                 'DAYS_MICROSECONDS'    => 15, 
+                 'DAYS_MICROSECOND'     => 15, 
+                 'DAY_MICROSECONDS'     => 15, 
+                 'DAY_MICROSECOND'      => 15, 
+                 'MINUTES_SECONDS'      => 11, 
+                 'MINUTES_SECOND'       => 11, 
+                 'MINUTE_SECONDS'       => 11, 
+                 'MINUTE_SECOND'        => 11, 
+                 'MICROSECONDS'         => 0, 
+                 'MICROSECOND'          => 0, 
+                 'HOURS_SECONDS'        => 13, 
+                 'HOURS_SECOND'         => 13, 
+                 'HOUR_SECONDS'         => 13, 
+                 'HOUR_SECOND'          => 13, 
+                 'HOURS_MINUTES'        => 14, 
+                 'HOUR_MINUTES'         => 14, 
+                 'HOURS_MINUTE'         => 14, 
+                 'HOUR_MINUTE'          => 14, 
+                 'DAYS_SECONDS'         => 16, 
+                 'DAYS_SECOND'          => 16, 
+                 'DAY_SECONDS'          => 16, 
+                 'DAY_SECOND'           => 16, 
+                 'DAYS_MINUTES'         => 17, 
+                 'DAYS_MINUTE'          => 17, 
+                 'DAY_MINUTES'          => 17, 
+                 'DAY_MINUTE'           => 17, 
+                 'YEARS_MONTHS'         => 19, 
+                 'YEARS_MONTH'          => 19, 
+                 'YEAR_MONTHS'          => 19, 
+                 'YEAR_MONTH'           => 19, 
+                 'DAYS_HOURS'           => 18, 
+                 'DAYS_HOUR'            => 18, 
+                 'DAY_HOURS'            => 18, 
+                 'DAY_HOUR'             => 18, 
+                 'QUARTERS'             => 7, 
+                 'QUARTER'              => 7, 
+                 'SECONDS'              => 1, 
+                 'SECOND'               => 1, 
+                 'MINUTES'              => 2, 
+                 'MINUTE'               => 2, 
+                 'MONTHS'               => 6, 
+                 'MONTH'                => 6, 
+                 'HOURS'                => 3, 
+                 'HOUR'                 => 3, 
+                 'WEEKS'                => 5, 
+                 'WEEK'                 => 5, 
+                 'YEARS'                => 8, 
+                 'YEAR'                 => 8, 
+                 'DAYS'                 => 4, 
+                 'MINS'                 => 2, 
+                 'SECS'                 => 1, 
+                 'QTR'                  => 7, 
+                 'MTH'                  => 6, 
+                 'DAY'                  => 4, 
+                 'MIN'                  => 2, 
+                 'SEC'                  => 1, 
+                 'YR'                   => 8, 
+                 'WK'                   => 5, 
+                 'HR'                   => 3));

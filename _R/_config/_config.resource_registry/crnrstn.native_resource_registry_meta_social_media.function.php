@@ -266,12 +266,23 @@ namespace CRNRSTN;
  * DATE                :: Monday, April 20, 2026 @ 0007 hrs.
  * AUTHOR              :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
  * URI                 :: http://evifweb.jony5.com/
- * TITLE               :: The Native Resource Registry 
- *                        of...
- * DESCRIPTION         :: The native resource...
- *
+ * TITLE               :: The Social Media HTML Meta Tag
+ *                        Content Library for the CLR-SSL 
+ *                        and for the Integrated
+ *                        Software Solutions.
+ * DESCRIPTION         :: The CLR-SSL Social Media Meta
+ *                        Data Content Library provides
+ *                        the CLR-SSL framework and
+ *                        supporting software providers
+ *                        with a static meta data storage
+ *                        and retrieval architecture for
+ *                        social share and social preview
+ *                        data and any relevant
+ *                        data integrations.
  *
  *                        5
+ *
+ *                        Friday, August 28, 2026 @ 1010 hrs.
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
@@ -279,7 +290,9 @@ namespace CRNRSTN;
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
- * @package CRNRSTN
+ * @return mixed
+ * @access public
+ *
  * @version 1.00.0000 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
  * @author Jonathan '5' Harris <jharris@eVifweb.com>
  * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
@@ -287,8 +300,7 @@ namespace CRNRSTN;
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
  * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
- * @return mixed 
- * @access public
+ * @package CRNRSTN
  *
  */
 function _crnrstn_native_resource_registry_meta_social_media(

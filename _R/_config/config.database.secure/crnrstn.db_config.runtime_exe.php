@@ -342,7 +342,7 @@ $socket   = NULL;
  * name prefix.
  *
  */
-$table_prefix = 'crnrstn_';
+$table_prefix = 'R_';
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Toshiba® M100 [eVifweb®] :: 

@@ -294,8 +294,7 @@ namespace CRNRSTN;
  *
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Initialize WordPress(r)
  * configuration profiles
  * for each environment.
@@ -310,8 +309,7 @@ $this->config_add_data_wp('BLUEHOST_JONY5', 'DB_USER', 'jony5_prod123');
 $this->config_add_data_wp('BLUEHOST_JONY5', 'DB_PASSWORD', 'password123456789');
 $this->config_add_data_wp('BLUEHOST_JONY5', 'DB_HOST', 'localhost');
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * New WordPress(r) Configuration.
  * CRNRSTN :: WordPress(r) Integrations.
  *
@@ -321,8 +319,7 @@ $this->config_add_data_wp('BLUEHOST_EVIFWEB', 'DB_USER', 'jony5_prod123');
 $this->config_add_data_wp('BLUEHOST_EVIFWEB', 'DB_PASSWORD', 'password123456789');
 $this->config_add_data_wp('BLUEHOST_EVIFWEB', 'DB_HOST', 'localhost');
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * New WordPress(r) Configuration.
  * CRNRSTN :: WordPress Integrations.
  *
@@ -332,8 +329,7 @@ $this->config_add_data_wp('LOCALHOST_PC', 'DB_USER', 'jony5_stage');
 $this->config_add_data_wp('LOCALHOST_PC', 'DB_PASSWORD', 'aXNTPxGPeLRwYzTS');
 $this->config_add_data_wp('LOCALHOST_PC', 'DB_HOST', 'localhost');
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * New WordPress(r) Configuration.
  * CRNRSTN :: WordPress(r) Integrations.
  *
@@ -343,8 +339,7 @@ $this->config_add_data_wp('LOCALHOST_CHAD_MACBOOKPRO', 'DB_USER', 'jony5_stage')
 $this->config_add_data_wp('LOCALHOST_CHAD_MACBOOKPRO', 'DB_PASSWORD', 'aXNTPxGPeLRwYzTS');
 $this->config_add_data_wp('LOCALHOST_CHAD_MACBOOKPRO', 'DB_HOST', 'localhost');
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * WordPress(r) Configuration
  * data that is applied across
  * all environments.

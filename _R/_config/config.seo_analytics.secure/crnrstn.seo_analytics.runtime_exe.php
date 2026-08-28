@@ -300,34 +300,15 @@ namespace CRNRSTN;
  * LICENSE            :: MIT | https://crnrstn.jony5.com/licensing/
  *
  */
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * CRNRSTN :: Advanced Configuration
  * Parameters for Initialization of
  * Third Party Analytics tag profiles.
  *
  */
-$tmp_str_JONY5 = '<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5WQEX5QE9Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
+$tmp_str_JONY5 = '';
 
-  gtag(\'config\', \'G-5WQEX5QE9Y\');
-</script>
-';
-
-$tmp_str_EVIFWEB = '<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EVBJ1EJ75E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag(\'js\', new Date());
-
-  gtag(\'config\', \'G-EVBJ1EJ75E\');
-</script>
-';
+$tmp_str_EVIFWEB = '';
 
 $tmp_str_JONY5_TEST = $tmp_str_CHAD_MACBOOKPRO = $tmp_str_MACBOOKPRO = '<!-- Global site tag - **config_add_seo_analytics TEST**  -->
 <script>
@@ -335,8 +316,7 @@ $tmp_str_JONY5_TEST = $tmp_str_CHAD_MACBOOKPRO = $tmp_str_MACBOOKPRO = '<!-- Glo
 </script>
 ';
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * INITIALIZE ANALYTICS 
  * PROFILE(S) FOR 
  * EACH ENVIRONMENT. 

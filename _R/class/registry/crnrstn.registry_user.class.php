@@ -375,7 +375,7 @@ class crnrstn_registry_user
     private static $server_files_version_hash_ARRAY = array();
     protected $hash_acceleration_ARRAY = array();
     protected $total_bytes_hashed_ARRAY = array();
-    private static $byte_reporting_system = 'ISO_80000';             // ['ISO_80000' or 'SI_Metric']
+    private static $byte_reporting_system = 'ISO_80000';  // ['ISO_80000' or 'SI_Metric']
     private static $byte_units_ARRAY = array();
     private static $bytes_processed = 0;
     private static $css_styles_ARRAY = array();
@@ -783,6 +783,19 @@ class crnrstn_registry_user
          */
         self::$R_data['system_colors']['electric_white'] = '1px 1px 1px rgba(199, 213, 255, 1.0)'; // R :: Electric White.
         self::$R_data['system_colors']['slimer_green']   = '1px 1px 2px rgba(87, 255, 0, 1.0)';    // R :: Slimer® Green.
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Initialize some required
+         * CLR-SSL data type integers.
+         *
+         *
+         * 5 :: Wednesday, August 26, 2026 @ 1220 hrs.
+         *
+         */
+        self::$R_data['int_flag']['R_array']   = 14;
+        self::$R_data['int_flag']['R_int']     = 7;
+        self::$R_data['int_flag']['R_integer'] = 8;
+        self::$R_data['int_flag']['R_string']  = 13;
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Initialize CRNRSTN :: Lightsaber RoCEv2 SOAP
@@ -1510,9 +1523,9 @@ class crnrstn_registry_user
                    $token);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * SOURCE   :: https://www.php.net/manual/en/session.constants.php#constant.sid
-             * AUTHOR   :: https://www.php.net/manual/en/session.constants.php#120025
-             * COMMENT  :: https://www.php.net/manual/en/session.constants.php#120025
+             * SOURCE  :: https://www.php.net/manual/en/session.constants.php#constant.sid
+             * COMMENT :: https://www.php.net/manual/en/session.constants.php#120025
+             * AUTHOR  :: https://www.php.net/manual/en/session.constants.php#120025
              *
              * Check whether a
              * session is started
@@ -2582,13 +2595,14 @@ class crnrstn_registry_user
                                 $mem_ptr = $R_resp['clr_ssl_resource']['memory_pointer'][0];
 
                                 //switch($R_resp[$mem_ptr]['resource_name']){
-                                //switch(\get_class($R_resp[$mem_ptr]['data'][0])){
-                                    //case __NAMESPACE__ . '\crnrstn_json':
+                                /*
+                                switch(\get_class($R_resp[$mem_ptr]['data'][0])){
+                                    case __NAMESPACE__ . '\crnrstn_json':
 
-                                    //break;
+                                    break;
 
-                                //}
-
+                                }
+                                */
                             }
 
                         break;
@@ -5448,19 +5462,22 @@ class crnrstn_registry_user
                     <li' . $this->alternating_row_style('primary') .
                     '><span class="R_report_meta_name">data_license_key:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
-                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] . '" target="_blank">' .
+                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
+                    '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['key'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
                     <li' . $this->alternating_row_style('primary') .
                     '><span class="R_report_meta_name">data_license_name:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
-                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] . '" target="_blank">' .
+                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
+                    '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['name'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
                     <li' . $this->alternating_row_style('primary') .
                     '><span class="R_report_meta_name">data_license_url:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
-                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] . '" target="_blank">' .
+                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
+                    '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
                 </ul>
@@ -5609,7 +5626,7 @@ class crnrstn_registry_user
 
         */
 
-        die($html_out);
+        die($report_html);
 
     }
 
@@ -10346,7 +10363,7 @@ die();</code></pre>';
                 }
 
             break;
-            case 'R_SQL_time_interval':
+            case 'R_sql_time_intervals':
  
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Initialize support 
@@ -10364,8 +10381,8 @@ die();</code></pre>';
                  * and return $R_data. 
                  *
                  * /_R/_config/_config.defaults
-                 * /load_static_cache/R_SQL_time_interval
-                 * /crnrstn.R_SQL_time_interval.runtime_exe.php
+                 * /load_static_cache/R_sql_time_intervals
+                 * /crnrstn.R_sql_time_intervals.runtime_exe.php
                  *
                  * Previously initialized (2024-2025) via: 
                  * $this->relevant_header_fields_ARRAY = _crnrstn_settings(
@@ -12946,7 +12963,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                                                   $resource);
 
             break;
-            case 'R_SQL_time_interval':
+            case 'R_sql_time_intervals':
                 // 5 :: Saturday, June 27, 2026 @ 2205 hrs.
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -13624,11 +13641,21 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 default:
 
                     // 5 :: Thursday, April 23, 2026 @ 0040 hrs.
-                    //self::$R_data['spool']['err_message_queue_push']['message_token'][]                             = $token['token'];
-                    self::$R_data['spool']['err_message_queue_push'][$token['token']]['message'][]                    = $message_str;
-                    self::$R_data['spool']['err_message_queue_push'][$token['token']]['data_authorization_profile'][] = $spool_channel;
+                    self::$R_data['spool']['error_log']['message_str'][]               = $message_str;
+                    self::$R_data['spool']['error_log']['syslog_level'][]              = $syslog_level;
+                    self::$R_data['spool']['error_log']['error_reporting_level'][]     = $error_reporting_level;
+                    self::$R_data['spool']['error_log']['line_num'][]                  = $line_num;
+                    self::$R_data['spool']['error_log']['method'][]                    = $method;
+                    self::$R_data['spool']['error_log']['file'][]                      = $file;
+                    self::$R_data['spool']['error_log']['token'][]                     = $token;
+                    self::$R_data['spool']['error_log']['spool'][]                     = $spool;
+                    self::$R_data['spool']['error_log']['spool_channel'][]             = $spool_channel;
+                    self::$R_data['spool']['error_log']['syslog_prefix'][]             = $syslog_prefix;
+                    self::$R_data['spool']['error_log']['syslog_prefix_passthrough'][] = $syslog_prefix_passthrough;
+                    self::$R_data['spool']['error_log']['spool_runtime'][]             = $this->wall_time();
+                    self::$R_data['spool']['error_log']['spool_microtime'][]           = $this->microtime_float();
 
-                    return count(self::$R_data['spool']['err_message_queue_push'][$token['token']]['message']);
+                    return true;
 
                 break;
 
@@ -14810,9 +14837,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/5100189/use-php-to-check-if-page-was-accessed-with-ssl
-     * COMMENT  :: https://stackoverflow.com/a/10307798
-     * AUTHOR   :: https://stackoverflow.com/users/887067/saeven
+     * SOURCE  :: https://stackoverflow.com/questions/5100189/use-php-to-check-if-page-was-accessed-with-ssl
+     * COMMENT :: https://stackoverflow.com/a/10307798
+     * AUTHOR  :: https://stackoverflow.com/users/887067/saeven
      *
      *
      * Saeven
@@ -26109,9 +26136,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          * you just want to set and forget it,
          * use 45).
          *
-         * SOURCE   :: https://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php
-         * COMMENT  :: https://stackoverflow.com/a/3003233
-         * AUTHOR   :: https://stackoverflow.com/users/238978/emil-vikstr%c3%b6m
+         * SOURCE  :: https://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php
+         * COMMENT :: https://stackoverflow.com/a/3003233
+         * AUTHOR  :: https://stackoverflow.com/users/238978/emil-vikstr%c3%b6m
          *
          *
          * Emil Vikström
@@ -26127,9 +26154,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         $ip = $_SERVER['REMOTE_ADDR'];
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * SOURCE   :: https://stackoverflow.com/questions/12435582/php-serverremote-addr-shows-ipv6/12436099
-         * COMMENT  :: https://stackoverflow.com/a/12436099
-         * AUTHOR   :: https://stackoverflow.com/users/813192/sander-steffann
+         * SOURCE  :: https://stackoverflow.com/questions/12435582/php-serverremote-addr-shows-ipv6/12436099
+         * COMMENT :: https://stackoverflow.com/a/12436099
+         * AUTHOR  :: https://stackoverflow.com/users/813192/sander-steffann
          *
          *
          * Sander Steffann
@@ -28972,9 +28999,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-     * COMMENT  :: https://stackoverflow.com/a/13733588
-     * AUTHOR   :: https://stackoverflow.com/users/1698153/scott
+     * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+     * COMMENT :: https://stackoverflow.com/a/13733588
+     * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
      *
      *
      * Scott
@@ -29224,11 +29251,8 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                                         0, 
                                         'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
 
-                if(!is_numeric($tmp_len)){
-
+                if(!is_numeric($tmp_len))
                     $tmp_len = (int) self::$R_data['R_salt_default_length'];
-
-                }
 
                 $clr_ssl_msg = 'An invalid length, (' . 
                                $this->gettype($len) . ') ' . 
@@ -29333,23 +29357,12 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          */
         $max = \strlen($codeAlphabet);       
 
-        if(function_exists('random_int')){
-
-            for($i = 0; $i < $len; $i++){
-
+        if(\function_exists('random_int'))
+            for($i = 0; $i < $len; $i++)
                 $token .= $codeAlphabet[random_int(0, $max - 1)];
-
-            }
-
-        }else{
-
-            for($i = 0; $i < $len; $i++){
-
+        else
+            for($i = 0; $i < $len; $i++)
                 $token .= $codeAlphabet[$this->crypto_rand_secure(0, $max - 1)];
-
-            }
-
-        }
 
         if($hmac_algorithm_hash_return !== false){
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -29397,7 +29410,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                  * 5 :: Thursday, November 6, 2025 @ 0237 hrs.
                  *
                  */
-                $tmp_hash_key = substr($tmp_hash_key, 0, $len);
+                $tmp_hash_key = \substr($tmp_hash_key, 0, $len);
 
             }
 
@@ -29430,10 +29443,10 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
      * @return
      * @access private
      *
-     * SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-     * COMMENT  :: https://stackoverflow.com/a/13733588
-     * AUTHOR   :: https://stackoverflow.com/users/1698153/scott
-     * AUTHOR   :: https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php#104322
+     * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+     * COMMENT :: https://stackoverflow.com/a/13733588
+     * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
+     * AUTHOR  :: https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php#104322
      *
      *
      * Scott
@@ -29483,87 +29496,117 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              $algorithm_override = NULL, 
              $binary_return = false)
     {
-
-        //
-        // $char_selection = NULL [OR (int) 0]
-        //      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-        //                      abcdefghijklmnopqrstuvwxyz
-        //                      0123456789
-        //
-        // $char_selection = '01'
-        //      $codeAlphabet = 01
-        //
-        // $char_selection = (int) -3
-        //      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-        //                      abcdefghijklmnopqrstuvwxyz
-        //                      0123456789:+=_- )(*$#@!~.
-        //
-        // $char_selection = (int) -2
-        //      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-        //                      abcdefghijklmnopqrstuvwxyz
-        //                      0123456789{}[]:+=_- )(*&%$#@!~?.
-        //
-        // $char_selection = (int) -1
-        //      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-        //                      abcdefghijklmnopqrstuvwxyz
-        //                      0123456789{}[]:;\"\'|\\+=_- )(*&^%$#@!~
-        //                      `?/<>.,   '
-        //
-        // Note: $char_selection = -1 will use *all* characters across
-        //        all dimensions in the known ASCII universe for system
-        //        key generation. There are some character omissions to
-        //        note, however. $char_selection = -1 evokes *all*
-        //        characters except:
-        //          - The sequence \e escape key (ESC or 0x1B (27) in
-        //            ASCII), and
-        //          - we're not splitting hairs choosing between
-        //            sequence \n LINEFEED (LF or 0x0A (10) in ASCII)
-        //            and the sequence \r carriage RETURN (CR or 0x0D
-        //            (13) in ASCII) as I just let the PhpStorm IDE
-        //            choose how to convey the ENTER key to text, and
-        //          - also screw both \f form feed (FF or 0x0C (12) in
-        //            ASCII) and \v VERTICAL TAB (VT or 0x0B (11) in
-        //            ASCII) sequences; we do not use these characters
-        //            for system key generation.
-        //
-        // Note: $char_selection = -3 produces a little more variation in
-        //       output key (over $char_selection = NULL); it has just a
-        //       few more characters added to the set beyond the plain
-        //       alpha numeric ones. -3 is the coolest however, because
-        //       these new characters were hand selected for being the
-        //       nicest (imho) to work with as data in the data
-        //       handling world.
-        //
-        //       TLDR; $char_selection = -3 produces CSV safe data. the
-        //       output has no quotes, no commas, no semi-colons...etc.,
-        //       but it has the most distinct number of characters for
-        //       the strongest possible variation in system key
-        //       generation output by CRNRSTN ::
-        //
-        //       5 :: Wednesday, December 6, 2023 @ 2127 hrs.
-        //
-        // https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Finished documentation and
+         *       integration updates for $char_selection=(-4)
+         *       from the other day, a new integer
+         *       to provide another (second now)
+         *       CSV friendly token string output data.
+         *       5 :: Thursday, February 12, 2026 @ 0059 hrs.
+         *
+         *  $char_selection = '01'
+         *    $codeAlphabet = 01
+         *
+         *  $char_selection = NULL [(int) 0, (int) -5 ][options]
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789
+         *
+         *  $char_selection = (int) -4
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789+=_-*~.
+         *
+         *  $char_selection = (int) -3
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789:+=_- )(*$#@!~.
+         *
+         *  $char_selection = (int) -2
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789{}[]:+=_- )(*&%$#@!~?.
+         *
+         *  $char_selection = (int) -1
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789{}[]:;\"\'|\\+=_- )(*&^%$#@!~
+         *                    `?/<>.,   '
+         *
+         * Note: $char_selection = -1 will use *all*
+         *       characters across all dimensions in
+         *       the known ASCII universe (and aligning
+         *       with data known for as being common
+         *       and accessible keyboard data entry for
+         *       random hash token generation. There
+         *       are still some character omissions
+         *       from this key generator to
+         *       note, however:
+         *
+         *       $char_selection = -1 evokes *all*
+         *       characters except:
+         *          - The sequence \e escape key
+         *            (ESC or 0x1B (27) in ASCII), and
+         *          - We're not splitting hairs to
+         *            be choosing between:
+         *            ~ sequence \n LINEFEED
+         *              (LF or 0x0A (10) in ASCII) and
+         *            ~ the sequence \r carriage
+         *              RETURN (CR or 0x0D (13) in ASCII)
+         *            ~ I just struck the keyboard
+         *              ENTER key, and I let the
+         *              PhpStorm IDE choose how to
+         *              convey this in ASCII.
+         *          - Also screw both \f form feed
+         *            (FF or 0x0C (12) in ASCII) and
+         *            \v VERTICAL TAB (VT or 0x0B (11)
+         *            in ASCII) sequences; we do not
+         *            use these characters for system
+         *            key and hash generation.
+         *
+         * Note: $char_selection = -3 and -4 both produce a
+         *       little more variation in output key data
+         *       variability (over $char_selection = NULL);
+         *       these have just a few more characters
+         *       added to the set beyond the plain alpha
+         *       numeric ones. I think -3 is the coolest
+         *       in the world of big data however, because
+         *       the characters were hand selected for
+         *       being the nicest (imho) to work with in
+         *       raw text format in big multi-GB CSV text
+         *       files; also, -3 has a few more chars by
+         *       count than $char_selection = -4.
+         *
+         *       TLDR; $char_selection = -3 (and -4)
+         *       produces CSV safe data. The output has
+         *       no quotes, no commas, no semi-colons,...,
+         *       but it has the most distinct number of
+         *       characters beyond straight alpha-numeric
+         *       for achieving the highest possible
+         *       variation in system key generation
+         *       output by CRNRSTN ::
+         *
+         *       https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double
+         *
+         *
+         * 5 :: Wednesday, December 6, 2023 @ 2127 hrs.
+         * Last Modified: Thursday, February 12, 2026 @ 0059 hrs.
+         *
+         */
         if(!isset($length_override)){
 
-            if($this->isset_resource('R_salt_default_length', 'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true){
-
-                $tmp_salt_length = $this->get_resource('R_salt_default_length', 0, 'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
-
-            }else{
-
+            if($this->isset_resource('R_salt_default_length', 'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
+                $tmp_salt_length = $this->get_resource(
+                                          'R_salt_default_length',
+                                          0,
+                                          'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
+            else
                 $tmp_salt_length = (int) self::$R_data['R_salt_default_length'];
 
-            }
-
-            if(!is_numeric($tmp_salt_length)){
-
+            if(!is_numeric($tmp_salt_length))
                 $length = (int) self::$R_data['R_salt_default_length'];
-
-            }else{
-
+            else
                 $length = (int) $tmp_salt_length;
-
-            }
 
         }else{
 
@@ -29621,35 +29664,44 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                  */
                 $tmp_int = $tmp_salt_length = sqrt(-1);
 
-                if($this->isset_resource('R_salt_default_length', 'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true){
+                if($this->isset_resource('R_salt_default_length', 'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
+                    $tmp_salt_length = $this->get_resource(
+                                              'R_salt_default_length',
+                                              0,
+                                              'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
 
-                    $tmp_salt_length = $this->get_resource('R_salt_default_length', 0, 'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
-
-                }
-
-                if(!is_numeric($tmp_salt_length)){
-
+                if(!is_numeric($tmp_salt_length))
                     $length = (int) self::$R_data['R_salt_default_length'];
-
-                }else{
-
+                else
                     $length = (int) $tmp_salt_length;
 
-                }
-
-                $this->error_log('An invalid ' . 
-                       'length, (' . $this->gettype($length_override) . ') ' .
-                       strval($tmp_int) . 
-                       ', was input for salt generation. ' .
-                       'A default value from ' . 
-                       'system settings,' .
-                       ' (' . $this->gettype($length) . 
-                       ') ' . strval($length) .
-                       ', has manually been applied.', 
-                       __LINE__, 
-                       __METHOD__, 
-                       __FILE__, 
-                       CRNRSTN_SETTINGS_CRNRSTN);
+                $clr_ssl_msg = 'An invalid ' .
+                               'length, (' . $this->gettype($length_override) . ') ' .
+                               \strval($tmp_int) .
+                               ', was input for salt generation. ' .
+                               'A default value from ' .
+                               'system settings,' .
+                               ' (' . $this->gettype($length) .
+                               ') ' . \strval($length) .
+                               ', has manually been applied.';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
 
             }else{
 
@@ -29659,15 +29711,21 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
         }
 
-        //
-        // SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-        // COMMENT  :: https://stackoverflow.com/a/13733588
-        // AUTHOR   :: https://stackoverflow.com/users/1698153/scott
-        //
-        //
-        // Scott
-        //
-        return $this->generate_new_key($length, $char_selection, $system_hashed_return, $algorithm_override, $binary_return);
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+         * COMMENT :: https://stackoverflow.com/a/13733588
+         * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
+         *
+         *
+         * Scott
+         *
+         */
+        return $this->generate_new_key(
+                      $length,
+                      $char_selection,
+                      $system_hashed_return,
+                      $algorithm_override,
+                      $binary_return);
 
     }
 
@@ -29820,9 +29878,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 case 'null':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                     * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                     * COMMENT  :: https://stackoverflow.com/a/25299281
+                     * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                     * COMMENT :: https://stackoverflow.com/a/25299281
+                     * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                      *
                      *
                      * Ulver
@@ -29964,9 +30022,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $serialized_data = serialize($data);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                     * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                     * COMMENT  :: https://stackoverflow.com/a/25299281
+                     * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                     * COMMENT :: https://stackoverflow.com/a/25299281
+                     * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                      *
                      *
                      * Ulver
@@ -30007,9 +30065,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             case self::$R_data['int_flag']['R_null']:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                 * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                 * COMMENT  :: https://stackoverflow.com/a/25299281
+                 * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                 * COMMENT :: https://stackoverflow.com/a/25299281
+                 * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                  *
                  *
                  * Ulver
@@ -30151,9 +30209,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 $serialized_data = (string) serialize($data);
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                 * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                 * COMMENT  :: https://stackoverflow.com/a/25299281
+                 * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                 * COMMENT :: https://stackoverflow.com/a/25299281
+                 * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                  *
                  *
                  * Ulver
@@ -30302,17 +30360,15 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              $length = 1)
     {
 
-        $tmp = preg_split('~~u', $str, -1, PREG_SPLIT_NO_EMPTY);
+        $tmp = \preg_split('~~u', $str, -1, PREG_SPLIT_NO_EMPTY);
 
         if($length > 1){
 
-            $chunks = array_chunk($tmp, $length);
+            $chunks = \array_chunk($tmp, $length);
 
-            foreach($chunks as $i => $chunk){
-
+            foreach($chunks as
+                    $i => $chunk)
                 $chunks[$i] = join('', (array)$chunk);
-
-            }
 
             $tmp = $chunks;
 
@@ -30343,33 +30399,39 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              $strip)
     {
 
-        //
-        // Break message
-        // apart by
-        // strip string.
-        $lines = explode($strip, $message);
-        $last = '';
+        /*  # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Break message
+         * apart by
+         * strip string.
+         *
+         */
+        $lines = \explode($strip, $message);
+        $last  = '';
 
-        //
-        // Pop off empty
-        // strings at
-        // the end.
-        //
-        //
-        // 5
+        /*  # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Pop off empty
+         * strings at
+         * the end.
+         *
+         *
+         * 5
+         *
+         */
         do{
 
-            $last = array_pop($lines);
+            $last = \array_pop($lines);
 
-        }while(empty($last) && (count($lines)));
+        }while(empty($last) && (\count($lines)));
 
-        //
-        // Re-assemble
-        // what remains.
-        //
-        //
-        // 5
-        return implode($strip, array_merge($lines, array($last)));
+        /*  # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Re-assemble
+         * what remains.
+         *
+         *
+         * 5
+         *
+         */
+        return \implode($strip, \array_merge($lines, array($last)));
 
     }
 
@@ -30389,16 +30451,16 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              $original_str)
     {
 
-        $pattern_array = array();
+        $pattern_array     =
         $replacement_array = array();
 
-        $pattern_array[0] = $pattern;
+        $pattern_array[0]     = $pattern;
         $replacement_array[0] = $replacement;
 
-        $original_str = str_replace(
-                             $pattern_array, 
-                             $replacement_array, 
-                             $original_str);
+        $original_str = \str_replace(
+                        $pattern_array,
+                        $replacement_array,
+                        $original_str);
 
         return $original_str;
 
@@ -30420,15 +30482,12 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                      $output_format = 'array')
     {
 
-        $tmp_ARRAY = array();
-        $tmp_ARRAY['string'] = $this->hash($result_str);
+        $tmp_ARRAY                = array();
+        $tmp_ARRAY['string']      = $this->hash($result_str);
         $tmp_ARRAY['index_array'] = $result_array;
 
-        if($output_format != 'array'){
-
+        if($output_format != 'array')
             return $tmp_ARRAY['string'];
-
-        }
 
         return $tmp_ARRAY;
 
@@ -30521,11 +30580,8 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         $index_pos   =
         $total_index = 0;
 
-        if(!isset($output_format)){
-
+        if(!isset($output_format))
             $output_format = 'array';
-
-        }
 
         $str_out   = '';
         $str_units = array();
@@ -30535,15 +30591,16 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             $total_index++;
             $str_out .= $R_data_000 . '::';
-            $str_units[] = $var_0;
+            $str_units[] = $R_data_000;
 
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_001)){
 
@@ -30554,10 +30611,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_002)){
 
@@ -30568,10 +30626,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_003)){
 
@@ -30582,10 +30641,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_004)){
 
@@ -30596,10 +30656,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_005)){
 
@@ -30610,10 +30671,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_006)){
 
@@ -30624,10 +30686,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_007)){
 
@@ -30638,10 +30701,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_008)){
 
@@ -30652,10 +30716,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_009)){
 
@@ -30666,10 +30731,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_010)){
 
@@ -30680,10 +30746,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_011)){
 
@@ -30694,10 +30761,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_012)){
 
@@ -30708,10 +30776,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_013)){
 
@@ -30722,10 +30791,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_014)){
 
@@ -30736,10 +30806,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_015)){
 
@@ -30843,139 +30914,94 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         $keys_out[] = $R_data_000;
 
         $key_count++;
-        if(isset($R_data_001)){
-
+        if(isset($R_data_001))
             $keys_out[] = $R_data_001;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_002)){
-
+        if(isset($R_data_002))
             $keys_out[] = $R_data_002;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_003)){
-
+        if(isset($R_data_003))
             $keys_out[] = $R_data_003;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_004)){
-
+        if(isset($R_data_004))
             $keys_out[] = $R_data_004;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_005)){
-
+        if(isset($R_data_005))
             $keys_out[] = $R_data_005;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_006)){
-
+        if(isset($R_data_006))
             $keys_out[] = $R_data_006;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_007)){
-
+        if(isset($R_data_007))
             $keys_out[] = $R_data_007;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_008)){
-
+        if(isset($R_data_008))
             $keys_out[] = $R_data_008;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_009)){
-
+        if(isset($R_data_009))
             $keys_out[] = $R_data_009;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_010)){
-
+        if(isset($R_data_010))
             $keys_out[] = $R_data_010;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_011)){
-
+        if(isset($R_data_011))
             $keys_out[] = $R_data_011;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_012)){
-
+        if(isset($R_data_012))
             $keys_out[] = $R_data_012;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_013)){
-
+        if(isset($R_data_013))
             $keys_out[] = $R_data_013;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_014)){
-
+        if(isset($R_data_014))
             $keys_out[] = $R_data_014;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
-        if(isset($R_data_015)){
-
+        if(isset($R_data_015))
             $keys_out[] = $R_data_015;
-
-        }
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         return $keys_out;
 
@@ -31074,7 +31100,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          *
          */
 
-        $total_index   = count($data_keys);
+        $total_index   = \count($data_keys);
         $var_index_pos = 0;
         $str_out       = '';
         $array_out     = array();
@@ -31089,13 +31115,13 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $array_out[] = array(
                                    'parameter_name' => $data_keys[$var_index_pos], 
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_000, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_000, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_000, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_000,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_000,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_000, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_000));
 
                 }
@@ -31105,18 +31131,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_001)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_001, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_001, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_001, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_001,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_001,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_001, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_001));
 
                 }
@@ -31126,18 +31152,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_002)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_002, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_002, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_002, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_002,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_002,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_002, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_002));
 
                 }
@@ -31147,18 +31173,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_003)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_003, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_003, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_003, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_003,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_003,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_003, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_003));
 
                 }
@@ -31168,18 +31194,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_004)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_004, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_004, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_004, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_004,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_004,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_004, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_004));
 
                 }
@@ -31189,18 +31215,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_005)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_005, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_005, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_005, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_005,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_005,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_005, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_005));
 
                 }
@@ -31210,18 +31236,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_006)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_006, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_006, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_006, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_006,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_006,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_006, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_006));
 
                 }
@@ -31231,18 +31257,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_007)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_007, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_007, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_007, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_007,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_007,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_007, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_007));
 
                 }
@@ -31252,18 +31278,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_008)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_008, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_008, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_008, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_008,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_008,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_008, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_008));
 
                 }
@@ -31273,18 +31299,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_009)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_009, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_009, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_009, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_009,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_009,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_009, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_009));
 
                 }
@@ -31294,18 +31320,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_010)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_010, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_010, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_010, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_010,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_010,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_010, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_010));
 
                 }
@@ -31315,18 +31341,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_011)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_011, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_011, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_011, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_011,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_011,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_011, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_011));
 
                 }
@@ -31336,18 +31362,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_012)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_012, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_012, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_012, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_012,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_012,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_012, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_012));
 
                 }
@@ -31357,18 +31383,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_013)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_013, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_013, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_013, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_013,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_013,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_013, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_013));
 
                 }
@@ -31378,18 +31404,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_014)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_014, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_014, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_014, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_014,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_014,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_014, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_014));
 
                 }
@@ -31399,18 +31425,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset($R_data_015)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' was not able to be applied. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_015, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_015, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_015, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_015,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_015,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_015, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_015));
 
                 }
@@ -31425,18 +31451,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_000, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_000, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_000, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_000,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_000,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_000));
 
                     }
@@ -31451,18 +31477,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_001, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_001, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_001, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_001,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_001,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_001));
 
                     }
@@ -31477,18 +31503,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_002, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_002, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_002, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_002,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_002,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_002));
 
                     }
@@ -31503,18 +31529,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_003, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_003, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_003, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_003,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_003,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_003));
 
                     }
@@ -31529,18 +31555,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_004, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_004, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_004, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_004,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_004,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_004));
 
                     }
@@ -31555,18 +31581,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_005, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_005, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_005, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_005,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_005,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_005));
 
                     }
@@ -31579,9 +31605,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 if(isset($R_data_006)){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Calculate length in a manner 
-                     * that works for more data 
-                     * types than just string. 
+                     * Calculate length in a manner
+                     * that works for more data
+                     * types than just string.
                      *
                      * Previously:
                      * if(\strlen($R_data_006) > 0)
@@ -31594,18 +31620,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_006, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_006, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_006, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_006,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_006,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_006));
 
                     }
@@ -31620,18 +31646,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_007, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_007, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_007, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_007,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_007,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_007));
 
                     }
@@ -31646,18 +31672,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_008, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_008, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_008, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_008,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_008,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_008));
 
                     }
@@ -31672,18 +31698,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_009, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_009, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_009, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_009,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_009,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_009));
 
                     }
@@ -31698,18 +31724,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_010, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_010, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_010, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_010,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_010,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_010));
 
                     }
@@ -31724,18 +31750,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_011, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_011, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_011, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_011,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_011,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_011));
 
                     }
@@ -31750,18 +31776,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_012, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_012, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_012, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_012,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_012,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_012));
 
                     }
@@ -31776,18 +31802,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_013, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_013, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_013, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_013,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_013,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_013));
 
                     }
@@ -31802,18 +31828,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_014, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_014, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_014, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_014,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_014,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_014));
 
                     }
@@ -31828,18 +31854,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     $len = \strlen(\print_r($R_data_015, true));
                     if($len > 0){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is not an empty string. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_015, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_015, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => $len, 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_015,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_015,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => $len,
                                        'bytes'          => $this->data_reporting_bytes($R_data_015));
 
                     }
@@ -31855,36 +31881,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_000 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_000, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_000, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_000, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_000,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_000,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_000, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_000));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_000, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_000, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_000, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_000,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_000,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_000, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_000));
 
                 }
@@ -31896,36 +31922,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_001 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_001, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_001, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_001, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_001,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_001,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_001, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_001));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_001, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_001, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_001, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_001,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_001,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_001, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_001));
 
                 }
@@ -31937,36 +31963,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_002 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_002, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_002, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_002, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_002,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_002,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_002, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_002));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_002, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_002, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_002, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_002,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_002,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_002, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_002));
 
                 }
@@ -31978,36 +32004,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_003 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_003, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_003, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_003, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_003,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_003,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_003, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_003));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_003, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_003, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_003, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_003,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_003,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_003, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_003));
 
                 }
@@ -32019,36 +32045,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_004 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_004, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_004, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_004, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_004,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_004,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_004, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_004));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_004, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_004, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_004, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_004,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_004,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_004, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_004));
 
                 }
@@ -32060,36 +32086,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_005 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_005, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_005, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_005, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_005,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_005,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_005, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_005));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_005, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_005, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_005, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_005,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_005,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_005, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_005));
 
                 }
@@ -32101,36 +32127,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_006 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_006, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_006, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_006, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_006,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_006,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_006, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_006));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_006, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_006, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_006, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_006,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_006,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_006, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_006));
 
                 }
@@ -32142,36 +32168,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_007 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_007, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_007, 
-                                                                                     CRNRSTN_STRING)),
-                                       'len'            => \strlen(\print_r($R_data_007, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_007,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_007,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_007, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_007));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_007, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_007, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_007, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_007,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_007,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_007, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_007));
 
                 }
@@ -32183,36 +32209,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_008 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_008, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_008, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_008, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_008,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_008,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_008, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_008));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_008, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_008, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_008, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_008,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_008,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_008, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_008));
 
                 }
@@ -32224,36 +32250,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_009 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_009, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_009, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_009, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_009,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_009,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_009, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_009));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_009, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_009, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_009, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_009,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_009,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_009, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_009));
 
                 }
@@ -32265,36 +32291,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_010 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_010, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_010, 
-                                                                                     CRNRSTN_STRING)),
-                                       'len'            => \strlen(\print_r($R_data_010, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_010,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_010,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_010, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_010));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_010, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_010, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_010, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_010,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_010,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_010, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_010));
 
                 }
@@ -32306,36 +32332,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_011 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_011, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_011, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_011, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_011,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_011,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_011, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_011));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_011, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_011, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_011, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_011,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_011,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_011, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_011));
 
                 }
@@ -32347,36 +32373,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_012 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_012, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_012, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_012, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_012,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_012,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_012, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_012));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_012, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_012, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_012, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_012,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_012,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_012, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_012));
 
                 }
@@ -32388,36 +32414,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_013 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_013, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_013, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_013, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_013,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_013,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_013, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_013));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_013, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_013, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_013, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_013,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_013,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_013, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_013));
 
                 }
@@ -32429,36 +32455,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_014 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_014, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_014, 
-                                                                                     CRNRSTN_STRING)),
-                                       'len'            => \strlen(\print_r($R_data_014, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_014,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_014,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_014, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_014));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_014, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_014, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_014, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_014,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_014,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_014, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_014));
 
                 }
@@ -32470,36 +32496,36 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                     if($R_data_015 == ''){
 
-                        $str_out .= $data_keys[$var_index_pos] . 
+                        $str_out .= $data_keys[$var_index_pos] .
                                     ' is empty. ';
                         $array_out[] = array(
-                                       'parameter_name' => $data_keys[$var_index_pos], 
+                                       'parameter_name' => $data_keys[$var_index_pos],
                                        'data_type'      => array(
-                                                           CRNRSTN_INTEGER => $this->gettype(
-                                                                                     $R_data_015, 
-                                                                                     CRNRSTN_INTEGER), 
-                                                           CRNRSTN_STRING  => $this->gettype(
-                                                                                     $R_data_015, 
-                                                                                     CRNRSTN_STRING)), 
-                                       'len'            => \strlen(\print_r($R_data_015, true)), 
+                                                           self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                     $R_data_015,
+                                                                                     self::$R_data['int_flag']['R_integer']),
+                                                           self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                     $R_data_015,
+                                                                                     self::$R_data['int_flag']['R_string'])),
+                                       'len'            => \strlen(\print_r($R_data_015, true)),
                                        'bytes'          => $this->data_reporting_bytes($R_data_015));
 
                     }
 
                 }else{
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_015, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_015, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_015, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_015,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_015,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_015, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_015));
 
                 }
@@ -32508,7 +32534,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             break;
             case 'IS_NULL':
-                // Added IS_NULL. 5 :: Monday, June 22, 2026 @ 0029 hrs.
+                // Added IS_NULL. 5 :: Monday, June 22, 2026 @ 0028 hrs.
             default:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -32518,18 +32544,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                  */
                 if(!isset($R_data_000)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_000, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_000, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_000, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_000,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_000,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_000, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_000));
 
                 }
@@ -32539,18 +32565,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_001)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_001, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_001, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_001, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_001,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_001,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_001, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_001));
                 }
 
@@ -32559,18 +32585,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_002)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_002, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_002, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_002, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_002,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_002,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_002, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_002));
 
                 }
@@ -32580,18 +32606,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_003)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_003, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_003, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_003, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_003,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_003,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_003, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_003));
 
                 }
@@ -32601,18 +32627,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_004)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_004, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_004, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_004, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_004,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_004,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_004, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_004));
 
                 }
@@ -32622,18 +32648,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_005)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_005, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_005, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_005, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_005,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_005,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_005, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_005));
 
                 }
@@ -32643,18 +32669,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_006)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_006, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_006, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_006, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_006,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_006,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_006, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_006));
 
                 }
@@ -32664,18 +32690,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_007)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_007, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_007, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_007, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_007,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_007,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_007, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_007));
 
                 }
@@ -32685,18 +32711,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_008)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_008, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_008, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_008, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_008,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_008,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_008, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_008));
 
                 }
@@ -32706,18 +32732,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_009)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_009, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_009, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_009, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_009,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_009,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_009, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_009));
 
                 }
@@ -32727,18 +32753,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_010)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_010, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_010, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_010, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_010,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_010,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_010, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_010));
 
                 }
@@ -32748,18 +32774,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_011)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_011, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_011, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_011, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_011,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_011,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_011, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_011));
 
                 }
@@ -32769,18 +32795,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_012)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_012, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_012, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_012, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_012,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_012,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_012, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_012));
 
                 }
@@ -32790,18 +32816,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_013)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_013, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_013, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_013, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_013,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_013,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_013, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_013));
 
                 }
@@ -32811,18 +32837,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_014)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_014, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_014, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_014, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_014,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_014,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_014, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_014));
 
                 }
@@ -32832,18 +32858,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(!isset($R_data_015)){
 
-                    $str_out .= $data_keys[$var_index_pos] . 
+                    $str_out .= $data_keys[$var_index_pos] .
                                 ' is null. ';
                     $array_out[] = array(
-                                   'parameter_name' => $data_keys[$var_index_pos], 
+                                   'parameter_name' => $data_keys[$var_index_pos],
                                    'data_type'      => array(
-                                                       CRNRSTN_INTEGER => $this->gettype(
-                                                                                 $R_data_015, 
-                                                                                 CRNRSTN_INTEGER), 
-                                                       CRNRSTN_STRING  => $this->gettype(
-                                                                                 $R_data_015, 
-                                                                                 CRNRSTN_STRING)), 
-                                   'len'            => \strlen(\print_r($R_data_015, true)), 
+                                                       self::$R_data['int_flag']['R_integer'] => $this->gettype(
+                                                                                 $R_data_015,
+                                                                                 self::$R_data['int_flag']['R_integer']),
+                                                       self::$R_data['int_flag']['R_string']  => $this->gettype(
+                                                                                 $R_data_015,
+                                                                                 self::$R_data['int_flag']['R_string'])),
+                                   'len'            => \strlen(\print_r($R_data_015, true)),
                                    'bytes'          => $this->data_reporting_bytes($R_data_015));
 
                 }
@@ -32855,8 +32881,8 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Initialize the 
-         * array. 
+         * Initialize the
+         * array.
          *
          */
         $tmp_final_out_ARRAY                = array();
@@ -32957,18 +32983,18 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 $tmp_total_bytes_processed[$channel] = (int) $tmp_total_bytes;
 
-                /*error_log(__LINE__ .
-                 *    '  crnrstn $channel[' .
-                 *    $this->get_channel_config($channel, 'NAME') .
-                 *    ']. tmp_total_bytes[' .
-                 *    print_r($tmp_total_bytes, true) .
+                /* error_log(__LINE__ .
+                 *     '  crnrstn $channel[' .
+                 *     $this->get_channel_config($channel, 'NAME') .
+                 *     ']. tmp_total_bytes[' .
+                 *     \print_r($tmp_total_bytes, true) .
+                 *     ']. ');
+                 * error_log(__LINE__ .
+                 *     '  crnrstn $channel[' .
+                 *     $channel . ']. tmp_total_bytes[' .
+                 *    \print_r($tmp_total_bytes, true) .
                  *    ']. ');
-                 *error_log(__LINE__ .
-                 *    '  crnrstn $channel[' .
-                 *    $channel . ']. tmp_total_bytes[' .
-                 *    print_r($tmp_total_bytes, true) .
-                 *    ']. ');
-                 *die();
+                 * die();
                  *
                  */
                 self::$_R['kivotos']->R['rrs_map']->byte_reporting(
@@ -33042,11 +33068,8 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              * just seconds?
              *
              */
-            if(is_numeric($interval_str)){
-
+            if(\is_numeric($interval_str))
                 $tmp_is_seconds = true;
-
-            }
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Handle base
@@ -33054,17 +33077,10 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              * seconds.
              *
              */
-            if($tmp_is_seconds == true){
-
-                foreach(self::$sql_interval_ARRAY['UNITS']['VALUES'][self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN']['SECOND']] as
+            if($tmp_is_seconds == true)
+                foreach($this->R_data['R_sql_time_intervals']['interval_values'][$this->R_data['R_sql_time_intervals'][ 'interval_string_patterns']['SECOND']] as
                     $tmp_unit => $tmp_format)
-                {
-
                     return $interval_str . ' ' . $tmp_unit;
-
-                }
-
-            }
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Strip spaces.
@@ -33076,13 +33092,13 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              * UPPERCASE the data.
              *
              */
-            $tmp_interval_upper = strtoupper($interval_str);
+            $tmp_interval_upper = \strtoupper($interval_str);
 
-            foreach(self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN'] as
+            foreach($this->R_data['R_sql_time_intervals'][ 'interval_string_patterns'] as
                 $tmp_unit_str_ptrn => $unit_index)
             {
 
-                $tmp_pos_unit = strpos($tmp_interval, $tmp_unit_str_ptrn);
+                $tmp_pos_unit = \strpos($tmp_interval, $tmp_unit_str_ptrn);
                 if($tmp_pos_unit !== false){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -33094,13 +33110,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                      *
                      */
                     $tmp_data_str_ARRAY = explode($tmp_unit_str_ptrn, $tmp_interval_upper);
-                    foreach(self::$sql_interval_ARRAY['UNITS']['VALUES'][$unit_index] as
+                    foreach($this->R_data['R_sql_time_intervals']['interval_values'][$unit_index] as
                         $tmp_unit => $tmp_format)
-                    {
-
                         return $tmp_data_str_ARRAY[0] . ' ' . $tmp_unit;
-
-                    }
 
                     break 1;
 
@@ -33141,7 +33153,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                    __FILE__,
                    $token);
 
-            throw new \Exception($clr_ssl_msg);
+            //throw new \Exception($clr_ssl_msg);
 
         }catch(\Exception $e){
 
@@ -34688,11 +34700,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Load the alphabet.
          *
-         * SOURCE   :: https://www.php.net/manual/en/function.range.php
-         * SOURCE   :: https://stackoverflow.com/questions/431912/way-to-get-all-alphabetic-chars-in-an-array-in-php
-         * COMMENT  :: https://stackoverflow.com/a/431930
-         * COMMENT  :: https://stackoverflow.com/a/433119
-         * AUTHOR   :: https://stackoverflow.com/users/44639/pez
+         * SOURCE  :: https://www.php.net/manual/en/function.range.php
+         * SOURCE  :: https://stackoverflow.com/questions/431912/way-to-get-all-alphabetic-chars-in-an-array-in-php
+         * COMMENT :: https://stackoverflow.com/a/431930
+         * COMMENT :: https://stackoverflow.com/a/433119
+         * AUTHOR  :: https://stackoverflow.com/users/44639/pez
          *
          *
          * PEZ
@@ -35510,9 +35522,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/2192657/how-to-determine-the-memory-footprint-size-of-a-variable
-     * AUTHOR   :: https://stackoverflow.com/users/198707/tatu-ulmanen
-     * COMMENT  :: https://stackoverflow.com/a/2192689
+     * SOURCE  :: https://stackoverflow.com/questions/2192657/how-to-determine-the-memory-footprint-size-of-a-variable
+     * COMMENT :: https://stackoverflow.com/a/2192689
+     * AUTHOR  :: https://stackoverflow.com/users/198707/tatu-ulmanen
      *
      *
      * Tatu Ulmanen
@@ -37634,24 +37646,23 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $data = NULL, 
              $output_type = 'PHP_NATIVE')
     {
-        // Where, $output_type = 'CRNRSTN_INTEGER', CRNRSTN_INTEGER,
-        //                       'CRNRSTN_STRING', CRNRSTN_STRING,
-        //                       'CRNRSTN_ARRAY', CRNRSTN_ARRAY,
-        //                       OR 'PHP_NATIVE'.
-        //
-        //
-        // Sunday, November 12, 2023 @ 0340 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Where, $output_type = 'R_integer', self::$R_data['int_flag']['R_integer'],
+         *                       'R_string', self::$R_data['int_flag']['R_string'],
+         *                       'R_array', self::$R_data['int_flag']['R_array'],
+         *                       or 'PHP_NATIVE'.
+         *
+         * 5 :: Sunday, November 12, 2023 @ 0340 hrs.
+         *
+         */
 
-        if(isset(self::$R_data['R_datatype_master'])){
-
+        if(isset(self::$R_data['R_datatype_master']))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Load parameter 
              * data type. 
              *
              */
             $tmp_data_type_profile_ARRAY = self::$R_data['R_datatype_master'][\gettype($data)];
-
-        }
 
         //
         // Output data type.

@@ -285,8 +285,7 @@ namespace CRNRSTN;
  *
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * DATA HANDLING ARCHITECTURES.
  * -----
  * G :: HTTP $_GET REQUEST.

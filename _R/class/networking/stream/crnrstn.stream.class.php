@@ -299,7 +299,7 @@ namespace CRNRSTN;
  * @return object
  * @access public
  *
- *@version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
+ * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
  * @author Jonathan '5' Harris <jharris@eVifweb.com>
  * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
  * @license https://crnrstn.jony5.com/licensing/ MIT
@@ -307,6 +307,7 @@ namespace CRNRSTN;
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
  * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
  * @package CRNRSTN
+ *
  */
 class crnrstn_stream
 {

@@ -1819,6 +1819,19 @@ class crnrstn
         self::$R_data['system_colors']['slimer_green']   = '1px 1px 2px rgba(87, 255, 0, 1.0)';    // R :: Slimer® Green.
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Initialize some required
+         * CLR-SSL data type integers.
+         *
+         *
+         * 5 :: Wednesday, August 26, 2026 @ 1220 hrs.
+         *
+         */
+        self::$R_data['int_flag']['R_array']   = 14;
+        self::$R_data['int_flag']['R_int']     = 7;
+        self::$R_data['int_flag']['R_integer'] = 8;
+        self::$R_data['int_flag']['R_string']  = 13;
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Initialize CRNRSTN :: Lightsaber RoCEv2 SOAP
          * Services Layer (CLR-SSL) Multi-Channel 
          * Decoupled Data Object (MC-DDO) Channel ID
@@ -2186,6 +2199,18 @@ class crnrstn
         $this->R_data_write(
                __METHOD__,
                'R_config_database_secure');
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Initialize CLR-SSL SQL
+         * time interval string patterns
+         * for the support of UGC
+         * input parsing.
+         *
+         *
+         * 5 :: Wednesday, August 26, 2026 @ 0911 hrs.
+         *
+         */
+        $this->R_data_write(__METHOD__, 'R_sql_time_intervals');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * TODO :: Initialize these defaults closer 
@@ -2586,9 +2611,9 @@ class crnrstn
                    $token);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * SOURCE   :: https://www.php.net/manual/en/session.constants.php#constant.sid
-             * AUTHOR   :: https://www.php.net/manual/en/session.constants.php#120025
-             * COMMENT  :: https://www.php.net/manual/en/session.constants.php#120025
+             * SOURCE  :: https://www.php.net/manual/en/session.constants.php#constant.sid
+             * COMMENT :: https://www.php.net/manual/en/session.constants.php#120025
+             * AUTHOR  :: https://www.php.net/manual/en/session.constants.php#120025
              *
              * Check whether a
              * session is started
@@ -6667,12 +6692,12 @@ class crnrstn
                        __FILE__, 
                        $token);
 
-                $html_out = $this->clr_ssl_registry_resource_report(
-                                   $R_resp,
-                                   $clr_ssl_msg, 
-                                   false,
-                                   __LINE__, 
-                                   __METHOD__);
+                $this->clr_ssl_registry_resource_report(
+                       $R_resp,
+                       $clr_ssl_msg,
+                       false,
+                       __LINE__,
+                       __METHOD__);
 
             break;
             default:
@@ -6680,17 +6705,16 @@ class crnrstn
                 switch(\gettype($R_resp[$mem_ptr]['data'][0])){
                     case 'object':
 
-                        $clr_ssl_msg = 'Unknown resource ' . 
-                                       'received. PHP get_class output: (' . 
-                                       \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
+                        $clr_ssl_msg = 'By-passing data output report for (' .
+                                       \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' .
                                        \get_class($R_resp[$mem_ptr]['data'][0]) . '.';
 
                     break;
                     default:
 
-                        $clr_ssl_msg = 'Unknown (' . 
-                                       \gettype($R_resp[$mem_ptr]['data'][0]) . 
-                                       ') resource received.';
+                        $clr_ssl_msg = 'By-passing data output report for 1 (' .
+                                       \gettype($R_resp[$mem_ptr]['data'][0]) .
+                                       ') resource.';
 
                     break;
 
@@ -6716,37 +6740,6 @@ class crnrstn
                        $token);
 
             break;
-
-        }
-
-        if(!isset(self::$R_data['initialized_via_test'][$res_name]))
-        { 
-
-            $clr_ssl_msg = 'The ' . 
-                           \gettype($R_resp[$mem_ptr]['data'][0]) . 
-                           ' resource, ' . 
-                           \print_r($res_name, true) . 
-                           ', is not configured ' . 
-                           'for storage in the CLR-SSL ' . 
-                           'Resource Kivotos.';
-            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __METHOD__, 
-                     'code'                    => 200, 
-                     'clr_ssl_msg'             => $clr_ssl_msg);
-            $this->error_log(
-                   $clr_ssl_msg, 
-                   \LOG_WARNING, 
-                   \E_WARNING, 
-                   __LINE__, 
-                   __METHOD__, 
-                   __FILE__, 
-                   $token);
 
         }
 
@@ -6818,12 +6811,31 @@ class crnrstn
 
                     }
 
-                    $html_out = $this->clr_ssl_registry_resource_report(
-                                       $R_resp,
-                                       $clr_ssl_msg, 
-                                       false,
-                                       __LINE__, 
-                                       __METHOD__);
+                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __METHOD__,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                           $clr_ssl_msg,
+                           \LOG_NOTICE,
+                           \E_NOTICE,
+                           __LINE__,
+                           __METHOD__,
+                           __FILE__,
+                           $token);
+
+                   $this->clr_ssl_registry_resource_report(
+                          $R_resp,
+                          $clr_ssl_msg,
+                          false,
+                          __LINE__,
+                          __METHOD__);
 
                 break;
                 case 'general_resource':
@@ -6862,31 +6874,23 @@ class crnrstn
                                    ') ' . 
                                    self::$R_data['R_kivotos_index'][$res_name]['public_key'] .
                                    '.';
-
-                    $html_out = $this->clr_ssl_registry_resource_report(
-                                       $R_resp,
-                                       $clr_ssl_msg, 
-                                       true,
-                                       __LINE__, 
-                                       __METHOD__);
-
                     // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
                                  'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                     $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                     $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => __METHOD__,
+                             'code'                    => 200,
                              'clr_ssl_msg'             => $clr_ssl_msg);
                     $this->error_log(
-                           $clr_ssl_msg, 
-                           \LOG_NOTICE, 
-                           \E_NOTICE, 
-                           __LINE__, 
-                           __METHOD__, 
-                           __FILE__, 
+                           $clr_ssl_msg,
+                           \LOG_NOTICE,
+                           \E_NOTICE,
+                           __LINE__,
+                           __METHOD__,
+                           __FILE__,
                            $token);
 
                 break;
@@ -6920,11 +6924,6 @@ class crnrstn
          *
          */
 
-        if(isset(self::$_R['kivotos']))
-            return self::$_R['kivotos']->kivotos_storage($public_key);
-
-        echo '<br>[mthd ' . __METHOD__ . '] [lnum ' . __LINE__ . '] ' . $public_key;
-        die();
         return self::$_R['kivotos']->kivotos_storage($public_key);
 
     }
@@ -9426,7 +9425,7 @@ die();</code></pre>';
                                                   $resource);
 
             break;
-            case 'R_SQL_time_interval':
+            case 'R_sql_time_intervals':
                 // 5 :: Saturday, June 27, 2026 @ 2205 hrs.
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -9436,8 +9435,8 @@ die();</code></pre>';
                  *
                  */
                 $write_authorized_callers = array(__NAMESPACE__ . 
-                                                '\crnrstn::config_load_static_application_data'               => 1, __NAMESPACE__ . 
-                                                '\crnrstn_registry_user::config_load_static_application_data' => 1);
+                                                '\crnrstn::clr_ssl_initialize'               => 1, __NAMESPACE__ .
+                                                '\crnrstn_registry_user::clr_ssl_initialize' => 1);
 
                 if(!isset($write_authorized_callers[$caller])){
 
@@ -12849,7 +12848,7 @@ die();</code></pre>';
                 }
 
             break;
-            case 'R_SQL_time_interval':
+            case 'R_sql_time_intervals':
  
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Initialize support 
@@ -12867,8 +12866,8 @@ die();</code></pre>';
                  * and return $R_data. 
                  *
                  * /_R/_config/_config.defaults
-                 * /load_static_cache/R_SQL_time_interval
-                 * /crnrstn.R_SQL_time_interval.runtime_exe.php
+                 * /load_static_cache/R_sql_time_intervals
+                 * /crnrstn.R_sql_time_intervals.runtime_exe.php
                  *
                  * Previously initialized (2024-2025) via: 
                  * $this->relevant_header_fields_ARRAY = _crnrstn_settings(
@@ -21076,7 +21075,7 @@ $tmp_get_param_run_data .
                      * 5 :: Wednesday, October 4, 2023 @ 1256 hrs.
                      *
                      *
-                    self::$sql_interval_ARRAY['UNITS']['VALUES'] = self::$_R['kivotos']->R['database']->config_load_static_application_data($name, $this);
+                    self::$sql_interval_ARRAY['UNITS']['VALUES'] = self::$_R['kivotos']->R['db']->config_load_static_application_data($name, $this);
 
                 break;
                 case 'sql_interval_ARRAY[UNITS][STRING_PATTERN]':
@@ -21092,7 +21091,7 @@ $tmp_get_param_run_data .
                      * 5 :: Wednesday, October 4, 2023 @ 1256 hrs.
                      *
                      *
-                    self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN'] = self::$_R['kivotos']->R['database']->config_load_static_application_data($name, $this);
+                    self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN'] = self::$_R['kivotos']->R['db']->config_load_static_application_data($name, $this);
 
                 break;
                 case 'server_operations_ARRAY':
@@ -21389,9 +21388,9 @@ $tmp_get_param_run_data .
                      * self::$oCRNRSTN_DATABASE = new crnrstn_database_crnrstn($this);
                      *
                      *
-                    self::$_R['kivotos']->R['database'] = $this->return_registered_resource(
-                                                                 'new',
-                                                                 'crnrstn_database_crnrstn');
+                    self::$_R['kivotos']->R['db'] = $this->return_registered_resource(
+                                                           'new',
+                                                           'crnrstn_database_crnrstn');
                      */
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -22216,7 +22215,6 @@ $tmp_get_param_run_data .
          */
         $this->R_data_write(__METHOD__, 'R_timezone_syntax');
         $this->R_data_write(__METHOD__, 'R_OpenSSL_config');
-        $this->R_data_write(__METHOD__, 'R_SQL_time_interval');
         $this->R_data_write(__METHOD__, 'R_http_header_fields');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -24574,9 +24572,9 @@ $tmp_get_param_run_data .
             case self::$R_data['int_flag']['R_string']:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                 * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                 * COMMENT  :: https://stackoverflow.com/a/25299281
+                 * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                 * COMMENT :: https://stackoverflow.com/a/25299281
+                 * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                  *
                  *
                  * Ulver
@@ -24733,23 +24731,19 @@ $tmp_get_param_run_data .
          * Where, $output_type = 'R_integer', self::$R_data['int_flag']['R_integer'], 
          *                       'R_string', self::$R_data['int_flag']['R_string'], 
          *                       'R_array', self::$R_data['int_flag']['R_array'], 
-         *                       or 
-         *                       'PHP_NATIVE'. 
+         *                       or 'PHP_NATIVE'.
          *
          * 5 :: Sunday, November 12, 2023 @ 0340 hrs.
          *
          */
 
-        if(isset(self::$R_data['R_datatype_master'])){
-
+        if(isset(self::$R_data['R_datatype_master']))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Load parameter 
              * data type. 
              *
              */
             $tmp_data_type_profile_ARRAY = self::$R_data['R_datatype_master'][\gettype($data)];
-
-        }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Output data 
@@ -25759,9 +25753,9 @@ $tmp_get_param_run_data .
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/2192657/how-to-determine-the-memory-footprint-size-of-a-variable
-     * AUTHOR   :: https://stackoverflow.com/users/198707/tatu-ulmanen
-     * COMMENT  :: https://stackoverflow.com/a/2192689
+     * SOURCE  :: https://stackoverflow.com/questions/2192657/how-to-determine-the-memory-footprint-size-of-a-variable
+     * COMMENT :: https://stackoverflow.com/a/2192689
+     * AUTHOR  :: https://stackoverflow.com/users/198707/tatu-ulmanen
      *
      *
      * Tatu Ulmanen
@@ -26489,7 +26483,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          * Web Root + the
          * Framework Directory:
          * self::$R_data['R_paths']['APPLICATION']['HTTP'] = 'http://172.16.225.128/lightbox_helper/' .
-         *                                                                        '_lightbox_helper/';
+         *                                                   '_lightbox_helper/';
          *
          * Directory Root +
          * the Framework Directory:
@@ -28191,69 +28185,100 @@ output   * start              N/Y    N/N     ---       ---        ---          -
     {
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * $char_selection = NULL [OR (int) 0]
-         *      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-         *                      abcdefghijklmnopqrstuvwxyz
-         *                      0123456789
+         * Edit: Finished documentation and
+         *       integration updates for $char_selection=(-4)
+         *       from the other day, a new integer
+         *       to provide another (second now)
+         *       CSV friendly token string output data.
+         *       5 :: Thursday, February 12, 2026 @ 0059 hrs.
          *
-         * $char_selection = '01'
-         *      $codeAlphabet = 01
+         *  $char_selection = '01'
+         *    $codeAlphabet = 01
          *
-         * $char_selection = (int) -3
-         *      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-         *                      abcdefghijklmnopqrstuvwxyz
-         *                      0123456789:+=_- )(*$#@!~.
+         *  $char_selection = NULL [(int) 0, (int) -5 ][options]
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789
          *
-         * $char_selection = (int) -2
-         *      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-         *                      abcdefghijklmnopqrstuvwxyz
-         *                      0123456789{}[]:+=_- )(*&%$#@!~?.
+         *  $char_selection = (int) -4
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789+=_-*~.
          *
-         * $char_selection = (int) -1
-         *      $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
-         *                      abcdefghijklmnopqrstuvwxyz
-         *                      0123456789{}[]:;\"\'|\\+=_- )(*&^%$#@!~
-         *                      `?/<>.,   '
+         *  $char_selection = (int) -3
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789:+=_- )(*$#@!~.
          *
-         * Note: $char_selection = -1 will use *all* 
-         *        characters across all dimensions in the 
-         *        known ASCII universe for system key generation. 
-         *        There are some character omissions to note, 
-         *        however. 
-         *        $char_selection = -1 evokes *all* 
-         *        characters except:
-         *        - The sequence \e escape key (ESC or 0x1B (27) in
-         *          ASCII), and
-         *        - we're not splitting hairs choosing between
-         *          sequence \n LINEFEED (LF or 0x0A (10) in ASCII)
-         *          and the sequence \r carriage RETURN (CR or 0x0D
-         *          (13) in ASCII) as I just let the PhpStorm IDE
-         *          choose how to convey the ENTER key to text, and
-         *        - also screw both \f form feed (FF or 0x0C (12) in
-         *          ASCII) and \v VERTICAL TAB (VT or 0x0B (11) in
-         *          ASCII) sequences; we do not use these characters
-         *          for system key generation. 
+         *  $char_selection = (int) -2
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789{}[]:+=_- )(*&%$#@!~?.
          *
-         * Note: $char_selection = -3 produces a little 
-         *       more variation in output key 
-         *       (over $char_selection = NULL); it has just a
-         *       few more characters added to the set beyond 
-         *       the plain alpha numeric ones. -3 is the coolest 
-         *       however, because these new characters were hand 
-         *       selected for being the nicest (imho) to work 
-         *       with as data in the data handling world.
+         *  $char_selection = (int) -1
+         *    $codeAlphabet = ABCDEFGHIJKLMNOPQRSTUVWXYZ
+         *                    abcdefghijklmnopqrstuvwxyz
+         *                    0123456789{}[]:;\"\'|\\+=_- )(*&^%$#@!~
+         *                    `?/<>.,   '
          *
-         *       TLDR; $char_selection = -3 produces CSV safe 
-         *       data. The output has no quotes, no commas, 
-         *       no semi-colons...etc., but it has the most 
-         *       distinct number of characters for the strongest 
-         *       possible variation in system key generation 
-         *       output by CRNRSTN :: 
+         * Note: $char_selection = -1 will use *all*
+         *       characters across all dimensions in
+         *       the known ASCII universe (and aligning
+         *       with data known for as being common
+         *       and accessible keyboard data entry for
+         *       random hash token generation. There
+         *       are still some character omissions
+         *       from this key generator to
+         *       note, however:
+         *
+         *       $char_selection = -1 evokes *all*
+         *       characters except:
+         *          - The sequence \e escape key
+         *            (ESC or 0x1B (27) in ASCII), and
+         *          - We're not splitting hairs to
+         *            be choosing between:
+         *            ~ sequence \n LINEFEED
+         *              (LF or 0x0A (10) in ASCII) and
+         *            ~ the sequence \r carriage
+         *              RETURN (CR or 0x0D (13) in ASCII)
+         *            ~ I just struck the keyboard
+         *              ENTER key, and I let the
+         *              PhpStorm IDE choose how to
+         *              convey this in ASCII.
+         *          - Also screw both \f form feed
+         *            (FF or 0x0C (12) in ASCII) and
+         *            \v VERTICAL TAB (VT or 0x0B (11)
+         *            in ASCII) sequences; we do not
+         *            use these characters for system
+         *            key and hash generation.
+         *
+         * Note: $char_selection = -3 and -4 both produce a
+         *       little more variation in output key data
+         *       variability (over $char_selection = NULL);
+         *       these have just a few more characters
+         *       added to the set beyond the plain alpha
+         *       numeric ones. I think -3 is the coolest
+         *       in the world of big data however, because
+         *       the characters were hand selected for
+         *       being the nicest (imho) to work with in
+         *       raw text format in big multi-GB CSV text
+         *       files; also, -3 has a few more chars by
+         *       count than $char_selection = -4.
+         *
+         *       TLDR; $char_selection = -3 (and -4)
+         *       produces CSV safe data. The output has
+         *       no quotes, no commas, no semi-colons,...,
+         *       but it has the most distinct number of
+         *       characters beyond straight alpha-numeric
+         *       for achieving the highest possible
+         *       variation in system key generation
+         *       output by CRNRSTN ::
          *
          *       https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double
          *
          *
-         *       5 :: Wednesday, December 6, 2023 @ 2127 hrs.
+         * 5 :: Wednesday, December 6, 2023 @ 2127 hrs.
+         * Last Modified: Thursday, February 12, 2026 @ 0059 hrs.
          *
          */
         if(!isset($length_override)){
@@ -28261,28 +28286,17 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             if($this->isset_resource(
                       'R_salt_default_length', 
                       'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
-            {
-
                 $tmp_salt_length = $this->get_resource(
                                           'R_salt_default_length', 
                                           0, 
                                           'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
-
-            }else{
-
+            else
                 $tmp_salt_length = (int) self::$R_data['R_salt_default_length'];
 
-            }
-
-            if(!is_numeric($tmp_salt_length)){
-
+            if(!is_numeric($tmp_salt_length))
                 $length = (int) self::$R_data['R_salt_default_length'];
-
-            }else{
-
+            else
                 $length = (int) $tmp_salt_length;
-
-            }
 
         }else{
 
@@ -28343,24 +28357,15 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 if($this->isset_resource(
                           'R_salt_default_length', 
                           'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
-                {
-
                     $tmp_salt_length = $this->get_resource(
                                               'R_salt_default_length', 
                                               0, 
                                               'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
 
-                }
-
-                if(!is_numeric($tmp_salt_length)){
-
+                if(!is_numeric($tmp_salt_length))
                     $length = (int) self::$R_data['R_salt_default_length'];
-
-                }else{
-
+                else
                     $length = (int) $tmp_salt_length;
-
-                }
 
                 $clr_ssl_msg = 'An invalid length, (' . 
                                $this->gettype($length_override) . 
@@ -28399,9 +28404,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-         * COMMENT  :: https://stackoverflow.com/a/13733588
-         * AUTHOR   :: https://stackoverflow.com/users/1698153/scott
+         * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+         * COMMENT :: https://stackoverflow.com/a/13733588
+         * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
          *
          *
          * Scott
@@ -28487,9 +28492,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 case 'null':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                     * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                     * COMMENT  :: https://stackoverflow.com/a/25299281
+                     * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                     * COMMENT :: https://stackoverflow.com/a/25299281
+                     * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                      *
                      *
                      * Ulver
@@ -28631,9 +28636,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     $serialized_data = serialize($data);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                     * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                     * COMMENT  :: https://stackoverflow.com/a/25299281
+                     * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                     * COMMENT :: https://stackoverflow.com/a/25299281
+                     * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                      *
                      *
                      * Ulver
@@ -28694,12 +28699,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         */
 
         switch($tmp_data_type){
-            //case CRNRSTN_INT:
-            //case CRNRSTN_INTEGER:
-            //case CRNRSTN_DOUBLE:
-            //case CRNRSTN_FLOAT:
-            //case CRNRSTN_STRING:
-            //case CRNRSTN_NULL:
             case self::$R_data['int_flag']['R_int']:
             case self::$R_data['int_flag']['R_integer']:
             case self::$R_data['int_flag']['R_double']:
@@ -28708,9 +28707,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
             case self::$R_data['int_flag']['R_null']:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                 * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                 * COMMENT  :: https://stackoverflow.com/a/25299281
+                 * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                 * COMMENT :: https://stackoverflow.com/a/25299281
+                 * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                  *
                  *
                  * Ulver
@@ -28744,8 +28743,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 $bytes = $this->tidy_boolean(self::$R_data['operating_system']['mbstring_func_overload']) ? \mb_strlen((string)$data, '8bit') : \strlen((string)$data);
 
             break;
-            //case CRNRSTN_BOOL:
-            //case CRNRSTN_BOOLEAN:
             case self::$R_data['int_flag']['R_bool']:
             case self::$R_data['int_flag']['R_boolean']:
 
@@ -28833,7 +28830,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     }
 
             break;
-            //case CRNRSTN_ARRAY:
             case self::$R_data['int_flag']['R_array']:
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -28855,9 +28851,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 $serialized_data = (string) serialize($data);
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                 * AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                 * COMMENT  :: https://stackoverflow.com/a/25299281
+                 * SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                 * COMMENT :: https://stackoverflow.com/a/25299281
+                 * AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                  *
                  *
                  * Ulver
@@ -28867,10 +28863,6 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 $bytes = $this->tidy_boolean(self::$R_data['operating_system']['mbstring_func_overload']) ? \mb_strlen($serialized_data, '8bit') : \strlen($serialized_data);
 
             break;
-            //case CRNRSTN_OBJECT:
-            //case CRNRSTN_RESOURCE:
-            //case CRNRSTN_RESOURCE_CLOSED:
-            //case CRNRSTN_UNKNOWN_TYPE:
             case self::$R_data['int_flag']['R_object']:
             case self::$R_data['int_flag']['R_resource']:
             case self::$R_data['int_flag']['R_resource_closed']:
@@ -28952,7 +28944,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     error_log(__LINE__ . ' ' . 
                         __METHOD__ . 
                         ' SETTING tmp_channel_ARRAY[' . 
-                        print_r($tmp_channel_ARRAY, true) . 
+                        \print_r($tmp_channel_ARRAY, true) .
                         '] TO EXTRACT $_GET[] DATA.');
 
                 }
@@ -29065,7 +29057,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $channel = 'R_channel_RUNTIME')
     {
 
-        if(is_string($channel))
+        if(\is_string($channel))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Convert CLR-SSL channel 
              * data to integer. 
@@ -29076,7 +29068,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              */
             $channel = (int) self::$R_data['int_flag'][$channel];
 
-        if(is_string($system))
+        if(\is_string($system))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Convert CLR-SSL file system 
              * mapping architecture to integer. 
@@ -35036,6 +35028,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 return self::$data_channel_init_sequence;
 
+            case 'R_sql_time_intervals':
+
+                return self::$R_data[$name];
+
             case 'static_css_length_unit':
 
                 return self::$static_css_length_unit;
@@ -39736,11 +39732,11 @@ output   * start              N/Y    N/N     ---       ---        ---          -
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Load the alphabet.
          *
-         * SOURCE   :: https://www.php.net/manual/en/function.range.php
-         * SOURCE   :: https://stackoverflow.com/questions/431912/way-to-get-all-alphabetic-chars-in-an-array-in-php
-         * COMMENT  :: https://stackoverflow.com/a/431930
-         * COMMENT  :: https://stackoverflow.com/a/433119
-         * AUTHOR   :: https://stackoverflow.com/users/44639/pez
+         * SOURCE  :: https://www.php.net/manual/en/function.range.php
+         * SOURCE  :: https://stackoverflow.com/questions/431912/way-to-get-all-alphabetic-chars-in-an-array-in-php
+         * COMMENT :: https://stackoverflow.com/a/431930
+         * COMMENT :: https://stackoverflow.com/a/433119
+         * AUTHOR  :: https://stackoverflow.com/users/44639/pez
          *
          *
          * PEZ
@@ -40365,7 +40361,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *       5 :: Sunday, May 24, 2026 @ 2045 hrs.
          */
 
-        return self::$_R['kivotos']->R['log_output_mgr'];
+        return self::$_R['kivotos']->kivotos_storage('log_output_mgr');
 
     }
 
@@ -47499,11 +47495,21 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 default:
 
                     // 5 :: Thursday, April 23, 2026 @ 0040 hrs.
-                    //self::$R_data['spool']['err_message_queue_push']['message_token'][]                             = $token['token'];
-                    self::$R_data['spool']['err_message_queue_push'][$token['token']]['message'][]                    = $message_str;
-                    self::$R_data['spool']['err_message_queue_push'][$token['token']]['data_authorization_profile'][] = $spool_channel;
+                    self::$R_data['spool']['error_log']['message_str'][]               = $message_str;
+                    self::$R_data['spool']['error_log']['syslog_level'][]              = $syslog_level;
+                    self::$R_data['spool']['error_log']['error_reporting_level'][]     = $error_reporting_level;
+                    self::$R_data['spool']['error_log']['line_num'][]                  = $line_num;
+                    self::$R_data['spool']['error_log']['method'][]                    = $method;
+                    self::$R_data['spool']['error_log']['file'][]                      = $file;
+                    self::$R_data['spool']['error_log']['token'][]                     = $token;
+                    self::$R_data['spool']['error_log']['spool'][]                     = $spool;
+                    self::$R_data['spool']['error_log']['spool_channel'][]             = $spool_channel;
+                    self::$R_data['spool']['error_log']['syslog_prefix'][]             = $syslog_prefix;
+                    self::$R_data['spool']['error_log']['syslog_prefix_passthrough'][] = $syslog_prefix_passthrough;
+                    self::$R_data['spool']['error_log']['spool_runtime'][]             = $this->wall_time();
+                    self::$R_data['spool']['error_log']['spool_microtime'][]           = $this->microtime_float();
 
-                    return \count(self::$R_data['spool']['err_message_queue_push'][$token['token']]['message']);
+                    return true;
 
                 break;
 
@@ -47609,6 +47615,28 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                                                                          $spool_channel,
                                                                          $syslog_prefix,
                                                                          $syslog_prefix_passthrough);
+                    else
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Spool the error log until the
+                         * CLR-SSL Database Services Layer
+                         * is ready to process the data.
+                         *
+                         *
+                         * 5 :: Wednesday, August 26, 2026 @ 1124 hrs.
+                         *
+                         */
+                        return $this->error_log(
+                                      $message_str,
+                                      $syslog_level,
+                                      $error_reporting_level,
+                                      $line_num,
+                                      $method,
+                                      $file,
+                                      $token,
+                                      true,
+                                      $spool_channel,
+                                      $syslog_prefix,
+                                      $syslog_prefix_passthrough);
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                 5 :: Sunday, May 10, 2026 @ 1842 hrs.
@@ -63367,19 +63395,22 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                     <li' . $this->alternating_row_style('primary') .
                     '><span class="R_report_meta_name">data_license_key:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
-                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] . '" target="_blank">' .
+                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
+                    '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['key'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
                     <li' . $this->alternating_row_style('primary') .
                     '><span class="R_report_meta_name">data_license_name:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
-                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] . '" target="_blank">' .
+                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
+                    '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['name'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
                     <li' . $this->alternating_row_style('primary') .
                     '><span class="R_report_meta_name">data_license_url:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
-                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] . '" target="_blank">' .
+                    $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
+                    '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
                 </ul>
@@ -63718,14 +63749,14 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
         $this->system_output_footer_html(
-            self::$R_data['int_flag']['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_PLUS_JQUERY'],
-            true);
+               self::$R_data['int_flag']['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_PLUS_JQUERY'],
+               true);
         $this->system_output_footer_html(
-            self::$R_data['int_flag']['CRNRSTN_RESPONSE_REPORT'],
-            true);
+               self::$R_data['int_flag']['CRNRSTN_RESPONSE_REPORT'],
+               true);
         $this->system_output_footer_html(
-            self::$R_data['int_flag']['CRNRSTN_RESOURCE_DOCUMENTATION'],
-            true);
+               self::$R_data['int_flag']['CRNRSTN_RESOURCE_DOCUMENTATION'],
+               true);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * CLR-SSL Head HTML output.
@@ -63753,209 +63784,209 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         $html_out = '<!DOCTYPE html>
 <html lang="' . $this->iso_language_html() . '">
-<head>
-    <title>' . $this->get_crnrstn('CLR_SSL_long_TEXT') . '.' .
-    ' The CLR-SSL.</title>
-    ' . $this->system_output_head_html(self::$R_data['int_flag']['CRNRSTN_CSS_MAIN_DESKTOP']) . '
-</head>
-<body>
-    <div class="crnrstn_default_landing_page_wrapper">
-
-        <div class="crnrstn_default_landing_page_logo">' . 
-        $this->return_system_image(
-               'CRNRSTN_LOGO',
-               '', 
-               70,
-               NULL, 
-               NULL,
-               NULL, 
-               NULL,
-               'CRNRSTN_HTML') . 
-        '</div>
-
-        <div class="crnrstn_default_landing_content_title">
-            <h1>C<span class="the_R">R</span>NRSTN :: ' . 
-            $this->version_crnrstn() . '</h1>
-        </div>
-
-        <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_WELCOME') . '
-            <br><br>
-            ' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_DESCRIPTION') . '
-        </p>
-
-        <div class="crnrstn_cb_40"></div>
-        <div class="crnrstn_default_landing_content_title">
-            <h2>' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_RECENT_ACTIVITY') . '</h2>
-            <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_RECENT_ACTIVITY_DESCRIPTION') . '</p>
-            <div class="crnrstn_cb_5"></div>
-            <div class="crnrstn_default_landing_content_border_major"><div class="crnrstn_cb_5"></div></div>
-        </div>
-        <div class="crnrstn_general_post_log_shell">
-            <ul>
-                <!--<li><p style="font-family: Courier New, Courier, monospace; ' . 
-                'font-size: 13px; color: #333;">There are currently no posts to display.</p></li>-->
-
-                <li>
-                    <div class="crnrstn_general_post_recent_activity_shell">
-                        <div class="crnrstn_general_post_recent_activity_date">' . 
-                        'Monday, November 21, 2022 @ 1003 hrs.</div>
-                        <div class="crnrstn_general_post_recent_activity_copy">' . 
-                        '<p>The project has received about twenty (20) 
-                            new system constants (integer), and these will be ' . 
-                            'used to seamlessly drive planned third party 
-                            JS and CSS framework integrations. The current project ' . 
-                            'lead is in the middle of making a rough 
-                            pass through all of these new resources to set them ' . 
-                            'squarely on top of the asset mapping 
-                            architecture of C<span class="the_R">R</span>' . 
-                            'NRSTN :: This is definitely a rough 
-                            pass, friends.</p> 
-
-                            <p>A second pass will need to be made in order to ' . 
-                            'clear all of the 404 return responses from broken 
-                            library dependencies (mostly images...png, gif, jpg). ' . 
-                            'As is the case with any vanilla application, a URL 
-                            from C<span class="the_R">R</span>NRSTN :: ' . 
-                            'which points directly to any JS 
-                            framework\'s source on the server will enable that ' . 
-                            'framework to access all of it\'s own supporting 
-                            assets as intended,...itself. So, for example, a JS ' . 
-                            'application (running in the browser) would 
-                            know where to find all of it\'s &quot;internal&quot; ' . 
-                            'images. This would be the fruit borne from 
-                            operating according to a more traditional ' . 
-                            'approach...or (in this case) the fruit of setting 
-                            <span class="crnrstn_general_post_code_copy">' . 
-                            '$tunneling_active = false</span> 
-                            when calling <span class="crnrstn_general_post_code_copy">' . 
-                            '$oC<span class="the_R">R</span>NRSTN->' . 
-                            'config_init_asset_map_js()</span>.
-                            </p>
-
-                            <blockquote>On a side note...by default, ' . 
-                            '<span class="crnrstn_general_post_code_copy">$tunneling_active</span> 
-                            is set to TRUE,...which is the lead dev\'s ' . 
-                            'recommendation and which will eventually allow ' . 
-                            'C<span class="the_R">R</span>NRSTN :: 
-                            to do some pretty cool shit like bind resources to ' . 
-                            'sessions and quietly return ANY resource from 
-                            ANY authorized server (think...spontaneous file ' . 
-                            'server).</blockquote>
-
-                            <p>In our case, however, 404 error are being returned ' . 
-                            'after the use of a URL to a JS framework 
-                            that takes C<span class="the_R">R</span>NRSTN :: ' . 
-                            'itself as the intended endpoint 
-                            and...consequently and among other things...exposes ' . 
-                            'no specific information about the location of 
-                            the resource being requested. In fact, a filename ' . 
-                            '(or filename plus one (1) directory) is the 
-                            most that ever need be revealed. Therefore, in all of ' . 
-                            'these situations, I...I mean...the current lead 
-                            developer will need to have C<span class="the_R">R</span>' . 
-                            'NRSTN :: step up and do the 
-                            work of providing these resources directly to said ' . 
-                            'JS framework...on top of having already 
-                            made C<span class="the_R">R</span>NRSTN :: ' . 
-                            'to do the work of providing the very JS 
-                            framework that is now seeking said resources.</p>
-
-                            <p>With great power comes great responsibility, my friends.</p>
-
+    <head>
+        <title>' . $this->get_crnrstn('CLR_SSL_long_TEXT') . '.' .
+        ' The CLR-SSL.</title>
+        ' . $this->system_output_head_html(self::$R_data['int_flag']['CRNRSTN_CSS_MAIN_DESKTOP']) . '
+    </head>
+    <body>
+        <div class="crnrstn_default_landing_page_wrapper">
+    
+            <div class="crnrstn_default_landing_page_logo">' .
+            $this->return_system_image(
+                   'CRNRSTN_LOGO',
+                   '',
+                   70,
+                   NULL,
+                   NULL,
+                   NULL,
+                   NULL,
+                   'CRNRSTN_HTML') .
+            '</div>
+    
+            <div class="crnrstn_default_landing_content_title">
+                <h1>C<span class="the_R">R</span>NRSTN :: ' .
+                $this->version_crnrstn() . '</h1>
+            </div>
+    
+            <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_WELCOME') . '
+                <br><br>
+                ' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_DESCRIPTION') . '
+            </p>
+    
+            <div class="crnrstn_cb_40"></div>
+            <div class="crnrstn_default_landing_content_title">
+                <h2>' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_RECENT_ACTIVITY') . '</h2>
+                <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_RECENT_ACTIVITY_DESCRIPTION') . '</p>
+                <div class="crnrstn_cb_5"></div>
+                <div class="crnrstn_default_landing_content_border_major"><div class="crnrstn_cb_5"></div></div>
+            </div>
+            <div class="crnrstn_general_post_log_shell">
+                <ul>
+                    <!--<li><p style="font-family: Courier New, Courier, monospace; ' .
+                    'font-size: 13px; color: #333;">There are currently no posts to display.</p></li>-->
+    
+                    <li>
+                        <div class="crnrstn_general_post_recent_activity_shell">
+                            <div class="crnrstn_general_post_recent_activity_date">' .
+                            'Monday, November 21, 2022 @ 1003 hrs.</div>
+                            <div class="crnrstn_general_post_recent_activity_copy">' .
+                            '<p>The project has received about twenty (20) 
+                                new system constants (integer), and these will be ' .
+                                'used to seamlessly drive planned third party 
+                                JS and CSS framework integrations. The current project ' .
+                                'lead is in the middle of making a rough 
+                                pass through all of these new resources to set them ' .
+                                'squarely on top of the asset mapping 
+                                architecture of C<span class="the_R">R</span>' .
+                                'NRSTN :: This is definitely a rough 
+                                pass, friends.</p> 
+    
+                                <p>A second pass will need to be made in order to ' .
+                                'clear all of the 404 return responses from broken 
+                                library dependencies (mostly images...png, gif, jpg). ' .
+                                'As is the case with any vanilla application, a URL 
+                                from C<span class="the_R">R</span>NRSTN :: ' .
+                                'which points directly to any JS 
+                                framework\'s source on the server will enable that ' .
+                                'framework to access all of it\'s own supporting 
+                                assets as intended,...itself. So, for example, a JS ' .
+                                'application (running in the browser) would 
+                                know where to find all of it\'s &quot;internal&quot; ' .
+                                'images. This would be the fruit borne from 
+                                operating according to a more traditional ' .
+                                'approach...or (in this case) the fruit of setting 
+                                <span class="crnrstn_general_post_code_copy">' .
+                                '$tunneling_active = false</span> 
+                                when calling <span class="crnrstn_general_post_code_copy">' .
+                                '$oC<span class="the_R">R</span>NRSTN->' .
+                                'config_init_asset_map_js()</span>.
+                                </p>
+    
+                                <blockquote>On a side note...by default, ' .
+                                '<span class="crnrstn_general_post_code_copy">$tunneling_active</span> 
+                                is set to TRUE,...which is the lead dev\'s ' .
+                                'recommendation and which will eventually allow ' .
+                                'C<span class="the_R">R</span>NRSTN :: 
+                                to do some pretty cool shit like bind resources to ' .
+                                'sessions and quietly return ANY resource from 
+                                ANY authorized server (think...spontaneous file ' .
+                                'server).</blockquote>
+    
+                                <p>In our case, however, 404 error are being returned ' .
+                                'after the use of a URL to a JS framework 
+                                that takes C<span class="the_R">R</span>NRSTN :: ' .
+                                'itself as the intended endpoint 
+                                and...consequently and among other things...exposes ' .
+                                'no specific information about the location of 
+                                the resource being requested. In fact, a filename ' .
+                                '(or filename plus one (1) directory) is the 
+                                most that ever need be revealed. Therefore, in all of ' .
+                                'these situations, I...I mean...the current lead 
+                                developer will need to have C<span class="the_R">R</span>' .
+                                'NRSTN :: step up and do the 
+                                work of providing these resources directly to said ' .
+                                'JS framework...on top of having already 
+                                made C<span class="the_R">R</span>NRSTN :: ' .
+                                'to do the work of providing the very JS 
+                                framework that is now seeking said resources.</p>
+    
+                                <p>With great power comes great responsibility, my friends.</p>
+    
+                            </div>
+                            <div class="crnrstn_general_post_recent_activity_datestamp">' .
+                            '<p>[2022-11-21 10:03:29.330436]</p></div>
+    
                         </div>
-                        <div class="crnrstn_general_post_recent_activity_datestamp">' . 
-                        '<p>[2022-11-21 10:03:29.330436]</p></div>
-
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-
-        <div class="crnrstn_default_landing_content_footer">
-            <div class="crnrstn_cb_5"></div>
-            <div class="crnrstn_default_landing_content_border_minor"><div class="crnrstn_cb_15"></div></div>
-            <div class="crnrstn_default_landing_recent_activity_creative"><?php echo $this->return_branding_creative(); ?></div>
-
-        </div>
-
-        <div class="crnrstn_cb_40"></div>
-        <div class="crnrstn_default_landing_content_title">
-            <h2>' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_DEMONSTRATION') . '</h2>
-            <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_DEMONSTRATION_DESCRIPTION') . 
-            ' <sup class="crnrstn_documentation_page_stats_sup">&dagger;</sup>' . 
-            $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_FILE') . ':</p>
-            <div class="crnrstn_cb_5"></div>
-            <div class="crnrstn_default_landing_content_border_major"><div class="crnrstn_cb_5"></div></div>
-        </div>
-        <div class="crnrstn_wethrbug_get_resource_demo"><strong>WETHRBUG_APP</strong> = ' . 
-        $this->get_resource('WETHRBUG_APP') . '</div>
-        <div class="crnrstn_cb_30"></div>
-
-        <div class="crnrstn_general_dagger_key_shell">
-            <div class="crnrstn_general_dagger_key_dag">&dagger;</div>
-            <div class="crnrstn_general_dagger_key_description">
-                <p>
-                    <em>' . $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_SEE') . 
-                    ' \'/_R/_config/config.system_resource.secure' . 
-                    '/crnrstn.system_resource.runtime_exe.php\'</em>.
-                </p>
+                    </li>
+    
+                </ul>
             </div>
-            <div class="crnrstn_cb"></div>
-
-        </div>
-
-        <div class="crnrstn_cb_40"></div>
-        <div>
-            <div class="crnrstn_facebook_gallery_check_it_out" style="">
-                <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_CHECK_OUT') . 
-                ' <a href="' . $this->return_sticky_link(
-                                      'https://www.facebook.com/media/set/?set=a.10152398953669503.' . 
-                                      '1073741836.586549502&type=1&l=4ba17e313a',
-                                      'crnrstn_landing_photo_album_facebook') . 
-                '" target="_blank" style="text-decoration:none; ' . 
-                'color: #0066CC; text-decoration:underline;">Facebook</a> ' . 
-                $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_PHOTO_ALBUM') . 
-                '!</p>
+    
+            <div class="crnrstn_default_landing_content_footer">
+                <div class="crnrstn_cb_5"></div>
+                <div class="crnrstn_default_landing_content_border_minor"><div class="crnrstn_cb_15"></div></div>
+                <div class="crnrstn_default_landing_recent_activity_creative"><?php echo $this->return_branding_creative(); ?></div>
+    
             </div>
-            <div style="float: left;">
-                ' . $this->return_sticky_media_link(
-                           'FACEBOOK_MEDIUM',
-                           'https://www.facebook.com/media/set/?set=a' . 
-                           '10152398953669503.1073741836.586549502' . 
-                           '&type=1&l=4ba17e313a') . '
+    
+            <div class="crnrstn_cb_40"></div>
+            <div class="crnrstn_default_landing_content_title">
+                <h2>' . $this->multi_lang_content_return('DEFAULT_LANDING_TITLE_DEMONSTRATION') . '</h2>
+                <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_DEMONSTRATION_DESCRIPTION') .
+                ' <sup class="crnrstn_documentation_page_stats_sup">&dagger;</sup>' .
+                $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_FILE') . ':</p>
+                <div class="crnrstn_cb_5"></div>
+                <div class="crnrstn_default_landing_content_border_major"><div class="crnrstn_cb_5"></div></div>
             </div>
-        </div>
-        <div class="crnrstn_cb_20" style="color:#2e2e31;"></div>
-        <pre class="crnrstn_ascii_art_pre">' . 
-        $this->return_CRNRSTN_ASCII_ART() . 
-        '</pre>
-
-        <div class="crnrstn_cb_20"></div>
-        <div class="crnrstn_general_copyright_shell">
-            &copy; 2012-' . \date('Y') . ' Jonathan \'5\' Harris :: ' . 
-            $this->multi_lang_content_return('COPY_ALL_RIGHTS_PART1') . '
-            <br>' . $this->multi_lang_content_return('COPY_ALL_RIGHTS_PART2') . 
-            ' <a id="crnrstn_general_mit_lnk" href="#" onclick="' . 
-            'oCRNRSTN_JS.crnrstn_interact_ui_ux(\'onclick\', this); ' . 
-            'return false;" target="_self">' . 
-            $this->multi_lang_content_return('COPY_ALL_RIGHTS_PART_MIT') . 
-            '</a>.
-        </div>
-
-        <div class="crnrstn_cb_40"></div>
-        <div id="crnrstn_j5_wolf_pup_outter_wrap" class="crnrstn_j5_wolf_pup_outter_wrap">
-            <div id="crnrstn_j5_wolf_pup_inner_wrap" class="crnrstn_j5_wolf_pup_inner_wrap">
-                ' . $this->return_creative(
-                           'J5_WOLF_PUP_RAND',
-                           self::$R_data['int_flag']['CRNRSTN_HTML']) . '
+            <div class="crnrstn_wethrbug_get_resource_demo"><strong>WETHRBUG_APP</strong> = ' .
+            $this->get_resource('WETHRBUG_APP') . '</div>
+            <div class="crnrstn_cb_30"></div>
+    
+            <div class="crnrstn_general_dagger_key_shell">
+                <div class="crnrstn_general_dagger_key_dag">&dagger;</div>
+                <div class="crnrstn_general_dagger_key_description">
+                    <p>
+                        <em>' . $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_SEE') .
+                        ' \'/_R/_config/config.system_resource.secure' .
+                        '/crnrstn.system_resource.runtime_exe.php\'</em>.
+                    </p>
+                </div>
+                <div class="crnrstn_cb"></div>
+    
             </div>
+    
+            <div class="crnrstn_cb_40"></div>
+            <div>
+                <div class="crnrstn_facebook_gallery_check_it_out" style="">
+                    <p>' . $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_CHECK_OUT') .
+                    ' <a href="' . $this->return_sticky_link(
+                                          'https://www.facebook.com/media/set/?set=a.10152398953669503.' .
+                                          '1073741836.586549502&type=1&l=4ba17e313a',
+                                          'crnrstn_landing_photo_album_facebook') .
+                    '" target="_blank" style="text-decoration:none; ' .
+                    'color: #0066CC; text-decoration:underline;">Facebook</a> ' .
+                    $this->multi_lang_content_return('DEFAULT_LANDING_TEXT_PHOTO_ALBUM') .
+                    '!</p>
+                </div>
+                <div style="float: left;">
+                    ' . $this->return_sticky_media_link(
+                               'FACEBOOK_MEDIUM',
+                               'https://www.facebook.com/media/set/?set=a' .
+                               '10152398953669503.1073741836.586549502' .
+                               '&type=1&l=4ba17e313a') . '
+                </div>
+            </div>
+            <div class="crnrstn_cb_20" style="color:#2e2e31;"></div>
+            <pre class="crnrstn_ascii_art_pre">' .
+            $this->return_CRNRSTN_ASCII_ART() .
+            '</pre>
+    
+            <div class="crnrstn_cb_20"></div>
+            <div class="crnrstn_general_copyright_shell">
+                &copy; 2012-' . \date('Y') . ' Jonathan \'5\' Harris :: ' .
+                $this->multi_lang_content_return('COPY_ALL_RIGHTS_PART1') . '
+                <br>' . $this->multi_lang_content_return('COPY_ALL_RIGHTS_PART2') .
+                ' <a id="crnrstn_general_mit_lnk" href="#" onclick="' .
+                'oCRNRSTN_JS.crnrstn_interact_ui_ux(\'onclick\', this); ' .
+                'return false;" target="_self">' .
+                $this->multi_lang_content_return('COPY_ALL_RIGHTS_PART_MIT') .
+                '</a>.
+            </div>
+    
+            <div class="crnrstn_cb_40"></div>
+            <div id="crnrstn_j5_wolf_pup_outter_wrap" class="crnrstn_j5_wolf_pup_outter_wrap">
+                <div id="crnrstn_j5_wolf_pup_inner_wrap" class="crnrstn_j5_wolf_pup_inner_wrap">
+                    ' . $this->return_creative(
+                               'J5_WOLF_PUP_RAND',
+                               self::$R_data['int_flag']['CRNRSTN_HTML']) . '
+                </div>
+            </div>
+    
         </div>
-
-    </div>
-
-' . $this->system_output_footer_html() . '
-</body>
+    
+    ' . $this->system_output_footer_html() . '
+    </body>
 </html>';
 
         return $html_out;
@@ -63975,7 +64006,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
         $msg_token = $this->generate_key('system_message_token');
         $ts        = $this->return_query_date_time_stamp();
-        header('Content-Type: application/xml');
+        \header('Content-Type: application/xml');
 
         echo '<?xml version="1.0" encoding="iso-8859-1" ?>
         <token>
@@ -64002,13 +64033,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  'code'                    => 200,
                  'clr_ssl_msg'             => $clr_ssl_msg);
         $this->error_log(
-            $clr_ssl_msg,
-            \LOG_DEBUG,
-            \E_NOTICE,
-            __LINE__,
-            __METHOD__,
-            __FILE__,
-            $token);
+               $clr_ssl_msg,
+               \LOG_DEBUG,
+               \E_NOTICE,
+               __LINE__,
+               __METHOD__,
+               __FILE__,
+               $token);
 
         $clr_ssl_msg = 'CLR-SSL Advanced Logging ' .
                        'Services Layer message ' .
@@ -64026,13 +64057,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  'code'                    => 200,
                  'clr_ssl_msg'             => $clr_ssl_msg);
         $this->error_log(
-            $clr_ssl_msg,
-            \LOG_DEBUG,
-            \E_NOTICE,
-            __LINE__,
-            __METHOD__,
-            __FILE__,
-            $token);
+               $clr_ssl_msg,
+               \LOG_DEBUG,
+               \E_NOTICE,
+               __LINE__,
+               __METHOD__,
+               __FILE__,
+               $token);
 
         $clr_ssl_msg = 'CRNRSTN :: ' .
                        $this->version_crnrstn() .
@@ -64048,13 +64079,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  'code'                    => 200,
                  'clr_ssl_msg'             => $clr_ssl_msg);
         $this->error_log(
-            $clr_ssl_msg,
-            \LOG_DEBUG,
-            \E_NOTICE,
-            __LINE__,
-            __METHOD__,
-            __FILE__,
-            $token);
+               $clr_ssl_msg,
+               \LOG_DEBUG,
+               \E_NOTICE,
+               __LINE__,
+               __METHOD__,
+               __FILE__,
+               $token);
 
         die();
 
@@ -64419,19 +64450,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
             if(!isset($is_dev_mode)){
 
                 $is_dev_mode = false;
-                if($this->is_bit_set((int) self::$R_data['int_flag']['R_js_css_min_mode']) == true){
-
+                if($this->is_bit_set((int) self::$R_data['int_flag']['R_js_css_min_mode']) == true)
                     $is_dev_mode = true;
-
-                }
 
             }else{
 
-                if(!is_bool($is_dev_mode)){
-
+                if(!is_bool($is_dev_mode))
                     $is_dev_mode = $this->tidy_boolean($is_dev_mode);
-
-                }
 
             }
 
@@ -64867,18 +64892,32 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                 }
 
-                error_log('[lnum ' . 
-                    __LINE__ . 
-                    '] [mthd ' . 
-                    __METHOD__ . 
-                    '] CLR-SSL spool (' . 
-                    \gettype($resource_constant) . 
-                    ')' . 
-                    '$resource_constant[' . 
-                    $this->return_int_const_profile(
-                           $resource_constant, 
-                           self::$R_data['int_flag']['R_string']) . 
-                    '].');
+                $clr_ssl_msg = 'CLR-SSL spool (' .
+                               \gettype($resource_constant) .
+                               ')' .
+                               '$resource_constant[' .
+                               $this->return_int_const_profile(
+                                      $resource_constant,
+                                      self::$R_data['int_flag']['R_string']) .
+                               '].';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_DEBUG,
+                       \E_NOTICE,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
 
             }
 
@@ -67116,10 +67155,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_001)){
 
@@ -67130,10 +67170,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_002)){
 
@@ -67144,10 +67185,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_003)){
 
@@ -67158,10 +67200,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_004)){
 
@@ -67172,10 +67215,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_005)){
 
@@ -67186,10 +67230,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_006)){
 
@@ -67200,10 +67245,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_007)){
 
@@ -67214,10 +67260,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_008)){
 
@@ -67228,10 +67275,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_009)){
 
@@ -67242,10 +67290,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_010)){
 
@@ -67256,10 +67305,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_011)){
 
@@ -67270,10 +67320,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_012)){
 
@@ -67284,10 +67335,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_013)){
 
@@ -67298,10 +67350,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_014)){
 
@@ -67312,10 +67365,11 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         }
 
         $index_pos++;
-        if($index_pos > $total_index) return $this->output_regression_stripe_ARRAY(
-                                                    $str_out, 
-                                                    $str_units, 
-                                                    $output_format);
+        if($index_pos > $total_index)
+            return $this->output_regression_stripe_ARRAY(
+                          $str_out,
+                          $str_units,
+                          $output_format);
 
         if(isset($R_data_015)){
 
@@ -67445,92 +67499,92 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $key_count++;
         if(isset($R_data_001))
             $keys_out[] = $R_data_001;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_002))
             $keys_out[] = $R_data_002;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_003))
             $keys_out[] = $R_data_003;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_004))
             $keys_out[] = $R_data_004;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_005))
             $keys_out[] = $R_data_005;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_006))
             $keys_out[] = $R_data_006;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_007))
             $keys_out[] = $R_data_007;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_008))
             $keys_out[] = $R_data_008;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_009))
             $keys_out[] = $R_data_009;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_010))
             $keys_out[] = $R_data_010;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_011))
             $keys_out[] = $R_data_011;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_012))
             $keys_out[] = $R_data_012;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_013))
             $keys_out[] = $R_data_013;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_014))
             $keys_out[] = $R_data_014;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         $key_count++;
         if(isset($R_data_015))
             $keys_out[] = $R_data_015;
-
-        if($key_count > sizeof($keys_out)) return $keys_out;
+        if($key_count > sizeof($keys_out))
+            return $keys_out;
 
         return $keys_out;
 
@@ -67629,7 +67683,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *
          */
 
-        $total_index   = count($data_keys);
+        $total_index   = \count($data_keys);
         $var_index_pos = 0;
         $str_out       = '';
         $array_out     = array();
@@ -69436,16 +69490,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $tmp_str_out = '';
         $data_type_family = 'CRNRSTN::RESOURCE::SEO_ANALYTICS';
 
-        if(isset($data_key)){
-
+        if(isset($data_key))
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Return a 
              * specific profile. 
              *
              */
             return $this->get_resource($data_key, 0, $data_type_family);
-
-        }
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Return all 
@@ -69560,6 +69611,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              */
 
             $tmp_str_out .= $this->get_resource($tmp_data_key, 0, $data_type_family);
+
             /*error_log(__LINE__ . 
              *    ' crnrstn $tmp_str_out=[' . 
              *    $tmp_str_out . 
@@ -74533,9 +74585,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-     * COMMENT  :: https://stackoverflow.com/a/13733588
-     * AUTHOR   :: https://stackoverflow.com/users/1698153/scott
+     * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+     * COMMENT :: https://stackoverflow.com/a/13733588
+     * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
      *
      *
      * Scott
@@ -74682,7 +74734,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          *       https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double
          *
          *
-         *       5 :: Wednesday, December 6, 2023 @ 2102 hrs.
+         * 5 :: Wednesday, December 6, 2023 @ 2102 hrs.
+         * Last Modified: Thursday, February 12, 2026 @ 0059 hrs.
          *
          */
         $token = '';
@@ -74775,11 +74828,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                         0, 
                                         'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
 
-                if(!is_numeric($tmp_len)){
-
+                if(!is_numeric($tmp_len))
                     $tmp_len = (int) self::$R_data['R_salt_default_length'];
-
-                }
 
                 $clr_ssl_msg = 'An invalid length, (' . 
                                $this->gettype($len) . ') ' . 
@@ -74884,23 +74934,12 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          */
         $max = \strlen($codeAlphabet);       
 
-        if(function_exists('random_int')){
-
-            for($i = 0; $i < $len; $i++){
-
+        if(\function_exists('random_int'))
+            for($i = 0; $i < $len; $i++)
                 $token .= $codeAlphabet[random_int(0, $max - 1)];
-
-            }
-
-        }else{
-
-            for($i = 0; $i < $len; $i++){
-
+        else
+            for($i = 0; $i < $len; $i++)
                 $token .= $codeAlphabet[$this->crypto_rand_secure(0, $max - 1)];
-
-            }
-
-        }
 
         if($hmac_algorithm_hash_return !== false){
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -74948,7 +74987,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                  * 5 :: Thursday, November 6, 2025 @ 0237 hrs.
                  *
                  */
-                $tmp_hash_key = substr($tmp_hash_key, 0, $len);
+                $tmp_hash_key = \substr($tmp_hash_key, 0, $len);
 
             }
 
@@ -74981,10 +75020,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
      * @return
      * @access private
      *
-     * SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-     * COMMENT  :: https://stackoverflow.com/a/13733588
-     * AUTHOR   :: https://stackoverflow.com/users/1698153/scott
-     * AUTHOR   :: https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php#104322
+     * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+     * COMMENT :: https://stackoverflow.com/a/13733588
+     * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
+     * AUTHOR  :: https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php#104322
      *
      *
      * Scott
@@ -76112,7 +76151,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $pattern_array[0]     = $pattern;
         $replacement_array[0] = $replacement;
 
-        $original_str = str_replace(
+        $original_str = \str_replace(
                         $pattern_array, 
                         $replacement_array, 
                         $original_str);
@@ -78999,9 +79038,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
          * you just want to set and forget it, 
          * use 45). 
          *
-         * SOURCE   :: https://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php
-         * COMMENT  :: https://stackoverflow.com/a/3003233
-         * AUTHOR   :: https://stackoverflow.com/users/238978/emil-vikstr%c3%b6m
+         * SOURCE  :: https://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php
+         * COMMENT :: https://stackoverflow.com/a/3003233
+         * AUTHOR  :: https://stackoverflow.com/users/238978/emil-vikstr%c3%b6m
          *
          *
          * Emil Vikström
@@ -79017,9 +79056,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $ip = $_SERVER['REMOTE_ADDR'];
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * SOURCE   :: https://stackoverflow.com/questions/12435582/php-serverremote-addr-shows-ipv6/12436099
-         * COMMENT  :: https://stackoverflow.com/a/12436099
-         * AUTHOR   :: https://stackoverflow.com/users/813192/sander-steffann
+         * SOURCE  :: https://stackoverflow.com/questions/12435582/php-serverremote-addr-shows-ipv6/12436099
+         * COMMENT :: https://stackoverflow.com/a/12436099
+         * AUTHOR  :: https://stackoverflow.com/users/813192/sander-steffann
          *
          *
          * Sander Steffann
@@ -79178,13 +79217,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     if($json_out == true){
 
-                        $db_resp_out = self::$_R['kivotos']->R['database']->return_database_value(
-                                                                            $oCRNRSTN_MySQLi,
-                                                                            $result_handle,
-                                                                            $batch_key,
-                                                                            $result_set_key,
-                                                                            $fieldname,
-                                                                            $pos);
+                        $db_resp_out = self::$_R['kivotos']->R['db']->return_database_value(
+                                                                      $oCRNRSTN_MySQLi,
+                                                                      $result_handle,
+                                                                      $batch_key,
+                                                                      $result_set_key,
+                                                                      $fieldname,
+                                                                      $pos);
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * SOURCE :: https://www.php.net/manual/en/json.constants.php
@@ -79197,13 +79236,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
 
                     }else{
 
-                        return self::$_R['kivotos']->R['database']->return_database_value(
-                                                                    $oCRNRSTN_MySQLi,
-                                                                    $result_handle,
-                                                                    $batch_key,
-                                                                    $result_set_key,
-                                                                    $fieldname,
-                                                                    $pos);
+                        return self::$_R['kivotos']->R['db']->return_database_value(
+                                                              $oCRNRSTN_MySQLi,
+                                                              $result_handle,
+                                                              $batch_key,
+                                                              $result_set_key,
+                                                              $fieldname,
+                                                              $pos);
 
                     }
 
@@ -86804,11 +86843,8 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * just seconds? 
              *
              */
-            if(is_numeric($interval_str)){
-
+            if(\is_numeric($interval_str))
                 $tmp_is_seconds = true;
-
-            }
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Handle base 
@@ -86816,17 +86852,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * seconds. 
              *
              */
-            if($tmp_is_seconds == true){
-
-                foreach(self::$sql_interval_ARRAY['UNITS']['VALUES'][self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN']['SECOND']] as 
+            if($tmp_is_seconds == true)
+                foreach(self::$R_data['R_sql_time_intervals']['interval_values'][self::$R_data['R_sql_time_intervals'][ 'interval_string_patterns']['SECOND']] as
                     $tmp_unit => $tmp_format)
-                {
-
                     return $interval_str . ' ' . $tmp_unit;
-
-                }
-
-            }
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Strip spaces. 
@@ -86838,13 +86867,13 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
              * UPPERCASE the data.
              *
              */
-            $tmp_interval_upper = strtoupper($interval_str);
+            $tmp_interval_upper = \strtoupper($interval_str);
 
-            foreach(self::$sql_interval_ARRAY['UNITS']['STRING_PATTERN'] as 
+            foreach(self::$R_data['R_sql_time_intervals'][ 'interval_string_patterns'] as
                 $tmp_unit_str_ptrn => $unit_index)
             {
 
-                $tmp_pos_unit = strpos($tmp_interval, $tmp_unit_str_ptrn);
+                $tmp_pos_unit = \strpos($tmp_interval, $tmp_unit_str_ptrn);
                 if($tmp_pos_unit !== false){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -86855,14 +86884,10 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      * on unit. 
                      *
                      */
-                    $tmp_data_str_ARRAY = explode($tmp_unit_str_ptrn, $tmp_interval_upper);
-                    foreach(self::$sql_interval_ARRAY['UNITS']['VALUES'][$unit_index] as 
+                    $tmp_data_str_ARRAY = \explode($tmp_unit_str_ptrn, $tmp_interval_upper);
+                    foreach(self::$R_data['R_sql_time_intervals']['interval_values'][$unit_index] as
                         $tmp_unit => $tmp_format)
-                    {
-
                         return $tmp_data_str_ARRAY[0] . ' ' . $tmp_unit;
-
-                    }
 
                     break 1;
 
@@ -86903,7 +86928,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                    __FILE__, 
                    $token);
 
-            throw new \Exception($clr_ssl_msg);
+            //throw new \Exception($clr_ssl_msg);
 
         }catch(\Exception $e){
 
@@ -88500,9 +88525,9 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/13076480/php-get-actual-maximum-upload-size
-     * AUTHOR   :: https://stackoverflow.com/users/710377/meustrus
-     * COMMENT  :: https://stackoverflow.com/a/25370978
+     * SOURCE  :: https://stackoverflow.com/questions/13076480/php-get-actual-maximum-upload-size
+     * COMMENT :: https://stackoverflow.com/a/25370978
+     * AUTHOR  :: https://stackoverflow.com/users/710377/meustrus
      *
      *
      * meustrus
@@ -92530,9 +92555,9 @@ $http_status_codes[$response_code] . '</div>
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/5100189/use-php-to-check-if-page-was-accessed-with-ssl
-     * COMMENT  :: https://stackoverflow.com/a/10307798
-     * AUTHOR   :: https://stackoverflow.com/users/887067/saeven
+     * SOURCE  :: https://stackoverflow.com/questions/5100189/use-php-to-check-if-page-was-accessed-with-ssl
+     * COMMENT :: https://stackoverflow.com/a/10307798
+     * AUTHOR  :: https://stackoverflow.com/users/887067/saeven
      *
      *
      * Saeven
@@ -93416,8 +93441,8 @@ $http_status_codes[$response_code] . '</div>
          * string. 
          *
          */
-        $lines = explode($strip, $message);
-        $last = '';
+        $lines = \explode($strip, $message);
+        $last  = '';
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Pop off empty 
@@ -93427,9 +93452,9 @@ $http_status_codes[$response_code] . '</div>
          */
         do{
 
-            $last = array_pop($lines);
+            $last = \array_pop($lines);
 
-        }while(empty($last) && (count($lines)));
+        }while(empty($last) && (\count($lines)));
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Re-assemble what 

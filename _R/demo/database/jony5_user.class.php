@@ -5592,9 +5592,9 @@ class jony5_user
     }
 
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-     * COMMENT  :: https://stackoverflow.com/a/13733588
-     * AUTHOR   :: https://stackoverflow.com/users/1698153/scott
+     * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+     * COMMENT :: https://stackoverflow.com/a/13733588
+     * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
      *
      *
      * Scott
@@ -5750,10 +5750,10 @@ class jony5_user
      * @return
      * @access private
      *
-     * SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-     * COMMENT  :: https://stackoverflow.com/a/13733588
-     * AUTHOR   :: https://stackoverflow.com/users/1698153/scott
-     * AUTHOR   :: https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php#104322
+     * SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+     * COMMENT :: https://stackoverflow.com/a/13733588
+     * AUTHOR  :: https://stackoverflow.com/users/1698153/scott
+     * AUTHOR  :: https://www.php.net/manual/en/function.openssl-random-pseudo-bytes.php#104322
      *
      *
      * Scott

@@ -298,8 +298,7 @@ namespace CRNRSTN;
  *
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * INITIALIZE GLOBAL 
  * IPv4 and IPv6 SECURITY 
  * PROTOCOLS FOR 

@@ -258,127 +258,63 @@
 namespace CRNRSTN;
 
 /**
- * R :: R_SQL_time_interval contains support data structures for parsing SQL temporal intervals from the midst of user generated content. 
- * 
- * $R_data = array('interval_values' => array(), 'interval_string_patterns' => array());
- * 
- * @package CRNRSTN
- * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
- * @author Jonathan '5' Harris <jharris@eVifweb.com>
- * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
- * @license https://crnrstn.jony5.com/licensing/ MIT
- * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
- * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
- * @param array $R_data contains support data structures for parsing SQL temporal intervals from the midst of user generated content. 
- * @access public
+ * R :: Content Pending. 
+ *
+ * RUNTIME EXECUTABLE :: /_R/_config/_config.defaults
+ *                       /load_static_cache/registry_is_authorized_resource
+ *                       /crnrstn.registry_is_authorized_resource.runtime_exe.php
+ * EXECUTABLE VERSION :: 1.00.0000
+ * DATE               :: Sunday, May 24, 2026 @ 1003 hrs.
+ * AUTHOR             :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
+ * URI                :: http://evifweb.jony5.com/
+ * TITLE              :: The CRNRSTN :: Lightsaber
+ *                       RoCEv2 SOAP Services Layer 
+ *                       (CLR-SSL) Resource 
+ *                       Registry Software Access 
+ *                       Authorization Settings 
+ *                       and Configuration 
+ *                       Runtime Executable 
+ * DESCRIPTION        :: Initialize system variables
+ *                       specific to CLR-SSL Resource  
+ *                       Registry authorized software 
+ *                       access settings and 
+ *                       configuration. 
+ *
+ *                       This CLR-SSL runtime 
+ *                       executable operates 
+ *                       in conjunction with 
+ *                       crnrstn->R_load_static().
  *
  *
- * 5 :: Saturday, June 27, 2026 @ 2253 hrs.
+ *                       5
+ *                       
+ *                       Sunday, May 24, 2026 @ 1005 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ * LICENSE            :: MIT | https://crnrstn.jony5.com/licensing/
  *
  */
+
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * Initialize support 
- * data structures for 
- * SQL temporal intervals. 
- *
- * https://dev.mysql.com/doc/refman/8.0/en/expressions.html
- *
- *
- * 5 :: Wednesday, June 12, 2024 @ 0339 hrs.
- *
- */
-$R_data = array(
-          'interval_values'             => array(
-             array('MICROSECOND'        => 'MICROSECONDS'), 
-             array('SECOND'             => 'SECONDS'), 
-             array('MINUTE'             => 'MINUTES'), 
-             array('HOUR'               => 'HOURS'), 
-             array('DAY'                => 'DAYS'), 
-             array('WEEK'               => 'WEEKS'), 
-             array('MONTH'              => 'MONTHS'), 
-             array('QUARTER'            => 'QUARTERS'), 
-             array('YEAR'               => 'YEARS'), 
-             array('SECOND_MICROSECOND' => 'SECONDS.MICROSECONDS'), 
-             array('MINUTE_MICROSECOND' => 'MINUTES:SECONDS.MICROSECONDS'), 
-             array('MINUTE_SECOND'      => 'MINUTES:SECONDS'), 
-             array('HOUR_MICROSECOND'   => 'HOURS:MINUTES:SECONDS.MICROSECONDS'), 
-             array('HOUR_SECOND'        => 'HOURS:MINUTES:SECONDS'), 
-             array('HOUR_MINUTE'        => 'HOURS:MINUTES'), 
-             array('DAY_MICROSECOND'    => 'DAYS HOURS:MINUTES:SECONDS.MICROSECONDS'), 
-             array('DAY_SECOND'         => 'DAYS HOURS:MINUTES:SECONDS'), 
-             array('DAY_MINUTE'         => 'DAYS HOURS:MINUTES'), 
-             array('DAY_HOUR'           => 'DAYS HOURS'), 
-             array('YEAR_MONTH'         => 'YEARS-MONTHS')), 
-          'interval_string_patterns'    => array(
-                 'SECONDS_MICROSECONDS' => 9, 
-                 'SECONDS_MICROSECOND'  => 9, 
-                 'SECOND_MICROSECONDS'  => 9, 
-                 'SECOND_MICROSECOND'   => 9, 
-                 'MINUTES_MICROSECONDS' => 10, 
-                 'MINUTES_MICROSECOND'  => 10, 
-                 'MINUTE_MICROSECONDS'  => 10, 
-                 'MINUTE_MICROSECOND'   => 10, 
-                 'HOURS_MICROSECONDS'   => 12, 
-                 'HOURS_MICROSECOND'    => 12, 
-                 'HOUR_MICROSECONDS'    => 12, 
-                 'HOUR_MICROSECOND'     => 12, 
-                 'DAYS_MICROSECONDS'    => 15, 
-                 'DAYS_MICROSECOND'     => 15, 
-                 'DAY_MICROSECONDS'     => 15, 
-                 'DAY_MICROSECOND'      => 15, 
-                 'MINUTES_SECONDS'      => 11, 
-                 'MINUTES_SECOND'       => 11, 
-                 'MINUTE_SECONDS'       => 11, 
-                 'MINUTE_SECOND'        => 11, 
-                 'MICROSECONDS'         => 0, 
-                 'MICROSECOND'          => 0, 
-                 'HOURS_SECONDS'        => 13, 
-                 'HOURS_SECOND'         => 13, 
-                 'HOUR_SECONDS'         => 13, 
-                 'HOUR_SECOND'          => 13, 
-                 'HOURS_MINUTES'        => 14, 
-                 'HOUR_MINUTES'         => 14, 
-                 'HOURS_MINUTE'         => 14, 
-                 'HOUR_MINUTE'          => 14, 
-                 'DAYS_SECONDS'         => 16, 
-                 'DAYS_SECOND'          => 16, 
-                 'DAY_SECONDS'          => 16, 
-                 'DAY_SECOND'           => 16, 
-                 'DAYS_MINUTES'         => 17, 
-                 'DAYS_MINUTE'          => 17, 
-                 'DAY_MINUTES'          => 17, 
-                 'DAY_MINUTE'           => 17, 
-                 'YEARS_MONTHS'         => 19, 
-                 'YEARS_MONTH'          => 19, 
-                 'YEAR_MONTHS'          => 19, 
-                 'YEAR_MONTH'           => 19, 
-                 'DAYS_HOURS'           => 18, 
-                 'DAYS_HOUR'            => 18, 
-                 'DAY_HOURS'            => 18, 
-                 'DAY_HOUR'             => 18, 
-                 'QUARTERS'             => 7, 
-                 'QUARTER'              => 7, 
-                 'SECONDS'              => 1, 
-                 'SECOND'               => 1, 
-                 'MINUTES'              => 2, 
-                 'MINUTE'               => 2, 
-                 'MONTHS'               => 6, 
-                 'MONTH'                => 6, 
-                 'HOURS'                => 3, 
-                 'HOUR'                 => 3, 
-                 'WEEKS'                => 5, 
-                 'WEEK'                 => 5, 
-                 'YEARS'                => 8, 
-                 'YEAR'                 => 8, 
-                 'DAYS'                 => 4, 
-                 'MINS'                 => 2, 
-                 'SECS'                 => 1, 
-                 'QTR'                  => 7, 
-                 'MTH'                  => 6, 
-                 'DAY'                  => 4, 
-                 'MIN'                  => 2, 
-                 'SEC'                  => 1, 
-                 'YR'                   => 8, 
-                 'WK'                   => 5, 
-                 'HR'                   => 3));
+* Set resource to (int) 0, 
+* in order to remove 
+* the resource's 
+* authorization for 
+* CLR-SSL Resource 
+* Registry access. 
+*
+*
+* 5
+*
+* Sunday, July 28, 2024 @ 0844 hrs.
+*
+*/
+return array(
+       __NAMESPACE__ . '\lightbox_helper_by_eVifweb' => 1, 
+       __NAMESPACE__ . '\crnrstn'                    => 1,
+       __NAMESPACE__ . '\crnrstn_bitflip_manager'    => 1,
+       __NAMESPACE__ . '\crnrstn_kivotos'            => 1,
+       __NAMESPACE__ . '\crnrstn_registry_user'      => 1,
+       __NAMESPACE__ . '\crnrstn_registry_assistant' => 1,
+       __NAMESPACE__ . '\obj_with_access_off______0' => 0);

@@ -15359,9 +15359,9 @@ class crnrstn_response_return_serialization_map extends crnrstn
                             $tmp_crnrstn_signature_headers_ARRAY = $this->header_signature_options_return();
 
                             //
-                            // SOURCE   :: https://stackoverflow.com/questions/9728269/content-length-and-other-http-headers
-                            // COMMENT  :: https://stackoverflow.com/a/9728576
-                            // AUTHOR   :: https://stackoverflow.com/users/1219121/neysor
+                            // SOURCE  :: https://stackoverflow.com/questions/9728269/content-length-and-other-http-headers
+                            // COMMENT :: https://stackoverflow.com/a/9728576
+                            // AUTHOR  :: https://stackoverflow.com/users/1219121/neysor
                             //
                             //
                             // Neysor
@@ -15492,9 +15492,9 @@ class crnrstn_response_return_serialization_map extends crnrstn
                         if($pos_map !== false){
 
                             //
-                            // SOURCE   :: https://stackoverflow.com/questions/16384089/jquery-2-0-0-min-map-uncaught-syntaxerror-unexpected-token/
-                            // COMMENT  :: https://stackoverflow.com/a/38021461
-                            // AUTHOR   :: https://stackoverflow.com/users/2510246/bylerj
+                            // SOURCE  :: https://stackoverflow.com/questions/16384089/jquery-2-0-0-min-map-uncaught-syntaxerror-unexpected-token/
+                            // COMMENT :: https://stackoverflow.com/a/38021461
+                            // AUTHOR  :: https://stackoverflow.com/users/2510246/bylerj
                             //
                             //
                             // bylerj
@@ -16120,9 +16120,9 @@ class crnrstn_response_return_serialization_map extends crnrstn
                         $tmp_crnrstn_signature_headers_ARRAY = $this->header_signature_options_return();
 
                         //
-                        // SOURCE   :: https://stackoverflow.com/questions/9728269/content-length-and-other-http-headers
-                        // COMMENT  :: https://stackoverflow.com/a/9728576
-                        // AUTHOR   :: https://stackoverflow.com/users/1219121/neysor
+                        // SOURCE  :: https://stackoverflow.com/questions/9728269/content-length-and-other-http-headers
+                        // COMMENT :: https://stackoverflow.com/a/9728576
+                        // AUTHOR  :: https://stackoverflow.com/users/1219121/neysor
                         //
                         //
                         // Neysor
@@ -18153,9 +18153,9 @@ class crnrstn_response_return_serialization_map extends crnrstn
                                 $tmp_crnrstn_signature_headers_ARRAY = $this->header_signature_options_return();
 
                                 //
-                                // SOURCE   :: https://stackoverflow.com/questions/9728269/content-length-and-other-http-headers
-                                // COMMENT  :: https://stackoverflow.com/a/9728576
-                                // AUTHOR   :: https://stackoverflow.com/users/1219121/neysor
+                                // SOURCE  :: https://stackoverflow.com/questions/9728269/content-length-and-other-http-headers
+                                // COMMENT :: https://stackoverflow.com/a/9728576
+                                // AUTHOR  :: https://stackoverflow.com/users/1219121/neysor
                                 //
                                 //
                                 // Neysor

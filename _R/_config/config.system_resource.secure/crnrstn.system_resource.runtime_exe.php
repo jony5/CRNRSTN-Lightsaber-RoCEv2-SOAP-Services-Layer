@@ -471,8 +471,7 @@ namespace CRNRSTN;
  *
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Begin system resource
  * definitions for the
  * next environment.
@@ -497,8 +496,7 @@ $this->config_add_resource(
 	   'SSL_ENABLED', 
 	   true);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * BEGIN SYSTEM RESOURCE DEFINITIONS
  * FOR THE NEXT ENVIRONMENT.
  *
@@ -537,8 +535,7 @@ $this->config_add_resource(
  
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * BEGIN SYSTEM RESOURCE 
  * DEFINITIONS FOR THE 
  * NEXT ENVIRONMENT.
@@ -561,8 +558,7 @@ $this->config_add_resource(
 	   'SSL_ENABLED', 
 	   false);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * BEGIN SYSTEM RESOURCE 
  * DEFINITIONS FOR ALL 
  * ENVIRONMENTS AS 

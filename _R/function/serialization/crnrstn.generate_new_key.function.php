@@ -336,9 +336,9 @@ namespace CRNRSTN;
  *
  *                        Scott
  *
- *                        SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
- *                        COMMENT  :: https://stackoverflow.com/a/13733588
- *                        AUTHOR   :: https://stackoverflow.com/users/1698153/scott
+ *                        SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+ *                        COMMENT :: https://stackoverflow.com/a/13733588
+ *                        AUTHOR  :: https://stackoverflow.com/users/1698153/scott
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
@@ -346,9 +346,9 @@ namespace CRNRSTN;
  *
  */
 //
-// SOURCE   :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
-// COMMENT  :: https://stackoverflow.com/a/13733588
-// AUTHOR   :: https://stackoverflow.com/users/1698153/scott
+// SOURCE  :: https://stackoverflow.com/questions/1846202/php-how-to-generate-a-random-unique-alphanumeric-string
+// COMMENT :: https://stackoverflow.com/a/13733588
+// AUTHOR  :: https://stackoverflow.com/users/1698153/scott
 //
 //
 // Scott

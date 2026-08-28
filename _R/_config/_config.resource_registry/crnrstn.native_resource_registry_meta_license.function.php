@@ -266,34 +266,20 @@ namespace CRNRSTN;
  * DATE                :: Thursday, April 16, 2026 @ 1911 hrs.
  * AUTHOR              :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
  * URI                 :: http://evifweb.jony5.com/
- * TITLE               :: The Native Resource Registry 
- *                        of Class and Function Global 
- *                        Definitions, Runtime Executables, 
- *                        SOAP Endpoints, and Database 
- *                        Technologies of the CRNRSTN :: 
- *                        Lightsaber RoCEv2 SOAP 
- *                        Services Layer (CLR-SSL)
- * DESCRIPTION         :: The native resource registry
- *                        supporting all system resource
- *                        initialization for applications
- *                        supported by the CRNRSTN ::
- *                        Lightsaber SOAP Services Layer.
- *
- *                        The system registry is complete
- *                        with all native class and global
- *                        function definitions along with
- *                        any runtime executables that are
- *                        used by all currently supported
- *                        or "in development" applications.
- *
- *                        The Lightbox Helper by eVifweb and
- *                        CRNRSTN :: Lightsaber both use this
- *                        registry to just in time (JIT) meet
- *                        all of their resources
- *                        initialization requirements.
+ * TITLE               :: The CLR-SSL Software License
+ *                        and License Meta Source Control
+ * DESCRIPTION         :: Stores and makes accessible
+ *                        software licenses and relevant
+ *                        meta data, such as license URL,
+ *                        for all licenses applicable
+ *                        to the CLR-SSL and/or any licensed
+ *                        third-party software included with
+ *                        or integrated into the CLR-SSL.
  *
  *
  *                        5
+ *
+ *                        Friday, August 28, 2026 @ 0801 hrs.
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
@@ -301,7 +287,9 @@ namespace CRNRSTN;
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
- * @package CRNRSTN
+ * @return mixed
+ * @access public
+ *
  * @version 1.00.0000 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
  * @author Jonathan '5' Harris <jharris@eVifweb.com>
  * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
@@ -309,8 +297,7 @@ namespace CRNRSTN;
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
  * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
- * @return mixed 
- * @access public
+ * @package CRNRSTN
  *
  */
 function _crnrstn_native_resource_registry_meta_license(

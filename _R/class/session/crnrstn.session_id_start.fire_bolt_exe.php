@@ -304,9 +304,9 @@ namespace CRNRSTN;
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
- * SOURCE   :: https://www.php.net/manual/en/reserved.variables.session.php
- * AUTHOR   :: https://www.php.net/manual/en/reserved.variables.session.php#113114
- * COMMENT  :: https://www.php.net/manual/en/reserved.variables.session.php#113114
+ * SOURCE  :: https://www.php.net/manual/en/reserved.variables.session.php
+ * AUTHOR  :: https://www.php.net/manual/en/reserved.variables.session.php#113114
+ * COMMENT :: https://www.php.net/manual/en/reserved.variables.session.php#113114
  *
  * if(!session_id()) @session_start();
  *
@@ -327,9 +327,9 @@ namespace CRNRSTN;
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
- * SOURCE   :: https://www.php.net/manual/en/session.constants.php#constant.sid
- * AUTHOR   :: https://www.php.net/manual/en/session.constants.php#120025
- * COMMENT  :: https://www.php.net/manual/en/session.constants.php#120025
+ * SOURCE  :: https://www.php.net/manual/en/session.constants.php#constant.sid
+ * AUTHOR  :: https://www.php.net/manual/en/session.constants.php#120025
+ * COMMENT :: https://www.php.net/manual/en/session.constants.php#120025
  *
  * Check whether a
  * session is started

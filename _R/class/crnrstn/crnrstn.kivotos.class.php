@@ -878,17 +878,17 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\nusoapservermime':
             case __NAMESPACE__ . '===\nusoap_wsdlcache':
             case __NAMESPACE__ . '===\nusoap_xmlschema':
-            case __NAMESPACE__ . '===\soapclientmime':
+            case __NAMESPACE__ . '\soapclientmime':
             case __NAMESPACE__ . '===\soapclient':
-            case __NAMESPACE__ . '===\soap_fault':
-            case __NAMESPACE__ . '===\soap_parser':
-            case __NAMESPACE__ . '\soap_server':
+            case __NAMESPACE__ . '\soap_fault':
+            case __NAMESPACE__ . '\soap_parser':
+            case __NAMESPACE__ . '===\soap_server':
             case __NAMESPACE__ . '===\soap_transport_http':
             case __NAMESPACE__ . '===\soapval':
             case __NAMESPACE__ . '===\wsdlcache':
             case __NAMESPACE__ . '===\wsdl':
-            case __NAMESPACE__ . '===XMLSchema':
-            case __NAMESPACE__ . '===\nusoap_server':
+            case __NAMESPACE__ . '\XMLSchema':
+            case __NAMESPACE__ . '\nusoap_server':
             case __NAMESPACE__ . '===\nusoap_client':
 
             // PHPMailer
@@ -1047,17 +1047,16 @@ class crnrstn_kivotos extends crnrstn
                 switch(\gettype($R_resp[$mem_ptr]['data'][0])){
                     case 'object':
 
-                        $clr_ssl_msg = 'Unknown resource ' . 
-                                       'received. PHP get_class output: (' . 
+                        $clr_ssl_msg = 'By-passing data output report for (' .
                                        \gettype($R_resp[$mem_ptr]['data'][0]) . ') ' . 
                                        \get_class($R_resp[$mem_ptr]['data'][0]) . '.';
 
                     break;
                     default:
 
-                        $clr_ssl_msg = 'Unknown (' . 
+                        $clr_ssl_msg = 'By-passing data output report for 1 (' .
                                        \gettype($R_resp[$mem_ptr]['data'][0]) . 
-                                       ') resource received.';
+                                       ') resource.';
 
                     break;
 
@@ -1118,12 +1117,12 @@ class crnrstn_kivotos extends crnrstn
                                    $R_resp[$mem_ptr]['title']['TEXT'] . 
                                    ', that this resource will be stored ' . 
                                    'securely, and that all is well.';
-                    $html_out = $this->clr_ssl_registry_resource_report(
-                                       $R_resp,
-                                       $clr_ssl_msg, 
-                                       false,
-                                       __LINE__, 
-                                       __METHOD__);
+                    $this->clr_ssl_registry_resource_report(
+                           $R_resp,
+                           $clr_ssl_msg,
+                           false,
+                           __LINE__,
+                           __METHOD__);
 
                 break;
                 case 'general_resource':

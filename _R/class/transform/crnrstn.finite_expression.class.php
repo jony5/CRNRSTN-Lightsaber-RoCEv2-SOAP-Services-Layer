@@ -850,9 +850,9 @@ class crnrstn_finite_expression
         // min, and secs 
         // from total secs.
         //
-        // SOURCE   :: https://stackoverflow.com/questions/3172332/convert-seconds-to-hourminutesecond/3172358
-        // COMMENT  :: https://stackoverflow.com/a/3172368
-        // AUTHOR   :: https://stackoverflow.com/users/51760/aif
+        // SOURCE  :: https://stackoverflow.com/questions/3172332/convert-seconds-to-hourminutesecond/3172358
+        // COMMENT :: https://stackoverflow.com/a/3172368
+        // AUTHOR  :: https://stackoverflow.com/users/51760/aif
         //
         //
         // aif

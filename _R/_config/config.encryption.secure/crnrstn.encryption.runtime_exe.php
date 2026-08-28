@@ -395,8 +395,7 @@ namespace CRNRSTN;
  *
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Edit: Added a data handling architecture 
  *       channel to the stack behind SOAP: 
  *
@@ -576,8 +575,7 @@ $this->config_init_session_encryption(
 	   OPENSSL_RAW_DATA, 
 	   'sha256');
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * INITIALIZATION FOR ENCRYPTION :: 
  * CRNRSTN :: COOKIE DATA :: 
  * ADVANCED CONFIGURATION PARAMETERS.
@@ -752,8 +750,7 @@ $this->config_init_cookie_encryption(
        'sha256');
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * INITIALIZATION FOR ENCRYPTION :: 
  * CRNRSTN :: TUNNELLED DATA :: 
  * ADVANCED CONFIGURATION PARAMETERS. 

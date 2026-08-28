@@ -2345,11 +2345,8 @@ if(!\function_exists('_R_resource_return')){
                                                  '] ';
 
                                 $message_str_elipse = '...';
-                                if(\strlen($clr_ssl_msg) < 31){
-
+                                if(\strlen($clr_ssl_msg) < 31)
                                     $message_str_elipse = '';
-
-                                }
 
                                 $clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 0));
                                 $clr_ssl_msg = $clr_ssl_msg . $message_str_elipse;

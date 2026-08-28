@@ -1419,9 +1419,9 @@ class crnrstn_bassdrive_stream_manager
                             $this->oCRNRSTN_USR->process_query();
 
                             //
-                            // SOURCE   :: https://stackoverflow.com/questions/8829102/check-if-mysql-table-exists-without-using-select-from-syntax
-                            // COMMENT  :: https://stackoverflow.com/a/8829109
-                            // AUTHOR   :: https://stackoverflow.com/users/125816/sergio-tulentsev
+                            // SOURCE  :: https://stackoverflow.com/questions/8829102/check-if-mysql-table-exists-without-using-select-from-syntax
+                            // COMMENT :: https://stackoverflow.com/a/8829109
+                            // AUTHOR  :: https://stackoverflow.com/users/125816/sergio-tulentsev
                             //
                             // Quick check to
                             // confirm table creation
@@ -2372,9 +2372,9 @@ class crnrstn_bassdrive_stream_manager
                             $this->oCRNRSTN_USR->process_query();
 
                             //
-                            // SOURCE   :: https://stackoverflow.com/questions/8829102/check-if-mysql-table-exists-without-using-select-from-syntax
-                            // COMMENT  :: https://stackoverflow.com/a/8829109
-                            // AUTHOR   :: https://stackoverflow.com/users/125816/sergio-tulentsev
+                            // SOURCE  :: https://stackoverflow.com/questions/8829102/check-if-mysql-table-exists-without-using-select-from-syntax
+                            // COMMENT :: https://stackoverflow.com/a/8829109
+                            // AUTHOR  :: https://stackoverflow.com/users/125816/sergio-tulentsev
                             //
                             // Quick check to
                             // confirm table creation

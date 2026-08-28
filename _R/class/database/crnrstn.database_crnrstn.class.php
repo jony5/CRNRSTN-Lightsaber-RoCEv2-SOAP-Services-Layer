@@ -305,6 +305,17 @@ namespace CRNRSTN;
  */
 class crnrstn_database_crnrstn extends crnrstn
 {
+    /*  # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Deleted the method,
+     *       config_load_static_application_data,
+     *       and moved the initialization of
+     *       the CLR-SSL SQL time interval string
+     *       pattern data structures to
+     *       clr_ssl_initialize() in crnrstn
+     *       and crnrstn_registry_user.
+     *       5 :: Wednesday, August 26, 2026 @ 0855 hrs.
+     *
+     */
 
     private static $_R = array();
     private $R_data    = array();
@@ -328,6 +339,7 @@ class crnrstn_database_crnrstn extends crnrstn
 
         $this->R_data['R_debug_mode']         = $this->get_crnrstn('R_debug_mode');
         $this->R_data['phpmailer_debug_mode'] = $this->get_crnrstn('phpmailer_debug_mode');
+        $this->R_data['R_sql_time_intervals'] = $this->get_crnrstn('R_sql_time_intervals');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Acquire an instantiation of
@@ -404,6 +416,54 @@ class crnrstn_database_crnrstn extends crnrstn
          *
          */
 
+        /*
+        echo '<br><pre><code>[' .
+             $this->return_micro_time() . '] 
+[mthd ' .
+             __METHOD__ . '] 
+[lnum ' .
+             __LINE__ . '] 
+[rtime ' . $this->wall_time() . '] 
+Adding to query, msg=' . $message_str . '</code></pre>';
+
+        die();
+
+         */
+
+        /*
+        // CLR-SSL Error Log Spooling Data Struct
+        echo '<br><pre><code>[' .
+            $this->return_micro_time() . ']
+[mthd ' .
+            __METHOD__ . ']
+[lnum ' .
+            __LINE__ . ']
+[rtime ' . $this->wall_time() . ']
+Spool Replay Target Location Checksum: [' .
+            $this->crc_int32($method) . ']
+Spool Replay Target Location ID: (' .
+                    $this->gettype(\strval($method)) . ') ' .
+                    $method . '
+Spool Commanding Line No: ' .
+                    $line_num . '
+Spool Commanding Message: ' .
+                    $message_str . '
+Spool Command: ' .
+                    \strval($spool) . '</code></pre>';
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['message_str'][]               = $message_str;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['syslog_level'][]              = $syslog_level;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['error_reporting_level'][]     = $error_reporting_level;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['line_num'][]                  = $line_num;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['method'][]                    = $method;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['file'][]                      = $file;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['token'][]                     = $token;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['spool'][]                     = $spool;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['spool_channel'][]             = $spool_channel;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['syslog_prefix'][]             = $syslog_prefix;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['syslog_prefix_passthrough'][] = $syslog_prefix_passthrough;
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['spool_runtime'][]             = $this->wall_time();
+        $this->R_data['spool']['error_log'][$this->R_data['R_request_serial']]['spool_microtime'][]           = $this->microtime_float();
+
         echo '<br><pre><code>[' . $this->return_micro_time() . '] 
 [mthd ' .
             __METHOD__ . '] 
@@ -417,10 +477,10 @@ date [' .
     \print_r(\gettimeofday(), true) . '] ' .
             '
 R_debug_mode[' .
-            self::$R_data['R_debug_mode'] . '] ' .
+            $this->R_data['R_debug_mode'] . '] ' .
             '
 phpmailer_debug_mode[' .
-            self::$R_data['phpmailer_debug_mode'] . '] ' .
+            $this->R_data['phpmailer_debug_mode'] . '] ' .
             '
 message_str [' .
             \strval($message_str) . '] ' .
@@ -437,44 +497,25 @@ line_num [' .
 method [' .
             \strval($method) . '] ' .
             '
+file [' .
+            \strval($file) . '] ' .
+            '
+spool_channel [' .
+            \strval($spool_channel) . '] ' .
+            '
+syslog_prefix [' .
+            \strval($syslog_prefix) . '] ' .
+            '
+syslog_prefix_passthrough [' .
+            \strval($syslog_prefix_passthrough) . '] ' .
+            '
 token [' .
     \print_r($token, true) . '] ' .
             '
 spool [' .
             \strval($spool) . ']</code></pre>';
 
-    }
-
-    /**
-     * R :: Content pending.
-     *
-     * @param
-     * @param
-     * @return
-     * @access public
-     *
-     */
-    function config_load_static_application_data(
-             $data_type,
-             $oCRNRSTN = NULL)
-    {
-
-        switch($data_type){
-            case 'sql_interval_values':
-            case 'sql_interval_ARRAY[UNITS][STRING_PATTERN]':
-            case 'sql_interval_string_patterns':
-            case 'sql_interval_ARRAY[UNITS][VALUES]':
-
-                return _crnrstn_settings($data_type, $oCRNRSTN);
-
-            break;
-            default:
-
-                error_log(__LINE__ . ' env Unknown SWITCH CASE received. ['. strval($data_type) . '].');
-
-            break;
-
-        }
+        */
 
     }
 

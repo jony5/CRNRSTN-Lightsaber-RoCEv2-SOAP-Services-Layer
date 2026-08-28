@@ -415,8 +415,7 @@ namespace CRNRSTN;
  * LICENSE            :: MIT | https://crnrstn.jony5.com/licensing/
  *
  */
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Edit: Added a data handling architecture 
  *       to the stack behind SOAP: 
  *
@@ -433,8 +432,7 @@ namespace CRNRSTN;
  *
  */
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * BEGIN INITIALIZATION 
  * OF ENVIRONMENTALLY 
  * RELEVANT RESOURCE 
@@ -447,8 +445,7 @@ namespace CRNRSTN;
 $oWCR_BLUEHOST_JONY5 = $this->define_wildcard_resource('BLUEHOST_JONY5', 'CRNRSTN::INTEGRATIONS::WCR');
 $oWCR_BLUEHOST_JONY5->add_attribute('EMAIL_SEND_ACTIVE', true);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * REQUIRED BY SOAP 
  * CONNECTION MANAGER. 
  *
@@ -468,8 +465,7 @@ $oWCR_BLUEHOST_JONY5->add_attribute('SOAP_ENCRYPT_HMAC_ALG', 'haval256,5');
 
 //$oWCR_BLUEHOST_JONY5->add_attribute('LOCAL_DIR_FILEPATH', '/var/www/html/_backup_test/_tmp/');
 //$oWCR_BLUEHOST_JONY5->add_attribute('LOCAL_MKDIR_MODE', 775);
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * EMAIL AND FTP 
  * ATTRIBUTE NAMES 
  * MATCH INTERNAL SYSTEM 
@@ -503,8 +499,7 @@ $oWCR_BLUEHOST_JONY5->add_attribute('CHARSET', 'iso-8859-1');
 $oWCR_BLUEHOST_JONY5->add_attribute('MESSAGE_ENCODING', '8bit');
 $oWCR_BLUEHOST_JONY5->add_attribute('ALLOW_EMPTY', false);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * EXCEPTION HANDLING 
  * NOTIFICATIONS EMAIL 
  * ENDPOINTS. 
@@ -527,8 +522,7 @@ $oWCR_BLUEHOST_JONY5->add_attribute('RECIPIENTS_NAME', 'J5');
 
 //$oCRNRSTN_oWCR_ARRAY[$oWCR_BLUEHOST_JONY5->return_resource_key()] = $oWCR_BLUEHOST_JONY5;
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Begin A NEW WILD 
  * CARD RESOURCE. 
  *
@@ -536,8 +530,7 @@ $oWCR_BLUEHOST_JONY5->add_attribute('RECIPIENTS_NAME', 'J5');
 $oWCR_BLUEHOST_EVIFWEB = $this->define_wildcard_resource('BLUEHOST_EVIFWEB', 'CRNRSTN::INTEGRATIONS::WCR');
 $oWCR_BLUEHOST_EVIFWEB->add_attribute('EMAIL_SEND_ACTIVE', true);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * REQUIRED BY SOAP 
  * CONNECTION MANAGER.
  *
@@ -557,8 +550,7 @@ $oWCR_BLUEHOST_EVIFWEB->add_attribute('SOAP_ENCRYPT_HMAC_ALG', 'haval256,5');
 //$oWCR_BLUEHOST_EVIFWEB->add_attribute('LOCAL_DIR_FILEPATH', '/var/www/html/_backup_test/_tmp/');
 //$oWCR_BLUEHOST_EVIFWEB->add_attribute('LOCAL_MKDIR_MODE', 775);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * REQUIRED BY 
  * SOAP CONNECTION 
  * MANAGER. 
@@ -591,8 +583,7 @@ $oWCR_BLUEHOST_EVIFWEB->add_attribute('CHARSET', 'iso-8859-1');
 $oWCR_BLUEHOST_EVIFWEB->add_attribute('MESSAGE_ENCODING', '8bit');
 $oWCR_BLUEHOST_EVIFWEB->add_attribute('ALLOW_EMPTY', false);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * EXCEPTION HANDLING 
  * NOTIFICATIONS EMAIL 
  * ENDPOINTS. 
@@ -603,8 +594,7 @@ $oWCR_BLUEHOST_EVIFWEB->add_attribute('RECIPIENTS_NAME_PIPED', '|Jonathan Harris
 
 //$oCRNRSTN_oWCR_ARRAY[$oWCR_BLUEHOST_EVIFWEB->return_resource_key()] = $oWCR_BLUEHOST_EVIFWEB;
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Begin A NEW WILD  
  * CARD RESOURCE. 
  *
@@ -624,8 +614,7 @@ $oWCR_LOCALHOST_CHAD_MACBOOKPRO_FTP->add_attribute('FTP_MKDIR_MODE', 777);
 
 //$oCRNRSTN_oWCR_ARRAY[$oWCR_LOCALHOST_CHAD_MACBOOKPRO_FTP->return_resource_key()] = $oWCR_LOCALHOST_CHAD_MACBOOKPRO_FTP;
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Begin A NEW WILD 
  * CARD RESOURCE. 
  *
@@ -678,8 +667,7 @@ $oWCR_LOCALHOST_CHAD_MACBOOKPRO->add_attribute('CHARSET', 'iso-8859-1');
 $oWCR_LOCALHOST_CHAD_MACBOOKPRO->add_attribute('MESSAGE_ENCODING', '8bit');
 $oWCR_LOCALHOST_CHAD_MACBOOKPRO->add_attribute('ALLOW_EMPTY', false);
 
-/*
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * EXCEPTION HANDLING 
  * NOTIFICATIONS EMAIL 
  * ENDPOINTS. 

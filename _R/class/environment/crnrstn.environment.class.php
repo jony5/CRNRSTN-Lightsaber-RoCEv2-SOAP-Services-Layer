@@ -678,7 +678,7 @@ class crnrstn_environment extends crnrstn
          * to append. 
          *
          */
-        self::$R_log_output_mgr = $this->return_R_log_output_mgr();
+        self::$R_log_output_mgr = $this->kivotos_storage('log_output_mgr');
         //self::$R_log_output_mgr->sync_to_environment($this->oCRNRSTN, $this);
 
         $this->R_data['R_cluster_id'] = $this->get_crnrstn('R_cluster_id');

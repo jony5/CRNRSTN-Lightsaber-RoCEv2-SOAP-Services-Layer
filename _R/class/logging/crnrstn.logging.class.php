@@ -575,6 +575,8 @@ class crnrstn_logging extends crnrstn
         $this->R_data['int_flag']     = $this->get_crnrstn('int_flag');
         $this->R_data['R_debug_mode'] = $this->get_crnrstn('R_debug_mode');
 
+        self::$_R['kivotos']['crnrstn_database_crnrstn'] = $this->kivotos_storage('db');
+
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * This is a working-but-untested 
          * data structure that demonstrates 
@@ -3824,7 +3826,7 @@ class crnrstn_logging extends crnrstn
          *
          */
 
-        if(is_string($spool_channel))
+        if(\is_string($spool_channel))
             $spool_channel = $this->R_data['int_flag'][$spool_channel];
 
         if($spool == true){
@@ -3854,47 +3856,21 @@ class crnrstn_logging extends crnrstn
                 default:
 
                     // 5 :: Thursday, April 23, 2026 @ 0040 hrs.
-                    //$this->R_data['spool']['err_message_queue_push']['message_token'][]                               = $token['token'];
-                    //$this->R_data['spool']['err_message_queue_push'][$token['token']][]['message'][]                  = $message_str;
-                    //$this->R_data['spool']['err_message_queue_push'][$token['token']]['data_authorization_profile'][] = $spool_channel;
+                    $this->R_data['spool']['error_log']['message_str'][]               = $message_str;
+                    $this->R_data['spool']['error_log']['syslog_level'][]              = $syslog_level;
+                    $this->R_data['spool']['error_log']['error_reporting_level'][]     = $error_reporting_level;
+                    $this->R_data['spool']['error_log']['line_num'][]                  = $line_num;
+                    $this->R_data['spool']['error_log']['method'][]                    = $method;
+                    $this->R_data['spool']['error_log']['file'][]                      = $file;
+                    $this->R_data['spool']['error_log']['token'][]                     = $token;
+                    $this->R_data['spool']['error_log']['spool'][]                     = $spool;
+                    $this->R_data['spool']['error_log']['spool_channel'][]             = $spool_channel;
+                    $this->R_data['spool']['error_log']['syslog_prefix'][]             = $syslog_prefix;
+                    $this->R_data['spool']['error_log']['syslog_prefix_passthrough'][] = $syslog_prefix_passthrough;
+                    $this->R_data['spool']['error_log']['spool_runtime'][]             = $this->wall_time();
+                    $this->R_data['spool']['error_log']['spool_microtime'][]           = $this->microtime_float();
 
-                    //return count($this->R_data['spool']['err_message_queue_push']['message']);
-
-	                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-	                 * CLR-SSL spooling
-	                 * architecture is pending.
-	                 *
-	                 * Error this fact
-	                 * out for now.
-	                 *
-	                 *
-	                 * 5 :: Saturday, May 16, 2026 @ 0300 hrs.
-	                 *
-	                 */
-	                \openlog(
-	                    $this->clr_ssl_syslog_prefix(
-                               $line_num,
-                               $file,
-                               $method,
-                               'R :: [Log Spool Pending] ',
-                               $syslog_prefix_passthrough),
-	                    \LOG_CONS |
-	                    \LOG_NDELAY |
-	                    \LOG_NOWAIT |
-	                    \LOG_PID |
-	                    \LOG_PERROR,
-	                    \LOG_SYSLOG);
-	                \syslog($syslog_level, $message_str);
-	                \closelog();
-
-	                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-	                 * Nothing happened.
-	                 *
-	                 * Is not the CLR-SSL spooling
-	                 * architecture still pending?
-	                 *
-	                 */
-                	return 0;
+                    return true;
 
                 break;
 
@@ -3975,7 +3951,7 @@ class crnrstn_logging extends crnrstn
                  * then come back, and finish
                  * the thought, above.
                  */
-                if(isset(self::$_R['kivotos']->R['crnrstn_database_crnrstn']))
+                if(isset(self::$_R['kivotos']['crnrstn_database_crnrstn']))
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * The CLR-SSL Logging Services
                      * Layer architecture is
@@ -3985,19 +3961,40 @@ class crnrstn_logging extends crnrstn
                      *
                      * 5 :: Tuesday, August 25, 2026 @ 2251 hrs.
                      */
-                    self::$_R['kivotos']->R['crnrstn_database_crnrstn']->error_log(
-                                                                         $message_str,
-                                                                         $syslog_level,
-                                                                         $error_reporting_level,
-                                                                         $line_num,
-                                                                         $method,
-                                                                         $file,
-                                                                         $token,
-                                                                         $spool,
-                                                                         $spool_channel,
-                                                                         $syslog_prefix,
-                                                                         $syslog_prefix_passthrough);
-
+                    self::$_R['kivotos']['crnrstn_database_crnrstn']->error_log(
+                                                                      $message_str,
+                                                                      $syslog_level,
+                                                                      $error_reporting_level,
+                                                                      $line_num,
+                                                                      $method,
+                                                                      $file,
+                                                                      $token,
+                                                                      $spool,
+                                                                      $spool_channel,
+                                                                      $syslog_prefix,
+                                                                      $syslog_prefix_passthrough);
+                    else
+                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                         * Spool the error_log until the
+                         * CLR-SSL Database Services Layer
+                         * is ready to process the data.
+                         *
+                         *
+                         * 5 :: Wednesday, August 26, 2026 @ 1127 hrs.
+                         *
+                         */
+                        return $this->error_log(
+                                      $message_str,
+                                      $syslog_level,
+                                      $error_reporting_level,
+                                      $line_num,
+                                      $method,
+                                      $file,
+                                      $token,
+                                      true,
+                                      $spool_channel,
+                                      $syslog_prefix,
+                                      $syslog_prefix_passthrough);
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                 5 :: Sunday, May 10, 2026 @ 1842 hrs.

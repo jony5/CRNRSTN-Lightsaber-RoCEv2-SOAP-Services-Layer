@@ -8675,9 +8675,9 @@ class lightbox_helper_by_eVifweb extends crnrstn
                             }
 
                             //
-                            // SOURCE   :: https://stackoverflow.com/questions/4915753/how-can-i-remove-three-characters-at-the-end-of-a-string-in-php
-                            // AUTHOR   :: https://stackoverflow.com/users/367878/bensiu
-                            // COMMENT  :: https://stackoverflow.com/a/4915787
+                            // SOURCE  :: https://stackoverflow.com/questions/4915753/how-can-i-remove-three-characters-at-the-end-of-a-string-in-php
+                            // COMMENT :: https://stackoverflow.com/a/4915787
+                            // AUTHOR  :: https://stackoverflow.com/users/367878/bensiu
                             //
                             //
                             // bensiu
@@ -17431,9 +17431,9 @@ class lightbox_helper_by_eVifweb extends crnrstn
         function copy_base64_output(){
 
             //
-            // SOURCE   :: https://stackoverflow.com/questions/1173194/select-all-div-text-with-single-mouse-click
-            // COMMENT  :: https://stackoverflow.com/a/1173319
-            // AUTHOR   :: https://stackoverflow.com/users/136482/denis-sadowski
+            // SOURCE  :: https://stackoverflow.com/questions/1173194/select-all-div-text-with-single-mouse-click
+            // COMMENT :: https://stackoverflow.com/a/1173319
+            // AUTHOR  :: https://stackoverflow.com/users/136482/denis-sadowski
             //
             //
             // Denis Sadowski
@@ -23482,9 +23482,9 @@ Born on Nov. 10th, 2005, my dog...named \'J5\' (proper)...is part Korean Jindo, 
                     $tmp_search_content_text_preview = $this->str_sanitize($tmp_search_content_text_preview, 'php_code_escape_single_quotes');
 
                     //
-                    // SOURCE   :: https://stackoverflow.com/questions/3760816/remove-new-lines-from-string-and-replace-with-one-empty-space
-                    // AUTHOR   :: https://stackoverflow.com/users/427328/jwueller
-                    // COMMENT  :: https://stackoverflow.com/a/3760830
+                    // SOURCE  :: https://stackoverflow.com/questions/3760816/remove-new-lines-from-string-and-replace-with-one-empty-space
+                    // COMMENT :: https://stackoverflow.com/a/3760830
+                    // AUTHOR  :: https://stackoverflow.com/users/427328/jwueller
                     //
                     //
                     // jwueller
@@ -23941,9 +23941,9 @@ Born on Nov. 10th, 2005, my dog...named \'J5\' (proper)...is part Korean Jindo, 
             case 'string':
 
                 //
-                // SOURCE   :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
-                // AUTHOR   :: https://stackoverflow.com/users/1773335/ulver
-                // COMMENT  :: https://stackoverflow.com/a/25299281
+                // SOURCE  :: https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
+                // COMMENT :: https://stackoverflow.com/a/25299281
+                // AUTHOR  :: https://stackoverflow.com/users/1773335/ulver
                 //
                 //
                 // Ulver

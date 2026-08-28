@@ -6191,9 +6191,9 @@ function _crnrstn_documentation_library(
         case 'format_bytes':
             /*
             //
-            // SOURCE   :: https://stackoverflow.com/questions/2510434/format-bytes-to-kilobytes-megabytes-gigabytes
-            // COMMENT  :: https://stackoverflow.com/a/2510459
-            // AUTHOR   :: https://stackoverflow.com/users/227532/leo
+            // SOURCE  :: https://stackoverflow.com/questions/2510434/format-bytes-to-kilobytes-megabytes-gigabytes
+            // COMMENT :: https://stackoverflow.com/a/2510459
+            // AUTHOR  :: https://stackoverflow.com/users/227532/leo
             //
             //
             // Leo

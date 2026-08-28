@@ -564,7 +564,7 @@ function _crnrstn_native_resource_registry(
              * Monday, August 19, 2024 @ 0245 hrs.
              *
              */
-            $root        = $R->get_crnrstn('R_framework_path');
+            $root              = $R->get_crnrstn('R_framework_path');
 
         }
 
@@ -622,10 +622,10 @@ function _crnrstn_native_resource_registry(
              * 5
              *
              */
-            $script_filename = \str_replace(
-                                    $R_path_patterns, 
-                                    $R_path_replacements, 
-                                    $_SERVER['SCRIPT_FILENAME']);
+            $script_filename            = \str_replace(
+                                          $R_path_patterns,
+                                          $R_path_replacements,
+                                          $_SERVER['SCRIPT_FILENAME']);
             $tmp_script_filepath_ARRAY  = \explode($os_path_dir_separator_char, $script_filename);
             $tmp_app_directory          = \explode('../', $application_directory);
             $tmp_change_directory_depth = \sizeof($tmp_app_directory);
@@ -682,9 +682,9 @@ function _crnrstn_native_resource_registry(
              *
              */
             $root = \str_replace(
-                         $R_path_patterns, 
-                         $R_path_replacements, 
-                         $root);
+                    $R_path_patterns,
+                    $R_path_replacements,
+                    $root);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Standardize the use of the 
@@ -729,9 +729,9 @@ function _crnrstn_native_resource_registry(
              *
              */
             $root = \str_replace(
-                         $R_path_patterns, 
-                         $R_path_replacements, 
-                         $root);
+                    $R_path_patterns,
+                    $R_path_replacements,
+                    $root);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Standardize the use of the
@@ -755,16 +755,16 @@ function _crnrstn_native_resource_registry(
                  *
                  */
                 $root = \str_replace(
-                             $os_path_dir_separator_char . 
-                             $os_path_dir_separator_char,
-                             $os_path_dir_separator_char, 
-                             $root);
+                        $os_path_dir_separator_char .
+                        $os_path_dir_separator_char,
+                        $os_path_dir_separator_char,
+                        $root);
 
         }
 
     }
 
-    $CLR_SSL_dir = $R->get_crnrstn('R_framework_directory');
+    $CLR_SSL_dir       = $R->get_crnrstn('R_framework_directory');
     $R_script_filename = $root . $os_path_dir_separator_char .
                          '_config' . $os_path_dir_separator_char .
                          '_config.resource_registry' . $os_path_dir_separator_char .
@@ -772,9 +772,9 @@ function _crnrstn_native_resource_registry(
                          'config' . $os_path_dir_separator_char .
                          'software_access_mode' . $os_path_dir_separator_char .
                          'crnrstn.software_access_mode.runtime_exe.php';
-    $path_tmp_fix = \strpos($R_script_filename, '\\' .
-                    $CLR_SSL_dir . '\ui\iframe\\' .
-                    $CLR_SSL_dir . '\_config');
+    $path_tmp_fix      = \strpos($R_script_filename, '\\' .
+                         $CLR_SSL_dir . '\ui\iframe\\' .
+                         $CLR_SSL_dir . '\_config');
     if($path_tmp_fix !== false){
 
         $R_path_patterns[0]     = $CLR_SSL_dir . $os_path_dir_separator_char .
@@ -841,12 +841,9 @@ function _crnrstn_native_resource_registry(
      * 5 :: Tuesday, May 26, 2026 @ 0243 hrs.
      *
      */
-    if(!isset($software_access_mode)){
-
+    if(!isset($software_access_mode))
         // 5 :: Tuesday, May 26, 2026 @ 0306 hrs.
         $software_access_mode = 'AUTHORIZED_ACCESS_STRICT';
-
-    }
 
     /*
     error_log('[lnum ' . __LINE__ .
@@ -939,8 +936,8 @@ function _crnrstn_native_resource_registry(
              * Software authorized 
              * access list. 
              *
-             * /_R/_config/_config.defaults
-             * /load_static_cache/registry_is_authorized_resource
+             * /_R/_config/_config.resource_registry
+             * /resource/config/registry_is_authorized_resource
              * /crnrstn.registry_is_authorized_resource.runtime_exe.php
              *
              * E.g.:
@@ -984,30 +981,20 @@ function _crnrstn_native_resource_registry(
                                  '.runtime_exe.php';
             $resource_filepath = $root . $os_path_dir_separator_char . 
                                  '_config' . $os_path_dir_separator_char . 
-                                 '_config.defaults' . $os_path_dir_separator_char . 
-                                 'load_static_cache' . $os_path_dir_separator_char . 
+                                 '_config.resource_registry' . $os_path_dir_separator_char .
+                                 'resource' . $os_path_dir_separator_char .
+                                 'config' . $os_path_dir_separator_char .
                                  $request_type . $os_path_dir_separator_char . 
                                  $resource_filename;
+            $file_exists       =
+            $res_compatible    = false;
 
-            $file_exists    = false;
-            $res_compatible = false;
-
-            if(\is_object($R)){
-
-                if(method_exists($R, 'is_file') && 
-                    method_exists($R, 'error_log') && 
-                    method_exists($R, 'by_pass_is_file'))
-                {
-
-                    if($R->is_file($resource_filepath, $resource_filename)){
-
+            if(\is_object($R))
+                if(\method_exists($R, 'is_file') &&
+                    \method_exists($R, 'error_log') &&
+                    \method_exists($R, 'by_pass_is_file'))
+                    if($R->is_file($resource_filepath, $resource_filename))
                         $res_compatible = $file_exists = true;
-
-                    }
-
-                }
-
-            }
 
             if($file_exists === true){
 
@@ -1170,34 +1157,20 @@ function _crnrstn_native_resource_registry(
                                  'software_access_mode' . $os_path_dir_separator_char . 
                                  'crnrstn.software_access_mode.runtime_exe.php';
 
-            if($res_compatible === true){
-
-                if($R->is_file($resource_filepath, $resource_filename)){
-
+            if($res_compatible === true)
+                if($R->is_file($resource_filepath, $resource_filename))
                     $file_exists = true;
-
-                }
-
-            }else{
-
-                if(\is_file($resource_filepath)){
-                    
+            else
+                if(\is_file($resource_filepath))
                     $file_exists = true;
-
-                }
-
-            }
             
             if($file_exists === true){
 
                 require($resource_filepath);
 
                 if(($software_access_mode == 'ANONYMOUS_OK') || 
-                    ($software_access_mode == 'AUTHORIZED_ACCESS_INTEROPERABLE')){
-
+                    ($software_access_mode == 'AUTHORIZED_ACCESS_INTEROPERABLE'))
                     return true;
-
-                }
 
             }
 
@@ -1639,6 +1612,7 @@ function _crnrstn_native_resource_registry(
                                      *
                                      */
                                     //$R->process_R_resp($dependency_resp);
+
                                     return $dependency_resp;
 
                                 }
@@ -1839,7 +1813,7 @@ function _crnrstn_native_resource_registry(
                                      *
                                      */
                                     $R->process_R_resp($dependency_resp);
-                                    //return $dependency_resp;
+
                                     return NULL;
 
                                     /*
@@ -2482,7 +2456,6 @@ function _crnrstn_native_resource_registry(
                                 __FILE__, 
                                 $token);
 
-                            //return $R_resp;
                             return NULL;
 
                         }else{
@@ -2650,7 +2623,7 @@ function _crnrstn_native_resource_registry(
 
                         // Exit the statement.
                         //return $R_resp;
-                        return NULL;
+                        return true;
 
                     }
 
@@ -2869,18 +2842,12 @@ function _crnrstn_native_resource_registry(
 
                         if((($software_access_mode == 'ANONYMOUS_OK') || 
                                 ($software_access_mode == 'AUTHORIZED_ACCESS_INTEROPERABLE')))
-                        {
-
                             // We send it.
                             $err_response_authorized = true;
-
-                        }
 
                         if((\gettype($R) == 'object') && 
                             (($software_access_mode == 'AUTHORIZED_ACCESS_STRICT') || 
                                 ($software_access_mode == 'AUTHORIZED_ACCESS_INTEROPERABLE')))
-                        {
-
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * If the calling resource is 
                              * a string or unregistered 
@@ -2904,8 +2871,6 @@ function _crnrstn_native_resource_registry(
                                 NULL, 
                                 NULL, 
                                 $R_debug_mode))
-                            {
-
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * Process err conditions with 
                                  * this authorized resource. 
@@ -2915,12 +2880,8 @@ function _crnrstn_native_resource_registry(
                                  *
                                  */
                                 $err_response_authorized = true;
-
-                            }else{
-
+                            else
                                 if($software_access_mode != 'AUTHORIZED_ACCESS_STRICT')
-                                {
-
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * Process err conditions with 
                                      * this authorized resource. 
@@ -2930,12 +2891,6 @@ function _crnrstn_native_resource_registry(
                                      *
                                      */
                                     $err_response_authorized = true;
-
-                                }
-
-                            }
-
-                        }
 
                         if($err_response_authorized == true){
 
@@ -3017,8 +2972,6 @@ function _crnrstn_native_resource_registry(
                                                     $R_resp, 
                                                     $R_debug_mode, 
                                                     $clr_ssl_sandbox)))
-                            {
-
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * If file generation fails, 
                                  * skip this resource. 
@@ -3029,8 +2982,6 @@ function _crnrstn_native_resource_registry(
                                  */
                                 //return $R_resp;
                                 return NULL;
-
-                            }
 
                             if(!($R->is_file(
                                      $R_file_path, 
@@ -4357,17 +4308,6 @@ function _crnrstn_native_resource_registry(
                             $R_resp[$memory_pointer]['data_resource_name'][]    = $R_resp[$memory_pointer]['resource_name'];
                             $R_resp[$memory_pointer]['data_software_version'][] = $R_resp[$memory_pointer]['software_default'];
 
-                            /*
-                            $R_resp[$memory_pointer]['data_resource_name'][]    = $R_resp[$memory_pointer]['resource_name'];
-                            $R_resp[$memory_pointer]['data_software_version'][] = $R_resp[$memory_pointer]['software_default'];
-                            $R_resp[$memory_pointer]['data_resource_title'][]   = $R_resp[$memory_pointer]['title']['TEXT'];
-                            $R_resp[$memory_pointer]['data_software_company'][] = $R_resp[$memory_pointer]['software_company']['key'];
-                            $R_resp[$memory_pointer]['data_copyright'][]        = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
-                            $R_resp[$memory_pointer]['data_license_key'][]      = $R_resp[$memory_pointer]['license']['key'][$R_resp[$memory_pointer]['software_default']];
-                            $R_resp[$memory_pointer]['data_license_name'][]     = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
-                            $R_resp[$memory_pointer]['data_license_url'][]      = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
-
-                             */
                             $tmp_cnt = \sizeof($R_resp[$memory_pointer]['data']);
 
                             $clr_ssl_msg = 'Executed ' . $tmp_cnt . ' ' . 
@@ -5348,18 +5288,12 @@ function _crnrstn_native_resource_registry(
 
                             if((($software_access_mode == 'ANONYMOUS_OK') || 
                                     ($software_access_mode == 'AUTHORIZED_ACCESS_INTEROPERABLE')))
-                            {
-
                                 // We send it.
                                 $err_response_authorized = true;
-
-                            }
 
                             if((\gettype($R) == 'object') && 
                                 (($software_access_mode == 'AUTHORIZED_ACCESS_STRICT') || 
                                     ($software_access_mode == 'AUTHORIZED_ACCESS_INTEROPERABLE')))
-                            {
-
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * If the calling resource is 
                                  * a string or unregistered 
@@ -5383,8 +5317,6 @@ function _crnrstn_native_resource_registry(
                                     NULL, 
                                     NULL, 
                                     $R_debug_mode))
-                                {
-
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * Process err conditions with 
                                      * this authorized resource. 
@@ -5394,12 +5326,8 @@ function _crnrstn_native_resource_registry(
                                      *
                                      */
                                     $err_response_authorized = true;
-
-                                }else{
-
+                                else
                                     if($software_access_mode != 'AUTHORIZED_ACCESS_STRICT')
-                                    {
-
                                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                          * Process err conditions with 
                                          * this authorized resource. 
@@ -5409,12 +5337,6 @@ function _crnrstn_native_resource_registry(
                                          *
                                          */
                                         $err_response_authorized = true;
-
-                                    }
-
-                                }
-
-                            }
 
                             if($err_response_authorized == true){
 
@@ -5496,8 +5418,6 @@ function _crnrstn_native_resource_registry(
                                                         $R_resp, 
                                                         $R_debug_mode, 
                                                         $clr_ssl_sandbox)))
-                                {
-
                                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                      * If file generation fails, 
                                      * skip this resource. 
@@ -5507,8 +5427,6 @@ function _crnrstn_native_resource_registry(
                                      *
                                      */
                                     return $R_resp;
-
-                                }
 
                                 if(!($R->is_file(
                                          $R_file_path, 
@@ -5684,18 +5602,7 @@ function _crnrstn_native_resource_registry(
                         $R_resp[$memory_pointer]['data'][]                  = require($R_resp[$memory_pointer]['file_path']['new_obj_exe'][$R_resp[$memory_pointer]['software_default']]);
                         $R_resp[$memory_pointer]['data_resource_name'][]    = $R_resp[$memory_pointer]['resource_name'];
                         $R_resp[$memory_pointer]['data_software_version'][] = $R_resp[$memory_pointer]['software_default'];
-                        
-                        /*
-                        $R_resp[$memory_pointer]['data_resource_name'][]    = $R_resp[$memory_pointer]['resource_name'];
-                        $R_resp[$memory_pointer]['data_software_version'][] = $R_resp[$memory_pointer]['software_default'];
-                        $R_resp[$memory_pointer]['data_resource_title'][]   = $R_resp[$memory_pointer]['title']['TEXT'];
-                        $R_resp[$memory_pointer]['data_software_company'][] = $R_resp[$memory_pointer]['software_company']['key'];
-                        $R_resp[$memory_pointer]['data_copyright'][]        = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
-                        $R_resp[$memory_pointer]['data_license_key'][]      = $R_resp[$memory_pointer]['license']['key'][$R_resp[$memory_pointer]['software_default']];
-                        $R_resp[$memory_pointer]['data_license_name'][]     = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
-                        $R_resp[$memory_pointer]['data_license_url'][]      = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
-                         */
                         $tmp_cnt = \sizeof($R_resp[$memory_pointer]['data']);
 
                         $clr_ssl_msg = $R_action . ' Storing ' . 
@@ -6855,7 +6762,7 @@ function _crnrstn_native_resource_registry(
                                                      * Sips coffee. 
                                                      *
 
-                                                    return $this->generate_new_key(
+                                                    return $R->generate_new_key(
                                                                   128, 
                                                                   -1);
 
@@ -12202,7 +12109,7 @@ function _crnrstn_native_resource_registry(
              * '_crnrstn_pretty_elapsed_time'          => 'FUNCTION_DEFINITION',
              * '_crnrstn_elapsed_time_multi_language_cache'                            => 'FUNCTION_DEFINITION',
              * '/_lightbox_helper/soap_services/crnrstn/1.0.0/wsdl/index.php?wsdl'     => 'SOAP_ENDPOINT',
-             * '/_lightbox_helper/soap_services/crnrstnmgmt/1.0.0/wsdl/index.php?wsdl' => 'SOAP_ENDPOINT',
+             * '/_lightbox_helper/soap_services/crnrstnmgmt/1.0.0/wsdl/?wsdl' => 'SOAP_ENDPOINT',
              * '_crnrstn_settings'                     => 'FUNCTION_DEFINITION',
              * '_crnrstn_native_resource_registry_content_library' => 'FUNCTION_DEFINITION',
              * '_crnrstn_native_resource_registry'     => 'FUNCTION_DEFINITION',
@@ -13585,7 +13492,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_PHPMailer':
                 case 'crnrstn_PHPMailer':
-                case  'gabriel':
+                case 'gabriel':
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Edit: Added the RoCEv2 technology component 
                      *       to the crnrstn_PHPMailer text title copy
@@ -25963,8 +25870,8 @@ function _crnrstn_native_resource_registry(
                                     if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
 
                                         // 5 :: Monday, August 24, 2026 @ 2150 hrs.
-                                        $this->anoint_eval('gabriel_mimedecode');
-                                        $this->anoint_eval('gabriel_mimepart');
+                                        $R->anoint_eval('gabriel_mimedecode');
+                                        $R->anoint_eval('gabriel_mimepart');
                                         $R_resp = _crnrstn_native_resource_registry(
                                                   __FUNCTION__, 
                                                   $R, 
@@ -26112,8 +26019,8 @@ function _crnrstn_native_resource_registry(
                                     if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
 
                                         // 5 :: Monday, August 24, 2026 @ 2151 hrs.
-                                        $this->anoint_eval('gabriel_mimedecode');
-                                        $this->anoint_eval('gabriel_mimepart');
+                                        $R->anoint_eval('gabriel_mimedecode');
+                                        $R->anoint_eval('gabriel_mimepart');
                                         $R_resp = _crnrstn_native_resource_registry(
                                                   __FUNCTION__, 
                                                   $R, 
@@ -26431,8 +26338,8 @@ function _crnrstn_native_resource_registry(
                             if($request_type === 'return'){
 
                                 // 5 :: Monday, August 24, 2026 @ 2153 hrs.
-                                $this->anoint_eval('gabriel_mimedecode');
-                                $this->anoint_eval('gabriel_mimepart');
+                                $R->anoint_eval('gabriel_mimedecode');
+                                $R->anoint_eval('gabriel_mimepart');
 
                             }
 
@@ -26519,6 +26426,2704 @@ function _crnrstn_native_resource_registry(
                                 __LINE__, 
                                 __FUNCTION__, 
                                 __FILE__, 
+                                $token);
+
+                            return false;
+
+                        break;
+
+                    }
+
+                break;
+                case $root . $os_path_dir_separator_char .
+                     'class' . $os_path_dir_separator_char .
+                     'thirdparty' . $os_path_dir_separator_char .
+                     'nusoap' . $os_path_dir_separator_char .
+                     '1.124' . $os_path_dir_separator_char .
+                     'class.soapclientmime.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
+                case '1.124' . $os_path_dir_separator_char .
+                     'class.soapclientmime.php':
+                case __NAMESPACE__ .
+                     '\soapclientmime':
+                case 'soapclientmime':
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * case 'soapclientmime[1.124]':
+                     *
+                     *
+                     * 5 :: Tuesday, July 16, 2024 @ 0845 hrs.
+                     *
+                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize the system
+                     * configuration resource
+                     * file path.
+                     *
+                     */
+                    $tmp_resource_name_1_124                = 'soapclientmime';
+                    $tmp_type_dir                           = 'object';
+                    $tmp_public_key                         = 'soapclientmime';
+                    $tmp_storage_arch_1_124                       = 'general_resource';
+                    $tmp_file_name_1_124                    = 'class.soapclientmime.php';
+                    $tmp_file_path_1_124                    = $root . $os_path_dir_separator_char .
+                                                              'class' . $os_path_dir_separator_char .
+                                                              'thirdparty' . $os_path_dir_separator_char .
+                                                              'nusoap' . $os_path_dir_separator_char .
+                                                              '1.124' . $os_path_dir_separator_char .
+                                                              $tmp_file_name_1_124;
+                    $tmp_obj_exe_path_1_124                 = $root . $os_path_dir_separator_char .
+                                                              '_config' . $os_path_dir_separator_char .
+                                                              '_config.resource_registry' . $os_path_dir_separator_char .
+                                                              'resource' . $os_path_dir_separator_char .
+                                                              $tmp_type_dir . '_return' . $os_path_dir_separator_char .
+                                                              $tmp_resource_name_1_124 . $os_path_dir_separator_char .
+                                                              'crnrstn.' . $tmp_resource_name_1_124 .
+                                                              '.fire_bolt_exe.php';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize the CRNRSTN ::
+                     * Lightsaber RoCEv2 SOAP
+                     * Services Layer (CLR-SSL)
+                     * Multi-Language Services
+                     * Layer for resource
+                     * meta return.
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, August 24, 2024 @ 0458 hrs.
+                     *
+                     */
+                    switch($tmp_iso_lang_code){
+                        //case 'es':
+                        case 'en':
+                        default:
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize a title for this
+                             * natively registered resource of
+                             * the CRNRSTN :: Lightsaber RoCEv2
+                             * SOAP Services Layer (CLR-SSL)
+                             * System Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             */
+                            $tmp_TITLE_TEXT = 'NuSOAP - Web Services PHP ' .
+                            'Toolkit SOAP Client Mime ' .
+                            'Backwards Compatibility Patch';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the license name for
+                             * this natively registered resource
+                             * of the CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services Layer
+                             * (CLR-SSL) Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             */
+                            $tmp_LICENSE_NAME_TEXT = 'GNU Lesser General Public ' .
+                            'License version 2.1 or ' .
+                            '(at your option) any ' .
+                            'later version.';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the license URL
+                             * for this natively registered
+                             * resource of the CRNRSTN ::
+                             * Lightsaber RoCEv2 SOAP
+                             * Services Layer (CLR-SSL)
+                             * System Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             * Saturday, November 1, 2025 @ 2139 hrs.
+                             *
+                             */
+                            $tmp_LICENSE_URL = 'http://www.gnu.org/licenses/lgpl-2.1.html';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the copyright
+                             * data for this natively
+                             * registered resource of
+                             * the CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services
+                             * Layer (CLR-SSL) System
+                             * Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             * Saturday, August 24, 2024 @ 0700 hrs.
+                             *
+                             */
+                            $tmp_COPYRIGHT_TEXT = 'Copyright (c) 2002 NuSphere Corporation.';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Prepare a memory pointer
+                     * in order to index this
+                     * resource in the CLR-SSL
+                     * Resource Registry data
+                     * output container.
+                     *
+                     *
+                     * 5 :: Wednesday, April 15, 2026 @ 0817 hrs.
+                     *
+                     */
+                    $memory_ptr = $R->generate_memory_pointer($tmp_file_path_1_124);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize a CLR-SSL
+                     * Resource Registry
+                     * response output
+                     * data container.
+                     *
+                     * $R_resp = array();
+                     *
+                     *
+                     * 5 :: Saturday, April 4, 2026 @ 1453 hrs.
+                     *
+                     */
+                    $R_resp                                           = array();
+                    $R_resp['clr_ssl_resource']['memory_pointer'][]   = $memory_ptr;
+                    $R_resp[$memory_ptr]['resource_name']             = $tmp_resource_name_1_124;
+                    $R_resp[$memory_ptr]['iso_lang_code']             = $tmp_iso_lang_code;
+                    $R_resp[$memory_ptr]['background_color_hex']      = $tmp_background_color_hex;
+                    $R_resp[$memory_ptr]['title']['TEXT']             = $tmp_TITLE_TEXT;
+                    $R_resp[$memory_ptr]['software_company']['key']   = 'NuSphere Corporation';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Load v1.123 of the
+                     * NuSOAP - Web Services
+                     * Toolkit when PHP < 5.6.0.
+                     *
+                     * Example #2 PHP_VERSION_ID
+                     * example and usage.
+                     * https://www.php.net/manual/en/function.phpversion.php
+                     *
+                     *
+                     * 5 :: Monday, August 17, 2026 @ 2321 hrs.
+                     *
+                     */
+                    if(\PHP_VERSION_ID < 50600)
+                        $R_resp[$memory_ptr]['software_default']      = '1.124'; //'1.123';
+                    else
+                        $R_resp[$memory_ptr]['software_default']      = '1.124';
+
+                    $R_resp[$memory_ptr]['license']['key']            = array('1.124' => 'GNU_Lesser_2.1');
+                    $R_resp[$memory_ptr]['license']['name']           = array('1.124' => $tmp_LICENSE_NAME_TEXT);
+                    $R_resp[$memory_ptr]['license']['url']            = array('1.124' => $tmp_LICENSE_URL);
+                    $R_resp[$memory_ptr]['copyright']                 = array('1.124' => $tmp_COPYRIGHT_TEXT);
+
+                    if($request_type === 'meta'){
+                        // 5 :: Friday, May 22, 2026 @ 1316 hrs.
+
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Sun Aug 25 03:53:39.764398 2024';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Tue Jul 16 10:41:52.859252 2024';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
+
+                    }
+
+                    $R_resp[$memory_ptr]['microtime']                 = $R->microtime_float();
+                    $R_resp[$memory_ptr]['timestamp']                 = \gettimeofday();
+                    $R_resp[$memory_ptr]['runtime']                   = $R->wall_time();
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * require
+                     * require_once
+                     * include
+                     * include_once
+                     */
+                    $R_resp[$memory_ptr]['evaluation_protocol']       = array('1.124' => 'require');
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * SOAP_ENDPOINT
+                     * CLASS_DEFINITION
+                     * FUNCTION_DEFINITION
+                     * RUNTIME_EXECUTABLE
+                     */
+                    $R_resp[$memory_ptr]['resource_type']             = 'CLASS_DEFINITION';
+                    $R_resp[$memory_ptr]['public_key']                = $tmp_public_key;
+                    $R_resp[$memory_ptr]['storage_arch']              = array('1.124' => $tmp_storage_arch_1_124);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * (int) $int_flag['R_load_many_to_1_request']
+                     * (int) $int_flag['R_load_1_to_1_request']
+                     * (int) $int_flag['R_load_1_to_1_session']
+                     * (int) $int_flag['R_load_on_ttl_expire']
+                     */
+                    $R_resp[$memory_ptr]['loading_arch']              = array('1.124' => $int_flag['R_load_many_to_1_request']);
+                    $R_resp[$memory_ptr]['namespace']                 = __NAMESPACE__;
+                    $R_resp[$memory_ptr]['file_path']['definition']   = array('1.124' => $tmp_file_path_1_124);
+                    $R_resp[$memory_ptr]['file_path']['new_obj_exe']  = array('1.124' => $tmp_obj_exe_path_1_124);
+                    $R_resp[$memory_ptr]['file_name']                 = array('1.124' => $tmp_file_name_1_124);
+                    $R_resp[$memory_ptr]['software_version']          = array('1.124');
+                    $R_resp[$memory_ptr]['is_active']                 = array('1.124' => true);
+                    $R_resp[$memory_ptr]['input_parameter_count']     = array('1.124' => 0);
+                    $R_resp[$memory_ptr]['input_parameter_defaults']  = array('1.124' => array());
+                    $R_resp[$memory_ptr]['eval_ttl']                  = array('1.124' => -1);
+                    $R_resp[$memory_ptr]['file_evaluate_enabled']     = array('1.124' => true);
+                    $R_resp[$memory_ptr]['auto_eval_mode_enabled']    = array('1.124' => true);
+                    $R_resp[$memory_ptr]['auto_obj_mode_enabled']     = array('1.124' => true);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * view_source_safe = 0 for admin
+                     *                    only access.
+                     * -----
+                     * This will grant a browser authenticated
+                     * PHP admin session read access to
+                     * source code.
+                     *
+                     * Only an update to admin server
+                     * settings should change this.
+                     */
+                    $R_resp[$memory_ptr]['view_source_safe']          = array('1.124' => 0);
+                    $R_resp[$memory_ptr]['extends_class']             = array('1.124' => 'nusoap_client_mime');
+                    $R_resp[$memory_ptr]['dependencies']              = array();
+                    $R_resp[$memory_ptr]['php_version']['removed']    = array();
+                    $R_resp[$memory_ptr]['php_version']['deprecated'] = array();
+                    $R_resp[$memory_ptr]['php_version']['supported']  = array('1.124' => 'PHP >= 5.6, ' .
+                                                                                         'PHP 7, PHP <= 8.5');
+
+                    $clr_ssl_msg = 'Request received for ' .
+                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                   ', ' .
+                                   $R_resp[$memory_ptr]['resource_name'] .
+                                   ' v' .
+                                   $R_resp[$memory_ptr]['software_default'] .
+                                   '.';
+                    // 5 :: Sat May 02 05:09:58.253792 2026
+                    $msg_token = 'c5a7e39f34c63839a4c750f33f1e57ba' .
+                                 'a3831d15c5c1bd6ef2fa2c236bc1f035' .
+                                 'c7f0bd1bf5a44a656df993705850cd24' .
+                                 '77a5e6ae07218dce37ebffd9630dc6da';
+                    $token_generation_date = '2026-05-02 05:09:58';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => $request_type,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg,
+                             'memory_ptr'              => $memory_ptr,
+                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                    $R->error_log(
+                        $clr_ssl_msg,
+                        \LOG_DEBUG,
+                        \E_NOTICE,
+                        __LINE__,
+                        __FUNCTION__,
+                        __FILE__,
+                        $token);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Registry Resource
+                     * High Level Architecture for
+                     * Resource and Meta Access:
+                     * - ping
+                     * - evaluate
+                     * - return
+                     * - meta
+                     *
+                     * Are we checking on the
+                     * existence of the requested
+                     * resource in the server
+                     * file system? A resource
+                     * ping?
+                     *
+                     * Perhaps a function call or
+                     * even an object needs to
+                     * be returned?
+                     *
+                     * Does someone need a class title
+                     * in HTML? Maybe.
+                     *
+                     *
+                     * 5 :: Friday, April 3, 2026 @ 0808 hrs.
+                     * Last Updated: Wednesday, April 15, 2026 @ 1825 hrs.
+                     *
+                     */
+                    switch($request_type){
+                        case 'ping':
+
+                            if($R->by_pass_is_file(
+                                   NULL,
+                                   $R_resp[$memory_ptr]['resource_name'],
+                                   $R_resp[$memory_ptr]['software_default']))
+                            {
+
+                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * return this resource?
+                                     *
+                                     *
+                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'return[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);                // <-- true means skip the file check.
+
+                                        return $R_resp;
+
+                                    }
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * evaluate this resource?
+                                     *
+                                     *
+                                     * 5 :: Thursday, May 21, 2026 @ 0720 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'evaluate[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);               // <-- true means skip the file check.
+
+                                }
+
+                                // 5 :: Saturday, May 9, 2026 @ 1307 hrs.
+                                return $R_resp;
+
+                            }
+
+                            if(!($R->is_file(
+                                     $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']],
+                                     $R_resp[$memory_ptr]['resource_name'],
+                                     $R_resp[$memory_ptr]['software_default'])))
+                            {
+
+                                $clr_ssl_msg = 'File not found: ' .
+                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                               '.';
+                                // 5 :: Tue May 05 10:34:21.410099 2026
+                                $msg_token = 'f86218697a878ffeb49113b1592e932a' .
+                                             '5c8948ef5be919ae5203dcf8f39f6674' .
+                                             'cf83e763d800a7cd3c6435e9371b3c3f' .
+                                             '55ef7454c6477b50dd5677cb8999878b';
+                                $token_generation_date = '2026-05-05 10:34:21';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_CRIT,
+                                    \E_ERROR,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                return false;
+
+                            }else{
+
+                                $clr_ssl_msg = 'The file system is ready for the ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ', ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Sat May 02 05:11:13.188544 2026
+                                $msg_token = '66baaf0359e0eadf9868de9aea11aa46' .
+                                             '65391eef25c4ccfde8027e5d0296ed61' .
+                                             'aedff61fb4f2eecb6e6669f901859561' .
+                                             '6c452dabcab6c724cbe9c3f8140246b7';
+                                $token_generation_date = '2026-05-02 05:11:13';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * return this resource?
+                                     *
+                                     *
+                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'return[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);                // <-- true means skip the file check.
+
+                                        return $R_resp;
+
+                                    }
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * evaluate this resource?
+                                     *
+                                     *
+                                     * 5 :: Thursday, May 21, 2026 @ 0711 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'evaluate[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);               // <-- true means skip the file check.
+
+                                }
+
+                                return $R_resp;
+
+                            }
+
+                        break;
+                        case 'return':
+                        case 'evaluate':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * If the resource is inactive,
+                             * (bool) $R_resp[$memory_ptr]['is_active']['2.00.0001'] == false,
+                             * or the file path is not
+                             * successfully pointing to
+                             * a valid file, the CLR-SSL
+                             * will neither evaluate nor
+                             * return the result of a
+                             * class, function or
+                             * runtime executable
+                             * system resource.
+                             *
+                             * It is worth mentioning
+                             * that viewing the file
+                             * source code could still
+                             * be technically allowed to
+                             * work on an "inactive"
+                             * CLR-SSL resource.
+                             *
+                             *
+                             * 5 :: Tuesday, April 20, 2026 @ 2206 hrs.
+                             *
+                             */
+                            if(!((bool) $R_resp[$memory_ptr]['is_active'][$R_resp[$memory_ptr]['software_default']] !== false)){
+
+                                if($request_type == 'evaluate')
+                                    $tmp_action_type = 'evaluation of the';
+                                else
+                                    $tmp_action_type = 'return of the';
+
+                                $clr_ssl_msg = 'Resource inactive: ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Tue May 05 10:35:35.553788 2026
+                                $msg_token = '201960d970e0ae1eeda4ff156edf4679' .
+                                             '0bf5aa395548ea184874cdf3e8f2a742' .
+                                             'c5889a4648bb69cddeccfb076224bb0f' .
+                                             '77b0bd62bf3726e23718e38afb509bdc';
+                                $token_generation_date = '2026-05-05 10:35:35';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                // 5 :: Tuesday, April 20, 2026 @ 2213 hrs.
+                                $clr_ssl_msg = 'Suppressed the ' .
+                                               $tmp_action_type . ' of an inactive ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ' at ' .
+                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                               '.';
+                                // 5 :: Tue May 05 10:40:55.187196 2026
+                                $msg_token = '864be09888d08df5fbd253374ea7e160' .
+                                             '181eaa7c6e2c583a5db4619199386e25' .
+                                             '63a4b4ee0a16411c16887eca7b47e130' .
+                                             '814e5f5c0ceff24cd2d29f6a5ab05a60';
+                                $token_generation_date = '2026-05-05 10:40:55';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_INFO,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                return false;
+
+                            }
+
+                            // True = skip file check.
+                            if($R_data_001 != true)
+                            {
+
+                                if(!($R->is_file(
+                                         $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']],
+                                         $R_resp[$memory_ptr]['resource_name'],
+                                         $R_resp[$memory_ptr]['software_default'])))
+                                {
+
+                                    if($request_type == 'evaluate')
+                                        $tmp_action_type = 'evaluate the';
+                                    else
+                                        $tmp_action_type = 'return the';
+
+                                    $clr_ssl_msg = 'File not found: ' .
+                                                   $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                                   '.';
+                                    // 5 :: Mon May 04 11:43:18.601975 2026
+                                    $msg_token = 'becce664f25748d4ccbdadd448154814' .
+                                                 '61ad56445dce65672910e312ae6521da' .
+                                                 '4cf5c4c5bc7fa4609098ad53d2ada748' .
+                                                 'dea2d12b4d472f5bbc92ac8a3099e1ae';
+                                    $token_generation_date = '2026-05-04 11:43:18';
+                                    $token = array(
+                                             'token'                   => $msg_token,
+                                             'token_generation_date'   => $token_generation_date,
+                                             'request_type'            => $request_type,
+                                             'code'                    => 200,
+                                             'clr_ssl_msg'             => $clr_ssl_msg,
+                                             'memory_ptr'              => $memory_ptr,
+                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                    $R->error_log(
+                                        $clr_ssl_msg,
+                                        \LOG_CRIT,
+                                        \E_ERROR,
+                                        __LINE__,
+                                        __FUNCTION__,
+                                        __FILE__,
+                                        $token);
+
+                                    // 5 :: Friday, April 3, 2026 @ 0316 hrs.
+                                    $clr_ssl_msg = 'Failed to ' .
+                                                   $tmp_action_type . ' ' .
+                                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . ': ' .
+                                                   $R_resp[$memory_ptr]['resource_name'] . '.';
+                                    // 5 :: Mon May 04 11:46:24.591492 2026
+                                    $msg_token = 'f73b7f224db29d2351053223edb0ca6c' .
+                                                 '2a6a05d0619fe0e1fc99cc063cf8110b' .
+                                                 'ce469260c189da2b1ac5bd09244792d3' .
+                                                 '936b29e570a95837735955d5aad2578a';
+                                    $token_generation_date = '2026-05-04 11:46:24';
+                                    $token = array(
+                                             'token'                   => $msg_token,
+                                             'token_generation_date'   => $token_generation_date,
+                                             'request_type'            => $request_type,
+                                             'code'                    => 200,
+                                             'clr_ssl_msg'             => $clr_ssl_msg,
+                                             'memory_ptr'              => $memory_ptr,
+                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                    $R->error_log(
+                                        $clr_ssl_msg,
+                                        \LOG_ERR,
+                                        \E_ERROR,
+                                        __LINE__,
+                                        __FUNCTION__,
+                                        __FILE__,
+                                        $token);
+
+                                    return false;
+
+                                }
+
+                                $clr_ssl_msg = 'The file system is ready for the ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ', ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Sat May 02 05:12:39.467621 2026
+                                $msg_token = '5cb36eceda47d94aa18e7dbc987bc083' .
+                                             'bc73d4296245a0c62dc8818fc80e5ce5' .
+                                             'c63f55fb03b78c6fc969b5e4e2313eeb' .
+                                             'c766a93d282bdec4302ea84547a12282';
+                                $token_generation_date = '2026-05-02 05:12:39';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                            }
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Evaluate the resource definition
+                             * for a CLR-SSL Registry Resource
+                             * and/or return a CLR-SSL
+                             * resource...or return the
+                             * output of said resource, e.g.,
+                             * if the resource is a function.
+                             *
+                             *
+                             * 5 :: Monday, April 20, 2026 @ 0328 hrs.
+                             *
+                             */
+                            return _crnrstn_native_resource_registry(
+                                   __FUNCTION__,
+                                   $R,
+                                   $request_type . '[' .
+                                   $R_resp[$memory_ptr]['resource_type'] . ']',
+                                   $R_resp,
+                                   $R_debug_mode,
+                                   $memory_ptr);
+
+                        break;
+                        case 'meta':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * CLR-SSL Registry Resource
+                             * meta data fulfillment call.
+                             *
+                             *
+                             * 5 :: Friday, April 10, 2026 @ 1248 hrs.
+                             *
+                             */
+                            return _crnrstn_native_resource_registry(
+                                   __FUNCTION__,
+                                   $R,
+                                   'return[' .
+                                   $request_type . ']',
+                                   $R_resp,
+                                   $R_debug_mode,
+                                   $memory_ptr,
+                                   $R_data_000);
+
+                        break;
+                        default:
+
+                            $clr_ssl_msg = 'Unknown CLR-SSL Resource ' .
+                                           'Registry action received: ' .
+                                           \strval($request_type);
+                            // 5 :: Tue May 05 10:42:30.764204 2026
+                            $msg_token = '0bc593b10317e80af67da077dae6a820' .
+                                         'cea0adfb67072752b2f8a73bbd08d0f5' .
+                                         '1bf2f2547abc379c32ab21297c20edf6' .
+                                         'aaa7daf4dae0366736f2aa56e708f99f';
+                            $token_generation_date = '2026-05-05 10:42:30';
+                            $token = array(
+                                     'token'                   => $msg_token,
+                                     'token_generation_date'   => $token_generation_date,
+                                     'request_type'            => $request_type,
+                                     'code'                    => 200,
+                                     'clr_ssl_msg'             => $clr_ssl_msg,
+                                     'memory_ptr'              => $memory_ptr,
+                                     'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                     'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                     'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                     'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                     'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                     'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                     'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                     'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                     'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                     'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                     'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                     'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                            $R->error_log(
+                                $clr_ssl_msg,
+                                \LOG_ERR,
+                                \E_ERROR,
+                                __LINE__,
+                                __FUNCTION__,
+                                __FILE__,
+                                $token);
+
+                            return false;
+
+                        break;
+
+                    }
+
+                break;
+                case $root . $os_path_dir_separator_char .
+                     'class' . $os_path_dir_separator_char .
+                     'thirdparty' . $os_path_dir_separator_char .
+                     'nusoap' . $os_path_dir_separator_char .
+                     '1.124' . $os_path_dir_separator_char .
+                     'class.nusoap_server_mime.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
+                case '1.124' . $os_path_dir_separator_char .
+                     'class.nusoap_server_mime.php':
+                case __NAMESPACE__ .
+                     '\nusoap_server_mime':
+                case 'nusoap_server_mime':
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * case 'nusoap_server_mime[1.124]':
+                     *
+                     *
+                     * 5 :: Tuesday, July 16, 2024 @ 0844 hrs.
+                     *
+                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize the system
+                     * configuration resource
+                     * file path.
+                     *
+                     */
+                    $tmp_resource_name_1_124                = 'nusoap_server_mime';
+                    $tmp_type_dir                           = 'object';
+                    $tmp_public_key                         = 'nusoap_server_mime';
+                    $tmp_storage_arch_1_124                 = 'general_resource';
+                    $tmp_file_name_1_124                    = 'class.nusoap_server_mime.php';
+                    $tmp_file_path_1_124                    = $root . $os_path_dir_separator_char .
+                                                              'class' . $os_path_dir_separator_char .
+                                                              'thirdparty' . $os_path_dir_separator_char .
+                                                              'nusoap' . $os_path_dir_separator_char .
+                                                              '1.124' . $os_path_dir_separator_char .
+                                                              $tmp_file_name_1_124;
+                    $tmp_obj_exe_path_1_124                 = $root . $os_path_dir_separator_char .
+                                                              '_config' . $os_path_dir_separator_char .
+                                                              '_config.resource_registry' . $os_path_dir_separator_char .
+                                                              'resource' . $os_path_dir_separator_char .
+                                                              $tmp_type_dir . '_return' . $os_path_dir_separator_char .
+                                                              $tmp_resource_name_1_124 . $os_path_dir_separator_char .
+                                                              'crnrstn.' . $tmp_resource_name_1_124 .
+                                                              '.fire_bolt_exe.php';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize the CRNRSTN ::
+                     * Lightsaber RoCEv2 SOAP
+                     * Services Layer (CLR-SSL)
+                     * Multi-Language Services
+                     * Layer for resource
+                     * meta return.
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, August 24, 2024 @ 0458 hrs.
+                     *
+                     */
+                    switch($tmp_iso_lang_code){
+                        //case 'es':
+                        case 'en':
+                        default:
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize a title for this
+                             * natively registered resource of
+                             * the CRNRSTN :: Lightsaber RoCEv2
+                             * SOAP Services Layer (CLR-SSL)
+                             * System Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             */
+                            $tmp_TITLE_TEXT = 'NuSOAP - Web Services PHP ' .
+                            'Toolkit NuSOAP Server MIME ' .
+                            'Attachments Supported by ' .
+                            'PEAR Mail MIME';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the license name for
+                             * this natively registered resource
+                             * of the CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services Layer
+                             * (CLR-SSL) Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             */
+                            $tmp_LICENSE_NAME_TEXT = 'GNU Lesser General Public ' .
+                            'License version 2.1 or ' .
+                            '(at your option) any ' .
+                            'later version.';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the license URL
+                             * for this natively registered
+                             * resource of the CRNRSTN ::
+                             * Lightsaber RoCEv2 SOAP
+                             * Services Layer (CLR-SSL)
+                             * System Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             * Saturday, November 1, 2025 @ 2139 hrs.
+                             *
+                             */
+                            $tmp_LICENSE_URL = 'http://www.gnu.org/licenses/lgpl-2.1.html';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the copyright
+                             * data for this natively
+                             * registered resource of
+                             * the CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services
+                             * Layer (CLR-SSL) System
+                             * Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             * Saturday, August 24, 2024 @ 0700 hrs.
+                             *
+                             */
+                            $tmp_COPYRIGHT_TEXT = 'Copyright (c) 2002 NuSphere Corporation.';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Prepare a memory pointer
+                     * in order to index this
+                     * resource in the CLR-SSL
+                     * Resource Registry data
+                     * output container.
+                     *
+                     *
+                     * 5 :: Wednesday, April 15, 2026 @ 0817 hrs.
+                     *
+                     */
+                    $memory_ptr = $R->generate_memory_pointer($tmp_file_path_1_124);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize a CLR-SSL
+                     * Resource Registry
+                     * response output
+                     * data container.
+                     *
+                     * $R_resp = array();
+                     *
+                     *
+                     * 5 :: Saturday, April 4, 2026 @ 1453 hrs.
+                     *
+                     */
+                    $R_resp                                           = array();
+                    $R_resp['clr_ssl_resource']['memory_pointer'][]   = $memory_ptr;
+                    $R_resp[$memory_ptr]['resource_name']             = $tmp_resource_name_1_124;
+                    $R_resp[$memory_ptr]['iso_lang_code']             = $tmp_iso_lang_code;
+                    $R_resp[$memory_ptr]['background_color_hex']      = $tmp_background_color_hex;
+                    $R_resp[$memory_ptr]['title']['TEXT']             = $tmp_TITLE_TEXT;
+                    $R_resp[$memory_ptr]['software_company']['key']   = 'NuSphere Corporation';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Load v1.123 of the
+                     * NuSOAP - Web Services
+                     * Toolkit when PHP < 5.6.0.
+                     *
+                     * Example #2 PHP_VERSION_ID
+                     * example and usage.
+                     * https://www.php.net/manual/en/function.phpversion.php
+                     *
+                     *
+                     * 5 :: Monday, August 17, 2026 @ 2321 hrs.
+                     *
+                     */
+                    if(\PHP_VERSION_ID < 50600)
+                        $R_resp[$memory_ptr]['software_default']      = '1.124'; //'1.123';
+                    else
+                        $R_resp[$memory_ptr]['software_default']      = '1.124';
+
+                    $R_resp[$memory_ptr]['license']['key']            = array('1.124' => 'GNU_Lesser_2.1');
+                    $R_resp[$memory_ptr]['license']['name']           = array('1.124' => $tmp_LICENSE_NAME_TEXT);
+                    $R_resp[$memory_ptr]['license']['url']            = array('1.124' => $tmp_LICENSE_URL);
+                    $R_resp[$memory_ptr]['copyright']                 = array('1.124' => $tmp_COPYRIGHT_TEXT);
+
+                    if($request_type === 'meta'){
+                        // 5 :: Friday, May 22, 2026 @ 1316 hrs.
+
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Sun Aug 25 03:51:45.619026 2024';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Tue Jul 16 10:47:28.511245 2024';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
+
+                    }
+
+                    $R_resp[$memory_ptr]['microtime']                 = $R->microtime_float();
+                    $R_resp[$memory_ptr]['timestamp']                 = \gettimeofday();
+                    $R_resp[$memory_ptr]['runtime']                   = $R->wall_time();
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * require
+                     * require_once
+                     * include
+                     * include_once
+                     */
+                    $R_resp[$memory_ptr]['evaluation_protocol']       = array('1.124' => 'require');
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * SOAP_ENDPOINT
+                     * CLASS_DEFINITION
+                     * FUNCTION_DEFINITION
+                     * RUNTIME_EXECUTABLE
+                     */
+                    $R_resp[$memory_ptr]['resource_type']             = 'CLASS_DEFINITION';
+                    $R_resp[$memory_ptr]['public_key']                = $tmp_public_key;
+                    $R_resp[$memory_ptr]['storage_arch']              = array('1.124' => $tmp_storage_arch_1_124);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * (int) $int_flag['R_load_many_to_1_request']
+                     * (int) $int_flag['R_load_1_to_1_request']
+                     * (int) $int_flag['R_load_1_to_1_session']
+                     * (int) $int_flag['R_load_on_ttl_expire']
+                     */
+                    $R_resp[$memory_ptr]['loading_arch']              = array('1.124' => $int_flag['R_load_many_to_1_request']);
+                    $R_resp[$memory_ptr]['namespace']                 = __NAMESPACE__;
+                    $R_resp[$memory_ptr]['file_path']['definition']   = array('1.124' => $tmp_file_path_1_124);
+                    $R_resp[$memory_ptr]['file_path']['new_obj_exe']  = array('1.124' => $tmp_obj_exe_path_1_124);
+                    $R_resp[$memory_ptr]['file_name']                 = array('1.124' => $tmp_file_name_1_124);
+                    $R_resp[$memory_ptr]['software_version']          = array('1.124');
+                    $R_resp[$memory_ptr]['is_active']                 = array('1.124' => true);
+                    $R_resp[$memory_ptr]['input_parameter_count']     = array('1.124' => 0);
+                    $R_resp[$memory_ptr]['input_parameter_defaults']  = array('1.124' => array());
+                    $R_resp[$memory_ptr]['eval_ttl']                  = array('1.124' => -1);
+                    $R_resp[$memory_ptr]['file_evaluate_enabled']     = array('1.124' => true);
+                    $R_resp[$memory_ptr]['auto_eval_mode_enabled']    = array('1.124' => true);
+                    $R_resp[$memory_ptr]['auto_obj_mode_enabled']     = array('1.124' => true);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * view_source_safe = 0 for admin
+                     *                    only access.
+                     * -----
+                     * This will grant a browser authenticated
+                     * PHP admin session read access to
+                     * source code.
+                     *
+                     * Only an update to admin server
+                     * settings should change this.
+                     */
+                    $R_resp[$memory_ptr]['view_source_safe']          = array('1.124' => 0);
+                    $R_resp[$memory_ptr]['extends_class']             = array('1.124' => 'nusoap_server');
+                    $R_resp[$memory_ptr]['dependencies']              = array();
+                    $R_resp[$memory_ptr]['php_version']['removed']    = array();
+                    $R_resp[$memory_ptr]['php_version']['deprecated'] = array();
+                    $R_resp[$memory_ptr]['php_version']['supported']  = array('1.124' => 'PHP >= 5.6, PHP 7, PHP <= 8.5');
+
+                    $clr_ssl_msg = 'Request received for ' .
+                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                   ', ' .
+                                   $R_resp[$memory_ptr]['resource_name'] .
+                                   ' v' .
+                                   $R_resp[$memory_ptr]['software_default'] .
+                                   '.';
+                    // 5 :: Sat May 02 05:01:08.346578 2026
+                    $msg_token = '8a94fc28432fb887756f4088845c3611' .
+                                 'bfe4e3cb8617fd1eaafc17a9d88b68d7' .
+                                 '4b1619e4ca74c14a24c9c376e388a3f6' .
+                                 '6b95b245e13bc3bb5e4f363e1952173c';
+                    $token_generation_date = '2026-05-02 05:01:08';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => $request_type,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg,
+                             'memory_ptr'              => $memory_ptr,
+                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                    $R->error_log(
+                        $clr_ssl_msg,
+                        \LOG_DEBUG,
+                        \E_NOTICE,
+                        __LINE__,
+                        __FUNCTION__,
+                        __FILE__,
+                        $token);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Registry Resource
+                     * High Level Architecture for
+                     * Resource and Meta Access:
+                     * - ping
+                     * - evaluate
+                     * - return
+                     * - meta
+                     *
+                     * Are we checking on the
+                     * existence of the requested
+                     * resource in the server
+                     * file system? A resource
+                     * ping?
+                     *
+                     * Perhaps a function call or
+                     * even an object needs to
+                     * be returned?
+                     *
+                     * Does someone need a class title
+                     * in HTML? Maybe.
+                     *
+                     *
+                     * 5 :: Friday, April 3, 2026 @ 0808 hrs.
+                     * Last Updated: Wednesday, April 15, 2026 @ 1825 hrs.
+                     *
+                     */
+                    switch($request_type){
+                        case 'ping':
+
+                            if($R->by_pass_is_file(
+                                   NULL,
+                                   $R_resp[$memory_ptr]['resource_name'],
+                                   $R_resp[$memory_ptr]['software_default']))
+                            {
+
+                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * return this resource?
+                                     *
+                                     *
+                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'return[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);                // <-- true means skip the file check.
+
+                                        return $R_resp;
+
+                                    }
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * evaluate this resource?
+                                     *
+                                     *
+                                     * 5 :: Thursday, May 21, 2026 @ 0720 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'evaluate[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);               // <-- true means skip the file check.
+
+                                }
+
+                                // 5 :: Saturday, May 9, 2026 @ 1307 hrs.
+                                return $R_resp;
+
+                            }
+
+                            if(!($R->is_file(
+                                     $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']],
+                                     $R_resp[$memory_ptr]['resource_name'],
+                                     $R_resp[$memory_ptr]['software_default'])))
+                            {
+
+                                $clr_ssl_msg = 'File not found: ' .
+                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                               '.';
+                                // 5 :: Tue May 05 10:04:13.880804 2026
+                                $msg_token = '2d7b5ec547dd30bc82bc132d105f4518' .
+                                             '9607bdb8a5938fbf851dd0eb44d16092' .
+                                             'c2eb4aacbf92334052a041284a3470fa' .
+                                             '5c8832c31c7c04f416a858c3452a789a';
+                                $token_generation_date = '2026-05-05 10:04:13';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_CRIT,
+                                    \E_ERROR,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                return false;
+
+                            }else{
+
+                                $clr_ssl_msg = 'The file system is ready for the ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ', ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Sat May 02 05:02:29.186810 2026
+                                $msg_token = '7655adbb41f64df853a24ee18d42d079' .
+                                             '0719afce0001831b429fc3907f384669' .
+                                             '7f86371ae76b72e412d06d6ee8649b7c' .
+                                             '7eaacd25bbd7114995186e0bd3161fb5';
+                                $token_generation_date = '2026-05-02 05:02:29';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * return this resource?
+                                     *
+                                     *
+                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'return[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);                // <-- true means skip the file check.
+
+                                        return $R_resp;
+
+                                    }
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * evaluate this resource?
+                                     *
+                                     *
+                                     * 5 :: Thursday, May 21, 2026 @ 0711 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'evaluate[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);               // <-- true means skip the file check.
+
+                                }
+
+                                return $R_resp;
+
+                            }
+
+                        break;
+                        case 'return':
+                        case 'evaluate':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * If the resource is inactive,
+                             * (bool) $R_resp[$memory_ptr]['is_active']['2.00.0001'] == false,
+                             * or the file path is not
+                             * successfully pointing to
+                             * a valid file, the CLR-SSL
+                             * will neither evaluate nor
+                             * return the result of a
+                             * class, function or
+                             * runtime executable
+                             * system resource.
+                             *
+                             * It is worth mentioning
+                             * that viewing the file
+                             * source code could still
+                             * be technically allowed to
+                             * work on an "inactive"
+                             * CLR-SSL resource.
+                             *
+                             *
+                             * 5 :: Tuesday, April 20, 2026 @ 2206 hrs.
+                             *
+                             */
+                            if(!((bool) $R_resp[$memory_ptr]['is_active'][$R_resp[$memory_ptr]['software_default']] !== false)){
+
+                                if($request_type == 'evaluate')
+                                    $tmp_action_type = 'evaluation of the';
+                                else
+                                    $tmp_action_type = 'return of the';
+
+                                $clr_ssl_msg = 'Resource inactive: ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Tue May 05 10:06:24.981098 2026
+                                $msg_token = '23380f148ae85bddd4c9d7bed047f98b' .
+                                             'c23ba88498b384f010f24fd4f5f16cfa' .
+                                             '05d6e543fdedc4bf7092af019a022d1a' .
+                                             'be081658600688341a856af0f24733ab';
+                                $token_generation_date = '2026-05-05 10:06:24';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                // 5 :: Tuesday, April 20, 2026 @ 2213 hrs.
+                                $clr_ssl_msg = 'Suppressed the ' .
+                                               $tmp_action_type . ' of an inactive ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ' at ' .
+                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                               '.';
+                                // 5 :: Tue May 05 10:11:49.007474 2026
+                                $msg_token = '88c01ad203a1e81e2e29a909cd2db0d6' .
+                                             '35fec2411c0237c895c7f7987554fece' .
+                                             '5bd3fc07ee6d27f11a04fd1b0c2338e3' .
+                                             '6ace299e8160c8baff138cc51efe7152';
+                                $token_generation_date = '2026-05-05 10:11:49';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_INFO,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                return false;
+
+                            }
+
+                            // True = skip file check.
+                            if($R_data_001 != true)
+                            {
+
+                                if(!($R->is_file(
+                                         $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']],
+                                         $R_resp[$memory_ptr]['resource_name'],
+                                         $R_resp[$memory_ptr]['software_default'])))
+                                {
+
+                                    if($request_type == 'evaluate')
+                                        $tmp_action_type = 'evaluate the';
+                                    else
+                                        $tmp_action_type = 'return the';
+
+                                    $clr_ssl_msg = 'File not found: ' .
+                                                   $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                                   '.';
+                                    // 5 :: Tue May 05 10:15:43.832644 2026
+                                    $msg_token = 'cf880a514c68ffa704ffe8f38e0d9083' .
+                                                 '577bc9c874a86e2ff392618ada4795c4' .
+                                                 '6993b21104e8db611daa165c4a4c2078' .
+                                                 'a0be9d18fc18ef8f2f3d9376bf832253';
+                                    $token_generation_date = '2026-05-05 10:15:43';
+                                    $token = array(
+                                             'token'                   => $msg_token,
+                                             'token_generation_date'   => $token_generation_date,
+                                             'request_type'            => $request_type,
+                                             'code'                    => 200,
+                                             'clr_ssl_msg'             => $clr_ssl_msg,
+                                             'memory_ptr'              => $memory_ptr,
+                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                    $R->error_log(
+                                        $clr_ssl_msg,
+                                        \LOG_CRIT,
+                                        \E_ERROR,
+                                        __LINE__,
+                                        __FUNCTION__,
+                                        __FILE__,
+                                        $token);
+
+                                    // 5 :: Friday, April 3, 2026 @ 0316 hrs.
+                                    $clr_ssl_msg = 'Failed to ' .
+                                                   $tmp_action_type . ' the ' .
+                                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                                   ': ' .
+                                                   $R_resp[$memory_ptr]['resource_name'] .
+                                                   ' v' .
+                                                   $R_resp[$memory_ptr]['software_default'] .
+                                                   '.';
+                                    // 5 :: Tue May 05 10:18:00.372662 2026
+                                    $msg_token = 'c4f1806652abe22bba39fbe33791d3d9' .
+                                                 'db5c84f2a9065e16771f1505a8a31e76' .
+                                                 '42892735189a6dd708fea7194256a69c' .
+                                                 '7fa79ab7410ab2a58ba0ccf7da492a97';
+                                    $token_generation_date = '2026-05-05 10:18:00';
+                                    $token = array(
+                                             'token'                   => $msg_token,
+                                             'token_generation_date'   => $token_generation_date,
+                                             'request_type'            => $request_type,
+                                             'code'                    => 200,
+                                             'clr_ssl_msg'             => $clr_ssl_msg,
+                                             'memory_ptr'              => $memory_ptr,
+                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                    $R->error_log(
+                                        $clr_ssl_msg,
+                                        \LOG_ERR,
+                                        \E_ERROR,
+                                        __LINE__,
+                                        __FUNCTION__,
+                                        __FILE__,
+                                        $token);
+
+                                    return false;
+
+                                }
+
+                                $clr_ssl_msg = 'The file system is ready for the ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ', ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Sat May 02 05:04:19.291595 2026
+                                $msg_token = 'a473b8775976dc7305b7e9475de72377' .
+                                             '1609fd624267e4497a7776267b16360c' .
+                                             '6f2bc3900af708e3182032c136667e81' .
+                                             'ab2be9fee9a26a460601f2b10ed1db5e';
+                                $token_generation_date = '2026-05-02 05:04:19';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                            }
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Evaluate the resource definition
+                             * for a CLR-SSL Registry Resource
+                             * and/or return a CLR-SSL
+                             * resource...or return the
+                             * output of said resource, e.g.,
+                             * if the resource is a function.
+                             *
+                             *
+                             * 5 :: Monday, April 20, 2026 @ 0328 hrs.
+                             *
+                             */
+                            return _crnrstn_native_resource_registry(
+                                   __FUNCTION__,
+                                   $R,
+                                   $request_type . '[' .
+                                   $R_resp[$memory_ptr]['resource_type'] . ']',
+                                   $R_resp,
+                                   $R_debug_mode,
+                                   $memory_ptr);
+
+                        break;
+                        case 'meta':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * CLR-SSL Registry Resource
+                             * meta data fulfillment call.
+                             *
+                             *
+                             * 5 :: Friday, April 10, 2026 @ 1248 hrs.
+                             *
+                             */
+                            return _crnrstn_native_resource_registry(
+                                   __FUNCTION__,
+                                   $R,
+                                   'return[' .
+                                   $request_type . ']',
+                                   $R_resp,
+                                   $R_debug_mode,
+                                   $memory_ptr,
+                                   $R_data_000);
+
+                        break;
+                        default:
+
+                            $clr_ssl_msg = 'Unknown CLR-SSL Resource ' .
+                                           'Registry action received: ' .
+                                           \strval($request_type);
+                            // 5 :: Tue May 05 10:19:04.892452 2026
+                            $msg_token = 'ad55464d4b6f95d3ea83d4391b9aff8c' .
+                                         '7e0f758c3c9f6682e928b090d1653133' .
+                                         'ce2678d80c932eb021be4e67193fff86' .
+                                         '80e9513188a767c925b11d7eec44b697';
+                            $token_generation_date = '2026-05-05 10:19:04';
+                            $token = array(
+                                     'token'                   => $msg_token,
+                                     'token_generation_date'   => $token_generation_date,
+                                     'request_type'            => $request_type,
+                                     'code'                    => 200,
+                                     'clr_ssl_msg'             => $clr_ssl_msg,
+                                     'memory_ptr'              => $memory_ptr,
+                                     'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                     'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                     'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                     'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                     'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                     'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                     'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                     'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                     'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                     'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                     'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                     'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                            $R->error_log(
+                                $clr_ssl_msg,
+                                \LOG_ERR,
+                                \E_ERROR,
+                                __LINE__,
+                                __FUNCTION__,
+                                __FILE__,
+                                $token);
+
+                            return false;
+
+                        break;
+
+                    }
+
+                break;
+                case $root . $os_path_dir_separator_char .
+                     'class' . $os_path_dir_separator_char .
+                     'thirdparty' . $os_path_dir_separator_char .
+                     'nusoap' . $os_path_dir_separator_char .
+                     '1.124' . $os_path_dir_separator_char .
+                     'class.nusoapservermime.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
+                case '1.124' . $os_path_dir_separator_char .
+                     'class.nusoapservermime.php':
+                case __NAMESPACE__ .
+                     '\nusoapservermime':
+                case 'nusoapservermime':
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * case 'nusoapservermime[1.124]':
+                     *
+                     *
+                     * 5 :: Tuesday, July 16, 2024 @ 0845 hrs.
+                     *
+                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize the system
+                     * configuration resource
+                     * file path.
+                     *
+                     */
+                    $tmp_resource_name_1_124                = 'nusoapservermime';
+                    $tmp_type_dir                           = 'object';
+                    $tmp_public_key                         = 'nusoapservermime';
+                    $tmp_storage_arch_1_124                 = 'general_resource';
+                    $tmp_file_name_1_124                    = 'class.nusoapservermime.php';
+                    $tmp_file_path_1_124                    = $root . $os_path_dir_separator_char .
+                                                              'class' . $os_path_dir_separator_char .
+                                                              'thirdparty' . $os_path_dir_separator_char .
+                                                              'nusoap' . $os_path_dir_separator_char .
+                                                              '1.124' . $os_path_dir_separator_char .
+                                                              $tmp_file_name_1_124;
+                    $tmp_obj_exe_path_1_124                 = $root . $os_path_dir_separator_char .
+                                                              '_config' . $os_path_dir_separator_char .
+                                                              '_config.resource_registry' . $os_path_dir_separator_char .
+                                                              'resource' . $os_path_dir_separator_char .
+                                                              $tmp_type_dir . '_return' . $os_path_dir_separator_char .
+                                                              $tmp_resource_name_1_124 . $os_path_dir_separator_char .
+                                                              'crnrstn.' . $tmp_resource_name_1_124 .
+                                                              '.fire_bolt_exe.php';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize the CRNRSTN ::
+                     * Lightsaber RoCEv2 SOAP
+                     * Services Layer (CLR-SSL)
+                     * Multi-Language Services
+                     * Layer for resource
+                     * meta return.
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, August 24, 2024 @ 0458 hrs.
+                     *
+                     */
+                    switch($tmp_iso_lang_code){
+                        //case 'es':
+                        case 'en':
+                        default:
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize a title for this
+                             * natively registered resource of
+                             * the CRNRSTN :: Lightsaber RoCEv2
+                             * SOAP Services Layer (CLR-SSL)
+                             * System Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             */
+                            $tmp_TITLE_TEXT = 'NuSOAP - Web Services PHP ' .
+                            'Toolkit NuSOAP Server Mime ' .
+                            'Backwards Compatibility Patch';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the license name for
+                             * this natively registered resource
+                             * of the CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services Layer
+                             * (CLR-SSL) Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             */
+                            $tmp_LICENSE_NAME_TEXT = 'GNU Lesser General Public ' .
+                            'License version 2.1 or ' .
+                            '(at your option) any ' .
+                            'later version.';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the license URL
+                             * for this natively registered
+                             * resource of the CRNRSTN ::
+                             * Lightsaber RoCEv2 SOAP
+                             * Services Layer (CLR-SSL)
+                             * System Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             * Saturday, November 1, 2025 @ 2139 hrs.
+                             *
+                             */
+                            $tmp_LICENSE_URL = 'http://www.gnu.org/licenses/lgpl-2.1.html';
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Initialize the copyright
+                             * data for this natively
+                             * registered resource of
+                             * the CRNRSTN :: Lightsaber
+                             * RoCEv2 SOAP Services
+                             * Layer (CLR-SSL) System
+                             * Resource Registry.
+                             *
+                             *
+                             * 5
+                             *
+                             * Saturday, August 24, 2024 @ 0700 hrs.
+                             *
+                             */
+                            $tmp_COPYRIGHT_TEXT = 'Copyright (c) 2002 NuSphere Corporation.';
+
+                        break;
+
+                    }
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Prepare a memory pointer
+                     * in order to index this
+                     * resource in the CLR-SSL
+                     * Resource Registry data
+                     * output container.
+                     *
+                     *
+                     * 5 :: Wednesday, April 15, 2026 @ 0817 hrs.
+                     *
+                     */
+                    $memory_ptr = $R->generate_memory_pointer($tmp_file_path_1_124);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Initialize a CLR-SSL
+                     * Resource Registry
+                     * response output
+                     * data container.
+                     *
+                     * $R_resp = array();
+                     *
+                     *
+                     * 5 :: Saturday, April 4, 2026 @ 1453 hrs.
+                     *
+                     */
+                    $R_resp                                           = array();
+                    $R_resp['clr_ssl_resource']['memory_pointer'][]   = $memory_ptr;
+                    $R_resp[$memory_ptr]['resource_name']             = $tmp_resource_name_1_124;
+                    $R_resp[$memory_ptr]['iso_lang_code']             = $tmp_iso_lang_code;
+                    $R_resp[$memory_ptr]['background_color_hex']      = $tmp_background_color_hex;
+                    $R_resp[$memory_ptr]['title']['TEXT']             = $tmp_TITLE_TEXT;
+                    $R_resp[$memory_ptr]['software_company']['key']   = 'NuSphere Corporation';
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * Load v1.123 of the
+                     * NuSOAP - Web Services
+                     * Toolkit when PHP < 5.6.0.
+                     *
+                     * Example #2 PHP_VERSION_ID
+                     * example and usage.
+                     * https://www.php.net/manual/en/function.phpversion.php
+                     *
+                     *
+                     * 5 :: Monday, August 17, 2026 @ 2321 hrs.
+                     *
+                     */
+                    if(\PHP_VERSION_ID < 50600)
+                        $R_resp[$memory_ptr]['software_default']      = '1.124'; //'1.123';
+                    else
+                        $R_resp[$memory_ptr]['software_default']      = '1.124';
+
+                    $R_resp[$memory_ptr]['license']['key']            = array('1.124' => 'GNU_Lesser_2.1');
+                    $R_resp[$memory_ptr]['license']['name']           = array('1.124' => $tmp_LICENSE_NAME_TEXT);
+                    $R_resp[$memory_ptr]['license']['url']            = array('1.124' => $tmp_LICENSE_URL);
+                    $R_resp[$memory_ptr]['copyright']                 = array('1.124' => $tmp_COPYRIGHT_TEXT);
+
+                    if($request_type === 'meta'){
+                        // 5 :: Friday, May 22, 2026 @ 1316 hrs.
+
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Sun Aug 25 03:52:34.876324 2024';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Tue Jul 16 10:43:22.719245 2024';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
+
+                    }
+
+                    $R_resp[$memory_ptr]['microtime']                 = $R->microtime_float();
+                    $R_resp[$memory_ptr]['timestamp']                 = \gettimeofday();
+                    $R_resp[$memory_ptr]['runtime']                   = $R->wall_time();
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * require
+                     * require_once
+                     * include
+                     * include_once
+                     */
+                    $R_resp[$memory_ptr]['evaluation_protocol']       = array('1.124' => 'require');
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * SOAP_ENDPOINT
+                     * CLASS_DEFINITION
+                     * FUNCTION_DEFINITION
+                     * RUNTIME_EXECUTABLE
+                     */
+                    $R_resp[$memory_ptr]['resource_type']             = 'CLASS_DEFINITION';
+                    $R_resp[$memory_ptr]['public_key']                = $tmp_public_key;
+                    $R_resp[$memory_ptr]['storage_arch']              = array('1.124' => $tmp_storage_arch_1_124);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * (int) $int_flag['R_load_many_to_1_request']
+                     * (int) $int_flag['R_load_1_to_1_request']
+                     * (int) $int_flag['R_load_1_to_1_session']
+                     * (int) $int_flag['R_load_on_ttl_expire']
+                     */
+                    $R_resp[$memory_ptr]['loading_arch']              = array('1.124' => $int_flag['R_load_many_to_1_request']);
+                    $R_resp[$memory_ptr]['namespace']                 = __NAMESPACE__;
+                    $R_resp[$memory_ptr]['file_path']['definition']   = array('1.124' => $tmp_file_path_1_124);
+                    $R_resp[$memory_ptr]['file_path']['new_obj_exe']  = array('1.124' => $tmp_obj_exe_path_1_124);
+                    $R_resp[$memory_ptr]['file_name']                 = array('1.124' => $tmp_file_name_1_124);
+                    $R_resp[$memory_ptr]['software_version']          = array('1.124');
+                    $R_resp[$memory_ptr]['is_active']                 = array('1.124' => true);
+                    $R_resp[$memory_ptr]['input_parameter_count']     = array('1.124' => 0);
+                    $R_resp[$memory_ptr]['input_parameter_defaults']  = array('1.124' => array());
+                    $R_resp[$memory_ptr]['eval_ttl']                  = array('1.124' => -1);
+                    $R_resp[$memory_ptr]['file_evaluate_enabled']     = array('1.124' => true);
+                    $R_resp[$memory_ptr]['auto_eval_mode_enabled']    = array('1.124' => true);
+                    $R_resp[$memory_ptr]['auto_obj_mode_enabled']     = array('1.124' => true);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * view_source_safe = 0 for admin
+                     *                    only access.
+                     * -----
+                     * This will grant a browser authenticated
+                     * PHP admin session read access to
+                     * source code.
+                     *
+                     * Only an update to admin server
+                     * settings should change this.
+                     */
+                    $R_resp[$memory_ptr]['view_source_safe']          = array('1.124' => 0);
+                    $R_resp[$memory_ptr]['extends_class']             = array('1.124' => 'nusoap_server_mime');
+                    $R_resp[$memory_ptr]['dependencies']              = array();
+                    $R_resp[$memory_ptr]['php_version']['removed']    = array();
+                    $R_resp[$memory_ptr]['php_version']['deprecated'] = array();
+                    $R_resp[$memory_ptr]['php_version']['supported']  = array('1.124' => 'PHP >= 5.6, PHP 7, PHP <= 8.5');
+
+                    $clr_ssl_msg = 'Request received for ' .
+                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                   ', ' .
+                                   $R_resp[$memory_ptr]['resource_name'] .
+                                   ' v' .
+                                   $R_resp[$memory_ptr]['software_default'] .
+                                   '.';
+                    // 5 :: Sat May 02 05:05:39.398970 2026
+                    $msg_token = '6759234570f871c8e2b634fb835134f7' .
+                                 'e209868c973c85c50dcae7b2e01c3e86' .
+                                 'c2f448170d34bb7d7fab7438c6734594' .
+                                 '278292a08d379af2ba75e0c7a1821b87';
+                    $token_generation_date = '2026-05-02 05:05:39';
+                    $token = array(
+                             'token'                   => $msg_token,
+                             'token_generation_date'   => $token_generation_date,
+                             'request_type'            => $request_type,
+                             'code'                    => 200,
+                             'clr_ssl_msg'             => $clr_ssl_msg,
+                             'memory_ptr'              => $memory_ptr,
+                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                    $R->error_log(
+                        $clr_ssl_msg,
+                        \LOG_DEBUG,
+                        \E_NOTICE,
+                        __LINE__,
+                        __FUNCTION__,
+                        __FILE__,
+                        $token);
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * CLR-SSL Registry Resource
+                     * High Level Architecture for
+                     * Resource and Meta Access:
+                     * - ping
+                     * - evaluate
+                     * - return
+                     * - meta
+                     *
+                     * Are we checking on the
+                     * existence of the requested
+                     * resource in the server
+                     * file system? A resource
+                     * ping?
+                     *
+                     * Perhaps a function call or
+                     * even an object needs to
+                     * be returned?
+                     *
+                     * Does someone need a class title
+                     * in HTML? Maybe.
+                     *
+                     *
+                     * 5 :: Friday, April 3, 2026 @ 0808 hrs.
+                     * Last Updated: Wednesday, April 15, 2026 @ 1825 hrs.
+                     *
+                     */
+                    switch($request_type){
+                        case 'ping':
+
+                            if($R->by_pass_is_file(
+                                   NULL,
+                                   $R_resp[$memory_ptr]['resource_name'],
+                                   $R_resp[$memory_ptr]['software_default']))
+                            {
+
+                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * return this resource?
+                                     *
+                                     *
+                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'return[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);                // <-- true means skip the file check.
+
+                                        return $R_resp;
+
+                                    }
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * evaluate this resource?
+                                     *
+                                     *
+                                     * 5 :: Thursday, May 21, 2026 @ 0720 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'evaluate[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);               // <-- true means skip the file check.
+
+                                }
+
+                                // 5 :: Saturday, May 9, 2026 @ 1307 hrs.
+                                return $R_resp;
+
+                            }
+
+                            if(!($R->is_file(
+                                     $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']],
+                                     $R_resp[$memory_ptr]['resource_name'],
+                                     $R_resp[$memory_ptr]['software_default'])))
+                            {
+
+                                $clr_ssl_msg = 'File not found: ' .
+                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                               '.';
+                                // 5 :: Tue May 05 10:20:15.434963 2026
+                                $msg_token = '3e0e9f7297448d6379a446a9001e2a00' .
+                                             'c45fa1fa7b3dcf8cfe7190ade682a67f' .
+                                             'e1837028c23728a292b9335d630acd43' .
+                                             '7cbb09b1bee9771c289749daf4495eac';
+                                $token_generation_date = '2026-05-05 10:20:15';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_CRIT,
+                                    \E_ERROR,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                return false;
+
+                            }else{
+
+                                $clr_ssl_msg = 'The file system is ready for the ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ', ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Sat May 02 05:07:00.134807 2026
+                                $msg_token = '5fa3ad7fcfa8d36548ae5e996e70fe00' .
+                                             '3313fa0749be6d5c37d6065e6e175eac' .
+                                             'c4d54c2c767972fe0322c9b9292634be' .
+                                             '7c5441f132e0734b44c60eca1b480752';
+                                $token_generation_date = '2026-05-02 05:07:00';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * return this resource?
+                                     *
+                                     *
+                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
+
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'return[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);                // <-- true means skip the file check.
+
+                                        return $R_resp;
+
+                                    }
+
+                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                                     * Do we automatically
+                                     * evaluate this resource?
+                                     *
+                                     *
+                                     * 5 :: Thursday, May 21, 2026 @ 0711 hrs.
+                                     *
+                                     */
+                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
+                                        $R_resp = _crnrstn_native_resource_registry(
+                                                  __FUNCTION__,
+                                                  $R,
+                                                  'evaluate[' .
+                                                  $R_resp[$memory_ptr]['resource_type'] . ']',
+                                                  $R_resp,
+                                                  $R_debug_mode,
+                                                  $memory_ptr,
+                                                  true);               // <-- true means skip the file check.
+
+                                }
+
+                                return $R_resp;
+
+                            }
+
+                        break;
+                        case 'return':
+                        case 'evaluate':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * If the resource is inactive,
+                             * (bool) $R_resp[$memory_ptr]['is_active']['2.00.0001'] == false,
+                             * or the file path is not
+                             * successfully pointing to
+                             * a valid file, the CLR-SSL
+                             * will neither evaluate nor
+                             * return the result of a
+                             * class, function or
+                             * runtime executable
+                             * system resource.
+                             *
+                             * It is worth mentioning
+                             * that viewing the file
+                             * source code could still
+                             * be technically allowed to
+                             * work on an "inactive"
+                             * CLR-SSL resource.
+                             *
+                             *
+                             * 5 :: Tuesday, April 20, 2026 @ 2206 hrs.
+                             *
+                             */
+                            if(!((bool) $R_resp[$memory_ptr]['is_active'][$R_resp[$memory_ptr]['software_default']] !== false)){
+
+                                if($request_type == 'evaluate')
+                                    $tmp_action_type = 'evaluation of the';
+                                else
+                                    $tmp_action_type = 'return of the';
+
+                                $clr_ssl_msg = 'Resource inactive: ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Tue May 05 10:24:34.322912 2026
+                                $msg_token = 'fc16594c2eb6d5caf9463e63593e79ec' .
+                                             '4fed6c750fda55e9d688f701a96b5559' .
+                                             'a2d2c8614b3c8ef5cba2661bbe78fd6d' .
+                                             'f77dbf45bf99ed02f94ba093cf87af3c';
+                                $token_generation_date = '2026-05-05 10:24:34';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                // 5 :: Tuesday, April 20, 2026 @ 2213 hrs.
+                                $clr_ssl_msg = 'Suppressed the ' .
+                                               $tmp_action_type . ' of an inactive ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ' at ' .
+                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                               '.';
+                                // 5 :: Tue May 05 10:28:15.272761 2026
+                                $msg_token = 'ee9897b2cb67550a2971119626eae40c' .
+                                             '3fe3f0982fdd1715419a883db9d7b562' .
+                                             '279f381fd93fa68b313b1eef56b5438b' .
+                                             '4ee440e8154e852479826063e21b815e';
+                                $token_generation_date = '2026-05-05 10:28:15';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_INFO,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                                return false;
+
+                            }
+
+                            // True = skip file check.
+                            if($R_data_001 != true)
+                            {
+
+                                if(!($R->is_file(
+                                         $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']],
+                                         $R_resp[$memory_ptr]['resource_name'],
+                                         $R_resp[$memory_ptr]['software_default'])))
+                                {
+
+                                    if($request_type == 'evaluate')
+                                        $tmp_action_type = 'evaluate the';
+                                    else
+                                        $tmp_action_type = 'return the';
+
+                                    $clr_ssl_msg = 'File not found: ' .
+                                                   $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] .
+                                                   '.';
+                                    // 5 :: Tue May 05 10:29:55.993830 2026
+                                    $msg_token = 'c82177548fafa898a4bae4719080873f' .
+                                                 '50f258a045353e6fac617b5f53b4ddd4' .
+                                                 '623ff769ebc80e1283a8c598347399ca' .
+                                                 '1fb896706bba5a05e225b6fe9a14a13b';
+                                    $token_generation_date = '2026-05-05 10:29:55';
+                                    $token = array(
+                                             'token'                   => $msg_token,
+                                             'token_generation_date'   => $token_generation_date,
+                                             'request_type'            => $request_type,
+                                             'code'                    => 200,
+                                             'clr_ssl_msg'             => $clr_ssl_msg,
+                                             'memory_ptr'              => $memory_ptr,
+                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                    $R->error_log(
+                                        $clr_ssl_msg,
+                                        \LOG_CRIT,
+                                        \E_ERROR,
+                                        __LINE__,
+                                        __FUNCTION__,
+                                        __FILE__,
+                                        $token);
+
+                                    // 5 :: Friday, April 3, 2026 @ 0316 hrs.
+                                    $clr_ssl_msg = 'Failed to ' .
+                                                   $tmp_action_type . ' the ' .
+                                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                                   ': ' .
+                                                   $R_resp[$memory_ptr]['resource_name'] .
+                                                   ' v' .
+                                                   $R_resp[$memory_ptr]['software_default'] .
+                                                   '.';
+                                    // 5 :: Tue May 05 10:31:35.108072 2026
+                                    $msg_token = '8d2034505f052337690b5a06917debfe' .
+                                                 '3ef6fac22b1489b6119b2158a8625dd1' .
+                                                 '42da2933bcc7fadc1ac79e9d0bc63ff5' .
+                                                 '83a2f7cef0cf6d2423f3a20f2c39e84d';
+                                    $token_generation_date = '2026-05-05 10:31:35';
+                                    $token = array(
+                                             'token'                   => $msg_token,
+                                             'token_generation_date'   => $token_generation_date,
+                                             'request_type'            => $request_type,
+                                             'code'                    => 200,
+                                             'clr_ssl_msg'             => $clr_ssl_msg,
+                                             'memory_ptr'              => $memory_ptr,
+                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                             'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                             'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                    $R->error_log(
+                                        $clr_ssl_msg,
+                                        \LOG_ERR,
+                                        \E_ERROR,
+                                        __LINE__,
+                                        __FUNCTION__,
+                                        __FILE__,
+                                        $token);
+
+                                    return false;
+
+                                }
+
+                                $clr_ssl_msg = 'The file system is ready for the ' .
+                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] .
+                                               ', ' .
+                                               $R_resp[$memory_ptr]['resource_name'] .
+                                               ' v' .
+                                               $R_resp[$memory_ptr]['software_default'] .
+                                               '.';
+                                // 5 :: Sat May 02 05:08:14.805402 2026
+                                $msg_token = 'fa961724cb031475206a299fd2995076' .
+                                             'adf23c966fc7dfd7cc9dc6bb91c1e458' .
+                                             '9bbe323818e11008c26fcf386988b7da' .
+                                             '0fb3e3469d37f85192e826ab4af5ff53';
+                                $token_generation_date = '2026-05-02 05:08:14';
+                                $token = array(
+                                         'token'                   => $msg_token,
+                                         'token_generation_date'   => $token_generation_date,
+                                         'request_type'            => $request_type,
+                                         'code'                    => 200,
+                                         'clr_ssl_msg'             => $clr_ssl_msg,
+                                         'memory_ptr'              => $memory_ptr,
+                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                         'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                         'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                                $R->error_log(
+                                    $clr_ssl_msg,
+                                    \LOG_DEBUG,
+                                    \E_NOTICE,
+                                    __LINE__,
+                                    __FUNCTION__,
+                                    __FILE__,
+                                    $token);
+
+                            }
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * Evaluate the resource definition
+                             * for a CLR-SSL Registry Resource
+                             * and/or return a CLR-SSL
+                             * resource...or return the
+                             * output of said resource, e.g.,
+                             * if the resource is a function.
+                             *
+                             *
+                             * 5 :: Monday, April 20, 2026 @ 0328 hrs.
+                             *
+                             */
+                            return _crnrstn_native_resource_registry(
+                                   __FUNCTION__,
+                                   $R,
+                                   $request_type . '[' .
+                                   $R_resp[$memory_ptr]['resource_type'] . ']',
+                                   $R_resp,
+                                   $R_debug_mode,
+                                   $memory_ptr);
+
+                        break;
+                        case 'meta':
+
+                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                             * CLR-SSL Registry Resource
+                             * meta data fulfillment call.
+                             *
+                             *
+                             * 5 :: Friday, April 10, 2026 @ 1248 hrs.
+                             *
+                             */
+                            return _crnrstn_native_resource_registry(
+                                   __FUNCTION__,
+                                   $R,
+                                   'return[' .
+                                   $request_type . ']',
+                                   $R_resp,
+                                   $R_debug_mode,
+                                   $memory_ptr,
+                                   $R_data_000);
+
+                        break;
+                        default:
+
+                            $clr_ssl_msg = 'Unknown CLR-SSL Resource ' .
+                                           'Registry action received: ' .
+                                           \strval($request_type);
+                            // 5 :: Tue May 05 10:33:19.106296 2026
+                            $msg_token = '6cd1dd146f6320d2a7278c23c29c4e21' .
+                                         'b59674b4a3d3cc5be7324f79902432b3' .
+                                         'd4e5eb6a871cae0de8c7b25dc1bab5a4' .
+                                         '4a27cbe86420c4b168291a1437923f46';
+                            $token_generation_date = '2026-05-05 10:33:19';
+                            $token = array(
+                                     'token'                   => $msg_token,
+                                     'token_generation_date'   => $token_generation_date,
+                                     'request_type'            => $request_type,
+                                     'code'                    => 200,
+                                     'clr_ssl_msg'             => $clr_ssl_msg,
+                                     'memory_ptr'              => $memory_ptr,
+                                     'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'],
+                                     'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'],
+                                     'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']],
+                                     'namespace'               => $R_resp[$memory_ptr]['namespace'],
+                                     'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']],
+                                     'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']],
+                                     'resource_type'           => $R_resp[$memory_ptr]['resource_type'],
+                                     'resource_name'           => $R_resp[$memory_ptr]['resource_name'],
+                                     'software_version'        => $R_resp[$memory_ptr]['software_default'],
+                                     'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'],
+                                     'software_company'        => $R_resp[$memory_ptr]['software_company']['key'],
+                                     'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']],
+                                     'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
+                            $R->error_log(
+                                $clr_ssl_msg,
+                                \LOG_ERR,
+                                \E_ERROR,
+                                __LINE__,
+                                __FUNCTION__,
+                                __FILE__,
                                 $token);
 
                             return false;
@@ -31563,7 +34168,7 @@ function _crnrstn_native_resource_registry(
                      * more on-point data if that 
                      * is required.
                      *
-                     * $this->initialize_application_path('clr_ssl_rasl_https');
+                     * $R->initialize_application_path('clr_ssl_rasl_https');
                      *
                      *
                      * 5 :: Tuesday, June 2, 2026 @ 0825 hrs.
@@ -39904,2704 +42509,6 @@ function _crnrstn_native_resource_registry(
                     }
 
                 break;
-                case $root . $os_path_dir_separator_char . 
-                     'class' . $os_path_dir_separator_char . 
-                     'thirdparty' . $os_path_dir_separator_char . 
-                     'nusoap' . $os_path_dir_separator_char . 
-                     '1.124' . $os_path_dir_separator_char . 
-                     'class.nusoap_server_mime.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
-                case '1.124' . $os_path_dir_separator_char . 
-                     'class.nusoap_server_mime.php':
-                case __NAMESPACE__ . 
-                     '\nusoap_server_mime':
-                case 'nusoap_server_mime':
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * case 'nusoap_server_mime[1.124]':
-                     *
-                     *
-                     * 5 :: Tuesday, July 16, 2024 @ 0844 hrs.
-                     *
-                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize the system 
-                     * configuration resource 
-                     * file path. 
-                     *
-                     */
-                    $tmp_resource_name_1_124                = 'nusoap_server_mime';
-                    $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'nusoap_server_mime';
-                    $tmp_storage_arch_1_124                 = 'general_resource';
-                    $tmp_file_name_1_124                    = 'class.nusoap_server_mime.php';
-                    $tmp_file_path_1_124                    = $root . $os_path_dir_separator_char . 
-                                                              'class' . $os_path_dir_separator_char . 
-                                                              'thirdparty' . $os_path_dir_separator_char . 
-                                                              'nusoap' . $os_path_dir_separator_char . 
-                                                              '1.124' . $os_path_dir_separator_char . 
-                                                              $tmp_file_name_1_124;
-                    $tmp_obj_exe_path_1_124                 = $root . $os_path_dir_separator_char .
-                                                              '_config' . $os_path_dir_separator_char .
-                                                              '_config.resource_registry' . $os_path_dir_separator_char .
-                                                              'resource' . $os_path_dir_separator_char .
-                                                              $tmp_type_dir . '_return' . $os_path_dir_separator_char .
-                                                              $tmp_resource_name_1_124 . $os_path_dir_separator_char .
-                                                              'crnrstn.' . $tmp_resource_name_1_124 . 
-                                                              '.fire_bolt_exe.php';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize the CRNRSTN :: 
-                     * Lightsaber RoCEv2 SOAP 
-                     * Services Layer (CLR-SSL) 
-                     * Multi-Language Services 
-                     * Layer for resource 
-                     * meta return. 
-                     *
-                     *
-                     * 5
-                     *
-                     * Saturday, August 24, 2024 @ 0458 hrs.
-                     *
-                     */
-                    switch($tmp_iso_lang_code){
-                        //case 'es':
-                        case 'en':
-                        default:
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize a title for this 
-                             * natively registered resource of 
-                             * the CRNRSTN :: Lightsaber RoCEv2 
-                             * SOAP Services Layer (CLR-SSL) 
-                             * System Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             */
-                            $tmp_TITLE_TEXT = 'NuSOAP - Web Services PHP ' .
-                            'Toolkit NuSOAP Server MIME ' .
-                            'Attachments Supported by ' .
-                            'PEAR Mail MIME';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the license name for 
-                             * this natively registered resource 
-                             * of the CRNRSTN :: Lightsaber 
-                             * RoCEv2 SOAP Services Layer 
-                             * (CLR-SSL) Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             */
-                            $tmp_LICENSE_NAME_TEXT = 'GNU Lesser General Public ' .
-                            'License version 2.1 or ' .
-                            '(at your option) any ' .
-                            'later version.';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the license URL 
-                             * for this natively registered 
-                             * resource of the CRNRSTN :: 
-                             * Lightsaber RoCEv2 SOAP 
-                             * Services Layer (CLR-SSL) 
-                             * System Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             * Saturday, November 1, 2025 @ 2139 hrs.
-                             *
-                             */
-                            $tmp_LICENSE_URL = 'http://www.gnu.org/licenses/lgpl-2.1.html';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the copyright 
-                             * data for this natively 
-                             * registered resource of 
-                             * the CRNRSTN :: Lightsaber 
-                             * RoCEv2 SOAP Services 
-                             * Layer (CLR-SSL) System 
-                             * Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             * Saturday, August 24, 2024 @ 0700 hrs.
-                             *
-                             */
-                            $tmp_COPYRIGHT_TEXT = 'Copyright (c) 2002 NuSphere Corporation.';
-
-                        break;
-
-                    }
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Prepare a memory pointer 
-                     * in order to index this 
-                     * resource in the CLR-SSL 
-                     * Resource Registry data 
-                     * output container. 
-                     *
-                     *
-                     * 5 :: Wednesday, April 15, 2026 @ 0817 hrs.
-                     *
-                     */
-                    $memory_ptr = $R->generate_memory_pointer($tmp_file_path_1_124);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize a CLR-SSL 
-                     * Resource Registry 
-                     * response output 
-                     * data container. 
-                     *
-                     * $R_resp = array();
-                     *
-                     *
-                     * 5 :: Saturday, April 4, 2026 @ 1453 hrs.
-                     *
-                     */
-                    $R_resp                                           = array();
-                    $R_resp['clr_ssl_resource']['memory_pointer'][]   = $memory_ptr;
-                    $R_resp[$memory_ptr]['resource_name']             = $tmp_resource_name_1_124;
-                    $R_resp[$memory_ptr]['iso_lang_code']             = $tmp_iso_lang_code;
-                    $R_resp[$memory_ptr]['background_color_hex']      = $tmp_background_color_hex;
-                    $R_resp[$memory_ptr]['title']['TEXT']             = $tmp_TITLE_TEXT;
-                    $R_resp[$memory_ptr]['software_company']['key']   = 'NuSphere Corporation';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Load v1.123 of the 
-                     * NuSOAP - Web Services 
-                     * Toolkit when PHP < 5.6.0. 
-                     *
-                     * Example #2 PHP_VERSION_ID 
-                     * example and usage. 
-                     * https://www.php.net/manual/en/function.phpversion.php
-                     *
-                     *
-                     * 5 :: Monday, August 17, 2026 @ 2321 hrs.
-                     *
-                     */
-                    if(\PHP_VERSION_ID < 50600)
-                        $R_resp[$memory_ptr]['software_default']      = '1.124'; //'1.123';
-                    else
-                        $R_resp[$memory_ptr]['software_default']      = '1.124';
-
-                    $R_resp[$memory_ptr]['license']['key']            = array('1.124' => 'GNU_Lesser_2.1');
-                    $R_resp[$memory_ptr]['license']['name']           = array('1.124' => $tmp_LICENSE_NAME_TEXT);
-                    $R_resp[$memory_ptr]['license']['url']            = array('1.124' => $tmp_LICENSE_URL);
-                    $R_resp[$memory_ptr]['copyright']                 = array('1.124' => $tmp_COPYRIGHT_TEXT);
-
-                    if($request_type === 'meta'){
-                        // 5 :: Friday, May 22, 2026 @ 1316 hrs.
-
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Sun Aug 25 03:51:45.619026 2024';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Tue Jul 16 10:47:28.511245 2024';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
-
-                    }
-
-                    $R_resp[$memory_ptr]['microtime']                 = $R->microtime_float();
-                    $R_resp[$memory_ptr]['timestamp']                 = \gettimeofday();
-                    $R_resp[$memory_ptr]['runtime']                   = $R->wall_time();
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * require 
-                     * require_once
-                     * include
-                     * include_once
-                     */
-                    $R_resp[$memory_ptr]['evaluation_protocol']       = array('1.124' => 'require');
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOAP_ENDPOINT
-                     * CLASS_DEFINITION
-                     * FUNCTION_DEFINITION
-                     * RUNTIME_EXECUTABLE
-                     */
-                    $R_resp[$memory_ptr]['resource_type']             = 'CLASS_DEFINITION';
-                    $R_resp[$memory_ptr]['public_key']                = $tmp_public_key;
-                    $R_resp[$memory_ptr]['storage_arch']              = array('1.124' => $tmp_storage_arch_1_124);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * (int) $int_flag['R_load_many_to_1_request']
-                     * (int) $int_flag['R_load_1_to_1_request']
-                     * (int) $int_flag['R_load_1_to_1_session']
-                     * (int) $int_flag['R_load_on_ttl_expire']
-                     */
-                    $R_resp[$memory_ptr]['loading_arch']              = array('1.124' => $int_flag['R_load_many_to_1_request']);
-                    $R_resp[$memory_ptr]['namespace']                 = __NAMESPACE__;
-                    $R_resp[$memory_ptr]['file_path']['definition']   = array('1.124' => $tmp_file_path_1_124);
-                    $R_resp[$memory_ptr]['file_path']['new_obj_exe']  = array('1.124' => $tmp_obj_exe_path_1_124);
-                    $R_resp[$memory_ptr]['file_name']                 = array('1.124' => $tmp_file_name_1_124);
-                    $R_resp[$memory_ptr]['software_version']          = array('1.124');
-                    $R_resp[$memory_ptr]['is_active']                 = array('1.124' => true);
-                    $R_resp[$memory_ptr]['input_parameter_count']     = array('1.124' => 0);
-                    $R_resp[$memory_ptr]['input_parameter_defaults']  = array('1.124' => array());
-                    $R_resp[$memory_ptr]['eval_ttl']                  = array('1.124' => -1);
-                    $R_resp[$memory_ptr]['file_evaluate_enabled']     = array('1.124' => true);
-                    $R_resp[$memory_ptr]['auto_eval_mode_enabled']    = array('1.124' => true);
-                    $R_resp[$memory_ptr]['auto_obj_mode_enabled']     = array('1.124' => true);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * view_source_safe = 0 for admin 
-                     *                    only access. 
-                     * -----
-                     * This will grant a browser authenticated 
-                     * PHP admin session read access to 
-                     * source code. 
-                     *
-                     * Only an update to admin server 
-                     * settings should change this. 
-                     */
-                    $R_resp[$memory_ptr]['view_source_safe']          = array('1.124' => 0);
-                    $R_resp[$memory_ptr]['extends_class']             = array('1.124' => 'nusoap_server');
-                    $R_resp[$memory_ptr]['dependencies']              = array();
-                    $R_resp[$memory_ptr]['php_version']['removed']    = array();
-                    $R_resp[$memory_ptr]['php_version']['deprecated'] = array();
-                    $R_resp[$memory_ptr]['php_version']['supported']  = array('1.124' => 'PHP >= 5.6, PHP 7, PHP <= 8.5');
-
-                    $clr_ssl_msg = 'Request received for ' . 
-                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                   ', ' . 
-                                   $R_resp[$memory_ptr]['resource_name'] . 
-                                   ' v' . 
-                                   $R_resp[$memory_ptr]['software_default'] . 
-                                   '.';
-                    // 5 :: Sat May 02 05:01:08.346578 2026
-                    $msg_token = '8a94fc28432fb887756f4088845c3611' . 
-                                 'bfe4e3cb8617fd1eaafc17a9d88b68d7' . 
-                                 '4b1619e4ca74c14a24c9c376e388a3f6' . 
-                                 '6b95b245e13bc3bb5e4f363e1952173c';
-                    $token_generation_date = '2026-05-02 05:01:08';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => $request_type, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                             'memory_ptr'              => $memory_ptr, 
-                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_DEBUG, 
-                        \E_NOTICE, 
-                        __LINE__, 
-                        __FUNCTION__, 
-                        __FILE__, 
-                        $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * CLR-SSL Registry Resource 
-                     * High Level Architecture for 
-                     * Resource and Meta Access: 
-                     * - ping 
-                     * - evaluate 
-                     * - return 
-                     * - meta 
-                     *
-                     * Are we checking on the 
-                     * existence of the requested 
-                     * resource in the server 
-                     * file system? A resource 
-                     * ping? 
-                     *
-                     * Perhaps a function call or 
-                     * even an object needs to 
-                     * be returned? 
-                     *
-                     * Does someone need a class title 
-                     * in HTML? Maybe. 
-                     *
-                     *
-                     * 5 :: Friday, April 3, 2026 @ 0808 hrs.
-                     * Last Updated: Wednesday, April 15, 2026 @ 1825 hrs.
-                     *
-                     */
-                    switch($request_type){
-                        case 'ping':
-
-                            if($R->by_pass_is_file(
-                                   NULL, 
-                                   $R_resp[$memory_ptr]['resource_name'], 
-                                   $R_resp[$memory_ptr]['software_default']))
-                            {
-
-                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * return this resource? 
-                                     *
-                                     *
-                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'return[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);                // <-- true means skip the file check.
-
-                                        return $R_resp;
-
-                                    }
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * evaluate this resource? 
-                                     *
-                                     *
-                                     * 5 :: Thursday, May 21, 2026 @ 0720 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'evaluate[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);               // <-- true means skip the file check.
-
-                                }
-
-                                // 5 :: Saturday, May 9, 2026 @ 1307 hrs.
-                                return $R_resp;
-
-                            }
-
-                            if(!($R->is_file(
-                                     $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']], 
-                                     $R_resp[$memory_ptr]['resource_name'], 
-                                     $R_resp[$memory_ptr]['software_default'])))
-                            {
-
-                                $clr_ssl_msg = 'File not found: ' . 
-                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:04:13.880804 2026
-                                $msg_token = '2d7b5ec547dd30bc82bc132d105f4518' . 
-                                             '9607bdb8a5938fbf851dd0eb44d16092' . 
-                                             'c2eb4aacbf92334052a041284a3470fa' . 
-                                             '5c8832c31c7c04f416a858c3452a789a';
-                                $token_generation_date = '2026-05-05 10:04:13';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_CRIT, 
-                                    \E_ERROR, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                return false;
-
-                            }else{
-
-                                $clr_ssl_msg = 'The file system is ready for the ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ', ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Sat May 02 05:02:29.186810 2026
-                                $msg_token = '7655adbb41f64df853a24ee18d42d079' . 
-                                             '0719afce0001831b429fc3907f384669' . 
-                                             '7f86371ae76b72e412d06d6ee8649b7c' . 
-                                             '7eaacd25bbd7114995186e0bd3161fb5';
-                                $token_generation_date = '2026-05-02 05:02:29';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * return this resource? 
-                                     *
-                                     *
-                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'return[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);                // <-- true means skip the file check.
-
-                                        return $R_resp;
-
-                                    }
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * evaluate this resource? 
-                                     *
-                                     *
-                                     * 5 :: Thursday, May 21, 2026 @ 0711 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'evaluate[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);               // <-- true means skip the file check.
-
-                                }
-
-                                return $R_resp;
-
-                            }
-
-                        break;
-                        case 'return':
-                        case 'evaluate':
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * If the resource is inactive, 
-                             * (bool) $R_resp[$memory_ptr]['is_active']['2.00.0001'] == false, 
-                             * or the file path is not 
-                             * successfully pointing to 
-                             * a valid file, the CLR-SSL 
-                             * will neither evaluate nor 
-                             * return the result of a 
-                             * class, function or 
-                             * runtime executable 
-                             * system resource. 
-                             *
-                             * It is worth mentioning 
-                             * that viewing the file 
-                             * source code could still 
-                             * be technically allowed to 
-                             * work on an "inactive" 
-                             * CLR-SSL resource. 
-                             *
-                             *
-                             * 5 :: Tuesday, April 20, 2026 @ 2206 hrs.
-                             *
-                             */
-                            if(!((bool) $R_resp[$memory_ptr]['is_active'][$R_resp[$memory_ptr]['software_default']] !== false)){
-
-                                if($request_type == 'evaluate') 
-                                    $tmp_action_type = 'evaluation of the';
-                                else
-                                    $tmp_action_type = 'return of the';
-
-                                $clr_ssl_msg = 'Resource inactive: ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:06:24.981098 2026
-                                $msg_token = '23380f148ae85bddd4c9d7bed047f98b' . 
-                                             'c23ba88498b384f010f24fd4f5f16cfa' . 
-                                             '05d6e543fdedc4bf7092af019a022d1a' . 
-                                             'be081658600688341a856af0f24733ab';
-                                $token_generation_date = '2026-05-05 10:06:24';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                // 5 :: Tuesday, April 20, 2026 @ 2213 hrs.
-                                $clr_ssl_msg = 'Suppressed the ' . 
-                                               $tmp_action_type . ' of an inactive ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ' at ' . 
-                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:11:49.007474 2026
-                                $msg_token = '88c01ad203a1e81e2e29a909cd2db0d6' . 
-                                             '35fec2411c0237c895c7f7987554fece' . 
-                                             '5bd3fc07ee6d27f11a04fd1b0c2338e3' . 
-                                             '6ace299e8160c8baff138cc51efe7152';
-                                $token_generation_date = '2026-05-05 10:11:49';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_INFO, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                return false;
-
-                            }
-
-                            // True = skip file check. 
-                            if($R_data_001 != true)
-                            {
-
-                                if(!($R->is_file(
-                                         $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']], 
-                                         $R_resp[$memory_ptr]['resource_name'], 
-                                         $R_resp[$memory_ptr]['software_default'])))
-                                {
-
-                                    if($request_type == 'evaluate') 
-                                        $tmp_action_type = 'evaluate the';
-                                    else
-                                        $tmp_action_type = 'return the';
-
-                                    $clr_ssl_msg = 'File not found: ' . 
-                                                   $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                                   '.';
-                                    // 5 :: Tue May 05 10:15:43.832644 2026
-                                    $msg_token = 'cf880a514c68ffa704ffe8f38e0d9083' . 
-                                                 '577bc9c874a86e2ff392618ada4795c4' . 
-                                                 '6993b21104e8db611daa165c4a4c2078' . 
-                                                 'a0be9d18fc18ef8f2f3d9376bf832253';
-                                    $token_generation_date = '2026-05-05 10:15:43';
-                                    $token = array(
-                                             'token'                   => $msg_token, 
-                                             'token_generation_date'   => $token_generation_date, 
-                                             'request_type'            => $request_type, 
-                                             'code'                    => 200, 
-                                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                                             'memory_ptr'              => $memory_ptr, 
-                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                    $R->error_log(
-                                        $clr_ssl_msg, 
-                                        \LOG_CRIT, 
-                                        \E_ERROR, 
-                                        __LINE__, 
-                                        __FUNCTION__, 
-                                        __FILE__, 
-                                        $token);
-
-                                    // 5 :: Friday, April 3, 2026 @ 0316 hrs.
-                                    $clr_ssl_msg = 'Failed to ' . 
-                                                   $tmp_action_type . ' the ' . 
-                                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                                   ': ' . 
-                                                   $R_resp[$memory_ptr]['resource_name'] . 
-                                                   ' v' . 
-                                                   $R_resp[$memory_ptr]['software_default'] . 
-                                                   '.';
-                                    // 5 :: Tue May 05 10:18:00.372662 2026
-                                    $msg_token = 'c4f1806652abe22bba39fbe33791d3d9' . 
-                                                 'db5c84f2a9065e16771f1505a8a31e76' . 
-                                                 '42892735189a6dd708fea7194256a69c' . 
-                                                 '7fa79ab7410ab2a58ba0ccf7da492a97';
-                                    $token_generation_date = '2026-05-05 10:18:00';
-                                    $token = array(
-                                             'token'                   => $msg_token, 
-                                             'token_generation_date'   => $token_generation_date, 
-                                             'request_type'            => $request_type, 
-                                             'code'                    => 200, 
-                                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                                             'memory_ptr'              => $memory_ptr, 
-                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                    $R->error_log(
-                                        $clr_ssl_msg, 
-                                        \LOG_ERR,  
-                                        \E_ERROR, 
-                                        __LINE__, 
-                                        __FUNCTION__, 
-                                        __FILE__, 
-                                        $token);
-
-                                    return false;
-
-                                }
-
-                                $clr_ssl_msg = 'The file system is ready for the ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ', ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Sat May 02 05:04:19.291595 2026
-                                $msg_token = 'a473b8775976dc7305b7e9475de72377' . 
-                                             '1609fd624267e4497a7776267b16360c' . 
-                                             '6f2bc3900af708e3182032c136667e81' . 
-                                             'ab2be9fee9a26a460601f2b10ed1db5e';
-                                $token_generation_date = '2026-05-02 05:04:19';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                            }
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Evaluate the resource definition 
-                             * for a CLR-SSL Registry Resource 
-                             * and/or return a CLR-SSL 
-                             * resource...or return the 
-                             * output of said resource, e.g., 
-                             * if the resource is a function. 
-                             *
-                             *
-                             * 5 :: Monday, April 20, 2026 @ 0328 hrs.
-                             *
-                             */
-                            return _crnrstn_native_resource_registry(
-                                   __FUNCTION__, 
-                                   $R, 
-                                   $request_type . '[' . 
-                                   $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                   $R_resp, 
-                                   $R_debug_mode, 
-                                   $memory_ptr);
-
-                        break;
-                        case 'meta':
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * CLR-SSL Registry Resource 
-                             * meta data fulfillment call. 
-                             *
-                             *
-                             * 5 :: Friday, April 10, 2026 @ 1248 hrs.
-                             *
-                             */
-                            return _crnrstn_native_resource_registry(
-                                   __FUNCTION__, 
-                                   $R, 
-                                   'return[' . 
-                                   $request_type . ']', 
-                                   $R_resp, 
-                                   $R_debug_mode, 
-                                   $memory_ptr, 
-                                   $R_data_000);
-
-                        break;
-                        default:
-
-                            $clr_ssl_msg = 'Unknown CLR-SSL Resource ' . 
-                                           'Registry action received: ' . 
-                                           \strval($request_type);
-                            // 5 :: Tue May 05 10:19:04.892452 2026
-                            $msg_token = 'ad55464d4b6f95d3ea83d4391b9aff8c' . 
-                                         '7e0f758c3c9f6682e928b090d1653133' . 
-                                         'ce2678d80c932eb021be4e67193fff86' . 
-                                         '80e9513188a767c925b11d7eec44b697';
-                            $token_generation_date = '2026-05-05 10:19:04';
-                            $token = array(
-                                     'token'                   => $msg_token, 
-                                     'token_generation_date'   => $token_generation_date, 
-                                     'request_type'            => $request_type, 
-                                     'code'                    => 200, 
-                                     'clr_ssl_msg'             => $clr_ssl_msg, 
-                                     'memory_ptr'              => $memory_ptr, 
-                                     'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                     'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                     'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                     'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                     'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                     'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                     'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                     'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                     'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                     'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                     'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                     'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                            $R->error_log(
-                                $clr_ssl_msg, 
-                                \LOG_ERR, 
-                                \E_ERROR, 
-                                __LINE__, 
-                                __FUNCTION__, 
-                                __FILE__, 
-                                $token);
-
-                            return false;
-
-                        break;
-
-                    }
-
-                break;
-                case $root . $os_path_dir_separator_char . 
-                     'class' . $os_path_dir_separator_char . 
-                     'thirdparty' . $os_path_dir_separator_char . 
-                     'nusoap' . $os_path_dir_separator_char . 
-                     '1.124' . $os_path_dir_separator_char . 
-                     'class.nusoapservermime.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
-                case '1.124' . $os_path_dir_separator_char . 
-                     'class.nusoapservermime.php':
-                case __NAMESPACE__ . 
-                     '\nusoapservermime':
-                case 'nusoapservermime':
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * case 'nusoapservermime[1.124]':
-                     *
-                     *
-                     * 5 :: Tuesday, July 16, 2024 @ 0845 hrs.
-                     *
-                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize the system 
-                     * configuration resource 
-                     * file path. 
-                     *
-                     */
-                    $tmp_resource_name_1_124                = 'nusoapservermime';
-                    $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'nusoapservermime';
-                    $tmp_storage_arch_1_124                 = 'general_resource';
-                    $tmp_file_name_1_124                    = 'class.nusoapservermime.php';
-                    $tmp_file_path_1_124                    = $root . $os_path_dir_separator_char . 
-                                                              'class' . $os_path_dir_separator_char . 
-                                                              'thirdparty' . $os_path_dir_separator_char . 
-                                                              'nusoap' . $os_path_dir_separator_char . 
-                                                              '1.124' . $os_path_dir_separator_char . 
-                                                              $tmp_file_name_1_124;
-                    $tmp_obj_exe_path_1_124                 = $root . $os_path_dir_separator_char .
-                                                              '_config' . $os_path_dir_separator_char .
-                                                              '_config.resource_registry' . $os_path_dir_separator_char .
-                                                              'resource' . $os_path_dir_separator_char .
-                                                              $tmp_type_dir . '_return' . $os_path_dir_separator_char .
-                                                              $tmp_resource_name_1_124 . $os_path_dir_separator_char .
-                                                              'crnrstn.' . $tmp_resource_name_1_124 . 
-                                                              '.fire_bolt_exe.php';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize the CRNRSTN :: 
-                     * Lightsaber RoCEv2 SOAP 
-                     * Services Layer (CLR-SSL) 
-                     * Multi-Language Services 
-                     * Layer for resource 
-                     * meta return. 
-                     *
-                     *
-                     * 5
-                     *
-                     * Saturday, August 24, 2024 @ 0458 hrs.
-                     *
-                     */
-                    switch($tmp_iso_lang_code){
-                        //case 'es':
-                        case 'en':
-                        default:
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize a title for this 
-                             * natively registered resource of 
-                             * the CRNRSTN :: Lightsaber RoCEv2 
-                             * SOAP Services Layer (CLR-SSL) 
-                             * System Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             */
-                            $tmp_TITLE_TEXT = 'NuSOAP - Web Services PHP ' . 
-                            'Toolkit NuSOAP Server Mime ' . 
-                            'Backwards Compatibility Patch';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the license name for 
-                             * this natively registered resource 
-                             * of the CRNRSTN :: Lightsaber 
-                             * RoCEv2 SOAP Services Layer 
-                             * (CLR-SSL) Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             */
-                            $tmp_LICENSE_NAME_TEXT = 'GNU Lesser General Public ' . 
-                            'License version 2.1 or ' . 
-                            '(at your option) any ' . 
-                            'later version.';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the license URL 
-                             * for this natively registered 
-                             * resource of the CRNRSTN :: 
-                             * Lightsaber RoCEv2 SOAP 
-                             * Services Layer (CLR-SSL) 
-                             * System Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             * Saturday, November 1, 2025 @ 2139 hrs.
-                             *
-                             */
-                            $tmp_LICENSE_URL = 'http://www.gnu.org/licenses/lgpl-2.1.html';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the copyright 
-                             * data for this natively 
-                             * registered resource of 
-                             * the CRNRSTN :: Lightsaber 
-                             * RoCEv2 SOAP Services 
-                             * Layer (CLR-SSL) System 
-                             * Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             * Saturday, August 24, 2024 @ 0700 hrs.
-                             *
-                             */
-                            $tmp_COPYRIGHT_TEXT = 'Copyright (c) 2002 NuSphere Corporation.';
-
-                        break;
-
-                    }
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Prepare a memory pointer 
-                     * in order to index this 
-                     * resource in the CLR-SSL 
-                     * Resource Registry data 
-                     * output container. 
-                     *
-                     *
-                     * 5 :: Wednesday, April 15, 2026 @ 0817 hrs.
-                     *
-                     */
-                    $memory_ptr = $R->generate_memory_pointer($tmp_file_path_1_124);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize a CLR-SSL 
-                     * Resource Registry 
-                     * response output 
-                     * data container. 
-                     *
-                     * $R_resp = array();
-                     *
-                     *
-                     * 5 :: Saturday, April 4, 2026 @ 1453 hrs.
-                     *
-                     */
-                    $R_resp                                           = array();
-                    $R_resp['clr_ssl_resource']['memory_pointer'][]   = $memory_ptr;
-                    $R_resp[$memory_ptr]['resource_name']             = $tmp_resource_name_1_124;
-                    $R_resp[$memory_ptr]['iso_lang_code']             = $tmp_iso_lang_code;
-                    $R_resp[$memory_ptr]['background_color_hex']      = $tmp_background_color_hex;
-                    $R_resp[$memory_ptr]['title']['TEXT']             = $tmp_TITLE_TEXT;
-                    $R_resp[$memory_ptr]['software_company']['key']   = 'NuSphere Corporation';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Load v1.123 of the 
-                     * NuSOAP - Web Services 
-                     * Toolkit when PHP < 5.6.0. 
-                     *
-                     * Example #2 PHP_VERSION_ID 
-                     * example and usage. 
-                     * https://www.php.net/manual/en/function.phpversion.php
-                     *
-                     *
-                     * 5 :: Monday, August 17, 2026 @ 2321 hrs.
-                     *
-                     */
-                    if(\PHP_VERSION_ID < 50600)
-                        $R_resp[$memory_ptr]['software_default']      = '1.124'; //'1.123';
-                    else
-                        $R_resp[$memory_ptr]['software_default']      = '1.124';
-
-                    $R_resp[$memory_ptr]['license']['key']            = array('1.124' => 'GNU_Lesser_2.1');
-                    $R_resp[$memory_ptr]['license']['name']           = array('1.124' => $tmp_LICENSE_NAME_TEXT);
-                    $R_resp[$memory_ptr]['license']['url']            = array('1.124' => $tmp_LICENSE_URL);
-                    $R_resp[$memory_ptr]['copyright']                 = array('1.124' => $tmp_COPYRIGHT_TEXT);
-
-                    if($request_type === 'meta'){
-                        // 5 :: Friday, May 22, 2026 @ 1316 hrs.
-
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Sun Aug 25 03:52:34.876324 2024';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Tue Jul 16 10:43:22.719245 2024';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
-
-                    }
-
-                    $R_resp[$memory_ptr]['microtime']                 = $R->microtime_float();
-                    $R_resp[$memory_ptr]['timestamp']                 = \gettimeofday();
-                    $R_resp[$memory_ptr]['runtime']                   = $R->wall_time();
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * require 
-                     * require_once
-                     * include
-                     * include_once
-                     */
-                    $R_resp[$memory_ptr]['evaluation_protocol']       = array('1.124' => 'require');
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOAP_ENDPOINT
-                     * CLASS_DEFINITION
-                     * FUNCTION_DEFINITION
-                     * RUNTIME_EXECUTABLE
-                     */
-                    $R_resp[$memory_ptr]['resource_type']             = 'CLASS_DEFINITION';
-                    $R_resp[$memory_ptr]['public_key']                = $tmp_public_key;
-                    $R_resp[$memory_ptr]['storage_arch']              = array('1.124' => $tmp_storage_arch_1_124);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * (int) $int_flag['R_load_many_to_1_request']
-                     * (int) $int_flag['R_load_1_to_1_request']
-                     * (int) $int_flag['R_load_1_to_1_session']
-                     * (int) $int_flag['R_load_on_ttl_expire']
-                     */
-                    $R_resp[$memory_ptr]['loading_arch']              = array('1.124' => $int_flag['R_load_many_to_1_request']);
-                    $R_resp[$memory_ptr]['namespace']                 = __NAMESPACE__;
-                    $R_resp[$memory_ptr]['file_path']['definition']   = array('1.124' => $tmp_file_path_1_124);
-                    $R_resp[$memory_ptr]['file_path']['new_obj_exe']  = array('1.124' => $tmp_obj_exe_path_1_124);
-                    $R_resp[$memory_ptr]['file_name']                 = array('1.124' => $tmp_file_name_1_124);
-                    $R_resp[$memory_ptr]['software_version']          = array('1.124');
-                    $R_resp[$memory_ptr]['is_active']                 = array('1.124' => true);
-                    $R_resp[$memory_ptr]['input_parameter_count']     = array('1.124' => 0);
-                    $R_resp[$memory_ptr]['input_parameter_defaults']  = array('1.124' => array());
-                    $R_resp[$memory_ptr]['eval_ttl']                  = array('1.124' => -1);
-                    $R_resp[$memory_ptr]['file_evaluate_enabled']     = array('1.124' => true);
-                    $R_resp[$memory_ptr]['auto_eval_mode_enabled']    = array('1.124' => true);
-                    $R_resp[$memory_ptr]['auto_obj_mode_enabled']     = array('1.124' => true);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * view_source_safe = 0 for admin 
-                     *                    only access. 
-                     * -----
-                     * This will grant a browser authenticated 
-                     * PHP admin session read access to 
-                     * source code. 
-                     *
-                     * Only an update to admin server 
-                     * settings should change this. 
-                     */
-                    $R_resp[$memory_ptr]['view_source_safe']          = array('1.124' => 0);
-                    $R_resp[$memory_ptr]['extends_class']             = array('1.124' => 'nusoap_server_mime');
-                    $R_resp[$memory_ptr]['dependencies']              = array();
-                    $R_resp[$memory_ptr]['php_version']['removed']    = array();
-                    $R_resp[$memory_ptr]['php_version']['deprecated'] = array();
-                    $R_resp[$memory_ptr]['php_version']['supported']  = array('1.124' => 'PHP >= 5.6, PHP 7, PHP <= 8.5');
-
-                    $clr_ssl_msg = 'Request received for ' . 
-                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                   ', ' . 
-                                   $R_resp[$memory_ptr]['resource_name'] . 
-                                   ' v' . 
-                                   $R_resp[$memory_ptr]['software_default'] . 
-                                   '.';
-                    // 5 :: Sat May 02 05:05:39.398970 2026
-                    $msg_token = '6759234570f871c8e2b634fb835134f7' . 
-                                 'e209868c973c85c50dcae7b2e01c3e86' . 
-                                 'c2f448170d34bb7d7fab7438c6734594' . 
-                                 '278292a08d379af2ba75e0c7a1821b87';
-                    $token_generation_date = '2026-05-02 05:05:39';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => $request_type, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                             'memory_ptr'              => $memory_ptr, 
-                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_DEBUG, 
-                        \E_NOTICE, 
-                        __LINE__, 
-                        __FUNCTION__, 
-                        __FILE__, 
-                        $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * CLR-SSL Registry Resource 
-                     * High Level Architecture for 
-                     * Resource and Meta Access: 
-                     * - ping 
-                     * - evaluate 
-                     * - return 
-                     * - meta 
-                     *
-                     * Are we checking on the 
-                     * existence of the requested 
-                     * resource in the server 
-                     * file system? A resource 
-                     * ping? 
-                     *
-                     * Perhaps a function call or 
-                     * even an object needs to 
-                     * be returned? 
-                     *
-                     * Does someone need a class title 
-                     * in HTML? Maybe. 
-                     *
-                     *
-                     * 5 :: Friday, April 3, 2026 @ 0808 hrs.
-                     * Last Updated: Wednesday, April 15, 2026 @ 1825 hrs.
-                     *
-                     */
-                    switch($request_type){
-                        case 'ping':
-
-                            if($R->by_pass_is_file(
-                                   NULL, 
-                                   $R_resp[$memory_ptr]['resource_name'], 
-                                   $R_resp[$memory_ptr]['software_default']))
-                            {
-
-                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * return this resource? 
-                                     *
-                                     *
-                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'return[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);                // <-- true means skip the file check.
-
-                                        return $R_resp;
-
-                                    }
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * evaluate this resource? 
-                                     *
-                                     *
-                                     * 5 :: Thursday, May 21, 2026 @ 0720 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'evaluate[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);               // <-- true means skip the file check.
-
-                                }
-
-                                // 5 :: Saturday, May 9, 2026 @ 1307 hrs.
-                                return $R_resp;
-
-                            }
-
-                            if(!($R->is_file(
-                                     $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']], 
-                                     $R_resp[$memory_ptr]['resource_name'], 
-                                     $R_resp[$memory_ptr]['software_default'])))
-                            {
-
-                                $clr_ssl_msg = 'File not found: ' . 
-                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:20:15.434963 2026
-                                $msg_token = '3e0e9f7297448d6379a446a9001e2a00' . 
-                                             'c45fa1fa7b3dcf8cfe7190ade682a67f' . 
-                                             'e1837028c23728a292b9335d630acd43' . 
-                                             '7cbb09b1bee9771c289749daf4495eac';
-                                $token_generation_date = '2026-05-05 10:20:15';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_CRIT, 
-                                    \E_ERROR, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                return false;
-
-                            }else{
-
-                                $clr_ssl_msg = 'The file system is ready for the ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ', ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Sat May 02 05:07:00.134807 2026
-                                $msg_token = '5fa3ad7fcfa8d36548ae5e996e70fe00' . 
-                                             '3313fa0749be6d5c37d6065e6e175eac' . 
-                                             'c4d54c2c767972fe0322c9b9292634be' . 
-                                             '7c5441f132e0734b44c60eca1b480752';
-                                $token_generation_date = '2026-05-02 05:07:00';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * return this resource? 
-                                     *
-                                     *
-                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'return[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);                // <-- true means skip the file check.
-
-                                        return $R_resp;
-
-                                    }
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * evaluate this resource? 
-                                     *
-                                     *
-                                     * 5 :: Thursday, May 21, 2026 @ 0711 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'evaluate[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);               // <-- true means skip the file check.
-
-                                }
-
-                                return $R_resp;
-
-                            }
-
-                        break;
-                        case 'return':
-                        case 'evaluate':
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * If the resource is inactive, 
-                             * (bool) $R_resp[$memory_ptr]['is_active']['2.00.0001'] == false, 
-                             * or the file path is not 
-                             * successfully pointing to 
-                             * a valid file, the CLR-SSL 
-                             * will neither evaluate nor 
-                             * return the result of a 
-                             * class, function or 
-                             * runtime executable 
-                             * system resource. 
-                             *
-                             * It is worth mentioning 
-                             * that viewing the file 
-                             * source code could still 
-                             * be technically allowed to 
-                             * work on an "inactive" 
-                             * CLR-SSL resource. 
-                             *
-                             *
-                             * 5 :: Tuesday, April 20, 2026 @ 2206 hrs.
-                             *
-                             */
-                            if(!((bool) $R_resp[$memory_ptr]['is_active'][$R_resp[$memory_ptr]['software_default']] !== false)){
-
-                                if($request_type == 'evaluate') 
-                                    $tmp_action_type = 'evaluation of the';
-                                else
-                                    $tmp_action_type = 'return of the';
-
-                                $clr_ssl_msg = 'Resource inactive: ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:24:34.322912 2026
-                                $msg_token = 'fc16594c2eb6d5caf9463e63593e79ec' . 
-                                             '4fed6c750fda55e9d688f701a96b5559' . 
-                                             'a2d2c8614b3c8ef5cba2661bbe78fd6d' . 
-                                             'f77dbf45bf99ed02f94ba093cf87af3c';
-                                $token_generation_date = '2026-05-05 10:24:34';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                // 5 :: Tuesday, April 20, 2026 @ 2213 hrs.
-                                $clr_ssl_msg = 'Suppressed the ' . 
-                                               $tmp_action_type . ' of an inactive ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ' at ' . 
-                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:28:15.272761 2026
-                                $msg_token = 'ee9897b2cb67550a2971119626eae40c' . 
-                                             '3fe3f0982fdd1715419a883db9d7b562' . 
-                                             '279f381fd93fa68b313b1eef56b5438b' . 
-                                             '4ee440e8154e852479826063e21b815e';
-                                $token_generation_date = '2026-05-05 10:28:15';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_INFO, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                return false;
-
-                            }
-
-                            // True = skip file check. 
-                            if($R_data_001 != true)
-                            {
-
-                                if(!($R->is_file(
-                                         $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']], 
-                                         $R_resp[$memory_ptr]['resource_name'], 
-                                         $R_resp[$memory_ptr]['software_default'])))
-                                {
-
-                                    if($request_type == 'evaluate') 
-                                        $tmp_action_type = 'evaluate the';
-                                    else
-                                        $tmp_action_type = 'return the';
-
-                                    $clr_ssl_msg = 'File not found: ' . 
-                                                   $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                                   '.';
-                                    // 5 :: Tue May 05 10:29:55.993830 2026
-                                    $msg_token = 'c82177548fafa898a4bae4719080873f' . 
-                                                 '50f258a045353e6fac617b5f53b4ddd4' . 
-                                                 '623ff769ebc80e1283a8c598347399ca' . 
-                                                 '1fb896706bba5a05e225b6fe9a14a13b';
-                                    $token_generation_date = '2026-05-05 10:29:55';
-                                    $token = array(
-                                             'token'                   => $msg_token, 
-                                             'token_generation_date'   => $token_generation_date, 
-                                             'request_type'            => $request_type, 
-                                             'code'                    => 200, 
-                                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                                             'memory_ptr'              => $memory_ptr, 
-                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                    $R->error_log(
-                                        $clr_ssl_msg, 
-                                        \LOG_CRIT, 
-                                        \E_ERROR, 
-                                        __LINE__, 
-                                        __FUNCTION__, 
-                                        __FILE__, 
-                                        $token);
-
-                                    // 5 :: Friday, April 3, 2026 @ 0316 hrs.
-                                    $clr_ssl_msg = 'Failed to ' . 
-                                                   $tmp_action_type . ' the ' . 
-                                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                                   ': ' . 
-                                                   $R_resp[$memory_ptr]['resource_name'] . 
-                                                   ' v' . 
-                                                   $R_resp[$memory_ptr]['software_default'] . 
-                                                   '.';
-                                    // 5 :: Tue May 05 10:31:35.108072 2026
-                                    $msg_token = '8d2034505f052337690b5a06917debfe' . 
-                                                 '3ef6fac22b1489b6119b2158a8625dd1' . 
-                                                 '42da2933bcc7fadc1ac79e9d0bc63ff5' . 
-                                                 '83a2f7cef0cf6d2423f3a20f2c39e84d';
-                                    $token_generation_date = '2026-05-05 10:31:35';
-                                    $token = array(
-                                             'token'                   => $msg_token, 
-                                             'token_generation_date'   => $token_generation_date, 
-                                             'request_type'            => $request_type, 
-                                             'code'                    => 200, 
-                                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                                             'memory_ptr'              => $memory_ptr, 
-                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                    $R->error_log(
-                                        $clr_ssl_msg, 
-                                        \LOG_ERR,  
-                                        \E_ERROR, 
-                                        __LINE__, 
-                                        __FUNCTION__, 
-                                        __FILE__, 
-                                        $token);
-
-                                    return false;
-
-                                }
-
-                                $clr_ssl_msg = 'The file system is ready for the ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ', ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Sat May 02 05:08:14.805402 2026
-                                $msg_token = 'fa961724cb031475206a299fd2995076' . 
-                                             'adf23c966fc7dfd7cc9dc6bb91c1e458' . 
-                                             '9bbe323818e11008c26fcf386988b7da' . 
-                                             '0fb3e3469d37f85192e826ab4af5ff53';
-                                $token_generation_date = '2026-05-02 05:08:14';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                            }
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Evaluate the resource definition 
-                             * for a CLR-SSL Registry Resource 
-                             * and/or return a CLR-SSL 
-                             * resource...or return the 
-                             * output of said resource, e.g., 
-                             * if the resource is a function. 
-                             *
-                             *
-                             * 5 :: Monday, April 20, 2026 @ 0328 hrs.
-                             *
-                             */
-                            return _crnrstn_native_resource_registry(
-                                   __FUNCTION__, 
-                                   $R, 
-                                   $request_type . '[' . 
-                                   $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                   $R_resp, 
-                                   $R_debug_mode, 
-                                   $memory_ptr);
-
-                        break;
-                        case 'meta':
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * CLR-SSL Registry Resource 
-                             * meta data fulfillment call. 
-                             *
-                             *
-                             * 5 :: Friday, April 10, 2026 @ 1248 hrs.
-                             *
-                             */
-                            return _crnrstn_native_resource_registry(
-                                   __FUNCTION__, 
-                                   $R, 
-                                   'return[' . 
-                                   $request_type . ']', 
-                                   $R_resp, 
-                                   $R_debug_mode, 
-                                   $memory_ptr, 
-                                   $R_data_000);
-
-                        break;
-                        default:
-
-                            $clr_ssl_msg = 'Unknown CLR-SSL Resource ' . 
-                                           'Registry action received: ' . 
-                                           \strval($request_type);
-                            // 5 :: Tue May 05 10:33:19.106296 2026
-                            $msg_token = '6cd1dd146f6320d2a7278c23c29c4e21' . 
-                                         'b59674b4a3d3cc5be7324f79902432b3' . 
-                                         'd4e5eb6a871cae0de8c7b25dc1bab5a4' . 
-                                         '4a27cbe86420c4b168291a1437923f46';
-                            $token_generation_date = '2026-05-05 10:33:19';
-                            $token = array(
-                                     'token'                   => $msg_token, 
-                                     'token_generation_date'   => $token_generation_date, 
-                                     'request_type'            => $request_type, 
-                                     'code'                    => 200, 
-                                     'clr_ssl_msg'             => $clr_ssl_msg, 
-                                     'memory_ptr'              => $memory_ptr, 
-                                     'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                     'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                     'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                     'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                     'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                     'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                     'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                     'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                     'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                     'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                     'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                     'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                            $R->error_log(
-                                $clr_ssl_msg, 
-                                \LOG_ERR, 
-                                \E_ERROR, 
-                                __LINE__, 
-                                __FUNCTION__, 
-                                __FILE__, 
-                                $token);
-
-                            return false;
-
-                        break;
-
-                    }
-
-                break;
-                case $root . $os_path_dir_separator_char . 
-                     'class' . $os_path_dir_separator_char . 
-                     'thirdparty' . $os_path_dir_separator_char . 
-                     'nusoap' . $os_path_dir_separator_char . 
-                     '1.124' . $os_path_dir_separator_char . 
-                     'class.soapclientmime.php': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
-                case '1.124' . $os_path_dir_separator_char . 
-                     'class.soapclientmime.php':
-                case __NAMESPACE__ . 
-                     '\soapclientmime':
-                case 'soapclientmime':
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * case 'soapclientmime[1.124]':
-                     *
-                     *
-                     * 5 :: Tuesday, July 16, 2024 @ 0845 hrs.
-                     * 
-                     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize the system 
-                     * configuration resource 
-                     * file path. 
-                     *
-                     */
-                    $tmp_resource_name_1_124                = 'soapclientmime';
-                    $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'soapclientmime';
-                    $tmp_storage_arch_1_124                       = 'general_resource';
-                    $tmp_file_name_1_124                    = 'class.soapclientmime.php';
-                    $tmp_file_path_1_124                    = $root . $os_path_dir_separator_char . 
-                                                              'class' . $os_path_dir_separator_char . 
-                                                              'thirdparty' . $os_path_dir_separator_char . 
-                                                              'nusoap' . $os_path_dir_separator_char . 
-                                                              '1.124' . $os_path_dir_separator_char . 
-                                                              $tmp_file_name_1_124;
-                    $tmp_obj_exe_path_1_124                 = $root . $os_path_dir_separator_char .
-                                                              '_config' . $os_path_dir_separator_char .
-                                                              '_config.resource_registry' . $os_path_dir_separator_char .
-                                                              'resource' . $os_path_dir_separator_char .
-                                                              $tmp_type_dir . '_return' . $os_path_dir_separator_char .
-                                                              $tmp_resource_name_1_124 . $os_path_dir_separator_char .
-                                                              'crnrstn.' . $tmp_resource_name_1_124 . 
-                                                              '.fire_bolt_exe.php';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize the CRNRSTN :: 
-                     * Lightsaber RoCEv2 SOAP 
-                     * Services Layer (CLR-SSL) 
-                     * Multi-Language Services 
-                     * Layer for resource 
-                     * meta return. 
-                     *
-                     *
-                     * 5
-                     *
-                     * Saturday, August 24, 2024 @ 0458 hrs.
-                     *
-                     */
-                    switch($tmp_iso_lang_code){
-                        //case 'es':
-                        case 'en':
-                        default:
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize a title for this 
-                             * natively registered resource of 
-                             * the CRNRSTN :: Lightsaber RoCEv2 
-                             * SOAP Services Layer (CLR-SSL) 
-                             * System Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             */
-                            $tmp_TITLE_TEXT = 'NuSOAP - Web Services PHP ' .
-                            'Toolkit SOAP Client Mime ' .
-                            'Backwards Compatibility Patch';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the license name for 
-                             * this natively registered resource 
-                             * of the CRNRSTN :: Lightsaber 
-                             * RoCEv2 SOAP Services Layer 
-                             * (CLR-SSL) Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             */
-                            $tmp_LICENSE_NAME_TEXT = 'GNU Lesser General Public ' . 
-                            'License version 2.1 or ' . 
-                            '(at your option) any ' . 
-                            'later version.';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the license URL 
-                             * for this natively registered 
-                             * resource of the CRNRSTN :: 
-                             * Lightsaber RoCEv2 SOAP 
-                             * Services Layer (CLR-SSL) 
-                             * System Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             * Saturday, November 1, 2025 @ 2139 hrs.
-                             *
-                             */
-                            $tmp_LICENSE_URL = 'http://www.gnu.org/licenses/lgpl-2.1.html';
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Initialize the copyright 
-                             * data for this natively 
-                             * registered resource of 
-                             * the CRNRSTN :: Lightsaber 
-                             * RoCEv2 SOAP Services 
-                             * Layer (CLR-SSL) System 
-                             * Resource Registry. 
-                             *
-                             *
-                             * 5
-                             *
-                             * Saturday, August 24, 2024 @ 0700 hrs.
-                             *
-                             */
-                            $tmp_COPYRIGHT_TEXT = 'Copyright (c) 2002 NuSphere Corporation.';
-
-                        break;
-
-                    }
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Prepare a memory pointer 
-                     * in order to index this 
-                     * resource in the CLR-SSL 
-                     * Resource Registry data 
-                     * output container. 
-                     *
-                     *
-                     * 5 :: Wednesday, April 15, 2026 @ 0817 hrs.
-                     *
-                     */
-                    $memory_ptr = $R->generate_memory_pointer($tmp_file_path_1_124);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Initialize a CLR-SSL 
-                     * Resource Registry 
-                     * response output 
-                     * data container. 
-                     *
-                     * $R_resp = array();
-                     *
-                     *
-                     * 5 :: Saturday, April 4, 2026 @ 1453 hrs.
-                     *
-                     */
-                    $R_resp                                           = array();
-                    $R_resp['clr_ssl_resource']['memory_pointer'][]   = $memory_ptr;
-                    $R_resp[$memory_ptr]['resource_name']             = $tmp_resource_name_1_124;
-                    $R_resp[$memory_ptr]['iso_lang_code']             = $tmp_iso_lang_code;
-                    $R_resp[$memory_ptr]['background_color_hex']      = $tmp_background_color_hex;
-                    $R_resp[$memory_ptr]['title']['TEXT']             = $tmp_TITLE_TEXT;
-                    $R_resp[$memory_ptr]['software_company']['key']   = 'NuSphere Corporation';
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Load v1.123 of the 
-                     * NuSOAP - Web Services 
-                     * Toolkit when PHP < 5.6.0. 
-                     *
-                     * Example #2 PHP_VERSION_ID 
-                     * example and usage. 
-                     * https://www.php.net/manual/en/function.phpversion.php
-                     *
-                     *
-                     * 5 :: Monday, August 17, 2026 @ 2321 hrs.
-                     *
-                     */
-                    if(\PHP_VERSION_ID < 50600)
-                        $R_resp[$memory_ptr]['software_default']      = '1.124'; //'1.123';
-                    else
-                        $R_resp[$memory_ptr]['software_default']      = '1.124';
-
-                    $R_resp[$memory_ptr]['license']['key']            = array('1.124' => 'GNU_Lesser_2.1');
-                    $R_resp[$memory_ptr]['license']['name']           = array('1.124' => $tmp_LICENSE_NAME_TEXT);
-                    $R_resp[$memory_ptr]['license']['url']            = array('1.124' => $tmp_LICENSE_URL);
-                    $R_resp[$memory_ptr]['copyright']                 = array('1.124' => $tmp_COPYRIGHT_TEXT);
-
-                    if($request_type === 'meta'){
-                        // 5 :: Friday, May 22, 2026 @ 1316 hrs.
-
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Sun Aug 25 03:53:39.764398 2024';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Tue Jul 16 10:41:52.859252 2024';
-                        $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
-
-                    }
-
-                    $R_resp[$memory_ptr]['microtime']                 = $R->microtime_float();
-                    $R_resp[$memory_ptr]['timestamp']                 = \gettimeofday();
-                    $R_resp[$memory_ptr]['runtime']                   = $R->wall_time();
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * require 
-                     * require_once
-                     * include
-                     * include_once
-                     */
-                    $R_resp[$memory_ptr]['evaluation_protocol']       = array('1.124' => 'require');
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * SOAP_ENDPOINT
-                     * CLASS_DEFINITION
-                     * FUNCTION_DEFINITION
-                     * RUNTIME_EXECUTABLE
-                     */
-                    $R_resp[$memory_ptr]['resource_type']             = 'CLASS_DEFINITION';
-                    $R_resp[$memory_ptr]['public_key']                = $tmp_public_key;
-                    $R_resp[$memory_ptr]['storage_arch']              = array('1.124' => $tmp_storage_arch_1_124);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * (int) $int_flag['R_load_many_to_1_request']
-                     * (int) $int_flag['R_load_1_to_1_request']
-                     * (int) $int_flag['R_load_1_to_1_session']
-                     * (int) $int_flag['R_load_on_ttl_expire']
-                     */
-                    $R_resp[$memory_ptr]['loading_arch']              = array('1.124' => $int_flag['R_load_many_to_1_request']);
-                    $R_resp[$memory_ptr]['namespace']                 = __NAMESPACE__;
-                    $R_resp[$memory_ptr]['file_path']['definition']   = array('1.124' => $tmp_file_path_1_124);
-                    $R_resp[$memory_ptr]['file_path']['new_obj_exe']  = array('1.124' => $tmp_obj_exe_path_1_124);
-                    $R_resp[$memory_ptr]['file_name']                 = array('1.124' => $tmp_file_name_1_124);
-                    $R_resp[$memory_ptr]['software_version']          = array('1.124');
-                    $R_resp[$memory_ptr]['is_active']                 = array('1.124' => true);
-                    $R_resp[$memory_ptr]['input_parameter_count']     = array('1.124' => 0);
-                    $R_resp[$memory_ptr]['input_parameter_defaults']  = array('1.124' => array());
-                    $R_resp[$memory_ptr]['eval_ttl']                  = array('1.124' => -1);
-                    $R_resp[$memory_ptr]['file_evaluate_enabled']     = array('1.124' => true);
-                    $R_resp[$memory_ptr]['auto_eval_mode_enabled']    = array('1.124' => true);
-                    $R_resp[$memory_ptr]['auto_obj_mode_enabled']     = array('1.124' => true);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * view_source_safe = 0 for admin 
-                     *                    only access. 
-                     * -----
-                     * This will grant a browser authenticated 
-                     * PHP admin session read access to 
-                     * source code. 
-                     *
-                     * Only an update to admin server 
-                     * settings should change this. 
-                     */
-                    $R_resp[$memory_ptr]['view_source_safe']          = array('1.124' => 0);
-                    $R_resp[$memory_ptr]['extends_class']             = array('1.124' => 'nusoap_client_mime');
-                    $R_resp[$memory_ptr]['dependencies']              = array();
-                    $R_resp[$memory_ptr]['php_version']['removed']    = array();
-                    $R_resp[$memory_ptr]['php_version']['deprecated'] = array();
-                    $R_resp[$memory_ptr]['php_version']['supported']  = array('1.124' => 'PHP >= 5.6, ' . 
-                                                                                         'PHP 7, PHP <= 8.5');
-
-                    $clr_ssl_msg = 'Request received for ' . 
-                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                   ', ' . 
-                                   $R_resp[$memory_ptr]['resource_name'] . 
-                                   ' v' . 
-                                   $R_resp[$memory_ptr]['software_default'] . 
-                                   '.';
-                    // 5 :: Sat May 02 05:09:58.253792 2026
-                    $msg_token = 'c5a7e39f34c63839a4c750f33f1e57ba' . 
-                                 'a3831d15c5c1bd6ef2fa2c236bc1f035' . 
-                                 'c7f0bd1bf5a44a656df993705850cd24' . 
-                                 '77a5e6ae07218dce37ebffd9630dc6da';
-                    $token_generation_date = '2026-05-02 05:09:58';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => $request_type, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                             'memory_ptr'              => $memory_ptr, 
-                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_DEBUG, 
-                        \E_NOTICE, 
-                        __LINE__, 
-                        __FUNCTION__, 
-                        __FILE__, 
-                        $token);
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * CLR-SSL Registry Resource 
-                     * High Level Architecture for 
-                     * Resource and Meta Access: 
-                     * - ping 
-                     * - evaluate 
-                     * - return 
-                     * - meta 
-                     *
-                     * Are we checking on the 
-                     * existence of the requested 
-                     * resource in the server 
-                     * file system? A resource 
-                     * ping? 
-                     *
-                     * Perhaps a function call or 
-                     * even an object needs to 
-                     * be returned? 
-                     *
-                     * Does someone need a class title 
-                     * in HTML? Maybe. 
-                     *
-                     *
-                     * 5 :: Friday, April 3, 2026 @ 0808 hrs.
-                     * Last Updated: Wednesday, April 15, 2026 @ 1825 hrs.
-                     *
-                     */
-                    switch($request_type){
-                        case 'ping':
-
-                            if($R->by_pass_is_file(
-                                   NULL, 
-                                   $R_resp[$memory_ptr]['resource_name'], 
-                                   $R_resp[$memory_ptr]['software_default']))
-                            {
-
-                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * return this resource? 
-                                     *
-                                     *
-                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'return[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);                // <-- true means skip the file check.
-
-                                        return $R_resp;
-
-                                    }
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * evaluate this resource? 
-                                     *
-                                     *
-                                     * 5 :: Thursday, May 21, 2026 @ 0720 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'evaluate[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);               // <-- true means skip the file check.
-
-                                }
-
-                                // 5 :: Saturday, May 9, 2026 @ 1307 hrs.
-                                return $R_resp;
-
-                            }
-
-                            if(!($R->is_file(
-                                     $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']], 
-                                     $R_resp[$memory_ptr]['resource_name'], 
-                                     $R_resp[$memory_ptr]['software_default'])))
-                            {
-
-                                $clr_ssl_msg = 'File not found: ' . 
-                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:34:21.410099 2026
-                                $msg_token = 'f86218697a878ffeb49113b1592e932a' . 
-                                             '5c8948ef5be919ae5203dcf8f39f6674' . 
-                                             'cf83e763d800a7cd3c6435e9371b3c3f' . 
-                                             '55ef7454c6477b50dd5677cb8999878b';
-                                $token_generation_date = '2026-05-05 10:34:21';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_CRIT, 
-                                    \E_ERROR, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                return false;
-
-                            }else{
-
-                                $clr_ssl_msg = 'The file system is ready for the ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ', ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Sat May 02 05:11:13.188544 2026
-                                $msg_token = '66baaf0359e0eadf9868de9aea11aa46' . 
-                                             '65391eef25c4ccfde8027e5d0296ed61' . 
-                                             'aedff61fb4f2eecb6e6669f901859561' . 
-                                             '6c452dabcab6c724cbe9c3f8140246b7';
-                                $token_generation_date = '2026-05-02 05:11:13';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                if($R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * return this resource? 
-                                     *
-                                     *
-                                     * 5 :: Tuesday, June 9, 2026 @ 1705 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false){
-
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'return[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);                // <-- true means skip the file check.
-
-                                        return $R_resp;
-
-                                    }
-
-                                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                     * Do we automatically 
-                                     * evaluate this resource? 
-                                     *
-                                     *
-                                     * 5 :: Thursday, May 21, 2026 @ 0711 hrs.
-                                     *
-                                     */
-                                    if($R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']] !== false)
-                                        $R_resp = _crnrstn_native_resource_registry(
-                                                  __FUNCTION__, 
-                                                  $R, 
-                                                  'evaluate[' . 
-                                                  $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                                  $R_resp, 
-                                                  $R_debug_mode, 
-                                                  $memory_ptr, 
-                                                  true);               // <-- true means skip the file check.
-
-                                }
-
-                                return $R_resp;
-
-                            }
-
-                        break;
-                        case 'return':
-                        case 'evaluate':
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * If the resource is inactive, 
-                             * (bool) $R_resp[$memory_ptr]['is_active']['2.00.0001'] == false, 
-                             * or the file path is not 
-                             * successfully pointing to 
-                             * a valid file, the CLR-SSL 
-                             * will neither evaluate nor 
-                             * return the result of a 
-                             * class, function or 
-                             * runtime executable 
-                             * system resource. 
-                             *
-                             * It is worth mentioning 
-                             * that viewing the file 
-                             * source code could still 
-                             * be technically allowed to 
-                             * work on an "inactive" 
-                             * CLR-SSL resource. 
-                             *
-                             *
-                             * 5 :: Tuesday, April 20, 2026 @ 2206 hrs.
-                             *
-                             */
-                            if(!((bool) $R_resp[$memory_ptr]['is_active'][$R_resp[$memory_ptr]['software_default']] !== false)){
-
-                                if($request_type == 'evaluate') 
-                                    $tmp_action_type = 'evaluation of the';
-                                else
-                                    $tmp_action_type = 'return of the';
-
-                                $clr_ssl_msg = 'Resource inactive: ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:35:35.553788 2026
-                                $msg_token = '201960d970e0ae1eeda4ff156edf4679' . 
-                                             '0bf5aa395548ea184874cdf3e8f2a742' . 
-                                             'c5889a4648bb69cddeccfb076224bb0f' . 
-                                             '77b0bd62bf3726e23718e38afb509bdc';
-                                $token_generation_date = '2026-05-05 10:35:35';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                // 5 :: Tuesday, April 20, 2026 @ 2213 hrs.
-                                $clr_ssl_msg = 'Suppressed the ' . 
-                                               $tmp_action_type . ' of an inactive ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ' at ' . 
-                                               $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                               '.';
-                                // 5 :: Tue May 05 10:40:55.187196 2026
-                                $msg_token = '864be09888d08df5fbd253374ea7e160' . 
-                                             '181eaa7c6e2c583a5db4619199386e25' . 
-                                             '63a4b4ee0a16411c16887eca7b47e130' . 
-                                             '814e5f5c0ceff24cd2d29f6a5ab05a60';
-                                $token_generation_date = '2026-05-05 10:40:55';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_INFO, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                                return false;
-
-                            }
-
-                            // True = skip file check. 
-                            if($R_data_001 != true)
-                            {
-
-                                if(!($R->is_file(
-                                         $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']], 
-                                         $R_resp[$memory_ptr]['resource_name'], 
-                                         $R_resp[$memory_ptr]['software_default'])))
-                                {
-
-                                    if($request_type == 'evaluate') 
-                                        $tmp_action_type = 'evaluate the';
-                                    else
-                                        $tmp_action_type = 'return the';
-
-                                    $clr_ssl_msg = 'File not found: ' . 
-                                                   $R_resp[$memory_ptr]['file_path']['definition'][$R_resp[$memory_ptr]['software_default']] . 
-                                                   '.';
-                                    // 5 :: Mon May 04 11:43:18.601975 2026
-                                    $msg_token = 'becce664f25748d4ccbdadd448154814' . 
-                                                 '61ad56445dce65672910e312ae6521da' . 
-                                                 '4cf5c4c5bc7fa4609098ad53d2ada748' . 
-                                                 'dea2d12b4d472f5bbc92ac8a3099e1ae';
-                                    $token_generation_date = '2026-05-04 11:43:18';
-                                    $token = array(
-                                             'token'                   => $msg_token, 
-                                             'token_generation_date'   => $token_generation_date, 
-                                             'request_type'            => $request_type, 
-                                             'code'                    => 200, 
-                                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                                             'memory_ptr'              => $memory_ptr, 
-                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                    $R->error_log(
-                                        $clr_ssl_msg, 
-                                        \LOG_CRIT, 
-                                        \E_ERROR, 
-                                        __LINE__, 
-                                        __FUNCTION__, 
-                                        __FILE__, 
-                                        $token);
-
-                                    // 5 :: Friday, April 3, 2026 @ 0316 hrs.
-                                    $clr_ssl_msg = 'Failed to ' . 
-                                                   $tmp_action_type . ' ' . 
-                                                   $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . ': ' . 
-                                                   $R_resp[$memory_ptr]['resource_name'] . '.';
-                                    // 5 :: Mon May 04 11:46:24.591492 2026
-                                    $msg_token = 'f73b7f224db29d2351053223edb0ca6c' . 
-                                                 '2a6a05d0619fe0e1fc99cc063cf8110b' . 
-                                                 'ce469260c189da2b1ac5bd09244792d3' . 
-                                                 '936b29e570a95837735955d5aad2578a';
-                                    $token_generation_date = '2026-05-04 11:46:24';
-                                    $token = array(
-                                             'token'                   => $msg_token, 
-                                             'token_generation_date'   => $token_generation_date, 
-                                             'request_type'            => $request_type, 
-                                             'code'                    => 200, 
-                                             'clr_ssl_msg'             => $clr_ssl_msg, 
-                                             'memory_ptr'              => $memory_ptr, 
-                                             'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                             'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                             'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                             'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                             'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                             'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                             'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                             'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                             'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                             'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                             'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                             'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                    $R->error_log(
-                                        $clr_ssl_msg, 
-                                        \LOG_ERR, 
-                                        \E_ERROR, 
-                                        __LINE__, 
-                                        __FUNCTION__, 
-                                        __FILE__, 
-                                        $token);
-
-                                    return false;
-
-                                }
-
-                                $clr_ssl_msg = 'The file system is ready for the ' . 
-                                               $R_syntax['resource_type'][$R_resp[$memory_ptr]['resource_type']] . 
-                                               ', ' . 
-                                               $R_resp[$memory_ptr]['resource_name'] . 
-                                               ' v' . 
-                                               $R_resp[$memory_ptr]['software_default'] . 
-                                               '.';
-                                // 5 :: Sat May 02 05:12:39.467621 2026
-                                $msg_token = '5cb36eceda47d94aa18e7dbc987bc083' . 
-                                             'bc73d4296245a0c62dc8818fc80e5ce5' . 
-                                             'c63f55fb03b78c6fc969b5e4e2313eeb' . 
-                                             'c766a93d282bdec4302ea84547a12282';
-                                $token_generation_date = '2026-05-02 05:12:39';
-                                $token = array(
-                                         'token'                   => $msg_token, 
-                                         'token_generation_date'   => $token_generation_date, 
-                                         'request_type'            => $request_type, 
-                                         'code'                    => 200, 
-                                         'clr_ssl_msg'             => $clr_ssl_msg, 
-                                         'memory_ptr'              => $memory_ptr, 
-                                         'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                         'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                         'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                         'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                         'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                         'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                         'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                         'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                         'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                         'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                         'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                         'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                                $R->error_log(
-                                    $clr_ssl_msg, 
-                                    \LOG_DEBUG, 
-                                    \E_NOTICE, 
-                                    __LINE__, 
-                                    __FUNCTION__, 
-                                    __FILE__, 
-                                    $token);
-
-                            }
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Evaluate the resource definition 
-                             * for a CLR-SSL Registry Resource 
-                             * and/or return a CLR-SSL 
-                             * resource...or return the 
-                             * output of said resource, e.g., 
-                             * if the resource is a function. 
-                             *
-                             *
-                             * 5 :: Monday, April 20, 2026 @ 0328 hrs.
-                             *
-                             */
-                            return _crnrstn_native_resource_registry(
-                                   __FUNCTION__, 
-                                   $R, 
-                                   $request_type . '[' . 
-                                   $R_resp[$memory_ptr]['resource_type'] . ']', 
-                                   $R_resp, 
-                                   $R_debug_mode, 
-                                   $memory_ptr);
-
-                        break;
-                        case 'meta':
-
-                            /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * CLR-SSL Registry Resource 
-                             * meta data fulfillment call. 
-                             *
-                             *
-                             * 5 :: Friday, April 10, 2026 @ 1248 hrs.
-                             *
-                             */
-                            return _crnrstn_native_resource_registry(
-                                   __FUNCTION__, 
-                                   $R, 
-                                   'return[' . 
-                                   $request_type . ']', 
-                                   $R_resp, 
-                                   $R_debug_mode, 
-                                   $memory_ptr, 
-                                   $R_data_000);
-
-                        break;
-                        default:
-
-                            $clr_ssl_msg = 'Unknown CLR-SSL Resource ' . 
-                                           'Registry action received: ' . 
-                                           \strval($request_type);
-                            // 5 :: Tue May 05 10:42:30.764204 2026
-                            $msg_token = '0bc593b10317e80af67da077dae6a820' . 
-                                         'cea0adfb67072752b2f8a73bbd08d0f5' . 
-                                         '1bf2f2547abc379c32ab21297c20edf6' . 
-                                         'aaa7daf4dae0366736f2aa56e708f99f';
-                            $token_generation_date = '2026-05-05 10:42:30';
-                            $token = array(
-                                     'token'                   => $msg_token, 
-                                     'token_generation_date'   => $token_generation_date, 
-                                     'request_type'            => $request_type, 
-                                     'code'                    => 200, 
-                                     'clr_ssl_msg'             => $clr_ssl_msg, 
-                                     'memory_ptr'              => $memory_ptr, 
-                                     'resource_ping_runtime'   => $R_resp[$memory_ptr]['runtime'], 
-                                     'resource_ping_microtime' => $R_resp[$memory_ptr]['microtime'], 
-                                     'file_evaluate_enabled'   => $R_resp[$memory_ptr]['file_evaluate_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'auto_eval_mode_enabled'  => $R_resp[$memory_ptr]['auto_eval_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'auto_obj_mode_enabled'   => $R_resp[$memory_ptr]['auto_obj_mode_enabled'][$R_resp[$memory_ptr]['software_default']], 
-                                     'namespace'               => $R_resp[$memory_ptr]['namespace'], 
-                                     'resource_loading_arch'   => $R_resp[$memory_ptr]['loading_arch'][$R_resp[$memory_ptr]['software_default']], 
-                                     'resource_eval_ttl'       => $R_resp[$memory_ptr]['eval_ttl'][$R_resp[$memory_ptr]['software_default']], 
-                                     'resource_type'           => $R_resp[$memory_ptr]['resource_type'], 
-                                     'resource_name'           => $R_resp[$memory_ptr]['resource_name'], 
-                                     'software_version'        => $R_resp[$memory_ptr]['software_default'], 
-                                     'resource_title'          => $R_resp[$memory_ptr]['title']['TEXT'], 
-                                     'software_company'        => $R_resp[$memory_ptr]['software_company']['key'], 
-                                     'copyright'               => $R_resp[$memory_ptr]['copyright'][$R_resp[$memory_ptr]['software_default']], 
-                                     'license_key'             => $R_resp[$memory_ptr]['license']['key'][$R_resp[$memory_ptr]['software_default']]);
-                            $R->error_log(
-                                $clr_ssl_msg, 
-                                \LOG_ERR, 
-                                \E_ERROR, 
-                                __LINE__, 
-                                __FUNCTION__, 
-                                __FILE__, 
-                                $token);
-
-                            return false;
-
-                        break;
-
-                    }
-
-                break;
                 case 'NuSOAP_1.123/NuSOAP_1.124-Notes': // <= $name. Where, _foo_factory(x, x, x, $name, x_000, x_001)
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -45483,7 +45390,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_bringer_of_the_precious_things':
                 case 'crnrstn_bringer_of_the_precious_things':
-                case  'precious_things':
+                case 'precious_things':
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Edit: Added crnrstn_bringer_of_the_precious_things
                      *       to the CLR-SSL System Resource Registry;
@@ -72232,12 +72139,9 @@ function _crnrstn_native_resource_registry(
                              * 5
                              *
                              */
-                            $tmp_TITLE_TEXT = 'The CRNRSTN :: Lightsaber ' .
-                            'RoCEv2 SOAP Services ' .
-                            'Layer (CLR-SSL) System Registry Native ' .
-                            'Registered Resources HTML and ' .
-                            'Text Content Generator ' .
-                            'and Library';
+                            $tmp_TITLE_TEXT = 'The Corporate Meta Data Content Library ' .
+                            'for Corporate Sponsors and Software Owners of ' .
+                            'Licensed Third-Party Software Integrated into the CLR-SSL.';
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * Initialize the license name for 
@@ -72334,6 +72238,7 @@ function _crnrstn_native_resource_registry(
                         // 5 :: Friday, May 22, 2026 @ 1328 hrs.
 
                         $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Mon Apr 20 00:00:42.232969 2026';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Thu Aug 27 23:14:19.924711 2026';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Mon Apr 20 00:00:42.232969 2026';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
@@ -73140,12 +73045,8 @@ function _crnrstn_native_resource_registry(
                              * 5
                              *
                              */
-                            $tmp_TITLE_TEXT = 'The CRNRSTN :: Lightsaber ' .
-                            'RoCEv2 SOAP Services ' .
-                            'Layer (CLR-SSL) System Registry Native ' .
-                            'Registered Resources HTML and ' .
-                            'Text Content Generator ' .
-                            'and Library';
+                            $tmp_TITLE_TEXT = 'The CLR-SSL Software License ' .
+                            'and License Meta Source Control';
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * Initialize the license name for 
@@ -73242,6 +73143,7 @@ function _crnrstn_native_resource_registry(
                         // 5 :: Friday, May 22, 2026 @ 1328 hrs.
 
                         $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Mon Apr 20 00:00:42.232969 2026';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Fri Aug 28 08:07:33.164484 2026';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Mon Apr 20 00:00:42.232969 2026';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
@@ -74048,12 +73950,9 @@ function _crnrstn_native_resource_registry(
                              * 5
                              *
                              */
-                            $tmp_TITLE_TEXT = 'The CRNRSTN :: Lightsaber ' . 
-                            'RoCEv2 SOAP Services ' . 
-                            'Layer (CLR-SSL) System Registry Native ' . 
-                            'Registered Resources HTML and ' . 
-                            'Text Content Generator ' . 
-                            'and Library';
+                            $tmp_TITLE_TEXT = 'The Social Media HTML Meta ' .
+                            'Tag Content Library for the CLR-SSL ' .
+                            'and for the Integrated Software Solutions';
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * Initialize the license name for 
@@ -74150,6 +74049,7 @@ function _crnrstn_native_resource_registry(
                         // 5 :: Friday, May 22, 2026 @ 1328 hrs.
 
                         $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Mon Apr 20 00:00:42.232969 2026';
+                        $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['timestamp']['LINUX_MAC_OS'][] = 'Fri Aug 28 10:37:53.951253 2026';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['last_modified']['ip_address']                  = '172.16.225.1';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['timestamp']['LINUX_MAC_OS'][]   = 'Mon Apr 20 00:00:42.232969 2026';
                         $R_resp[$memory_ptr]['clr_ssl_admin']['datecreated']['ip_address']                    = '172.16.225.1';
@@ -91255,7 +91155,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\_lightbox_helper_load_page_data':
                 case '_lightbox_helper_load_page_data':
-                case  'lightbox_helper.default_page':
+                case 'lightbox_helper.default_page':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the system 
@@ -110914,7 +110814,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_logging_output_profile_manager':
                 case 'crnrstn_logging_output_profile_manager':
-                case 'log_output_mgr':
+                case 'log_output_prfl_mgr':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the system 
@@ -110924,7 +110824,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'crnrstn_logging_output_profile_manager';
                     $tmp_file_name                          = 'crnrstn.logging_output_profile_manager.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'log_output_mgr';
+                    $tmp_public_key                         = 'log_output_prfl_mgr';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'class' . $os_path_dir_separator_char . 
@@ -145334,7 +145234,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_chunk_restrictor':
                 case 'crnrstn_chunk_restrictor':
-                case 'chunk_restrict':
+                case 'chunk_restrictor':
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Selection target eight (8)
                      * identification complete.
@@ -145355,7 +145255,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'crnrstn_chunk_restrictor';
                     $tmp_file_name                          = 'crnrstn.chunk_restrictor.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'chunk_restrict';
+                    $tmp_public_key                         = 'chunk_restrictor';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'class' . $os_path_dir_separator_char . 
@@ -152346,7 +152246,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_database_crnrstn':
                 case 'crnrstn_database_crnrstn':
-                case 'database':
+                case 'db':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the system 
@@ -152356,7 +152256,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'crnrstn_database_crnrstn';
                     $tmp_file_name                          = 'crnrstn.database_crnrstn.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'database';
+                    $tmp_public_key                         = 'db';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'class' . $os_path_dir_separator_char . 
@@ -154131,7 +154031,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_database_connection_handle':
                 case 'crnrstn_database_connection_handle':
-                case 'database_connection_handle':
+                case 'db_connection_handle':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the system 
@@ -154141,7 +154041,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'crnrstn_database_connection_handle';
                     $tmp_file_name                          = 'crnrstn.database_connection_handle.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'database_connection_handle';
+                    $tmp_public_key                         = 'db_connection_handle';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'class' . $os_path_dir_separator_char . 
@@ -155914,7 +155814,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_database_request':
                 case 'crnrstn_database_request':
-                case 'database_request':
+                case 'db_request':
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the system 
@@ -155924,7 +155824,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'crnrstn_database_request';
                     $tmp_file_name                          = 'crnrstn.database_request.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'database_request';
+                    $tmp_public_key                         = 'db_request';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'class' . $os_path_dir_separator_char . 
@@ -156803,7 +156703,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\crnrstn_database_query':
                 case 'crnrstn_database_query':
-                case 'query':
+                case 'db_query': // <- Resource software key for the CLR-SSL framework developer.
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Initialize the system 
@@ -156813,7 +156713,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'crnrstn_database_query';
                     $tmp_file_name                          = 'crnrstn.database_query.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'query';
+                    $tmp_public_key                         = 'db_query';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'class' . $os_path_dir_separator_char . 
@@ -175437,7 +175337,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\jony5_bassdrive_integration_data':
                 case 'jony5_bassdrive_integration_data':
-                case 'jony5_bassdrive_database':
+                case 'jony5_bassdrive_db':
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Edit: Added the Jony5.com bassdrive_integration_data
                      *       class definition resource to the CRNRSTN ::
@@ -175466,7 +175366,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'jony5_bassdrive_integration_data';
                     $tmp_file_name                          = 'jony5_bassdrive_integration_data.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'jony5_bassdrive_database';
+                    $tmp_public_key                         = 'jony5_bassdrive_db';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               '_crnrstn' . $os_path_dir_separator_char . 
@@ -176328,7 +176228,7 @@ function _crnrstn_native_resource_registry(
                 case __NAMESPACE__ . 
                      '\jony5_database_integration':
                 case 'jony5_database_integration':
-                case 'jony5_database':
+                case 'jony5_db': // <- Resource software key for the CLR-SSL framework developer.
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Edit: Added the Jony5.com database_integration
                      *       class definition resource to the CRNRSTN ::
@@ -176357,7 +176257,7 @@ function _crnrstn_native_resource_registry(
                     $tmp_resource_name                      = 'jony5_database_integration';
                     $tmp_file_name                          = 'jony5_database_integration.class.php';
                     $tmp_type_dir                           = 'object';
-                    $tmp_public_key                         = 'jony5_database';
+                    $tmp_public_key                         = 'jony5_db';
                     $tmp_storage_arch                       = 'general_resource';
                     $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                               'demo' . $os_path_dir_separator_char . 

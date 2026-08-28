@@ -266,12 +266,23 @@ namespace CRNRSTN;
  * DATE                :: Thursday, April 16, 2026 @ 1911 hrs.
  * AUTHOR              :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
  * URI                 :: http://evifweb.jony5.com/
- * TITLE               :: The Native Resource Registry 
- *                        of...
- * DESCRIPTION         :: The native resource...
+ * TITLE               :: The Corporate Meta Data Content
+ *                        Library for Corporate Sponsors
+ *                        and Software Owners of Licensed
+ *                        Third-Party Software Integrated
+ *                        into the CLR-SSL.
+ * DESCRIPTION         :: This is a static meta data content
+ *                        silo for corporate sponsors and for
+ *                        license owners of the third-party
+ *                        software that has been used or
+ *                        integrated into the CLR-SSL framework,
+ *                        but is not directly affiliated with
+ *                        eVifweb® or the CLR-SSL.
  *
  *
  *                        5
+ *
+ *                        Thursday, August 27, 2026 @ 2302 hrs.
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
@@ -279,7 +290,9 @@ namespace CRNRSTN;
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
- * @package CRNRSTN
+ * @return mixed
+ * @access public
+ *
  * @version 1.00.0000 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
  * @author Jonathan '5' Harris <jharris@eVifweb.com>
  * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
@@ -287,8 +300,7 @@ namespace CRNRSTN;
  * @link https://crnrstn.jony5.com/ CRNRSTN :: Project Website.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
  * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
- * @return mixed 
- * @access public
+ * @package CRNRSTN
  *
  */
 function _crnrstn_native_resource_registry_meta_corporate(

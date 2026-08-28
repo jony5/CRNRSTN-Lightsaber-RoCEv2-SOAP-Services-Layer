@@ -1205,9 +1205,9 @@ class crnrstn_bassdrive_integration_data
         $contents = '';
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * SOURCE   :: https://stackoverflow.com/questions/3308388/fopen-returns-resource-id-4
-         * COMMENT  :: https://stackoverflow.com/a/3308463
-         * AUTHOR   :: https://stackoverflow.com/users/383633/phpology
+         * SOURCE  :: https://stackoverflow.com/questions/3308388/fopen-returns-resource-id-4
+         * COMMENT :: https://stackoverflow.com/a/3308463
+         * AUTHOR  :: https://stackoverflow.com/users/383633/phpology
          *
          * https://www.php.net/manual/en/function.fread.php
          *

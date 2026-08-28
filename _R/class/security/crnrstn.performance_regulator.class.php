@@ -8126,9 +8126,9 @@ class crnrstn_performance_regulator extends crnrstn
                             $tmp_data = (int) $tmp_data;
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * SOURCE   :: https://stackoverflow.com/questions/50994126/php-how-to-check-if-a-valid-chmod-mode
-                             * COMMENT  :: https://stackoverflow.com/a/50994207
-                             * AUTHOR   :: https://stackoverflow.com/users/1043150/philipp
+                             * SOURCE  :: https://stackoverflow.com/questions/50994126/php-how-to-check-if-a-valid-chmod-mode
+                             * COMMENT :: https://stackoverflow.com/a/50994207
+                             * AUTHOR  :: https://stackoverflow.com/users/1043150/philipp
                              *
                              *
                              * Philipp
@@ -15728,8 +15728,8 @@ class crnrstn_performance_regulator extends crnrstn
                        $this->R_data['int_flag']['CRNRSTN_SETTINGS_CRNRSTN']);
 
             break;
-            case  'config_custom_error_handler_boolean':
-            case  'config_custom_error_handler_integer':
+            case 'config_custom_error_handler_boolean':
+            case 'config_custom_error_handler_integer':
 
                 switch($data_key){
                     case 'crnrstn_error_handling':
