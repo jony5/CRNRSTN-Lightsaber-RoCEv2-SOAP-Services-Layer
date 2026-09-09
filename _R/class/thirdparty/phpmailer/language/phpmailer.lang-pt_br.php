@@ -1,7 +1,7 @@
 <?php
 /**
- * Brazilian Portuguese crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Brazilian Portuguese PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Paulo Henrique Garcia <paulo@controllerweb.com.br>
  * @author Lucas Guimarães <lucas@lucasguimaraes.com>
  * @author Phelipe Alves <phelipealvesdesouza@gmail.com>

@@ -454,7 +454,7 @@ function _crnrstn_settings(
 
         break;
         case 'log_silo_profile_ARRAY':
-        case 'CRNRSTN_log_silo_profile':
+        case 'log_silo_profile':
 
             /*
             //
@@ -605,7 +605,7 @@ function _crnrstn_settings(
             // NOTE: INTERESTED IN THE DOM VISIBLE
     		// 		 (BUFFER OUTPUT WRITTEN) <HTML> 
             //       LANG ATTRIBUTE? 
-            //       
+            //
             //       PLEASE SEE, 
             //       $lightbox_helper->iso_language_html();
             //

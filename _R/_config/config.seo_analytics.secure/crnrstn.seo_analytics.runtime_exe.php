@@ -300,35 +300,26 @@ namespace CRNRSTN;
  * LICENSE            :: MIT | https://crnrstn.jony5.com/licensing/
  *
  */
-/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * CRNRSTN :: Advanced Configuration
- * Parameters for Initialization of
+/**
+ * R :: R_seo_analytics returns third party web reporting and analytics HTML tracking tag content for client-side web browser integrations.
+ *
+ * CLR-SSL Advanced Configuration
+ * Parameters for the Initialization of
  * Third Party Analytics tag profiles.
  *
- */
-$tmp_str_JONY5 = '';
-
-$tmp_str_EVIFWEB = '';
-
-$tmp_str_JONY5_TEST = $tmp_str_CHAD_MACBOOKPRO = $tmp_str_MACBOOKPRO = '<!-- Global site tag - **config_add_seo_analytics TEST**  -->
-<script>
-// HELLO TEST
-</script>
-';
-
-/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * INITIALIZE ANALYTICS 
- * PROFILE(S) FOR 
- * EACH ENVIRONMENT. 
- * $this->config_add_seo_analytics(
- *        [environment-key], 
- *        [data-key], 
- *        [3rd-party-html-injection-string], 
- *        [enabled-by-default]=true);
+ * @param string $R_data contains third party web reporting and analytics HTML tracking tag content.
+ * @access public
+ *
+ * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
+ * @author Jonathan '5' Harris <jharris@eVifweb.com>
+ * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
+ * @license https://crnrstn.jony5.com/licensing/ MIT
+ * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
+ * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
+ * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
+ * @package CRNRSTN
+ *
+ *  5 :: Wednesday, August 12, 2026 @ 1128 hrs.
  *
  */
-$this->config_add_seo_analytics('BLUEHOST_JONY5', 'GOOGLE_ANALYTICS', $tmp_str_JONY5);
-$this->config_add_seo_analytics('BLUEHOST_EVIFWEB', 'GOOGLE_ANALYTICS', $tmp_str_EVIFWEB);
-$this->config_add_seo_analytics('LOCALHOST_CHAD_MACBOOKPRO', 'GOOGLE_ANALYTICS_TEST', $tmp_str_JONY5_TEST, false);
-$this->config_add_seo_analytics('LOCALHOST_CHAD_MACBOOKPRO', 'GOOGLE_ANALYTICS', $tmp_str_CHAD_MACBOOKPRO);
-$this->config_add_seo_analytics('LOCALHOST_PC', 'GOOGLE_ANALYTICS', $tmp_str_MACBOOKPRO);
+$R_data = '';

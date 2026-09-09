@@ -301,16 +301,11 @@ namespace CRNRSTN;
  *
  */
 function _crnrstn_native_resource_registry_meta_license(
-         $license_key,
-         $attribute,
-         $R,
-         $background_color_hex = '#FFF',
-         $iso_lang_code = 'en',
-         $R_debug_mode = 0,
-         $generate_search_algorithm_data = false,
-         $generate_content_synchronization_hash = false,
-         $resource_license_name_text = NULL,
-         $resource_license_url = NULL)
+         $R_resp, 
+         $R_meta_key, 
+         $R, 
+         $R_debug_mode = 0, 
+         $css_data = NULL)
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * The _crnrstn_native_resource_registry_meta_license()
@@ -353,6 +348,61 @@ function _crnrstn_native_resource_registry_meta_license(
      *       overhaul pivoting around 
      *       config_serial_override. 
      *       5 :: Saturday, June 20, 2026 @ 0347 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Renamed the
+     *       _crnrstn_native_resource_registry_meta_license()
+     *       $generate_content_synchronization_hash
+     *       input parameter to
+     *       $generate_version_sync_hash and swapped
+     *       function input places with
+     *       $generate_search_algorithm_data.
+     *       5 :: Tuesday, September 1, 2026 @ 0220 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Added $css_data = NULL
+     *       input parameter to
+     *       _crnrstn_native_resource_registry_meta_license().
+     *       5 :: Tuesday, September 1, 2026 @ 1742 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Removed input parameter,
+     *       $background_color_hex = '#FFF',
+     *       from
+     *       _crnrstn_native_resource_registry_meta_license().
+     *       5 :: Wednesday, September 2, 2026 @ "01" 2345 hrs.
+     *
+     *       "01010101...split the atom...Oh,
+     *       Oh, Oh, Oh. You know what I mean.
+     *
+     *       Yeah, you know what I mean:
+     *       "Oh, Oh, Oh"...
+     *       Yeah, you know what
+     *       I mean..."Oh"...yeah. ;)
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Added the $R_resp input 
+     *       parameter to the function, 
+     *       _crnrstn_native_resource_registry_meta_license(), 
+     *       renamed the $attribute input 
+     *       parameter to $R_meta_key, and removed 
+     *       the following input parameters:
+     *       - $license_key,
+     *       - $iso_lang_code = 'en',
+     *       - $generate_version_sync_hash = false,
+     *       - $generate_search_algorithm_data = false,
+     *       - $resource_license_name_text = NULL, and 
+     *       - $resource_license_url = NULL.
+     * 
+     *       The new function definition:
+     *       function _crnrstn_native_resource_registry_meta_license(
+     *                $R_resp, 
+     *                $R_meta_key, 
+     *                $R, 
+     *                $R_debug_mode = 0, 
+     *                $css_data = NULL)
+     *       { ... }
+     *       5 :: Wednesday, September 9, 2026 @ 0611 hrs.
      *
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * 'LICENSE_NAME_HTML'         => $R->return_registered_resource_meta(
@@ -399,24 +449,30 @@ function _crnrstn_native_resource_registry_meta_license(
      * 5 :: Friday, April 17, 2026 @ 0514 hrs.
      *
      */
+    $memory_pointer                 = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+    $generate_version_sync_hash     = $R->get_crnrstn('generate_version_sync_hash');
+    $generate_search_algorithm_data = $R->get_crnrstn('generate_search_algorithm_data');
+    $R_text                         =
+    $R_html                         = '';
+    $output_mode                    = NULL;
 
-    error_log('[lnum ' . 
-        __LINE__ . '] [mthd ' . 
-        __METHOD__ . 
-        '] $license_key[' . 
-        $license_key . 
-        '] $attribute[' . 
-        $attribute . '] $resource_license_name_text[' . 
-        $resource_license_name_text . '] $resource_license_url[' . 
-        strval($resource_license_url) . ']. die();');
+    echo '<br><pre><code>[' . 
+$R->return_micro_time() . '] 
+[func ' . __FUNCTION__ . '] 
+[lnum ' . __LINE__ . '] 
+[rtime ' . $R->wall_time() . '] 
+license key[' . $R_resp[$memory_pointer]['license']['key'] . '] 
+meta key[' . $R_meta_key . '] 
+license name[' . 
+$R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']] . '] 
+license url[' . 
+\strval($R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']]) . '].</code></pre>';
 
-    die();
-
-    switch($license_key){
+    switch($R_resp[$memory_pointer]['license']['key']){
         case 'BSD':
             // 5 :: Monday, August 24, 2026 @ 2105 hrs.
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'LICENSE_NAME':
                 case 'LICENSE_NAME_HTML':
                 case 'LICENSE_NAME_TEXT':
@@ -438,7 +494,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      *
                      */
 
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -449,18 +505,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -477,8 +533,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -493,7 +549,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_name_text;
+                        $R_text = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -506,8 +562,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -522,9 +578,9 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Sunday, August 25, 2024 @ 0549 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
                         '" target="_blank">BSD License</a></span>';
 
                 break;
@@ -548,7 +604,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_URL_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -559,18 +615,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_URL_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_URL':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -587,8 +643,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -603,7 +659,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0851 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_url;
+                        $R_text = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -616,8 +672,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -632,31 +688,26 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0851 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">' . $resource_license_url . '</a></span>';
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . '</a></span>';
 
                 break;
                 default:
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $license_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['license']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0754 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -665,12 +716,12 @@ function _crnrstn_native_resource_registry_meta_license(
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -683,33 +734,30 @@ function _crnrstn_native_resource_registry_meta_license(
                             \syslog($syslog_level, $clr_ssl_msg);
                             \closelog();
 
-
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __METHOD__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __METHOD__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -719,7 +767,7 @@ function _crnrstn_native_resource_registry_meta_license(
         case 'BSD_2.0':
             // 5 :: Monday, August 24, 2026 @ 1932 hrs.
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'LICENSE_NAME':
                 case 'LICENSE_NAME_HTML':
                 case 'LICENSE_NAME_TEXT':
@@ -741,7 +789,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      *
                      */
 
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -752,18 +800,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -780,8 +828,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -796,7 +844,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_name_text;
+                        $R_text = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -809,8 +857,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -825,9 +873,9 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Sunday, August 25, 2024 @ 0549 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
                         '" target="_blank">BSD License 2.0</a></span>';
 
                 break;
@@ -851,7 +899,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_URL_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -862,18 +910,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_URL_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_URL':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -890,8 +938,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -906,7 +954,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0851 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_url;
+                        $R_text = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -919,8 +967,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -935,31 +983,26 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0851 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">' . $resource_license_url . '</a></span>';
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . '</a></span>';
 
                 break;
                 default:
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $license_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['license']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0754 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -968,12 +1011,12 @@ function _crnrstn_native_resource_registry_meta_license(
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -986,33 +1029,30 @@ function _crnrstn_native_resource_registry_meta_license(
                             \syslog($syslog_level, $clr_ssl_msg);
                             \closelog();
 
-
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __METHOD__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __METHOD__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -1021,7 +1061,7 @@ function _crnrstn_native_resource_registry_meta_license(
         break;
         case 'GNU_Lesser':
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'LICENSE_NAME':
                 case 'LICENSE_NAME_HTML':
                 case 'LICENSE_NAME_TEXT':
@@ -1043,7 +1083,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      *
                      */
 
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1054,18 +1094,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1082,8 +1122,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -1098,7 +1138,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_name_text;
+                        $R_text = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1111,8 +1151,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -1127,10 +1167,10 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Sunday, August 25, 2024 @ 0549 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">GNU Lesser ' .
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">GNU Lesser ' . 
                         'General Public License</a></span>';
 
                 break;
@@ -1154,7 +1194,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_URL_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1165,18 +1205,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_URL_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_URL':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1193,8 +1233,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -1209,7 +1249,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0851 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_url;
+                        $R_text = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1222,8 +1262,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0851 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -1238,31 +1278,26 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0851 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">' . $resource_license_url . '</a></span>';
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . '</a></span>';
 
                 break;
                 default:
 
                     $clr_ssl_msg = 'Unknown attribute key received [' . 
-                                   $attribute . 
+                                   $R_meta_key . 
                                    '] for ' . 
-                                   $license_key . 
+                                   $R_resp[$memory_pointer]['license']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__, 
-                        $R, 
-                        'registry_access_is_authorized',
-                         NULL, 
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0754 hrs.
-                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -1289,33 +1324,30 @@ function _crnrstn_native_resource_registry_meta_license(
                             \syslog($syslog_level, $clr_ssl_msg);
                             \closelog();
 
-
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_ERR, 
-                        \E_ERROR, 
-                        __LINE__, 
-                        __METHOD__, 
-                        __FILE__, 
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -1324,7 +1356,7 @@ function _crnrstn_native_resource_registry_meta_license(
         break;
         case 'GNU_Lesser_2.1':
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'LICENSE_NAME':
                 case 'LICENSE_NAME_HTML':
                 case 'LICENSE_NAME_TEXT':
@@ -1345,7 +1377,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Thursday, November 6, 2025 @ 1003 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1356,18 +1388,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1384,8 +1416,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -1400,7 +1432,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_name_text;
+                        $R_text = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1413,8 +1445,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -1429,12 +1461,12 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Sunday, August 25, 2024 @ 0617 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">GNU Lesser ' .
-                        'General Public License</a> ' .
-                        'version 2.1 or (at your option) any ' .
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a ' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">GNU Lesser ' . 
+                        'General Public License</a> ' . 
+                        'version 2.1 or (at your option) any ' . 
                         'later version.</span>';
 
                 break;
@@ -1458,7 +1490,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Monday, April 20, 2026 @ 0901 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_URL_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1469,18 +1501,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_URL_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_URL':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1497,8 +1529,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0901 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -1513,7 +1545,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0901 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_url;
+                        $R_text = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1526,8 +1558,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0901 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -1542,31 +1574,26 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0901 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">' . $resource_license_url . '</a></span>';
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . '</a></span>';
 
                 break;
                 default:
 
                     $clr_ssl_msg = 'Unknown attribute key received [' . 
-                                   $attribute . 
+                                   $R_meta_key . 
                                    '] for ' . 
-                                   $license_key . 
+                                   $R_resp[$memory_pointer]['license']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__, 
-                        $R, 
-                        'registry_access_is_authorized',
-                         NULL, 
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0801 hrs.
-                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -1595,30 +1622,28 @@ function _crnrstn_native_resource_registry_meta_license(
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_ERR, 
-                        \E_ERROR, 
-                        __LINE__, 
-                        __METHOD__, 
-                        __FILE__, 
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -1627,7 +1652,7 @@ function _crnrstn_native_resource_registry_meta_license(
         break;
         case 'CC_Attrib_3.0':
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'LICENSE_NAME':
                 case 'LICENSE_NAME_HTML':
                 case 'LICENSE_NAME_TEXT':
@@ -1648,7 +1673,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Thursday, November 6, 2025 @ 1003 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1659,18 +1684,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1687,8 +1712,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -1703,7 +1728,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_name_text;
+                        $R_text = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1716,8 +1741,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the multi-part
                          * license name data for this
@@ -1733,10 +1758,10 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Sunday, August 25, 2024 @ 1131 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">Creative Commons ' .
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a ' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">Creative Commons ' . 
                         'Attribution 3.0 License</span>';
 
                 break;
@@ -1760,7 +1785,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Monday, April 20, 2026 @ 0902 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_URL_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1771,18 +1796,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_URL_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_URL':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1799,8 +1824,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0902 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -1815,7 +1840,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0902 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_url;
+                        $R_text = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1828,8 +1853,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0902 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -1844,31 +1869,26 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0902 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">' . $resource_license_url . '</a></span>';
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . '</a></span>';
 
                 break;
                 default:
 
                     $clr_ssl_msg = 'Unknown attribute key received [' . 
-                                   $attribute . 
+                                   $R_meta_key . 
                                    '] for ' . 
-                                   $license_key . 
+                                   $R_resp[$memory_pointer]['license']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__, 
-                        $R, 
-                        'registry_access_is_authorized',
-                         NULL, 
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0802 hrs.
-                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -1897,30 +1917,28 @@ function _crnrstn_native_resource_registry_meta_license(
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_ERR, 
-                        \E_ERROR, 
-                        __LINE__, 
-                        __METHOD__, 
-                        __FILE__, 
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -1929,7 +1947,7 @@ function _crnrstn_native_resource_registry_meta_license(
         break;
         case 'PHP_3.01':
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'LICENSE_NAME':
                 case 'LICENSE_NAME_HTML':
                 case 'LICENSE_NAME_TEXT':
@@ -1950,7 +1968,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Thursday, November 6, 2025 @ 1003 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1961,18 +1979,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1989,8 +2007,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -2005,7 +2023,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_name_text;
+                        $R_text = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2018,8 +2036,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -2034,11 +2052,11 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Sunday, August 25, 2024 @ 0624 hrs.
                          *
                          */
-                         $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">PHP License v3.01, ' .
-                        'copyright <span ' . $tmp_css_data['copyright_mark'] .
+                         $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a ' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">PHP License v3.01, ' . 
+                        'copyright <span ' . $css_data['copyright_mark'] . 
                         '>&copy;</span> the PHP Group</span>';
 
                 break;
@@ -2062,7 +2080,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Monday, April 20, 2026 @ 0903 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_URL_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2073,18 +2091,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_URL_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_URL':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2101,8 +2119,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0903 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -2117,7 +2135,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0903 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_url;
+                        $R_text = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2130,8 +2148,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0903 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -2146,31 +2164,26 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0903 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">' . $resource_license_url . '</a></span>';
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . '</a></span>';
 
                 break;
                 default:
 
                     $clr_ssl_msg = 'Unknown attribute key received [' . 
-                                   $attribute . 
+                                   $R_meta_key . 
                                    '] for ' . 
-                                   $license_key . 
+                                   $R_resp[$memory_pointer]['license']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__, 
-                        $R, 
-                        'registry_access_is_authorized',
-                         NULL, 
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0802 hrs.
-                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -2199,30 +2212,28 @@ function _crnrstn_native_resource_registry_meta_license(
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_ERR, 
-                        \E_ERROR, 
-                        __LINE__, 
-                        __METHOD__, 
-                        __FILE__, 
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -2231,7 +2242,7 @@ function _crnrstn_native_resource_registry_meta_license(
         break;
         case 'MIT':
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'LICENSE_NAME':
                 case 'LICENSE_NAME_HTML':
                 case 'LICENSE_NAME_TEXT':
@@ -2252,7 +2263,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Thursday, November 6, 2025 @ 1003 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2263,18 +2274,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2291,8 +2302,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -2307,7 +2318,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_name_text;
+                        $R_text = $R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2320,8 +2331,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -2336,9 +2347,9 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Sunday, August 25, 2024 @ 0617 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a ' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
                         '" target="_blank">MIT License</span>';
 
                 break;
@@ -2362,7 +2373,7 @@ function _crnrstn_native_resource_registry_meta_license(
                      * Monday, April 20, 2026 @ 0911 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'LICENSE_URL_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2373,18 +2384,18 @@ function _crnrstn_native_resource_registry_meta_license(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'LICENSE_URL_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'LICENSE_URL':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2401,8 +2412,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0911 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -2417,7 +2428,7 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0911 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_license_url;
+                        $R_text = $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2430,8 +2441,8 @@ function _crnrstn_native_resource_registry_meta_license(
                      * 5 :: Monday, April 20, 2026 @ 0911 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * license name HTML data for this
@@ -2446,31 +2457,26 @@ function _crnrstn_native_resource_registry_meta_license(
                          * Monday, April 20, 2026 @ 0911 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['license_name'] .
-                        '><a' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="' . $resource_license_url .
-                        '" target="_blank">' . $resource_license_url . '</a></span>';
+                        $R_html = '<span ' . $css_data['license_name'] . 
+                        '><a' . $css_data['copy_a'] . ' ' . 
+                        'href="' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . 
+                        '" target="_blank">' . $R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']] . '</a></span>';
 
                 break;
                 default:
 
                     $clr_ssl_msg = 'Unknown attribute key received [' . 
-                                   $attribute . 
+                                   $R_meta_key . 
                                    '] for ' . 
-                                   $license_key . 
+                                   $R_resp[$memory_pointer]['license']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__, 
-                        $R, 
-                        'registry_access_is_authorized',
-                         NULL, 
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0804 hrs.
-                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -2499,30 +2505,28 @@ function _crnrstn_native_resource_registry_meta_license(
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_ERR, 
-                        \E_ERROR, 
-                        __LINE__, 
-                        __METHOD__, 
-                        __FILE__, 
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -2533,20 +2537,15 @@ function _crnrstn_native_resource_registry_meta_license(
             // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
             $clr_ssl_msg = 'Unknown key received [' . 
-                           $license_key . 
+                           $R_resp[$memory_pointer]['license']['key'] . 
                            ']. Unable to return copy data.';
 
-            if(!(_crnrstn_native_resource_registry(
-                __METHOD__, 
-                $R, 
-                'registry_access_is_authorized',
-                 NULL, 
-                 $R_debug_mode) !== false))
-            {
+            if(!\method_exists($R, 'process_R_resp')){
 
                 // 5 :: Tuesday, May 19, 2026 @ 0804 hrs.
-                if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                    ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                    ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                    ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                 {
 
                     $syslog_level     = LOG_WARNING;
@@ -2575,33 +2574,86 @@ function _crnrstn_native_resource_registry_meta_license(
 
                 }
 
-                return false;
+            }else{
+
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __FUNCTION__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $R->error_log(
+                    $clr_ssl_msg,
+                    \LOG_ERR,
+                    \E_ERROR,
+                    __LINE__,
+                    __FUNCTION__,
+                    __FILE__,
+                    $token);
 
             }
-
-            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __METHOD__, 
-                     'code'                    => 200, 
-                     'clr_ssl_msg'             => $clr_ssl_msg);
-            $R->error_log(
-                $clr_ssl_msg, 
-                \LOG_ERR, 
-                \E_ERROR, 
-                __LINE__, 
-                __METHOD__, 
-                __FILE__, 
-                $token);
-
-            return false;
 
         break;
 
     }
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Prepare the string 
+     * data for UI/UX/SOAP 
+     * content return, and 
+     * return the output. 
+     *
+     * This will articulate the 
+     * most exterior membrane of the 
+     * CRNRSTN :: Lightsaber RoCEv2 
+     * SOAP Services Layer's 
+     * Document Object Model (DOM) 
+     * HTML/Text Resource Type 
+     * Output Control Services 
+     * Layer for: 
+     * - directly integrating 
+     *   CLR-SSL Libraries with the 
+     *   response output architecture 
+     *   of the SOAP services layer 
+     *   of the CLR-SSL, 
+     * - directly integrating 
+     *   CLR-SSL Libraries with the 
+     *   Multi-Language Services 
+     *   Layer of the CLR-SSL, 
+     * - exposing all CLR-SSL Library 
+     *   content to HMAC Hash supported 
+     *   content versioning and 
+     *   CLR-SSL powered version 
+     *   control integrations on 
+     *   top of SOAP, and 
+     * - directly integrating 
+     *   the application of a tight 
+     *   search indexing algorithm 
+     *   for all software, corporate, 
+     *   license, and social media 
+     *   CLR-SSL Resource Registry 
+     *   Library meta data. 
+     *
+     *
+     * 5
+     *
+     * Sunday, August 25, 2024 @ 0723 hrs.
+     *
+     */
+    return $R->soap_data_initialization_cache_output(
+               $R_resp[$memory_pointer]['iso_lang_code'], 
+               $R_meta_key, 
+               $R_text, 
+               $R_html, 
+               NULL, 
+               NULL, 
+               $output_mode, 
+               $generate_version_sync_hash, 
+               $generate_search_algorithm_data, 
+               $css_data);
 
 }

@@ -1,7 +1,7 @@
 <?php
 /**
- * Hungarian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Hungarian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author @dominicus-75
  */
 

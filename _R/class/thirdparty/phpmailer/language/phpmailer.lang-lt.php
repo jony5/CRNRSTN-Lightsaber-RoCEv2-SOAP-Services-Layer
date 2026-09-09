@@ -1,7 +1,7 @@
 <?php
 /**
- * Lithuanian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Lithuanian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Dainius Kaupaitis <dk@sum.lt>
  */
 

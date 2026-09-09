@@ -280,7 +280,7 @@ namespace CRNRSTN;
  *                       (object) $oCRNRSTN variable 
  *                       at the scope of the location 
  *                       that this CLR-SSL resource 
- *                       is implementated. 
+ *                       is implemented.
  *
  *
  *                       5
@@ -707,7 +707,8 @@ if(!\function_exists('_R_resource_return')){
                 $app_dir_chunk     = \array_pop($tmp_app_directory);
                 $directory_shift[] =  '../';
 
-                if(($app_dir_chunk != '..') && ($app_dir_chunk != '.')) 
+                if(($app_dir_chunk != '..') &&
+                    ($app_dir_chunk != '.'))
                     $path_chunk[] = $app_dir_chunk;
 
             }
@@ -751,9 +752,9 @@ if(!\function_exists('_R_resource_return')){
              *
              */
             $root = \str_replace(
-                         $R_path_patterns, 
-                         $R_path_replacements, 
-                         $root);
+                    $R_path_patterns,
+                    $R_path_replacements,
+                    $root);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Standardize the use of the 
@@ -799,9 +800,9 @@ if(!\function_exists('_R_resource_return')){
              *
              */
             $root = \str_replace(
-                         $R_path_patterns, 
-                         $R_path_replacements, 
-                         $root);
+                    $R_path_patterns,
+                    $R_path_replacements,
+                    $root);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Standardize the use of the
@@ -877,7 +878,7 @@ if(!\function_exists('_R_resource_return')){
             $clr_ssl_msg = 'An error was experienced while ' . 
                            'attempting to set the default ' . 
                            'timezone for ' . 
-                           \strval($caller) . 
+                           __FUNCTION__ .
                            '.';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2740,7 +2741,7 @@ if(!\function_exists('_R_server_response')){
          * the proper status code. 
          *
          */
-        header($_SERVER['SERVER_PROTOCOL'] . 
+        \header($_SERVER['SERVER_PROTOCOL'] .
             ' ' . 
             $response_code . 
             ' ' . 
@@ -2939,10 +2940,10 @@ if(!isset($WordPress_debug_mode_override))
  *
  */
 return _R_resource_return(
-             $application_directory, 
-             $R_framework_directory, 
-             $R_resource_name, 
-             $R_hmac_algorithm_override, 
-             $R_debug_mode_override, 
-             $PHPMailer_debug_mode_override, 
-             $WordPress_debug_mode_override);
+       $application_directory,
+       $R_framework_directory,
+       $R_resource_name,
+       $R_hmac_algorithm_override,
+       $R_debug_mode_override,
+       $PHPMailer_debug_mode_override,
+       $WordPress_debug_mode_override);

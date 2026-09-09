@@ -1,7 +1,7 @@
 <?php
 /**
- * Malaysian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Malaysian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Nawawi Jamili <nawawi@rutweb.com>
  */
 

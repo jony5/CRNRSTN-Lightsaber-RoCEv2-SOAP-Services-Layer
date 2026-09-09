@@ -1,7 +1,7 @@
 <?php
 /**
- * Bulgarian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Bulgarian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Mikhail Kyosev <mialygk@gmail.com>
  */
 

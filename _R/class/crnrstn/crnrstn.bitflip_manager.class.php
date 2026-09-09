@@ -399,7 +399,7 @@ class crnrstn_bitflip_manager extends crnrstn
     private static $uname_output;
     private static $getconf_output;
     protected $bit_value_array = array();
-    
+
     //protected $global_constants_string_ARRAY = array();
     private static $system_int_constants_string_ARRAY = array();
     private static $bitflag_constant_serial_ARRAY = array();
@@ -434,7 +434,7 @@ class crnrstn_bitflip_manager extends crnrstn
          * CLR-SSL Resource Registry
          * Prototyping (2024-2026):
          * $this->oCRNRSTN_BITWISE = $this->return_registered_resource(
-         *                                  'new',
+         *                                  'new', 
          *                                  'crnrstn_bitmask');
          *
          */
@@ -442,10 +442,10 @@ class crnrstn_bitflip_manager extends crnrstn
         $spice_salt_mem_ptr = NULL;
         // 5 :: Saturday, August 22, 2026 @ 0519 hrs.
         $this->compound_ointment(
-               $spice_salt_mem_ptr,
-               'crnrstn_bitmask');
+               $spice_salt_mem_ptr, 
+               'bitmask');
         $this->anoint(
-               'crnrstn_bitmask',
+               'bitmask', 
                $this->R['icy_digital_itcc']);
 
     }
@@ -533,7 +533,7 @@ class crnrstn_bitflip_manager extends crnrstn
     {
 
         if(!isset($this->R['bits'][$this->hash(
-                                          $bitwise_object_array_index_serial,
+                                          $bitwise_object_array_index_serial, 
                                           'md5')]))
         {
 
@@ -542,7 +542,7 @@ class crnrstn_bitflip_manager extends crnrstn
         }else{
 
             $R_bitmask = $this->R['bits'][$this->hash(
-                                                 $bitwise_object_array_index_serial,
+                                                 $bitwise_object_array_index_serial, 
                                                  'md5')];
 
             $tmp_val = $R_bitmask->return_bit_value($integer_constant);
@@ -586,12 +586,12 @@ class crnrstn_bitflip_manager extends crnrstn
     {
 
         if(!isset($this->R['bits'][$this->hash(
-                                          $name,
+                                          $name, 
                                           'md5')]))
             return false;
 
         $R_bitmask = $this->R['bits'][$this->hash(
-                                             $name,
+                                             $name, 
                                              'md5')];
 
         if(\is_bool($is_bit_set))
@@ -725,18 +725,18 @@ class crnrstn_bitflip_manager extends crnrstn
              * CLR-SSL Resource Registry
              * Prototyping (2024-2026):
              * $oCRNRSTN_BITMASK = $this->return_registered_resource(
-             *                            'new',
+             *                            'new', 
              *                            'crnrstn_bitmask');
              *
              */
-
+            $R_bitmask          =
             $spice_salt_mem_ptr = NULL;
             // 5 :: Saturday, August 22, 2026 @ 1336 hrs.
             $this->compound_ointment(
-                   $spice_salt_mem_ptr,
-                   'crnrstn_bitmask');
+                   $spice_salt_mem_ptr, 
+                   'bitmask');
             $this->anoint(
-                   'crnrstn_bitmask',
+                   'bitmask', 
                    $R_bitmask);
 
         }
@@ -1018,18 +1018,19 @@ class crnrstn_bitflip_manager extends crnrstn
              * CLR-SSL Resource Registry
              * Prototyping (2024-2026):
              * $this->oCRNRSTN_BITMASK = $this->return_registered_resource(
-             *                                  'new',
+             *                                  'new', 
              *                                  'crnrstn_bitmask');
              *
              */
 
+            $R_bitmask          =
             $spice_salt_mem_ptr = NULL;
             // 5 :: Saturday, August 22, 2026 @ 0435 hrs.
             $this->compound_ointment(
-                   $spice_salt_mem_ptr,
-                   'crnrstn_bitmask');
+                   $spice_salt_mem_ptr, 
+                   'bitmask');
             $this->anoint(
-                   'crnrstn_bitmask',
+                   'bitmask', 
                    $R_bitmask);
 
             $this->R['bits'][$this->hash($name, 'md5')] = $R_bitmask;

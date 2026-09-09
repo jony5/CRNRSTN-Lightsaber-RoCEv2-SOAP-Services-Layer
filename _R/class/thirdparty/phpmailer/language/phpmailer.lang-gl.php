@@ -1,7 +1,7 @@
 <?php
 /**
- * Galician crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Galician PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author by Donato Rouco <donatorouco@gmail.com>
  */
 

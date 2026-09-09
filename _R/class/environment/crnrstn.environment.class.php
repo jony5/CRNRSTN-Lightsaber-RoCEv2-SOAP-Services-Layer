@@ -274,14 +274,14 @@ namespace CRNRSTN;
  *                     bow of the ship in the entire
  *                     framework for 
  *                     environmental detection. 
- *                     
+ *
  *                     The CRNRSTN :: Environmental 
  *                     Services Layer used to be the 
  *                     first layer (or object...in 
  *                     those days) in CRNRSTN :: to 
  *                     know who the SERVER was 
  *                     by name. 
- *                     
+ *
  *                     CRNRSTN :: Lightsaber thanks 
  *                     you for your service, 
  *                     CRNRSTN :: Environment.
@@ -295,7 +295,7 @@ namespace CRNRSTN;
  *                     satisfy environmental detection 
  *                     earlier in the stack or at a 
  *                     lower level.
- *                     
+ *
  *                     CRNRSTN :: Environment 
  *                     loads classes that support the 
  *                     kitchen sink (in terms of HTML 
@@ -322,7 +322,7 @@ namespace CRNRSTN;
  *                     x.gif from:
  *
  *                     http://172.16.225.128/lightbox_helper/?crnrstn_0010111011=x.gif,
- *                     
+ *
  *                     all of our environmental 
  *                     detection responsibilities 
  *                     will need to be performed as 
@@ -336,7 +336,7 @@ namespace CRNRSTN;
  *                     CRNRSTN :: Lightsaber SOAP 
  *                     Services Layer documentation 
  *                     page assembly.
- *                     
+ *
  *                     Now, crnrstn is the lead 
  *                     class object performing 
  *                     environmental detection 
@@ -418,7 +418,7 @@ class crnrstn_environment extends crnrstn
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Edit: Deleted the error_log() method 
      *       from the crnrstn_environment class 
-     *       object added to crnrstn on  
+     *       object added to crnrstn on 
      *       Thursday, August 18, 2022 @ 0224 hrs.
      *       in light of the 
      *       crnrstn_environment crnrstn 
@@ -597,7 +597,7 @@ class crnrstn_environment extends crnrstn
      * 100 = better / bigger file. 
      *
      */
-    public $jpg_image_quality       = 100;  
+    public $jpg_image_quality       = 100;
     public $cache_ttl_default       = 80;
     public $useCURL_default         = true;
     protected $max_login_attempts   = 10;
@@ -2095,11 +2095,11 @@ class crnrstn_environment extends crnrstn
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * $tmp_show_comments = true;
-         * if($this->is_serialized_bit_set('crnrstn_html_comments_mode', 
+         * if($this->is_serialized_bit_set('R_html_comments_mode',
          *     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -2337,10 +2337,10 @@ class crnrstn_environment extends crnrstn
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -2495,11 +2495,11 @@ class crnrstn_environment extends crnrstn
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
 
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           CRNRSTN_HTML_COMMENTS_SILENT_GOLD) !== true)
          * {
          *
@@ -2603,11 +2603,11 @@ class crnrstn_environment extends crnrstn
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
 
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          * 
@@ -2719,10 +2719,10 @@ $tmp_node_cnt . '</div>';
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -2807,9 +2807,9 @@ $tmp_node_cnt . '</div>';
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
         /* if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -3301,10 +3301,10 @@ requirements related to returning the content for this request.
         for($i = 0; $i < $tmp_meta_cnt; $i++){
 
             $tmp_data = $this->get_resource('HTML_HEAD_CRNRSTN_META', $i, $tmp_data_type_family);
-            if(is_array($tmp_data)){
+            if(\is_array($tmp_data)){
 
                 $tmp_cnt = sizeof($tmp_data);
-                for ($ii = 0; $ii < $tmp_cnt; $ii++){
+                for($ii = 0; $ii < $tmp_cnt; $ii++){
 
                     $tmp_str_out_HTML .= htmlentities($tmp_data[$ii]) . '<br>
         ';
@@ -3374,11 +3374,11 @@ requirements related to returning the content for this request.
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
 
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -3464,11 +3464,11 @@ requirements related to returning the content for this request.
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
 
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -3544,11 +3544,11 @@ requirements related to returning the content for this request.
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
 
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -3617,11 +3617,11 @@ requirements related to returning the content for this request.
                                     $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD'], 
                                     $this->R_data['int_flag']['R_boolean'], 
                                     (int) $this->R_data['int_flag']['R_icy_bitmask'], 
-                                    'crnrstn_html_comments_mode');
+                                    'R_html_comments_mode');
 
         /* $tmp_show_comments = true;
          * if($this->is_serialized_bit_set(
-         *           'crnrstn_html_comments_mode', 
+         *           'R_html_comments_mode',
          *           $this->R_data['int_flag']['CRNRSTN_HTML_COMMENTS_SILENT_GOLD']) !== true)
          * {
          *
@@ -4345,7 +4345,7 @@ requirements related to returning the content for this request.
                      *                                     __FILE__, 
                      *                                     CRNRSTN_SETTINGS_CRNRSTN);
                      *
-                     */                                    
+                     */
 
                     include_once($wp_config_file_path);
 
@@ -8460,7 +8460,7 @@ requirements related to returning the content for this request.
 //                               __METHOD__, 
 //                               __FILE__, 
 //                               $this->R_data['int_flag']['CRNRSTN_BARNEY']);
-                       
+
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * HOOOSTON, VE HAFF PROBLEM!
                          * https://www.wired.com/2011/04/alt-text-spacecraft/
@@ -8582,7 +8582,7 @@ requirements related to returning the content for this request.
 //
 //                            $this->error_log('The "' . $paramName . '" parameter has been requested from wild card resource (i.e. WCR), "' . $wildCardKey . '", but this parameter was not found to have been initialized therein via oWCR->add_attribute().', __LINE__, __METHOD__, __FILE__, $this->R_data['int_flag']['CRNRSTN_BARNEY']);
 //
-//                            
+//
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * HOOOSTON, VE HAFF PROBLEM!
                              * https://www.wired.com/2011/04/alt-text-spacecraft/
@@ -9051,7 +9051,7 @@ requirements related to returning the content for this request.
                                                                   'crnrstn_favicon_asset_map_http_root', 
                                                                   0, 
                                                                   'CRNRSTN::RESOURCE::ASSET_PATH');
-                
+
                 /*
                 error_log('[lnum ' . 
                     __LINE__ . '] [mthd ' . 
@@ -10315,7 +10315,7 @@ requirements related to returning the content for this request.
 
             // PNG
             $tmp_img_cnt = \sizeof($tmp_scraped_filename_PNG_ARRAY);
-            for ($i = 0; $i < $tmp_img_cnt; $i++){
+            for($i = 0; $i < $tmp_img_cnt; $i++){
 
                 $tmp_pos_png      = \strpos($tmp_scraped_filename_PNG_ARRAY[$i], '.png');
                 $tmp_pos_ds_store = \strpos($tmp_scraped_filename_PNG_ARRAY[$i], 'DS_Store');
@@ -10335,8 +10335,8 @@ requirements related to returning the content for this request.
             }
 
             // JPEG
-            $tmp_img_cnt = sizeof($tmp_scraped_filename_JPEG_ARRAY);
-            for ($i = 0; $i < $tmp_img_cnt; $i++){
+            $tmp_img_cnt = \sizeof($tmp_scraped_filename_JPEG_ARRAY);
+            for($i = 0; $i < $tmp_img_cnt; $i++){
 
                 $tmp_pos_jpg      = \strpos($tmp_scraped_filename_JPEG_ARRAY[$i], '.jpg');
                 $tmp_pos_jpeg     = \strpos($tmp_scraped_filename_JPEG_ARRAY[$i], '.jpeg');

@@ -312,7 +312,7 @@ namespace CRNRSTN;
  */
 class crnrstn_sql_profile_manager extends crnrstn
 {
-    /* # # C # R # N # R # S # T # N # : : # # # #
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Edit: We modified the crnrstn_query_profile_manager 
      *       class object by applying an 
      *       extension of the crnrstn_user object, 
@@ -366,14 +366,14 @@ class crnrstn_sql_profile_manager extends crnrstn
      *         ~ a bit slower if max size is only approximated
      *         - much slower if max size is not known
      *         - cannot be used with most array functions
-     *         
+     *
      *         To sum up:
      *         SplFixedArray is a very good choice 
      *         for storing giant amount of data, 
      *         though only as long as you at least 
      *         roughly know the size and can work 
      *         without array functions.
-     *         
+     *
      *         SOURCE  :: https://www.php.net/manual/en/class.splfixedarray.php
      *         COMMENT :: https://www.php.net/manual/en/class.splfixedarray.php#124555
      *         AUTHOR  :: herhor67 at interia dot pl

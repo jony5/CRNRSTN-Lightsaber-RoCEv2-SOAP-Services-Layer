@@ -318,7 +318,7 @@ class crnrstn_messenger_from_north extends crnrstn
      *       extension of the crnrstn object, 
      *       by deleting the 
      *       __construct($oCRNRSTN) input 
-     *       parameter with its private static  
+     *       parameter with its private static 
      *       definition, and by removing the 
      *       object assignment to the 
      *       private static  $oCRNRSTN variable. 
@@ -3038,7 +3038,7 @@ class crnrstn_messenger_from_north extends crnrstn
             // $oCRNRSTN_PROXYMailer = new crnrstn_highway_of_the_king($this);
             $oCRNRSTN_PROXYMailer = $this->return_registered_resource('new', 'crnrstn_highway_of_the_king', $this);
 
-            //$oCRNRSTN_PHPMailer = new \PHPMailer\crnrstn_PHPMailer\crnrstn_PHPMailer($this);
+            //$oCRNRSTN_PHPMailer = new \PHPMailer\PHPMailer\PHPMailer($this);
 
             //
             // INITIALIZE SENDER/FROM
@@ -3161,7 +3161,7 @@ class crnrstn_messenger_from_north extends crnrstn
                     // $oCRNRSTN_PROXYMailer = new crnrstn_highway_of_the_king($this);
                     $oCRNRSTN_PROXYMailer = $this->return_registered_resource('new', 'crnrstn_highway_of_the_king', $this);
 
-                    //$oCRNRSTN_PHPMailer = new \PHPMailer\crnrstn_PHPMailer\crnrstn_PHPMailer($this);
+                    //$oCRNRSTN_PHPMailer = new \PHPMailer\PHPMailer\PHPMailer($this);
 
                     //
                     // WE HAVE FOUND BULK EMAIL
@@ -3357,8 +3357,8 @@ class crnrstn_messenger_from_north extends crnrstn
             //
             // 5 :: Monday, July 15, 2024 @ 2151 hrs.
             //
-            // $oCRNRSTN_PHPMailer = new \PHPMailer\crnrstn_PHPMailer\crnrstn_PHPMailer($this);
-            $oCRNRSTN_PHPMailer = $this->return_registered_resource('new', 'crnrstn_PHPMailer', $this);
+            // $oCRNRSTN_PHPMailer = new \PHPMailer\PHPMailer\PHPMailer($this);
+            $oCRNRSTN_PHPMailer = $this->return_registered_resource('new', 'PHPMailer', $this);
 
             //
             // INITIALIZE SENDER/FROM
@@ -3481,8 +3481,8 @@ class crnrstn_messenger_from_north extends crnrstn
                     //
                     // 5 :: Monday, July 15, 2024 @ 2153 hrs.
                     //
-                    // $oCRNRSTN_PHPMailer = new \PHPMailer\crnrstn_PHPMailer\crnrstn_PHPMailer($this);
-                    $oCRNRSTN_PHPMailer = $this->return_registered_resource('new', 'crnrstn_PHPMailer', $this);
+                    // $oCRNRSTN_PHPMailer = new \PHPMailer\PHPMailer\PHPMailer($this);
+                    $oCRNRSTN_PHPMailer = $this->return_registered_resource('new', 'PHPMailer', $this);
 
                     //
                     // WE HAVE FOUND BULK EMAIL
@@ -5564,30 +5564,48 @@ LOG TRACE
      * @access private
      *
      */
-    private function return_PHP_exception_trace_pretty(
+    function return_PHP_exception_trace_pretty(
                      $exception_obj_trace_str, 
                      $format = 'ERROR_LOG')
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Changed the return_PHP_exception_trace_pretty()
+         *       method visibility
+         *       from private to public.
+         *       5 :: Saturday, September 5, 2026 @ 0214 hrs.
+         *
+         */
 
         switch($format){
             case 'HTML':
 
-                $exception_obj_trace_str = $this->proper_replace('\n', '<br>', $exception_obj_trace_str);
-                $exception_obj_trace_str = $this->proper_replace('
-', '<br>', $exception_obj_trace_str);
+                $exception_obj_trace_str = $this->proper_replace(
+                                           '\n',
+                                           '<br>',
+                                           $exception_obj_trace_str);
+                $exception_obj_trace_str = $this->proper_replace(
+                                           '
+',
+                                           '<br>',
+                                           $exception_obj_trace_str);
 
             break;
             case 'TEXT':
 
-                $exception_obj_trace_str = $this->proper_replace('\n', '
-', $exception_obj_trace_str);
+                $exception_obj_trace_str = $this->proper_replace(
+                                           '\n', '
+',
+                                           $exception_obj_trace_str);
 
             break;
             default:
-
-                //
-                // DO NOTHING :: STRAIGHT UNPROCESSED PHP NATIVE OUT
-
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Do nothing for straight-
+                 * unprocessed PHP native
+                 * exception object
+                 * trace output.
+                 *
+                 */
             break;
 
         }

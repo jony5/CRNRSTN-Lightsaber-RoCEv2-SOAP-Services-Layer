@@ -1531,7 +1531,7 @@ class crnrstn_bringer_of_the_precious_things extends crnrstn_environment
             // BUILD; THE FIRST PASS HAS 
             // BEEN FINISHED.
             //
-            // 5 :: Friday, March 1, 2024 @ 0304 hrs.    
+            // 5 :: Friday, March 1, 2024 @ 0304 hrs.
             //
             // THE TARGET FORMAT 
             // FOR HTML OUTPUT:
@@ -13494,13 +13494,13 @@ Born on Nov. 10th, 2005, my dog...named \'J5\' (proper)...is part Korean Jindo, 
             ($char_selection != -2) && 
             ($char_selection != -3) && 
             ($char_selection != -4) && 
-            ($char_selection != -5) &&  
+            ($char_selection != -5) && 
             ($char_selection != 0) && 
             ($char_selection != '-1') && 
             ($char_selection != '-2') && 
             ($char_selection != '-3') && 
             ($char_selection != '-4') && 
-            ($char_selection != '-5') &&  
+            ($char_selection != '-5') && 
             ($char_selection != '0')){
 
             $codeAlphabet = $char_selection;

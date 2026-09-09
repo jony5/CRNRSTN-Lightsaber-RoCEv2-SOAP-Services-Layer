@@ -1,7 +1,7 @@
 <?php
 /**
- * Portuguese (European) crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Portuguese (European) PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Jonadabe <jonadabe@hotmail.com>
  */
 

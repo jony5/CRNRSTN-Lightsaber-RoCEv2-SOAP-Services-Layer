@@ -1,8 +1,8 @@
 <?php
 /**
- * Tagalog crnrstn_PHPMailer language file: refer to English translation for definitive list
+ * Tagalog PHPMailer language file: refer to English translation for definitive list
  *
- *   @package crnrstn_PHPMailer
+ *   @package CRNRSTN
  *   @author Adriane Justine Tan <adrianetan12@gmail.com>
  */
  

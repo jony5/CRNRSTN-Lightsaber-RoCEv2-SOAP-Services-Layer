@@ -1,7 +1,7 @@
 <?php
 /**
- * Slovene crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Slovene PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Klemen Tušar <techouse@gmail.com>
  * @author Filip Š <projects@filips.si>
  */

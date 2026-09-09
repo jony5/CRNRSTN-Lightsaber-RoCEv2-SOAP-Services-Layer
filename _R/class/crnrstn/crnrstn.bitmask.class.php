@@ -240,7 +240,7 @@ namespace CRNRSTN;
 /**
  * 
  *
- * CLASS DEFINITION :: crnrstn_bitmask
+ * CLASS DEFINITION :: bitmask
  * CLASS VERSION    :: 1.00.0000
  * DATE             :: Friday, October 27, 2023 @ 0518 hrs.
  * AUTHOR           :: icy at digitalitcc dot com
@@ -301,7 +301,7 @@ namespace CRNRSTN;
  * LICENSE          :: Creative Commons Attribution 3.0 License
  *                     https://www.php.net/license/index.php#doc-lic
  */
-class crnrstn_bitmask 
+class bitmask 
 {
 
     protected $bitmask = array();

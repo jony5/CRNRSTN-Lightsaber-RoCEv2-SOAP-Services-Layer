@@ -1,7 +1,7 @@
 <?php
 /**
- * Latvian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Latvian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Eduards M. <e@npd.lv>
  */
 

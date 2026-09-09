@@ -508,7 +508,7 @@ class crnrstn_log extends crnrstn
      *       5 :: Thursday, March 12, 2026 @ 1155 hrs.
      *
      */
-    
+
     private $R_data = array();
 
     private static $serial;

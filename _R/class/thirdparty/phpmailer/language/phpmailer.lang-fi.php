@@ -1,7 +1,7 @@
 <?php
 /**
- * Finnish crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Finnish PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Jyry Kuukanen
  */
 

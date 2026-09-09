@@ -1,7 +1,7 @@
 <?php
 /**
- * Estonian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Estonian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Indrek Päri
  * @author Elan Ruusamäe <glen@delfi.ee>
  */

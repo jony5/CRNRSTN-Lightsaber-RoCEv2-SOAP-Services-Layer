@@ -3422,55 +3422,37 @@ class crnrstn_multi_language_manager extends crnrstn
     }
 
     public function multi_lang_content_return(
-                    $iso_lang_code = 'en', 
-                    $multi_lang_resource_key = NULL, 
-                    $data_attribute_key = NULL, 
-                    $default_content = NULL, 
-                    $css_style_ARRAY = NULL)
+                    $data_attribute_key,
+                    $default_content = NULL,
+                    $iso_lang_code = 'en',
+                    $css_data = NULL)
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Deleted the
+         *       multi_lang_content_return method
+         *       input parameter,
+         *       $multi_lang_resource_key = NULL.
+         *       5 :: Tuesday, September 1, 2026 @ 0239 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Moved the multi_lang_content_return
+         *       method $iso_lang_code input parameter
+         *       to follow the $default_content,
+         *       renamed $css_style_ARRAY to $css_style,
+         *       and removed the NULL default
+         *       for $data_attribute_key.
+         *       5 :: Tuesday, September 1, 2026 @ 0249 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Renamed the input parameter
+         *       $css_style to $css_data to
+         *       follow the CLR-SSL System
+         *       Link Library.
+         *       5 :: Thursday, September 3, 2026 @ 1636 hrs.
+         *
+         */
 
-        //
-        // We will use this as a catch until
-        // all static system content output
-        // can be standardized as a result
-        // of our progress on the CRNRSTN ::
-        // Lightsaber RoCEv2 SOAP Services
-        // Layer (CLR-SSL) System Registry.
-        //
-        //
-        // 5 :: November 6, 2025 @ 0538 hrs.
-        if(isset($multi_lang_resource_key)){
-
-            error_log('[lnum ' . __LINE__ .
-                '] [mthd ' . __METHOD__ .
-                '] $iso_lang_code[' . $iso_lang_code .
-                ']. $multi_lang_resource_key[' . $multi_lang_resource_key .
-                '] $data_attribute_key[' . $data_attribute_key .
-                ']. die();');
-
-            die();
-
-        }else{
-
-            //
-            // TODO: A ton of original CRNRSTN :: first pass
-            // multi-lang method calls only provide
-            // one parameter, right now...$data_attribute_key
-            // There is no time to update them all, atm,
-            // as we work to wire up the CLR-SSL
-            // System Registry and the accompanying
-            // CLR-SSL Resource Content Library.
-            //
-            //
-            // 5 ::
-            //
-            // November 6, 2025 @ 0538 hrs.
-            $data_attribute_key = $iso_lang_code;
-
-        }
-
-        //
-        // WORRY NOT. THIS WILL BE DATABASE DRIVEN.
+        // Worry not. This will be database driven.
         switch($data_attribute_key){
             case 'SOCIAL_PREVIEW_TITLE':
 
@@ -4593,6 +4575,17 @@ photo album
             break;
 
         }
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Return default content 
+         * if available. 
+         *
+         *
+         * 5 :: Wednesday, September 9, 2026 @ 0922 hrs.
+         *
+         */
+        if(isset($default_content)) 
+            return $default_content;
 
         return NULL;
 

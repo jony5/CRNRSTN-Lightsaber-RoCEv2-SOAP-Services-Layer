@@ -529,8 +529,8 @@ class crnrstn_logging extends crnrstn
      *
      */
 
-    private static $_R = array();
-    private $R_data = array();
+    private $_R = array();
+    private $R_data    = array();
     private static $R_log_output_mgr;
     private static $config_serial;
 
@@ -575,7 +575,7 @@ class crnrstn_logging extends crnrstn
         $this->R_data['int_flag']     = $this->get_crnrstn('int_flag');
         $this->R_data['R_debug_mode'] = $this->get_crnrstn('R_debug_mode');
 
-        self::$_R['kivotos']['crnrstn_database_crnrstn'] = $this->kivotos_storage('db');
+        $this->_R['kivotos']['db']    = $this->kivotos_storage('db');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * This is a working-but-untested 
@@ -1037,7 +1037,7 @@ class crnrstn_logging extends crnrstn
                  * // (browser) storage of globally 
                  * // accessible and serialized 
                  * // by key error messages. 
-                 * case 'R_channel_SSDTLA':   
+                 * case 'R_channel_SSDTLA':
                  * case 'R_channel_PSSDTLA':
                  * case 'R_channel_SOAP':
                  * case 'R_channel_FILE':
@@ -1924,7 +1924,7 @@ class crnrstn_logging extends crnrstn
                                                     'in order to investigate web application ' .
                                                     'bottlenecks when they are made manifest ' .
                                                     'during peak traffic times in production.
-  
+    
                                                     As admin (or with admin assigned ' .
                                                     'user privileges), login via browser to ' .
                                                     'any node/server/IP/IoT (including dev environments) ' .
@@ -3951,7 +3951,7 @@ class crnrstn_logging extends crnrstn
                  * then come back, and finish
                  * the thought, above.
                  */
-                if(isset(self::$_R['kivotos']['crnrstn_database_crnrstn']))
+                if(isset($this->_R['kivotos']['crnrstn_database_crnrstn']))
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * The CLR-SSL Logging Services
                      * Layer architecture is
@@ -3961,7 +3961,7 @@ class crnrstn_logging extends crnrstn
                      *
                      * 5 :: Tuesday, August 25, 2026 @ 2251 hrs.
                      */
-                    self::$_R['kivotos']['crnrstn_database_crnrstn']->error_log(
+                    $this->_R['kivotos']['crnrstn_database_crnrstn']->error_log(
                                                                       $message_str,
                                                                       $syslog_level,
                                                                       $error_reporting_level,
@@ -5317,9 +5317,9 @@ class crnrstn_logging extends crnrstn
         $tmp_is_log_none = false;
         $tmp_is_log_all = false;
 
-        if($this->isset_crnrstn('CRNRSTN_log_silo_profile') == true){
+        if($this->isset_crnrstn('log_silo_profile') == true){
 
-            $tmp_log_silo_ARRAY = $this->get_crnrstn('CRNRSTN_log_silo_profile');
+            $tmp_log_silo_ARRAY = $this->get_crnrstn('log_silo_profile');
 
             foreach($tmp_log_silo_ARRAY as
             	$silo_index => $tmp_silo_profile)
@@ -6890,7 +6890,7 @@ class crnrstn_logging extends crnrstn
                                      *        fclose($fp);
                                      *
                                      *    }else{
-                                     *        
+                                     *
                                      *      /**
 				                     *       * # C # R # N # R # S # T # N # :: # L # I # G # H # T
 				                     *       * HOOOSTON, VE HAFF PROBLEM!

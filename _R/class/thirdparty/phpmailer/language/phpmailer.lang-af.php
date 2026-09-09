@@ -1,7 +1,7 @@
 <?php
 /**
- * Afrikaans crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Afrikaans PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  */
 
 $PHPMAILER_LANG['authenticate']         = 'SMTP-fout: kon nie geverifieer word nie.';

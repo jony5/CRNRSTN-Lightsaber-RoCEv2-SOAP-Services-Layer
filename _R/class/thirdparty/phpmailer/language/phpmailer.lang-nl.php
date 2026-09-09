@@ -1,7 +1,7 @@
 <?php
 /**
- * Dutch crnrstn_PHPMailer language file: refer to crnrstn_PHPMailer.php for definitive list.
- * @package crnrstn_PHPMailer
+ * Dutch PHPMailer language file: refer to PHPMailer.php for definitive list.
+ * @package CRNRSTN
  * @author Tuxion <team@tuxion.nl>
  */
 

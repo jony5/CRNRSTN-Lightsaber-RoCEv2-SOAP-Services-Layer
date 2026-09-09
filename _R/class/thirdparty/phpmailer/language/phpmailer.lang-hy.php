@@ -1,7 +1,7 @@
 <?php
 /**
- * Armenian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Armenian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Hrayr Grigoryan <hrayr@bits.am>
  */
  

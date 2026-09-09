@@ -386,10 +386,10 @@ namespace CRNRSTN;
  *    M :: Remote Direct Memory Access 
  *
  *         Remote Direct Memory 
- *         Access  (RDMA, RoCE, or  
- *         RoCEv2) Data Storage and  
- *         Application Acceleration  
- *         Architecture, or simply  
+ *         Access  (RDMA, RoCE, or 
+ *         RoCEv2) Data Storage and 
+ *         Application Acceleration 
+ *         Architecture, or simply 
  *         "the R" in CLR-SSL.
  *
  *    F :: Server Local File System
@@ -595,7 +595,7 @@ $oWCR_BLUEHOST_EVIFWEB->add_attribute('RECIPIENTS_NAME_PIPED', '|Jonathan Harris
 //$oCRNRSTN_oWCR_ARRAY[$oWCR_BLUEHOST_EVIFWEB->return_resource_key()] = $oWCR_BLUEHOST_EVIFWEB;
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * Begin A NEW WILD  
+ * Begin A NEW WILD 
  * CARD RESOURCE. 
  *
  */

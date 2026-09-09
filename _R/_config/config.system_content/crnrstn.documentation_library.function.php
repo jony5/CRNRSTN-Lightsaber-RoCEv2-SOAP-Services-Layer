@@ -403,7 +403,7 @@ function _crnrstn_documentation_library(
     $tmp_ul_style               = $R_csc->return_dom_style_tag('unordered_list_style', $background_color_hex);
     $tmp_ol_style               = $R_csc->return_dom_style_tag('ordered_list_style', $background_color_hex);
     $tmp_li_style               = $R_csc->return_dom_style_tag('list_item_style', $background_color_hex);
-    
+
     switch($module_key){
         case 'add_cookie':
 
@@ -447,7 +447,7 @@ function _crnrstn_documentation_library(
                  *
                  */
                 $R_csc->social_meta_image();
-                
+
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Return this to the 
                  * original value. 
@@ -460,7 +460,7 @@ function _crnrstn_documentation_library(
                     ' content source $module_key[' . 
                     $module_key . 
                     '].');
-                
+
                 return true;
 
             }
@@ -473,11 +473,11 @@ function _crnrstn_documentation_library(
              *
              */
             $tmp_title_array = array();
-            
+
             $token = $R_csc->return_content_deep_link_token();
             $tmp_title_array['PAGE_TITLE'] = '<h1>' . $token . $module_key . '</h1>';
             $R_csc->sauce($tmp_title_array['PAGE_TITLE']);
-            
+
             $token = $R_csc->return_content_deep_link_token();
             $tmp_title_array['PAGE_DESCRIPTION'] = '<p>' . $token . 'CONTENT PENDING.</p>';
             $R_csc->sauce($tmp_title_array['PAGE_DESCRIPTION']);
@@ -959,7 +959,7 @@ function _crnrstn_documentation_library(
             $R_csc->add_page_element(
                     $tmp_page_serial, 
                     'PARAMETER_DEFINITION', 
-                    $tmp_param_def,  
+                    $tmp_param_def, 
                     $tmp_output_type);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -15116,7 +15116,7 @@ $codeAlphabet .= "<span class="crnrstn_documentation_method_string_data">' .
                             'that his brother came forth, and his hand was holding on ' . 
                             'to Esau\'s heel, so his name was called Jacob. And Isaac ' . 
                             'was sixty years old when she bore them.</p>
-                             
+
                             <p><strong>Gen. 36:12a</strong> - And Timna was a concubine ' . 
                             'to Eliphaz, Esau\'s son, and she bore Amalek to Eliphaz.</p>
 

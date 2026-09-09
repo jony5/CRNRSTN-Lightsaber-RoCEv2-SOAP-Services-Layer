@@ -300,7 +300,7 @@ namespace CRNRSTN;
  *                     Decoupled Data Object (MC-DDO) 
  *                     Services Layer channels are 
  *                     defined as follows:
- *                    
+ *
  *                       G :: HTTP $_GET Request
  *                               An OpenSSL encrypted 
  *                               JSON object appended 
@@ -308,7 +308,7 @@ namespace CRNRSTN;
  *                               generated HTML link 
  *                               for system data 
  *                               payload carry.
- *                     
+ *
  *                       P :: HTTP $_POST Request
  *                               This is an OpenSSL 
  *                               encrypted JSON object 
@@ -316,14 +316,14 @@ namespace CRNRSTN;
  *                               to every system generated
  *                               HTML form for system data
  *                               payload carry.
- *                     
+ *
  *                       H :: PHP SERVER Session
  *                               This is an OpenSSL 
  *                               encrypted JSON object 
  *                               stored in the 
  *                               $_SESSION Super 
  *                               Global Array.
- *                     
+ *
  *                       S :: CRNRSTN :: SOAP Services 
  *                            Data Tunnel Layer 
  *                            Architecture (SSDTLA) Packet.
@@ -332,10 +332,10 @@ namespace CRNRSTN;
  *                               Data Tunnel Layer 
  *                               Architecture (CRNRSTN :: 
  *                               PSSDTLA) packet.
- *                     
+ *
  *                               The browser will talk 
  *                               like a server.
- *                     
+ *
  *                       J :: CRNRSTN :: Pseudo-SOAP 
  *                            Services Data Tunnel Layer 
  *                            Architecture (PSSDTLA) 
@@ -344,27 +344,27 @@ namespace CRNRSTN;
  *                               JSON object stored in the 
  *                               browser HTML as hidden 
  *                               form <INPUT> data.
- *                     
+ *
  *                       C :: CRNRSTN :: Carrier Pigeon (Cookie)
  *                               An avian of homing 
  *                               variant...or a browser 
  *                               cookie, within which is 
  *                               stored an OpenSSL 
  *                               encrypted JSON object.
- *                     
+ *
  *                       D :: Database (MySQLi Connection)
  *                               This is an OpenSSL 
  *                               encrypted JSON object 
  *                               stored in the database.
- *                     
+ *
  *                       R :: Runtime
  *                               The CRNRSTN :: MC-DDO 
  *                               system default.
- *                     
+ *
  *                       O :: Simple Object Access 
  *                            Protocol (NuSOAP 0.9.5, 
  *                            SOAP 1.1)
- *                     
+ *
  *                       F :: Server Local File System
  *                               This is an OpenSSL 
  *                               encrypted JSON object 

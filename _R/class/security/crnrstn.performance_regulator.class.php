@@ -371,9 +371,9 @@ class crnrstn_performance_regulator extends crnrstn
      *       5 :: Monday, March 16, 2026 @ 0226 hrs.
      *
      */
-    
-    private $R_data = array();
 
+    private $_R     = array();
+    private $R_data = array();
     public $system_integer_meta_lookup_ARRAY = array();
     public $system_integer_meta_cache_ARRAY = array();
     private static $config_relevant_ini_values_ARRAY = array();
@@ -402,7 +402,7 @@ class crnrstn_performance_regulator extends crnrstn
      */
     function __construct()
     {
-        
+
         $this->R_data['int_flag'] = $this->get_crnrstn('int_flag');
 
         //$this->snapshot_ini_values();
@@ -420,20 +420,18 @@ class crnrstn_performance_regulator extends crnrstn
                                                         'max_file_uploads', 
                                                         'variables_order');
 
-        /**
-         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
         $this->monitor_pid_performance(true);
 
-        $tmp_mem_arr = $this->getServerMemoryUsage(false);
-        $server_load = $this->getServerLoad();
+        $tmp_mem_arr    = $this->getServerMemoryUsage(false);
+        $server_load    = $this->getServerLoad();
         $peak_mem_usage = memory_get_peak_usage(true);
 
         error_log(__LINE__ . ' '. 
             __METHOD__ . ' memory_limit=' . 
             $this->ini_get('memory_limit'));
 
-
-        $tmp_mem_arr = $this->getServerMemoryUsage(false);
+        $tmp_mem_arr    = $this->getServerMemoryUsage(false);
         $peak_mem_usage = memory_get_peak_usage(true);
 
         error_log(__LINE__ . ' ' . 
@@ -455,7 +453,7 @@ class crnrstn_performance_regulator extends crnrstn
 
         $this->process_id_perf_stat_ARRAY = $this->getpidinfo($this->process_id);
 
-         * SOURCE :: https://www.php.net/manual/en/function.getmypid.php#118865
+        SOURCE :: https://www.php.net/manual/en/function.getmypid.php#118865
         On windows, you can get a 
         list of PID's using this 
         single line statement:
@@ -464,7 +462,7 @@ class crnrstn_performance_regulator extends crnrstn
         $pids = array_column(
                     array_map(
                         'str_getcsv', 
-                        explode("\n",trim(`tasklist /FO csv /NH`))), 
+                        explode("\n", trim(`tasklist /FO csv /NH`))),
                     1); 
         ? >
 
@@ -1203,7 +1201,8 @@ class crnrstn_performance_regulator extends crnrstn
                      * performance acceleration boost. 
                      *
                      */
-                    if($this->config_is_valid_detected_env($tmp_env_key) == true){
+                    if($this->config_is_valid_detected_env($this->R_data['R_cluster_id'] .
+                            $this->R_data['R_node_id']) == true){
 
                         if($tmp_data_key == 'crnrstn_path_directory' || 
                             $tmp_data_key == 'crnrstn_system_directory')
@@ -3169,7 +3168,7 @@ class crnrstn_performance_regulator extends crnrstn
                          *       and free memory have the 
                          *       unit "kB" always. 
                          *       Is this correct?
-                         *       
+                         *
                          *       Checking. 
                          *       5 :: Monday, March 2, 2026 @ 0457 hrs.
                          *
@@ -5210,7 +5209,7 @@ class crnrstn_performance_regulator extends crnrstn
  *                                $this->set_crnrstn('R_debug_mode', $tmp_int);
  *
  *                            break;
- *                            case 'CRNRSTN_log_silo_profile':
+ *                            case 'log_silo_profile':
  *
  *                                //
  *                                // The CRNRSTN :: Lightsaber RoCEv2 SOAP
@@ -5225,7 +5224,7 @@ class crnrstn_performance_regulator extends crnrstn
  *                                // CRNRSTN :: UGC DATA INPUT [INTEGER]
  *                                $this->input_data_value(
  *                                       $tmp_int, 
- *                                       'CRNRSTN_log_silo_profile', 
+ *                                       'log_silo_profile',
  *                                       $data_type_family, 
  *                                       $index, 
  *                                       $data_authorization_profile, 
@@ -6535,7 +6534,7 @@ class crnrstn_performance_regulator extends crnrstn
                  *      '1 YEAR', 
                  *      '5 WEEKS', 
                  *      (int) 100 == '100 SECONDS' 
-                 *      
+                 *
                  * See database query date span handles.
                  *
                  *
@@ -7185,7 +7184,7 @@ class crnrstn_performance_regulator extends crnrstn
                     $this->set_crnrstn(
                            'system_resource_profile_ARRAY', 
                            array(
-                    'CRNRSTN_log_silo_profile'                     => array('validation_profile' => '_log_silo_profile', 
+                    'log_silo_profile'                             => array('validation_profile' => '_log_silo_profile',
                                                                               'data_type_family' => 'CRNRSTN::RESOURCE::CONFIGURATION'),
                     'max_disk_storage_utilization'                 => array('validation_profile' => '_percentage', 
                                                                               'data_type_family' => 'CRNRSTN::RESOURCE::DISK_STORAGE'),
@@ -7316,7 +7315,7 @@ class crnrstn_performance_regulator extends crnrstn
                              *
                              */
                             $this->set_crnrstn(
-                                   'CRNRSTN_log_silo_profile', 
+                                   'log_silo_profile',
                                    $data);
 
                         break;
@@ -7380,7 +7379,7 @@ class crnrstn_performance_regulator extends crnrstn
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                              * 'debug_logging_output_channel', 
                              * 'DOM', 
-                             * 'CRNRSTN::RESOURCE::GENERAL_SETTINGS');              
+                             * 'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
                              *
                              * Where CHANNEL = ['CONSOLE', 'DOM', 'ALERT'];
                              *
@@ -7721,7 +7720,7 @@ class crnrstn_performance_regulator extends crnrstn
                                      *        'override_interact_theme_sprite_icon_thirdparty_tm_is_active', 
                                      *        1, 
                                      *        'CRNRSTN::RESOURCE::SPRITE_ICON');
-                                     *  
+                                     *
                                      * Where [1=ON, 0=OFF]
                                      *
                                      *
@@ -8198,7 +8197,7 @@ class crnrstn_performance_regulator extends crnrstn
 
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * Do we need to [runtime] 
-                                 * load the server  
+                                 * load the server 
                                  * OpenSSL ciphers? 
                                  *
                                  */
@@ -9596,7 +9595,7 @@ class crnrstn_performance_regulator extends crnrstn
                                     $this->input_data_value(
                                            $this->get_crnrstn(
                                                   'R_hmac_hash_config', 
-                                                  'options',  
+                                                  'options', 
                                                   'ISACTIVE', 
                                                   \strtolower(\trim($tmp_hmac))), 
                                            $data_key . '_index', 
@@ -9709,50 +9708,50 @@ class crnrstn_performance_regulator extends crnrstn
                                     [NAME] => sha256)
                                 [OPTIONS] => Array(
                                     [SERVER] => Array(
-                                        [0] => md2              
-                                        [1] => md4              
+                                        [0] => md2
+                                        [1] => md4
                                         [2] => md5
-                                        [3] => sha1             
-                                        [4] => sha224           
+                                        [3] => sha1
+                                        [4] => sha224
                                         [5] => sha256
-                                        [6] => sha384           
-                                        [7] => sha512           
+                                        [6] => sha384
+                                        [7] => sha512
                                         [8] => ripemd128
-                                        [9] => ripemd160        
-                                        [10] => ripemd256       
+                                        [9] => ripemd160
+                                        [10] => ripemd256
                                         [11] => ripemd320
-                                        [12] => whirlpool       
-                                        [13] => tiger128,3      
+                                        [12] => whirlpool
+                                        [13] => tiger128,3
                                         [14] => tiger160,3
-                                        [15] => tiger192,3      
-                                        [16] => tiger128,4      
+                                        [15] => tiger192,3
+                                        [16] => tiger128,4
                                         [17] => tiger160,4
-                                        [18] => tiger192,4      
-                                        [19] => snefru          
+                                        [18] => tiger192,4
+                                        [19] => snefru
                                         [20] => snefru256
-                                        [21] => gost            
-                                        [22] => gost-crypto     
+                                        [21] => gost
+                                        [22] => gost-crypto
                                         [23] => adler32
-                                        [24] => crc32           
-                                        [25] => crc32b          
+                                        [24] => crc32
+                                        [25] => crc32b
                                         [26] => fnv132
-                                        [27] => fnv1a32         
-                                        [28] => fnv164          
+                                        [27] => fnv1a32
+                                        [28] => fnv164
                                         [29] => fnv1a64
-                                        [30] => joaat           
-                                        [31] => haval128,3      
+                                        [30] => joaat
+                                        [31] => haval128,3
                                         [32] => haval160,3
-                                        [33] => haval192,3      
-                                        [34] => haval224,3      
+                                        [33] => haval192,3
+                                        [34] => haval224,3
                                         [35] => haval256,3
-                                        [36] => haval128,4      
-                                        [37] => haval160,4      
+                                        [36] => haval128,4
+                                        [37] => haval160,4
                                         [38] => haval192,4
-                                        [39] => haval224,4      
-                                        [40] => haval256,4      
+                                        [39] => haval224,4
+                                        [40] => haval256,4
                                         [41] => haval128,5
-                                        [42] => haval160,5      
-                                        [43] => haval192,5      
+                                        [42] => haval160,5
+                                        [43] => haval192,5
                                         [44] => haval224,5
                                         [45] => haval256,5
                                         )
@@ -10036,7 +10035,7 @@ class crnrstn_performance_regulator extends crnrstn
                                 //       5 :: Wednesday, February 18, 2026 @ 0503 hrs.
 
                                     //'browser_cookie_privacy_accept_module', CRNRSTN_UI_COOKIE_YESNO, 'CRNRSTN::RESOURCE::COOKIE_PRIVACY');
-                                
+
                                     $tmp_force_data_err = true;
                                     $tmp_err_str = $data_profile . '[' . $data_key . '] could not be configured with the input, ' .
                                         strval($tmp_int) . '. ' . strval($data) . ', was the value that was provided as method input to this environment. ' .
@@ -14968,7 +14967,7 @@ class crnrstn_performance_regulator extends crnrstn
                                  *         encryption passphrase (# of bits) 
                                  *         management architecture based on 
                                  *         the cipher; e.g., aes-128 gets 
-                                 *         128 bit passphrase (16 chars),  
+                                 *         128 bit passphrase (16 chars), 
                                  *         aes-256 receives a 256 bit 
                                  *         passphrase (32 chars),...etc. 
                                  *         5 :: Sunday, March 1, 2026 @ 2245 hrs.

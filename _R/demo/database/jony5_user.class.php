@@ -5619,25 +5619,14 @@ class jony5_user
         $codeAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $codeAlphabet .= 'abcdefghijklmnopqrstuvwxyz';
         $codeAlphabet .= '0123456789';
-        $max          = strlen($codeAlphabet); // edited
+        $max          = \strlen($codeAlphabet); // edited
 
-        if(function_exists(__NAMESPACE__ . '\random_int')){
-
-            for ($i = 0; $i < $len; $i++){
-
-                $token .= $codeAlphabet[random_int(0, $max-1)];
-
-            }
-
-        }else{
-
-            for($i = 0; $i < $len; $i++){
-
+        if(\function_exists(__NAMESPACE__ . '\random_int'))
+            for($i = 0; $i < $len; $i++)
+                $token .= $codeAlphabet[\random_int(0, $max-1)];
+        else
+            for($i = 0; $i < $len; $i++)
                 $token .= $codeAlphabet[$this->crypto_rand_secure(0, $max - 1)];
-
-            }
-
-        }
 
         return $token;
 

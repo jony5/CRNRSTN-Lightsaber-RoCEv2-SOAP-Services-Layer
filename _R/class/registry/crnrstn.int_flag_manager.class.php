@@ -439,16 +439,16 @@ class crnrstn_int_flag_manager
      *        Organization of Architectural 
      *        Considerations (of the System) 
      *        Along an Unbounded Integer Plane. 
-     *        
+     *
      *        CLR-SSL thoughts about Integers 
      *        according to it's own systems. 
-     *        
+     *
      *        Note: We take a 32 bit OS 
      *        upper limit for max and min 
      *        integer bounds in system memory. 
      *        5 :: Friday, February 13, 2026 @ 2210 hrs.
 
-    
+
     Currently, 603 Integers are 
     Defined as SUPER GLOBALS 
     in Bulk:

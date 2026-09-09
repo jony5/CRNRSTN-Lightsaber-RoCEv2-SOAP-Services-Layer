@@ -448,7 +448,7 @@ body.crnrstn-disable-scrolling                                          { overfl
 .R_report_meta_value                        { font-weight: normal; font-size: 14px; }
 .R_report_meta_value a                      { color:#0066CC; text-shadow: none; }
 .R_report_meta_list ul                      { width:500px; }
-.R_report_meta_list li                      { overflow-wrap:break-word; padding:10px 20px 10px 20px;}
+.R_report_meta_list li                      { overflow-wrap:break-word; padding:10px 10px 10px 20px;}
 .R_report_data_shell                        { width:65%; min-width:645px; height:190px; padding:0 0 5px 20px; margin:0 0 0 20px; border:1px solid #333; overflow-y: scroll; overflow-x: scroll; }
 .R_report_generation_stats                  { padding:0 0 0 20px; overflow-wrap: break-word; font-family: "Courier New", Courier, monospace; font-size:14px; line-height: 20px; color: #333; text-shadow: 1px 1px 2px #ECECEC, 0 0 1em #ECECEC, 0 0 0.2em #ECECEC; }
 .R_report_copyright                         { width: 245px; font-family:Arial, Helvetica, sans-serif; text-align:left; padding-left:20px; font-size: 12px; line-height: 18px; color: #666; }

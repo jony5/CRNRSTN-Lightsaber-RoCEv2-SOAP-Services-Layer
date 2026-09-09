@@ -465,7 +465,7 @@ class crnrstn_soap_authorization_manager
 //            $tmp_accept_array = array();
 //            $tmp_deny_array = array();
 //
-//            for ($i = 0; $i < $tmp_cnt; $i++){
+//            for($i = 0; $i < $tmp_cnt; $i++){
 //
 //                //
 //                // CHECK FOR NOT

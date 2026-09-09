@@ -313,7 +313,7 @@ namespace CRNRSTN;
  *
  *                     Tuesday, July 2, 2024 @ 0804 hrs.
  *                     Last Modified: Saturday, March 14, 2026 @ 0311 hrs.
- *                     
+ *
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  *
@@ -1442,6 +1442,7 @@ class crnrstn_logging_output_profile_manager extends crnrstn
              *
              */
 
+            $oLogging_profile   =
             $spice_salt_mem_ptr = NULL;
             // 5 :: Tuesday, July 28, 2026 @ 0357 hrs.
             $this->compound_ointment(
@@ -1451,7 +1452,7 @@ class crnrstn_logging_output_profile_manager extends crnrstn
                    $this->R_data['R_cluster_id'], 
                    $this->profile_endpoint_criteria_ARRAY);
             $this->anoint(
-                   'crnrstn_bitmask',
+                   'crnrstn_logging_oprofile',
                    $oLogging_profile);
 
             $this->oLog_profiles_ARRAY[] = $oLogging_profile;

@@ -1187,7 +1187,7 @@ class crnrstn_user extends crnrstn
           $tmp_html_out .= $this->concatIntegrationPacketDatum(self::$formIntegrationPacket_ARRAY[$crnrstn_form_handle]['transport_protocol']);
 
           $tmp_input_cnt = sizeof(self::$formIntegrationPacket_ARRAY[$crnrstn_form_handle]['input_name']);
-          for ($i = 0; $i < $tmp_input_cnt; $i++){
+          for($i = 0; $i < $tmp_input_cnt; $i++){
 
               $tmp_html_out .= $this->concatIntegrationPacketDatum($i, ":");
               $tmp_html_out .= $this->concatIntegrationPacketDatum(self::$formIntegrationPacket_ARRAY[$crnrstn_form_handle]['input_name'][$i], ":");
@@ -7694,7 +7694,7 @@ ACCESS TYPE: SYSTEM LEVEL ACCESS
         $tmp_html_out .= $this->concatIntegrationPacketDatum(self::$formIntegrationPacket_ARRAY[$crnrstn_form_handle]['transport_protocol']);
 
         $tmp_input_cnt = sizeof(self::$formIntegrationPacket_ARRAY[$crnrstn_form_handle]['input_name']);
-        for ($i = 0; $i < $tmp_input_cnt; $i++){
+        for($i = 0; $i < $tmp_input_cnt; $i++){
 
             $tmp_html_out .= $this->concatIntegrationPacketDatum($i, ':');
             $tmp_html_out .= $this->concatIntegrationPacketDatum(self::$formIntegrationPacket_ARRAY[$crnrstn_form_handle]['input_name'][$i], ':');

@@ -748,13 +748,13 @@ class crnrstn_wind_cloud_fire extends crnrstn_user
                                       $this->secret_key_override, 
                                       $this->hmac_algorithm_override, 
                                       $this->options_bitwise_override);
-        
+
         /* error_log('157 electrum email ' . 
          *     'array size = ' . 
          *     sizeof($tmp_RECIPIENT_ARRAY));
          *
          */
-        
+
         if(isset($this->notifications_sender)){
 
             $tmp_SENDER_ARRAY = $this->return_oEmailArraySOAP_struct(
@@ -2313,7 +2313,7 @@ class crnrstn_wind_cloud_fire extends crnrstn_user
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Updated initNotifications() 
-         *       Exception messaging with a  
+         *       Exception messaging with a 
          *       replacement of the static text, 
          *       "2.0.0", by $this->version_crnrstn() 
          *       in anticipation of extending 
@@ -2637,7 +2637,7 @@ class crnrstn_wind_cloud_fire extends crnrstn_user
                                          *       'CRNRSTN :: Electrum [' . 
                                          *       $oEndpoint_connection_type . 
                                          *       '] MODIFIED TIMESTAMP=[' . 
-                                         *       \date('D M j G:i:s T Y' ,  
+                                         *       \date('D M j G:i:s T Y' , 
                                          *           $this->source_file_lastmodify_at_path_ARRAY[$oEndpoint_serial][$filePath]) . 
                                          *       '] *****', 
                                          *       __LINE__, 
@@ -9450,7 +9450,7 @@ class crnrstn_wind_cloud_fire extends crnrstn_user
              *
              */
             $tmp_result_cnt = sizeof($results);
-            for ($results_pos = 0; $results_pos < $tmp_result_cnt; $results_pos++){
+            for($results_pos = 0; $results_pos < $tmp_result_cnt; $results_pos++){
 
                 $tmp_dir_selection = $this->find_deepest_empty_dir(
                                             $results, 
@@ -10533,8 +10533,8 @@ class crnrstn_wind_cloud_fire extends crnrstn_user
                             $tmp_path_array['chunked_content'] = $oChunkRestrictData->return_linesArray();
 
                             $tmp_dest_path_or_ip_TEXT = '';
-                            $tmp_break_size = sizeof($tmp_path_array['chunked_content']);
-                            for ($i = 0; $i < $tmp_break_size; $i++){
+                            $tmp_break_size = \sizeof($tmp_path_array['chunked_content']);
+                            for($i = 0; $i < $tmp_break_size; $i++){
 
                                 $tmp_dest_path_or_ip_TEXT .= $tmp_path_array['chunked_content'][$i] . '
 ...';

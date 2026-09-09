@@ -1349,7 +1349,7 @@ $this->channel_bytes_stored($tmp_channel) . '
         //
         // Initialization return 
         // for acceleration of 
-        // CLR-SSL multi-channel  
+        // CLR-SSL multi-channel 
         // decoupled data object 
         // (MC-DDO) resource 
         // management.

@@ -280,7 +280,7 @@ namespace CRNRSTN;
  *                        decoupling of CRNRSTN :: 
  *                        Lightsaber SOAP Services 
  *                        Layer operational profile 
- *                        characteristics from the  
+ *                        characteristics from the 
  *                        server's native running 
  *                        PHP version. 
  *

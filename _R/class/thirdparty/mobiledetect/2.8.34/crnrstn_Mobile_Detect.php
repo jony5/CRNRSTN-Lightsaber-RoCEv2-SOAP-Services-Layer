@@ -23,7 +23,7 @@ namespace CRNRSTN;
  *
  * @version 2.8.34
  */
-class crnrstn_Mobile_Detect
+class Mobile_Detect
 {
     /**
      * Mobile detection type.

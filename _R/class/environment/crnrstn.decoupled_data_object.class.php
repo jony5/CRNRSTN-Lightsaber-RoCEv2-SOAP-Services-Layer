@@ -289,7 +289,7 @@ namespace CRNRSTN;
  *                     reflective of articulated
  *                     UGC meta or default settings 
  *                     where applicable.
- *                     
+ *
  *                     This class accurately reports
  *                     on the runtime performance of 
  *                     the CLR-SSL at all
@@ -2698,7 +2698,7 @@ class crnrstn_decoupled_data_object extends crnrstn
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                                  * 5 :: Monday, November 6, 2023 @ 2324 hrs.
                                  *
-                                 * $this->destruct_output .= '<pre><code>[lnum ' .  
+                                 * $this->destruct_output .= '<pre><code>[lnum ' . 
                                  *                           __LINE__ . '] [class ' . 
                                  *                           __CLASS__  . 
                                  *                           '] SUCCESS Channel ' . 
@@ -2775,7 +2775,7 @@ class crnrstn_decoupled_data_object extends crnrstn
                  *
                  * $this->destruct_output .= '<pre><code>[' . 
                  *                                     $this->return_micro_time()  . 
-                 *                                     '] [lnum ' .  
+                 *                                     '] [lnum ' . 
                  *                                     __LINE__ . '] [rtime ' . 
                  *                                     $this->wall_time() . '] [class ' . 
                  *                                     __CLASS__  . 
@@ -2846,7 +2846,7 @@ class crnrstn_decoupled_data_object extends crnrstn
              *
              * $this->destruct_output .= '<pre><code>[' . 
              *                                     $this->return_micro_time()  . 
-             *                                     '] [lnum ' .  
+             *                                     '] [lnum ' . 
              *                                     __LINE__ . '] [rtime ' . 
              *                                     $this->wall_time() . '] [class ' . 
              *                                     __CLASS__  . '] ERROR. channel[' . 
@@ -3075,11 +3075,11 @@ class crnrstn_decoupled_data_object extends crnrstn
          *       - $channel = NULL, 
          *       - $index = 0, and 
          *       - $ttl = 60
-         *       
+         *
          *       in order to comply with 
          *       method use in crnrstn, which 
          *       this class extends. 
-         *       
+         *
          *       [Mon Jul 27 04:51:56.822962 2026] [:error] [pid 19999] 
          *       [client 172.16.225.1:51093] 
          *       PHP Warning:  Declaration of 
@@ -11809,7 +11809,7 @@ $this->get_channel_config($channel_char, 'SOURCEID', $this->R_data['int_flag']['
                                                                $tmp_SOAP_ENCRYPT_SECRET_KEY, 
                                                                $tmp_SOAP_ENCRYPT_HMAC_ALG, 
                                                                $tmp_SOAP_ENCRYPT_OPTIONS);
-                     
+
                      */
                     $tmp_SOAP_ENCRYPT_HMAC_ALG_resp = $this->data_decrypt(
                                                              $SOAP_response['SOAP_ENCRYPT_HMAC_ALG'], 

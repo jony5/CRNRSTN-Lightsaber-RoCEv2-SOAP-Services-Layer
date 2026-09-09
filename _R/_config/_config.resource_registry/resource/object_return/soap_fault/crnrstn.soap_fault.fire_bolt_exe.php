@@ -291,79 +291,95 @@ use CRNRSTN\soap_fault;
 return new soap_fault();
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * CLR-SSL Resource Registry
- * Data Transport Architecture
- * Interfaces
+ * CLR-SSL Resource Registry 
+ * Data Transport Architecture 
+ * Interfaces 
  *
  * TLDR;
- * 1) CLR-SSL Kivotós Advanced Object Storage Ark.
- * 2) Resource Anointing with Compounded Ointment of Input Parameters.
- * 3) CLR-SSL Resource Registry Direct Integrations.
+ * 1) CLR-SSL Kivotós Advanced Object Storage Ark. 
+ * 2) Resource Anointing with Compounded Ointment of Input Parameters. 
+ * 3) CLR-SSL Resource Registry Direct Integrations. 
  *
- * 1) $var = $R->kivotos_storage('xml');
+ * 1) $obj = $R->kivotos_storage('ascii_art');
  * 2) $var = $R->compound_ointment_extract('wsdl', 0, false);
  * 3) $var = $R_resp[$memory_pointer]['input_parameter_defaults'][$R_resp[$memory_pointer]['software_default']][0];
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * A) CLR-SSL Kivotós Advanced
- *    Object Storage Ark.
- *    Use kivotos_storage() to
- *    access core resources that are
- *    loaded automatically by the
- *    CLR-SSL Resource Registry
- *    Internals. Access object,
- *    function output return,
- *    and runtime exe output
- *    return data.
+ * A) CLR-SSL Kivotós Advanced 
+ *    Object Storage Ark. 
+ *    Use kivotos_storage() to 
+ *    access core resources that are 
+ *    loaded automatically by the 
+ *    CLR-SSL Resource Registry 
+ *    Internals. Access object, 
+ *    function output return, 
+ *    and runtime exe output 
+ *    return data. 
  *
  *    function kivotos_storage($public_key)
  *    {}
  *
- * E.g.:
- *    $var = $R->kivotos_storage('xml');
+ * Where, $public_key = $R->get_crnrstn(
+ *                          'public_key', 
+ *                          $resource_name);
  *
- * Note: (string) $public_key is
- *       the index at which the data
- *       can be accessed within the
- *       CLR-SSL Kivotós Advanced
- *       Object Storage Ark or
- *       CRNRSTN :: KAOS ('chaos').
+ * Where, $resource_name = [a registered class or function............filename, 
+ *                          a registered class, function or exe.......filepath, 
+ *                          namespace + a registered class/function...name, 
+ *                          a registered class or function ...........name, or 
+ *                          the public software key of the class/function]
+ *
+ * E.g., to access an instantiation of crnrstn_ascii_art:
+ * $obj = $R->kivotos_storage($R->get_crnrstn('public_key', 'crnrstn_ascii_art'));
+ *
+ * Note: (string) $public_key is 
+ *       the index at which the data 
+ *       can be accessed within the 
+ *       CLR-SSL Kivotós Advanced 
+ *       Object Storage Ark or 
+ *       CRNRSTN :: KAOS (/cha·os/)
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * B) Just-In-Time Ointment Compounding
+ * B) Just-In-Time Ointment Compounding 
  *    and Variable Anointing and Just-
- *    In-Time Resource Definition
- *    Evaluations (or returns).
- *    Use compound_ointment_extract() to
- *    access resources loaded in the wild
- *    and dynamically via
- *    $R->compound_ointment() + $R->anoint()
- *    resource acquisition maneuvers.
+ *    In-Time Resource Definition 
+ *    Evaluations (or returns). 
+ *    Use compound_ointment_extract() to 
+ *    access resources loaded in the wild 
+ *    and dynamically via 
+ *    $R->compound_ointment() + $R->anoint() 
+ *    resource acquisition maneuvers. 
  *
  *    function compound_ointment_extract(
- *             $resource_name,
- *             $input_position = 0,
+ *             $resource_name, 
+ *             $input_position = 0, 
  *             $input_default = NULL)
  *             {}
  *
  * E.g.:
- *    $var = $R->compound_ointment_extract('wsdl', 0, false);
+ *    $var = $R->compound_ointment_extract($R->get_crnrstn('public_key', 'wsdl'), 0, false);
  *
- * Note: For Just-In-Time resource returns
- *       behind this architecture, please see:
+ * Note: For Just-In-Time resource returns 
+ *       behind this architecture, please see: 
  *
  *       $var = $R->return_anointed_resource($resource_name)
  *
+ * Where, $resource_name = [a registered class or function............filename, 
+ *                          a registered class, function or exe.......filepath, 
+ *                          namespace + a registered class/function...name, 
+ *                          a registered class or function ...........name, or 
+ *                          the public software key of the class/function]
+ *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * C) Direct integrations with the
- *    CLR-SSL Resource Registry's
- *    own internal data architecture.
+ * C) A direct and static integration with 
+ *    the internal data architecture of the 
+ *    CLR-SSL Resource Registry. 
  *
  * E.g.:
  *    $var = $R_resp[$memory_pointer]['input_parameter_defaults'][$R_resp[$memory_pointer]['software_default']][0];
  *
  *
  * 5 :: Saturday, August 22, 2026 @ 0742 hrs.
- * Last Modified: Monday, August 24, 2026 @ 1911 hrs.
+ * Last Modified: Wednesday, September 9, 2026 @ 1049 hrs.
  *
  */

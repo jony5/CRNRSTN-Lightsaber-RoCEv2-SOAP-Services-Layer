@@ -543,7 +543,7 @@ class crnrstn_soap_authentication_manager
 //            $tmp_grant_array = array();
 //            $tmp_deny_array = array();
 //
-//            for ($i = 0; $i < $tmp_cnt; $i++){
+//            for($i = 0; $i < $tmp_cnt; $i++){
 //
 //                //
 //                // CHECK FOR NOT
@@ -636,18 +636,18 @@ class crnrstn_soap_authentication_manager
 
         if($this->ISACTIVE == true){
 
-            $tmp_method_access_profile_ARRAY = explode('|', $method);
-            $tmp_cnt = sizeof($tmp_method_access_profile_ARRAY);
-            $tmp_group_activate_ARRAY = array();
-            $tmp_group_deactivate_ARRAY = array();
+            $tmp_method_access_profile_ARRAY = \explode('|', $method);
+            $tmp_cnt                         = \sizeof($tmp_method_access_profile_ARRAY);
+            $tmp_group_activate_ARRAY        = array();
+            $tmp_group_deactivate_ARRAY      = array();
 
-            for ($i = 0; $i < $tmp_cnt; $i++){
+            for($i = 0; $i < $tmp_cnt; $i++){
 
-                $pos_tilde = strpos($tmp_method_access_profile_ARRAY[$i],'~');
+                $pos_tilde = \strpos($tmp_method_access_profile_ARRAY[$i],'~');
                 if($pos_tilde !== false){
 
                     $tmp_clean_method_negation = self::$oCRNRSTN_ENV->proper_replace('~', '', $tmp_method_access_profile_ARRAY[$i]);
-                    $tmp_clean_method_negation = trim($tmp_clean_method_negation);
+                    $tmp_clean_method_negation = \trim($tmp_clean_method_negation);
                     $this->soap_services_method_deactivate_ARRAY[self::$oCRNRSTN_ENV->config_serial_hash][$this->resource_key][$this->serial][] = $tmp_clean_method_negation;
 
                 }else{
@@ -659,8 +659,8 @@ class crnrstn_soap_authentication_manager
                 if(isset($this->services_client_group_key)){
                     if($pos_tilde !== false){
 
-                        $tmp_clean_method_negation = self::$oCRNRSTN_ENV->proper_replace('~', '', $tmp_method_access_profile_ARRAY[$i]);
-                        $tmp_clean_method_negation = trim($tmp_clean_method_negation);
+                        $tmp_clean_method_negation    = self::$oCRNRSTN_ENV->proper_replace('~', '', $tmp_method_access_profile_ARRAY[$i]);
+                        $tmp_clean_method_negation    = trim($tmp_clean_method_negation);
                         $tmp_group_deactivate_ARRAY[] = $tmp_clean_method_negation;
 
                     }else{
@@ -676,7 +676,11 @@ class crnrstn_soap_authentication_manager
             if(isset($this->services_client_group_key)){
 
                 self::$oCRNRSTN_ENV->update_SOAP_services_oClient($this);
-                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_activate_SOAP_method($this->serial, $this->services_client_group_key, $tmp_group_activate_ARRAY, $tmp_group_deactivate_ARRAY);
+                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_activate_SOAP_method(
+                                     $this->serial,
+                                     $this->services_client_group_key,
+                                     $tmp_group_activate_ARRAY,
+                                     $tmp_group_deactivate_ARRAY);
 
             }else{
 
@@ -692,17 +696,17 @@ class crnrstn_soap_authentication_manager
 
         if($this->ISACTIVE == true){
 
-            $tmp_method_access_profile_ARRAY = explode('|', $method);
-            $tmp_cnt = sizeof($tmp_method_access_profile_ARRAY);
-            $tmp_deny_array = array();
+            $tmp_method_access_profile_ARRAY = \explode('|', $method);
+            $tmp_cnt                         = \sizeof($tmp_method_access_profile_ARRAY);
+            $tmp_deny_array                  = array();
 
-            for ($i = 0; $i < $tmp_cnt; $i++){
+            for($i = 0; $i < $tmp_cnt; $i++){
 
-                $pos_tilde = strpos($tmp_method_access_profile_ARRAY[$i],'~');
+                $pos_tilde = \strpos($tmp_method_access_profile_ARRAY[$i],'~');
                 if($pos_tilde !== false){
 
                     $tmp_clean_method_negation = self::$oCRNRSTN_ENV->proper_replace('~', '', $tmp_method_access_profile_ARRAY[$i]);
-                    $tmp_clean_method_negation = trim($tmp_clean_method_negation);
+                    $tmp_clean_method_negation = \trim($tmp_clean_method_negation);
                     $this->soap_services_method_deactivate_ARRAY[self::$oCRNRSTN_ENV->config_serial_hash][$this->resource_key][$this->serial][] = $tmp_clean_method_negation;
 
                 }else{
@@ -716,8 +720,8 @@ class crnrstn_soap_authentication_manager
                     if($pos_tilde !== false){
 
                         $tmp_clean_method_negation = self::$oCRNRSTN_ENV->proper_replace('~', '', $tmp_method_access_profile_ARRAY[$i]);
-                        $tmp_clean_method_negation = trim($tmp_clean_method_negation);
-                        $tmp_deny_array[] = $tmp_clean_method_negation;
+                        $tmp_clean_method_negation = \trim($tmp_clean_method_negation);
+                        $tmp_deny_array[]          = $tmp_clean_method_negation;
 
                     }else{
 
@@ -732,7 +736,10 @@ class crnrstn_soap_authentication_manager
             if(isset($this->services_client_group_key)){
 
                 self::$oCRNRSTN_ENV->update_SOAP_services_oClient($this);
-                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_deactivate_SOAP_method($this->serial, $this->services_client_group_key, $tmp_deny_array);
+                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_deactivate_SOAP_method(
+                                     $this->serial,
+                                     $this->services_client_group_key,
+                                     $tmp_deny_array);
 
             }else{
 
@@ -753,7 +760,10 @@ class crnrstn_soap_authentication_manager
             if(isset($this->services_client_group_key)){
 
                 self::$oCRNRSTN_ENV->update_SOAP_services_oClient($this);
-                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_IP_exclusiveAccess($this->serial, $this->services_client_group_key, $ip);
+                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_IP_exclusiveAccess(
+                                     $this->serial,
+                                     $this->services_client_group_key,
+                                     $ip);
 
             }else{
 
@@ -774,7 +784,10 @@ class crnrstn_soap_authentication_manager
             if(isset($this->services_client_group_key)){
 
                 self::$oCRNRSTN_ENV->update_SOAP_services_oClient($this);
-                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_IP_denyAccess($this->serial, $this->services_client_group_key, $ip);
+                self::$oCRNRSTN_ENV->update_SOAP_services_oClient_IP_denyAccess(
+                                     $this->serial,
+                                     $this->services_client_group_key,
+                                     $ip);
 
             }else{
 
@@ -788,21 +801,15 @@ class crnrstn_soap_authentication_manager
 
     public function init_services_client_group(){
 
-        if($this->ISACTIVE == true){
-
+        if($this->ISACTIVE == true)
             $this->services_client_group_key = self::$oCRNRSTN_ENV->generate_new_key(50);
-
-        }
 
     }
 
     public function sync_to_services_client_group($services_client_group_key){
 
-        if($this->ISACTIVE == true){
-
+        if($this->ISACTIVE == true)
             $this->services_client_group_key = $services_client_group_key;
-
-        }
 
     }
 

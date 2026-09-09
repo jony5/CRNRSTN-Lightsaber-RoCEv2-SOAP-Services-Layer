@@ -61,7 +61,7 @@ use League\OAuth2\Client\Token\AccessToken;
  *
  * @author  Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
  */
-class crnrstn_OAuth
+class OAuth
 {
     /**
      * An instance of the League OAuth Client Provider.

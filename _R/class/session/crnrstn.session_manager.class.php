@@ -276,10 +276,10 @@ namespace CRNRSTN;
  *                     CRNRSTN :: Lightsaber 
  *                     session data encryption 
  *                     services layer.
- *                     
- *                     
+ *
+ *
  *                     5
- *                     
+ *
  *                     Monday, July 29, 2024 @ 0819 hrs.
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -719,7 +719,7 @@ class crnrstn_session_manager extends crnrstn
          *       R_session_data method 
          *       scope visibility from 
          *       private to public.
-         *       
+         *
          *       [Thu Jun 11 06:23:17.269303 2026] [:error] 
          *       [pid 47378] [client 172.16.225.1:58637] 
          *       PHP Fatal error:  Uncaught Error: 
@@ -1222,7 +1222,7 @@ class crnrstn_session_manager extends crnrstn
                  *       from runtime and renamed to 
                  *       _____initialize_config_serialization().
                  *       5 :: Wednesday, June 10, 2026 @ 1611 hrs.
-                 *        
+                 *
                  */
 
                 $tmp_pre_cleaned_total_session_packet_size = $this->return_bytes($_SESSION);

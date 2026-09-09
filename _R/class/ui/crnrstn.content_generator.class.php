@@ -646,7 +646,7 @@ class crnrstn_content_generator extends crnrstn
                                 // BUILD AND ADD QUERY
                                 $tmp_cnt = sizeof($tmp_ugc_array);
                                 $tmp_ugc_search_clean_str_ARRAY = array();
-                                for ($i = 0; $i < $tmp_cnt; $i++){
+                                for($i = 0; $i < $tmp_cnt; $i++){
 
                                     $tmp_ugc_search_clean_str_ARRAY[$i] = strtolower($oSideBitch_Usr->str_sanitize($tmp_ugc_array[$i], 'search'));
 
@@ -687,7 +687,7 @@ class crnrstn_content_generator extends crnrstn
                                 //
                                 // COMBINE ALL DESIRED RESULT SETS INTO ONE TO SEQUENCE AND/OR PURGE DUPLICATES
                                 // FOR EACH WORD OR QUOTED STRING RESULT SET
-                                for ($i = 0; $i < $tmp_cnt; $i++){
+                                for($i = 0; $i < $tmp_cnt; $i++){
 
                                     #$this->resultSetMerge(($oQueryProfileMgr, {ORIGINAL RESULT SET KEY}, {TARGET RESULT SET KEY}, {MERGE KEY FIELD...PIPE OK}, {SEQUENCE KEY FIELD(S)...PIPE OK} {MERGE FIELD DATATYPE...PIPE OK})
                                     $this->resultSetMerge($oQueryProfileMgr, 'QUOTED_SEARCH_' . $i, 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', true,'CONTENT_LENGTH_RAW|DATECREATED', 'INTEGER|DATETIME');
@@ -714,7 +714,7 @@ class crnrstn_content_generator extends crnrstn
                                 // FOR EACH ROW IN MERGED RESULT SET
                                 $cur_pos = ($tmp_max_desktop_results*$tmp_current_pagination_pos) - $tmp_max_desktop_results;
 
-                                for ($i = $cur_pos; $i < $tmp_max_desktop_results+$cur_pos; $i++){
+                                for($i = $cur_pos; $i < $tmp_max_desktop_results + $cur_pos; $i++){
 
                                     $tmp_content_id = $this->return_db_value($oQueryProfileMgr, 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', $i);
 
@@ -787,7 +787,7 @@ class crnrstn_content_generator extends crnrstn
                                 //
                                 // COMBINE ALL DESIRED RESULT SETS INTO ONE TO SEQUENCE AND/OR PURGE DUPLICATES
                                 // FOR EACH WORD OR QUOTED STRING RESULT SET
-                                for ($i = 0; $i < $tmp_cnt; $i++){
+                                for($i = 0; $i < $tmp_cnt; $i++){
 
                                     $this->resultSetMerge($oQueryProfileMgr, 'PLAIN_SEARCH', 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', true,'CONTENT_LENGTH_RAW|DATECREATED', 'INTEGER|DATETIME');
 
@@ -809,7 +809,7 @@ class crnrstn_content_generator extends crnrstn
 
                                     //
                                     // BUILD HTML OUTPUT AND RETURN
-                                    //for ($ii = {PAGINATION_START_POS}; $ii < $tmp_max_desktop_results; $ii++){
+                                    //for($ii = {PAGINATION_START_POS}; $ii < $tmp_max_desktop_results; $ii++){
                                     $tmp_current_pagination_pos = $this->returnCurrentPaginationPos($pagination_serial);
                                     //error_log('348 - [' . $tmp_max_desktop_results.'] current_pagination_pos=' . $tmp_current_pagination_pos);
 
@@ -824,7 +824,7 @@ class crnrstn_content_generator extends crnrstn
 
                                     }
 
-                                    for ($ii = $cur_pos; $ii < $tmp_max_desktop_results+$cur_pos; $ii++){
+                                    for($ii = $cur_pos; $ii < $tmp_max_desktop_results + $cur_pos; $ii++){
 
                                         $tmp_content_id = $this->return_db_value($oQueryProfileMgr, 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', $ii);
 
@@ -973,7 +973,7 @@ class crnrstn_content_generator extends crnrstn
                                 // BUILD AND ADD QUERY
                                 $tmp_cnt = sizeof($tmp_ugc_array);
                                 $tmp_ugc_search_clean_str_ARRAY = array();
-                                for ($i = 0; $i < $tmp_cnt; $i++){
+                                for($i = 0; $i < $tmp_cnt; $i++){
 
                                     $tmp_ugc_search_clean_str_ARRAY[$i] = strtolower($oSideBitch_Usr->str_sanitize($tmp_ugc_array[$i], 'search'));
 
@@ -1014,7 +1014,7 @@ class crnrstn_content_generator extends crnrstn
                                 //
                                 // COMBINE ALL DESIRED RESULT SETS INTO ONE TO SEQUENCE AND/OR PURGE DUPLICATES
                                 // FOR EACH WORD OR QUOTED STRING RESULT SET
-                                for ($i = 0; $i < $tmp_cnt; $i++){
+                                for($i = 0; $i < $tmp_cnt; $i++){
 
                                     #$this->resultSetMerge(($oQueryProfileMgr, {ORIGINAL RESULT SET KEY}, {TARGET RESULT SET KEY}, {MERGE KEY FIELD...PIPE OK}, {SEQUENCE KEY FIELD(S)...PIPE OK} {MERGE FIELD DATATYPE...PIPE OK})
                                     $this->resultSetMerge($oQueryProfileMgr, 'QUOTED_SEARCH_' . $i, 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', true,'CONTENT_LENGTH_RAW|DATECREATED', 'INTEGER|DATETIME');
@@ -1041,7 +1041,7 @@ class crnrstn_content_generator extends crnrstn
                                 // FOR EACH ROW IN MERGED RESULT SET
                                 $cur_pos = ($tmp_max_desktop_results*$tmp_current_pagination_pos) - $tmp_max_desktop_results;
 
-                                for ($i = $cur_pos; $i < $tmp_max_desktop_results+$cur_pos; $i++){
+                                for($i = $cur_pos; $i < $tmp_max_desktop_results + $cur_pos; $i++){
 
                                     $tmp_content_id = $this->return_db_value($oQueryProfileMgr, 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', $i);
 
@@ -1105,7 +1105,7 @@ class crnrstn_content_generator extends crnrstn
                                 //
                                 // COMBINE ALL DESIRED RESULT SETS INTO ONE TO SEQUENCE AND/OR PURGE DUPLICATES
                                 // FOR EACH WORD OR QUOTED STRING RESULT SET
-                                for ($i = 0; $i < $tmp_cnt; $i++){
+                                for($i = 0; $i < $tmp_cnt; $i++){
 
                                     $this->resultSetMerge($oQueryProfileMgr, 'PLAIN_SEARCH', 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', true,'CONTENT_LENGTH_RAW|DATECREATED', 'INTEGER|DATETIME');
 
@@ -1127,7 +1127,7 @@ class crnrstn_content_generator extends crnrstn
 
                                     //
                                     // BUILD HTML OUTPUT AND RETURN
-                                    //for ($ii = {PAGINATION_START_POS}; $ii < $tmp_max_desktop_results; $ii++){
+                                    //for($ii = {PAGINATION_START_POS}; $ii < $tmp_max_desktop_results; $ii++){
                                     $tmp_current_pagination_pos = $this->returnCurrentPaginationPos($pagination_serial);
                                     //error_log('348 - [' . $tmp_max_desktop_results.'] current_pagination_pos=' . $tmp_current_pagination_pos);
 
@@ -1142,7 +1142,7 @@ class crnrstn_content_generator extends crnrstn
 
                                     }
 
-                                    for ($ii = $cur_pos; $ii < $tmp_max_desktop_results+$cur_pos; $ii++){
+                                    for($ii = $cur_pos; $ii < $tmp_max_desktop_results + $cur_pos; $ii++){
 
                                         $tmp_content_id = $this->return_db_value($oQueryProfileMgr, 'MERGED_SEARCH_RESULTS', 'CONTENT_ID', $ii);
 

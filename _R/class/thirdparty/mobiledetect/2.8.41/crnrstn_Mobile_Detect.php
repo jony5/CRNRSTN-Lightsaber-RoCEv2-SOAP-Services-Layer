@@ -217,7 +217,7 @@ namespace CRNRSTN;
  * @method bool isWatch()
 
  */
-class crnrstn_Mobile_Detect
+class Mobile_Detect
 {
     /**
      * Mobile detection type.

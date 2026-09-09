@@ -1,7 +1,7 @@
 <?php
 /**
- * Arabic crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Arabic PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author bahjat al mostafa <bahjat983@hotmail.com>
  */
 

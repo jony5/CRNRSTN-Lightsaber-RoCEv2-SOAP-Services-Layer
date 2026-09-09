@@ -1,7 +1,7 @@
 <?php
 /**
- * Russian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Russian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Alexey Chumakov <alex@chumakov.ru>
  * @author Foster Snowhill <i18n@forstwoof.ru>
  */

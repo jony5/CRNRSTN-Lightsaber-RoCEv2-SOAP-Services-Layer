@@ -361,13 +361,13 @@ namespace CRNRSTN;
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
  * Edit: Changed the int constant names 
  *       from:
- *       
+ *
  *       (int) CRNRSTN_1_TO_1_SESSION_LOAD
  *       (int) CRNRSTN_TTL_EXPIRE_LOAD
  *       (int) CRNRSTN_1_TO_1_PAGE_LOAD
  * 
  *       to
- *       
+ *
  *       (int) CRNRSTN_LOAD_1_TO_1_SESSION
  *       (int) CRNRSTN_LOAD_ON_TTL_EXPIRE
  *       (int) CRNRSTN_LOAD_1_TO_1_REQUEST
@@ -466,7 +466,7 @@ namespace CRNRSTN;
  * 'CRNRSTN_MODE_JPEG' => 0,       // Moved to crnrstn registry_boot. 5 :: Tuesday, May 26, 2026 @ 0843 hrs.
  * 'CRNRSTN_UI_PHPNIGHT' => 0,     // Moved to crnrstn registry_boot. 5 :: Tuesday, May 26, 2026 @ 0843 hrs.
  * 'CRNRSTN_UI_DARKNIGHT' => 0,       ^
- * 'CRNRSTN_UI_PHP' => 0,             ^   
+ * 'CRNRSTN_UI_PHP' => 0,             ^
  * 'CRNRSTN_UI_GREYSKY' => 0,         ^
  * 'CRNRSTN_UI_HTML' => 0,            ^
  * 'CRNRSTN_UI_DAYLIGHT' => 0,        ^

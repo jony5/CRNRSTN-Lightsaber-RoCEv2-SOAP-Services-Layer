@@ -1,7 +1,7 @@
 <?php
 /**
- * Indonesian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Indonesian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Cecep Prawiro <cecep.prawiro@gmail.com>
  * @author @januridp
  */

@@ -1,7 +1,7 @@
 <?php
 /**
- * Italian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Italian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Ilias Bartolini <brain79@inwind.it>
  * @author Stefano Sabatini <sabas88@gmail.com>
  */

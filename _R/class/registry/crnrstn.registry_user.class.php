@@ -547,7 +547,7 @@ class crnrstn_registry_user
          *       $R_cluster_id_override     = NULL, 
          *       $R_node_id_override        = NULL, 
          *       $R_client_id_override      = NULL, 
-         *       $R_request_id_override     = NULL, and  
+         *       $R_request_id_override     = NULL, and 
          *       $R_request_serial_override = NULL.
          *       5 :: Saturday, June 20, 2026 @ 0235 hrs.
          *       Sips coffee. 
@@ -1387,7 +1387,7 @@ class crnrstn_registry_user
          *       if the CLR-SSL deviates from 
          *       ISO 639-1 when we start driving 
          *       iso_lang_code dynamically. 
-         *       
+         *
          *       PHPMailer's extension 
          *       of crnrstn to use iso_lang_code 
          *       in its public function 
@@ -1661,7 +1661,7 @@ class crnrstn_registry_user
          * Edit: Changed crnrstn_registry_user 
          *       R_session_data method scope 
          *       visibility from private to public.
-         *       
+         *
          *       [Thu Jun 11 06:23:17.269303 2026] [:error] 
          *       [pid 47378] [client 172.16.225.1:58637] 
          *       PHP Fatal error:  Uncaught Error: 
@@ -2932,7 +2932,12 @@ class crnrstn_registry_user
                                                                  'CRNRSTN_RESOURCE_ALL'               => 0,
                                                                  'CRNRSTN_RESOURCE_THIRDPARTY'        => 0, // self::$R_data['int_flag']['CRNRSTN_RESOURCE_THIRDPARTY']    CRNRSTN_RESOURCE_THIRDPARTY
                                                                  'CRNRSTN_RESOURCE_OPENSOURCE'        => 0, // self::$R_data['int_flag']['CRNRSTN_RESOURCE_OPENSOURCE']    CRNRSTN_RESOURCE_OPENSOURCE
-                                                                 'CRNRSTN_EMAIL_MULTI_PART'           => 0);
+                                                                 'CRNRSTN_EMAIL_MULTI_PART'           => 0,
+                                                                 'CRNRSTN_HTML_COMMENTS_FULL'         => 0,
+                                                                 'CRNRSTN_HTML_COMMENTS_ENLARGED_PHYLACTERIES'         => 0,
+                                                                 'CRNRSTN_HTML_COMMENTS_CDN_STABILITY_CONTROL_ENABLED' => 0,
+                                                                 'CRNRSTN_HTML_COMMENTS_NONE'         => 0,
+                                                                 'CRNRSTN_HTML_COMMENTS_SILENT_GOLD'  => 0);
 
                                             foreach($R_int_const as
                                                 $crnrstn_constant_nom => $init_bitwise)
@@ -4883,9 +4888,11 @@ class crnrstn_registry_user
         $calling_location      = '';
         $R_str_patterns        =
         $R_str_replacements    =
-        $row_color             = array();
-        $row_color[]           = 'style="background-color: #F1F1F1;"';
-        $row_color[]           = '';
+        $html_injection        = array();
+        $html_injection['0'][] = 'style="background-color: #F1F1F1;"'; // White with a hint of grey.
+        $html_injection['0'][] = '';
+        $html_injection['1'][] = 'style="background-color: #F3F5FD;"'; // White with a hint of blue.
+        $html_injection['1'][] = '';
         $R_str_patterns[]      = 'crnrstn';
         $R_str_patterns[]      = 'CRNRSTN';
         $R_str_patterns[]      = 'CLR-SSL';
@@ -5014,7 +5021,7 @@ class crnrstn_registry_user
 
                 $data_resource_name = $R_resp;
 
-                if(self::$_R['kivotos']->isset_kivotos($data_resource_name)){
+                if(self::$_R['kivotos']->isset_kivotos($R_resp)){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Extract the data from
@@ -5059,7 +5066,7 @@ class crnrstn_registry_user
 
                         $clr_ssl_msg = 'CLR-SSL resource ' .
                             'initialization failure: ' .
-                            $data_resource_name;
+                            $resource;
                         // 5 :: Sunxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
                         $msg_token = 'a5ae9de61711d0b7f00f639bfcc45405' .
                             'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
@@ -5098,7 +5105,6 @@ class crnrstn_registry_user
                 }
 
             break;
-            case self::$R_data['int_flag']['R_array']:
             default:
                 // 5 :: Thursday, August 13, 2026 @ 2207 hrs.
             break;
@@ -5336,15 +5342,175 @@ class crnrstn_registry_user
 
                 <div class="crnrstn_cb_30"></div>
                 <ul class="R_report_meta_list">
-                    <li' . $this->alternating_row_style('primary', $row_color[0], $row_color[1]) .
-                    '><span class="R_report_meta_name">server_ip:</span> ' .
+                    <li' . $this->alternating_row_style(
+                                  '0',
+                                  $html_injection['0'][0],
+                                  $html_injection['0'][1]) .
+                    '><span class="R_report_meta_name">edge server:</span> ' .
                     '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['server_ip']['IPv4'][0] . '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">client_ip:</span> ' .
+                    $_SERVER['SERVER_NAME'] . '</span></li>
+                    <ul class="R_report_meta_list" style="padding-left:35px; max-width: 363px; font-size:75%;">
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">request date:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        $this->return_query_date_time_stamp() . '</span></li>
+                        <li' . $this->alternating_row_style('1',
+                              $html_injection['1'][0],
+                              $html_injection['1'][1]) .
+                        '><span class="R_report_meta_name">request method:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        $_SERVER['REQUEST_METHOD'] . '</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">interface:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        $_SERVER['GATEWAY_INTERFACE'] . '</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">rtime @ edge (now):</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        $this->wall_time() . ' seconds</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">rtime @ objectification:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        \substr((($R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['sec'] . '.' .
+                        \sprintf('%06d',
+                        $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['usec'])) -
+                        self::$R_data['starttime']), 0, -8) .
+                        ' seconds</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">rtime @ request received:</span> ' .
+                        '&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        \substr(($R_resp[$mem_ptr]['microtime'] -
+                        self::$R_data['starttime']), 0, -8) . ' seconds</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">reporting server ip:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;<span class="R_report_meta_value">' .
+                        $R_resp[$mem_ptr]['server_ip']['IPv4'][0] . '</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">requesting ip:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="R_report_meta_value">' .
+                        $R_resp[$mem_ptr]['client_ip']['IPv4'][0] . '</span></li>
+                    </ul>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">' .
+                    '<span class="the_R">R</span>_fire_bolt_creation_id:</span> ' .
                     '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['client_ip']['IPv4'][0] . '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
+                    $R_resp[$mem_ptr]['R_fire_bolt_creation_id'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name"><span ' .
+                    'class="the_R">R</span>_fire_bolt_creation_id_ttl:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['eval_ttl'][$R_resp[$mem_ptr]['software_version'][0]] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name"><span ' .
+                    'class="the_R">R</span>_fire_bolt_microtime:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['R_fire_bolt_microtime'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name header">' .
+                        '<span class="the_R">R</span>_fire_bolt_timestamp:</span><br>' .
+                        '<span class="R_report_meta_value">' .
+                        \strftime('%Y-%m-%d %H:%M:%S', $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['sec']) .
+                        '.' .
+                        \sprintf('%06d', $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['usec']) .
+                        '</span></li>
+                    <ul class="R_report_meta_list" style="padding-left:35px; max-width: 363px; font-size:75%;">
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">sec:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['sec'] .
+                        '</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">usec:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;<span class="R_report_meta_value">' .
+                        $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['usec'] .
+                        '</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">minuteswest:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['minuteswest'] .
+                        '</span></li>
+                        <li' . $this->alternating_row_style('1') .
+                        '><span class="R_report_meta_name">dsttime:</span> ' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' .
+                        '<span class="R_report_meta_value">' .
+                        $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['dsttime'] .
+                        '</span></li>
+                    </ul>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">' .
+                    '<span class="the_R">R</span>_fire_bolt_runtime:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['R_fire_bolt_runtime'][0] .
+                    ' seconds</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">' .
+                    '<span class="the_R">R</span>_cluster_id:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['R_cluster_id'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">' .
+                    '<span class="the_R">R</span>_node_id:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['R_node_id'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">' .
+                    '<span class="the_R">R</span>_client_id:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['R_client_id'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">' .
+                    '<span class="the_R">R</span>_request_id:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['R_request_id'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">' .
+                    '<span class="the_R">R</span>_request_serial:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['R_request_serial'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">data_resource_name:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $data_resource_name . '</span></li>
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">data_software_version:</span> ' .
+                    '<span class="R_report_meta_value">' .
+                    $R_resp[$mem_ptr]['software_version'][0] .
+                    '</span></li>
+                    <li' . $this->alternating_row_style('0') .
                     '><span class="R_report_meta_name">data_bytes:</span> ' .
                     '<span class="R_report_meta_value">' .
                     $this->return_bytes(
@@ -5355,125 +5521,35 @@ class crnrstn_registry_user
                            false,
                            false) .
                     '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">' .
-                    '<span class="the_R">R</span>_fire_bolt_creation_id:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_fire_bolt_creation_id'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name"><span ' .
-                    'class="the_R">R</span>_fire_bolt_creation_id_ttl:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['eval_ttl'][$R_resp[$mem_ptr]['software_version'][0]] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name"><span ' .
-                    'class="the_R">R</span>_fire_bolt_microtime:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_fire_bolt_microtime'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name header">' .
-                        '<span class="the_R">R</span>_fire_bolt_timestamp:</span> ' .
-                        '<span class="R_report_meta_value">' .
-                        \strftime('%Y-%m-%d %H:%M:%S', $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['sec']) .
-                        '.' .
-                        \sprintf('%06d', $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['usec']) .
-                        '</span>
-                        <ul class="R_report_meta_list" style="padding-left:35px;">
-                            <li><span class="R_report_meta_name">sec:</span> ' .
-                            '<span class="R_report_meta_value">' .
-                            $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['sec'] .
-                            '</span></li>
-                            <li><span class="R_report_meta_name">usec:</span> ' .
-                            '<span class="R_report_meta_value">' .
-                            $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['usec'] .
-                            '</span></li>
-                            <li><span class="R_report_meta_name">minuteswest:</span> ' .
-                            '<span class="R_report_meta_value">' .
-                            $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['minuteswest'] .
-                            '</span></li>
-                            <li><span class="R_report_meta_name">dsttime:</span> ' .
-                            '<span class="R_report_meta_value">' .
-                            $R_resp[$mem_ptr]['R_fire_bolt_timestamp'][0]['dsttime'] .
-                            '</span></li>
-                        </ul>
-                    </li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">' .
-                    '<span class="the_R">R</span>_fire_bolt_runtime:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_fire_bolt_runtime'][0] .
-                    ' seconds</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">' .
-                    '<span class="the_R">R</span>_cluster_id:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_cluster_id'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">' .
-                    '<span class="the_R">R</span>_node_id:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_node_id'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">' .
-                    '<span class="the_R">R</span>_client_id:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_client_id'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">' .
-                    '<span class="the_R">R</span>_request_id:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_request_id'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">' .
-                    '<span class="the_R">R</span>_request_serial:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['R_request_serial'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">data_resource_name:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $data_resource_name . '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">data_software_version:</span> ' .
-                    '<span class="R_report_meta_value">' .
-                    $R_resp[$mem_ptr]['software_version'][0] .
-                    '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">data_resource_title:</span> ' .
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">data_resource_title:</span><br>' .
                     '<span class="R_report_meta_value">' .
                     $data_resource_title .
                     '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">data_software_company:</span> ' .
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">data_software_company:</span><br>' .
                     '<span class="R_report_meta_value">' .
                     $data_software_company .
                     '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">data_copyright:</span> ' .
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">data_copyright:</span><br>' .
                     '<span class="R_report_meta_value">' .
                     $data_copyright . '</span></li>
-                    <li' . $this->alternating_row_style('primary') .
+                    <li' . $this->alternating_row_style('0') .
                     '><span class="R_report_meta_name">data_license_key:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
                     $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['key'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
-                    <li' . $this->alternating_row_style('primary') .
-                    '><span class="R_report_meta_name">data_license_name:</span> ' .
+                    <li' . $this->alternating_row_style('0') .
+                    '><span class="R_report_meta_name">data_license_name:</span><br>' .
                     '<span class="R_report_meta_value"><a href="' .
                     $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '" target="_blank">' .
                     $R_resp[$mem_ptr]['license']['name'][$R_resp[$mem_ptr]['software_version'][0]] .
                     '</a></span></li>
-                    <li' . $this->alternating_row_style('primary') .
+                    <li' . $this->alternating_row_style('0') .
                     '><span class="R_report_meta_name">data_license_url:</span> ' .
                     '<span class="R_report_meta_value"><a href="' .
                     $R_resp[$mem_ptr]['license']['url'][$R_resp[$mem_ptr]['software_version'][0]] .
@@ -5618,11 +5694,10 @@ class crnrstn_registry_user
                       true,
                       true,
                       true));
-
         /*
         $this->set_response_headers(
                'Content-Type: text/html; charset=utf-8',
-               $this->data_reporting_bytes($html_out));
+               $this->data_reporting_bytes($report_html));
 
         */
 
@@ -5669,6 +5744,32 @@ class crnrstn_registry_user
 
             // Set current style.
             self::$R_data['dom_support']['row_style'][self::$R_data['R_cluster_id']][$row_id]['style_current'] = 0;
+
+            if(!isset(self::$R_data['dom_support']['row_style'][self::$R_data['R_cluster_id']][$row_id]['style_data'])){
+
+                $clr_ssl_msg = 'Style data is NULL.';
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __METHOD__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $this->error_log(
+                       $clr_ssl_msg,
+                       \LOG_ERR,
+                       \E_WARNING,
+                       __LINE__,
+                       __METHOD__,
+                       __FILE__,
+                       $token);
+
+                return '';
+
+            }
 
             self::$R_data['dom_support']['row_style'][self::$R_data['R_cluster_id']][$row_id]['style_cnt'] = \count(self::$R_data['dom_support']['row_style'][self::$R_data['R_cluster_id']][$row_id]['style_data']);
 
@@ -5855,7 +5956,7 @@ class crnrstn_registry_user
              $R_syntax = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied method token_log from  
+         * Copied method token_log from 
          * the crnrstn class object to 
          * crnrstn_registry_user for 
          * tracking notable CLR-SSL 
@@ -7639,8 +7740,8 @@ die();</code></pre>';
                  * and return $R_data. 
                  *
                  * /_R/_config/_config.defaults
-                 * /load_static_cache/framework_directory
-                 * /crnrstn.framework_directory.runtime_exe.php
+                 * /load_static_cache/R_framework_directory
+                 * /crnrstn.R_framework_directory.runtime_exe.php
                  *
                  * Previously initialized via: 
                  * self::$R_data['framework_directory'] = _settings_crnrstn(
@@ -8351,41 +8452,41 @@ die();</code></pre>';
                     $R_data = array(
                               'string'            => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_string'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_string', 
-                                                           'PHP_NATIVE' => 'string'),
-                              'int'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_int'],              
+                                                           'PHP_NATIVE' => 'string'), 
+                              'int'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_int'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_int', 
-                                                           'PHP_NATIVE' => 'int'),
-                              'integer'           => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_integer'],          
+                                                           'PHP_NATIVE' => 'int'), 
+                              'integer'           => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_integer'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_integer', 
-                                                           'PHP_NATIVE' => 'integer'),
-                              'bool'              => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_bool'],             
+                                                           'PHP_NATIVE' => 'integer'), 
+                              'bool'              => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_bool'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_bool', 
-                                                           'PHP_NATIVE' => 'bool'),
-                              'boolean'           => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_boolean'],          
+                                                           'PHP_NATIVE' => 'bool'), 
+                              'boolean'           => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_boolean'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_boolean', 
-                                                           'PHP_NATIVE' => 'boolean'),
-                              'float'             => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_float'],            
+                                                           'PHP_NATIVE' => 'boolean'), 
+                              'float'             => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_float'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_float', 
-                                                           'PHP_NATIVE' => 'float'),
-                              'double'            => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_double'],           
+                                                           'PHP_NATIVE' => 'float'), 
+                              'double'            => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_double'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_double', 
-                                                           'PHP_NATIVE' => 'double'),
-                              'array'             => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_array'],            
+                                                           'PHP_NATIVE' => 'double'), 
+                              'array'             => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_array'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_array', 
-                                                           'PHP_NATIVE' => 'array'),
-                              'object'            => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_object'],           
+                                                           'PHP_NATIVE' => 'array'), 
+                              'object'            => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_object'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_object', 
-                                                           'PHP_NATIVE' => 'object'),
-                              'resource'          => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource'],         
+                                                           'PHP_NATIVE' => 'object'), 
+                              'resource'          => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_resource', 
-                                                           'PHP_NATIVE' => 'resource'),
-                              'resource (closed)' => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource_closed'],  
+                                                           'PHP_NATIVE' => 'resource'), 
+                              'resource (closed)' => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource_closed'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_resource_closed', 
-                                                           'PHP_NATIVE' => 'resource (closed)'),
-                              'unknown type'      => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_unknown_type'],     
+                                                           'PHP_NATIVE' => 'resource (closed)'), 
+                              'unknown type'      => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_unknown_type'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_unknown_type', 
-                                                           'PHP_NATIVE' => 'unknown type'),
-                              'NULL'              => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_null'],             
+                                                           'PHP_NATIVE' => 'unknown type'), 
+                              'NULL'              => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_null'], 
                                                            self::$R_data['int_flag']['R_string']  => 'R_null', 
                                                            'PHP_NATIVE' => 'NULL'));
 
@@ -11465,9 +11566,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              &$R_data_014 = NULL, &$R_data_015 = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied the method, R_report_static(),  
+         * Copied the method, R_report_static(), 
          * to the crnrstn_registry_user 
-         * from crnrstn.
+         * from crnrstn. 
          * 5 :: Tuesday, June 9, 2026 @ 1924 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -11475,7 +11576,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          *       method within crnrstn 
          *       to R_sync(
          *            $resource_name, 
-         *            $resource_data).
+         *            $resource_data). 
          *       5 :: Saturday, June 20, 2026 @ 0156 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -12220,10 +12321,10 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             break;
             default:
-                
+
                 $clr_ssl_msg = 'Attempting to sync ' . 
-                               'unsupported resource: ' . 
-                               $res_class_name . 
+                               'unsupported resource: ' .
+                               $res_name . 
                                '.';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
                 $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
@@ -12563,7 +12664,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['cipher']['default']['name']
                     self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default']['CRNRSTN_INTEGER']
                     self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['default']['name']
-                 
+
                  case 'openssl_digest_preferred_ARRAY':
                    self::$R_data[self::$R_data['R_cluster_id']][self::$R_data['R_node_id']]['R_OpenSSL_config']['digest_method']['preferred']
 
@@ -12846,7 +12947,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     break 1;
 
                 }
-                
+
                 self::$R_data[$resource] = $this->R_load_static(
                                                   __METHOD__, 
                                                   $resource);
@@ -13816,10 +13917,10 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                  * TODO :: Insert (here) a database driven 
                  *         administrative override 
                  *         for the application of 
-                 *         debug mode settings changes
-                 *         in order to support the    
+                 *         debug mode settings changes 
+                 *         in order to support the 
                  *         management of debugging 
-                 *         settings via web portal.
+                 *         settings via web portal. 
                  *         5 :: Saturday, May 9, 2026 @ 1430 hrs.
                  */
 
@@ -14091,6 +14192,59 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             break;
 
         }
+
+    }
+
+    /**
+     * R :: Content pending.
+     *
+     * @param
+     * @param
+     * @param
+     * @param
+     * @return
+     * @access public
+     *
+     */
+    function multi_lang_content_return(
+             $data_attribute_key,
+             $default_content,
+             $iso_lang_code = 'en',
+             $css_data = NULL)
+    {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Copied the multi_lang_content_return
+         * method from crnrstn to the crnrstn_registry_user.
+         * 5 :: Tuesday, September 1, 2026 @ 0252 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Renamed the
+         *       multi_lang_content_return input
+         *       parameter, $css_style, to $css_data to
+         *       follow the CLR-SSL System
+         *       Link Library.
+         *       5 :: Thursday, September 3, 2026 @ 1639 hrs.
+         *
+         */
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * We have expanded the multi-language
+         * content output support to honor
+         * current work on the CRNRSTN ::
+         * Lightsaber RoCEv2 SOAP Services
+         * Layer (CLR-SSL) System Resource
+         * Registry and the accompanying
+         * Resource Content Library.
+         *
+         *
+         * 5 :: November 6, 2025 @ 0550 hrs.
+         *
+         */
+        return self::$_R['kivotos']->R['lang_mgr']->multi_lang_content_return(
+                                                    $data_attribute_key,
+                                                    $default_content,
+                                                    $iso_lang_code,
+                                                    $css_data);
 
     }
 
@@ -15879,8 +16033,8 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         $resource_output = NULL;
 
         switch($resource_name){
-            case __NAMESPACE__ . '\crnrstn_OAuth':
-            case 'crnrstn_OAuth':
+            case __NAMESPACE__ . '\OAuth':
+            case 'OAuth':
             case 'gabriel_oauth':
                 // 5 :: Tuesday, June 2, 2026 @ 0622 hrs.
 
@@ -15888,7 +16042,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 if(isset(self::$_R['kivotos']->R['registry_usr'])){
 
-                    self::$_R['kivotos']->R['registry_usr']->anoint('crnrstn_PHPMailer', $PHPMailer);
+                    self::$_R['kivotos']->R['registry_usr']->anoint('PHPMailer', $PHPMailer);
 
                     $PHPMailer->setOAuth();
                     $resource_output = $PHPMailer->getOAuth();
@@ -15897,7 +16051,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 }
 
-                $this->anoint('crnrstn_PHPMailer', $PHPMailer);
+                $this->anoint('PHPMailer', $PHPMailer);
 
                 $PHPMailer->setOAuth();
                 $resource_output = $PHPMailer->getOAuth();
@@ -15930,7 +16084,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         return $R_resp;
 
     }
-            
+
     /**
      * R :: Content pending. 
      *
@@ -16244,28 +16398,91 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
      *
      */
     function soap_data_initialization_cache_output(
-             $content_versioning_hash_output = false,
-             $search_algorithm_output = false,
              $iso_lang_code = 'en',
-             $HTML_data = '',
-             $TEXT_data = '',
-             $title_dom_element = 'auto',
-             $description_dom_element = 'auto',
-             $author_dom_element = 'auto',
-             $company_name_dom_element = 'auto',
-             $constructor_function_dom_element = 'auto')
+             $attribute = '',
+             $R_text = '',
+             $R_html = '',
+             $R_resp = NULL,
+             $R_cache_transport_packet = NULL,
+             $output_mode = 'TEXT',
+             $generate_version_sync_hash = false,
+             $generate_search_algorithm_data = false,
+             $css_data = NULL,
+             $channel = 'R_channel_RUNTIME')
     {
-        // 5 :: Thursday, August 22, 2024 @ 0345 hrs.
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Thursday, August 22, 2024 @ 0345 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Replaced the
+         *       soap_data_initialization_cache_output()
+         *       method inputs, $HTML_data = '' and
+         *       $TEXT_data = '' with $R_text = '' and
+         *       $R_html = '' and changed their sequence.
+         *       5 :: Tuesday, September 1, 2026 @ 0539 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Copied the
+         *       soap_data_initialization_cache_output()
+         *       method definition from crnrstn to the
+         *       crnrstn_registry_user.
+         *       5 :: Tuesday, September 1, 2026 @ 2144 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added the input parameter,
+         *       $R_cache_transport_packet = NULL,
+         *       to the
+         *       soap_data_initialization_cache_output()
+         *       method.
+         *       5 :: Thursday, September 3, 2026 @ 0352 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Renamed the input parameter
+         *       $css_style to $css_data to
+         *       follow the CLR-SSL System
+         *       Link Library.
+         *       5 :: Thursday, September 3, 2026 @ 1636 hrs.
+         *
+         */
 
-        error_log('[lnum ' . __LINE__ .
-            '] [' . __METHOD__ .
-            '] $iso_lang_code[' . $iso_lang_code .
-            '] $HTML_data[' . $HTML_data .
-            '] $TEXT_data[' . $TEXT_data . ']. die();');
+        echo '<br><pre><code>[' .
+$this->return_micro_time() . '] 
+[mthd ' . __METHOD__ . '] 
+[lnum ' . __LINE__ . '] 
+[rtime ' . $this->wall_time() . '] 
+$attribute = ' . $attribute . ' 
+$R_text    = ' . \print_r($R_text, true) . '</code></pre>';
 
-        die();
+        echo '<br><pre><code>[' .
+$this->return_micro_time() . '] 
+[mthd ' . __METHOD__ . '] 
+[lnum ' . __LINE__ . '] 
+[rtime ' . $this->wall_time() . '] 
+$attribute = ' . $attribute . ' 
+$R_html    = ' . \print_r($R_html, true) . '</code></pre>';
 
-        return '';
+        if(isset($R_resp))
+            echo '<br><pre><code>[' .
+$this->return_micro_time() . '] 
+[mthd ' . __METHOD__ . '] 
+[lnum ' . __LINE__ . '] 
+[rtime ' . $this->wall_time() . '] 
+$attribute = ' . $attribute . ' 
+$R_resp    = ' . \print_r($R_resp, true) . '</code></pre>';
+
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * CLR-SSL Response Passthrough
+         * -----
+         * Return any CLR-SSL Resource
+         * Registry corporate, license or
+         * social library output.
+         *
+         *
+         * 5 :: Tuesday, September 1, 2026 @ 1148 hrs.
+         *
+         */
+        if(isset($R_resp))
+            return $R_resp;
 
     }
 
@@ -16288,7 +16505,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Added "RoCEv2 edits" (see
          *       the application's use of
-         *       $tmp_css_ARRAY['rdma']) to
+         *       $css['rdma']) to
          *       the product title HTML and
          *       text copy in The CRNRSTN ::
          *       Lightsaber RoCEv2 SOAP
@@ -16323,7 +16540,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                     return self::$R_data[$name];
 
                 break;
-                case 'css_styles':
+                case 'css_data':
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * 5 :: Monday, August 19, 2024 @ 0740 hrs.
                      *
@@ -16333,13 +16550,10 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                      *       5 :: Friday, October 31, 2025 @ 0629 hrs.
                      */
 
-                    if(!isset($background_color_hex)){
-
+                    if(!isset($background_color_hex))
                         $background_color_hex = self::$R_data['background_color_hex'];
 
-                    }
-
-                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                    /*
                      * Check the application
                      * acceleration memory
                      * cache layer for
@@ -16352,47 +16566,44 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                      * Monday, August 19, 2024 @ 0754 hrs.
                      *
                      */
-                    if(isset(self::$css_styles_ARRAY[self::$config_serial][$background_color_hex])){
-
+                    if(isset(self::$css_styles_ARRAY[self::$config_serial][$background_color_hex]))
                         return self::$css_styles_ARRAY[self::$config_serial][$background_color_hex];
 
-                    }
+                    $css                          = array();
+                    $css['title']                 = $this->return_dom_style_tag('title_span', $background_color_hex);
+                    $css['license_name']          = $this->return_dom_style_tag('license_name_span', $background_color_hex);
+                    $css['copyright']             = $this->return_dom_style_tag('copyright_span', $background_color_hex);
+                    $css['author_contributors']   = $this->return_dom_style_tag('author_contributors_span', $background_color_hex);
+                    $css['company_name']          = $this->return_dom_style_tag('company_name_span', $background_color_hex);
+                    $css['constructor_function']  = $this->return_dom_style_tag('constructor_function_span', $background_color_hex);
+                    $css['description']           = $this->return_dom_style_tag('description_span', $background_color_hex);
+                    $css['preview_resource']      = $this->return_dom_style_tag('preview_resource_div', $background_color_hex);
+                    $css['eVifweb']               = $this->return_dom_style_tag('eVifweb_span', $background_color_hex);
+                    $css['eVifweb_V']             = $this->return_dom_style_tag('eVifweb_V_span', $background_color_hex);
+                    $css['crnrstn']               = $this->return_dom_style_tag('crnrstn_span', $background_color_hex);
+                    $css['soap']                  = $this->return_dom_style_tag('soap_span', $background_color_hex);
+                    $css['php']                   = $this->return_dom_style_tag('php_title_text', $background_color_hex);
+                    $css['crnrstn_R']             = $this->return_dom_style_tag('crnrstn_R_span', $background_color_hex);
+                    $css['rdma']                  = $this->return_dom_style_tag('crnrstn_span', $background_color_hex);
+                    $css['lightsaber']            = $this->return_dom_style_tag('lightsaber_span', $background_color_hex);
+                    $css['icy_digitalitcc']       = $this->return_dom_style_tag('icy_digitalitcc_span', $background_color_hex);
+                    $css['lightbox_helper']       = $this->return_dom_style_tag('lightbox_helper_span', $background_color_hex);
+                    $css['copy']                  = $this->return_dom_style_tag('copy_span', $background_color_hex);
+                    $css['copy_a']                = $this->return_dom_style_tag('copy_a', $background_color_hex);
+                    $css['hr']                    = $this->return_dom_style_tag('hr_div', $background_color_hex);
+                    $css['reg_mark']              = $this->return_dom_style_tag('reg_mark_span', $background_color_hex);
+                    $css['copyright_mark']        = $this->return_dom_style_tag('copyright_mark_span', $background_color_hex);
+                    $css['super_script']          = $this->return_dom_style_tag('super_script', $background_color_hex);
+                    $css['cb_0px_div']            = $this->return_dom_style_tag('cb_0px_div', $background_color_hex);
+                    $css['line_break']            = $this->return_dom_style_tag('line_break_div', $background_color_hex);
+                    $css['pre']                   = $this->return_dom_style_tag('pre_style', $background_color_hex);
+                    $css['code']                  = $this->return_dom_style_tag('code_text_span', $background_color_hex);
+                    $css['blockquote']            = $this->return_dom_style_tag('blockquote_style', $background_color_hex);
+                    $css['ul']                    = $this->return_dom_style_tag('unordered_list_style', $background_color_hex);
+                    $css['ol']                    = $this->return_dom_style_tag('ordered_list_style', $background_color_hex);
+                    $css['li']                    = $this->return_dom_style_tag('list_item_style', $background_color_hex);
 
-                    $tmp_css_ARRAY = array();
-
-                    $tmp_css_ARRAY['title']                 = $this->return_dom_style_tag('title_span', $background_color_hex);
-                    $tmp_css_ARRAY['license_name']          = $this->return_dom_style_tag('license_name_span', $background_color_hex);
-                    $tmp_css_ARRAY['copyright']             = $this->return_dom_style_tag('copyright_span', $background_color_hex);
-                    $tmp_css_ARRAY['author_contributors']   = $this->return_dom_style_tag('author_contributors_span', $background_color_hex);
-                    $tmp_css_ARRAY['company_name']          = $this->return_dom_style_tag('company_name_span', $background_color_hex);
-                    $tmp_css_ARRAY['constructor_function']  = $this->return_dom_style_tag('constructor_function_span', $background_color_hex);
-                    $tmp_css_ARRAY['description']           = $this->return_dom_style_tag('description_span', $background_color_hex);
-                    $tmp_css_ARRAY['preview_resource']      = $this->return_dom_style_tag('preview_resource_div', $background_color_hex);
-                    $tmp_css_ARRAY['eVifweb']               = $this->return_dom_style_tag('eVifweb_span', $background_color_hex);
-                    $tmp_css_ARRAY['eVifweb_V']             = $this->return_dom_style_tag('eVifweb_V_span', $background_color_hex);
-                    $tmp_css_ARRAY['crnrstn']               = $this->return_dom_style_tag('crnrstn_span', $background_color_hex);
-                    $tmp_css_ARRAY['soap']                  = $this->return_dom_style_tag('soap_span', $background_color_hex);
-                    $tmp_css_ARRAY['php']                   = $this->return_dom_style_tag('php_title_text', $background_color_hex);
-                    $tmp_css_ARRAY['crnrstn_R']             = $this->return_dom_style_tag('crnrstn_R_span', $background_color_hex);
-                    $tmp_css_ARRAY['rdma']                  = $this->return_dom_style_tag('crnrstn_span', $background_color_hex);
-                    $tmp_css_ARRAY['lightsaber']            = $this->return_dom_style_tag('lightsaber_span', $background_color_hex);
-                    $tmp_css_ARRAY['icy_digitalitcc']       = $this->return_dom_style_tag('icy_digitalitcc_span', $background_color_hex);
-                    $tmp_css_ARRAY['lightbox_helper']       = $this->return_dom_style_tag('lightbox_helper_span', $background_color_hex);
-                    $tmp_css_ARRAY['copy']                  = $this->return_dom_style_tag('copy_span', $background_color_hex);
-                    $tmp_css_ARRAY['copy_a']                = $this->return_dom_style_tag('copy_a', $background_color_hex);
-                    $tmp_css_ARRAY['hr']                    = $this->return_dom_style_tag('hr_div', $background_color_hex);
-                    $tmp_css_ARRAY['reg_mark']              = $this->return_dom_style_tag('reg_mark_span', $background_color_hex);
-                    $tmp_css_ARRAY['copyright_mark']        = $this->return_dom_style_tag('copyright_mark_span', $background_color_hex);
-                    $tmp_css_ARRAY['super_script']          = $this->return_dom_style_tag('super_script', $background_color_hex);
-                    $tmp_css_ARRAY['line_break']            = $this->return_dom_style_tag('line_break_div', $background_color_hex);
-                    $tmp_css_ARRAY['pre']                   = $this->return_dom_style_tag('pre_style', $background_color_hex);
-                    $tmp_css_ARRAY['code']                  = $this->return_dom_style_tag('code_text_span', $background_color_hex);
-                    $tmp_css_ARRAY['blockquote']            = $this->return_dom_style_tag('blockquote_style', $background_color_hex);
-                    $tmp_css_ARRAY['ul']                    = $this->return_dom_style_tag('unordered_list_style', $background_color_hex);
-                    $tmp_css_ARRAY['ol']                    = $this->return_dom_style_tag('ordered_list_style', $background_color_hex);
-                    $tmp_css_ARRAY['li']                    = $this->return_dom_style_tag('list_item_style', $background_color_hex);
-
-                    self::$css_styles_ARRAY[self::$config_serial][$background_color_hex] = $tmp_css_ARRAY;
+                    self::$css_styles_ARRAY[self::$config_serial][$background_color_hex] = $css;
 
                     // 5 :: Monday, August 19, 2024 @ 0742 hrs.
                     return self::$css_styles_ARRAY[self::$config_serial][$background_color_hex];
@@ -19332,7 +19543,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 return true;
 
             }
-            
+
             self::$R_data['is_file_success'][$file_path] = 1;
             return true;
 
@@ -19593,7 +19804,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         return _crnrstn_native_resource_registry(__FUNCTION__, $this);
 
     }
-    
+
      */
 
     /**
@@ -20099,27 +20310,27 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
                 return self::$R_data[$name];
 
-            case 'crnrstn_OAuth[provider]':
+            case 'OAuth[provider]':
                 // 5 :: Friday, June 5, 2026 @ 0337 hrs.
 
                 return self::$R_data[$name];
 
-            case 'crnrstn_OAuth[userName]':
+            case 'OAuth[userName]':
                 // 5 :: Friday, June 5, 2026 @ 0337 hrs.
 
                 return self::$R_data[$name];
 
-            case 'crnrstn_OAuth[clientSecret]':
+            case 'OAuth[clientSecret]':
                 // 5 :: Friday, June 5, 2026 @ 0337 hrs.
 
                 return self::$R_data[$name];
 
-            case 'crnrstn_OAuth[clientId]':
+            case 'OAuth[clientId]':
                 // 5 :: Friday, June 5, 2026 @ 0337 hrs.
 
                 return self::$R_data[$name];
 
-            case 'crnrstn_OAuth[refreshToken]':
+            case 'OAuth[refreshToken]':
                 // 5 :: Friday, June 5, 2026 @ 0338 hrs.
 
                 return self::$R_data[$name];
@@ -20319,7 +20530,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                  */
                 return self::$R_data['iso_lang_code'];
 
-            case 'css_styles':
+            case 'css_data':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * 5 :: Monday, August 19, 2024 @ 0740 hrs.
                  *
@@ -20353,53 +20564,50 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                  * Monday, August 19, 2024 @ 0754 hrs.
                  *
                  */
-                if(isset(self::$R_data['css_styles'][$background_color_hex])){
+                if(isset(self::$R_data['css_data'][$R_index_000]))
+                    return self::$R_data['css_data'][$R_index_000];
 
-                    return self::$R_data['css_styles'][$background_color_hex];
+                $css                          = array();
+                $css['title']                 = $this->return_dom_style_tag('title_span', $R_index_000);
+                $css['license_name']          = $this->return_dom_style_tag('license_name_span', $R_index_000);
+                $css['copyright']             = $this->return_dom_style_tag('copyright_span', $R_index_000);
+                $css['author_contributors']   = $this->return_dom_style_tag('author_contributors_span', $R_index_000);
+                $css['company_name']          = $this->return_dom_style_tag('company_name_span', $R_index_000);
+                $css['constructor_function']  = $this->return_dom_style_tag('constructor_function_span', $R_index_000);
+                $css['description']           = $this->return_dom_style_tag('description_span', $R_index_000);
+                $css['preview_resource']      = $this->return_dom_style_tag('preview_resource_div', $R_index_000);
+                $css['eVifweb']               = $this->return_dom_style_tag('eVifweb_span', $R_index_000);
+                $css['eVifweb_V']             = $this->return_dom_style_tag('eVifweb_V_span', $R_index_000);
+                $css['crnrstn']               = $this->return_dom_style_tag('crnrstn_span', $R_index_000);
+                $css['soap']                  = $this->return_dom_style_tag('soap_span', $R_index_000);
+                $css['php']                   = $this->return_dom_style_tag('php_title_text', $R_index_000);
+                $css['crnrstn_R']             = $this->return_dom_style_tag('crnrstn_R_span', $R_index_000);
+                $css['rdma']                  = $this->return_dom_style_tag('crnrstn_span', $R_index_000);
+                $css['lightsaber']            = $this->return_dom_style_tag('lightsaber_span', $R_index_000);
+                $css['icy_digitalitcc']       = $this->return_dom_style_tag('icy_digitalitcc_span', $R_index_000);
+                $css['lightbox_helper']       = $this->return_dom_style_tag('lightbox_helper_span', $R_index_000);
+                $css['copy']                  = $this->return_dom_style_tag('copy_span', $R_index_000);
+                $css['copy_a']                = $this->return_dom_style_tag('copy_a', $R_index_000);
+                $css['hr']                    = $this->return_dom_style_tag('hr_div', $R_index_000);
+                $css['reg_mark']              = $this->return_dom_style_tag('reg_mark_span', $R_index_000);
+                $css['copyright_mark']        = $this->return_dom_style_tag('copyright_mark_span', $R_index_000);
+                $css['super_script']          = $this->return_dom_style_tag('super_script', $R_index_000);
+                $css['cb_0px_div']            = $this->return_dom_style_tag('cb_0px_div', $R_index_000);
+                $css['line_break']            = $this->return_dom_style_tag('line_break_div', $R_index_000);
+                $css['pre']                   = $this->return_dom_style_tag('pre_style', $R_index_000);
+                $css['code']                  = $this->return_dom_style_tag('code_text_span', $R_index_000);
+                $css['blockquote']            = $this->return_dom_style_tag('blockquote_style', $R_index_000);
+                $css['ul']                    = $this->return_dom_style_tag('unordered_list_style', $R_index_000);
+                $css['ol']                    = $this->return_dom_style_tag('ordered_list_style', $R_index_000);
+                $css['li']                    = $this->return_dom_style_tag('list_item_style', $R_index_000);
 
-                }
-
-                $tmp_css_ARRAY = array();
-
-                $tmp_css_ARRAY['title']                 = $this->return_dom_style_tag('title_span', $background_color_hex);
-                $tmp_css_ARRAY['license_name']          = $this->return_dom_style_tag('license_name_span', $background_color_hex);
-                $tmp_css_ARRAY['copyright']             = $this->return_dom_style_tag('copyright_span', $background_color_hex);
-                $tmp_css_ARRAY['author_contributors']   = $this->return_dom_style_tag('author_contributors_span', $background_color_hex);
-                $tmp_css_ARRAY['company_name']          = $this->return_dom_style_tag('company_name_span', $background_color_hex);
-                $tmp_css_ARRAY['constructor_function']  = $this->return_dom_style_tag('constructor_function_span', $background_color_hex);
-                $tmp_css_ARRAY['description']           = $this->return_dom_style_tag('description_span', $background_color_hex);
-                $tmp_css_ARRAY['preview_resource']      = $this->return_dom_style_tag('preview_resource_div', $background_color_hex);
-                $tmp_css_ARRAY['eVifweb']               = $this->return_dom_style_tag('eVifweb_span', $background_color_hex);
-                $tmp_css_ARRAY['eVifweb_V']             = $this->return_dom_style_tag('eVifweb_V_span', $background_color_hex);
-                $tmp_css_ARRAY['crnrstn']               = $this->return_dom_style_tag('crnrstn_span', $background_color_hex);
-                $tmp_css_ARRAY['soap']                  = $this->return_dom_style_tag('soap_span', $background_color_hex);
-                $tmp_css_ARRAY['php']                   = $this->return_dom_style_tag('php_title_text', $background_color_hex);
-                $tmp_css_ARRAY['crnrstn_R']             = $this->return_dom_style_tag('crnrstn_R_span', $background_color_hex);
-                $tmp_css_ARRAY['rdma']                  = $this->return_dom_style_tag('crnrstn_span', $background_color_hex);
-                $tmp_css_ARRAY['lightsaber']            = $this->return_dom_style_tag('lightsaber_span', $background_color_hex);
-                $tmp_css_ARRAY['icy_digitalitcc']       = $this->return_dom_style_tag('icy_digitalitcc_span', $background_color_hex);
-                $tmp_css_ARRAY['lightbox_helper']       = $this->return_dom_style_tag('lightbox_helper_span', $background_color_hex);
-                $tmp_css_ARRAY['copy']                  = $this->return_dom_style_tag('copy_span', $background_color_hex);
-                $tmp_css_ARRAY['copy_a']                = $this->return_dom_style_tag('copy_a', $background_color_hex);
-                $tmp_css_ARRAY['hr']                    = $this->return_dom_style_tag('hr_div', $background_color_hex);
-                $tmp_css_ARRAY['reg_mark']              = $this->return_dom_style_tag('reg_mark_span', $background_color_hex);
-                $tmp_css_ARRAY['copyright_mark']        = $this->return_dom_style_tag('copyright_mark_span', $background_color_hex);
-                $tmp_css_ARRAY['super_script']          = $this->return_dom_style_tag('super_script', $background_color_hex);
-                $tmp_css_ARRAY['line_break']            = $this->return_dom_style_tag('line_break_div', $background_color_hex);
-                $tmp_css_ARRAY['pre']                   = $this->return_dom_style_tag('pre_style', $background_color_hex);
-                $tmp_css_ARRAY['code']                  = $this->return_dom_style_tag('code_text_span', $background_color_hex);
-                $tmp_css_ARRAY['blockquote']            = $this->return_dom_style_tag('blockquote_style', $background_color_hex);
-                $tmp_css_ARRAY['ul']                    = $this->return_dom_style_tag('unordered_list_style', $background_color_hex);
-                $tmp_css_ARRAY['ol']                    = $this->return_dom_style_tag('ordered_list_style', $background_color_hex);
-                $tmp_css_ARRAY['li']                    = $this->return_dom_style_tag('list_item_style', $background_color_hex);
-
-                self::$R_data['css_styles'][$background_color_hex] = $tmp_css_ARRAY;
+                self::$R_data['css_data'][$R_index_000] = $css;
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * 5 :: Monday, August 19, 2024 @ 0742 hrs.
                  *
                  */
-                return self::$R_data['css_styles'][$background_color_hex];
+                return self::$R_data['css_data'][$R_index_000];
 
             case 'application_directory':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -20479,7 +20687,6 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             break;
             case 'log_silo_profile':
-            case 'CRNRSTN_log_silo_profile':
 
                 /* Get CRNRSTN :: Log
                  * Silo profile.
@@ -20970,7 +21177,6 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
 
             break;
             case 'log_silo_profile':
-            case 'CRNRSTN_log_silo_profile':
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * Set CRNRSTN :: Log
@@ -21420,31 +21626,31 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 self::$R_data[$name] = $value;
 
             break;
-            case 'crnrstn_OAuth[provider]':
+            case 'OAuth[provider]':
                 // 5 :: Friday, June 5, 2026 @ 0338 hrs.
 
                 self::$R_data[$name] = $value;
 
             break;
-            case 'crnrstn_OAuth[userName]':
+            case 'OAuth[userName]':
                 // 5 :: Friday, June 5, 2026 @ 0338 hrs.
 
                 self::$R_data[$name] = $value;
 
             break;
-            case 'crnrstn_OAuth[clientSecret]':
+            case 'OAuth[clientSecret]':
                 // 5 :: Friday, June 5, 2026 @ 0338 hrs.
 
                 self::$R_data[$name] = $value;
 
             break;
-            case 'crnrstn_OAuth[clientId]':
+            case 'OAuth[clientId]':
                 // 5 :: Friday, June 5, 2026 @ 0338 hrs.
 
                 self::$R_data[$name] = $value;
 
             break;
-            case 'crnrstn_OAuth[refreshToken]':
+            case 'OAuth[refreshToken]':
                 // 5 :: Friday, June 5, 2026 @ 0339 hrs.
 
                 self::$R_data[$name] = $value;
@@ -22718,7 +22924,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              $data_type_family = 'CRNRSTN::RESOURCE', 
              $data_authorization_profile = 'R_authorize & R_channel_RUNTIME')
     {
-        
+
         if(is_string($data_authorization_profile) || 
             !isset($data_authorization_profile))
         {
@@ -26001,22 +26207,45 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
     }
 
     /**
-     * R :: Content pending. 
+     * R :: Content pending.
      *
+     * Output Format: 2026-08-31 01:30:48
+     *
+     * @param
      * @return
      * @access public
      *
      */
-    function return_query_date_time_stamp()
+    function return_query_date_time_stamp($timestamp_override = NULL)
     {
-        // 5 :: Wednesday, July 31, 2024 @ 0805 hrs.
-        //
-        // return_query_date_time_stamp()
-        // output looks like, ________
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * 5 :: Wednesday, July 31, 2024 @ 0805 hrs.
+         *
+         * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Edit: Added $timestamp_override = NULL
+         *       input parameter to the method,
+         *       return_query_date_time_stamp(), and
+         *       aligned method internals to the use
+         *       of the same method by crnrstn.
+         *       5 :: Monday, August 31, 2026 @ 0140 hrs.
+         *
+         */
 
-        //$ts = date("Y-m-d H:i:s", time());
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Check to see if a
+         * timestamp override
+         * was provided.
+         *
+         *
+         * 5
+         *
+         * Saturday, September 14, 2024 @ 0158 hrs.
+         *
+         */
+        if(isset($timestamp_override))
+            return \date("Y-m-d H:i:s", $timestamp_override);
 
-        return date("Y-m-d H:i:s", time());
+        return \date("Y-m-d H:i:s", \time());
 
     }
 
@@ -26265,44 +26494,44 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          * For reference:
          *
          * self::$R_data['R_datatype_master'] = array(
-         * 'string'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_string'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_string',           
-         *                                  'PHP_NATIVE'                           => 'string'),
-         * 'int'                   => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_int'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_int',
-         *                                  'PHP_NATIVE'                           => 'int'),
-         * 'integer'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_integer'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_integer',
-         *                                  'PHP_NATIVE'                           => 'integer'),
-         * 'bool'                  => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_bool'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_bool',
-         *                                  'PHP_NATIVE'                           => 'bool'),
-         * 'boolean'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_boolean'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_boolean',
-         *                                  'PHP_NATIVE'                           => 'boolean'),
-         * 'float'                 => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_float'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_float',
-         *                                  'PHP_NATIVE'                           => 'float'),
-         * 'double'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_double'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_double',
-         *                                  'PHP_NATIVE'                           => 'double'),
-         * 'array'                 => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_array'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_array',
-         *                                  'PHP_NATIVE'                           => 'array'),
-         * 'object'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_object'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_object',
-         *                                  'PHP_NATIVE'                           => 'object'),
-         * 'resource'              => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_resource',
-         *                                  'PHP_NATIVE'                           => 'resource'),
-         * 'resource (closed)'     => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource_closed'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_resource_closed',
-         *                                  'PHP_NATIVE'                           => 'resource (closed)'),
-         * 'unknown type'          => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_unknown_type'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_unknown_type',
-         *                                  'PHP_NATIVE'                           => 'unknown type'),
-         * 'NULL'                  => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_null'],
-         *                                  self::$R_data['int_flag']['R_string']  => 'R_null',
+         * 'string'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_string'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_string', 
+         *                                  'PHP_NATIVE'                           => 'string'), 
+         * 'int'                   => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_int'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_int', 
+         *                                  'PHP_NATIVE'                           => 'int'), 
+         * 'integer'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_integer'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_integer', 
+         *                                  'PHP_NATIVE'                           => 'integer'), 
+         * 'bool'                  => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_bool'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_bool', 
+         *                                  'PHP_NATIVE'                           => 'bool'), 
+         * 'boolean'               => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_boolean'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_boolean', 
+         *                                  'PHP_NATIVE'                           => 'boolean'), 
+         * 'float'                 => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_float'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_float', 
+         *                                  'PHP_NATIVE'                           => 'float'), 
+         * 'double'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_double'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_double', 
+         *                                  'PHP_NATIVE'                           => 'double'), 
+         * 'array'                 => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_array'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_array', 
+         *                                  'PHP_NATIVE'                           => 'array'), 
+         * 'object'                => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_object'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_object', 
+         *                                  'PHP_NATIVE'                           => 'object'), 
+         * 'resource'              => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_resource', 
+         *                                  'PHP_NATIVE'                           => 'resource'), 
+         * 'resource (closed)'     => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_resource_closed'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_resource_closed', 
+         *                                  'PHP_NATIVE'                           => 'resource (closed)'), 
+         * 'unknown type'          => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_unknown_type'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_unknown_type', 
+         *                                  'PHP_NATIVE'                           => 'unknown type'), 
+         * 'NULL'                  => array(self::$R_data['int_flag']['R_integer'] => self::$R_data['int_flag']['R_null'], 
+         *                                  self::$R_data['int_flag']['R_string']  => 'R_null', 
          *                                  'PHP_NATIVE'                           => 'NULL'));
          *
          */
@@ -27152,7 +27381,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 (string) 'ON'
 
             Here are the CLR-SSL 
-            encryption profile string  
+            encryption profile string 
             constant system globals. 
 
             self::$R_data['int_flag']['R_encrypt_TUNNEL']
@@ -27324,9 +27553,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                          * AUTHOR :: Julio Marchi
                          *
                          * Note:
-                         * is_enabled($variable) from Julio on  
+                         * is_enabled($variable) from Julio on 
                          * php.net has been renamed in CRNRSTN :: to 
-                         * $this->boolean_conversion($variable).
+                         * $this->boolean_conversion($variable). 
                          *
                          * return $this->boolean_conversion($data);
                          *
@@ -28744,9 +28973,9 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
              $R_data_000 = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Copied the method, generate_memory_pointer(),  
+         * Edit: Copied the method, generate_memory_pointer(), 
          *       to the crnrstn_registry_user 
-         *       from crnrstn.
+         *       from crnrstn. 
          *       5 :: Tuesday, May 26, 2026 @ 1907 hrs.
          *
          */
@@ -28816,13 +29045,77 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          */
 
         switch($key_name){
+            case 'library_cache_mem_ptr':
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * 5 :: Tuesday, September 1, 2026 @ 0201 hrs.
+                 *
+                 */
+
+                return $this->generate_new_key(
+                              26,
+                              -1,
+                              true);
+
+            break;
+            case 'session_client_id':
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * 5 :: Sunday, August 30, 2026 @ 0345 hrs.
+                 *
+                 */
+
+                return $this->salt(128, '01');
+
+            break;
+            case 'thumb_dir_name':
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * 5 :: Saturday, August 22, 2026 @ 0615 hrs.
+                 *
+                 */
+                return $this->generate_new_key(25);
+
+            break;
+            case 'dom_proxy_id':
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * 5 :: Monday, August 4, 2026 @ 1402 hrs.
+                 *
+                 */
+                return $this->generate_new_key(
+                              32,
+                              -4,
+                              true,
+                              'sha256');
+
+            break;
+            case 'http_response_header_attribute_id':
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * 5 :: Tuesday, August 4, 2026 @ 0517 hrs.
+                 *
+                 */
+                return $this->generate_new_key(
+                              64,
+                              -2);
+
+            break;
+            case 'R_fire_bolt_creation_id':
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * 5 :: Friday, June 19, 2026 @ 0721 hrs.
+                 * Lights joint on kitchen stove gas range.
+                 * Sips coffee.
+                 *
+                 */
+
+                return $this->generate_new_key(
+                              128,
+                              -2);
+
+            break;
             case 'compound_ointment_spice_salt':
                 // 5 :: Monday, June 8, 2026 @ 0216 hrs.
 
                 return $this->generate_new_key(
-                              64, 
-                              -1, 
-                              true, 
+                              64,
+                              -1,
+                              true,
                               'md5');
 
             break;
@@ -28835,44 +29128,66 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 if(!isset(self::$R_data['R_datatype_master'])){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Graceful degredation. 
+                     * Graceful degredation.
                      *
-                     * The CLR-SSL framework 
-                     * is not yet ready. 
+                     * The CLR-SSL framework
+                     * is not yet ready.
                      *
                      *
                      * 5
                      *
                      */
                     return $this->generate_key(
-                                  'memory_pointer_weak', 
+                                  'memory_pointer_weak',
                                   $salt);
 
                 }
 
                 return $this->generate_new_key(
-                              64, 
-                              -1, 
+                              64,
+                              -1,
                               true);
 
             break;
             case 'memory_pointer_weak':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * 5 :: Tuesday, May 26, 2026 @ 0417 hrs.
-                 * tosses empty beer can. 
-                 * goes to kitchen to light joint. 
+                 * Tosses empty beer can.
+                 * Goes to kitchen to light joint on gas range of stove.
+                 *
+                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * SOURCE  :: https://www.php.net/manual/en/function.session-regenerate-id.php
+                 * COMMENT :: https://www.php.net/manual/en/function.session-regenerate-id.php#118672
+                 * AUTHOR  :: tedivm at tedivm dot com
+                 *
+                 * I wrote the current top voted
+                 * comment on this [session-regenerate-id]
+                 * and wanted to add something.
+                 *
+                 * The existing code from my previous
+                 * comment generates it's nonces
+                 * in an insecure way-
+                 *
+                 * $_SESSION['nonce'] = md5(microtime(true));
+                 *
+                 * Since "microtime" is predictable it
+                 * makes brute forcing the nonce
+                 * much easier. A better option would
+                 * be something that utilizes
+                 * randomness, such as-
+                 *
+                 * \bin2hex(\openssl_random_pseudo_bytes(32));
                  *
                  */
-
                 return hash(
-                           self::$R_data['hmac_algorithm'], 
-                           $salt . $this->return_micro_time());
+                       self::$R_data['hmac_algorithm'],
+                       $salt . \bin2hex(\openssl_random_pseudo_bytes(32)));
 
             break;
             case 'memory_pointer':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                  * 5 :: Tuesday, May 26, 2026 @ 0418 hrs.
-                 * hits joint. 
+                 * hits joint.
                  * Last Modified: Tuesday, May 26, 2026 @ 0439 hrs.
                  *
                  */
@@ -28880,25 +29195,25 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 if(!isset(self::$R_data['R_datatype_master'])){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Graceful degredation. 
+                     * Graceful degredation.
                      *
-                     * The CLR-SSL framework 
-                     * is not yet ready. 
+                     * The CLR-SSL framework
+                     * is not yet ready.
                      *
                      *
                      * 5
                      *
                      */
                     self::$R_data['resource_registry']['current_mem_pointer'] = $this->generate_key(
-                                                                                       'memory_pointer_weak', 
+                                                                                       'memory_pointer_weak',
                                                                                        $salt);
                     return self::$R_data['resource_registry']['current_mem_pointer'];
 
                 }
 
                 self::$R_data['resource_registry']['current_mem_pointer'] = $this->generate_new_key(
-                                                                                   64, 
-                                                                                   -1, 
+                                                                                   64,
+                                                                                   -1,
                                                                                    true);
                 return self::$R_data['resource_registry']['current_mem_pointer'];
 
@@ -28909,44 +29224,74 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 if(!isset(self::$R_data['R_datatype_master'])){
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Graceful degredation. 
+                     * Graceful degredation.
                      *
-                     * The CLR-SSL framework 
-                     * is not yet ready. 
+                     * The CLR-SSL framework
+                     * is not yet ready.
                      *
                      *
                      * 5
                      *
                      */
                     return hash(
-                           'sha512', 
-                           $key_name . 
-                           $this->return_micro_time());
+                           'sha512',
+                           $key_name .
+                           \bin2hex(\openssl_random_pseudo_bytes(32)));
 
                 }
 
                 return $this->generate_new_key(
-                              256, 
-                              -1, 
-                              true, 
+                              256,
+                              -1,
+                              true,
                               'sha512');
 
             break;
-            case 'request_id':
+            case 'R_request_id':
                 // 5 :: Thursday, April 30, 2026 @ 1443 hrs.
 
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Generate a fresh
+                 * CRNRSTN :: Lightsaber
+                 * SOAP Services Layer
+                 * Request ID.
+                 *
+                 *
+                 * 5
+                 *
+                 * Saturday, August 10, 2024 @ 0629 hrs.
+                 *
+                 * return $this->generate_new_key(42, -1, true);
+                 *
+                 */
                 return $this->generate_new_key(
-                              42, 
-                              -1, 
-                              true, 
+                              42,
+                              -1,
+                              true,
                               self::$R_data['hmac_algorithm']);
 
             break;
-            case 'request_serial':
+            case 'R_request_serial':
                 // 5 :: Thursday, April 30, 2026 @ 1446 hrs.
 
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Serialize the profile
+                 * for this request to
+                 * arrive at a fresh
+                 * implementation of the
+                 * CRNRSTN :: Lightsaber RoCEv2 SOAP
+                 * Services Layer.
+                 *
+                 *
+                 * 5
+                 *
+                 * Saturday, August 10, 2024 @ 0637 hrs.
+                 *
+                 * return $this->generate_new_key(64, -3);
+                 *
+                 */
                 return $this->generate_new_key(
-                              64, 
+                              64,
                               -3);
 
             break;
@@ -28954,30 +29299,98 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                 // 5 :: Thursday, April 30, 2026 @ 1451 hrs.
 
                 return $this->generate_new_key(
-                              50, 
-                              -2, 
-                              true);
+                              64,
+                              -5);
 
             break;
             case 'cache_bust':
                 // 5 :: Thursday, April 30, 2026 @ 1451 hrs.
 
                 return $this->generate_new_key(
-                              50, 
-                              -1, 
-                              true);
+                              50,
+                              -5);
 
             break;
             case 'session_config_salt':
                 // 5 :: Wednesday, May 20, 2026 @ 0148 hrs.
 
                 return $this->generate_new_key(
-                              64, 
+                              64,
                               -2);
 
             break;
             case 'R_cluster_id':
                 // 5 :: Tuesday, June 9, 2026 @ 1747 hrs.
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Serialize this configuration
+                 * profile for a fresh
+                 * implementation of the
+                 * CRNRSTN :: Lightsaber RoCEv2 SOAP
+                 * Services Layer.
+                 *
+                 *
+                 * 5
+                 *
+                 * Saturday, August 10, 2024 @ 0635 hrs.
+                 *
+                 * return $this->generate_new_key(64, -2);
+                 *
+                 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * Edit: Renamed config_serial in
+                 *       the CLR-SSL framework to
+                 *       R_cluster_id, and added
+                 *       R_node_id, R_client_id, and
+                 *       R_facility_id in order to
+                 *       lay down a generic
+                 *       (OpenSSL supported),
+                 *       facility aware, multi-client,
+                 *       dual-key, in-memory, data
+                 *       indexing services layer that
+                 *       will stretch across the
+                 *       entire CLR-SSL framework and
+                 *       that will turn each DOM
+                 *       endpoint into an AI compute
+                 *       cluster with an n+1 node
+                 *       (n+1 DOM i-frame) AI cluster
+                 *       resource management engine
+                 *       running between the server
+                 *       and the client/browser/CLI
+                 *       python API, or another
+                 *       server connecting as
+                 *       SOAP client.
+                 *
+                 *       5 :: Saturday, June 13, 2026 @ 1837 hrs.
+                 *
+                 */
+                return $this->generate_new_key(
+                              64,
+                              -1,
+                              true);
+
+            break;
+            case 'R_node_id':
+                // 5 :: Saturday, June 13, 2026 @ 1936 hrs.
+
+                return $this->generate_new_key(
+                              64,
+                              -1,
+                              true,
+                              'sha512');
+
+            break;
+            case 'R_client_id':
+                // 5 :: Saturday, June 13, 2026 @ 1936 hrs.
+
+                return $this->generate_new_key(
+                              64,
+                              -1,
+                              true,
+                              'sha512');
+
+            break;
+            case 'R_facility_id':
+                // 5 :: Saturday, June 13, 2026 @ 1937 hrs.
 
                 return $this->generate_new_key(
                               64, 
@@ -29111,7 +29524,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          *       are still some character omissions 
          *       from this key generator to 
          *       note, however: 
-         *       
+         *
          *       $char_selection = -1 evokes *all* 
          *       characters except:
          *          - The sequence \e escape key 
@@ -29355,11 +29768,11 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          * See, https://stackoverflow.com/a/13733588.
          * 
          */
-        $max = \strlen($codeAlphabet);       
+        $max = \strlen($codeAlphabet);
 
         if(\function_exists('random_int'))
             for($i = 0; $i < $len; $i++)
-                $token .= $codeAlphabet[random_int(0, $max - 1)];
+                $token .= $codeAlphabet[\random_int(0, $max - 1)];
         else
             for($i = 0; $i < $len; $i++)
                 $token .= $codeAlphabet[$this->crypto_rand_secure(0, $max - 1)];
@@ -29595,13 +30008,23 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          */
         if(!isset($length_override)){
 
-            if($this->isset_resource('R_salt_default_length', 'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
-                $tmp_salt_length = $this->get_resource(
-                                          'R_salt_default_length',
-                                          0,
-                                          'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
-            else
+            if(!isset(self::$_R['kivotos']->R['rrs_map'])){
+
                 $tmp_salt_length = (int) self::$R_data['R_salt_default_length'];
+
+            }else{
+
+                if($this->isset_resource(
+                          'R_salt_default_length',
+                          'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
+                    $tmp_salt_length = $this->get_resource(
+                                              'R_salt_default_length',
+                                              0,
+                                              'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
+                else
+                    $tmp_salt_length = (int) self::$R_data['R_salt_default_length'];
+
+            }
 
             if(!is_numeric($tmp_salt_length))
                 $length = (int) self::$R_data['R_salt_default_length'];
@@ -29613,47 +30036,47 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
             if(!is_numeric($length_override)){
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * It would certainly appear 
-                 * that this is not a valid 
-                 * number for the 
-                 * requested operation. 
+                 * It would certainly appear
+                 * that this is not a valid
+                 * number for the
+                 * requested operation.
                  *
-                 * We shall run a genuinely 
-                 * invalid calculation and 
-                 * use the system error that 
-                 * is generated to clearly 
-                 * communicate that the input 
-                 * datum is an "invalid number". 
+                 * We shall run a genuinely
+                 * invalid calculation and
+                 * use the system error that
+                 * is generated to clearly
+                 * communicate that the input
+                 * datum is an "invalid number".
                  *
-                 * This may be the only way 
+                 * This may be the only way
                  * that an application which
-                 * absolutely loves numbers as 
-                 * much as the CRNRSTN :: 
-                 * Lightsaber RoCEv2 SOAP 
-                 * Services Layer (CLR-SSL) 
-                 * loves numbers would be able 
-                 * to produce a respectable 
-                 * error message on this, the 
-                 * subject matter. 
-                 * 
-                 * And the CLR-SSL has really 
-                 * been loving the numbers 
-                 * lately, man. We happily pay 
-                 * the price ($$$) of compute 
-                 * to acquire an authentic NAN 
-                 * (not a number), real bad data. 
+                 * absolutely loves numbers as
+                 * much as the CRNRSTN ::
+                 * Lightsaber RoCEv2 SOAP
+                 * Services Layer (CLR-SSL)
+                 * loves numbers would be able
+                 * to produce a respectable
+                 * error message on this, the
+                 * subject matter.
                  *
-                 * We buy a properly shit value 
-                 * that can be consistently 
-                 * and reliably returned with 
-                 * confidence by the CLR-SSL. 
+                 * And the CLR-SSL has really
+                 * been loving the numbers
+                 * lately, man. We happily pay
+                 * the price ($$$) of compute
+                 * to acquire an authentic NAN
+                 * (not a number), real bad data.
                  *
-                 * And all this...even in the 
-                 * midst of "these economic 
-                 * times", at that! 
+                 * We buy a properly shit value
+                 * that can be consistently
+                 * and reliably returned with
+                 * confidence by the CLR-SSL.
                  *
-                 * CRNRSTN :: <3's... 
-                 * ...(int) CRNRSTN_INTEGER 4 LIFE! 
+                 * And all this...even in the
+                 * midst of "these economic
+                 * times", at that!
+                 *
+                 * CRNRSTN :: <3's...
+                 * ...(int) CRNRSTN_INTEGER 4 LIFE!
                  *
                  *
                  * 5 :: Monday, December 4, 2023 @ 1117 hrs.
@@ -29664,23 +30087,33 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                  */
                 $tmp_int = $tmp_salt_length = sqrt(-1);
 
-                if($this->isset_resource('R_salt_default_length', 'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
-                    $tmp_salt_length = $this->get_resource(
-                                              'R_salt_default_length',
-                                              0,
-                                              'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
+                if(!isset(self::$_R['kivotos']->R['rrs_map'])){
+
+                    $tmp_salt_length = (int) self::$R_data['R_salt_default_length'];
+
+                }else{
+
+                    if($this->isset_resource(
+                              'R_salt_default_length',
+                              'CRNRSTN::RESOURCE::GENERAL_SETTINGS') == true)
+                        $tmp_salt_length = $this->get_resource(
+                                                  'R_salt_default_length',
+                                                  0,
+                                                  'CRNRSTN::RESOURCE::GENERAL_SETTINGS');
+
+                }
 
                 if(!is_numeric($tmp_salt_length))
                     $length = (int) self::$R_data['R_salt_default_length'];
                 else
                     $length = (int) $tmp_salt_length;
 
-                $clr_ssl_msg = 'An invalid ' .
-                               'length, (' . $this->gettype($length_override) . ') ' .
-                               \strval($tmp_int) .
-                               ', was input for salt generation. ' .
-                               'A default value from ' .
-                               'system settings,' .
+                $clr_ssl_msg = 'An invalid length, (' .
+                               $this->gettype($length_override) .
+                               ') ' .
+                               \strval($tmp_int) . ', was input ' .
+                               'for salt generation. A default ' .
+                               'value from system settings,' .
                                ' (' . $this->gettype($length) .
                                ') ' . \strval($length) .
                                ', has manually been applied.';
@@ -29696,7 +30129,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
                          'clr_ssl_msg'             => $clr_ssl_msg);
                 $this->error_log(
                        $clr_ssl_msg,
-                       \LOG_DEBUG,
+                       \LOG_NOTICE,
                        \E_NOTICE,
                        __LINE__,
                        __METHOD__,
@@ -29718,6 +30151,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          *
          *
          * Scott
+         *
          *
          */
         return $this->generate_new_key(
@@ -30258,7 +30692,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          *       in order to support deeper 
          *       CLR-SSL Resource Registry 
          *       systems integrations. 
-         *       
+         *
          *       Cracks open can of SweetWater 420.
          *       Lights joint of last Indy® match.
          *       5 :: Thursday, June 18, 2026 @ 1953 hrs.
@@ -30315,7 +30749,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
         SOURCE  :: https://www.php.net/manual/en/function.crc32.php
         COMMENT :: https://www.php.net/manual/en/function.crc32.php#79567
         AUTHOR  :: dave at jufer dot info
-        
+
         This function returns the same 
         int value on a 64 bit mc. 
         like the crc32() function on 
@@ -34292,7 +34726,7 @@ Read access to ' . $resource . ' denied to caller: ' . $caller . '</code></pre>'
          *       data_reporting_bytes() 
          *       method. 
          *       5 :: Wednesday, June 24, 2026 @ 0038 hrs.
-         *       
+         *
          */
 
         $bytes = 0;
@@ -37729,9 +38163,9 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $str_pattern = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Copied the method, build_replacements_array(),  
+         * Edit: Copied the method, build_replacements_array(), 
          *       to the crnrstn_registry_user 
-         *       from crnrstn.
+         *       from crnrstn. 
          *       5 :: Tuesday, May 26, 2026 @ 1855 hrs.
          *
          */
@@ -37759,11 +38193,8 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
             }
 
-            if(!isset($str_pattern)){
-
+            if(!isset($str_pattern))
                 $str_pattern = '';
-
-            }
 
             $s = $str_pattern;
 
@@ -37871,1387 +38302,1387 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                 case 21:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                 break;
                 case 22:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s);
 
                 break;
                 case 23:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s);
 
                 break;
                 case 24:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s);
 
                 break;
                 case 25:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s);
 
                 break;
                 case 26:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 27:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 28:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 29:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 30:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 31:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 32:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 33:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 34:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 35:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 36:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 37:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 38:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 39:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 40:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 41:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                 break;
                 case 42:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s);
 
                 break;
                 case 43:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s);
 
                 break;
                 case 44:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s);
 
                 break;
                 case 45:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s);
 
                 break;
                 case 46:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 47:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 48:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 49:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 50:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 51:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 52:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 53:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 54:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 55:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 56:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 57:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 58:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 59:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 60:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 61:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                 break;
                 case 62:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s);
 
                 break;
                 case 63:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s);
 
                 break;
                 case 64:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s);
 
                 break;
                 case 65:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s);
 
                 break;
                 case 66:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 67:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 68:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 69:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 70:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 71:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 72:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 73:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 74:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 75:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 76:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 77:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 78:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 79:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 80:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 81:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                 break;
                 case 82:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s);
 
                 break;
                 case 83:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s);
 
                 break;
                 case 84:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s);
 
                 break;
                 case 85:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s);
 
                 break;
                 case 86:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 87:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 88:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 89:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 90:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 91:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 92:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 93:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 94:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 95:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 96:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 97:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 98:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 99:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 100:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 101:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                 break;
                 case 102:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s);
 
                 break;
                 case 103:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s);
 
                 break;
                 case 104:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s);
 
                 break;
                 case 105:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s);
 
                 break;
                 case 106:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 107:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 108:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 109:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 110:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 111:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 112:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 113:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 114:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 115:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 116:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 117:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 118:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 119:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 120:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 121:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                 break;
                 case 122:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s);
 
                 break;
                 case 123:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s);
 
                 break;
                 case 124:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s);
 
                 break;
                 case 125:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s);
 
                 break;
                 case 126:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 127:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 128:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 129:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 130:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 131:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 132:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 133:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 134:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 135:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 136:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 137:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 138:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 139:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 140:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 141:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                 break;
                 case 142:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s);
 
                 break;
                 case 143:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s);
 
                 break;
                 case 144:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s);
 
                 break;
                 case 145:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s);
 
                 break;
                 case 146:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 147:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 148:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 149:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 150:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 151:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 152:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 153:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 154:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 155:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 156:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 157:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 158:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
                 case 159:
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
@@ -39270,13 +39701,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                      *
                      */
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s);
 
                 break;
@@ -39310,46 +39741,46 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                     -----
                     ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789{}[]:;\"\'|\\+=_- )(*&^%$#@!~
                     `?/><.,   '{}[]:|\\+=_- )(*&%$#@!~?/.,:+=_- )(*$#@!~.
-                    
+
 
                     161 Patterns:
                     -----
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
                     $s
 
                     */
 
                     return array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
 
                     $s);
 
@@ -39387,14 +39818,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                      *
                      */
                     $tmp_ARRAY = array(
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
-                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s,
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
+                    $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, $s, 
                     $s);
 
                     for($i = 161; $i < $tmp_int; $i++){
@@ -39465,11 +39896,10 @@ output   * start              N/Y    N/N     ---       ---        ---          -
              $replacements_ARRAY = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Copied the method, build_replacements_array(),  
+         * Edit: Copied the method, build_replacements_array(), 
          *       to the crnrstn_registry_user 
-         *       from crnrstn.
+         *       from crnrstn. 
          *       5 :: Tuesday, May 26, 2026 @ 1855 hrs.
-         *
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * TODO :: Do we want to take 
@@ -39499,7 +39929,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  * ...e.g. use an empty "" 
                  * for n+1 different patterns...the 
                  * recommendation is to leave 
-                 * $replacements null if  
+                 * $replacements null if 
                  * there are under 161 
                  * patterns. If $replacements 
                  * has not already been built 
@@ -40207,10 +40637,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
      * @access public
      *
      */
-    function start_time()
+    function start_time($REQUEST_TIME_FLOAT = false)
     {
 
-        return date("Y-m-d H:i:s", self::$R_data['starttime']);
+        if($REQUEST_TIME_FLOAT !== false)
+            return self::$R_data['starttime'];
+
+        return \date('Y-m-d H:i:s', self::$R_data['starttime']);
 
     }
 
@@ -40226,7 +40659,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
         $timediff = $this->microtime_float() - self::$R_data['starttime'];
 
-        return substr($timediff, 0, -8);
+        return \substr($timediff, 0, -8);
 
     }
 
@@ -40242,24 +40675,30 @@ output   * start              N/Y    N/N     ---       ---        ---          -
      */
     function microtime_float()
     {
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * SOURCE :: http://www.php.net/manual/en/function.microtime.php
+         *
+         * microtime_float(){
+         *    list($usec, $sec) = explode(' ', microtime());
+         *    return ((float) $usec + (float) $sec);
+         * }
+         *
+         */
 
-        //list($usec, $sec) = explode(' ', microtime());
-        //return ((float)$usec + (float)$sec);
+        if(\function_exists(__NAMESPACE__ . '\gettimeofday')){
 
-        if(function_exists(__NAMESPACE__ . '\gettimeofday')){
-
-            $tod = gettimeofday();
-            $sec = $tod['sec'];
+            $tod  = \gettimeofday();
+            $sec  = $tod['sec'];
             $usec = $tod['usec'];
 
         }else{
 
-            $sec = time();
+            $sec  = time();
             $usec = 0;
 
         }
 
-        return $sec . '.' . sprintf('%06d', $usec);
+        return $sec . '.' . \sprintf('%06d', $usec);
 
     }
 
@@ -40272,7 +40711,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
      *
      * @return string The time in 
      *                ODBC canonical 
-     *                form with microseconds,  
+     *                form with microseconds, 
      *                e.g., '2024-07-15 00:56:13.653016'.
      * @access public
      * 
@@ -40306,20 +40745,21 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        if(function_exists(__NAMESPACE__ . '\gettimeofday')){
+        if(\function_exists(__NAMESPACE__ . '\gettimeofday')){
 
-            $tod = gettimeofday();
-            $sec = $tod['sec'];
+            $tod  = \gettimeofday();
+            $sec  = $tod['sec'];
             $usec = $tod['usec'];
 
         }else{
 
-            $sec = time();
+            $sec  = \time();
             $usec = 0;
 
         }
 
-        return strftime('%Y-%m-%d %H:%M:%S', $sec) . '.' . sprintf('%06d', $usec);
+        return \strftime('%Y-%m-%d %H:%M:%S', $sec) . '.' .
+               \sprintf('%06d', $usec);
 
     }
 
@@ -40351,7 +40791,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          *
          * 5 :: Wednesday, June 24, 2026 @ 0042 hrs.
-         *       
+         *
          */
 
         $bytes = 0;
@@ -41502,7 +41942,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *
          */
 
-        $type = strtoupper($type);
+        $type = \strtoupper($type);
 
         switch($type){
             case 'GET':

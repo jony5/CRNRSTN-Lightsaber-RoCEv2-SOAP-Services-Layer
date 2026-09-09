@@ -275,7 +275,7 @@ namespace CRNRSTN;
  *                       and Configuration 
  *                       Runtime Executable 
  * DESCRIPTION        :: Initialize system variables
- *                       specific to CLR-SSL Resource  
+ *                       specific to CLR-SSL Resource 
  *                       Registry authorized software 
  *                       access settings and 
  *                       configuration. 
@@ -287,7 +287,7 @@ namespace CRNRSTN;
  *
  *
  *                       5
- *                       
+ *
  *                       Sunday, May 24, 2026 @ 1005 hrs.
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -311,15 +311,26 @@ namespace CRNRSTN;
 *
 */
 return array(
-       __NAMESPACE__ . '\lightbox_helper_by_eVifweb' => 1, 
-       __NAMESPACE__ . '\crnrstn'                    => 1,
-       __NAMESPACE__ . '\crnrstn_bitflip_manager'    => 1,
-       __NAMESPACE__ . '\crnrstn_kivotos'            => 1,
-       __NAMESPACE__ . '\crnrstn_registry_user'      => 1,
-       __NAMESPACE__ . '\crnrstn_registry_assistant' => 1,
-       __NAMESPACE__ . '\nusoap_server'              => 1,
-       __NAMESPACE__ . '\nusoap_client'              => 1,
-       __NAMESPACE__ . '\wsdl'                       => 1,
-       __NAMESPACE__ . '\nusoap_base'                => 1,
-       __NAMESPACE__ . '\crnrstn_PHPMailer'          => 1);
-//     __NAMESPACE__ . '\obj_with_access_off______0' => 0
+       __NAMESPACE__ . '\crnrstn'                                => 1,
+       __NAMESPACE__ . '\crnrstn_registry_user'                  => 1,
+       __NAMESPACE__ . '\crnrstn_registry_assistant'             => 1,
+       __NAMESPACE__ . '\lightbox_helper_by_eVifweb'             => 1,
+       __NAMESPACE__ . '\crnrstn_kivotos'                        => 1,
+       __NAMESPACE__ . '\crnrstn_environment'                    => 1,
+       __NAMESPACE__ . '\crnrstn_logging'                        => 1,
+       __NAMESPACE__ . '\crnrstn_logging_output_profile_manager' => 1,
+       __NAMESPACE__ . '\crnrstn_bitflip_manager'                => 1,
+       __NAMESPACE__ . '\crnrstn_soap_content_memory_cache'      => 1,
+       __NAMESPACE__ . '\crnrstn_soap_client_manager'            => 1,
+       __NAMESPACE__ . '\crnrstn_soap_access_manager'            => 1,
+       __NAMESPACE__ . '\crnrstn_mysqli_conn'                    => 1,
+       __NAMESPACE__ . '\crnrstn_living_streams_of_communication_manager' => 1,
+       __NAMESPACE__ . '\crnrstn_asset_manager'                  => 1,
+       __NAMESPACE__ . '\crnrstn_fire_ftp_conn_manager'          => 1,
+       __NAMESPACE__ . '\crnrstn_ui_content_assembler'           => 1,
+       __NAMESPACE__ . '\nusoap_server'                          => 1,
+       __NAMESPACE__ . '\nusoap_client'                          => 1,
+       __NAMESPACE__ . '\wsdl'                                   => 1,
+       __NAMESPACE__ . '\nusoap_base'                            => 1,
+       __NAMESPACE__ . '\PHPMailer'                      => 1);
+//     __NAMESPACE__ . '\obj_with_access_off______0'             => 0

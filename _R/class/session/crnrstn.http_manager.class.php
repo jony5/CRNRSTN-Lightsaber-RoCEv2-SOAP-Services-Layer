@@ -312,7 +312,7 @@ namespace CRNRSTN;
 class crnrstn_http_manager extends crnrstn 
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-     * Edit: We modified the crnrstn_http_manager  
+     * Edit: We modified the crnrstn_http_manager 
      *       class object by adding an 
      *       extension of the crnrstn 
      *       object, by deleting the 
@@ -322,8 +322,8 @@ class crnrstn_http_manager extends crnrstn
      *       definitions, and by 
      *       removing/refactoring the object 
      *       assignments to the public 
-     *       $oCRNRSTN,
-     *       $oCRNRSTN_LOGGING,
+     *       $oCRNRSTN, 
+     *       $oCRNRSTN_LOGGING, 
      *       $oCRNRSTN_ENV, and 
      *       $oCRNRSTN_USR variables. 
      *       5 :: Wednesday, March 11, 2026 @ 2229 hrs.
@@ -366,14 +366,14 @@ class crnrstn_http_manager extends crnrstn
     	 * Edit: We deleted $oCRNRSTN 
     	 *       and $oCRNRSTN_ENV inputs from 
     	 *       the crnrstn_http_manager 
-    	 *       __construt().
+    	 *       __construt(). 
     	 *       5 :: Wednesday, March 11, 2026 @ 2222 hrs.
     	 *
     	 * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-    	 * Edit: Added $Mobile_Detect as
-    	 *       __construct() input for  
+    	 * Edit: Added $Mobile_Detect as 
+    	 *       __construct() input for 
     	 *       the crnrstn_http_manager 
-    	 *       class object.
+    	 *       class object. 
     	 *       5 :: Friday, August 21, 2026 @ 1015 hrs.
     	 *
     	 */
@@ -1571,7 +1571,7 @@ class crnrstn_http_manager extends crnrstn
 	     *
 	     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
 	     * Edit: Deleted the getHeaders() method, 
-	     *       and moved its contents to  
+	     *       and moved its contents to 
 	     *       get_headers() in order to align 
 	     *       to the CLR-SSL Initialization Series 
 	     *       use of "get_headers" and the new methods 

@@ -265,9 +265,9 @@ namespace CRNRSTN;
  * DATE 	 	    :: Tuesday, May 25, 2021 @ 1616 hrs.
  * AUTHOR 	 	    :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
  * URI              :: http://evifweb.jony5.com/
- * TITLE            :: The CRNRSTN :: Lightsaber RoCEv2  
+ * TITLE            :: The CRNRSTN :: Lightsaber RoCEv2 
  *                     SOAP Services Layer (CLR-SSL) 
- *                     Accessibility Manager  
+ *                     Accessibility Manager 
  *                     Class Object
  * DESCRIPTION      :: This is the CRNRSTN :: Lightsaber 
  *                     RoCEv2 SOAP Services Layer (CLR-SSL) 

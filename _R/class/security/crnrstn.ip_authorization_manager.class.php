@@ -2768,23 +2768,20 @@ class crnrstn_ip_authorization_manager extends crnrstn
 
 		#$IPv6 = (strpos($Ip, '::') === 0);			               // THIS WAS BREAKING WITH IPV6 IPS, SO HARDCODED TO TRUE. SEEMS TO WORK FINE.
 		$IPv6 = true;
-		$IPv4 = (strpos($Ip, '.') > 0);
+		$IPv4 = (\strpos($Ip, '.') > 0);
 	
 		if(!$IPv4 && !$IPv6) return false;
-		if($IPv6 && $IPv4) $Ip = substr($Ip, strrpos($Ip, ':')+1); // Strip IPv4 Compatibility notation
+		if($IPv6 && $IPv4) $Ip = \substr($Ip, \strrpos($Ip, ':')+1); // Strip IPv4 Compatibility notation
 		elseif(!$IPv4) return $Ip;                                 // Seems to be IPv6 already?
-		$Ip = array_pad(explode('.', $Ip), 4, 0);
-		if(count($Ip) > 4) return false;
-		for ($i = 0; $i < 4; $i++) if($Ip[$i] > 255) return false;
+		$Ip = \array_pad(\explode('.', $Ip), 4, 0);
+		if(\count($Ip) > 4) return false;
+		for($i = 0; $i < 4; $i++) if($Ip[$i] > 255) return false;
 		
-		if($Ip[0] == ''){
-
+		if($Ip[0] == '')
 		    $Ip[0] = 0;
-
-		}
 		
-		$Part7 = base_convert(($Ip[0] * 256) + $Ip[1], 10, 16);
-		$Part8 = base_convert(($Ip[2] * 256) + $Ip[3], 10, 16);
+		$Part7 = \base_convert(($Ip[0] * 256) + $Ip[1], 10, 16);
+		$Part8 = \base_convert(($Ip[2] * 256) + $Ip[3], 10, 16);
 
 		return $Mask . $Part7 . ':' . $Part8;
 
@@ -2804,17 +2801,11 @@ class crnrstn_ip_authorization_manager extends crnrstn
     function ExpandIPv6Notation($Ip)
     {
 
-		if(strpos($Ip, '::') !== false){
+		if(\strpos($Ip, '::') !== false)
+            $Ip = \str_replace('::', str_repeat(':0', 8 - substr_count($Ip, ':')) . ':', $Ip);
 
-            $Ip = str_replace('::', str_repeat(':0', 8 - substr_count($Ip, ':')) . ':', $Ip);
-
-        }
-
-		if(strpos($Ip, ':') === 0){
-
+		if(\strpos($Ip, ':') === 0)
             $Ip = '0' . $Ip;
-
-        }
 
 		return $Ip;
 
@@ -2843,43 +2834,32 @@ class crnrstn_ip_authorization_manager extends crnrstn
 
 	    //
         // INITIALIZATION.
-		$Ip = $this->ExpandIPv6Notation($Ip);
-		$Parts = explode(':', $Ip);
-		$Ip = array('', '');
+		$Ip    = $this->ExpandIPv6Notation($Ip);
+		$Parts = \explode(':', $Ip);
+		$Ip    = array('', '');
 		
 		for($i = 0; $i < 4; $i++){
 			
-			if(!isset($Parts[$i])){
-
+			if(!isset($Parts[$i]))
 				$Parts[$i] = 0;
-
-			}
 			
-			$Ip[0] .= str_pad(base_convert($Parts[$i], 16, 2), 16, 0, STR_PAD_LEFT);
+			$Ip[0] .= \str_pad(\base_convert($Parts[$i], 16, 2), 16, 0, STR_PAD_LEFT);
 
 		}
 		
 		for($i = 4; $i < 8; $i++){
 
-			if(!isset($Parts[$i])){
-
+			if(!isset($Parts[$i]))
 				$Parts[$i]=0;
-
-			}
 			
-			$Ip[1] .= str_pad(base_convert($Parts[$i], 16, 2), 16, 0, STR_PAD_LEFT);
+			$Ip[1] .= \str_pad(\base_convert($Parts[$i], 16, 2), 16, 0, STR_PAD_LEFT);
 		
 		}
 	
-		if($DatabaseParts == 2){
-
-            return array(base_convert($Ip[0], 2, 10), base_convert($Ip[1], 2, 10));
-
-        }else{
-
-		    return base_convert($Ip[0], 2, 10) + base_convert($Ip[1], 2, 10);
-
-		}
+		if($DatabaseParts == 2)
+            return array(\base_convert($Ip[0], 2, 10), \base_convert($Ip[1], 2, 10));
+        else
+		    return \base_convert($Ip[0], 2, 10) + \base_convert($Ip[1], 2, 10);
 
 	}
 

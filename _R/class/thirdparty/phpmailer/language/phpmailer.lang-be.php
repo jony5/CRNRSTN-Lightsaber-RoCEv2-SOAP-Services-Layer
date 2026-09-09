@@ -1,7 +1,7 @@
 <?php
 /**
- * Belarusian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Belarusian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Aleksander Maksymiuk <info@setpro.pl>
  */
 

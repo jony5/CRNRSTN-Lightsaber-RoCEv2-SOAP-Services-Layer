@@ -1,7 +1,7 @@
 <?php
 /**
- * Czech crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Czech PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  */
 
 $PHPMAILER_LANG['authenticate']         = 'Chyba SMTP: Autentizace selhala.';

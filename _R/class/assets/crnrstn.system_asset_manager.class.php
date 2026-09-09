@@ -670,7 +670,7 @@ class crnrstn_system_asset_manager extends crnrstn
              $asset_nom_hash . 
              ']. $footer_html_output[' . 
              $footer_html_output . ']');
-             
+
              */
 
             //
@@ -2216,7 +2216,7 @@ class crnrstn_system_asset_manager extends crnrstn
             $tmp_show_comments = true;
 
             if($this->is_serialized_bit_set(
-                      'crnrstn_html_comments_mode', 
+                      'R_html_comments_mode',
                       CRNRSTN_HTML_COMMENTS_SILENT_GOLD) !== true)
                 $tmp_show_comments = false;
 
@@ -7117,7 +7117,7 @@ class crnrstn_system_asset_manager extends crnrstn
 
                     if(strlen($tmp_str) > 0 && 
                         ($this->is_serialized_bit_set(
-                                'crnrstn_html_comments_mode', 
+                                'R_html_comments_mode',
                                 CRNRSTN_HTML_COMMENTS_SILENT_GOLD) == true))
                     {
 
@@ -7217,7 +7217,7 @@ class crnrstn_system_asset_manager extends crnrstn
             $tmp_show_comments = true;
 
             if($this->is_serialized_bit_set(
-                      'crnrstn_html_comments_mode', 
+                      'R_html_comments_mode',
                       CRNRSTN_HTML_COMMENTS_SILENT_GOLD) !== true)
             {
 
@@ -20998,7 +20998,7 @@ class crnrstn_system_asset_manager extends crnrstn
                 return false;
 //                $tmp_filename = $asset_data_key;
 //                $tmp_width = '';
-//                $tmp_height = '';   
+//                $tmp_height = '';
 //                $tmp_dom_width = '';
 //                $tmp_dom_height = '';
 //                $tmp_alt = '';
@@ -21776,7 +21776,7 @@ class crnrstn_system_asset_manager extends crnrstn
          *       adding empty string assignment to the 
          *       $dir_path input parameter 
          *       and setting $removed_segment_count = 0.
-         *       
+         *
          *       [Wed Jul 22 05:32:41.539122 2026] [:error] 
          *       [pid 119041] [client 172.16.225.1:58020] 
          *       PHP Warning:  Declaration of 
@@ -22273,7 +22273,7 @@ class crnrstn_system_asset_manager extends crnrstn
          *       /class/assets
          *       /crnrstn.system_asset_manager.class.php 
          *       on line 0
-         *       
+         *
          *       5 :: Wednesday, July 22, 2026 @ 0619 hrs.
          *
          */
@@ -26326,7 +26326,7 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $space = '';
 
                                 if(($width != '') || 
-                                    ($height != '') ||  
+                                    ($height != '') || 
                                     ($alt != '') || 
                                     ($title != ''))
                                     $space = ' ';
@@ -27770,7 +27770,7 @@ class crnrstn_system_asset_manager extends crnrstn
                 //         WE WOULD NEED TO TRIM 1 
                 //         DIRECTORY FROM THE FINAL 
                 //         PATH...RIGHT?
-                //         
+                //
                 //         THIS SHOULD ERROR WITH 
                 //         DIRECTORY NOT FOUND...IF 
                 //         WE NEED TO PERFORM A 
@@ -29704,7 +29704,7 @@ self::$image_filesystem_meta_ARRAY[CRNRSTN_BASE64 & CRNRSTN_JPEG][self::$request
          *       with the crnrstn class method use by 
          *       adding the $img_batch_size = 5 parameter 
          *       and setting $data_key = NULL.
-         *       
+         *
          *       [Wed Jul 22 05:39:41.096402 2026] [:error] 
          *       [pid 119043] [client 172.16.225.1:60643] 
          *       PHP Warning:  Declaration of 
@@ -29747,7 +29747,7 @@ self::$image_filesystem_meta_ARRAY[CRNRSTN_BASE64 & CRNRSTN_JPEG][self::$request
                 /*
                 $tmp_ARRAY['filename'] = $tmp_filename;
                 $tmp_ARRAY['width'] = $tmp_width;
-                $tmp_ARRAY['height'] = $tmp_height;    
+                $tmp_ARRAY['height'] = $tmp_height;
                 $tmp_ARRAY['dom_width'] = $tmp_dom_width;
                 $tmp_ARRAY['dom_height'] = $tmp_dom_height;
                 $tmp_ARRAY['alt'] = $tmp_alt;

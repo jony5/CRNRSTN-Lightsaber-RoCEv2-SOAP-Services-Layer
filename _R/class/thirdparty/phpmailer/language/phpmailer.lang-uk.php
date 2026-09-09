@@ -1,7 +1,7 @@
 <?php
 /**
- * Ukrainian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Ukrainian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Yuriy Rudyy <yrudyy@prs.net.ua>
  * @fixed by Boris Yurchenko <boris@yurchenko.pp.ua>
  */

@@ -1,7 +1,7 @@
 <?php
 /**
- * Hebrew crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Hebrew PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Ronny Sherer <ronny@hoojima.com>
  */
 

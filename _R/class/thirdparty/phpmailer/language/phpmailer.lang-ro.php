@@ -1,7 +1,7 @@
 <?php
 /**
- * Romanian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Romanian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Alex Florea <alecz.fia@gmail.com>
  */
 

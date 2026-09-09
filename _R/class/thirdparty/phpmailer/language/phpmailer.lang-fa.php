@@ -1,7 +1,7 @@
 <?php
 /**
- * Persian/Farsi crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Persian/Farsi PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Ali Jazayeri <jaza.ali@gmail.com>
  * @author Mohammad Hossein Mojtahedi <mhm5000@gmail.com>
  */

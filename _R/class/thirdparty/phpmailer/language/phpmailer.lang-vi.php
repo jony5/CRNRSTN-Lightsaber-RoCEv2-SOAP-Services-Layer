@@ -1,7 +1,7 @@
 <?php
 /**
- * Vietnamese (Tiếng Việt) crnrstn_PHPMailer language file: refer to English translation for definitive list.
- * @package crnrstn_PHPMailer
+ * Vietnamese (Tiếng Việt) PHPMailer language file: refer to English translation for definitive list.
+ * @package CRNRSTN
  * @author VINADES.,JSC <contact@vinades.vn>
  */
 

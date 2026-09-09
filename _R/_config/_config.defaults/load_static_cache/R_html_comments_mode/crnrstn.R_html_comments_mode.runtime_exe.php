@@ -258,9 +258,10 @@
 namespace CRNRSTN;
 
 /**
- * R :: R_seo_analytics returns third party web reporting and analytics HTML tracking tag content for client-side web browser integrations.
- *
- *
+ * R :: R_html_comments_mode contains the CLR-SSL HTML comments mode integer for client-side resource injections.
+ * 
+ * $R_data = array();
+ * 
  * @package CRNRSTN
  * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
  * @author Jonathan '5' Harris <jharris@eVifweb.com>
@@ -269,11 +270,45 @@ namespace CRNRSTN;
  * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
  * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
  * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
- * @param string $R_data contains third party web reporting and analytics HTML tracking tag content.
+ * @param integer $R_data contains the CLR-SSL HTML comments mode for client-side resource injections.
  * @access public
  *
  *
- * 5 :: Wednesday, August 12, 2026 @ 1128 hrs.
+ * 5 :: Monday, August 31, 2026 @ 0326 hrs.
  *
  */
-$R_data = '';
+$R_data = self::$R_data['int_flag']['CRNRSTN_HTML_COMMENTS_ENLARGED_PHYLACTERIES'];
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CLR-SSL HTML Code
+ * Comments On/Off Options:
+ *
+ * TLDR;
+ * OFF = CRNRSTN_HTML_COMMENTS_NONE
+ * OFF = CRNRSTN_HTML_COMMENTS_SILENT_GOLD (Alias for CRNRSTN_HTML_COMMENTS_NONE)
+ * ON  = CRNRSTN_HTML_COMMENTS_FULL
+ * ON  = CRNRSTN_HTML_COMMENTS_ENLARGED_PHYLACTERIES (Alias for CRNRSTN_HTML_COMMENTS_FULL)
+ * ON  = CRNRSTN_HTML_COMMENTS_CDN_STABILITY_CONTROL_ENABLED**
+ *       ** No page generation timestamps in HTML comments.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * No CLR-SSL HTML
+ * code comments should
+ * be written.
+ * - CRNRSTN_HTML_COMMENTS_NONE
+ * - CRNRSTN_HTML_COMMENTS_SILENT_GOLD
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CLR-SSL CDN HTML
+ * Stability Control.
+ *
+ * When CLR-SSL CDN
+ * HTML Stability Control
+ * is enabled, timestamps
+ * are removed from the
+ * HTML code comments that
+ * accompany CLR-SSL
+ * HTML content injections.
+ * - CRNRSTN_HTML_COMMENTS_CDN_STABILITY_CONTROL_ENABLED
+ *
+ */

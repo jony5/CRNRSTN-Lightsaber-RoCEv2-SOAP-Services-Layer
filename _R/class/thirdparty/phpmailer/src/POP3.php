@@ -67,7 +67,7 @@ namespace CRNRSTN;
  * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  */
-class crnrstn_POP3
+class POP3
 {
     /**
      * The POP3 PHPMailer Version number.
@@ -343,7 +343,7 @@ class crnrstn_POP3
         //So ignore errors here
         try {
             @fclose($this->pop_conn);
-        }catch(crnrstn_Exception $e){
+        }catch(Exception $e){
             //Do nothing
         }
     }

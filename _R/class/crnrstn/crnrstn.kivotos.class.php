@@ -362,7 +362,7 @@ class crnrstn_kivotos extends crnrstn
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied process_R_resp from crnrstn 
-         * to crnrstn_kivotos.
+         * to crnrstn_kivotos. 
          * 5 :: Thursday, August 6, 2026 @ 0501 hrs.
          *
          */
@@ -371,11 +371,11 @@ class crnrstn_kivotos extends crnrstn
         # C # R # N # R # S # T # N # :: # L # I # G # H # T
         5 :: Friday, June 19, 2026 @ 0932 hrs.
 
-        A more complete resource minting
+        A more complete resource minting 
         architecture is now coming from 
         the CLR-SSL Resource Registry 
         with all resource data ready 
-        to anoint vars by reference:
+        to anoint vars by reference: 
 
         Sample CLR-SSL Resource 
         Minting Data Architecture: 
@@ -386,7 +386,7 @@ class crnrstn_kivotos extends crnrstn
              [rtime 0.607403] [44019]: 
              7.1 KiB total bytes 
              loaded for CRNRSTN\crnrstn_kivotos v1.00.0000.
-             
+
         [mthd CRNRSTN\crnrstn::process_R_resp] [lnum 5815] Data Type = array
         [mthd CRNRSTN\crnrstn::process_R_resp] [lnum 5820] Data Type =
         Array
@@ -701,17 +701,17 @@ class crnrstn_kivotos extends crnrstn
 
          'crnrstn.constants_load.runtime_exe.php'            => 'RUNTIME_EXECUTABLE', 
          '_crnrstn_native_resource_registry_content_library' => 'FUNCTION_DEFINITION', 
-         'crnrstn_kivotós'                                   => 'CLASS_DEFINITION',
+         'crnrstn_kivotós'                                   => 'CLASS_DEFINITION', 
          'crnrstn_ascii_art'                                 => 'CLASS_DEFINITION', 
          'crnrstn_file_system_integrations_manager'          => 'CLASS_DEFINITION', 
          'crnrstn_logging'                                   => 'CLASS_DEFINITION', 
-         'crnrstn_session_manager'                           => 'CLASS_DEFINITION',
-         'crnrstn_json'                                      => 'CLASS_DEFINITION',
+         'crnrstn_session_manager'                           => 'CLASS_DEFINITION', 
+         'crnrstn_json'                                      => 'CLASS_DEFINITION', 
          'crnrstn_xml'                                       => 'CLASS_DEFINITION', 
          'crnrstn_socket'                                    => 'CLASS_DEFINITION', 
          'crnrstn_curl'                                      => 'CLASS_DEFINITION', 
          'crnrstn_stream'                                    => 'CLASS_DEFINITION', 
-         'crnrstn_multi_language_manager'                    => 'CLASS_DEFINITION',
+         'crnrstn_multi_language_manager'                    => 'CLASS_DEFINITION', 
          'crnrstn_client_assets'                             => 'CLASS_DEFINITION', 
          'crnrstn_content_source_controller'                 => 'CLASS_DEFINITION', 
          'crnrstn_performance_regulator'                     => 'CLASS_DEFINITION', 
@@ -857,7 +857,7 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\crnrstn_soap_authorization_manager':
             case __NAMESPACE__ . '===\crnrstn_soap_content_memory_cache':
 
-            // Database
+            // CLR-SSL :: Database
             case __NAMESPACE__ . '===\crnrstn_mysqli_conn_manager':
             case __NAMESPACE__ . '===\crnrstn_mysqli_conn':
             case __NAMESPACE__ . '===\crnrstn_sql_profile_manager':
@@ -892,10 +892,10 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\nusoap_client':
 
             // PHPMailer
-            case __NAMESPACE__ . '===\crnrstn_PHPMailer':
+            case __NAMESPACE__ . '===\PHPMailer':
 
             // Mobile_Detect
-            case __NAMESPACE__ . '===\crnrstn_Mobile_Detect':
+            case __NAMESPACE__ . '===\Mobile_Detect':
 
             // CLR-SSL :: CORE
             case __NAMESPACE__ . '===\crnrstn_client_assets':
@@ -918,8 +918,8 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\crnrstn':
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T 
                  * ^ Delete this entire case when 
-                 *   integration checks for this
-                 *   resource are complete.
+                 *   integration checks for this 
+                 *   resource are complete. 
                  *
                  *   5 :: Saturday, August 8, 2026 @ 1207 hrs.
                  *
@@ -990,11 +990,11 @@ class crnrstn_kivotos extends crnrstn
                 $this->R_kivotos_index[\get_class($this->R[$R_resp[$mem_ptr]['public_key']])]['public_key'] = $R_resp[$mem_ptr]['public_key'];
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * We don't need the object initialization
-                 * data stored again...with the meta.
+                 * We don't need the object initialization 
+                 * data stored again...with the meta. 
                  *
-                 * Delete the object data from
-                 * the R_kivotos_meta array.
+                 * Delete the object data from 
+                 * the R_kivotos_meta array. 
                  *
                  */
                 \array_splice($this->R_kivotos_meta[$res_name][$mem_ptr]['data'], 0);
@@ -1035,10 +1035,10 @@ class crnrstn_kivotos extends crnrstn
                        $token);
 
                 $this->clr_ssl_registry_resource_report(
-                       $R_resp,
-                       $clr_ssl_msg,
-                       false,
-                       __LINE__,
+                       $R_resp, 
+                       $clr_ssl_msg, 
+                       false, 
+                       __LINE__, 
                        __METHOD__);
 
             break;
@@ -1105,7 +1105,7 @@ class crnrstn_kivotos extends crnrstn
                                    $this->return_bytes(
                                           $R_resp[$mem_ptr]['data_bytes'][0], 
                                           2, 
-                                          NULL,
+                                          NULL, 
                                           true, 
                                           false, 
                                           false) . 
@@ -1118,10 +1118,10 @@ class crnrstn_kivotos extends crnrstn
                                    ', that this resource will be stored ' . 
                                    'securely, and that all is well.';
                     $this->clr_ssl_registry_resource_report(
-                           $R_resp,
-                           $clr_ssl_msg,
-                           false,
-                           __LINE__,
+                           $R_resp, 
+                           $clr_ssl_msg, 
+                           false, 
+                           __LINE__, 
                            __METHOD__);
 
                 break;
@@ -1132,14 +1132,14 @@ class crnrstn_kivotos extends crnrstn
                         case $this->R_data['int_flag']['R_object']:
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                             * Store The CRNRSTN :: Lightsaber
-                             * RoCEv2 SOAP Services Layer
-                             * (CLR-SSL) Resource Registry
-                             * data output at the location of
-                             * public_key.
+                             * Store The CRNRSTN :: Lightsaber 
+                             * RoCEv2 SOAP Services Layer 
+                             * (CLR-SSL) Resource Registry 
+                             * data output at the location of 
+                             * public_key. 
                              *
                              *
-                             * 5 :: Friday, August 8, 2026 @ 0812 hrs.
+                             * 5 :: Saturday, August 8, 2026 @ 0812 hrs.
                              *
                              */
                             $this->R[$R_resp[$mem_ptr]['public_key']]         = $R_resp[$mem_ptr]['data'][0];
@@ -1159,7 +1159,7 @@ class crnrstn_kivotos extends crnrstn
                              * public_key.
                              *
                              *
-                             * 5 :: Friday, August 8, 2026 @ 0812 hrs.
+                             * 5 :: Saturday, August 8, 2026 @ 0812 hrs.
                              *
                              */
                             $this->R[$R_resp[$mem_ptr]['public_key']]         = $R_resp[$mem_ptr]['data'][0];
@@ -1254,7 +1254,7 @@ class crnrstn_kivotos extends crnrstn
                                    $this->return_bytes(
                                           $R_resp[$mem_ptr]['data_bytes'][0], 
                                           2, 
-                                          NULL,
+                                          NULL, 
                                           true, 
                                           false, 
                                           false) . 
@@ -1350,10 +1350,10 @@ class crnrstn_kivotos extends crnrstn
          */
         $R_resp = $spice_salt_mem_ptr = NULL;
         $this->compound_ointment(
-               $spice_salt_mem_ptr,
+               $spice_salt_mem_ptr, 
                $public_key);
         $this->anoint(
-               $public_key,
+               $public_key, 
                $R_resp);
 
         return $R_resp;
@@ -1401,7 +1401,7 @@ class crnrstn_kivotos extends crnrstn
                      * does exist, are we happen to be
                      * searching for CRNRSTN\a_class_name.
                      *
-                     * If we cannot find, CRNRSTN\a_class_name,
+                     * If we cannot find, CRNRSTN\a_class_name, 
                      * we will also then be checking for
                      * CRNRSTN\CRNRSTN\a_class_name....which
                      * we would be finding in this example.
@@ -1413,19 +1413,19 @@ class crnrstn_kivotos extends crnrstn
                     if(isset($this->R[$this->R_kivotos_index[__NAMESPACE__ . '\\' . $resource]['public_key']]))
                         return true;
                 else
-                    return true;
+                    return true; 
 
-                return true;
+                return false;
 
             break;
             default:
 
                 $clr_ssl_msg = 'Unknown data type received: ' .
                                $this->gettype(
-                                      $resource,
+                                      $resource, 
                                       $this->R_data['int_flag']['R_string']) . ' ' .
                                '[' . \strval($this->gettype(
-                                                    $resource,
+                                                    $resource, 
                                                     $this->R_data['int_flag']['R_integer'])) .
                                '].';
                 // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -1433,18 +1433,18 @@ class crnrstn_kivotos extends crnrstn
                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token = array(
-                         'token' => $msg_token,
-                         'token_generation_date' => $token_generation_date,
-                         'request_type' => __METHOD__,
-                         'code' => 200,
+                         'token' => $msg_token, 
+                         'token_generation_date' => $token_generation_date, 
+                         'request_type' => __METHOD__, 
+                         'code' => 200, 
                          'clr_ssl_msg' => $clr_ssl_msg);
                 $this->error_log(
-                       $clr_ssl_msg,
-                       \LOG_WARNING,
-                       \E_WARNING,
-                       __LINE__,
-                       __METHOD__,
-                       __FILE__,
+                       $clr_ssl_msg, 
+                       \LOG_WARNING, 
+                       \E_WARNING, 
+                       __LINE__, 
+                       __METHOD__, 
+                       __FILE__, 
                        $token);
 
             break;
@@ -1468,10 +1468,10 @@ class crnrstn_kivotos extends crnrstn
      *
      */
     function get_kivotos(
-        $name,
-        $R_index_000 = NULL,
-        $R_index_001 = NULL,
-        $R_index_002 = NULL,
+        $name, 
+        $R_index_000 = NULL, 
+        $R_index_001 = NULL, 
+        $R_index_002 = NULL, 
         $R_index_003 = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1489,10 +1489,126 @@ class crnrstn_kivotos extends crnrstn
          */
 
         switch($name){
+            case 'public_key':
+            //case 'meta data output testing':
+                // 5 :: Tuesday, September 1, 2026 @ 0038 hrs.
+
+                if(isset($this->R_kivotos_index[$R_index_000]['public_key']))
+                    return $this->R_kivotos_index[$R_index_000]['public_key'];
+
+                /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                 * First test of CLR-SSL Registry 
+                 * Meta data request and return. 
+                 *
+                 * _crnrstn_native_resource_registry(
+                 *       'meta', 
+                 *       $R, 
+                 *       'new', 
+                 *       $name = {system name of class, function, runtime}, 
+                 *       $R_debug_mode, 
+                 *       $R_data_000 = 'TITLE|DESCRIPTION|LICENSE_URL')
+                 *
+                 * This test should be fired after 
+                 * all the registry_boot (and object boot) 
+                 * updates have run. 
+                 *
+                 *
+                 * 5 :: Tuesday, April 7, 2026 @ 1322 hrs.
+                 *
+                 */
+                //$tmp_resource_name = '_crnrstn_int_return';
+                $meta_keys = 'TITLE|' .
+                             'DESCRIPTION|' .
+                             'URL|' .
+                             'AUTHOR_CONTRIBUTORS|' .
+                             'COMPANY_NAME|' .
+                             'COPYRIGHT|' .
+                             'LICENSE_NAME|' .
+                             'LICENSE_URL|' .
+                             'LASTMODIFIED_LINUX_MAC_OS|' .
+                             'MODIFIEDBY_IP_ADDRESS|' .
+                             'DATECREATED_LINUX_MAC_OS|' .
+                             'CREATEDBY_IP_ADDRESS';
+                $meta_keys = 'TITLE';
+
+                if(!($R_resp = _crnrstn_native_resource_registry(
+                               'meta', 
+                               $this, 
+                               'new', 
+                               $R_index_000, 
+                               $this->R_data['R_debug_mode'],
+                               $name)))
+                {
+
+                    $clr_ssl_msg = 'Meta data error getting ' . 
+                                   \print_r($name, true) . ' for resource: ' . 
+                                   \print_r($R_index_000, true);
+                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token, 
+                             'token_generation_date'   => $token_generation_date, 
+                             'request_type'            => __METHOD__, 
+                             'code'                    => 200, 
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                           $clr_ssl_msg, 
+                           \LOG_ERR, 
+                           \E_ERROR, 
+                           __LINE__, 
+                           __METHOD__, 
+                           __FILE__, 
+                           $token);
+
+                }
+
+                return $R_resp;
+
+            break;
             case 'R_kivotos_meta':
                 // 5 :: Friday, August 14, 2026 @ 0523 hrs.
+                
+                if(isset($this->R_kivotos_meta[$R_index_000]))
+                    return $this->R_kivotos_meta[$R_index_000];
 
-                return $this->R_kivotos_meta[$R_index_000];
+                if(!($R_resp = _crnrstn_native_resource_registry(
+                               'meta', 
+                               $this, 
+                               'new', 
+                               $R_index_000, 
+                               $this->R_data['R_debug_mode'],
+                               $name)))
+                {
+
+                    $clr_ssl_msg = 'Meta data error getting ' . 
+                                   \print_r($name, true) . ' for resource: ' . 
+                                   \print_r($R_index_000, true);
+                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                    $token = array(
+                             'token'                   => $msg_token, 
+                             'token_generation_date'   => $token_generation_date, 
+                             'request_type'            => __METHOD__, 
+                             'code'                    => 200, 
+                             'clr_ssl_msg'             => $clr_ssl_msg);
+                    $this->error_log(
+                           $clr_ssl_msg, 
+                           \LOG_ERR, 
+                           \E_ERROR, 
+                           __LINE__, 
+                           __METHOD__, 
+                           __FILE__, 
+                           $token);
+
+                }
+
+                $this->R_kivotos_meta[__NAMESPACE__ . '\\' . $R_resp[$R_resp['clr_ssl_resource']['memory_pointer'][0]]['resource_name']] = $R_resp;
+
+                return $R_resp;
 
             case 'R_kivotos_index':
                 // 5 :: Thursday, August 13, 2026 @ 0244 hrs.
@@ -1510,18 +1626,18 @@ class crnrstn_kivotos extends crnrstn
                              'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token = array(
-                         'token' => $msg_token,
-                         'token_generation_date' => $token_generation_date,
-                         'request_type' => __METHOD__,
-                         'code' => 200,
+                         'token' => $msg_token, 
+                         'token_generation_date' => $token_generation_date, 
+                         'request_type' => __METHOD__, 
+                         'code' => 200, 
                          'clr_ssl_msg' => $clr_ssl_msg);
                 $this->error_log(
-                       $clr_ssl_msg,
-                       \LOG_WARNING,
-                       \E_WARNING,
-                       __LINE__,
-                       __METHOD__,
-                       __FILE__,
+                       $clr_ssl_msg, 
+                       \LOG_WARNING, 
+                       \E_WARNING, 
+                       __LINE__, 
+                       __METHOD__, 
+                       __FILE__, 
                        $token);
 
             break;
@@ -1577,21 +1693,21 @@ class crnrstn_kivotos extends crnrstn
             case 'nusoap_server':
 
                 $soa_namespace = $this->get_crnrstn(
-                                        'networking',
-                                        'nusoap',
+                                        'networking', 
+                                        'nusoap', 
                                         'soa_namespace');
                 $this->R[$this->R_kivotos_meta[$resource_name][$mem_ptr]['public_key']]->debug_flag = $this->get_crnrstn(
-                                                                                                             'networking',
-                                                                                                             'nusoap',
+                                                                                                             'networking', 
+                                                                                                             'nusoap', 
                                                                                                              'debug_flag');
                 $this->R['nusoap_server']->wsdl->schemaTargetNamespace = $soa_namespace;
                 $this->R['nusoap_server']->configureWSDL(
-                                          'CLR_SSL_SOAP_SVC',
+                                          'CLR_SSL_SOAP_SVC', 
                                           $soa_namespace);
 
                 $this->R_data_write(
-                       __METHOD__,
-                       $this->R_kivotos_meta[$resource_name][$mem_ptr]['public_key'],
+                       __METHOD__, 
+                       $this->R_kivotos_meta[$resource_name][$mem_ptr]['public_key'], 
                        $this->R['nusoap_server']);
 
             break;

@@ -78,7 +78,7 @@
  *      (v1.0.0)                   my dog and I to you...wherever 
  *                                 and whenever you are. 
  *        Author :: Jonathan '5' Harris, CEO, CTO, Lead Full Stack 
- *                  Developer, and as of Q3 in 2025, Chief Creative
+ *                  Developer, and as of Q3 in 2025, Chief Creative 
  *                  here at eVifweb® 
  *                  jharris@eVifweb.com. eVifweb@gmail.com. 
  *           URI :: https://crnrstn.jony5.com
@@ -253,119 +253,118 @@
  *                  THE SOFTWARE. 
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * Edit: Renamed 
- *       crnrstn_json 
- *       object instantiation return 
- *       file, changing the name from 
- *       crnrstn.crnrstn_json.runtime_exe.php 
- *       to 
- *       crnrstn.crnrstn_json.fire_bolt_exe.php. 
- *       5 :: Friday, June 19, 2026 @ 2238 hrs.
- *       Last Modified: Friday, June 19, 2026 @ 2329 hrs.
- *
  */
 
-namespace CRNRSTN\resource;
-
-use CRNRSTN\crnrstn_Mobile_Detect;
+namespace CRNRSTN;
 
 /**
- * R :: crnrstn_Mobile_Detect object instantiation and return.
+ * R :: Content Pending. 
  *
- * $R['kivotos'][{resource public_key}] = new crnrstn_Mobile_Detect();
+ * RUNTIME EXECUTABLE :: /_R/_config/config.database.secure/crnrstn.db.config.runtime_exe.php
+ * EXECUTABLE VERSION :: 1.00.0000
+ * DATE               :: Monday, July 22, 2024 @ 0703 hrs.
+ * AUTHOR             :: Jonathan '5' Harris, jharris@eVifweb.com, eVifweb@gmail.com.
+ * URI                :: http://evifweb.jony5.com/
+ * TITLE              :: The CRNRSTN :: Lightsaber
+ *                       SOAP Services Layer Database
+ *                       Authentication Profile
+ *                       Initialization Runtime Executable
+ * DESCRIPTION        :: Configure database authentication
+ *                       profiles for all database
+ *                       connections required by CRNRSTN ::
+ *                       Lightsaber or any application
+ *                       supported the CRNRSTN ::
+ *                       Lightsaber SOAP Services Layer.
  *
- * @package CRNRSTN
- * @version 2.00.0001 CRNRSTN :: Lightsaber RoCEv2 SOAP Services Layer.
- * @author Jonathan '5' Harris <jharris@eVifweb.com>
- * @copyright Copyright © 2012-2026 eVifweb® development All Rights Reserved.
- * @license https://crnrstn.jony5.com/licensing/ MIT
- * @link https://lightsaber.crnrstn.jony5.com/ CRNRSTN :: Lightsaber.
- * @link https://twitter.com/CRNRSTN_v2_0_0 CRNRSTN :: on Twitter.
- * @link http://evifweb.jony5.com/ eVifweb® :: Corporate Sponsor.
- * @access public
+ *                       Configure all database
+ *                       authentication profiles for
+ *                       each server environment that
+ *                       the CRNRSTN :: Lightsaber SOAP
+ *                       Services Layer will support
+ *                       at runtime.
+ *
+ *                       For WordPress specific database
+ *                       support, please see:
+ *                       /_R/_config/config.wp.secure/crnrstn.wordpress_config.runtime_exe.php
  *
  *
- * 5 :: Monday, August 17, 2026 @ 2353 hrs.
- * Lights joint with some fire from the
- * gas range on my kitchen stove.
+ *                       5
+ *
+ *                       Monday, July 22, 2024 @ 0843 hrs.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ *
+ * LICENSE            :: MIT | https://crnrstn.jony5.com/licensing/
  *
  */
-return new crnrstn_Mobile_Detect();
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * CLR-SSL Resource Registry
- * Data Transport Architecture
- * Interfaces
+ * Initialize an account
+ * authentication email
+ * to establish a
+ * CRNRSTN :: Lightsaber
+ * RoCEv2 SOAP Services
+ * Layer (CLR-SSL) server
+ * administration and
+ * application configuration
+ * management touchpoint.
  *
- * TLDR;
- * 1) CLR-SSL Kivotós Advanced Object Storage Ark.
- * 2) Resource Anointing with Compounded Ointment of Input Parameters.
- * 3) CLR-SSL Resource Registry Direct Integrations.
  *
- * 1) $var = $R->kivotos_storage('xml');
- * 2) $var = $R->compound_ointment_extract('wsdl', 0, false);
- * 3) $var = $R_resp[$memory_pointer]['input_parameter_defaults'][$R_resp[$memory_pointer]['software_default']][0];
+ * 5 :: Sunday, July 28, 2024 @ 0208 hrs.
  *
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * A) CLR-SSL Kivotós Advanced
- *    Object Storage Ark.
- *    Use kivotos_storage() to
- *    access core resources that are
- *    loaded automatically by the
- *    CLR-SSL Resource Registry
- *    Internals. Access object,
- *    function output return,
- *    and runtime exe output
- *    return data.
+ */
+
+$email = 'Jonathan 5 Harris eVifweb@gmail.com, Jonathan 5 Harris j5@jony5.com, Jonathan Harris c00000101@gmail.com';
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Initialize MySQL database
+ * connectivity credential
+ * data for the CRNRSTN ::
+ * Lightsaber RoCEv2 SOAP
+ * Services Layer (CLR-SSL).
  *
- *    function kivotos_storage($public_key)
- *    {}
  *
- * E.g.:
- *    $var = $R->kivotos_storage('xml');
+ * 5 :: Tuesday, June 2, 2026 @ 1217 hrs.
  *
- * Note: (string) $public_key is
- *       the index at which the data
- *       can be accessed within the
- *       CLR-SSL Kivotós Advanced
- *       Object Storage Ark or
- *       CRNRSTN :: KAOS ('chaos').
+ */
+$hostname = 'localhost';
+$username = 'a_user_name_for_evifweb_cedar';
+$password = '123456password';
+$database = 'evifweb_cedar';
+$port     = '3306';
+$socket   = NULL;
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Initialize a CRNRSTN ::
+ * Lightsaber RoCEv2 SOAP
+ * Services Layer (CLR-SSL)
+ * MySQL database table
+ * name prefix.
  *
- * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * B) Just-In-Time Ointment Compounding
- *    and Variable Anointing and Just-
- *    In-Time Resource Definition
- *    Evaluations (or returns).
- *    Use compound_ointment_extract() to
- *    access resources loaded in the wild
- *    and dynamically via
- *    $R->compound_ointment() + $R->anoint()
- *    resource acquisition maneuvers.
+ */
+$table_prefix = 'crnrstn_';
+
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Toshiba® M100 [eVifweb®] :: 
+ * RADIOHEAD Laptop.
  *
- *    function compound_ointment_extract(
- *             $resource_name,
- *             $input_position = 0,
- *             $input_default = NULL)
- *             {}
- *
- * E.g.:
- *    $var = $R->compound_ointment_extract('wsdl', 0, false);
- *
- * Note: For Just-In-Time resource returns
- *       behind this architecture, please see:
- *
- *       $var = $R->return_anointed_resource($resource_name)
+ * $this->config_add_database_connection(
+ *        'LOCALHOST_PC', 
+ *        'localhost', 
+ *        'crnrstn_stage', 
+ *        'password123456789', 
+ *        'crnrstn_stage');
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * C) Direct integrations with the
- *    CLR-SSL Resource Registry's
- *    own internal data architecture.
+ * Toshiba® M100 [eVifweb®] :: 
+ * RADIOHEAD Laptop. 
  *
- * E.g.:
- *    $var = $R_resp[$memory_pointer]['input_parameter_defaults'][$R_resp[$memory_pointer]['software_default']][0];
- *
- *
- * 5 :: Saturday, August 22, 2026 @ 0742 hrs.
- * Last Modified: Monday, August 24, 2026 @ 1911 hrs.
+ * $this->config_add_database_connection(
+ *        'LOCALHOST_PC', 
+ *        'localhost', 
+ *        'crnrstn_demo', 
+ *        'password123456789', 
+ *        'crnrstn_demo', 
+ *        3306);
  *
  */

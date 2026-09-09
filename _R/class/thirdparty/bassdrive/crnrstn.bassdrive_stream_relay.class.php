@@ -273,7 +273,7 @@ namespace CRNRSTN;
  *                     Relay JavaScript object
  *                     (JSON) faithful PHP
  *                     class objectification.
- *                  
+ *
  *                     Here is an example
  *                     of a Bassdrive.com
  *                     stream "relays" JSON 
@@ -290,7 +290,7 @@ namespace CRNRSTN;
  *                     from 2021: 
  *
  *                     https://lightsaber.crnrstn.jony5.com/_tmp_diagrams/bassdrive_dirty_shit/kos.mos.music/
- *                  
+ *
  *                     {
  *                     "relays" : [
  *                        {
@@ -360,7 +360,7 @@ namespace CRNRSTN;
  *                           "title" : "Kos.Mos Music Presents Phuture - hosted by Freestylers"
  *                        }
  *                       ],
- *       
+ *
  *                     "stats" : [
  *                        {
  *                           "bandwidth" : 22.13,
@@ -413,7 +413,7 @@ namespace CRNRSTN;
  *                           "bandwidthFormat" : "megabit"
  *                        }
  *                       ],
- *       
+ *
  *                     "nowplaying" : [
  *                        {
  *                           "name" : "Kos.Mos Music Presents Phuture - hosted by Freestylers",
@@ -425,13 +425,13 @@ namespace CRNRSTN;
  *                        }
  *                       ]
  *                     }
- *                  
+ *
  *                     ❤ ❤ C ❤ R ❤ N ❤ R ❤ S ❤ T ❤ N ❤ : : ❤ ❤ ❤ ❤
- *                     This work by eVifweb is done 
+ *                     This work by eVifweb® is done 
  *                     in memory of my boy, J5, 
  *                     ...who would have turned 16 
  *                     today, if he had not kicked 
- *                     the bucket back in August.
+ *                     the bucket back in August. 
  *
  *                     ❤ you, my boy.
  *

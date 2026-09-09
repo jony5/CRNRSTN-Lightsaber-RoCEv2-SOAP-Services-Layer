@@ -1,7 +1,7 @@
 <?php
 /**
- * Polish crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Polish PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  */
 
 $PHPMAILER_LANG['authenticate']         = 'Błąd SMTP: Nie można przeprowadzić uwierzytelnienia.';

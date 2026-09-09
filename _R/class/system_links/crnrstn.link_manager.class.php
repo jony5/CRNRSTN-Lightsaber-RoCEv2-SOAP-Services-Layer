@@ -316,7 +316,7 @@ namespace CRNRSTN;
  */
 class crnrstn_link_manager extends crnrstn 
 {
-    /* # # C # R # N # R # S # T # N # : : # # # #
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Edit: We modified the crnrstn_link_manager 
      *       class object by applying an 
      *       extension of the crnrstn object, 
@@ -328,8 +328,17 @@ class crnrstn_link_manager extends crnrstn
      *       public $oCRNRSTN variable. 
      *       5 :: Wednesday, July 22, 2026 @ 0758 hrs.
      *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Deleted the method,
+     *       soap_data_initialization_cache_output(),
+     *       on account of the
+     *       crnrstn_link_manager now extending
+     *       the crnrstn class...which has
+     *       this method.
+     *       5 :: Tuesday, September 1, 2026 @ 0549 hrs.
+     *
      */
-    
+
     /**
      * R :: Content pending.
      *
@@ -339,71 +348,6 @@ class crnrstn_link_manager extends crnrstn
      */
     function __construct()
     {
-
-    }
-
-    /**
-     * R :: Content pending.
-     *
-     * @param
-     * @param
-     * @param
-     * @param
-     * @param
-     * @param
-     * @param
-     * @param
-     * @param
-     * @return
-     * @access public
-     *
-     */
-    function soap_data_initialization_cache_output(
-             $iso_lang_code = 'en',
-             $multi_lang_resource_key = NULL,
-             $attribute = '',
-             $HTML_data = '',
-             $TEXT_data = '',
-             $output_mode = 'MULTI-PART',
-             $generate_version_synchronization_hash = false,
-             $generate_search_algorithm_data = false,
-             $css_style_ARRAY = NULL)
-    {
-        // 5 :: Wednesday, August 21, 2024 @ 0638 hrs.
-        //
-        // Edit :: Updated the CLR-SSL Link Manager
-        //         soap_data_initialization_cache_output()
-        //         method input parameters to honor CLR-SSL
-        //         System Registry Content
-        //         Library development changes.
-        //         5 :: Sunday, November 9, 2025 @ 0256 hrs.
-
-        //
-        // Return initialized
-        // CRNRSTN :: Lightsaber
-        // SOAP Services Layer
-        // content output.
-        //
-        //
-        // 5
-        //
-        // Thursday, August 22, 2024 @ 0349 hrs.
-        //
-        // Edit :: Updated crnrstn method input
-        //         parameters to honor CLR-SSL
-        //         System Registry Content
-        //         Library development.
-        //         5 :: Sunday, November 9, 2025 @ 0237 hrs.
-        return $this->oCRNRSTN->soap_data_initialization_cache_output(
-            $iso_lang_code,
-            $multi_lang_resource_key,
-            $attribute,
-            $HTML_data,
-            $TEXT_data,
-            $output_mode,
-            $generate_version_synchronization_hash,
-            $generate_search_algorithm_data,
-            $css_style_ARRAY);
 
     }
 

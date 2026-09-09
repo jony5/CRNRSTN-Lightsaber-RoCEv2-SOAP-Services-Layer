@@ -1,7 +1,7 @@
 <?php
 /**
- * Spanish crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Spanish PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Matt Sturdy <matt.sturdy@gmail.com>
  */
 

@@ -1,7 +1,7 @@
 <?php
 /**
- * German crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * German PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  */
 
 $PHPMAILER_LANG['authenticate']         = 'SMTP-Fehler: Authentifizierung fehlgeschlagen.';

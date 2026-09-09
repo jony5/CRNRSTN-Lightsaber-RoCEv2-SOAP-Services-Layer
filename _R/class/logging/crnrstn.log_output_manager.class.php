@@ -1729,7 +1729,7 @@ class crnrstn_log_output_manager extends crnrstn
  *                    $tmp_silo_str = '';
  *                    $tmp_silo_array = explode('|', $this->log_silo_profile);
  *                    $tmp_cnt = sizeof($tmp_silo_array);
- *                    for ($i = 0; $i < $tmp_cnt; $i++){
+ *                    for($i = 0; $i < $tmp_cnt; $i++){
  *                        $tmp_silo_str .= $tmp_silo_array[$i] . ' and ';
  *                    }
  *

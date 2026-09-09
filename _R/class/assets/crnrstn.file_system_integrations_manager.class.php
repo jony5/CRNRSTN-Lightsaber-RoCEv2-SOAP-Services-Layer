@@ -353,19 +353,19 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                 $token = array(
-                    'token' => $msg_token,
-                    'token_generation_date' => $token_generation_date,
-                    'request_type' => __METHOD__,
-                    'code' => 200,
+                    'token' => $msg_token, 
+                    'token_generation_date' => $token_generation_date, 
+                    'request_type' => __METHOD__, 
+                    'code' => 200, 
                     'clr_ssl_msg' => $clr_ssl_msg);
                 $this->error_log(
-                    $clr_ssl_msg,
-                    \LOG_INFO,
-                    \E_USER_NOTICE,
-                    __LINE__,
-                    __METHOD__,
-                    __FILE__,
-                    $token,
+                    $clr_ssl_msg, 
+                    \LOG_INFO, 
+                    \E_USER_NOTICE, 
+                    __LINE__, 
+                    __METHOD__, 
+                    __FILE__, 
+                    $token, 
                     'R :: [Admin Prompt] ');
 
             break;
@@ -445,14 +445,14 @@ class crnrstn_file_system_integrations_manager extends crnrstn
      *
      */
     function file_sys_integrations_init(
-        $request_type = 'FRAMEWORK_INTEGRITY_CHECK',
-        $R_resp = NULL,
+        $request_type = 'FRAMEWORK_INTEGRITY_CHECK', 
+        $R_resp = NULL, 
         $memory_pointer = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Copied file_sys_integrations_init() 
          * method from crnrstn on 
-         * Saturday, May 23, 2026 @ 0742 hrs.   
+         * Saturday, May 23, 2026 @ 0742 hrs. 
          * Waitress asked, "How many bottles?"...
          * 5 :: Saturday, May 23, 2026 @ 0744 hrs. 
          *
@@ -559,33 +559,33 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                     $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
                     $token = array(
-                        'token' => $msg_token,
-                        'token_generation_date' => $token_generation_date,
-                        'request_type' => $request_type,
-                        'code' => 200,
-                        'clr_ssl_msg' => $clr_ssl_msg,
-                        'memory_ptr' => $memory_pointer,
-                        'resource_ping_runtime' => $R_resp[$memory_pointer]['runtime'],
-                        'resource_ping_microtime' => $R_resp[$memory_pointer]['microtime'],
-                        'file_evaluate_enabled' => $R_resp[$memory_pointer]['file_evaluate_enabled'][$R_resp[$memory_pointer]['software_default']],
-                        'auto_obj_mode_enabled' => $R_resp[$memory_pointer]['auto_obj_mode_enabled'][$R_resp[$memory_pointer]['software_default']],
-                        'namespace' => $R_resp[$memory_pointer]['namespace'],
-                        'resource_loading_arch' => $R_resp[$memory_pointer]['loading_arch'][$R_resp[$memory_pointer]['software_default']],
-                        'resource_eval_ttl' => $R_resp[$memory_pointer]['eval_ttl'][$R_resp[$memory_pointer]['software_default']],
-                        'resource_type' => $R_resp[$memory_pointer]['resource_type'],
-                        'resource_name' => $R_resp[$memory_pointer]['resource_name'],
-                        'software_version' => $R_resp[$memory_pointer]['software_default'],
-                        'resource_title' => $R_resp[$memory_pointer]['title'],
-                        'software_company' => $R_resp[$memory_pointer]['software_company']['key'],
-                        'copyright' => $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']],
+                        'token' => $msg_token, 
+                        'token_generation_date' => $token_generation_date, 
+                        'request_type' => $request_type, 
+                        'code' => 200, 
+                        'clr_ssl_msg' => $clr_ssl_msg, 
+                        'memory_ptr' => $memory_pointer, 
+                        'resource_ping_runtime' => $R_resp[$memory_pointer]['runtime'], 
+                        'resource_ping_microtime' => $R_resp[$memory_pointer]['microtime'], 
+                        'file_evaluate_enabled' => $R_resp[$memory_pointer]['file_evaluate_enabled'][$R_resp[$memory_pointer]['software_default']], 
+                        'auto_obj_mode_enabled' => $R_resp[$memory_pointer]['auto_obj_mode_enabled'][$R_resp[$memory_pointer]['software_default']], 
+                        'namespace' => $R_resp[$memory_pointer]['namespace'], 
+                        'resource_loading_arch' => $R_resp[$memory_pointer]['loading_arch'][$R_resp[$memory_pointer]['software_default']], 
+                        'resource_eval_ttl' => $R_resp[$memory_pointer]['eval_ttl'][$R_resp[$memory_pointer]['software_default']], 
+                        'resource_type' => $R_resp[$memory_pointer]['resource_type'], 
+                        'resource_name' => $R_resp[$memory_pointer]['resource_name'], 
+                        'software_version' => $R_resp[$memory_pointer]['software_default'], 
+                        'resource_title' => $R_resp[$memory_pointer]['title'], 
+                        'software_company' => $R_resp[$memory_pointer]['software_company']['key'], 
+                        'copyright' => $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']], 
                         'license_key' => $R_resp[$memory_pointer]['license']['key'][$R_resp[$memory_pointer]['software_default']]);
                     $this->error_log(
-                        $clr_ssl_msg,
-                        \LOG_DEBUG,
-                        \E_NOTICE,
-                        __LINE__,
-                        __METHOD__,
-                        __FILE__,
+                        $clr_ssl_msg, 
+                        \LOG_DEBUG, 
+                        \E_NOTICE, 
+                        __LINE__, 
+                        __METHOD__, 
+                        __FILE__, 
                         $token);
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -606,8 +606,8 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                      *
                      */
                     return $this->generate_system_file(
-                        $request_type,
-                        $R_resp,
+                        $request_type, 
+                        $R_resp, 
                         $memory_pointer);
 
                 }
@@ -642,18 +642,18 @@ class crnrstn_file_system_integrations_manager extends crnrstn
             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
         $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
         $token = array(
-            'token' => $msg_token,
-            'token_generation_date' => $token_generation_date,
-            'request_type' => __METHOD__,
-            'code' => 200,
+            'token' => $msg_token, 
+            'token_generation_date' => $token_generation_date, 
+            'request_type' => __METHOD__, 
+            'code' => 200, 
             'clr_ssl_msg' => $clr_ssl_msg);
         $this->error_log(
-            $clr_ssl_msg,
-            \LOG_NOTICE,
-            \E_NOTICE,
-            __LINE__,
-            __METHOD__,
-            __FILE__,
+            $clr_ssl_msg, 
+            \LOG_NOTICE, 
+            \E_NOTICE, 
+            __LINE__, 
+            __METHOD__, 
+            __FILE__, 
             $token);
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -682,8 +682,8 @@ class crnrstn_file_system_integrations_manager extends crnrstn
      *
      */
     function generate_system_file(
-        $request_type,
-        $R_resp,
+        $request_type, 
+        $R_resp, 
         $memory_pointer)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -769,37 +769,37 @@ class crnrstn_file_system_integrations_manager extends crnrstn
      *
      */
     function print_pretty(
-        $notice,
-        $line_no = NULL,
-        $method = NULL,
-        $file = NULL,
-        $message_type = NULL,
+        $notice, 
+        $line_no = NULL, 
+        $method = NULL, 
+        $file = NULL, 
+        $message_type = NULL, 
         $echo_out_off = false)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * 5 :: Thursday, July 2, 2026 @ 0439 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied method, print_pretty(),
-         * from index.php global scope
-         * scripting using an
-         * eVifweb® Dell® XPS® 8950
-         * 128GB i9-12900K.
+         * Copied method, print_pretty(), 
+         * from index.php global scope 
+         * scripting using an 
+         * eVifweb® Dell® XPS® 8950 
+         * 128GB i9-12900K. 
          *
-         * The Dell® XPS® 8950 Gaming
-         * Desktop Computer is with:
-         * - a 12th Gen Intel® Core i9-12900K
-         *   up to 5.2 GHz CPU,
-         * - 128GB DDR5 RAM,
-         * - 2TB NVMe SSD + 4TB HDD,
-         * - AMD® Radeon® RX 6700XT 12GB,
-         * - Killer® Wi-Fi 6,
-         * - DVD Burner,
-         * - Windows® 11 Pro,
-         * - a fully licensed TechSmith®
-         *   SnagIt® v8.2.3 custom install, and
-         * - XAMPP® Windows® x64 v8.2.12-0
-         *   (VS16 Installer).
+         * The Dell® XPS® 8950 Gaming 
+         * Desktop Computer is with: 
+         * - a 12th Gen Intel® Core i9-12900K 
+         *   up to 5.2 GHz CPU, 
+         * - 128GB DDR5 RAM, 
+         * - 2TB NVMe SSD + 4TB HDD, 
+         * - AMD® Radeon® RX 6700XT 12GB, 
+         * - Killer® Wi-Fi 6, 
+         * - DVD Burner, 
+         * - Windows® 11 Pro, 
+         * - a fully licensed TechSmith® 
+         *   SnagIt® v8.2.3 custom install, and 
+         * - XAMPP® Windows® x64 v8.2.12-0 
+         *   (VS16 Installer). 
          *
          *
          * 5 :: Sunday, July 5, 2026 @ 0707 hrs.
@@ -852,11 +852,11 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                       1px 1px 2px rgba(87, 255, 0, 1.0);">' .
                     \strtoupper($notice) . '
                       ' . $this->print_pretty(
-                        $telemetry_report,
-                        __LINE__,
-                        __METHOD__,
-                        NULL,
-                        'telemetry',
+                        $telemetry_report, 
+                        __LINE__, 
+                        __METHOD__, 
+                        NULL, 
+                        'telemetry', 
                         true) . ' 
                       </div>';
 
@@ -886,11 +886,11 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                       1px 1px 2px rgba(87, 255, 0, 1.0);">' .
                     \strtoupper($notice) . '
                       ' . $this->print_pretty(
-                        $telemetry_report,
-                        __LINE__,
-                        __METHOD__,
-                        NULL,
-                        'telemetry',
+                        $telemetry_report, 
+                        __LINE__, 
+                        __METHOD__, 
+                        NULL, 
+                        'telemetry', 
                         true) . ' 
                       </div>';
 
@@ -919,11 +919,11 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                       1px 1px 2px rgba(87, 255, 0, 1.0);">' .
                     \strtoupper($notice) . '
                       ' . $this->print_pretty(
-                        $telemetry_report,
-                        __LINE__,
-                        __METHOD__,
-                        NULL,
-                        'telemetry',
+                        $telemetry_report, 
+                        __LINE__, 
+                        __METHOD__, 
+                        NULL, 
+                        'telemetry', 
                         true) . ' 
                       </div>';
 
@@ -957,62 +957,59 @@ class crnrstn_file_system_integrations_manager extends crnrstn
      *
      */
     function resource_ping(
-        $file_path,
-        $resource_name,
-        $resource_queue_pos,
-        $resources,
-        $R_debug_mode = 0,
-        $loading_arch = 'require',
+        $file_path, 
+        $resource_name, 
+        $resource_queue_pos, 
+        $resources, 
+        $R_debug_mode = 0, 
+        $loading_arch = 'require', 
         $request_endpoint = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * 5 :: Wednesday, July 1, 2026 @ 1742 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied method, resource_ping(),
-         * from index.php global scope scripting
-         * using an eVifweb® Dell® XPS® 8950
-         * 128GB i9-12900K.
+         * Copied method, resource_ping(), 
+         * from index.php global scope scripting 
+         * using an eVifweb® Dell® XPS® 8950 
+         * 128GB i9-12900K. 
          *
-         * The Dell® XPS® 8950 Gaming
-         * Desktop Computer is with:
-         * - a 12th Gen Intel® Core i9-12900K
-         *   up to 5.2 GHz CPU,
-         * - 128GB DDR5 RAM,
-         * - 2TB NVMe SSD + 4TB HDD,
-         * - AMD® Radeon® RX 6700XT 12GB,
-         * - Killer® Wi-Fi 6,
-         * - DVD Burner,
-         * - Windows® 11 Pro,
-         * - a fully licensed TechSmith®
-         *   SnagIt® v8.2.3 custom install, and
-         * - XAMPP® Windows® x64 v8.2.12-0
-         *   (VS16 Installer).
+         * The Dell® XPS® 8950 Gaming 
+         * Desktop Computer is with: 
+         * - a 12th Gen Intel® Core i9-12900K 
+         *   up to 5.2 GHz CPU, 
+         * - 128GB DDR5 RAM, 
+         * - 2TB NVMe SSD + 4TB HDD, 
+         * - AMD® Radeon® RX 6700XT 12GB, 
+         * - Killer® Wi-Fi 6, 
+         * - DVD Burner, 
+         * - Windows® 11 Pro, 
+         * - a fully licensed TechSmith® 
+         *   SnagIt® v8.2.3 custom install, and 
+         * - XAMPP® Windows® x64 v8.2.12-0 
+         *   (VS16 Installer). 
          *
          *
          * 5 :: Sunday, July 5, 2026 @ 0708 hrs.
          *
          */
 
-        if (!isset($request_endpoint)) {
-
+        if(!isset($request_endpoint))
             $request_endpoint = 'http://' .
                 $_SERVER['SERVER_ADDR'] .
                 '/sysops/';
 
-        }
-
-        $tod = \gettimeofday();
-        $sec = $tod['sec'];
-        $usec = $tod['usec'];
+        $tod      = \gettimeofday();
+        $sec      = $tod['sec'];
+        $usec     = $tod['usec'];
         $micro_ts = $sec . '.' . \sprintf('%06d', $usec);
-        $nonce = \hash('sha512', $micro_ts);
+        $nonce    = \hash('sha512', $micro_ts);
 
         //if(session_status() == PHP_SESSION_NONE) session_start();
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Write session data,
-         * and end the session.
+         * Write session data, 
+         * and end the session. 
          *
          *
          * 5 :: Wednesday, July 1, 2026 @ 1800 hrs.
@@ -1027,12 +1024,12 @@ class crnrstn_file_system_integrations_manager extends crnrstn
 
         */
 
-        $data = array('action' => __FUNCTION__,
-            'file_path' => $file_path,
-            'resource_name' => $resource_name,
-            'resource_queue_pos' => $resource_queue_pos,
-            'R_debug_mode' => $R_debug_mode,
-            'loading_arch' => $loading_arch,
+        $data = array('action' => __FUNCTION__, 
+            'file_path' => $file_path, 
+            'resource_name' => $resource_name, 
+            'resource_queue_pos' => $resource_queue_pos, 
+            'R_debug_mode' => $R_debug_mode, 
+            'loading_arch' => $loading_arch, 
             'nonce' => $nonce);
         $data = \http_build_query($data);
         $data_bytes = \strlen($data);
@@ -1040,11 +1037,11 @@ class crnrstn_file_system_integrations_manager extends crnrstn
         // https://www.php.net/manual/en/function.stream-context-create.php
         $context_options = array(
             'http' => array(
-                'method' => 'POST',
+                'method' => 'POST', 
                 'header' =>
                     "Accept-language: en\r\n" .
                     "Content-type: application/x-www-form-urlencoded\r\n" .
-                    "Content-Length: " . $data_bytes . "\r\n",
+                    "Content-Length: " . $data_bytes . "\r\n", 
                 'content' => $data
             )
         );
@@ -1053,28 +1050,34 @@ class crnrstn_file_system_integrations_manager extends crnrstn
             'Evaluating resource ' .
             $resource_queue_pos . ' of ' .
             \sizeof($resources) .
-            '.',
-            __LINE__,
-            __METHOD__,
+            '.', 
+            __LINE__, 
+            __METHOD__, 
             'index.php');
 
         $this->print_pretty(
             'Resource Name: ' .
-            $resource_name,
-            NULL, NULL, NULL,
+            $resource_name, 
+            NULL, 
+            NULL, 
+            NULL, 
             'telemetry');
 
         $this->print_pretty(
             'Resource File: ' .
-            $file_path,
-            NULL, NULL, NULL,
+            $file_path, 
+            NULL, 
+            NULL, 
+            NULL, 
             'telemetry');
 
         $this->print_pretty(
             '...sending ' .
             $data_bytes .
-            ' bytes.',
-            NULL, NULL, NULL,
+            ' bytes.', 
+            NULL, 
+            NULL, 
+            NULL, 
             'telemetry');
 
         error_log('[lnum ' .
@@ -1085,10 +1088,9 @@ class crnrstn_file_system_integrations_manager extends crnrstn
             $request_endpoint);
 
         $context = \stream_context_create($context_options);
+        $fp      = @\fopen($request_endpoint, 'r', false, $context);
 
-        $fp = @\fopen($request_endpoint, 'r', false, $context);
-
-        if (\gettype($fp) != 'resource') {
+        if(\gettype($fp) != 'resource'){
 
             $tod = \gettimeofday();
             $sec = $tod['sec'];
@@ -1111,17 +1113,17 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                 \print_r($request_endpoint, true) .
                 '] The resource pointer, (' .
                 \gettype($fp) . ') ' .
-                ', has been spoiled.',
-                NULL, NULL, NULL,
+                ', has been spoiled.', 
+                NULL, NULL, NULL, 
                 'telemetry');
 
-        } else {
+        }else{
 
-            $tod = \gettimeofday();
-            $sec = $tod['sec'];
-            $usec = $tod['usec'];
+            $tod      = \gettimeofday();
+            $sec      = $tod['sec'];
+            $usec     = $tod['usec'];
             $micro_ts = $sec . '.' . \sprintf('%06d', $usec);
-            //$nonce    = \hash('sha512', $micro_ts);
+            //$nonce  = \hash('sha512', $micro_ts);
 
             error_log('[lnum ' .
                 __LINE__ . '] [rtime ' .
@@ -1139,8 +1141,8 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                 '] The (' .
                 \gettype($fp) .
                 ') resource pointer' .
-                ', appears to be ready.',
-                NULL, NULL, NULL,
+                ', appears to be ready.', 
+                NULL, NULL, NULL, 
                 'telemetry');
 
             /*
@@ -1188,7 +1190,7 @@ class crnrstn_file_system_integrations_manager extends crnrstn
              * [Thu Jul 02 07:27:20.337580 2026] [:error] [pid 5060]
              * [client 172.16.225.1:50580]
              * PHP Warning:  feof() expects
-             * parameter 1 to be resource,
+             * parameter 1 to be resource, 
              * boolean given in
              * /var/www/html/sysops/index.php on line 619
              *
@@ -1221,11 +1223,11 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                     '] The resource pointer, (' .
                     \gettype($fp) . ') ' .
                     \print_r($fp, true) .
-                    ', has been spoiled.',
-                    __LINE__,
-                    __METHOD__,
-                    NULL,
-                    'telemetry',
+                    ', has been spoiled.', 
+                    __LINE__, 
+                    __METHOD__, 
+                    NULL, 
+                    'telemetry', 
                     true);
 
                 die();
@@ -1245,7 +1247,7 @@ class crnrstn_file_system_integrations_manager extends crnrstn
     function safe_resource_file_validate()
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * New method, safe_resource_file_validate(),
+         * New method, safe_resource_file_validate(), 
          * taken from index.php global scope
          * scripting using an eVifweb® Dell® XPS® 8950
          * 128GB i9-12900K.
@@ -1253,13 +1255,13 @@ class crnrstn_file_system_integrations_manager extends crnrstn
          * The Dell® XPS® 8950 Gaming
          * Desktop Computer is with:
          * - a 12th Gen Intel® Core i9-12900K
-         *   up to 5.2 GHz CPU,
-         * - 128GB DDR5 RAM,
-         * - 2TB NVMe SSD + 4TB HDD,
-         * - AMD® Radeon® RX 6700XT 12GB,
-         * - Killer® Wi-Fi 6,
-         * - DVD Burner,
-         * - Windows® 11 Pro,
+         *   up to 5.2 GHz CPU, 
+         * - 128GB DDR5 RAM, 
+         * - 2TB NVMe SSD + 4TB HDD, 
+         * - AMD® Radeon® RX 6700XT 12GB, 
+         * - Killer® Wi-Fi 6, 
+         * - DVD Burner, 
+         * - Windows® 11 Pro, 
          * - a fully licensed TechSmith®
          *   SnagIt® v8.2.3 custom install, and
          * - XAMPP® Windows® x64 v8.2.12-0
@@ -1289,7 +1291,7 @@ class crnrstn_file_system_integrations_manager extends crnrstn
             //$_SESSION['nonce'] = bin2hex(openssl_random_pseudo_bytes(10, true));
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Write session data,
+             * Write session data, 
              * and end the session.
              *
              *
@@ -1319,7 +1321,7 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                         $res_definitions['/var/www/html/sysops/_R/demo/database/jony5_user.class.php'] = 'jony5_user';
                         $res_definitions['/var/www/html/sysops/_R/class/user/crnrstn.user.class.php'] = 'crnrstn_user';
                         $res_definitions['/var/www/html/sysops/_R/class/crnrstn/crnrstn.configuration_manager.class.php'] = 'crnrstn_configuration_manager';
-                        $res_definitions['/var/www/html/sysops/_R/class/crnrstn/crnrstn.bitmask.class.php'] = 'crnrstn_bitmask';
+                        $res_definitions['/var/www/html/sysops/_R/class/crnrstn/crnrstn.bitmask.class.php'] = 'bitmask';
                         $res_definitions['/var/www/html/sysops/_R/class/thirdparty/bassdrive/crnrstn.bassdrive_integration_data.class.php'] = 'crnrstn_bassdrive_integration_data';
                         $res_definitions['/var/www/html/sysops/_R/class/thirdparty/bassdrive/crnrstn.bassdrive_stream_manager.class.php'] = 'crnrstn_bassdrive_stream_manager';
                         $res_definitions['/var/www/html/sysops/_R/class/thirdparty/bassdrive/crnrstn.bassdrive_stream_output_controller.class.php'] = 'crnrstn_bassdrive_stream_output_controller';
@@ -1427,7 +1429,7 @@ class crnrstn_file_system_integrations_manager extends crnrstn
         /*
         $res_definitions['/var/www/html/sysops/_R/class/user/crnrstn.user.class.php'] = 'crnrstn_user';
         $res_definitions['/var/www/html/sysops/_R/class/crnrstn/crnrstn.configuration_manager.class.php'] = 'crnrstn_configuration_manager';
-        $res_definitions['/var/www/html/sysops/_R/class/crnrstn/crnrstn.bitmask.class.php'] = 'crnrstn_bitmask';
+        $res_definitions['/var/www/html/sysops/_R/class/crnrstn/crnrstn.bitmask.class.php'] = 'bitmask';
         $res_definitions['/var/www/html/sysops/_R/class/thirdparty/bassdrive/crnrstn.bassdrive_integration_data.class.php'] = 'crnrstn_bassdrive_integration_data';
         $res_definitions['/var/www/html/sysops/_R/class/thirdparty/bassdrive/crnrstn.bassdrive_stream_manager.class.php'] = 'crnrstn_bassdrive_stream_manager';
         $res_definitions['/var/www/html/sysops/_R/class/thirdparty/bassdrive/crnrstn.bassdrive_stream_output_controller.class.php'] = 'crnrstn_bassdrive_stream_output_controller';
@@ -1497,19 +1499,19 @@ class crnrstn_file_system_integrations_manager extends crnrstn
 
                 // Ping the resource.
                 $result = $this->resource_ping(
-                    $res_file_path,
-                    $res_name,
-                    $res_pos,
+                    $res_file_path, 
+                    $res_name, 
+                    $res_pos, 
                     $res_definitions);
 
                 switch ($result) {
                     case 'success':
 
                         $this->print_pretty(
-                            $result,
-                            __LINE__,
-                            __METHOD__,
-                            'index.php',
+                            $result, 
+                            __LINE__, 
+                            __METHOD__, 
+                            'index.php', 
                             'success');
 
                     break;
@@ -1518,10 +1520,10 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                     case 'Unknown action requested.':
 
                         $this->print_pretty(
-                                $result,
-                                __LINE__,
-                                __METHOD__,
-                                'index.php',
+                                $result, 
+                                __LINE__, 
+                                __METHOD__, 
+                                'index.php', 
                                 'error');
 
                     break;
@@ -1529,10 +1531,10 @@ class crnrstn_file_system_integrations_manager extends crnrstn
                     case 'error':
 
                         $this->print_pretty(
-                            'Check logs for error.',
-                            __LINE__,
-                            __METHOD__,
-                            'index.php',
+                            'Check logs for error.', 
+                            __LINE__, 
+                            __METHOD__, 
+                            'index.php', 
                             'error');
 
                     break;
@@ -1548,25 +1550,25 @@ class crnrstn_file_system_integrations_manager extends crnrstn
     function safe_resource_pcntl_file_validate()
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * New method, safe_resource_pcntl_file_validate(),
-         * from index.php global scope scripting
-         * using an eVifweb® Dell® XPS® 8950
-         * 128GB i9-12900K.
+         * New method, safe_resource_pcntl_file_validate(), 
+         * from index.php global scope scripting 
+         * using an eVifweb® Dell® XPS® 8950 
+         * 128GB i9-12900K. 
          *
-         * The Dell® XPS® 8950 Gaming
-         * Desktop Computer is with:
-         * - a 12th Gen Intel® Core i9-12900K
-         *   up to 5.2 GHz CPU,
-         * - 128GB DDR5 RAM,
-         * - 2TB NVMe SSD + 4TB HDD,
-         * - AMD® Radeon® RX 6700XT 12GB,
-         * - Killer® Wi-Fi 6,
-         * - DVD Burner,
-         * - Windows® 11 Pro,
-         * - a fully licensed TechSmith®
-         *   SnagIt® v8.2.3 custom install, and
-         * - XAMPP® Windows® x64 v8.2.12-0
-         *   (VS16 Installer).
+         * The Dell® XPS® 8950 Gaming 
+         * Desktop Computer is with: 
+         * - a 12th Gen Intel® Core i9-12900K 
+         *   up to 5.2 GHz CPU, 
+         * - 128GB DDR5 RAM, 
+         * - 2TB NVMe SSD + 4TB HDD, 
+         * - AMD® Radeon® RX 6700XT 12GB, 
+         * - Killer® Wi-Fi 6, 
+         * - DVD Burner, 
+         * - Windows® 11 Pro, 
+         * - a fully licensed TechSmith® 
+         *   SnagIt® v8.2.3 custom install, and 
+         * - XAMPP® Windows® x64 v8.2.12-0 
+         *   (VS16 Installer). 
          *
          *
          * 5 :: Sunday, July 5, 2026 @ 0711 hrs.
@@ -1694,9 +1696,9 @@ class crnrstn_file_system_integrations_manager extends crnrstn
         $this->print_pretty(
             'End of resource test. ' .
             $res_cnt . ' resources tested in ' .
-            ((double)$micro_ts - (double)$_SERVER['REQUEST_TIME_FLOAT']) . ' seconds.',
-            __LINE__,
-            __METHOD__,
+            ((double)$micro_ts - (double)$_SERVER['REQUEST_TIME_FLOAT']) . ' seconds.', 
+            __LINE__, 
+            __METHOD__, 
             __FILE__);
 
         //print "Done! :^)\n\n";

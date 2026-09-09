@@ -509,7 +509,7 @@ function _lightbox_helper_by_eVifweb_settings(
             return 0;
 
         break;
-        case 'CRNRSTN_log_silo_profile':
+        case 'log_silo_profile':
             // # C # R # N # R # S # T # N # :: # L # I # G # H # T
             //  TL;DR
             //

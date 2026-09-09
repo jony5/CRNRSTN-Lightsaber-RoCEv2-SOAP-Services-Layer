@@ -1,7 +1,7 @@
 <?php
 /**
- * Hindi crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Hindi PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Yash Karanke <mr.karanke@gmail.com>
  */
  

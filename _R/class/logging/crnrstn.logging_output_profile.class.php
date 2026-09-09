@@ -832,7 +832,7 @@ class crnrstn_logging_output_profile extends crnrstn
          * (DTL) object. 
          *
          */
-        for ($i = 0; $i < $tmp_recipient_email_cnt; $i++){
+        for($i = 0; $i < $tmp_recipient_email_cnt; $i++){
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Bring in The Messenger. 
@@ -1094,7 +1094,7 @@ class crnrstn_logging_output_profile extends crnrstn
                                                     $tmp_SOAP_ENCRYPT_SECRET_KEY, 
                                                     $tmp_SOAP_ENCRYPT_HMAC_ALG, 
                                                     $tmp_SOAP_ENCRYPT_OPTIONS);
-            
+
             /*$tmp_STATUS_CODE = $this->data_decrypt(
              *                          $tmp_response['STATUS_CODE'], 
              *                          'R_encrypt_SOAP', 
@@ -1270,7 +1270,7 @@ class crnrstn_logging_output_profile extends crnrstn
              *        __LINE__, 
              *        __METHOD__, 
              *        __FILE__);
-             *     
+             *
              */
 
             if($tmp_SOAP_SERVICES_AUTH_STATUS == 'AUTHORIZATION GRANTED'){
@@ -1630,7 +1630,7 @@ class crnrstn_logging_output_profile extends crnrstn
                      *       __FILE__);
                      *
                      * $this->print_r(
-                     *        $tmp_SOAP_SERVICES_AUTH_STATUS,  
+                     *        $tmp_SOAP_SERVICES_AUTH_STATUS, 
                      *        '', 
                      *        'Server Response - ' . 
                      *        'Approved for King\'s Highway :: ' . 
@@ -2934,7 +2934,7 @@ class crnrstn_logging_output_profile extends crnrstn
                          */
                         $R_phpmailer = $this->return_registered_resource(
                                               'new', 
-                                              'crnrstn_PHPMailer');
+                                              'PHPMailer');
 
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Where $tmp_EMAIL_PROTOCOL = 
@@ -3489,7 +3489,7 @@ class crnrstn_logging_output_profile extends crnrstn
                                                        'fifth (5th) and final email send ' . 
                                                        'use case of the four (4) official ' . 
                                                        'and available protocols for things ' . 
-                                                       'of this nature per /crnrstn_PHPMailer/. ' . 
+                                                       'of this nature per /PHPMailer/. ' . 
                                                        'TLDR; ...an empty string will now ' . 
                                                        'be sent as the mailer protocol, and ' . 
                                                        'the results for which what one would ' . 
@@ -3515,7 +3515,7 @@ class crnrstn_logging_output_profile extends crnrstn
                                                     'be wanting the fifth (5th) and final ' . 
                                                     'email send use case of the four (4) ' . 
                                                     'official and available protocols for ' . 
-                                                    'things of this nature per /crnrstn_PHPMailer/. ' . 
+                                                    'things of this nature per /PHPMailer/. ' . 
                                                     'TLDR; ...an empty string will now be ' . 
                                                     'sent as the mailer protocol, and the ' . 
                                                    'results for which what one would ' . 
@@ -4846,7 +4846,7 @@ class crnrstn_logging_output_profile extends crnrstn
                  * send failure:
                  *
                  * EMAIL_PRIMARY         = The user's preference for 
-                 *                         sending email from the  
+                 *                         sending email from the 
                  *                         available protocols: SMTP, 
                  *                         QMAIL, SENDMAIL, or MAIL.
                  * EMAIL_SECONDARY       = Sendmail (no authentication) 

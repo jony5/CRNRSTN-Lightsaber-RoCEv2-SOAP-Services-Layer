@@ -1,7 +1,7 @@
 <?php
 /**
- * Simplified Chinese crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Simplified Chinese PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author liqwei <liqwei@liqwei.com>
  * @author young <masxy@foxmail.com>
  * @author Teddysun <i@teddysun.com>

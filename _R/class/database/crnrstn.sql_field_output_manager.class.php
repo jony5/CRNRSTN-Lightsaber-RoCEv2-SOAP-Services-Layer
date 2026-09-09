@@ -376,14 +376,14 @@ class crnrstn_sql_field_output_manager
      *         ~ a bit slower if max size is only approximated
      *         - much slower if max size is not known
      *         - cannot be used with most array functions
-     *         
+     *
      *         To sum up:
      *         SplFixedArray is a very good choice 
      *         for storing giant amount of data, 
      *         though only as long as you at least 
      *         roughly know the size and can work 
      *         without array functions.
-     *         
+     *
      *         SOURCE  :: https://www.php.net/manual/en/class.splfixedarray.php
      *         COMMENT :: https://www.php.net/manual/en/class.splfixedarray.php#124555
      *         AUTHOR  :: herhor67 at interia dot pl

@@ -1209,7 +1209,7 @@ class crnrstn_living_streams_of_communication_manager
          * array size determination. 
          *
          */
-        #$tmp_feeder_count = $oLIVING_STREAM->return_attribute_data('FEEDER_STREAM_COUNT');  
+        #$tmp_feeder_count = $oLIVING_STREAM->return_attribute_data('FEEDER_STREAM_COUNT');
 
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * See if you can work directly 
@@ -2716,7 +2716,7 @@ class crnrstn_living_streams_of_communication_manager
              *        $oLIVING_STREAM->stream_html_dom_key . 
              *        " tmp_buildOutput_ARRAY size " . 
              *        sizeof($this->tmp_buildOutput_ARRAY));
-             *        
+             *
              * }else{
              * 
              *    error_log("stream (1126) stream_output_processing() " . 

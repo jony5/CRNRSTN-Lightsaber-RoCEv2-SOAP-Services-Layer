@@ -1,7 +1,7 @@
 <?php
 /**
- * Japanese crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Japanese PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Mitsuhiro Yoshida <http://mitstek.com/>
  * @author Yoshi Sakai <http://bluemooninc.jp/>
  */

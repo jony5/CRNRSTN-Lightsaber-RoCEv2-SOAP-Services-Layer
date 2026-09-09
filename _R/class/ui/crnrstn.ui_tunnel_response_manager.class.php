@@ -3274,7 +3274,7 @@ class crnrstn_ui_tunnel_response_manager extends crnrstn
             $tmp_LIFESTYLE_IMAGES_DATA_cnt = $this->return_record_count('LIFESTYLE_IMAGES_DATA');
 
             $tmp_LIFESTYLE_IMAGES_DATA_cnt--;
-            for ($i = 0; $i < self::$lifestyle_image_return_cnt; $i++){
+            for($i = 0; $i < self::$lifestyle_image_return_cnt; $i++){
 
                 $image_index = rand(0, $tmp_LIFESTYLE_IMAGES_DATA_cnt);
 

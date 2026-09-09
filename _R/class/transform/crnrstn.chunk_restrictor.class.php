@@ -526,27 +526,25 @@ class crnrstn_chunk_restrictor {
     //
     // SOURCE :: https://www.php.net/manual/en/function.str-split.php
     // AUTHOR :: qeremy [atta] gmail [dotta] com :: https://www.php.net/manual/en/function.str-split.php#107658
-    public function str_split_unicode($str, $l = 0) {
+    public function str_split_unicode($str, $l = 0){
 
-        if ($l > 0) {
+        if($l > 0){
 
             $ret = array();
-            $len = mb_strlen($str, $this->encoding);
+            $len = \mb_strlen($str, $this->encoding);
 
-            for ($i = 0; $i < $len; $i += $l) {
-
-                $ret[] = mb_substr($str, $i, $l, $this->encoding);
-
-            }
+            for($i = 0; $i < $len; $i += $l)
+                $ret[] = \mb_substr($str, $i, $l, $this->encoding);
 
             return $ret;
         }
 
-        return preg_split('//u', $str, -1, PREG_SPLIT_NO_EMPTY);
+        return \preg_split('//u', $str, -1, PREG_SPLIT_NO_EMPTY);
 
     }
 
-    public function __destruct(){
+    public function __destruct()
+    {
 
     }
 

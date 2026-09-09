@@ -1,7 +1,7 @@
 <?php
 /**
- * Bosnian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Bosnian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Ermin Islamagić <ermin@islamagic.com>
  */
 

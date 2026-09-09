@@ -1,7 +1,7 @@
 <?php
 /**
- * Swedish crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Swedish PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Johan Linnér <johan@linner.biz>
  */
 

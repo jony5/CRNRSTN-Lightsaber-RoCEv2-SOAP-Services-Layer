@@ -54,7 +54,7 @@ namespace CRNRSTN;
  *
  * @author Marcus Bointon <phpmailer@synchromedia.co.uk>
  */
-class crnrstn_Exception extends \Exception
+class Exception extends \Exception
 {
     /**
      * Prettify error message output.

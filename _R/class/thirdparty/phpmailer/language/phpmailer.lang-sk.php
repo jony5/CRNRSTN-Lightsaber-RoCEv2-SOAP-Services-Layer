@@ -1,7 +1,7 @@
 <?php
 /**
- * Slovak crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Slovak PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Michal Tinka <michaltinka@gmail.com>
  * @author Peter Orlický <pcmanik91@gmail.com>
  */

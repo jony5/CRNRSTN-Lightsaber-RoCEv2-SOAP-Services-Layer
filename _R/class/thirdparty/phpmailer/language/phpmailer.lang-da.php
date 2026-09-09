@@ -1,7 +1,7 @@
 <?php
 /**
- * Danish crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Danish PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author John Sebastian <jms@iwb.dk>
  * Rewrite and extension of the work by Mikael Stokkebro <info@stokkebro.dk> 
  *  

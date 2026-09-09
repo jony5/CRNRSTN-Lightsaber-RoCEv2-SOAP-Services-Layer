@@ -1,7 +1,7 @@
 <?php
 /**
- * Catalan crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Catalan PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Ivan <web AT microstudi DOT com>
  */
 

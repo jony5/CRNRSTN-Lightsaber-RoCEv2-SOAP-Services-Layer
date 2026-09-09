@@ -416,7 +416,7 @@ namespace CRNRSTN;
  * $oCRNRSTN->init_session_encryption()
  * TODO :: FACILITATE GRACEFUL 
  *         ROTATION OF THESE 
- *         ENCRYPTION PROTOCOLS.   
+ *         ENCRYPTION PROTOCOLS. 
  *         See the OERSL.
  *
  * DESCRIPTION :: 
@@ -548,7 +548,7 @@ namespace CRNRSTN;
  *            'AES-192-OFB', 
  *            'this-Is-the-s3cret-encrypti0n-key', 
  *            OPENSSL_RAW_DATA, 
- *            'sha256');          
+ *            'sha256');
  */
 $this->config_init_session_encryption(
 	   'BLUEHOST_JONY5', 

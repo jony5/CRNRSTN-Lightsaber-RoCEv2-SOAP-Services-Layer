@@ -504,7 +504,8 @@ class crnrstn_fire_ftp_conn_manager extends crnrstn_user
                  *
                  */
 
-                $spice_salt_mem_ptr = NULL;
+                $spice_salt_mem_ptr =
+                $oLightning_conn    = NULL;
                 // 5 :: Saturday, August 22, 2026 @ 0536 hrs.
                 $this->compound_ointment(
                        $spice_salt_mem_ptr,

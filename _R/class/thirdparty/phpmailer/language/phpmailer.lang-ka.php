@@ -1,7 +1,7 @@
 <?php
 /**
- * Georgian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Georgian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Avtandil Kikabidze aka LONGMAN <akalongman@gmail.com>
  */
 

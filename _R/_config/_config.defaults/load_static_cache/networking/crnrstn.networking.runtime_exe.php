@@ -290,11 +290,11 @@ namespace CRNRSTN;
  */
 $R_data = array(
           'nusoap' => array(
-                      'wsdl_url'             => $this->get_crnrstn('crnrstn_soap_https'),
-                      'debug_flag'           => $this->get_crnrstn('nusoap_debug_flag'),
-                      'soa_namespace'        => 'http://www.w3.org/2003/05/soap-encoding',
-                      'wsdl_cache_ttl'       => 80,
-                      'usecurl'              => true,
-                      'soa_encrypt_cipher'   => 'sm4',
-                      'soa_encrypt_options'  => \OPENSSL_RAW_DATA,
+                      'wsdl_url'             => $this->get_crnrstn('crnrstn_soap_https'), 
+                      'debug_flag'           => $this->get_crnrstn('nusoap_debug_flag'), 
+                      'soa_namespace'        => 'http://www.w3.org/2003/05/soap-encoding', 
+                      'wsdl_cache_ttl'       => 80, 
+                      'usecurl'              => true, 
+                      'soa_encrypt_cipher'   => 'sm4', 
+                      'soa_encrypt_options'  => \OPENSSL_RAW_DATA, 
                       'soa_encrypt_hmac_alg' => 'haval256,5'));

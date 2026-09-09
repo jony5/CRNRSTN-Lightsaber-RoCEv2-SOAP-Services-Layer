@@ -305,17 +305,9 @@ namespace CRNRSTN;
  */
 function _crnrstn_native_resource_registry_meta_social_media(
          $R_resp,
-         $attribute,
+         $R_meta_key,
          $R,
-         $background_color_hex = '#FFF',
-         $iso_lang_code = 'en',
-         $R_debug_mode = 0,
-         $generate_search_algorithm_data = false,
-         $generate_content_synchronization_hash = false, 
-         $resource_title_text = NULL, 
-         $resource_license_name_text = NULL, 
-         $resource_license_url = NULL, 
-         $resource_copyright_text = NULL)
+         $R_debug_mode = 0)
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * The _crnrstn_native_resource_registry_meta_social_media()
@@ -355,24 +347,80 @@ function _crnrstn_native_resource_registry_meta_social_media(
      *       config_serial_override. 
      *       5 :: Saturday, June 20, 2026 @ 0348 hrs.
      *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Renamed the
+     *       _crnrstn_native_resource_registry_meta_social_media()
+     *       $generate_content_synchronization_hash
+     *       input parameter to
+     *       $generate_version_sync_hash and swapped
+     *       function input places with
+     *       $generate_search_algorithm_data.
+     *       5 :: Tuesday, September 1, 2026 @ 0221 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Removed input parameter,
+     *       $background_color_hex = '#FFF',
+     *       from
+     *       _crnrstn_native_resource_registry_meta_social_media().
+     *       5 :: Wednesday, September 2, 2026 @ "01" 2345 hrs.
+     *
+     *       "01010101...split the atom...Oh,
+     *       Oh, Oh, Oh. You know what I mean.
+     *
+     *       Yeah, you know what I mean:
+     *       "Oh, Oh, Oh"...
+     *       Yeah, you know what
+     *       I mean..."Oh"...yeah. ;)
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Modified the function, 
+     *       _crnrstn_native_resource_registry_meta_social_media(), 
+     *       by renaming the $attribute input 
+     *       parameter to $R_meta_key, and removing 
+     *       the following input parameters:
+     *       - $iso_lang_code = 'en',
+     *       - $generate_version_sync_hash = false,
+     *       - $generate_search_algorithm_data = false,
+     *       - $resource_title_text = NULL, 
+     *       - $resource_license_name_text = NULL, 
+     *       - $resource_license_url = NULL, and 
+     *       - $resource_copyright_text = NULL.
+     *
+     *       The new function definition:
+     *       function _crnrstn_native_resource_registry_meta_social_media(
+     *                $R_resp, 
+     *                $R_meta_key, 
+     *                $R, 
+     *                $R_debug_mode = 0)
+     *       { ... }
+     *       5 :: Wednesday, September 9, 2026 @ 0655 hrs.
+     *
      */
+    $memory_pointer                 = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+    $generate_version_sync_hash     = $R->get_crnrstn('generate_version_sync_hash');
+    $generate_search_algorithm_data = $R->get_crnrstn('generate_search_algorithm_data');
+    $R_text                         =
+    $R_html                         = '';
+    $output_mode                    = NULL;
 
-    \error_log('[lnum ' . 
-        __LINE__ . '] [mthd ' . 
-        __METHOD__ . 
-        '] $attribute[' . 
-        $attribute . '] $resource_license_name_text[' . 
-        $resource_license_name_text . '] $resource_license_url[' . 
-        strval($resource_license_url) . ']. die();');
+    echo '<br><pre><code>[' .
+$R->return_micro_time() . '] 
+[func ' . __FUNCTION__ . '] 
+[lnum ' . __LINE__ . '] 
+[rtime ' . $R->wall_time() . '] 
+meta key[' . $R_meta_key . '] 
+license name[' .
+$R_resp[$memory_pointer]['license']['name'][$R_resp[$memory_pointer]['software_default']] . '] 
+license url[' .
+\strval($R_resp[$memory_pointer]['license']['url'][$R_resp[$memory_pointer]['software_default']]) . '].</code></pre>';
 
-    die();
 
-    switch($R_resp['mem---xxxxx---ptr']['resource_name']){
-        case 'crnrstn_Exception':
+    switch($R_resp[$memory_pointer]['resource_name']){
+        case 'Exception':
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'SOCIAL_MEDIA_PREVIEW_META':
-                    // 5 :: Wednesday, July 18, 2024 @ 0215 hrs.
+                    // 5 :: Thursday, July 18, 2024 @ 0215 hrs.
 
                     /*
                     # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -380,7 +428,7 @@ function _crnrstn_native_resource_registry_meta_social_media(
                     # C # R # N # R # S # T # N # :: # L # I # G # H # T
                     // Notes: Social Media and Web Page Integrations
                     //        for CLR-SSL System Registry Resources.
-                    //        5 :: Wednesday, July 18, 2024 @ 0220 hrs.
+                    //        5 :: Thursday, July 18, 2024 @ 0220 hrs.
 
                     Each PHP resource (class and function
                     definition file + runtime executables)
@@ -399,7 +447,7 @@ function _crnrstn_native_resource_registry_meta_social_media(
                     The generated page should have final HTML
                     output similar to the following:
 
-                    $tmp_data_HTML_page_open     = '<!DOCTYPE html>
+                    $R_html_page_open = '<!DOCTYPE html>
                     <html lang="en">
                         <head>
                             <meta http-equiv="Content-Type" content="text/html" />
@@ -493,10 +541,10 @@ function _crnrstn_native_resource_registry_meta_social_media(
                      */
                     $tmp_file_path_favicon = '';        //$R->();
                     $tmp_page_title = 'The Lightbox Helper by eVifweb®';
-                    $tmp_page_description = 'The Lightbox Helper by eVifweb® ' .
-                    'makes flawless Lightbox galleries with rich and deep social ' .
+                    $tmp_page_description = 'The Lightbox Helper by eVifweb® ' . 
+                    'makes flawless Lightbox galleries with rich and deep social ' . 
                     'media technology integrations quickly and easily.';
-                    $tmp_page_keywords = 'Lightbox, Lightbox Helper, photo gallery, ' .
+                    $tmp_page_keywords = 'Lightbox, Lightbox Helper, photo gallery, ' . 
                     'image gallery, eVifweb, 5, PHP, jQuery, prototype.js, MIT License';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -505,38 +553,38 @@ function _crnrstn_native_resource_registry_meta_social_media(
                      *
                      */
                     $tmp_social_site_name = 'The Lightbox Helper by eVifweb®';
-                    $tmp_social_title = 'The Lightbox Helper by eVifweb® makes ' .
-                    'flawless Lightbox galleries with rich and deep social ' .
+                    $tmp_social_title = 'The Lightbox Helper by eVifweb® makes ' . 
+                    'flawless Lightbox galleries with rich and deep social ' . 
                     'media technology integrations.';
-                    $tmp_social_description = 'The Lightbox Helper by eVifweb®  ' .
-                    'makes flawless Lightbox galleries with rich and deep social ' .
-                    'media technology integrations quickly and easily. The Lightbox ' .
-                    'Helper is an MIT licensed PHP framework that provides robust ' .
+                    $tmp_social_description = 'The Lightbox Helper by eVifweb®  ' . 
+                    'makes flawless Lightbox galleries with rich and deep social ' . 
+                    'media technology integrations quickly and easily. The Lightbox ' . 
+                    'Helper is an MIT licensed PHP framework that provides robust ' . 
                     'support for Lightbox.';
                     $tmp_social_preview_image_ARRAY = array();
-                    $tmp_social_preview_image_ARRAY['IMAGE'][] = 'https://' .
-                    'lightbox-helper.evifweb.jony5.com/_lightbox_helper/ui/' .
+                    $tmp_social_preview_image_ARRAY['IMAGE'][] = 'https://' . 
+                    'lightbox-helper.evifweb.jony5.com/_lightbox_helper/ui/' . 
                     'imgs/social_preview/eVifweb_lightbox_helper_social_preview.png';
-                    $tmp_social_preview_image_ARRAY['IMAGE_ALT_TEXT'][] = 'The ' .
-                    'Lightbox Helper by eVifweb® makes flawless Lightbox ' .
-                    'galleries with rich and deep social media technology ' .
-                    'integrations quickly and easily. The Lightbox Helper ' .
-                    'is an MIT licensed PHP framework that provides robust ' .
+                    $tmp_social_preview_image_ARRAY['IMAGE_ALT_TEXT'][] = 'The ' . 
+                    'Lightbox Helper by eVifweb® makes flawless Lightbox ' . 
+                    'galleries with rich and deep social media technology ' . 
+                    'integrations quickly and easily. The Lightbox Helper ' . 
+                    'is an MIT licensed PHP framework that provides robust ' . 
                     'support for Lightbox.';
-                    $tmp_social_preview_image_ARRAY['IMAGE'][] = 'https://' .
-                    'lightbox-helper.evifweb.jony5.com/_lightbox_helper/' .
+                    $tmp_social_preview_image_ARRAY['IMAGE'][] = 'https://' . 
+                    'lightbox-helper.evifweb.jony5.com/_lightbox_helper/' . 
                     'ui/imgs/social_preview/eVifweb_CRNRSTN_social_preview.png';
-                    $tmp_social_preview_image_ARRAY['IMAGE_ALT_TEXT'][] = 'CRNRSTN :: ' .
-                    'strengthens the Lightbox Helper by eVifweb® for perfect ' .
-                    'Lightbox galleries. The Lightbox Helper is an MIT ' .
-                    'licensed PHP framework that provides robust support ' .
+                    $tmp_social_preview_image_ARRAY['IMAGE_ALT_TEXT'][] = 'CRNRSTN :: ' . 
+                    'strengthens the Lightbox Helper by eVifweb® for perfect ' . 
+                    'Lightbox galleries. The Lightbox Helper is an MIT ' . 
+                    'licensed PHP framework that provides robust support ' . 
                     'for Lightbox.';
-                    $tmp_social_preview_image_ARRAY['IMAGE'][] = 'https://' .
-                    'lightbox-helper.evifweb.jony5.com/_lightbox_helper/ui/' .
+                    $tmp_social_preview_image_ARRAY['IMAGE'][] = 'https://' . 
+                    'lightbox-helper.evifweb.jony5.com/_lightbox_helper/ui/' . 
                     'imgs/social_preview/eVifweb_5_social_preview.png';
-                    $tmp_social_preview_image_ARRAY['IMAGE_ALT_TEXT'][] = 'eVifweb® ' .
-                    'Founded in my senior year of college, eVifweb® is a nimble full ' .
-                    'service web development and digital marketing operation ready ' .
+                    $tmp_social_preview_image_ARRAY['IMAGE_ALT_TEXT'][] = 'eVifweb® ' . 
+                    'Founded in my senior year of college, eVifweb® is a nimble full ' . 
+                    'service web development and digital marketing operation ready ' . 
                     'to bring results to the table.';
                     $tmp_social_twitter_account = '@jony5';
                     $tmp_social_twitter_card = 'summary_large_image';
@@ -544,10 +592,11 @@ function _crnrstn_native_resource_registry_meta_social_media(
                     $tmp_canonical = 'https://lightbox-helper.evifweb.jony5.com/';
                     $tmp_social_og_url = 'https://lightbox-helper.evifweb.jony5.com/';
 
-                    return array(
+                    $memory_pointer = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+                    $R_resp[$memory_pointer]['social'][] = array(
                         'HTML_HEAD_TITLE' => $tmp_page_title,
                         'HTML_HEAD_FAVICON_FILEPATH' => array(
-                            $R->system_path('https') .
+                            $R->system_path('https') . 
                             '/ui/imgs/favicon/system/crnrstn/favicon.ico/favicon.ico' => 1
                         ),
                         'HEAD_PROFILE' => array(
@@ -590,182 +639,172 @@ function _crnrstn_native_resource_registry_meta_social_media(
                     );
 
                     //private function return_html_meta_keys()
-                    if(1 == 2)
-                    {
 
-                        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * SOURCE :: https://developers.facebook.com/docs/sharing/webmasters#markup
-                         * SOURCE :: https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
-                         * SOURCE :: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image
-                         * SOURCE :: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
-                         *
-                         * 5 :: Wednesday, March 6, 2024 @ 0049 hrs.
-                         *
-                         * The screen scrape algorithm 
-                         * for the page meta data 
-                         * population for search 
-                         * will be:
-                         *      1) case-insensitive,
-                         *      2) <meta> attribute name/
-                         *         property agnostic,
-                         *      3) and attempt to return 
-                         *         data in the format:
-                         *          array('twitter:card' => '{the screen 
-                         *            scraped data for the "twitter:card" meta 
-                         *            in a response 200 page return}').
-                         *
-                         */
-                        $tmp_html_meta_keys_ARRAY = array(
-                            array('name' =>
-                                array(
-                                    array('twitter:card'        => 'Must be set to a value of "summary_large_image". Yes, this is required.'),
-                                    array('twitter:site'        => 'The Twitter @username to which the card should be attributed. This is not required.'),
-                                    array('twitter:title'       => 'A concise title for the related content. Platform specific behaviors: iOS, Android: Truncated to two lines in timeline and expanded Tweet. Web: Truncated to one line in timeline and expanded Tweet. Yes, this is required.'),
-                                    array('twitter:description' => 'A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website. Platform specific behaviors: iOS, Android: Not displayed. Web: Truncated to three lines in timeline and expanded Tweet. This is not required.'),
-                                    array('twitter:image'       => 'A URL to a unique image representing the content of the page. You should not use a generic image such as your website logo, author photo, or other image that spans multiple pages. Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported. This is not required.'),
-                                    array('twitter:image:alt'   => 'A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters. This is not required.'),
-                                    array('twitter:creator'     => '@username for the content creator / author. This is not required.'),
-                                    array('description'         => 'A concise description of the page. This is not required.'),
-                                    array('keywords'            => 'The keyword <meta> element (<meta name="keywords" content="fill, in, your, keywords, here">) — which is supposed to provide keywords for search engines to determine the relevance of that page for different search terms — is ignored by search engines, because spammers were just filling the keyword list with hundreds of keywords, biasing results.')
-                                )
-                            ),
-                            array('property' =>
-                                array(
-                                    array('og:url'              => 'The canonical URL for your page. This should be the undecorated URL, without session variables, user identifying parameters, or counters. Likes and Shares for this URL will aggregate at this URL. For example, mobile domain URLs should point to the desktop version of the URL as the canonical URL to aggregate Likes and Shares across different versions of the page.'),
-                                    array('og:title'            => 'The title of your article without any branding such as your site name.'),
-                                    array('og:description'      => 'A brief description of the content, usually between 2 and 4 sentences. This will displayed below the title of the post on Facebook.'),
-                                    array('og:image'            => 'The URL of the image that appears when someone shares the content to Facebook. See below for more info, and check out Facebook\'s best practices guide to learn how to specify a high quality preview image.'),
-                                    array('fb:app_id'           => 'In order to use Facebook Insights you must add the app ID to your page. Insights lets you view analytics for traffic to your site from Facebook. Find the app ID in your App Dashboard.'),
-                                    array('og:type'             => 'The type of media of your content. This tag impacts how your content shows up in Feed. If you don\'t specify a type,the default is website. Each URL should be a single object, so multiple og:type values are not possible. Find the full list of object types in Object Types Reference.'),
-                                    array('og:locale'           => 'The locale of the resource. Defaults to en_US. You can also use og:locale:alternate if you have other available language translations available. Learn about the locales we support in Facebook\'s documentation on localization.'),
-                                    array('og:video'            => 'The URL for the video. If you want the video to play in-line in Feed, you should use the https:// URL if possible.'),
-                                    array('og:video:url'        => 'Equivalent to og:video.'),
-                                    array('og:video:secure_url' => 'Secure URL for the video. Include this even if you set the secure URL in og:video.'),
-                                    array('og:video:type'       => 'MIME type of the video. Either application/x-shockwave-flash or video/mp4.'),
-                                    array('og:video:width'      => 'Width of video in pixels. This property is required for videos.'),
-                                    array('og:video:height'     => 'Height of video in pixels. This property is required for videos.'),
-                                    array('og:image'            => 'Specify an image for a high quality preview in Feed.'),
-                                    array('og:image'            => 'URL for the image. To update an image after it\'s been published, use a new URL for the new image. Images are cached based on the URL and won\'t be updated unless the URL changes.'),
-                                    array('og:image:url'        => 'Equivalent to og:image.'),
-                                    array('og:image:secure_url' => 'https:// URL for the image.'),
-                                    array('og:image:type'       => 'MIME type of the image. One of image/jpeg, image/gif or image/png.'),
-                                    array('og:image:width'      => 'Width of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.'),
-                                    array('og:image:height'     => 'Height of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.'),
-                                    array('og:url'              => 'The canonical URL for your page. This should be the undecorated URL, without session variables, user identifying parameters, or counters. Likes and Shares for this URL will aggregate at this URL. For example, mobile domain URLs should point to the desktop version of the URL as the canonical URL to aggregate Likes and Shares across different versions of the page.'),
-                                    array('og:title'            => 'The title of your article without any branding such as your site name.'),
-                                    array('og:description'      => 'A brief description of the content, usually between 2 and 4 sentences. This will displayed below the title of the post on Facebook.'),
-                                    array('og:image'            => 'The URL of the image that appears when someone shares the content to Facebook. See below for more info, and check out Facebook\'s best practices guide to learn how to specify a high quality preview image.'),
-                                    array('fb:app_id'           => 'In order to use Facebook Insights you must add the app ID to your page. Insights lets you view analytics for traffic to your site from Facebook. Find the app ID in your App Dashboard.'),
-                                    array('og:type'             => 'The type of media of your content. This tag impacts how your content shows up in Feed. If you don\'t specify a type,the default is website. Each URL should be a single object, so multiple og:type values are not possible. Find the full list of object types in Object Types Reference.'),
-                                    array('og:locale'           => 'The locale of the resource. Defaults to en_US. You can also use og:locale:alternate if you have other available language translations available. Learn about the locales we support in Facebook\'s documentation on localization.'),
-                                    array('og:locale:alternate' => 'The locale of the resource. Defaults to en_US. You can also use og:locale:alternate if you have other available language translations available. Learn about the locales we support in Facebook\'s documentation on localization.'),
-                                    array('og:video'            => 'The URL for the video. If you want the video to play in-line in Feed, you should use the https:// URL if possible.'),
-                                    array('og:video:url'        => 'Equivalent to og:video.'),
-                                    array('og:video:secure_url' => 'Secure URL for the video. Include this even if you set the secure URL in og:video.'),
-                                    array('og:video:type'       => 'MIME type of the video. Either application/x-shockwave-flash or video/mp4.'),
-                                    array('og:video:width'      => 'Width of video in pixels. This property is required for videos.'),
-                                    array('og:video:height'     => 'Height of video in pixels. This property is required for videos.'),
-                                    array('og:image'            => 'URL for the image. Specify an image for a high quality preview in Feed. To update an image after it\'s been published, use a new URL for the new image. Images are cached based on the URL and won\'t be updated unless the URL changes.'),
-                                    array('og:image:url'        => 'Equivalent to og:image.'),
-                                    array('og:image:secure_url' => 'https:// URL for the image.'),
-                                    array('og:image:type'       => 'MIME type of the image. One of image/jpeg, image/gif or image/png.'),
-                                    array('og:image:width'      => 'Width of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.'),
-                                    array('og:image:height'     => 'Height of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.')
-                                )
-                            ),
-                            array('dom_tag' =>
-                                array(
-                                    array('title'               => 'The <title> element is metadata that represents the title of the overall HTML document (not the document\'s content.)')
-                                )
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * SOURCE :: https://developers.facebook.com/docs/sharing/webmasters#markup
+                     * SOURCE :: https://developer.twitter.com/en/docs/twitter-for-websites/cards/guides/getting-started
+                     * SOURCE :: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image
+                     * SOURCE :: https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML
+                     *
+                     * 5 :: Wednesday, March 6, 2024 @ 0049 hrs.
+                     *
+                     * The screen scrape algorithm
+                     * for the page meta data
+                     * population for search
+                     * will be:
+                     *      1) case-insensitive,
+                     *      2) <meta> attribute name/
+                     *         property agnostic,
+                     *      3) and attempt to return
+                     *         data in the format:
+                     *          array('twitter:card' => '{the screen
+                     *            scraped data for the "twitter:card" meta
+                     *            in a response 200 page return}').
+                     *
+                     */
+                    $R_resp[$memory_pointer]['social'][] = array(
+                        array('name' =>
+                            array(
+                                array('twitter:card'        => 'Must be set to a value of "summary_large_image". Yes, this is required.'),
+                                array('twitter:site'        => 'The Twitter @username to which the card should be attributed. This is not required.'),
+                                array('twitter:title'       => 'A concise title for the related content. Platform specific behaviors: iOS, Android: Truncated to two lines in timeline and expanded Tweet. Web: Truncated to one line in timeline and expanded Tweet. Yes, this is required.'),
+                                array('twitter:description' => 'A description that concisely summarizes the content as appropriate for presentation within a Tweet. You should not re-use the title as the description or use this field to describe the general services provided by the website. Platform specific behaviors: iOS, Android: Not displayed. Web: Truncated to three lines in timeline and expanded Tweet. This is not required.'),
+                                array('twitter:image'       => 'A URL to a unique image representing the content of the page. You should not use a generic image such as your website logo, author photo, or other image that spans multiple pages. Images for this Card support an aspect ratio of 2:1 with minimum dimensions of 300x157 or maximum of 4096x4096 pixels. Images must be less than 5MB in size. JPG, PNG, WEBP and GIF formats are supported. Only the first frame of an animated GIF will be used. SVG is not supported. This is not required.'),
+                                array('twitter:image:alt'   => 'A text description of the image conveying the essential nature of an image to users who are visually impaired. Maximum 420 characters. This is not required.'),
+                                array('twitter:creator'     => '@username for the content creator / author. This is not required.'),
+                                array('description'         => 'A concise description of the page. This is not required.'),
+                                array('keywords'            => 'The keyword <meta> element (<meta name="keywords" content="fill, in, your, keywords, here">) — which is supposed to provide keywords for search engines to determine the relevance of that page for different search terms — is ignored by search engines, because spammers were just filling the keyword list with hundreds of keywords, biasing results.')
                             )
-                        );
+                        ),
+                        array('property' =>
+                            array(
+                                array('og:url'              => 'The canonical URL for your page. This should be the undecorated URL, without session variables, user identifying parameters, or counters. Likes and Shares for this URL will aggregate at this URL. For example, mobile domain URLs should point to the desktop version of the URL as the canonical URL to aggregate Likes and Shares across different versions of the page.'),
+                                array('og:title'            => 'The title of your article without any branding such as your site name.'),
+                                array('og:description'      => 'A brief description of the content, usually between 2 and 4 sentences. This will displayed below the title of the post on Facebook.'),
+                                array('og:image'            => 'The URL of the image that appears when someone shares the content to Facebook. See below for more info, and check out Facebook\'s best practices guide to learn how to specify a high quality preview image.'),
+                                array('fb:app_id'           => 'In order to use Facebook Insights you must add the app ID to your page. Insights lets you view analytics for traffic to your site from Facebook. Find the app ID in your App Dashboard.'),
+                                array('og:type'             => 'The type of media of your content. This tag impacts how your content shows up in Feed. If you don\'t specify a type,the default is website. Each URL should be a single object, so multiple og:type values are not possible. Find the full list of object types in Object Types Reference.'),
+                                array('og:locale'           => 'The locale of the resource. Defaults to en_US. You can also use og:locale:alternate if you have other available language translations available. Learn about the locales we support in Facebook\'s documentation on localization.'),
+                                array('og:video'            => 'The URL for the video. If you want the video to play in-line in Feed, you should use the https:// URL if possible.'),
+                                array('og:video:url'        => 'Equivalent to og:video.'),
+                                array('og:video:secure_url' => 'Secure URL for the video. Include this even if you set the secure URL in og:video.'),
+                                array('og:video:type'       => 'MIME type of the video. Either application/x-shockwave-flash or video/mp4.'),
+                                array('og:video:width'      => 'Width of video in pixels. This property is required for videos.'),
+                                array('og:video:height'     => 'Height of video in pixels. This property is required for videos.'),
+                                array('og:image'            => 'Specify an image for a high quality preview in Feed.'),
+                                array('og:image'            => 'URL for the image. To update an image after it\'s been published, use a new URL for the new image. Images are cached based on the URL and won\'t be updated unless the URL changes.'),
+                                array('og:image:url'        => 'Equivalent to og:image.'),
+                                array('og:image:secure_url' => 'https:// URL for the image.'),
+                                array('og:image:type'       => 'MIME type of the image. One of image/jpeg, image/gif or image/png.'),
+                                array('og:image:width'      => 'Width of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.'),
+                                array('og:image:height'     => 'Height of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.'),
+                                array('og:url'              => 'The canonical URL for your page. This should be the undecorated URL, without session variables, user identifying parameters, or counters. Likes and Shares for this URL will aggregate at this URL. For example, mobile domain URLs should point to the desktop version of the URL as the canonical URL to aggregate Likes and Shares across different versions of the page.'),
+                                array('og:title'            => 'The title of your article without any branding such as your site name.'),
+                                array('og:description'      => 'A brief description of the content, usually between 2 and 4 sentences. This will displayed below the title of the post on Facebook.'),
+                                array('og:image'            => 'The URL of the image that appears when someone shares the content to Facebook. See below for more info, and check out Facebook\'s best practices guide to learn how to specify a high quality preview image.'),
+                                array('fb:app_id'           => 'In order to use Facebook Insights you must add the app ID to your page. Insights lets you view analytics for traffic to your site from Facebook. Find the app ID in your App Dashboard.'),
+                                array('og:type'             => 'The type of media of your content. This tag impacts how your content shows up in Feed. If you don\'t specify a type,the default is website. Each URL should be a single object, so multiple og:type values are not possible. Find the full list of object types in Object Types Reference.'),
+                                array('og:locale'           => 'The locale of the resource. Defaults to en_US. You can also use og:locale:alternate if you have other available language translations available. Learn about the locales we support in Facebook\'s documentation on localization.'),
+                                array('og:locale:alternate' => 'The locale of the resource. Defaults to en_US. You can also use og:locale:alternate if you have other available language translations available. Learn about the locales we support in Facebook\'s documentation on localization.'),
+                                array('og:video'            => 'The URL for the video. If you want the video to play in-line in Feed, you should use the https:// URL if possible.'),
+                                array('og:video:url'        => 'Equivalent to og:video.'),
+                                array('og:video:secure_url' => 'Secure URL for the video. Include this even if you set the secure URL in og:video.'),
+                                array('og:video:type'       => 'MIME type of the video. Either application/x-shockwave-flash or video/mp4.'),
+                                array('og:video:width'      => 'Width of video in pixels. This property is required for videos.'),
+                                array('og:video:height'     => 'Height of video in pixels. This property is required for videos.'),
+                                array('og:image'            => 'URL for the image. Specify an image for a high quality preview in Feed. To update an image after it\'s been published, use a new URL for the new image. Images are cached based on the URL and won\'t be updated unless the URL changes.'),
+                                array('og:image:url'        => 'Equivalent to og:image.'),
+                                array('og:image:secure_url' => 'https:// URL for the image.'),
+                                array('og:image:type'       => 'MIME type of the image. One of image/jpeg, image/gif or image/png.'),
+                                array('og:image:width'      => 'Width of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.'),
+                                array('og:image:height'     => 'Height of image in pixels. Specify height and width for your image to ensure that the image loads properly the first time it\'s shared.')
+                            )
+                        ),
+                        array('dom_tag' =>
+                            array(
+                                array('title'               => 'The <title> element is metadata that represents the title of the overall HTML document (not the document\'s content.)')
+                            )
+                        )
+                    );
 
-                        return $tmp_html_meta_keys_ARRAY;
+                    /*
+                    //
+                    // Wednesday, March 6, 2024 @ 0157 hrs.
+                    //
+                    // [TWITTER]
+                    twitter:card            The card type, which will be one of "summary", "summary_large_image", "app", or "player".
 
-                        /*
-                        //
-                        // Wednesday, March 6, 2024 @ 0157 hrs.
-                        //
-                        // [TWITTER]
-                        twitter:card            The card type, which will be one of "summary", "summary_large_image", "app", or "player".
+                        <meta name="twitter:card" content="summary"></meta>
 
-                            <meta name="twitter:card" content="summary"></meta>
-
-                        Card Property                                                                               Required
-                        ____________________________________________________________________________________________________
-                        twitter:card            Must be set to a value of "summary_large_image"                     Yes
-                        twitter:site            The Twitter @username to which the card should be attributed.       No
-                        twitter:title           A concise title for the related content.                            Yes
-                                                    Platform specific behaviors:
-                                                        iOS, Android: Truncated to two lines
-                                                                      in timeline and expanded Tweet.
-                                                                 Web: Truncated to one line in timeline
-                                                                      and expanded Tweet.
-                        twitter:description     A description that concisely summarizes the content as              No
-                                                appropriate for presentation within a Tweet. You should
-                                                not re-use the title as the description or use this field
-                                                to describe the general services provided by the website.
+                    Card Property                                                                               Required
+                    ____________________________________________________________________________________________________
+                    twitter:card            Must be set to a value of "summary_large_image"                     Yes
+                    twitter:site            The Twitter @username to which the card should be attributed.       No
+                    twitter:title           A concise title for the related content.                            Yes
                                                 Platform specific behaviors:
-                                                        iOS, Android: Not displayed.
-                                                                 Web: Truncated to three lines in
-                                                                      timeline and expanded Tweet.
+                                                    iOS, Android: Truncated to two lines
+                                                                  in timeline and expanded Tweet.
+                                                             Web: Truncated to one line in timeline
+                                                                  and expanded Tweet.
+                    twitter:description     A description that concisely summarizes the content as              No
+                                            appropriate for presentation within a Tweet. You should
+                                            not re-use the title as the description or use this field
+                                            to describe the general services provided by the website.
+                                            Platform specific behaviors:
+                                                    iOS, Android: Not displayed.
+                                                             Web: Truncated to three lines in
+                                                                  timeline and expanded Tweet.
 
-                        twitter:image           A URL to a unique image representing the content of the page.       No
-                                                You should not use a generic image such as your website logo,
-                                                author photo, or other image that spans multiple pages. Images
-                                                for this Card support an aspect ratio of 2:1 with minimum
-                                                dimensions of 300x157 or maximum of 4096x4096 pixels. Images
-                                                must be less than 5MB in size. JPG, PNG, WEBP and GIF formats
-                                                are supported. Only the first frame of an animated GIF will be
-                                                used. SVG is not supported.
-                        twitter:image:alt       A text description of the image conveying the essential nature      No
-                                                of an image to users who are visually impaired. Maximum
-                                                420 characters.
-                        twitter:creator         @username for the content creator / author.                         No
+                    twitter:image           A URL to a unique image representing the content of the page.       No
+                                            You should not use a generic image such as your website logo,
+                                            author photo, or other image that spans multiple pages. Images
+                                            for this Card support an aspect ratio of 2:1 with minimum
+                                            dimensions of 300x157 or maximum of 4096x4096 pixels. Images
+                                            must be less than 5MB in size. JPG, PNG, WEBP and GIF formats
+                                            are supported. Only the first frame of an animated GIF will be
+                                            used. SVG is not supported.
+                    twitter:image:alt       A text description of the image conveying the essential nature      No
+                                            of an image to users who are visually impaired. Maximum
+                                            420 characters.
+                    twitter:creator         @username for the content creator / author.                         No
 
-                        //
-                        // E.G.
-                        <meta name="twitter:card" content="summary_large_image">
-                        <meta name="twitter:site" content="@nytimes">
-                        <meta name="twitter:creator" content="@SarahMaslinNir">
-                        <meta name="twitter:title" content="Parade of Fans for Houston’s Funeral">
-                        <meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.">
-                        <meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
+                    // E.g.:
+                    <meta name="twitter:card" content="summary_large_image">
+                    <meta name="twitter:site" content="@nytimes">
+                    <meta name="twitter:creator" content="@SarahMaslinNir">
+                    <meta name="twitter:title" content="Parade of Fans for Houston’s Funeral">
+                    <meta name="twitter:description" content="NEWARK - The guest list and parade of limousines with celebrities emerging from them seemed more suited to a red carpet event in Hollywood or New York than than a gritty stretch of Sussex Avenue near the former site of the James M. Baxter Terrace public housing project here.">
+                    <meta name="twitter:image" content="http://graphics8.nytimes.com/images/2012/02/19/us/19whitney-span/19whitney-span-articleLarge.jpg">
 
-                        //
-                        // E.G.
-                        <meta name="twitter:card" content="summary" />
-                        <meta name="twitter:site" content="@nytimesbits" />
-                        <meta name="twitter:creator" content="@nickbilton" />
-                        <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
-                        <meta property="og:title" content="A Twitter for My Sister" />
-                        <meta property="og:description" content="In the early days, Twitter grew so quickly that it was almost impossible to add new features because engineers spent their time trying to keep the rocket ship from stalling." />
-                        <meta property="og:image" content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg" />
+                    // E.g.:
+                    <meta name="twitter:card" content="summary" />
+                    <meta name="twitter:site" content="@nytimesbits" />
+                    <meta name="twitter:creator" content="@nickbilton" />
+                    <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
+                    <meta property="og:title" content="A Twitter for My Sister" />
+                    <meta property="og:description" content="In the early days, Twitter grew so quickly that it was almost impossible to add new features because engineers spent their time trying to keep the rocket ship from stalling." />
+                    <meta property="og:image" content="http://graphics8.nytimes.com/images/2011/12/08/technology/bits-newtwitter/bits-newtwitter-tmagArticle.jpg" />
 
-                        */
-
-                    }
+                    */
 
                 break;
                 default:
 
+                    $memory_pointer = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+
                     $clr_ssl_msg = 'Unknown attribute key received [' . 
-                                   $attribute . 
+                                   $R_meta_key . 
                                    '] for ' . 
-                                   $license_key . 
+                                   $R_resp[$memory_pointer]['resource_name'] . ' v' . 
+                                   $R_resp[$memory_pointer]['software_default'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __METHOD__, 
-                        $R, 
-                        'registry_access_is_authorized',
-                         NULL, 
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0805 hrs.
-                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -794,30 +833,28 @@ function _crnrstn_native_resource_registry_meta_social_media(
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __METHOD__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_ERR, 
-                        \E_ERROR, 
-                        __LINE__, 
-                        __METHOD__, 
-                        __FILE__, 
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -827,21 +864,16 @@ function _crnrstn_native_resource_registry_meta_social_media(
         default:
             // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-            $clr_ssl_msg = 'Unknown key received [' . 
-                           $license_key . 
-                           ']. Unable to return copy data.';
+            $clr_ssl_msg = 'Unknown resource received: ' . 
+                           $R_resp[$memory_pointer]['resource_name'] . 
+                           '. Unable to return social media meta data.';
 
-            if(!(_crnrstn_native_resource_registry(
-                __METHOD__, 
-                $R, 
-                'registry_access_is_authorized',
-                 NULL, 
-                 $R_debug_mode) !== false))
-            {
+            if(!\method_exists($R, 'process_R_resp')){
 
                 // 5 :: Tuesday, May 19, 2026 @ 0806 hrs.
-                if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                    ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                    ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                    ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                 {
 
                     $syslog_level     = LOG_WARNING;
@@ -870,33 +902,85 @@ function _crnrstn_native_resource_registry_meta_social_media(
 
                 }
 
-                return false;
+            }else{
+
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __FUNCTION__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $R->error_log(
+                    $clr_ssl_msg,
+                    \LOG_ERR,
+                    \E_ERROR,
+                    __LINE__,
+                    __FUNCTION__,
+                    __FILE__,
+                    $token);
 
             }
-
-            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __METHOD__, 
-                     'code'                    => 200, 
-                     'clr_ssl_msg'             => $clr_ssl_msg);
-            $R->error_log(
-                $clr_ssl_msg, 
-                \LOG_ERR, 
-                \E_ERROR, 
-                __LINE__, 
-                __METHOD__, 
-                __FILE__, 
-                $token);
-
-            return false;
 
         break;
 
     }
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Prepare the string 
+     * data for UI/UX/SOAP 
+     * content return, and 
+     * return the output. 
+     *
+     * This will articulate the 
+     * most exterior membrane of the 
+     * CRNRSTN :: Lightsaber RoCEv2 
+     * SOAP Services Layer's 
+     * Document Object Model (DOM) 
+     * HTML/Text Resource Type 
+     * Output Control Services 
+     * Layer for: 
+     * - directly integrating 
+     *   CLR-SSL Libraries with the 
+     *   response output architecture 
+     *   of the SOAP services layer 
+     *   of the CLR-SSL, 
+     * - directly integrating 
+     *   CLR-SSL Libraries with the 
+     *   Multi-Language Services 
+     *   Layer of the CLR-SSL, 
+     * - exposing all CLR-SSL Library 
+     *   content to HMAC Hash supported 
+     *   content versioning and 
+     *   CLR-SSL powered version 
+     *   control integrations on 
+     *   top of SOAP, and 
+     * - directly integrating 
+     *   the application of a tight 
+     *   search indexing algorithm 
+     *   for all software, corporate, 
+     *   license, and social media 
+     *   CLR-SSL Resource Registry 
+     *   Library meta data. 
+     *
+     *
+     * 5
+     *
+     * Sunday, August 25, 2024 @ 0723 hrs.
+     *
+     */
+    return $R->soap_data_initialization_cache_output(
+               $R_resp[$memory_pointer]['iso_lang_code'], 
+               $R_meta_key, 
+               $R_text, 
+               $R_html, 
+               $R_resp, 
+               NULL, 
+               $output_mode, 
+               $generate_version_sync_hash, 
+               $generate_search_algorithm_data);
 
 }

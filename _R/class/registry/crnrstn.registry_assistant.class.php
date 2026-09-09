@@ -991,14 +991,14 @@ class crnrstn_registry_assistant extends crnrstn
          */
 
         switch($resource_name){
-            case __NAMESPACE__ . '\crnrstn_OAuth':
-            case 'crnrstn_OAuth':
+            case __NAMESPACE__ . '\OAuth':
+            case 'OAuth':
             case 'gabriel_oauth':
                 // 5 :: Tuesday, June 2, 2026 @ 0623 hrs.
 
                 $PHPMailer = NULL;
 
-                $this->anoint('crnrstn_PHPMailer', $PHPMailer);
+                $this->anoint('PHPMailer', $PHPMailer);
 
                 $PHPMailer->setOAuth();
                 $resource_output = $PHPMailer->getOAuth();

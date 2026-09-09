@@ -1,7 +1,7 @@
 <?php
 /**
- * Korean crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Korean PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author ChalkPE <amato0617@gmail.com>
  */
 

@@ -1,7 +1,7 @@
 <?php
 /**
- * Turkish crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Turkish PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Elçin Özel
  * @author Can Yılmaz
  * @author Mehmet Benlioğlu

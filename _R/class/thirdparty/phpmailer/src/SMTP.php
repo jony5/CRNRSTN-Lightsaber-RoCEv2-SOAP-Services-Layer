@@ -56,7 +56,7 @@ namespace CRNRSTN;
  * @author Chris Ryan
  * @author Marcus Bointon <phpmailer@synchromedia.co.uk>
  */
-class crnrstn_SMTP extends crnrstn 
+class SMTP extends crnrstn 
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * Edit: We modified the crnrstn_SMTP  
@@ -290,8 +290,8 @@ class crnrstn_SMTP extends crnrstn
      * @param string $str   Debug string to output
      * @param int    $level The debug level of this message; see DEBUG_* constants
      *
-     * @see crnrstn_SMTP::$Debugoutput
-     * @see crnrstn_SMTP::$do_debug
+     * @see SMTP::$Debugoutput
+     * @see SMTP::$do_debug
      */
     public function __construct()
     {
@@ -508,7 +508,7 @@ class crnrstn_SMTP extends crnrstn
      * @param string $username The user name
      * @param string $password The password
      * @param string $authtype The auth type (CRAM-MD5, PLAIN, LOGIN, XOAUTH2)
-     * @param crnrstn_OAuth  $OAuth    An optional OAuth instance for XOAUTH2 authentication
+     * @param OAuth  $OAuth    An optional OAuth instance for XOAUTH2 authentication
      *
      * @return bool True if successfully authenticated
      */

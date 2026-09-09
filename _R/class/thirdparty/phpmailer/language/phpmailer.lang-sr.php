@@ -1,7 +1,7 @@
 <?php
 /**
- * Serbian crnrstn_PHPMailer language file: refer to English translation for definitive list
- * @package crnrstn_PHPMailer
+ * Serbian PHPMailer language file: refer to English translation for definitive list
+ * @package CRNRSTN
  * @author Александар Јевремовић <ajevremovic@gmail.com>
  * @author Miloš Milanović <mmilanovic016@gmail.com>
  */

@@ -537,33 +537,57 @@ $this->config_add_resource(
 	   CRNRSTN_LOG_DEFAULT, 
 	   'CRNRSTN::RESOURCE::LOGGING');
 
-//
-// CRNRSTN :: CUSTOM 
-// ERROR HANDLING.
-//      Common Values for error reporting:
-//          E_ALL 
-//            (Show all errors, warnings 
-//            and notices including 
-//            coding standards.)
-//  	    E_ALL & ~E_NOTICE 
-//            (Show all errors, 
-//            except for notices)
-//          E_ALL & ~E_NOTICE & ~E_STRICT 
-//            (Show all errors, except 
-//            for notices and coding 
-//            standards warnings.)
-//  	    E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR 
-//            (Show only errors)
-//
-//      Default Value:          E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
-//      Development Value:      E_ALL
-//      Production Value:       E_ALL & ~E_DEPRECATED & ~E_STRICT
-//
-//      See ALSO, $err_reporting_profile for 
-//      $oCRNRSTN->config_add_environment()
-//      in CRNRSTN :: CONFIGURATION, _crnrstn.config.inc.php.
-//
-// Thursday, December 7, 2023 @ 0038 hrs.
+/* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * CLR-SSL Custom
+ * Error Handling.
+ *
+ * TLDR;
+ * Default Value:     E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
+ * Development Value: E_ALL
+ * Production Value:  E_ALL & ~E_DEPRECATED & ~E_STRICT
+ * -----
+ * E_ALL
+ * E_ALL & ~E_NOTICE
+ * E_ALL & ~E_NOTICE & ~E_STRICT
+ * E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR
+ *
+ * Here are some common values
+ * for error reporting:
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * E_ALL                   Show all errors, warnings
+ *                         and notices including
+ *                         coding standards.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * E_ALL & ~E_NOTICE       Show all errors,
+ *                         except for notices
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * E_ALL & ~E_NOTICE & ~E_STRICT
+ *
+ * Show all errors, except
+ * for notices and coding
+ * standards warnings.
+ *
+ *# C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * E_COMPILE_ERROR|E_RECOVERABLE_ERROR|E_ERROR|E_CORE_ERROR
+ *
+ * Show only errors.
+ *
+ * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+ * Default Value:     E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
+ * Development Value: E_ALL
+ * Production Value:  E_ALL & ~E_DEPRECATED & ~E_STRICT
+ *
+ *
+ * 5 :: Thursday, December 7, 2023 @ 0038 hrs.
+ * Last Modified: Monday, August 31, 2026 @ 0420 hrs.
+ * Cracks a crisp can of
+ * Sweetwater® 420 with our K-Bar®, and
+ * rolls a joint.
+ *
+ */
 $this->config_add_resource(
 	   CRNRSTN_RESOURCE_ALL, 
 	   'custom_error_reporting_profile', 

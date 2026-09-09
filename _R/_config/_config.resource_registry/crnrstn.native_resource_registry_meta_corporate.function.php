@@ -304,15 +304,11 @@ namespace CRNRSTN;
  *
  */
 function _crnrstn_native_resource_registry_meta_corporate(
-         $software_company_key,
-         $attribute,
+         $R_resp,
+         $R_meta_key,
          $R,
-         $background_color_hex = '#FFF',
-         $iso_lang_code = 'en',
          $R_debug_mode = 0,
-         $generate_search_algorithm_data = false,
-         $generate_content_synchronization_hash = false,
-         $resource_copyright_text = NULL)
+         $css_data = NULL)
 {
     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * The _crnrstn_native_resource_registry_meta_corporate()
@@ -355,6 +351,61 @@ function _crnrstn_native_resource_registry_meta_corporate(
      *       overhaul pivoting around 
      *       config_serial_override. 
      *       5 :: Saturday, June 20, 2026 @ 0342 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Renamed the
+     *       _crnrstn_native_resource_registry_meta_corporate()
+     *       $generate_content_synchronization_hash
+     *       input parameter to
+     *       $generate_version_sync_hash and swapped
+     *       function input places with
+     *       $generate_search_algorithm_data.
+     *       5 :: Tuesday, September 1, 2026 @ 0219 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Added $css_data = NULL
+     *       input parameter to
+     *       _crnrstn_native_resource_registry_meta_corporate().
+     *       5 :: Tuesday, September 1, 2026 @ 1742 hrs.
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Removed input parameter,
+     *       $background_color_hex = '#FFF',
+     *       from
+     *       _crnrstn_native_resource_registry_meta_corporate().
+     *       5 :: Wednesday, September 2, 2026 @ "01" 2345 hrs.
+     *
+     *       "01010101...split the atom...Oh,
+     *       Oh, Oh, Oh. You know what I mean.
+     *
+     *       Yeah, you know what I mean:
+     *       "Oh, Oh, Oh"...
+     *       Yeah, you know what
+     *       I mean..."Oh"...yeah. ;)
+     *
+     * # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Edit: Added the $R_resp input 
+     *       parameter to the function, 
+     *       _crnrstn_native_resource_registry_meta_corporate(), 
+     *       renamed the $attribute input 
+     *       parameter to $R_meta_key, and removed 
+     *       the following input parameters:
+     *       - $software_company_key,
+     *       - $background_color_hex = '#FFF',
+     *       - $iso_lang_code = 'en',
+     *       - $generate_version_sync_hash = false,
+     *       - $generate_search_algorithm_data = false, and 
+     *       - $resource_copyright_text = NULL.
+     *
+     *       The new function definition:
+     *       function _crnrstn_native_resource_registry_meta_corporate(
+     *                $R_resp, 
+     *                $R_meta_key, 
+     *                $R, 
+     *                $R_debug_mode = 0, 
+     *                $css_data = NULL)
+     *       { ... }
+     *       5 :: Wednesday, September 9, 2026 @ 0630 hrs.
      *
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * 'COMPANY_NAME_HTML'         => $R->return_registered_resource_meta(
@@ -417,44 +468,58 @@ function _crnrstn_native_resource_registry_meta_corporate(
      *
      * # C # R # N # R # S # T # N # :: # L # I # G # H # T
      * CLR-SSL Resource Registry 
-     * Corporate Sponsorship 
-     * and Copyright Meta Data. 
+     * Corporate Sponsorship
+     * and Third-Party Software
+     * Integrations Copyright
+     * Meta Data Corporate Keys
      *
-     * Where $corp_author_key = '{corp / author key}';
+     * Where:
+     * $corp_author_key = 'company name';
      *
-     * Available Corporate Author 
-     * Key Options Include: 
-     * - (string) 'PHPMailer', 
-     * - (string) 'Digital ITCC', 
-     * - (string) 'Mobile Detect', 
-     * - (string) 'NuSphere Corporation', 
-     * - (string) 'The PHP Group', and 
-     * - (string) 'eVifweb® development',
+     * Available corporate author
+     * key options include:
+     * - (string) 'Digital ITCC',
+     * - (string) 'Mobile Detect',
+     * - (string) 'MonstaApps®',
+     * - (string) 'Nette®',
+     * - (string) 'NuSphere Corporation',
+     * - (string) 'The PHP Group',
+     * - (string) 'PHPMailer', and
+     * - (string) 'eVifweb® development',...
      *
-     * and finishing with some sweet, 
+     * ...and finishing with some sweet,
      * sweet bong rips. 
      *
      *
      * 5 :: Friday, April 17, 2026 @ 1015 hrs.
-     * Last Modified: Saturday, April 18, 2026 @ 0746 hrs.
+     * Last Modified: Tuesday, September 1, 2026 @ 1734 hrs.
      *
      */
-    error_log('[lnum ' . 
-        __LINE__ . '] [func ' . 
-        __FUNCTION__ . 
-        '] $software_company_key[' . 
-        $software_company_key . 
-        '] $attribute[' . 
-        $attribute . '] $resource_copyright_text[' . 
-        $resource_copyright_text . ']. die();');
 
-    die();
+    $memory_pointer                 = $R_resp['clr_ssl_resource']['memory_pointer'][0];
+    $generate_version_sync_hash     = $R->get_crnrstn('generate_version_sync_hash');
+    $generate_search_algorithm_data = $R->get_crnrstn('generate_search_algorithm_data');
+    $R_cache_transport_packet       = array();
+    $R_text                         =
+    $R_html                         = '';
+    $output_mode                    = NULL;
 
-    switch($software_company_key){
+    echo '<br><pre><code>[' . 
+$R->return_micro_time() . '] 
+[func ' . __FUNCTION__ . '] 
+[lnum ' . __LINE__ . '] 
+[rtime ' . $R->wall_time() . '] 
+software company key[' . 
+$R_resp[$memory_pointer]['software_company']['key'] . '] 
+meta key[' . $R_meta_key . '] 
+copyright text[' .
+$R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']] . '].</code></pre>';
+
+    switch($R_resp[$memory_pointer]['software_company']['key']){
         case 'Digital ITCC':
             // 5 :: Friday, April 17, 2026 @ 1131 hrs.
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -475,7 +540,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -486,18 +551,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -514,8 +579,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -532,7 +597,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'Digital ITCC®';
+                        $R_text = 'Digital ITCC®';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -545,8 +610,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name HTML data
@@ -562,8 +627,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Sunday, August 25, 2024 @ 1136 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] .
-                        '>Digital ITCC<sup '  . $tmp_css_data['reg_mark'] .
+                        $R_html = '<span ' . $css_data['company_name'] . 
+                        '>Digital ITCC<sup '  . $css_data['reg_mark'] . 
                         '>&reg;</sup></span>';
 
                 break;
@@ -587,7 +652,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Friday, November 7, 2025 @ 0328 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -598,18 +663,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -626,8 +691,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -639,7 +704,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Sunday, August 25, 2024 @ 1134 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'icy at digitalitcc dot com';
+                        $R_text = 'icy at digitalitcc dot com';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -652,8 +717,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -669,34 +734,46 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Sunday, August 25, 2024 @ 1134 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' .
-                        $tmp_css_data['author_contributors'] .
-                        '><a ' . $tmp_css_data['copy_a'] .
-                        ' href="https://www.php.net/manual/en/' .
-                        'language.operators.bitwise.php#50299" ' .
-                        'target="_blank">icy</a> at <a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://www.php.net/manual/en/' .
-                        'language.operators.bitwise.php#50299" ' .
-                        'target="_blank">digitalitcc</a> <a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://www.php.net/manual/en/' .
-                        'language.operators.bitwise.php#50299" ' .
-                        'target="_blank">dot</a> <a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://www.php.net/manual/en/' .
-                        'language.operators.bitwise.php#50299" ' .
+                        $R_html = '<span ' . 
+                        $css_data['author_contributors'] . 
+                        '><a ' . $css_data['copy_a'] . 
+                        ' href="https://www.php.net/manual/en/' . 
+                        'language.operators.bitwise.php#50299" ' . 
+                        'target="_blank">icy</a> at <a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://www.php.net/manual/en/' . 
+                        'language.operators.bitwise.php#50299" ' . 
+                        'target="_blank">digitalitcc</a> <a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://www.php.net/manual/en/' . 
+                        'language.operators.bitwise.php#50299" ' . 
+                        'target="_blank">dot</a> <a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://www.php.net/manual/en/' . 
+                        'language.operators.bitwise.php#50299" ' . 
                         'target="_blank">com</a></span>';
+
+                        /*
+                        $R->url('language.operators.bitwise.php#50299')
+
+                         _crnrstn_system_link_library(
+                         $url_key,
+                         $R,
+                         $background_color_hex = '#FFF',
+                         $iso_lang_code = 'en',
+                         $output_mode = 'MULTI-PART',
+                         $generate_version_sync_hash = false,
+                         $generate_search_algorithm_data = false,
+                         $css_data = NULL){}
+
+                         */
 
                 break;
                 case 'URL':
                 case 'URL_HTML':
                 case 'URL_TEXT':
 
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://www.php.net/manual/en/language.operators.bitwise.php#50299';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://www.php.net/manual/en/language.operators.bitwise.php#50299';
 
                 break;
                 case 'COPYRIGHT':
@@ -719,7 +796,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Thursday, November 6, 2025 @ 1219 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -730,18 +807,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -758,8 +835,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -774,7 +851,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -787,8 +864,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -803,26 +880,51 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Sunday, August 25, 2024 @ 1132 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '><span ' . $tmp_css_data['copyright_mark'] .
-                        '>&copy;</span> 2001-2024 The <span ' . $tmp_css_data['php'] .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '><span ' . $css_data['copyright_mark'] . 
+                        '>&copy;</span> 2001-2024 The <span ' . $css_data['php'] . 
                         '>PHP</span> Group</span>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
 
-                    return array(
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
+
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -834,23 +936,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                 default:
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $software_company_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0752 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -859,12 +956,12 @@ function _crnrstn_native_resource_registry_meta_corporate(
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -879,30 +976,28 @@ function _crnrstn_native_resource_registry_meta_corporate(
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __FUNCTION__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __FUNCTION__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -923,7 +1018,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
              *
              */
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -944,7 +1039,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -955,18 +1050,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -983,8 +1078,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -999,7 +1094,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * 5
                          *
                          */
-                        $tmp_data_TEXT = 'eVifweb®';
+                        $R_text = 'eVifweb®';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1012,8 +1107,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name HTML data
@@ -1027,11 +1122,11 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] . '>' .
-                        '<a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="http://evifweb.jony5.com/" target="_blank">' .
-                        'e<span ' . $tmp_css_data['eVifweb_V'] .
-                        '>V</span>ifweb<sup ' . $tmp_css_data['reg_mark'] .
+                        $R_html = '<span ' . $css_data['company_name'] . '>' . 
+                        '<a ' . $css_data['copy_a'] . ' ' . 
+                        'href="http://evifweb.jony5.com/" target="_blank">' . 
+                        'e<span ' . $css_data['eVifweb_V'] . 
+                        '>V</span>ifweb<sup ' . $css_data['reg_mark'] . 
                         '>&reg;</sup></a></span>';
 
                 break;
@@ -1055,7 +1150,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Tuesday, November 11, 2025 @ 0535 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1066,18 +1161,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1094,8 +1189,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Tuesday, November 11, 2025 @ 0535 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -1105,14 +1200,14 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * 5
                          *
                          */
-                        $tmp_data_TEXT = 'Jonathan \'5\' Harris, CEO, CTO, ' .
-                        'Lead Full Stack Developer, and, as of 2025, ' .
-                        'Chief Creative here at eVifweb® ' .
-                        'eVifweb@gmail.com, ' .
-                        'a ravenous wolf of the tribe of Benjamin ' .
-                        'and one of the King\'s two swords, ' .
-                        'an eternal son of thunder, and a web ' .
-                        'professional living and working in ' .
+                        $R_text = 'Jonathan \'5\' Harris, CEO, CTO, ' . 
+                        'Lead Full Stack Developer, and, as of 2025, ' . 
+                        'Chief Creative here at eVifweb® ' . 
+                        'eVifweb@gmail.com, ' . 
+                        'a ravenous wolf of the tribe of Benjamin ' . 
+                        'and one of the King\'s two swords, ' . 
+                        'an eternal son of thunder, and a web ' . 
+                        'professional living and working in ' . 
                         'Atlanta, GA.';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1126,8 +1221,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Tuesday, November 11, 2025 @ 0536 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -1141,28 +1236,28 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' .
-                        $tmp_css_data['author_contributors'] .
-                        '>Jonathan \'5\' Harris, CEO, CTO, ' .
-                        'Lead Full Stack Developer, and, as of 2025, ' .
-                        'Chief Creative here at <span ' . $tmp_css_data['eVifweb'] . '>' .
-                        'e<span ' . $tmp_css_data['eVifweb_V'] . '>V</span>ifweb<sup ' .
-                        $tmp_css_data['reg_mark'] . '>&reg;</sup></span>. ' .
-                        '<a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="mailto:eVifweb@gmail.com" target="_blank">' .
-                        'e<span ' . $tmp_css_data['eVifweb_V'] .
-                        '>V</span>ifweb@gmail.com</a>, ' .
-                        'a <a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="https://jony5.com?vv=gen49_1,25-28" target="_blank">' .
-                        'ravenous wolf</a> ' .
-                        'of the <a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="https://jony5.com?vv=deut33_1-4,12,29" target="_blank">' .
-                        'tribe of Benjamin</a> ' .
-                        'and one of the King\'s two swords, ' .
-                        'an eternal son of thunder, and ' .
-                        'a <a ' . $tmp_css_data['copy_a'] . ' ' .
-                        'href="https://jony5.com/?scroll=WELCOME" target="_blank">web ' .
-                        'professional</a> living and working in ' .
+                        $R_html = '<span ' . 
+                        $css_data['author_contributors'] . 
+                        '>Jonathan \'5\' Harris, CEO, CTO, ' . 
+                        'Lead Full Stack Developer, and, as of 2025, ' . 
+                        'Chief Creative here at <span ' . $css_data['eVifweb'] . '>' . 
+                        'e<span ' . $css_data['eVifweb_V'] . '>V</span>ifweb<sup ' . 
+                        $css_data['reg_mark'] . '>&reg;</sup></span>. ' . 
+                        '<a ' . $css_data['copy_a'] . ' ' . 
+                        'href="mailto:eVifweb@gmail.com" target="_blank">' . 
+                        'e<span ' . $css_data['eVifweb_V'] . 
+                        '>V</span>ifweb@gmail.com</a>, ' . 
+                        'a <a ' . $css_data['copy_a'] . ' ' . 
+                        'href="https://jony5.com?vv=gen49_1,25-28" target="_blank">' . 
+                        'ravenous wolf</a> ' . 
+                        'of the <a ' . $css_data['copy_a'] . ' ' . 
+                        'href="https://jony5.com?vv=deut33_1-4,12,29" target="_blank">' . 
+                        'tribe of Benjamin</a> ' . 
+                        'and one of the King\'s two swords, ' . 
+                        'an eternal son of thunder, and ' . 
+                        'a <a ' . $css_data['copy_a'] . ' ' . 
+                        'href="https://jony5.com/?scroll=WELCOME" target="_blank">web ' . 
+                        'professional</a> living and working in ' . 
                         'Atlanta, GA.</span>';
 
                 break;
@@ -1233,13 +1328,10 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Sunday, July 7, 2024 @ 0134 hrs.
                      *
                      */
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://github.com/jony5/CRNRSTN-v2.00.0000-PRE-ALPHA-DEV-Lightsaber';
-                    $tmp_url_ARRAY[] = 'https://crnrstn.jony5.com';
-                    $tmp_url_ARRAY[] = 'http://evifweb.jony5.com';
-                    $tmp_url_ARRAY[] = 'https://jony5.com';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://github.com/jony5/CRNRSTN-v2.00.0000-PRE-ALPHA-DEV-Lightsaber';
+                    $R_cache_transport_packet['url'][] = 'https://crnrstn.jony5.com';
+                    $R_cache_transport_packet['url'][] = 'http://evifweb.jony5.com';
+                    $R_cache_transport_packet['url'][] = 'https://jony5.com';
 
                 break;
                 case 'COPYRIGHT':
@@ -1262,7 +1354,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Tuesday, November 11, 2025 @ 0534 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1273,18 +1365,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1301,8 +1393,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Tuesday, November 11, 2025 @ 0534 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -1317,7 +1409,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Tuesday, November 11, 2025 @ 0534 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1330,8 +1422,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Tuesday, November 11, 2025 @ 0534 hrs.
                      *
                      */
-                     if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                     if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -1346,16 +1438,41 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Tuesday, November 11, 2025 @ 0535 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '><span ' . $tmp_css_data['copyright_mark'] .
-                        '>&copy;</span> 2012-' . date('Y') . ' ' .
-                        '<span ' . $tmp_css_data['eVifweb'] . '>e<span ' .
-                        $tmp_css_data['eVifweb_V'] . '>V</span>ifweb<sup ' .
-                        $tmp_css_data['reg_mark'] . '>&reg;</sup></span> ' .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '><span ' . $css_data['copyright_mark'] . 
+                        '>&copy;</span> 2012-' . date('Y') . ' ' . 
+                        '<span ' . $css_data['eVifweb'] . '>e<span ' . 
+                        $css_data['eVifweb_V'] . '>V</span>ifweb<sup ' . 
+                        $css_data['reg_mark'] . '>&reg;</sup></span> ' . 
                         'development All Rights Reserved.</span>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
+
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Technology Software provider
@@ -1371,18 +1488,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Saturday, July 13, 2024 @ 1552 hrs.
                      *
                      */
-                    return array(
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -1394,33 +1511,28 @@ function _crnrstn_native_resource_registry_meta_corporate(
                                            'ALT' => 'eVifweb® development'),
                     'STACHE'            => array('TARGET' => '_blank',
                                            'URL' => 'https://jony5.com/',
-                                           'ALT' => 'Jonathan \'5\' Harris, CEO, ' .
-                                           'CTO, Lead Full Stack Developer, ' .
-                                           'Chief Creative here at eVifweb® ' .
-                                           '(as of 2025), and a ravenous ' .
+                                           'ALT' => 'Jonathan \'5\' Harris, CEO, ' . 
+                                           'CTO, Lead Full Stack Developer, ' . 
+                                           'Chief Creative here at eVifweb® ' . 
+                                           '(as of 2025), and a ravenous ' . 
                                            'wolf of the tribe of Benjamin.'));
 
                 break;
                 default:
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $software_company_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0754 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -1429,12 +1541,12 @@ function _crnrstn_native_resource_registry_meta_corporate(
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -1449,30 +1561,29 @@ function _crnrstn_native_resource_registry_meta_corporate(
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
 
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __FUNCTION__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __FUNCTION__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -1482,7 +1593,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
         case 'Mobile Detect':
             // 5 :: Friday, April 17, 2026 @ 1138 hrs.
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -1503,7 +1614,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1514,18 +1625,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1542,8 +1653,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -1558,7 +1669,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * 5
                          *
                          */
-                        $tmp_data_TEXT = 'Mobile Detect®';
+                        $R_text = 'Mobile Detect®';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1571,8 +1682,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name HTML data
@@ -1586,9 +1697,9 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] . '><a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://docs.mobiledetect.net/home" ' .
+                        $R_html = '<span ' . $css_data['company_name'] . '><a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://docs.mobiledetect.net/home" ' . 
                         'target="_blank">Mobile Detect&reg;</a></span>';
 
                 break;
@@ -1612,7 +1723,7 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * Friday, November 7, 2025 @ 0328 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1623,18 +1734,18 @@ function _crnrstn_native_resource_registry_meta_corporate(
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1651,8 +1762,8 @@ function _crnrstn_native_resource_registry_meta_corporate(
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -1664,13 +1775,13 @@ function _crnrstn_native_resource_registry_meta_corporate(
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'Şerban Ghiţă. I\'m a software developer based ' .
-'in Bucureşti, Romania. Software developer by day / Game designer ' .
+                        $R_text = 'Şerban Ghiţă. I\'m a software developer based ' . 
+'in Bucureşti, Romania. Software developer by day / Game designer ' . 
 'by night. Follow me on Twitch or YouTube for updates!
 
-Nick Ilyin.
+Nick Ilyin. 
 
-Original author: Victor Stanciu.
+Original author: Victor Stanciu. 
 
 Icon by: Dragoș Gavrilă.';
 
@@ -1685,8 +1796,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -1702,14 +1813,14 @@ Icon by: Dragoș Gavrilă.';
                          * Sunday, August 25, 2024 @ 0602 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<div ' .
-                        $tmp_css_data['author_contributors'] .
-                        '><div ' . $tmp_css_data['line_break'] . '><br></div>
-                        <ul ' . $tmp_css_data['ul'] . '><li ' .
-                        $tmp_css_data['li'] . '>Şerban Ghiţă</li>
-                        <li ' . $tmp_css_data['li'] . '>Nick Ilyin</li>
-                        <li ' . $tmp_css_data['li'] . '>Victor Stanciu</li>
-                        <li ' . $tmp_css_data['li'] . '>Dragoș Gavrilă</li>
+                        $R_html = '<div ' . 
+                        $css_data['author_contributors'] . 
+                        '><div ' . $css_data['line_break'] . '><br></div>
+                        <ul ' . $css_data['ul'] . '><li ' . 
+                        $css_data['li'] . '>Şerban Ghiţă</li>
+                        <li ' . $css_data['li'] . '>Nick Ilyin</li>
+                        <li ' . $css_data['li'] . '>Victor Stanciu</li>
+                        <li ' . $css_data['li'] . '>Dragoș Gavrilă</li>
                         </ul></div>';
 
                 break;
@@ -1717,13 +1828,10 @@ Icon by: Dragoș Gavrilă.';
                 case 'URL_HTML':
                 case 'URL_TEXT':
 
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://github.com/serbanghita/Mobile-Detect';
-                    $tmp_url_ARRAY[] = 'https://docs.mobiledetect.net/home';
-                    $tmp_url_ARRAY[] = 'https://github.com/serbanghita';
-                    $tmp_url_ARRAY[] = 'https://wordpress.org/plugins/tinywp-mobile-detect/';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://github.com/serbanghita/Mobile-Detect';
+                    $R_cache_transport_packet['url'][] = 'https://docs.mobiledetect.net/home';
+                    $R_cache_transport_packet['url'][] = 'https://github.com/serbanghita';
+                    $R_cache_transport_packet['url'][] = 'https://wordpress.org/plugins/tinywp-mobile-detect/';
 
                 break;
                 case 'COPYRIGHT':
@@ -1746,7 +1854,7 @@ Icon by: Dragoș Gavrilă.';
                      * Thursday, November 6, 2025 @ 1219 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1757,18 +1865,18 @@ Icon by: Dragoș Gavrilă.';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1785,8 +1893,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -1801,7 +1909,7 @@ Icon by: Dragoș Gavrilă.';
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -1814,8 +1922,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -1828,26 +1936,51 @@ Icon by: Dragoș Gavrilă.';
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '>Copyright <span ' . $tmp_css_data['copyright_mark'] .
-                        '>&copy;</span> 2021 Şerban Ghiţă, ' .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '>Copyright <span ' . $css_data['copyright_mark'] . 
+                        '>&copy;</span> 2021 Şerban Ghiţă, ' . 
                         'Nick Ilyin and contributors.</span>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
 
-                    return array(
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
+
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -1859,23 +1992,18 @@ Icon by: Dragoș Gavrilă.';
                 default:
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $software_company_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0752 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -1884,12 +2012,12 @@ Icon by: Dragoș Gavrilă.';
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -1904,30 +2032,28 @@ Icon by: Dragoș Gavrilă.';
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __FUNCTION__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __FUNCTION__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -1937,7 +2063,7 @@ Icon by: Dragoș Gavrilă.';
         case 'MonstaApps®':
             // 5 :: Monday, August 24, 2026 @ 1940 hrs.
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -1958,7 +2084,7 @@ Icon by: Dragoș Gavrilă.';
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1969,18 +2095,18 @@ Icon by: Dragoș Gavrilă.';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -1997,8 +2123,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -2015,7 +2141,7 @@ Icon by: Dragoș Gavrilă.';
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'MonstaApps®';
+                        $R_text = 'MonstaApps®';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2028,8 +2154,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name HTML data
@@ -2045,8 +2171,8 @@ Icon by: Dragoș Gavrilă.';
                          * Sunday, August 25, 2024 @ 1136 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] .
-                        '>MonstaApps<sup '  . $tmp_css_data['reg_mark'] .
+                        $R_html = '<span ' . $css_data['company_name'] . 
+                        '>MonstaApps<sup '  . $css_data['reg_mark'] . 
                         '>&reg;</sup></span>';
 
                 break;
@@ -2070,7 +2196,7 @@ Icon by: Dragoș Gavrilă.';
                      * Friday, November 7, 2025 @ 0328 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2081,18 +2207,18 @@ Icon by: Dragoș Gavrilă.';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2109,8 +2235,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -2122,7 +2248,7 @@ Icon by: Dragoș Gavrilă.';
                          * Sunday, August 25, 2024 @ 1134 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'MonstaApps®';
+                        $R_text = 'MonstaApps®';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2135,8 +2261,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -2152,11 +2278,11 @@ Icon by: Dragoș Gavrilă.';
                          * Sunday, August 25, 2024 @ 1134 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' .
-                        $tmp_css_data['author_contributors'] .
-                        '><a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://www.monstaftp.com/" ' .
+                        $R_html = '<span ' . 
+                        $css_data['author_contributors'] . 
+                        '><a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://www.monstaftp.com/" ' . 
                         'target="_blank">MonstaApps&reg;</a></span>';
 
                 break;
@@ -2164,10 +2290,7 @@ Icon by: Dragoș Gavrilă.';
                 case 'URL_HTML':
                 case 'URL_TEXT':
 
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://www.monstaftp.com/';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://www.monstaftp.com/';
 
                 break;
                 case 'COPYRIGHT':
@@ -2190,7 +2313,7 @@ Icon by: Dragoș Gavrilă.';
                      * Thursday, November 6, 2025 @ 1219 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2201,18 +2324,18 @@ Icon by: Dragoș Gavrilă.';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2229,8 +2352,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -2245,7 +2368,7 @@ Icon by: Dragoș Gavrilă.';
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2258,8 +2381,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -2274,25 +2397,50 @@ Icon by: Dragoș Gavrilă.';
                          * Sunday, August 25, 2024 @ 1132 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '>Copyright <span ' . $tmp_css_data['copyright_mark'] .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '>Copyright <span ' . $css_data['copyright_mark'] . 
                         '>&copy;</span> MonstaApps&reg;</span>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
 
-                    return array(
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
+
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -2304,23 +2452,18 @@ Icon by: Dragoș Gavrilă.';
                 default:
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $software_company_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0752 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -2329,12 +2472,12 @@ Icon by: Dragoș Gavrilă.';
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -2349,30 +2492,28 @@ Icon by: Dragoș Gavrilă.';
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __FUNCTION__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __FUNCTION__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -2393,7 +2534,7 @@ Icon by: Dragoș Gavrilă.';
              *
              */
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -2414,7 +2555,7 @@ Icon by: Dragoș Gavrilă.';
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2425,18 +2566,18 @@ Icon by: Dragoș Gavrilă.';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2453,8 +2594,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -2471,7 +2612,7 @@ Icon by: Dragoș Gavrilă.';
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'Nette®';
+                        $R_text = 'Nette®';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2484,8 +2625,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name HTML data
@@ -2501,8 +2642,8 @@ Icon by: Dragoș Gavrilă.';
                          * Sunday, August 25, 2024 @ 1136 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] .
-                        '>Nette<sup '  . $tmp_css_data['reg_mark'] .
+                        $R_html = '<span ' . $css_data['company_name'] . 
+                        '>Nette<sup '  . $css_data['reg_mark'] . 
                         '>&reg;</sup></span>';
 
                 break;
@@ -2526,7 +2667,7 @@ Icon by: Dragoș Gavrilă.';
                      * Friday, November 7, 2025 @ 0328 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2537,18 +2678,18 @@ Icon by: Dragoș Gavrilă.';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2565,8 +2706,8 @@ Icon by: Dragoș Gavrilă.';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -2578,7 +2719,7 @@ Icon by: Dragoș Gavrilă.';
                          * Sunday, August 25, 2024 @ 1134 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'David Grudl
+                        $R_text = 'David Grudl
 Honza Chemix Černý
 Miloslav Milo Hůla
 Milan Felix Šulc';
@@ -2594,8 +2735,8 @@ Milan Felix Šulc';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -2611,20 +2752,20 @@ Milan Felix Šulc';
                          * Sunday, August 25, 2024 @ 1134 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' .
-                        $tmp_css_data['author_contributors'] .
-                        '><a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://davidgrudl.com/" ' .
-                        'target="_blank">David Grudl</a>, <a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://honzacerny.com/" ' .
-                        'target="_blank">Honza Chemix Černý</a>, <a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://github.com/milo" ' .
-                        'target="_blank">Miloslav Milo Hůla</a>, <a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://f3l1x.io/" ' .
+                        $R_html = '<span ' . 
+                        $css_data['author_contributors'] . 
+                        '><a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://davidgrudl.com/" ' . 
+                        'target="_blank">David Grudl</a>, <a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://honzacerny.com/" ' . 
+                        'target="_blank">Honza Chemix Černý</a>, <a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://github.com/milo" ' . 
+                        'target="_blank">Miloslav Milo Hůla</a>, <a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://f3l1x.io/" ' . 
                         'target="_blank">Milan Felix Šulc</a></span>';
 
                 break;
@@ -2632,13 +2773,10 @@ Milan Felix Šulc';
                 case 'URL_HTML':
                 case 'URL_TEXT':
 
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://github.com/nette/mail';
-                    $tmp_url_ARRAY[] = 'https://doc.nette.org/en/mail';
-                    $tmp_url_ARRAY[] = 'https://doc.nette.org/mailing';
-                    $tmp_url_ARRAY[] = 'https://davidgrudl.com/';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://github.com/nette/mail';
+                    $R_cache_transport_packet['url'][] = 'https://doc.nette.org/en/mail';
+                    $R_cache_transport_packet['url'][] = 'https://doc.nette.org/mailing';
+                    $R_cache_transport_packet['url'][] = 'https://davidgrudl.com/';
 
                 break;
                 case 'COPYRIGHT':
@@ -2661,7 +2799,7 @@ Milan Felix Šulc';
                      * Thursday, November 6, 2025 @ 1219 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2672,18 +2810,18 @@ Milan Felix Šulc';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2700,8 +2838,8 @@ Milan Felix Šulc';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -2716,7 +2854,7 @@ Milan Felix Šulc';
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2729,8 +2867,8 @@ Milan Felix Šulc';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -2745,27 +2883,52 @@ Milan Felix Šulc';
                          * Sunday, August 25, 2024 @ 1132 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '>Copyright <span ' . $tmp_css_data['copyright_mark'] .
-                        '>&copy;</span>2004 David Grudl ' .
-                        '(<a href="https://davidgrudl.com" ' .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '>Copyright <span ' . $css_data['copyright_mark'] . 
+                        '>&copy;</span>2004 David Grudl ' . 
+                        '(<a href="https://davidgrudl.com" ' . 
                         'target="_blank">https://davidgrudl.com</a>)</span>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
 
-                    return array(
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
+
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -2777,23 +2940,18 @@ Milan Felix Šulc';
                 default:
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $software_company_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0752 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -2802,12 +2960,12 @@ Milan Felix Šulc';
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -2822,30 +2980,28 @@ Milan Felix Šulc';
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __FUNCTION__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __FUNCTION__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -2855,7 +3011,7 @@ Milan Felix Šulc';
         case 'NuSphere Corporation':
             // 5 :: Friday, April 17, 2026 @ 1220 hrs.
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -2876,7 +3032,7 @@ Milan Felix Šulc';
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2887,18 +3043,18 @@ Milan Felix Šulc';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -2915,8 +3071,8 @@ Milan Felix Šulc';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -2933,7 +3089,7 @@ Milan Felix Šulc';
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'NuSphere Corporation';
+                        $R_text = 'NuSphere Corporation';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -2946,8 +3102,8 @@ Milan Felix Šulc';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name HTML data
@@ -2961,9 +3117,9 @@ Milan Felix Šulc';
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] .
-                        '><a ' . $tmp_css_data['copy_a'] .
-                        ' href="http://www.nusphere.com" target="_blank">' .
+                        $R_html = '<span ' . $css_data['company_name'] . 
+                        '><a ' . $css_data['copy_a'] . 
+                        ' href="http://www.nusphere.com" target="_blank">' . 
                         'NuSphere Corporation</a></span>';
 
                 break;
@@ -2987,7 +3143,7 @@ Milan Felix Šulc';
                      * Friday, November 7, 2025 @ 0328 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2998,18 +3154,18 @@ Milan Felix Šulc';
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -3026,8 +3182,8 @@ Milan Felix Šulc';
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -3037,7 +3193,7 @@ Milan Felix Šulc';
                          * 5
                          *
                          */
-                        $tmp_data_TEXT = 'NuSphere and Dietrich Ayala. 
+                        $R_text = 'NuSphere and Dietrich Ayala. 
 
 Scott Nichol. 
 
@@ -3055,8 +3211,8 @@ Hey! I am Milan Šulc better known as Felix. I do code for a living.';
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -3070,22 +3226,22 @@ Hey! I am Milan Šulc better known as Felix. I do code for a living.';
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<div ' .
-                        $tmp_css_data['author_contributors'] .
-                        '><div ' . $tmp_css_data['line_break'] . '><br></div>
-                        <ul ' . $tmp_css_data['ul'] . '><li ' . $tmp_css_data['li'] . '>' .
-                        '<a ' . $tmp_css_data['copy_a'] .
-                        ' href="http://www.nusphere.com" target="_blank">' .
+                        $R_html = '<div ' . 
+                        $css_data['author_contributors'] . 
+                        '><div ' . $css_data['line_break'] . '><br></div>
+                        <ul ' . $css_data['ul'] . '><li ' . $css_data['li'] . '>' . 
+                        '<a ' . $css_data['copy_a'] . 
+                        ' href="http://www.nusphere.com" target="_blank">' . 
                         'NuSphere</a> and Dietrich Ayala</li>
-    
-<li ' . $tmp_css_data['li'] . '>Scott Nichol</li>
 
-<li ' . $tmp_css_data['li'] . '><strong>f3l1x</strong><br>
-Hey! I am Milan Šulc better known as ' .
-'<a ' . $tmp_css_data['copy_a'] .
-' href="https://f3l1x.io/" target="_blank">Felix</a>. I do  ' .
-'<a ' . $tmp_css_data['copy_a'] .
-' href="https://github.com/f3l1x" target="_blank">' .
+<li ' . $css_data['li'] . '>Scott Nichol</li>
+
+<li ' . $css_data['li'] . '><strong>f3l1x</strong><br>
+Hey! I am Milan Šulc better known as ' . 
+'<a ' . $css_data['copy_a'] . 
+' href="https://f3l1x.io/" target="_blank">Felix</a>. I do  ' . 
+'<a ' . $css_data['copy_a'] . 
+' href="https://github.com/f3l1x" target="_blank">' . 
 'code for a living</a>.</li></ul></div>';
 
                 break;
@@ -3093,15 +3249,12 @@ Hey! I am Milan Šulc better known as ' .
                 case 'URL_HTML':
                 case 'URL_TEXT':
 
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://github.com/f00b4r/nusoap';
-                    $tmp_url_ARRAY[] = 'https://github.com/f3l1x';
-                    $tmp_url_ARRAY[] = 'https://x.com/xf3l1x';
-                    $tmp_url_ARRAY[] = 'http://sourceforge.net/projects/nusoap/';
-                    //$tmp_url_ARRAY[] = 'http://dietrich.ganx4.com/nusoap';
-                    $tmp_url_ARRAY[] = 'http://www.nusphere.com';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://github.com/f00b4r/nusoap';
+                    $R_cache_transport_packet['url'][] = 'https://github.com/f3l1x';
+                    $R_cache_transport_packet['url'][] = 'https://x.com/xf3l1x';
+                    $R_cache_transport_packet['url'][] = 'http://sourceforge.net/projects/nusoap/';
+                    //$R_cache_transport_packet['url'][] = 'http://dietrich.ganx4.com/nusoap';
+                    $R_cache_transport_packet['url'][] = 'http://www.nusphere.com';
 
                 break;
                 case 'COPYRIGHT':
@@ -3124,7 +3277,7 @@ Hey! I am Milan Šulc better known as ' .
                      * Thursday, November 6, 2025 @ 1219 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -3135,18 +3288,18 @@ Hey! I am Milan Šulc better known as ' .
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -3163,8 +3316,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -3179,7 +3332,7 @@ Hey! I am Milan Šulc better known as ' .
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -3192,8 +3345,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -3206,25 +3359,50 @@ Hey! I am Milan Šulc better known as ' .
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '><span ' . $tmp_css_data['copyright_mark'] .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '><span ' . $css_data['copyright_mark'] . 
                         '>&copy;</span> 2002 NuSphere Corporation.</span>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
 
-                    return array(
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
+
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -3236,23 +3414,18 @@ Hey! I am Milan Šulc better known as ' .
                 default:
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $software_company_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0753 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -3261,12 +3434,12 @@ Hey! I am Milan Šulc better known as ' .
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -3281,30 +3454,28 @@ Hey! I am Milan Šulc better known as ' .
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __FUNCTION__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __FUNCTION__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -3314,7 +3485,7 @@ Hey! I am Milan Šulc better known as ' .
         case 'The PHP Group':
             // 5 :: Friday, April 17, 2026 @ 1223 hrs.
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -3335,7 +3506,7 @@ Hey! I am Milan Šulc better known as ' .
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -3346,18 +3517,18 @@ Hey! I am Milan Šulc better known as ' .
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -3374,8 +3545,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -3390,7 +3561,7 @@ Hey! I am Milan Šulc better known as ' .
                          * 5
                          *
                          */
-                        $tmp_data_TEXT = 'The PHP Foundation';
+                        $R_text = 'The PHP Foundation';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -3403,8 +3574,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name HTML data
@@ -3418,10 +3589,10 @@ Hey! I am Milan Šulc better known as ' .
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] . '><a ' .
-                        $tmp_css_data['copy_a'] .
-                        ' href="https://www.php.net/" target="_blank">The <span ' .
-                        $tmp_css_data['php'] . '>PHP</span> Foundation</a></span>';
+                        $R_html = '<span ' . $css_data['company_name'] . '><a ' . 
+                        $css_data['copy_a'] . 
+                        ' href="https://www.php.net/" target="_blank">The <span ' . 
+                        $css_data['php'] . '>PHP</span> Foundation</a></span>';
 
                 break;
                 case 'AUTHOR_CONTRIBUTORS':
@@ -3444,7 +3615,7 @@ Hey! I am Milan Šulc better known as ' .
                      * Friday, November 7, 2025 @ 0328 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -3455,18 +3626,18 @@ Hey! I am Milan Šulc better known as ' .
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -3483,8 +3654,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -3494,7 +3665,7 @@ Hey! I am Milan Šulc better known as ' .
                          * 5
                          *
                          */
-                        $tmp_data_TEXT = 'The PHP Foundation';
+                        $R_text = 'The PHP Foundation';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -3507,8 +3678,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -3522,9 +3693,9 @@ Hey! I am Milan Šulc better known as ' .
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' .
-                        $tmp_css_data['author_contributors'] .
-                        '>The <span ' . $tmp_css_data['php'] .
+                        $R_html = '<span ' . 
+                        $css_data['author_contributors'] . 
+                        '>The <span ' . $css_data['php'] . 
                         '>PHP</span> Foundation</span>';
 
                 break;
@@ -3532,13 +3703,10 @@ Hey! I am Milan Šulc better known as ' .
                 case 'URL_HTML':
                 case 'URL_TEXT':
 
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://www.php.net/manual/en/mysqli.construct.php';
-                    $tmp_url_ARRAY[] = 'https://www.php.net/manual/en/copyright.php';
-                    $tmp_url_ARRAY[] = 'https://www.php.net/manual/en/cc.license.php';
-                    $tmp_url_ARRAY[] = 'http://creativecommons.org/licenses/by/3.0/';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://www.php.net/manual/en/mysqli.construct.php';
+                    $R_cache_transport_packet['url'][] = 'https://www.php.net/manual/en/copyright.php';
+                    $R_cache_transport_packet['url'][] = 'https://www.php.net/manual/en/cc.license.php';
+                    $R_cache_transport_packet['url'][] = 'http://creativecommons.org/licenses/by/3.0/';
 
                 break;
                 case 'COPYRIGHT':
@@ -3561,7 +3729,7 @@ Hey! I am Milan Šulc better known as ' .
                      * Thursday, November 6, 2025 @ 1219 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -3572,18 +3740,18 @@ Hey! I am Milan Šulc better known as ' .
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -3600,8 +3768,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data
                          * parameter variable name in
@@ -3616,7 +3784,7 @@ Hey! I am Milan Šulc better known as ' .
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -3629,8 +3797,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') ||
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') ||
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -3643,26 +3811,51 @@ Hey! I am Milan Šulc better known as ' .
                          * 5
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '><span ' . $tmp_css_data['copyright_mark'] .
-                        '>&copy;</span> 2001-2024 The <span ' . $tmp_css_data['php'] .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '><span ' . $css_data['copyright_mark'] . 
+                        '>&copy;</span> 2001-2024 The <span ' . $css_data['php'] . 
                         '>PHP</span> Group</span>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
 
-                    return array(
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
+
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -3674,33 +3867,28 @@ Hey! I am Milan Šulc better known as ' .
                                            'ALT' => 'eVifweb® development'),
                     'STACHE'            => array('TARGET' => '_blank',
                                            'URL' => 'https://jony5.com/',
-                                           'ALT' => 'Jonathan \'5\' Harris, CEO, ' .
-                                           'CTO, Lead Full Stack Developer, ' .
-                                           'Chief Creative here at eVifweb® ' .
-                                           '(as of 2025), and a ravenous ' .
+                                           'ALT' => 'Jonathan \'5\' Harris, CEO, ' . 
+                                           'CTO, Lead Full Stack Developer, ' . 
+                                           'Chief Creative here at eVifweb® ' . 
+                                           '(as of 2025), and a ravenous ' . 
                                            'wolf of the tribe of Benjamin.'));
 
                 break;
                 default:
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
-                    $clr_ssl_msg = 'Unknown attribute key received [' .
-                                   $attribute .
-                                   '] for ' .
-                                   $software_company_key .
+                    $clr_ssl_msg = 'Unknown attribute key received [' . 
+                                   $R_meta_key . 
+                                   '] for ' . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__,
-                        $R,
-                        'registry_access_is_authorized',
-                         NULL,
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0753 hrs.
                         if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -3709,12 +3897,12 @@ Hey! I am Milan Šulc better known as ' .
                             $usec             = $tod['usec'];
                             $micro_time_float = $sec . '.' . \sprintf('%06d', $usec);
                             $timediff         = (float) $micro_time_float - $_SERVER['REQUEST_TIME_FLOAT'];
-                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) .
-                                                '.' . \sprintf('%06d', $usec) .
-                                                '] [func ' .
-                                                __FUNCTION__ . '] [lnum ' .
-                                                __LINE__ . '] [rtime ' .
-                                                \substr($timediff, 0, -8) .
+                            $syslog_prefix    = 'R :: [' . \strftime('%Y-%m-%d %H:%M:%S', $sec) . 
+                                                '.' . \sprintf('%06d', $usec) . 
+                                                '] [func ' . 
+                                                __FUNCTION__ . '] [lnum ' . 
+                                                __LINE__ . '] [rtime ' . 
+                                                \substr($timediff, 0, -8) . 
                                                 '] ';
                             \openlog(
                                 $syslog_prefix,
@@ -3729,30 +3917,28 @@ Hey! I am Milan Šulc better known as ' .
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token,
-                             'token_generation_date'   => $token_generation_date,
-                             'request_type'            => __FUNCTION__,
-                             'code'                    => 200,
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg,
-                        \LOG_ERR,
-                        \E_ERROR,
-                        __LINE__,
-                        __FUNCTION__,
-                        __FILE__,
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -3761,7 +3947,7 @@ Hey! I am Milan Šulc better known as ' .
         break;
         case 'PHPMailer':
 
-            switch($attribute){
+            switch($R_meta_key){
                 case 'COMPANY_NAME':
                 case 'COMPANY_NAME_HTML':
                 case 'COMPANY_NAME_TEXT':
@@ -3782,7 +3968,7 @@ Hey! I am Milan Šulc better known as ' .
                      * Friday, November 7, 2025 @ 0420 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COMPANY_NAME_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -3793,18 +3979,18 @@ Hey! I am Milan Šulc better known as ' .
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COMPANY_NAME_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COMPANY_NAME':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -3821,8 +4007,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * company name Text data
@@ -3839,7 +4025,7 @@ Hey! I am Milan Šulc better known as ' .
                          * Sunday, August 25, 2024 @ 1008 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'PHPMailer';
+                        $R_text = 'PHPMailer';
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -3852,8 +4038,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software 
                          * company name HTML data 
@@ -3869,7 +4055,7 @@ Hey! I am Milan Šulc better known as ' .
                          * Sunday, August 25, 2024 @ 1008 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['company_name'] .
+                        $R_html = '<span ' . $css_data['company_name'] . 
                         '>PHPMailer</span>';
 
                 break;
@@ -3893,7 +4079,7 @@ Hey! I am Milan Šulc better known as ' .
                      * Friday, November 7, 2025 @ 0328 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'AUTHOR_CONTRIBUTORS_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -3904,18 +4090,18 @@ Hey! I am Milan Šulc better known as ' .
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'AUTHOR_CONTRIBUTORS':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -3932,8 +4118,8 @@ Hey! I am Milan Šulc better known as ' .
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor Text
@@ -3945,9 +4131,9 @@ Hey! I am Milan Šulc better known as ' .
                          * Sunday, August 25, 2024 @ 1004 hrs.
                          *
                          */
-                        $tmp_data_TEXT = 'Development time and resources for 
+                        $R_text = 'Development time and resources for 
 PHPMailer are provided by Smartmessages.net, 
-a powerful email marketing system.
+a powerful email marketing system. 
 
 https://info.smartmessages.net/
 
@@ -3959,7 +4145,7 @@ If you\'d like to donate to say
 "thank you" to maintainers or 
 contributors, please contact them 
 through individual profile pages 
-via the contributors page.
+via the contributors page. 
 
 https://github.com/PHPMailer/PHPMailer/graphs/contributors
 
@@ -3974,23 +4160,23 @@ History
 
 - Marcus Bointon (coolbru on SF) and 
   Andy Prevost (codeworxtech) took 
-  over the project in 2004.
+  over the project in 2004. 
 
 - Became an Apache incubator project 
   on Google Code in 2010, managed 
-  by Jim Jagielski.
+  by Jim Jagielski. 
 
 - Marcus created his fork on GitHub 
-  in 2008.
+  in 2008. 
 
   https://github.com/Synchro/PHPMailer
 
 - Jim and Marcus decide to join forces 
   and use GitHub as the canonical and 
-  official repo for PHPMailer in 2013.
+  official repo for PHPMailer in 2013. 
 
 - PHPMailer moves to the PHPMailer
-  organisation on GitHub in 2013.
+  organisation on GitHub in 2013. 
 
   https://github.com/PHPMailer';
 
@@ -4005,8 +4191,8 @@ History
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * author contributor HTML data
@@ -4022,87 +4208,112 @@ History
                          * Sunday, August 25, 2024 @ 1004 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<div ' .
-                        $tmp_css_data['author_contributors'] .
+                        $R_html = '<div ' . 
+                        $css_data['author_contributors'] . 
                         '>Development time and resources for 
-PHPMailer are provided by <a ' . $tmp_css_data['copy_a'] .
+PHPMailer are provided by <a ' . $css_data['copy_a'] . 
 ' href="https://info.smartmessages.net/" target="_blank">Smartmessages.net</a>, 
-a powerful email marketing system.
+a powerful email marketing system. 
 
-<div ' . $tmp_css_data['line_break'] . '><br><br></div>
-<a ' . $tmp_css_data['copy_a'] .
-' href="https://info.smartmessages.net/" target="_blank">' .
-'<img src="https://info.smartmessages.net/wp-content/themes/smartmessages/img/vector/' .
-'smartmessages-logo.svg" width="270" height="28" ' .
+<div ' . $css_data['line_break'] . '><br><br></div>
+<a ' . $css_data['copy_a'] . 
+' href="https://info.smartmessages.net/" target="_blank">' . 
+'<img src="https://info.smartmessages.net/wp-content/themes/smartmessages/img/vector/' . 
+'smartmessages-logo.svg" width="270" height="28" ' . 
 'alt="Smartmessages email marketing"></a>
 
-<div ' . $tmp_css_data['line_break'] . '><br><br></div>
+<div ' . $css_data['line_break'] . '><br><br></div>
 Other contributions are gladly received, 
 whether in beer, T-shirts, Amazon 
 wishlist raids, or cold, hard cash. 
 
-<div ' . $tmp_css_data['line_break'] . '><br><br></div>
+<div ' . $css_data['line_break'] . '><br><br></div>
 If you\'d like to donate to say 
 &quot;thank you&quot; to maintainers or 
 contributors, please contact them 
 through individual profile pages 
-via <a ' . $tmp_css_data['copy_a'] .
-' href="https://github.com/PHPMailer/PHPMailer/graphs/' .
-'contributors" target="_blank">the contributors page</a>.
+via <a ' . $css_data['copy_a'] . 
+' href="https://github.com/PHPMailer/PHPMailer/graphs/' . 
+'contributors" target="_blank">the contributors page</a>. 
 
-<div ' . $tmp_css_data['line_break'] . '><br><br><br></div>
+<div ' . $css_data['line_break'] . '><br><br><br></div>
 History
 
-<div ' . $tmp_css_data['line_break'] . '><br></div>
-<ul ' . $tmp_css_data['ul'] . '><li ' . $tmp_css_data['li'] .
+<div ' . $css_data['line_break'] . '><br></div>
+<ul ' . $css_data['ul'] . '><li ' . $css_data['li'] . 
 '>PHPMailer was originally written in 
-2001 by Brent R. Matzelle as a ' .
-'<a ' . $tmp_css_data['copy_a'] .
-' href="http://sourceforge.net/projects/phpmailer/" target="_blank">SourceForge</a> ' .
-'<a ' . $tmp_css_data['copy_a'] .
+2001 by Brent R. Matzelle as a ' . 
+'<a ' . $css_data['copy_a'] . 
+' href="http://sourceforge.net/projects/phpmailer/" target="_blank">SourceForge</a> ' . 
+'<a ' . $css_data['copy_a'] . 
 ' href="http://sourceforge.net/projects/phpmailer/" target="_blank">project</a>.</li>
 
-<li ' . $tmp_css_data['li'] . '>Marcus Bointon (coolbru on SF) and 
+<li ' . $css_data['li'] . '>Marcus Bointon (coolbru on SF) and 
 Andy Prevost (codeworxtech) took 
 over the project in 2004.</li>
 
-<li ' . $tmp_css_data['li'] . '>Became an Apache incubator project 
+<li ' . $css_data['li'] . '>Became an Apache incubator project 
 on Google Code in 2010, managed 
 by Jim Jagielski.</li>
 
-<li ' . $tmp_css_data['li'] . '>Marcus created ' .
-'<a ' . $tmp_css_data['copy_a'] .
-' href="https://github.com/Synchro/PHPMailer" target="_blank">his fork</a> on ' .
-'<a ' . $tmp_css_data['copy_a'] .
+<li ' . $css_data['li'] . '>Marcus created ' . 
+'<a ' . $css_data['copy_a'] . 
+' href="https://github.com/Synchro/PHPMailer" target="_blank">his fork</a> on ' . 
+'<a ' . $css_data['copy_a'] . 
 ' href="https://github.com/Synchro/PHPMailer" target="_blank">GitHub</a> 
 in 2008.</li>
 
-<li ' . $tmp_css_data['li'] . '>Jim and Marcus decide to join forces 
+<li ' . $css_data['li'] . '>Jim and Marcus decide to join forces 
 and use GitHub as the canonical and 
 official repo for PHPMailer in 2013.</li>
 
-<li ' . $tmp_css_data['li'] . '>PHPMailer moves to the ' .
-'<a ' . $tmp_css_data['copy_a'] .
+<li ' . $css_data['li'] . '>PHPMailer moves to the ' . 
+'<a ' . $css_data['copy_a'] . 
 ' href="https://github.com/PHPMailer" target="_blank">PHPMailer organisation</a> 
-on ' .
-'<a ' . $tmp_css_data['copy_a'] .
+on ' . 
+'<a ' . $css_data['copy_a'] . 
 ' href="https://github.com/PHPMailer" target="_blank">GitHub</a> in 2013.</li></ul></div>';
 
                 break;
                 case 'MEDIA_ELEMENT_KEY':
 
-                    return array(
+                    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+                     * L.A.M.P. stack software 
+                     * version data has been 
+                     * added to the CLR-SSL 
+                     * Registered Resources 
+                     * meta data function 
+                     * definition file in 
+                     * order to support link 
+                     * alt tag HTML generation. 
+                     *
+                     *
+                     * 5
+                     *
+                     * Saturday, July 13, 2024 @ 1400 hrs.
+                     *
+                     */
+                    if(\method_exists($R, 'process_R_resp'))
+                        if(\strlen($R->version_mysqli()) > 0)
+                            $version_mysqli = 'MySQLi v' . 
+                                              $R->version_mysqli();
+                        else
+                            $version_mysqli = 'MySQLi';
+                    else
+                        $version_mysqli = 'MySQLi';
+
+                    $R_cache_transport_packet['media_element'] = array(
                     'CRNRSTN_LOGO'      => array('TARGET' => '_blank',
                                            'URL' => 'https://lightsaber.crnrstn.jony5.com/',
-                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' .
+                                           'ALT' => 'CRNRSTN :: Lightsaber SOAP Services Layer v' . 
                                            $R->version_crnrstn()),
                     'POWER_BY_PHP'      => array('TARGET' => '_blank',
                                            'URL' => 'https://www.php.net/',
-                                           'ALT' => 'PHP v' .
+                                           'ALT' => 'PHP v' . 
                                            $R->version_php()),
                     'MYSQL_DOLPHIN'     => array('TARGET' => '_blank',
                                            'URL' => 'https://www.mysql.com/',
-                                           'ALT' => $tmp_version_mysqli),
+                                           'ALT' => $version_mysqli),
                     'APACHE_POWER'      => array('TARGET' => '_blank',
                                            'URL' => 'https://apache.org/',
                                            'ALT' => 'Powered by Apache'),
@@ -4115,13 +4326,10 @@ on ' .
                 case 'URL_HTML':
                 case 'URL_TEXT':
 
-                    $tmp_url_ARRAY = \array();
-                    $tmp_url_ARRAY[] = 'https://github.com/PHPMailer/PHPMailer';
-                    $tmp_url_ARRAY[] = 'http://phpmailer.github.io/PHPMailer/';
-                    $tmp_url_ARRAY[] = 'https://sourceforge.net/projects/phpmailer/';
-                    $tmp_url_ARRAY[] = 'https://twitter.com/smartmessages';
-
-                    return $R->get_link_data('CRNRSTN_ARRAY', $tmp_url_ARRAY, false, true);
+                    $R_cache_transport_packet['url'][] = 'https://github.com/PHPMailer/PHPMailer';
+                    $R_cache_transport_packet['url'][] = 'http://phpmailer.github.io/PHPMailer/';
+                    $R_cache_transport_packet['url'][] = 'https://sourceforge.net/projects/phpmailer/';
+                    $R_cache_transport_packet['url'][] = 'https://twitter.com/smartmessages';
 
                 break;
                 case 'COPYRIGHT':
@@ -4144,7 +4352,7 @@ on ' .
                      * Thursday, November 6, 2025 @ 1219 hrs.
                      *
                      */
-                    switch($attribute){
+                    switch($R_meta_key){
                         case 'COPYRIGHT_HTML':
 
                             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -4155,18 +4363,18 @@ on ' .
                              * - 'MULTI-PART'.
                              *
                              */
-                            $tmp_multi_part_output_mode = 'HTML';
+                            $output_mode = 'HTML';
 
                         break;
                         case 'COPYRIGHT_TEXT':
 
-                            $tmp_multi_part_output_mode = 'TEXT';
+                            $output_mode = 'TEXT';
 
                         break;
                         case 'COPYRIGHT':
                         default:
 
-                            $tmp_multi_part_output_mode = 'MULTI-PART';
+                            $output_mode = 'MULTI-PART';
 
                         break;
 
@@ -4183,8 +4391,8 @@ on ' .
                      * 5 :: Thursday, November 6, 2025 @ 0336 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'TEXT') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'TEXT') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Standardize the Text data 
                          * parameter variable name in 
@@ -4199,7 +4407,7 @@ on ' .
                          * Thursday, October 30, 2025 @ 1420 hrs.
                          *
                          */
-                        $tmp_data_TEXT = $resource_copyright_text;
+                        $R_text = $R_resp[$memory_pointer]['copyright'][$R_resp[$memory_pointer]['software_default']];
 
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * Do we temporarily load the
@@ -4212,8 +4420,8 @@ on ' .
                      * 5 :: Thursday, November 6, 2025 @ 0338 hrs.
                      *
                      */
-                    if(($tmp_multi_part_output_mode == 'HTML') || 
-                        ($tmp_multi_part_output_mode == 'MULTI-PART'))
+                    if(($output_mode == 'HTML') || 
+                        ($output_mode == 'MULTI-PART'))
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                          * Initialize the software
                          * copyright HTML data for this
@@ -4228,12 +4436,12 @@ on ' .
                          * Sunday, August 25, 2024 @ 0602 hrs.
                          *
                          */
-                        $tmp_data_HTML = '<span ' . $tmp_css_data['copyright'] .
-                        '><span ' . $tmp_css_data['copyright_mark'] .
-                        '>&copy;</span> 2012 - 2017 Marcus Bointon. ' .
-                        '<span ' . $tmp_css_data['copyright_mark'] .
-                        '>&copy;</span> 2010 - 2012 Jim Jagielski. ' .
-                        '<span ' . $tmp_css_data['copyright_mark'] .
+                        $R_html = '<span ' . $css_data['copyright'] . 
+                        '><span ' . $css_data['copyright_mark'] . 
+                        '>&copy;</span> 2012 - 2017 Marcus Bointon. ' . 
+                        '<span ' . $css_data['copyright_mark'] . 
+                        '>&copy;</span> 2010 - 2012 Jim Jagielski. ' . 
+                        '<span ' . $css_data['copyright_mark'] . 
                         '>&copy;</span> 2004 - 2009 Andy Prevost.</span>';
 
                 break;
@@ -4241,22 +4449,17 @@ on ' .
                     // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
                     $clr_ssl_msg = 'Unknown attribute key received [' . 
-                                   $attribute . 
+                                   $R_meta_key . 
                                    '] for ' . 
-                                   $software_company_key . 
+                                   $R_resp[$memory_pointer]['software_company']['key'] . 
                                    '. Unable to return copy data.';
 
-                    if(!(_crnrstn_native_resource_registry(
-                        __FUNCTION__, 
-                        $R, 
-                        'registry_access_is_authorized',
-                         NULL, 
-                         $R_debug_mode) !== false))
-                    {
+                    if(!\method_exists($R, 'process_R_resp')){
 
                         // 5 :: Tuesday, May 19, 2026 @ 0747 hrs.
-                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                        if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                            ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                            ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                         {
 
                             $syslog_level     = LOG_WARNING;
@@ -4285,30 +4488,28 @@ on ' .
 
                         }
 
-                        return false;
+                    }else{
+
+                        // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                                     'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                        $token = array(
+                                 'token'                   => $msg_token,
+                                 'token_generation_date'   => $token_generation_date,
+                                 'request_type'            => __FUNCTION__,
+                                 'code'                    => 200,
+                                 'clr_ssl_msg'             => $clr_ssl_msg);
+                        $R->error_log(
+                            $clr_ssl_msg,
+                            \LOG_ERR,
+                            \E_ERROR,
+                            __LINE__,
+                            __FUNCTION__,
+                            __FILE__,
+                            $token);
 
                     }
-
-                    // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-                    $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                                 'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-                    $token = array(
-                             'token'                   => $msg_token, 
-                             'token_generation_date'   => $token_generation_date, 
-                             'request_type'            => __FUNCTION__, 
-                             'code'                    => 200, 
-                             'clr_ssl_msg'             => $clr_ssl_msg);
-                    $R->error_log(
-                        $clr_ssl_msg, 
-                        \LOG_ERR, 
-                        \E_ERROR, 
-                        __LINE__, 
-                        __FUNCTION__, 
-                        __FILE__, 
-                        $token);
-
-                    return false;
 
                 break;
 
@@ -4319,20 +4520,15 @@ on ' .
             // 5 :: Friday, April 17, 2026 @ 1040 hrs.
 
             $clr_ssl_msg = 'Unknown key received [' . 
-                           $software_company_key . 
+                           $R_resp[$memory_pointer]['software_company']['key'] . 
                            ']. Unable to return copy data.';
 
-            if(!(_crnrstn_native_resource_registry(
-                __FUNCTION__, 
-                $R, 
-                'registry_access_is_authorized',
-                 NULL, 
-                 $R_debug_mode) !== false))
-            {
+            if(!\method_exists($R, 'process_R_resp')){
 
                 // 5 :: Tuesday, May 19, 2026 @ 0754 hrs.
-                if(($R_debug_mode === CRNRSTN_DEBUG_ON) || 
-                    ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG))
+                if(($R_debug_mode === CRNRSTN_DEBUG_ON) ||
+                    ($R_debug_mode === CRNRSTN_DEBUG_SYSLOG) ||
+                    ($R_debug_mode === CRNRSTN_SYSTEM_TEST))
                 {
 
                     $syslog_level     = LOG_WARNING;
@@ -4361,30 +4557,28 @@ on ' .
 
                 }
 
-                return false;
+            }else{
+
+                // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+                $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
+                             'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                $token = array(
+                         'token'                   => $msg_token,
+                         'token_generation_date'   => $token_generation_date,
+                         'request_type'            => __FUNCTION__,
+                         'code'                    => 200,
+                         'clr_ssl_msg'             => $clr_ssl_msg);
+                $R->error_log(
+                    $clr_ssl_msg,
+                    \LOG_ERR,
+                    \E_ERROR,
+                    __LINE__,
+                    __FUNCTION__,
+                    __FILE__,
+                    $token);
 
             }
-
-            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
-            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' . 
-                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
-            $token = array(
-                     'token'                   => $msg_token, 
-                     'token_generation_date'   => $token_generation_date, 
-                     'request_type'            => __FUNCTION__, 
-                     'code'                    => 200, 
-                     'clr_ssl_msg'             => $clr_ssl_msg);
-            $R->error_log(
-                $clr_ssl_msg, 
-                \LOG_ERR, 
-                \E_ERROR, 
-                __LINE__, 
-                __FUNCTION__, 
-                __FILE__, 
-                $token);
-
-            return false;
 
         break;
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -4399,7 +4593,7 @@ on ' .
          * -----
          * case 'CORP_0004':
          *
-         *  switch($attribute){
+         *  switch($R_meta_key){
          *      case 'COMPANY_NAME':
          *      case 'COMPANY_NAME_HTML':
          *      case 'COMPANY_NAME_TEXT':
@@ -4427,9 +4621,9 @@ on ' .
          *          // 5 :: Friday, April 17, 2026 @ 1040 hrs.
          *
          *          $tmp_err_str = 'Unknown attribute key received [' . 
-         *                         $attribute . 
+         *                         $R_meta_key . 
          *                         '] for ' . 
-         *                         $software_company_key . 
+         *                         $R_resp[$memory_pointer]['software_company']['key'] . 
          *                         '. Unable to return copy data.';
          *
          *          switch(\get_class($R)){
@@ -4462,5 +4656,61 @@ on ' .
          */
 
     }
+
+
+    /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+     * Prepare the string 
+     * data for UI/UX/SOAP 
+     * content return, and 
+     * return the output. 
+     *
+     * This will articulate the 
+     * most exterior membrane of the 
+     * CRNRSTN :: Lightsaber RoCEv2 
+     * SOAP Services Layer's 
+     * Document Object Model (DOM) 
+     * HTML/Text Resource Type 
+     * Output Control Services 
+     * Layer for: 
+     * - directly integrating 
+     *   CLR-SSL Libraries with the 
+     *   response output architecture 
+     *   of the SOAP services layer 
+     *   of the CLR-SSL, 
+     * - directly integrating 
+     *   CLR-SSL Libraries with the 
+     *   Multi-Language Services 
+     *   Layer of the CLR-SSL, 
+     * - exposing all CLR-SSL Library 
+     *   content to HMAC Hash supported 
+     *   content versioning and 
+     *   CLR-SSL powered version 
+     *   control integrations on 
+     *   top of SOAP, and 
+     * - directly integrating 
+     *   the application of a tight 
+     *   search indexing algorithm 
+     *   for all software, corporate, 
+     *   license, and social media 
+     *   CLR-SSL Resource Registry 
+     *   Library meta data. 
+     *
+     *
+     * 5
+     *
+     * Sunday, August 25, 2024 @ 0723 hrs.
+     *
+     */
+    return $R->soap_data_initialization_cache_output(
+               $R_resp[$memory_pointer]['iso_lang_code'],
+               $R_meta_key,
+               $R_text,
+               $R_html,
+               NULL,
+               $R_cache_transport_packet,
+               $output_mode,
+               $generate_version_sync_hash,
+               $generate_search_algorithm_data,
+               $css_data);
 
 }

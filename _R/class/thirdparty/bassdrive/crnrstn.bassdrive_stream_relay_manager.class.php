@@ -271,7 +271,7 @@ namespace CRNRSTN;
  *                     Bassdrive.com Radio Show
  *                     Broadcast JSON Stream
  *                     Relay Manager.
- *                  
+ *
  *                     Here is an example
  *                     of a Bassdrive.com
  *                     stream "relays" JSON 
@@ -288,7 +288,7 @@ namespace CRNRSTN;
  *                     from 2021: 
  *
  *                     https://lightsaber.crnrstn.jony5.com/_tmp_diagrams/bassdrive_dirty_shit/kos.mos.music/
- *                  
+ *
  *                     {
  *                     "relays" : [
  *                        {
@@ -358,7 +358,7 @@ namespace CRNRSTN;
  *                           "title" : "Kos.Mos Music Presents Phuture - hosted by Freestylers"
  *                        }
  *                       ],
- *       
+ *
  *                     "stats" : [
  *                        {
  *                           "bandwidth" : 22.13,
@@ -411,7 +411,7 @@ namespace CRNRSTN;
  *                           "bandwidthFormat" : "megabit"
  *                        }
  *                       ],
- *       
+ *
  *                     "nowplaying" : [
  *                        {
  *                           "name" : "Kos.Mos Music Presents Phuture - hosted by Freestylers",
@@ -423,7 +423,7 @@ namespace CRNRSTN;
  *                        }
  *                       ]
  *                     }
- *                  
+ *
  *                     ❤ ❤ C ❤ R ❤ N ❤ R ❤ S ❤ T ❤ N ❤ : : ❤ ❤ ❤ ❤
  *                     In memory of my best and longest (15+ years)
  *                     drinking buddy, J5,...who would have turned

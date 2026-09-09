@@ -325,7 +325,8 @@ class crnrstn_configuration_manager extends crnrstn
      *
      */
 
-    private $R_data;
+    private $_R     = array();
+    private $R_data = array();
 
     private static $system_profile_data_key_map_ARRAY = array();
 
@@ -374,20 +375,23 @@ class crnrstn_configuration_manager extends crnrstn
          *       Sips Coca-Cola® Classic. 
          *
          */
-        $this->R_data['channels']        = $this->get_crnrstn('channels');
-        $this->R_data['R_cluster_id']    = $this->get_crnrstn('R_cluster_id');
-        $this->R_data['R_node_id']       = $this->get_crnrstn('R_node_id');
-        $this->R_data['R_kivotos_index'] = $this->get_kivotos('R_kivotos_index');
-        $this->R['kivotos']              = $this->R_data_write(
-                                                  __METHOD__,
-                                                  'R_kivotos');
+        $this->R_data['channels']          = $this->get_crnrstn('channels');
+        $this->R_data['R_cluster_id']      = $this->get_crnrstn('R_cluster_id');
+        $this->R_data['R_node_id']         = $this->get_crnrstn('R_node_id');
+        $this->_R['kivotos']['method_mgr'] = $R_method_manager;
+        $this->_R['kivotos']['link_mgr']   = $R_link_manager;
+        $this->_R['kivotos']['ddo']        = $R_ddo;
 
-        // $this->initialize_resource('crnrstn_method_manager', $R_method_manager);
-        // $this->initialize_resource('crnrstn_link_manager', $R_link_manager);
-        // $this->initialize_resource('crnrstn_decoupled_data_object', $R_ddo);
-        $this->R[$this->R_data['R_kivotos_index'][\get_class($R_method_manager)]['public_key']] = $R_method_manager;
-        $this->R[$this->R_data['R_kivotos_index'][\get_class($R_link_manager)]['public_key']]   = $R_link_manager;
-        $this->R[$this->R_data['R_kivotos_index'][\get_class($R_ddo)]['public_key']]            = $R_ddo;
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Configure this environment for
+         * the CRNRSTN :: Lightsaber RoCEv2
+         * SOAP Services Layer. The CLR-SSL.
+         *
+         *
+         * 5 :: Friday, August 28, 2026 @ 2212 hrs.
+         *
+         */
+        $this->config_detect_environment();
 
     }
 
@@ -437,9 +441,9 @@ class crnrstn_configuration_manager extends crnrstn
                 // 5 :: Thursday, August 20, 2026 @ xxxx hrs.
                 $this->compound_ointment(
                        $spice_salt_mem_ptr,
-                       'crnrstn_bitmask');
+                       'bitmask');
                 $this->anoint(
-                       'crnrstn_bitmask',
+                       'bitmask',
                        $R_bitmask);
 
                 */
@@ -474,13 +478,13 @@ class crnrstn_configuration_manager extends crnrstn
                 // 5 :: Thursday, August 20, 2026 @ xxxx hrs.
                 $this->compound_ointment(
                        $spice_salt_mem_ptr,
-                       'crnrstn_bitmask');
+                       'bitmask');
                 $this->anoint(
-                       'crnrstn_bitmask',
+                       'bitmask',
                        $R_bitmask);
 
                 */
-                $this->R['kivotos']->R['link_manager'] = $data;
+                $this->R['kivotos']->R['link_mgr'] = $data;
 
             break;
             case __NAMESPACE__ . '\crnrstn_decoupled_data_object':
@@ -603,11 +607,11 @@ class crnrstn_configuration_manager extends crnrstn
              $to_plaid = false)
     {
 
-        return $this->R['kivotos']->R['link_manager']->get_link_data(
-                                                       $data_type,
-                                                       $url,
-                                                       $unit_test,
-                                                       $to_plaid);
+        return $this->R['kivotos']->R['link_mgr']->get_link_data(
+                                                   $data_type,
+                                                   $url,
+                                                   $unit_test,
+                                                   $to_plaid);
 
     }
 
@@ -1429,7 +1433,7 @@ class crnrstn_configuration_manager extends crnrstn
 //
 //                //
 //                // WE COULD NOT FIND THE REQUESTED DATA KEY IN THE SYSTEM.
-//                
+//
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
                      * HOOOSTON, VE HAFF PROBLEM!
                      * https://www.wired.com/2011/04/alt-text-spacecraft/

@@ -296,9 +296,9 @@ namespace CRNRSTN;
  * CRNRSTN :: DEFAULTS WINDOWS 
  * SYSTEMS TO os_bit_size = (int) 64.
  * THEREFORE, IF NEEDED AND UNTIL 
- * I CAN GET TESTED WINDOWS COMMANDS,
+ * I CAN GET TESTED WINDOWS COMMANDS, 
  * PLEASE SET os_bit_size = (int) 32 HERE, 
- * FOR WINDOWS. WHERE,
+ * FOR WINDOWS. WHERE, 
  *
  * Note: PASS $os_bit_size, AND CRNRSTN :: 
  *       WILL RUN: 
@@ -334,11 +334,11 @@ namespace CRNRSTN;
  *         5 :: Wednesday, October 4, 2023 @ 1232 hrs.
  *
  *         config_disk_byte_settings_overrides(
- *           $env_key = CRNRSTN_RESOURCE_ALL,
- *           $os_bit_size = NULL,
- *           $max_write_file_size = NULL,
- *           $crnrstn_file_bytes_reserve = NULL,
- *           $max_write_volume_size = NULL,
+ *           $env_key = CRNRSTN_RESOURCE_ALL, 
+ *           $os_bit_size = NULL, 
+ *           $max_write_file_size = NULL, 
+ *           $crnrstn_file_bytes_reserve = NULL, 
+ *           $max_write_volume_size = NULL, 
  *           $crnrstn_volume_bytes_reserve = NULL);
  *
  */ 
@@ -399,12 +399,12 @@ $this->config_disk_byte_settings_overrides(
  *         5 :: Wednesday, October 4, 2023 @ 1233 hrs.
  *
  *         config_disk_max_item_count_overrides(
- *           $env_key = CRNRSTN_RESOURCE_ALL,
- *           $max_count_folder_items = NULL,
- *           $crnrstn_folder_items_reserve = NULL,
- *           $max_count_volume_items = NULL,
- *           $crnrstn_volume_items_reserve = NULL,
- *           $crnrstn_max_length_filename = NULL,
+ *           $env_key = CRNRSTN_RESOURCE_ALL, 
+ *           $max_count_folder_items = NULL, 
+ *           $crnrstn_folder_items_reserve = NULL, 
+ *           $max_count_volume_items = NULL, 
+ *           $crnrstn_volume_items_reserve = NULL, 
+ *           $crnrstn_max_length_filename = NULL, 
  *           $crnrstn_max_length_filepath = NULL);
  *
  */ 
@@ -426,11 +426,11 @@ $this->config_disk_max_item_count_overrides(
  *         5 :: Wednesday, October 4, 2023 @ 1233 hrs.
  * 
  *         config_database_network_overrides(
- *           $env_key = CRNRSTN_RESOURCE_ALL,
- *           $crnrstn_soap_services_enabled = NULL,
- *           $crnrstn_slow_queries_acceleration_enabled = NULL,
- *           $max_connections = NULL,
- *           $connection_keepalive = NULL,
+ *           $env_key = CRNRSTN_RESOURCE_ALL, 
+ *           $crnrstn_soap_services_enabled = NULL, 
+ *           $crnrstn_slow_queries_acceleration_enabled = NULL, 
+ *           $max_connections = NULL, 
+ *           $connection_keepalive = NULL, 
  *           $connection_ttl = NULL);
  *
  */ 
@@ -449,13 +449,13 @@ $this->config_database_network_overrides(
  *         5 :: Wednesday, October 4, 2023 @ 1233 hrs.
  *
  *         config_database_throughput_overrides(
- *           $env_key = CRNRSTN_RESOURCE_ALL,
- *           $crnrstn_query_cache_enabled = NULL,
- *           $crnrstn_results_cache_enabled = NULL,
- *           $max_allowed_packet_bytes = NULL,
- *           $max_cache_packet_bytes = NULL,
- *           $cache_ttl_packet = NULL,
- *           $max_cache_results_bytes = NULL,
+ *           $env_key = CRNRSTN_RESOURCE_ALL, 
+ *           $crnrstn_query_cache_enabled = NULL, 
+ *           $crnrstn_results_cache_enabled = NULL, 
+ *           $max_allowed_packet_bytes = NULL, 
+ *           $max_cache_packet_bytes = NULL, 
+ *           $cache_ttl_packet = NULL, 
+ *           $max_cache_results_bytes = NULL, 
  *           $cache_ttl_results = NULL);
  *
  * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -482,9 +482,9 @@ $this->config_database_throughput_overrides(
  *         5 :: Wednesday, October 4, 2023 @ 1233 hrs.
  *
  *         config_database_shard_overrides(
- *           $env_key = CRNRSTN_RESOURCE_ALL,
- *           $table_prefix = NULL,
- *           $max_table_record_count = NULL,
+ *           $env_key = CRNRSTN_RESOURCE_ALL, 
+ *           $table_prefix = NULL, 
+ *           $max_table_record_count = NULL, 
  *           $shard_ttl = NULL);
  *
  */ 
@@ -501,15 +501,15 @@ $this->config_database_shard_overrides(
  *         5 :: Wednesday, October 4, 2023 @ 1233 hrs.
  *
  *         config_electrum_overrides(
- *           $env_key = CRNRSTN_RESOURCE_ALL,
- *           $max_bytes_throughput = NULL,
- *           $max_pid_threads = NULL,
- *           $max_conn_ftp = NULL,
- *           $ftp_conn_timeout = NULL,
- *           $max_cpu_load_percentage = NULL,
- *           $max_memory_usage_bytes = NULL,
- *           $max_incoming_data_connections,
- *           $max_outgoing_data_connections,
+ *           $env_key = CRNRSTN_RESOURCE_ALL, 
+ *           $max_bytes_throughput = NULL, 
+ *           $max_pid_threads = NULL, 
+ *           $max_conn_ftp = NULL, 
+ *           $ftp_conn_timeout = NULL, 
+ *           $max_cpu_load_percentage = NULL, 
+ *           $max_memory_usage_bytes = NULL, 
+ *           $max_incoming_data_connections, 
+ *           $max_outgoing_data_connections, 
  *           $ftp_graceful_degrade = NULL);
  *
  * Note: $ftp_graceful_degrade = true
@@ -540,10 +540,10 @@ $this->config_electrum_overrides(
  *         5 :: Wednesday, October 4, 2023 @ 1234 hrs.
  *
  *         config_wethrbug_overrides(
- *           $env_key = CRNRSTN_RESOURCE_ALL,
- *           $default_zipcode = NULL,
- *           $forecast_length = NULL,
- *           $default_units_celsius = NULL,
+ *           $env_key = CRNRSTN_RESOURCE_ALL, 
+ *           $default_zipcode = NULL, 
+ *           $forecast_length = NULL, 
+ *           $default_units_celsius = NULL, 
  *           $database_enabled = NULL
  * );
  *

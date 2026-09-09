@@ -540,9 +540,9 @@ class lightbox_helper_by_eVifweb extends crnrstn
             // 5 :: Thursday, August 20, 2026 @ xxxx hrs.
             $this->compound_ointment(
                    $spice_salt_mem_ptr,
-                   'crnrstn_bitmask');
+                   'bitmask');
             $this->anoint(
-                   'crnrstn_bitmask',
+                   'bitmask',
                    $R_bitmask);
 
             */
@@ -675,7 +675,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
              * IS_ACTIVE                    => 1
              * LOAD_CONTROL_PROFILE         => -1 
              *
-             * where, LOAD_CONTROL_PROFILE =            
+             * where, LOAD_CONTROL_PROFILE =
              *        (int) CRNRSTN_LOAD_1_TO_1_SESSION, 9878,
              *        (int) CRNRSTN_LOAD_1_TO_1_REQUEST, 9879.
              * 
@@ -706,7 +706,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
              * Where RESOURCE_TYPE = 
              * 'SOAP_ENDPOINT', 
              * 'CLASS_DEFINITION', 
-             * 'FUNCTION_DEFINITION', or  
+             * 'FUNCTION_DEFINITION', or 
              * 'RUNTIME_OPERATION'. 
              *
              * Where LOAD_METHOD = 
@@ -1158,7 +1158,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
              $R_syntax = NULL)
     {
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Copied method token_log from  
+         * Copied method token_log from 
          * the crnrstn class object to 
          * lightbox_helper_by_eVifweb for 
          * tracking notable CLR-SSL 
@@ -1469,7 +1469,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
             }
 
         }
-        
+
         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * if(isset($queue_mem_pointer)){
          *
@@ -1955,7 +1955,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
             error_log('[lnum ' . __LINE__ . '] [' . __METHOD__ . '] $registry_name[' . print_r($registry_name, true) .
             ']. $file_path[' . print_r($file_path, true) . ']. $resource_type[' . print_r($resource_type, true) .
             ']. $load_method[' . print_r($load_method, true) . ']. ');
-            
+
             /**
             [Fri Jul 12 11:28:21.740728 2024] [:error] [pid 86793] [client 172.16.225.1:51565] [lnum 1129]
             [lightbox_helper_by_eVifweb::is_valid_registered_resources_to_load]
@@ -6027,20 +6027,22 @@ class lightbox_helper_by_eVifweb extends crnrstn
 
     }
 
-    public function config_is_valid_detected_env(
-                    $env_key, 
-                    $force_detection = true)
+    function config_is_valid_detected_env(
+             $env_key,
+             $force_detection = true)
     {
 
-        //
-        // Is the environment detected?
-        if(!isset(self::$env_key_hash_config_ARRAY[self::$config_serial]) && 
-            $force_detection == true)
-        {
-
+        /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
+         * Before we articulate the CLR-SSL
+         * UGC Configuration Input Services Layer,
+         * are we able to generate keys?
+         *
+         *
+         * 5 :: Friday, August 28, 2026 @ 2129 hrs.
+         *
+         */
+        if(!isset($this->R_data['R_cluster_id']))
             return false;
-
-        }
 
         //
         // We might not have
@@ -6143,7 +6145,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
         //
         //
         // 5 :: Saturday, July 13, 2024 @ 0512 hrs.
-        $this->env_key($env_key);
+        //$this->env_key($env_key);
 
         //
         // Check and initialize (if required)
@@ -6152,7 +6154,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
         //
         //
         // 5 :: Saturday, July 13, 2024 @ 0528 hrs.
-        $this->env_key_hash_ping(self::$env_key_hash_config_ARRAY);
+        //$this->env_key_hash_ping(self::$env_key_hash_config_ARRAY);
 
         //
         // The Lightbox Helper
@@ -6167,15 +6169,15 @@ class lightbox_helper_by_eVifweb extends crnrstn
         //
         //
         // 5 :: Saturday, July 13, 2024 @ 0505 hrs.
-        if($env_key == CRNRSTN_RESOURCE_ALL || 
-            (self::$env_key_hash_config_ARRAY[self::$config_serial] == $this->hash($env_key)))
-        {
-
+        if($this->R_data['R_cluster_id'] .
+            $this->R_data['R_node_id'] == $env_key)
             return true;
 
-        }
+        // Are we forcing this?
+        if($force_detection === true)
+            return false;
 
-        return false;
+        return true;
 
     }
 
@@ -7061,7 +7063,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
                                 // I. Answer the question, 
                                 //    are we told to load the
                                 //    resource only one time?
-                                //          
+                                //
                                 //      - Check RESOURCE_TYPE.
                                 //
                                 //      - If RESOURCE_TYPE = CLASS_DEFINITION 
@@ -7073,25 +7075,25 @@ class lightbox_helper_by_eVifweb extends crnrstn
                                 //            by eVifweb® has already
                                 //            loaded the configuration
                                 //            resource.
-                                //          
+                                //
                                 //          - TODO :: Check to see if
                                 //            the server runtime already
                                 //            registers this resource
                                 //            as defined in the system.
-                                //          
+                                //
                                 //      - If RESOURCE_TYPE = RUNTIME_EXECUTABLE
                                 //        should load only one time if the
                                 //        LOAD_METHOD is require_once
                                 //        or include_once.
-                                //          
+                                //
                                 //          - If LOAD_METHOD = *_once:
-                                //          
+                                //
                                 //               - TODO :: Check to see if
                                 //                 The Lightbox Helper
                                 //                 by eVifweb® has already
                                 //                 loaded the
                                 //                 configuration resource.
-                                //          
+                                //
                                 //               - TODO :: Check to see if
                                 //                 the server runtime
                                 //                 already registers this

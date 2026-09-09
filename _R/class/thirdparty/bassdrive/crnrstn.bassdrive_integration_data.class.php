@@ -312,14 +312,14 @@ namespace CRNRSTN;
  *                     show broadcast on 
  *                     Thursday, November 11, 
  *                     2021 @ 0039 hrs.
- *                  
+ *
  *                     Listen to the actual 
  *                     Bassdrive.com live 
  *                     radio broadcast 
  *                     from 2021: 
  *
  *                     https://lightsaber.crnrstn.jony5.com/_tmp_diagrams/bassdrive_dirty_shit/kos.mos.music/
- *                  
+ *
  *                     {
  *                     "relays" : [
  *                        {
@@ -389,7 +389,7 @@ namespace CRNRSTN;
  *                           "title" : "Kos.Mos Music Presents Phuture - hosted by Freestylers"
  *                        }
  *                       ],
- *       
+ *
  *                     "stats" : [
  *                        {
  *                           "bandwidth" : 22.13,
