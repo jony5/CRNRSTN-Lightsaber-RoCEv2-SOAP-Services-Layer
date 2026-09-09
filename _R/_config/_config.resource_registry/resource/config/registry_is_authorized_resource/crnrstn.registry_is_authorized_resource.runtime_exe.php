@@ -332,5 +332,5 @@ return array(
        __NAMESPACE__ . '\nusoap_client'                          => 1,
        __NAMESPACE__ . '\wsdl'                                   => 1,
        __NAMESPACE__ . '\nusoap_base'                            => 1,
-       __NAMESPACE__ . '\PHPMailer'                      => 1);
+       __NAMESPACE__ . '\PHPMailer'                              => 1);
 //     __NAMESPACE__ . '\obj_with_access_off______0'             => 0
