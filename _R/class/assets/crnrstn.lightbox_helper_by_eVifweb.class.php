@@ -415,7 +415,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
              * SOAP Services Layer, 
              * please see, 
              * /_lightbox_helper/_config
-             * /_config.resource_registry
+             * /resource_registry
              * /crnrstn.native_resource_registry.function.php 
              *
              *
@@ -1391,8 +1391,8 @@ class lightbox_helper_by_eVifweb extends crnrstn
          * The affected system resources
          * include HTML content
          * output from:
-         *  - /_lightbox_helper/_config/_config.resource_registry/crnrstn.native_resource_registry.function.php
-         *  - /_lightbox_helper/_config/_config.resource_registry/crnrstn.native_registered_resource_content_library.function.php
+         *  - /_lightbox_helper/_config/resource_registry/crnrstn.native_resource_registry.function.php
+         *  - /_lightbox_helper/_config/resource_registry/crnrstn.native_registered_resource_content_library.function.php
          *  - /_lightbox_helper/_config/config.integer_constants/crnrstn.system_integer_bank.function.php
          *  - /_lightbox_helper/_config/config.lightbox_helper.original/
          *  - /_lightbox_helper/_config/config.system_content/crnrstn.documentation_library.function.php
@@ -1963,7 +1963,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
             $registry_name[ Array\n(\n
                             [_crnrstn_native_resource_registry] => 1\n
                             )\n].
-            $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/_config.resource_registry/crnrstn.native_resource_registry.function.php].
+            $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/resource_registry/crnrstn.native_resource_registry.function.php].
             $resource_type[FUNCTION_DEFINITION].
             $load_method[require_once].
 
@@ -1974,7 +1974,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
                 Array\n(\n
                     [_crnrstn_native_resource_registry] => 1\n
                 )\n].
-            $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/_config.resource_registry/crnrstn.native_resource_registry.function.php].
+            $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/resource_registry/crnrstn.native_resource_registry.function.php].
 
             $resource_type[FUNCTION_DEFINITION].
 
@@ -2089,7 +2089,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
             // Some items can
             // be found with
             // the system copy
-            // here, _lightbox_helper/_config/_config.resource_registry/crnrstn.native_registered_resource_content_library.function.php
+            // here, _lightbox_helper/_config/resource_registry/crnrstn.native_registered_resource_content_library.function.php
             $tmp_title_style            = $this->return_dom_style_tag('title_span', '#FFF');
             $tmp_footer_copyright_style = $this->return_dom_style_tag('footer_copyright_span', '#FFF');
             $tmp_timestamp_style        = $this->return_dom_style_tag('timestamp_span', '#FFF');
@@ -2859,7 +2859,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
                                 error_log('[lnum ' . __LINE__ . '] register_name[' . $tmp_current_name . '] $resource_type[' . strval($resource_type) . ']. Success.');
                                 error_log('[lnum ' . __LINE__ . '] load_method[' . $load_method . '] $file_path[' . strval($file_path) . ']. die();');
 
-                                /**
+                                /*
                                 [Fri Jul 12 14:31:12.244718 2024] [:error] [pid 85958] [client 172.16.225.1:52443] [lnum 1338]
                                 register_name[_crnrstn_native_resource_registry]
                                 $resource_type[FUNCTION_DEFINITION]. Success.
@@ -5713,7 +5713,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
             error_log('[lnum ' . __LINE__ . '] [' . __LINE__ . '] $include_method_name[' . print_r($include_method_name, true) .
             ']. $file_path[' . print_r($file_path, true) . ']. die();');
 
-            /**
+            /*
             [Sun Jul 21 05:57:58.295103 2024] [:error] [pid 43193] [client 172.16.225.1:50652] [lnum 4585]
             $include_method_name[require_once].
             $file_path[/var/www/html/lightbox_helper/_lightbox_helper/_config/
@@ -6842,7 +6842,7 @@ class lightbox_helper_by_eVifweb extends crnrstn
         //
         //              The CRNRSTN :: Lightsaber SOAP 
         //              Services Layer system registry: 
-        //              /_lightbox_helper/_config/_config.resource_registry/crnrstn.native_resource_registry.function.php 
+        //              /_lightbox_helper/_config/resource_registry/crnrstn.native_resource_registry.function.php 
         //
         //
         //              5

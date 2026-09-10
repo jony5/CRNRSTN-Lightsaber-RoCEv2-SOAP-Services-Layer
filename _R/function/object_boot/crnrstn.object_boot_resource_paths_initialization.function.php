@@ -400,7 +400,7 @@ function _crnrstn_object_boot_resource_paths_initialization(
                                                               $application_directory . $slsh .
                                                               $framework_directory . $slsh .
                                                               '_config' . $slsh .
-                                                              '_config.resource_registry';
+                                                              'resource_registry';
 //    $crnrstn_directory_paths['config_system_paths']         = $_SERVER['DOCUMENT_ROOT'] . $slsh .
 //                                                              $application_directory . $slsh .
 //                                                              $framework_directory . $slsh .

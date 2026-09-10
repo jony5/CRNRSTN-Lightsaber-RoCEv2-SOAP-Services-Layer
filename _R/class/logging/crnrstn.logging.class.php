@@ -2923,7 +2923,7 @@ class crnrstn_logging extends crnrstn
          *
          * self::$R_log_output_mgr = $this->return_registered_resource(
          *                                  'new',
-         *                                  'crnrstn_logging_output_profile_manager',
+         *                                  'crnrstn_log_out_prfl_mgr',
          *                                  $init_profile_pack_ARRAY);
          */
 
@@ -2931,10 +2931,10 @@ class crnrstn_logging extends crnrstn
         // 5 :: Friday, August 21, 2026 @ 0112 hrs.
         $this->compound_ointment(
                $spice_salt_mem_ptr,
-               'crnrstn_logging_output_profile_manager',
+               'crnrstn_log_out_prfl_mgr',
                $init_profile_pack_ARRAY);
         $this->anoint(
-               'crnrstn_logging_output_profile_manager',
+               'crnrstn_log_out_prfl_mgr',
                self::$R_log_output_mgr);
 
         /*error_log('[lnum ' .
@@ -3231,7 +3231,7 @@ class crnrstn_logging extends crnrstn
                  */
                 self::$R_log_output_mgr = $this->return_registered_resource(
                 	                             'new',
-                	                             'crnrstn_logging_output_profile_manager',
+                	                             'crnrstn_log_out_prfl_mgr',
                 	                             $init_profile_pack_ARRAY);
 
                 /* error_log('[lnum ' .

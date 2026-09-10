@@ -526,11 +526,11 @@ class crnrstn_user extends crnrstn
          *
          * self::$oPaginator = $this->return_registered_resource(
          *                            'new', 
-         *                            'crnrstn_result_set_pagination_manager', 
+         *                            'crnrstn_result_set_mgr', 
          *                            $this);
          *
          */
-        $this->R['pagination_mgr'] = $R_pagination_mgr;
+        $this->R['result_set_mgr'] = $R_pagination_mgr;
 
         $this->env_key           = $this->return_env_key();
         $this->env_key_hash      = $this->return_env_key(true);

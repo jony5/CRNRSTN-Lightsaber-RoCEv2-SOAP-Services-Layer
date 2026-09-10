@@ -485,15 +485,15 @@ if(!\function_exists('_R_resource_return')){
          * Sunday, May 10, 2024 @ 0802 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
-         * Edit: Added the initialization
-         *       (or definition) of
-         *       the integer constant,
-         *       CRNRSTN_SYSTEM_TEST, in order
-         *       to take the development of
-         *       a CLR-SSL system file check
-         *       automation architecture
-         *       eVifweb® engineering test
-         *       deeper into the framework.
+         * Edit: Added the initialization 
+         *       (or definition) of 
+         *       the integer constant, 
+         *       CRNRSTN_SYSTEM_TEST, in order 
+         *       to take the development of 
+         *       a CLR-SSL system file check 
+         *       automation architecture 
+         *       eVifweb® engineering test 
+         *       deeper into the framework. 
          *       5 :: Monday, July 6, 2026 @ 0616 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -506,7 +506,7 @@ if(!\function_exists('_R_resource_return')){
          *       We also got to briefly test 
          *       for the first time the use of 
          *       SplFixedArray technology 
-         *       in CRNRSTN ::
+         *       in CRNRSTN :: 
          *
          * The original CRNRSTN :: Debug Mode 
          * Architecture (2018 - Summer of 2026):
@@ -520,16 +520,16 @@ if(!\function_exists('_R_resource_return')){
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Deprecated the use of 
-         *       CLR-SSL Resource Registry loading  
+         *       CLR-SSL Resource Registry loading 
          *       architecture integer constants; 
-         *       - CRNRSTN_LOAD_MANY_TO_1_REQUEST
-         *       - CRNRSTN_LOAD_1_TO_1_REQUEST
-         *       - CRNRSTN_LOAD_1_TO_1_SESSION
-         *       - CRNRSTN_LOAD_ON_TTL_EXPIRE
+         *       - CRNRSTN_LOAD_MANY_TO_1_REQUEST 
+         *       - CRNRSTN_LOAD_1_TO_1_REQUEST 
+         *       - CRNRSTN_LOAD_1_TO_1_SESSION 
+         *       - CRNRSTN_LOAD_ON_TTL_EXPIRE 
          *
          *       Now to be represented by 
          *       these integers and strings: 
-         *       - 'R_load_many_to_1_request', 9876
+         *       - 'R_load_many_to_1_request', 9876;
          *       - 'R_load_1_to_1_request', 9877;
          *       - 'R_load_1_to_1_session', 9878; 
          *       - 'R_load_on_ttl_expire', 9879; 
@@ -537,7 +537,7 @@ if(!\function_exists('_R_resource_return')){
          *       5 :: Friday, July 10, 2026 @ 2128 hrs.
          *
          * The original CRNRSTN :: Resource Registry 
-         * Loading Architecture (2024 - Summer of 2026):
+         * Loading Architecture (2024 - Summer of 2026): 
          * @define(__NAMESPACE__ . '\CRNRSTN_LOAD_MANY_TO_1_REQUEST', (int) 9876);
          * @define(__NAMESPACE__ . '\CRNRSTN_LOAD_1_TO_1_REQUEST', (int) 9877);
          * @define(__NAMESPACE__ . '\CRNRSTN_LOAD_1_TO_1_SESSION', (int) 9878);
@@ -682,11 +682,11 @@ if(!\function_exists('_R_resource_return')){
         {
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Standardize the use of
-             * directory separator based
-             * on path replacement
-             * patterns specific to the
-             * server operating system.
+             * Standardize the use of 
+             * directory separator based 
+             * on path replacement 
+             * patterns specific to the 
+             * server operating system. 
              *
              *
              * 5
@@ -741,11 +741,11 @@ if(!\function_exists('_R_resource_return')){
                         $R_framework_directory;
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Standardize the use of
-             * directory separator based
-             * on path replacement
-             * patterns specific to the
-             * server operating system.
+             * Standardize the use of 
+             * directory separator based 
+             * on path replacement 
+             * patterns specific to the 
+             * server operating system. 
              *
              *
              * 5
@@ -782,18 +782,18 @@ if(!\function_exists('_R_resource_return')){
 
             $directory_shift = '../';
 
-            $root = $_SERVER['DOCUMENT_ROOT'] .
+            $root = $_SERVER['DOCUMENT_ROOT'] . 
                     \DIRECTORY_SEPARATOR . 
                     $application_directory . 
                     \DIRECTORY_SEPARATOR . 
                     $R_framework_directory;
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Standardize the use of
-             * directory separator based
-             * on path replacement
-             * patterns specific to the
-             * server operating system.
+             * Standardize the use of 
+             * directory separator based 
+             * on path replacement 
+             * patterns specific to the 
+             * server operating system. 
              *
              *
              * 5
@@ -805,11 +805,11 @@ if(!\function_exists('_R_resource_return')){
                     $root);
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-             * Standardize the use of the
-             * operating system specific
-             * directory separator by
-             * reducing all double slashes
-             * to single.
+             * Standardize the use of the 
+             * operating system specific 
+             * directory separator by 
+             * reducing all double slashes 
+             * to single. 
              *
              *
              * 5
@@ -859,7 +859,7 @@ if(!\function_exists('_R_resource_return')){
          *
          */
         if(\is_file($tmp_obj_exe_path)) 
-            // Initialize $R_data with default timezone for the CLR-SSL.
+            // Initialize $R_data with default timezone for the CLR-SSL. 
             require($tmp_obj_exe_path);
         else
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -878,7 +878,7 @@ if(!\function_exists('_R_resource_return')){
             $clr_ssl_msg = 'An error was experienced while ' . 
                            'attempting to set the default ' . 
                            'timezone for ' . 
-                           __FUNCTION__ .
+                           __FUNCTION__ . 
                            '.';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -923,7 +923,7 @@ if(!\function_exists('_R_resource_return')){
                 case CRNRSTN_SYSTEM_TEST:
                 case CRNRSTN_DEBUG_ON:
                     /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                     * Database Integrations Pending.
+                     * Database Integrations Pending. 
                      *
                      *
                      * 5 :: Sunday, May 17, 2026 @ 0754 hrs.
@@ -937,11 +937,8 @@ if(!\function_exists('_R_resource_return')){
                                      _R_wall_time() . 
                                      '] ';
                     $message_str_elipse = '...';
-                    if(\strlen($clr_ssl_msg) < 31){
-
+                    if(\strlen($clr_ssl_msg) < 31)
                         $message_str_elipse = '';
-
-                    }
 
                     //$clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 34));
                     $clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 0));
@@ -988,16 +985,16 @@ if(!\function_exists('_R_resource_return')){
          *       from the eVifweb Neural Network Data 
          *       Center SysOps Script Generator index.php 
          *       and added a switch case for 
-         *       'crnrstn_dom_proxy_iframe'.
+         *       'crnrstn_dom_proxy_iframe'. 
          *       5 :: Thursday, February 12, 2026 @ 2306 hrs.
          *
          * # C # R # N # R # S # T # N # :: # L # I # G # H # T
          * Edit: Moved 'crnrstn_dom_proxy_iframe' 
-         *       switch case output to a method
+         *       switch case output to a method 
          *       call internal to CRNRSTN :: 
          *       ui_module_out() and deleted this 
          *       switch case from the index.php. 
-         *       5 :: Monday, March 9, 2026 @ 0059 hrs.
+         *       5 :: Monday, March 9, 2026 @ 0059 hrs. 
          *
          */
         switch($R_resource_name){
@@ -1008,7 +1005,7 @@ if(!\function_exists('_R_resource_return')){
                  * SOAP Services Layer (CLR-SSL) 
                  * Boot-Up. 
                  *
-                 * Prepare to boot-up  
+                 * Prepare to boot-up 
                  * the framework. 
                  *
                  *
@@ -1019,26 +1016,25 @@ if(!\function_exists('_R_resource_return')){
                  */
                 $tmp_resource_name                      = 'crnrstn_registry_user';
                 $tmp_file_name                          = 'crnrstn.registry_user.class.php';
-                $tmp_type_dir                           = 'object';
+                $tmp_type_dir                           = 'obj';
                 $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                           'class' . $os_path_dir_separator_char . 
                                                           'registry' . $os_path_dir_separator_char . 
                                                           $tmp_file_name;
                 $tmp_obj_exe_path                       = $root . $os_path_dir_separator_char . 
                                                           '_config' . $os_path_dir_separator_char . 
-                                                          '_config.resource_registry' . $os_path_dir_separator_char . 
-                                                          'resource' . $os_path_dir_separator_char . 
-                                                          $tmp_type_dir  . '_return' . $os_path_dir_separator_char . 
+                                                          'resource_registry' . $os_path_dir_separator_char . 
+                                                          $tmp_type_dir . $os_path_dir_separator_char . 
                                                           $tmp_resource_name . $os_path_dir_separator_char . 
                                                           'crnrstn.' . $tmp_resource_name . 
                                                           '.fire_bolt_exe.php';
-                $tmp_TITLE_TEXT                         = 'The CRNRSTN :: Lightsaber ' .
-                                                          'RoCEv2 SOAP Services ' .
-                                                          'Layer (CLR-SSL) System ' .
+                $tmp_TITLE_TEXT                         = 'The CRNRSTN :: Lightsaber ' . 
+                                                          'RoCEv2 SOAP Services ' . 
+                                                          'Layer (CLR-SSL) System ' . 
                                                           'Registry User';
                 $tmp_LICENSE_NAME_TEXT                  = 'MIT License';
                 $tmp_LICENSE_URL                        = 'https://crnrstn.jony5.com/licensing/';
-                $tmp_COPYRIGHT_TEXT                     = 'Copyright © 2012-' . \date('Y') . ' ' .
+                $tmp_COPYRIGHT_TEXT                     = 'Copyright © 2012-' . \date('Y') . ' ' . 
                                                           'eVifweb® development All Rights Reserved.';
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1102,7 +1098,7 @@ if(!\function_exists('_R_resource_return')){
                 $R_resp[$memory_pointer]['runtime']                 = _R_wall_time();
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                 * require 
+                 * require
                  * require_once
                  * include
                  * include_once
@@ -1238,7 +1234,7 @@ if(!\function_exists('_R_resource_return')){
                     case CRNRSTN_SYSTEM_TEST:
                     case CRNRSTN_DEBUG_ON:
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Database Integrations Pending.
+                         * Database Integrations Pending. 
                          *
                          *
                          * 5 :: Sunday, May 17, 2026 @ 0754 hrs.
@@ -1252,11 +1248,8 @@ if(!\function_exists('_R_resource_return')){
                                          _R_wall_time() . 
                                          '] ';
                         $message_str_elipse = '...';
-                        if(\strlen($clr_ssl_msg) < 31){
-
+                        if(\strlen($clr_ssl_msg) < 31)
                             $message_str_elipse = '';
-
-                        }
 
                         //$clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 34));
                         $clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 0));
@@ -1370,7 +1363,7 @@ if(!\function_exists('_R_resource_return')){
                             case CRNRSTN_SYSTEM_TEST:
                             case CRNRSTN_DEBUG_ON:
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                 * Database Integrations Pending.
+                                 * Database Integrations Pending. 
                                  *
                                  *
                                  * 5 :: Sunday, May 17, 2026 @ 0754 hrs.
@@ -1385,11 +1378,8 @@ if(!\function_exists('_R_resource_return')){
                                                  '] ';
 
                                 $message_str_elipse = '...';
-                                if(\strlen($clr_ssl_msg) < 31){
-
+                                if(\strlen($clr_ssl_msg) < 31)
                                     $message_str_elipse = '';
-
-                                }
 
                                 $clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 0));
                                 $clr_ssl_msg = $clr_ssl_msg . $message_str_elipse;
@@ -1520,16 +1510,15 @@ if(!\function_exists('_R_resource_return')){
                  */
                 $tmp_resource_name                      = 'lightbox_helper_by_eVifweb';
                 $tmp_file_name                          = 'lightbox_helper.class.php';
-                $tmp_type_dir                           = 'object';
+                $tmp_type_dir                           = 'obj';
                 $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                           'class' . $os_path_dir_separator_char . 
                                                           'assets' . $os_path_dir_separator_char . 
                                                           $tmp_file_name;
                 $tmp_obj_exe_path                       = $root . $os_path_dir_separator_char . 
                                                           '_config' . $os_path_dir_separator_char . 
-                                                          '_config.resource_registry' . $os_path_dir_separator_char . 
-                                                          'resource' . $os_path_dir_separator_char . 
-                                                          $tmp_type_dir  . '_return' . $os_path_dir_separator_char . 
+                                                          'resource_registry' . $os_path_dir_separator_char . 
+                                                          $tmp_type_dir . $os_path_dir_separator_char . 
                                                           $tmp_resource_name . $os_path_dir_separator_char . 
                                                           'crnrstn.' . $tmp_resource_name . 
                                                           '.fire_bolt_exe.php';
@@ -1537,7 +1526,7 @@ if(!\function_exists('_R_resource_return')){
                                                           'by eVifweb®';
                 $tmp_LICENSE_NAME_TEXT                  = 'MIT License';
                 $tmp_LICENSE_URL                        = 'https://crnrstn.jony5.com/licensing/';
-                $tmp_COPYRIGHT_TEXT                     = 'Copyright © 2012-' . \date('Y') . ' ' .
+                $tmp_COPYRIGHT_TEXT                     = 'Copyright © 2012-' . \date('Y') . ' ' . 
                                                           'eVifweb® development All Rights Reserved.';
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -1720,7 +1709,7 @@ if(!\function_exists('_R_resource_return')){
                     case CRNRSTN_SYSTEM_TEST:
                     case CRNRSTN_DEBUG_ON:
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Database Integrations Pending.
+                         * Database Integrations Pending. 
                          *
                          *
                          * 5 :: Sunday, May 17, 2026 @ 0754 hrs.
@@ -1735,11 +1724,8 @@ if(!\function_exists('_R_resource_return')){
                                          '] ';
 
                         $message_str_elipse = '...';
-                        if(\strlen($clr_ssl_msg) < 31){
-
+                        if(\strlen($clr_ssl_msg) < 31)
                             $message_str_elipse = '';
-
-                        }
 
                         $clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 0));
                         $clr_ssl_msg = $clr_ssl_msg . $message_str_elipse;
@@ -1852,7 +1838,7 @@ if(!\function_exists('_R_resource_return')){
                             case CRNRSTN_SYSTEM_TEST:
                             case CRNRSTN_DEBUG_ON:
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                 * Database Integrations Pending.
+                                 * Database Integrations Pending. 
                                  *
                                  *
                                  * 5 :: Sunday, May 17, 2026 @ 0754 hrs.
@@ -1867,11 +1853,8 @@ if(!\function_exists('_R_resource_return')){
                                                  '] ';
 
                                 $message_str_elipse = '...';
-                                if(\strlen($clr_ssl_msg) < 31){
-
+                                if(\strlen($clr_ssl_msg) < 31)
                                     $message_str_elipse = '';
-
-                                }
 
                                 $clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 0));
                                 $clr_ssl_msg = $clr_ssl_msg . $message_str_elipse;
@@ -2000,24 +1983,23 @@ if(!\function_exists('_R_resource_return')){
                  */
                 $tmp_resource_name                      = 'crnrstn';
                 $tmp_file_name                          = 'crnrstn.class.php';
-                $tmp_type_dir                           = 'object';
+                $tmp_type_dir                           = 'obj';
                 $tmp_file_path                          = $root . $os_path_dir_separator_char . 
                                                           'class' . $os_path_dir_separator_char . 
                                                           'crnrstn' . $os_path_dir_separator_char . 
                                                           $tmp_file_name;
                 $tmp_obj_exe_path                       = $root . $os_path_dir_separator_char . 
                                                           '_config' . $os_path_dir_separator_char . 
-                                                          '_config.resource_registry' . $os_path_dir_separator_char . 
-                                                          'resource' . $os_path_dir_separator_char . 
-                                                          $tmp_type_dir  . '_return' . $os_path_dir_separator_char . 
+                                                          'resource_registry' . $os_path_dir_separator_char . 
+                                                          $tmp_type_dir . $os_path_dir_separator_char . 
                                                           $tmp_resource_name . $os_path_dir_separator_char . 
                                                           'crnrstn.' . $tmp_resource_name . 
                                                           '.fire_bolt_exe.php';
-                $tmp_TITLE_TEXT                         = 'The CRNRSTN :: Lightsaber RoCEv2 ' .
+                $tmp_TITLE_TEXT                         = 'The CRNRSTN :: Lightsaber RoCEv2 ' . 
                                                           'SOAP Services Layer (CLR-SSL) Class Object';
                 $tmp_LICENSE_NAME_TEXT                  = 'MIT License';
                 $tmp_LICENSE_URL                        = 'https://crnrstn.jony5.com/licensing/';
-                $tmp_COPYRIGHT_TEXT                     = 'Copyright © 2012-' . \date('Y') . ' ' .
+                $tmp_COPYRIGHT_TEXT                     = 'Copyright © 2012-' . \date('Y') . ' ' . 
                                                           'eVifweb® development All Rights Reserved.';
 
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -2199,7 +2181,7 @@ if(!\function_exists('_R_resource_return')){
                     case CRNRSTN_SYSTEM_TEST:
                     case CRNRSTN_DEBUG_ON:
                         /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                         * Database Integrations Pending.
+                         * Database Integrations Pending. 
                          *
                          *
                          * 5 :: Sunday, May 17, 2026 @ 0754 hrs.
@@ -2214,11 +2196,8 @@ if(!\function_exists('_R_resource_return')){
                                          '] ';
 
                         $message_str_elipse = '...';
-                        if(\strlen($clr_ssl_msg) < 31){
-
+                        if(\strlen($clr_ssl_msg) < 31)
                             $message_str_elipse = '';
-
-                        }
 
                         $clr_ssl_msg = \trim(\substr($clr_ssl_msg, 0, 0));
                         $clr_ssl_msg = $clr_ssl_msg . $message_str_elipse;
@@ -2331,7 +2310,7 @@ if(!\function_exists('_R_resource_return')){
                             case CRNRSTN_SYSTEM_TEST:
                             case CRNRSTN_DEBUG_ON:
                                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
-                                 * Database Integrations Pending.
+                                 * Database Integrations Pending. 
                                  *
                                  *
                                  * 5 :: Sunday, May 17, 2026 @ 0754 hrs.
@@ -2701,7 +2680,7 @@ if(!\function_exists('_R_server_response')){
         if($return_text !== false)
             return $R_resp;
 
-        // Prepare response header profile.
+        // Prepare response header profile. 
         $R_resp_header_options   = array();
         $R_version               = '2.00.0001';
         $R_content_date          = \date('D, M j Y G:i:s T');
@@ -2713,9 +2692,9 @@ if(!\function_exists('_R_server_response')){
         $R_resp_header_options[] = 'Date: ' . $R_content_date;
         $R_resp_header_options[] = 'Expires: ' . $R_content_date_expire;
         $R_resp_header_options[] = 'Last-Modified: ' . $R_content_date_lastmod;
-        $R_resp_header_options[] = 'X-Powered-By: PHP v' . \PHP_MAJOR_VERSION .
-            '.' . \PHP_MINOR_VERSION .
-            '.' . \PHP_RELEASE_VERSION .
+        $R_resp_header_options[] = 'X-Powered-By: PHP v' . \PHP_MAJOR_VERSION . 
+            '.' . \PHP_MINOR_VERSION . 
+            '.' . \PHP_RELEASE_VERSION . 
             ', CRNRSTN :: Lightsaber v' . $R_version;
         for($i = 0; $i < $R_resp_header_options; $i++)
             \header($R_resp_header_options[$i]);
@@ -2741,7 +2720,7 @@ if(!\function_exists('_R_server_response')){
          * the proper status code. 
          *
          */
-        \header($_SERVER['SERVER_PROTOCOL'] .
+        \header($_SERVER['SERVER_PROTOCOL'] . 
             ' ' . 
             $response_code . 
             ' ' . 
@@ -2883,7 +2862,7 @@ while(\strpos($script__file__,
         $os_path_dir_separator_char, 
         $script__file__);
 
-// CLR-SSL Framework input defaults.
+// CLR-SSL Framework input defaults. 
 if(!isset($application_directory))
     $application_directory = '';
 
@@ -2894,9 +2873,9 @@ if(!isset($directory_shift))
     $directory_shift = '../';
 
 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
- * Access restriction check.
- * Maybe, this could be
- * a redirect.
+ * Access restriction check. 
+ * Maybe, this could be 
+ * a redirect. 
  *
  *
  * 5 :: Wednesday, August 12, 2026 @ 1457 hrs.

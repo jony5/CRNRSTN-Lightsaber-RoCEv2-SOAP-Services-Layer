@@ -666,7 +666,7 @@ class crnrstn_kivotos extends crnrstn
         $R_resp[$mem_ptr]['loading_arch'][$R_resp[$mem_ptr]['software_version'][0]]        => 9876
         $R_resp[$mem_ptr]['namespace']                      => CRNRSTN
         $R_resp[$mem_ptr]['file_path']['definition'][$R_resp[$mem_ptr]['software_version'][0]]  => /var/www/html/_crnrstn/class/crnrstn/crnrstn.kivotos.class.php
-        $R_resp[$mem_ptr]['file_path']['new_obj_exe'][$R_resp[$mem_ptr]['software_version'][0]] => /var/www/html/_crnrstn/_config/_config.resource_registry/resource/object_return/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
+        $R_resp[$mem_ptr]['file_path']['new_obj_exe'][$R_resp[$mem_ptr]['software_version'][0]] => /var/www/html/_crnrstn/_config/resource_registry/obj/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
         $R_resp[$mem_ptr]['file_name'][$R_resp[$mem_ptr]['software_version'][0]]                => crnrstn.kivotos.class.php
         $R_resp[$mem_ptr]['software_version'][0]                                                => 1.00.0000
         $R_resp[$mem_ptr]['is_active'][$R_resp[$mem_ptr]['software_version'][0]]                => 1
@@ -703,7 +703,7 @@ class crnrstn_kivotos extends crnrstn
          '_crnrstn_native_resource_registry_content_library' => 'FUNCTION_DEFINITION', 
          'crnrstn_kivotós'                                   => 'CLASS_DEFINITION', 
          'crnrstn_ascii_art'                                 => 'CLASS_DEFINITION', 
-         'crnrstn_file_system_integrations_manager'          => 'CLASS_DEFINITION', 
+         'crnrstn_file_sys_mgr'                              => 'CLASS_DEFINITION', 
          'crnrstn_logging'                                   => 'CLASS_DEFINITION', 
          'crnrstn_session_manager'                           => 'CLASS_DEFINITION', 
          'crnrstn_json'                                      => 'CLASS_DEFINITION', 
@@ -719,8 +719,8 @@ class crnrstn_kivotos extends crnrstn
          'crnrstn_link_manager'                              => 'CLASS_DEFINITION', 
          'crnrstn_decoupled_data_object'                     => 'CLASS_DEFINITION', 
          'crnrstn_configuration_manager'                     => 'CLASS_DEFINITION', 
-         'crnrstn_response_return_serialization_map'         => 'CLASS_DEFINITION', 
-         'crnrstn_logging_output_profile_manager'            => 'CLASS_DEFINITION', 
+         'crnrstn_rrs_map'                                   => 'CLASS_DEFINITION', 
+         'crnrstn_log_out_prfl_mgr'                          => 'CLASS_DEFINITION', 
          'crnrstn_user'                                      => 'CLASS_DEFINITION', 
          'crnrstn_ui_tunnel_response_manager'                => 'CLASS_DEFINITION', 
          'crnrstn_environment'                               => 'CLASS_DEFINITION'
@@ -837,7 +837,7 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\crnrstn_bitflip_manager':
             case __NAMESPACE__ . '===\crnrstn_ip_authorization_manager':
             case __NAMESPACE__ . '===\crnrstn_ascii_art':
-            case __NAMESPACE__ . '===\crnrstn_file_system_integrations_manager':
+            case __NAMESPACE__ . '===\crnrstn_file_sys_mgr':
             case __NAMESPACE__ . '===\crnrstn_logging':
             case __NAMESPACE__ . '===\crnrstn_session_manager':
             case __NAMESPACE__ . '===\crnrstn_json':
@@ -906,10 +906,10 @@ class crnrstn_kivotos extends crnrstn
             case __NAMESPACE__ . '===\crnrstn_link_manager':
             case __NAMESPACE__ . '===\crnrstn_decoupled_data_object':
             case __NAMESPACE__ . '===\crnrstn_configuration_manager':
-            case __NAMESPACE__ . '===\crnrstn_response_return_serialization_map':
+            case __NAMESPACE__ . '===\crnrstn_rrs_map':
             case __NAMESPACE__ . '===\crnrstn_ux_manager':
             case __NAMESPACE__ . '===\crnrstn_redirect_controller':
-            case __NAMESPACE__ . '===\crnrstn_result_set_pagination_manager':
+            case __NAMESPACE__ . '===\crnrstn_result_set_mgr':
             case __NAMESPACE__ . '===\crnrstn_user':
             case __NAMESPACE__ . '===\crnrstn_ui_tunnel_response_manager':
             case __NAMESPACE__ . '===\crnrstn_environment':
@@ -1184,7 +1184,7 @@ class crnrstn_kivotos extends crnrstn
                         '.</code></pre>';
 
                     CRNRSTN\crnrstn_ascii_art
-                    CRNRSTN\crnrstn_file_system_integrations_manager
+                    CRNRSTN\crnrstn_file_sys_mgr
                     CRNRSTN\crnrstn_logging
                     CRNRSTN\crnrstn_session_manager
                     CRNRSTN\crnrstn_json
@@ -1208,7 +1208,7 @@ class crnrstn_kivotos extends crnrstn
                     5 :: Sunday, August 16, 2026 @ 1018 hrs.
 
                     CRNRSTN\crnrstn_ascii_art
-                    CRNRSTN\crnrstn_file_system_integrations_manager
+                    CRNRSTN\crnrstn_file_sys_mgr
                     CRNRSTN\crnrstn_logging
                     CRNRSTN\crnrstn_session_manager
                     CRNRSTN\crnrstn_json

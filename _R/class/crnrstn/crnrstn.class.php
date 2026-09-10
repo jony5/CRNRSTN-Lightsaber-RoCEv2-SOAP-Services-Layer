@@ -1394,14 +1394,14 @@ class crnrstn
              *
              * 5 :: Monday, July 8, 2024 @ 0552 hrs.
              *
-             * self::$oCRNRSTN_LOG_PROFILE_MGR = new crnrstn_logging_oprofile_manager(
+             * self::$oCRNRSTN_LOG_PROFILE_MGR = new crnrstn_log_out_prfl_mgr(
              *                                       $sys_logging_profile_pack, 
              *                                       $this);
              *
              *
             self::$_R['kivotos']->R['log_output_mgr'] = $this->return_registered_resource(
                                                                'new', 
-                                                               'crnrstn_logging_output_profile_manager', 
+                                                               'crnrstn_log_out_prfl_mgr', 
                                                                $sys_logging_profile_pack);
              */
 
@@ -4044,16 +4044,15 @@ class crnrstn
                  */
                 $tmp_resource_name                      = '_crnrstn_native_resource_registry';
                 $tmp_file_name                          = 'crnrstn.native_resource_registry.function.php';
-                $tmp_type_dir                           = 'function';
+                $tmp_type_dir                           = 'func';
                 $tmp_file_path                          = $root . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                           '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
-                                                          '_config.resource_registry' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                                                          'resource_registry' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                           $tmp_file_name;
                 $tmp_obj_exe_path                       = $root . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                           '_config' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
-                                                          '_config.resource_registry' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
-                                                          'resource' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
-                                                          $tmp_type_dir  . '_return' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                                                          'resource_registry' . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
+                                                          $tmp_type_dir . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                           $tmp_resource_name . self::$R_data['operating_system']['os_path_dir_separator_char'] . 
                                                           'crnrstn.' . $tmp_resource_name . 
                                                           '.fire_bolt_exe.php';
@@ -5640,7 +5639,7 @@ class crnrstn
 
                             [new_obj_exe] => Array
                                 (
-                                    [1.00.0000] => /var/www/html/_crnrstn/_config/_config.resource_registry/resource/object_return/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
+                                    [1.00.0000] => /var/www/html/_crnrstn/_config/resource_registry/obj/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
                                 )
 
                         )
@@ -6274,7 +6273,7 @@ class crnrstn
         $R_resp[$mem_ptr]['loading_arch'][$R_resp[$mem_ptr]['software_version'][0]]        => 9876
         $R_resp[$mem_ptr]['namespace']                      => CRNRSTN
         $R_resp[$mem_ptr]['file_path']['definition'][$R_resp[$mem_ptr]['software_version'][0]]  => /var/www/html/_crnrstn/class/crnrstn/crnrstn.kivotos.class.php
-        $R_resp[$mem_ptr]['file_path']['new_obj_exe'][$R_resp[$mem_ptr]['software_version'][0]] => /var/www/html/_crnrstn/_config/_config.resource_registry/resource/object_return/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
+        $R_resp[$mem_ptr]['file_path']['new_obj_exe'][$R_resp[$mem_ptr]['software_version'][0]] => /var/www/html/_crnrstn/_config/resource_registry/obj/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
         $R_resp[$mem_ptr]['file_name'][$R_resp[$mem_ptr]['software_version'][0]]                => crnrstn.kivotos.class.php
         $R_resp[$mem_ptr]['software_version'][0]                                                => 1.00.0000
         $R_resp[$mem_ptr]['is_active'][$R_resp[$mem_ptr]['software_version'][0]]                => 1
@@ -6327,8 +6326,8 @@ class crnrstn
         'crnrstn_link_manager'                              => 'CLASS_DEFINITION', 
         'crnrstn_decoupled_data_object'                     => 'CLASS_DEFINITION', 
         'crnrstn_configuration_manager'                     => 'CLASS_DEFINITION', 
-        'crnrstn_response_return_serialization_map'         => 'CLASS_DEFINITION', 
-        'crnrstn_logging_output_profile_manager'            => 'CLASS_DEFINITION', 
+        'crnrstn_rrs_map'                                   => 'CLASS_DEFINITION', 
+        'crnrstn_log_out_prfl_mgr'                          => 'CLASS_DEFINITION', 
         'crnrstn_user'                                      => 'CLASS_DEFINITION', 
         'crnrstn_ui_tunnel_response_manager'                => 'CLASS_DEFINITION', 
         'crnrstn_environment'                               => 'CLASS_DEFINITION'
@@ -6947,7 +6946,7 @@ class crnrstn
          *        Uncaught Error: Call to private method 
          *        CRNRSTN\\crnrstn::resource_allocation_management_action() 
          *        from context '' in /var/www/html/sysops
-         *        /_crnrstn/_config/_config.resource_registry
+         *        /_crnrstn/_config/resource_registry
          *        /crnrstn.native_resource_registry.function.php:8050\n
          *        Stack trace:\n
          *        #0 /var/www/html/sysops/_crnrstn/class
@@ -6964,8 +6963,8 @@ class crnrstn
          *           'CRNRSTN\\\\crnrstn...', NULL, NULL, NULL, 
          *           NULL, NULL, NULL, NULL, NULL)\n
          *        #3 /var/www/html/sysops/_crnrstn/_config
-         *           /_config.resource_registry/resource
-         *           /object_return/crnrstn
+         *           /resource_registry
+         *           /obj/crnrstn
          *           /crnrstn.crnrstn.runtime_exe.php(362): 
          *           CRNRSTN\\crnrstn->__construct('sysops', 
          *           '_crnrstn', 'sha256', 2, 0, false)\n
@@ -6973,7 +6972,7 @@ class crnrstn
          *           /crnrstn.runtime_exe.php(2094): 
          *           require('/var/www/html/s...')\n
          *        #5 /var/www/h in /var/www/html/sysops/_crnrstn/_config
-         *           /_config.resource_registry
+         *           /resource_registry
          *           /crnrstn.native_resource_registry.function.php 
          *           on line 8050
          *
@@ -8234,10 +8233,10 @@ die();</code></pre>';
          * include HTML content 
          * output from:
          *  - /_R/_config/
-         *    _config.resource_registry/
+         *    resource_registry/
          *    crnrstn.native_resource_registry.function.php
          *  - /_R/_config/
-         *    _config.resource_registry/
+         *    resource_registry/
          *    crnrstn.native_registered_resource_content_library.function.php
          *  - /_R/_config/
          *    config.integer_constants/
@@ -9004,7 +9003,7 @@ die();</code></pre>';
                  *
                  */
                 $write_authorized_callers = array(__NAMESPACE__ . 
-                                                '\crnrstn_file_system_integrations_manager::generate_system_file' => 1);
+                                                '\crnrstn_file_sys_mgr::generate_system_file' => 1);
 
                 if(!isset($write_authorized_callers[$caller])){
 
@@ -14805,7 +14804,7 @@ Data index[' .
              * be found with the 
              * system copy here: 
              * _lightbox_helper/_config
-             * /_config.resource_registry
+             * /resource_registry
              * /crnrstn.native_registered_resource_content_library.function.php
              *
              */
@@ -14902,7 +14901,7 @@ Data index[' .
 
             Copied from:
             /Users/jony5/Projects/www/stage/sysops
-            /public_html/_crnrstn/_config/_config.resource_registry
+            /public_html/_crnrstn/_config/resource_registry
             /crnrstn.native_registered_resource_content_library.function.php
 
 
@@ -21110,7 +21109,7 @@ $tmp_get_param_run_data .
                          'crnrstn_0010111011=crnrstn.main_desktop.css&crnrstn_' . 
                          '=420.00.45723.1574328724.0">
                           <link type="text/css" rel="stylesheet" href="./' . 
-                         '_R/ui/js/_lib/frameworks/lightbox.js/2.11.3/' . 
+                         '_R/ui/js/_lib/lightbox.js/2.11.3/' . 
                          'css/lightbox.min.css?crnrstn_0010111011=crnrstn.' . 
                          'lightbox.min.css&crnrstn_=420.00.2532.1668508400.0">' . 
                          '</head><body><div style="width:320px; font-size:14px; ' . 
@@ -26621,7 +26620,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'http':
                 case 'https':
@@ -26668,7 +26667,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'directory':
 
@@ -26716,7 +26715,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'directory':
 
@@ -26773,7 +26772,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_http':
                     case 'application_https':
@@ -26794,7 +26793,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_http':
                     case 'application_https':
@@ -26913,7 +26912,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_directory':
 
@@ -26928,7 +26927,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_directory':
 
@@ -27026,7 +27025,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'framework_http':
                     case 'framework_https':
@@ -27087,7 +27086,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'framework_http':
                     case 'framework_https':
@@ -27164,7 +27163,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'R_framework_directory':
 
@@ -27270,14 +27269,14 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'running_http':
                 case 'running_https':
 
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
                     or
-                    https://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    https://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
 
                 */
                 /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
@@ -27297,13 +27296,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'running_directory':
 
-                    /var/www/html/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    /var/www/html/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
                     or
-                    /var/www/html/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    /var/www/html/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
 
                 */
                 $clr_ssl_msg = 'Generating server ' .
@@ -27392,7 +27391,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_http':
                     case 'application_https':
@@ -27413,7 +27412,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_http':
                     case 'application_https':
@@ -27481,7 +27480,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'clr_ssl_rasl_http':
                 case 'clr_ssl_rasl_https':
@@ -27504,13 +27503,13 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'clr_ssl_rasl_directory':
 
-                    /var/www/html/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    /var/www/html/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
                     or
-                    /var/www/html/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    /var/www/html/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
 
                 */
                 if((\strpos(self::$R_data['application_directory'], '../') !== false) ||
@@ -27526,7 +27525,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'clr_ssl_rasl_directory':
 
@@ -27541,7 +27540,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_directory':
 
@@ -27607,12 +27606,12 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'crnrstn_soap_http':
                 case 'crnrstn_soap_https':
 
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
 
                 */
 
@@ -27656,7 +27655,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'crnrstn_soap_http':
                     case 'crnrstn_soap_https':
@@ -27673,7 +27672,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'clr_ssl_rasl_http':
                     case 'clr_ssl_rasl_https':
@@ -27766,7 +27765,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'clr_ssl_rasl_directory':
 
@@ -27781,7 +27780,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                     /*
                     Sample Deep Link:
-                    http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                    http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                     case 'application_directory':
 
@@ -27794,7 +27793,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
 
                 /*
                 Sample Deep Link:
-                http://192.168.1.71/sysops/_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
+                http://192.168.1.71/sysops/_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/index.php
 
                 case 'crnrstn_soap_directory':
 
@@ -29908,7 +29907,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
          *   CRNRSTN :: and that the CLR-SSL may 
          *   load like: 
          *        ~/Projects/www/stage/sysops/public_html
-         *         /_R/ui/css/_lib/frameworks/responsive_grid_system
+         *         /_R/ui/css/_lib/responsive_grid_system
          *         /css/html5reset.css reset.css 
          * - Ignoring search for a sec, and supporting 
          *   the user to always be able to return to 
@@ -36116,7 +36115,7 @@ output   * start              N/Y    N/N     ---       ---        ---          -
                  *
                 self::$_R['kivotos']->R['rrs_map'] = $this->return_registered_resource(
                                                      'new', 
-                                                     'crnrstn_response_return_serialization_map', 
+                                                     'crnrstn_rrs_map', 
                                                      $this);
                  */
 
@@ -54001,43 +54000,43 @@ print_r($tmp_channel_ARRAY, true) .
         /* http://172.16.225.139/lightsaber.crnrstn.evifweb.com/?crnrstn_0010111011=
          * jquery-3.6.1.js
          * &crnrstn_=420.00.289812.1670066826.0
-         *      _R/ui/js/_lib/frameworks/backbone/1.4.1/backbone.min.js
+         *      _R/ui/js/_lib/backbone/1.4.1/backbone.min.js
          */ 
         $tmp_ARRAY = array('crnrstn.main.js' => '/', 'crnrstn.lightbox-2.03.3.js' => self::$crnrstn_session_salt, 
-            'crnrstn.backbone_1_4_1.min.js' => '_lib/frameworks/backbone/1.4.1', 'jquery-3.6.1.js' => '_lib/frameworks/jquery/3.6.1', 
-            'jquery-3.6.1.min.map' => '_lib/frameworks/jquery/3.6.1', 'jquery-3.6.1.min.js' => '_lib/frameworks/jquery/3.6.1', 
-            'jquery-2.2.4.min.js' => '_lib/frameworks/jquery/2.2.4', 'jquery-2.2.4.js' => '_lib/frameworks/jquery/2.2.4', 
-            'jquery-1.12.4.min.js' => '_lib/frameworks/jquery/1.12.4', 'jquery-1.12.4.js' => '_lib/frameworks/jquery/1.12.4', 
-            'jquery-1.11.1.min.js' => '_lib/frameworks/jquery/1.11.1', '1.13.2/jquery-ui.theme.min.css' => '_lib/frameworks/jquery_ui', 
-            '1.13.2/jquery-ui.structure.min.css' => '_lib/frameworks/jquery_ui', '1.13.2/jquery-ui.min.css' => '_lib/frameworks/jquery_ui', 
-            '1.13.2/jquery-ui.theme.css' => '_lib/frameworks/jquery_ui', '1.13.2/jquery-ui.structure.css' => '_lib/frameworks/jquery_ui', 
-            '1.13.2/jquery-ui.css' => '_lib/frameworks/jquery_ui', '1.13.2/jquery-ui.min.js' => '_lib/frameworks/jquery_ui', 
-            '1.13.2/jquery-ui.js' => '_lib/frameworks/jquery_ui', '1.12.1/jquery-ui.theme.min.css' => '_lib/frameworks/jquery_ui', 
-            '1.12.1/jquery-ui.structure.min.css' => '_lib/frameworks/jquery_ui', '1.12.1/jquery-ui.min.css' => '_lib/frameworks/jquery_ui', 
-            '1.12.1/jquery-ui.theme.css' => '_lib/frameworks/jquery_ui', '1.12.1/jquery-ui.structure.css' => '_lib/frameworks/jquery_ui', 
-            '1.12.1/jquery-ui.css' => '_lib/frameworks/jquery_ui', '1.12.1/jquery-ui.min.js' => '_lib/frameworks/jquery_ui', 
-            '1.12.1/jquery-ui.js' => '_lib/frameworks/jquery_ui', 'jquery.mobile.external-png-1.4.5.min.css' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile.icons-1.4.5.min.css' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile.inline-png-1.4.5.min.css' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile.inline-svg-1.4.5.min.css' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile.structure-1.4.5.min.css' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile.theme-1.4.5.min.css' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile-1.4.5.min.css' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile.external-png-1.4.5.css' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile.icons-1.4.5.css' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile.inline-png-1.4.5.css' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile.inline-svg-1.4.5.css' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile.structure-1.4.5.css' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile.theme-1.4.5.css' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile-1.4.5.css' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile-1.4.5/index.js' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            'jquery.mobile-1.4.5.min.js' => '_lib/frameworks/jquery_mobile/1.4.5', 'jquery.mobile-1.4.5.js' => '_lib/frameworks/jquery_mobile/1.4.5', 
-            '2.11.3/css/lightbox.min.css' => '_lib/frameworks/lightbox.js', '2.11.3/css/lightbox.css' => '_lib/frameworks/lightbox.js', 
-            '2.11.3/js/lightbox.min.js' => '_lib/frameworks/lightbox.js', '2.11.3/js/lightbox.js' => '_lib/frameworks/lightbox.js', 
-            '2.11.3/js/lightbox-plus-jquery.min.js' => '_lib/frameworks/lightbox.js', '2.11.3/js/lightbox-plus-jquery.js' => '_lib/frameworks/lightbox.js', 
-            '1.4.1/backbone.min.js' => '_lib/frameworks/backbone', '1.4.1/backbone.min.map' => '_lib/frameworks/backbone', '1.4.1/backbone.js' => '_lib/frameworks/backbone', 
-            'prototype.js' => '_lib/frameworks/prototype.js/1.7.3', 'scriptaculous.js' => '_lib/frameworks/script.aculo.us/1.9.0/src', 
-            'builder.js' => '_lib/frameworks/script.aculo.us/1.9.0/src', 'controls.js' => '_lib/frameworks/script.aculo.us/1.9.0/src', 
-            'dragdrop.js' => '_lib/frameworks/script.aculo.us/1.9.0/src', 'effects.js' => '_lib/frameworks/script.aculo.us/1.9.0/src', 
-            'slider.js' => '_lib/frameworks/script.aculo.us/1.9.0/src', 'sound.js' => '_lib/frameworks/script.aculo.us/1.9.0/src', 
-            '2.03.3/css/lightbox.css' => '_lib/frameworks/lightbox.js', '2.03.3/js/lightbox.js' => '_lib/frameworks/lightbox.js', 
-            'moo.fx.js' => '_lib/frameworks/moo.fx/2.0/source', 'moo.fx.pack.js' => '_lib/frameworks/moo.fx/2.0/source', 'moo.fx.utils.js' => '_lib/frameworks/moo.fx/2.0/source', 
-            'accordion.js' => '_lib/frameworks/moo.fx/2.0/source', 'moo.fx.transitions.js' => '_lib/frameworks/moo.fx/2.0/source', 
-            'mootools-more-1.6.0.js' => '_lib/frameworks/mootools/more/1.6.0', 'mootools-more-1.6.0-min.js' => '_lib/frameworks/mootools/more/1.6.0', 
-            'mootools-core-1.6.0.js' => '_lib/frameworks/mootools/core/1.6.0', 'mootools-core-1.6.0-min.js' => '_lib/frameworks/mootools/core/1.6.0');
+            'crnrstn.backbone_1_4_1.min.js' => '_lib/backbone/1.4.1', 'jquery-3.6.1.js' => '_lib/jquery/3.6.1', 
+            'jquery-3.6.1.min.map' => '_lib/jquery/3.6.1', 'jquery-3.6.1.min.js' => '_lib/jquery/3.6.1', 
+            'jquery-2.2.4.min.js' => '_lib/jquery/2.2.4', 'jquery-2.2.4.js' => '_lib/jquery/2.2.4', 
+            'jquery-1.12.4.min.js' => '_lib/jquery/1.12.4', 'jquery-1.12.4.js' => '_lib/jquery/1.12.4', 
+            'jquery-1.11.1.min.js' => '_lib/jquery/1.11.1', '1.13.2/jquery-ui.theme.min.css' => '_lib/jquery_ui', 
+            '1.13.2/jquery-ui.structure.min.css' => '_lib/jquery_ui', '1.13.2/jquery-ui.min.css' => '_lib/jquery_ui', 
+            '1.13.2/jquery-ui.theme.css' => '_lib/jquery_ui', '1.13.2/jquery-ui.structure.css' => '_lib/jquery_ui', 
+            '1.13.2/jquery-ui.css' => '_lib/jquery_ui', '1.13.2/jquery-ui.min.js' => '_lib/jquery_ui', 
+            '1.13.2/jquery-ui.js' => '_lib/jquery_ui', '1.12.1/jquery-ui.theme.min.css' => '_lib/jquery_ui', 
+            '1.12.1/jquery-ui.structure.min.css' => '_lib/jquery_ui', '1.12.1/jquery-ui.min.css' => '_lib/jquery_ui', 
+            '1.12.1/jquery-ui.theme.css' => '_lib/jquery_ui', '1.12.1/jquery-ui.structure.css' => '_lib/jquery_ui', 
+            '1.12.1/jquery-ui.css' => '_lib/jquery_ui', '1.12.1/jquery-ui.min.js' => '_lib/jquery_ui', 
+            '1.12.1/jquery-ui.js' => '_lib/jquery_ui', 'jquery.mobile.external-png-1.4.5.min.css' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile.icons-1.4.5.min.css' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile.inline-png-1.4.5.min.css' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile.inline-svg-1.4.5.min.css' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile.structure-1.4.5.min.css' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile.theme-1.4.5.min.css' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile-1.4.5.min.css' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile.external-png-1.4.5.css' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile.icons-1.4.5.css' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile.inline-png-1.4.5.css' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile.inline-svg-1.4.5.css' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile.structure-1.4.5.css' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile.theme-1.4.5.css' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile-1.4.5.css' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile-1.4.5/index.js' => '_lib/jquery_mobile/1.4.5', 
+            'jquery.mobile-1.4.5.min.js' => '_lib/jquery_mobile/1.4.5', 'jquery.mobile-1.4.5.js' => '_lib/jquery_mobile/1.4.5', 
+            '2.11.3/css/lightbox.min.css' => '_lib/lightbox.js', '2.11.3/css/lightbox.css' => '_lib/lightbox.js', 
+            '2.11.3/js/lightbox.min.js' => '_lib/lightbox.js', '2.11.3/js/lightbox.js' => '_lib/lightbox.js', 
+            '2.11.3/js/lightbox-plus-jquery.min.js' => '_lib/lightbox.js', '2.11.3/js/lightbox-plus-jquery.js' => '_lib/lightbox.js', 
+            '1.4.1/backbone.min.js' => '_lib/backbone', '1.4.1/backbone.min.map' => '_lib/backbone', '1.4.1/backbone.js' => '_lib/backbone', 
+            'prototype.js' => '_lib/prototype.js/1.7.3', 'scriptaculous.js' => '_lib/script.aculo.us/1.9.0/src', 
+            'builder.js' => '_lib/script.aculo.us/1.9.0/src', 'controls.js' => '_lib/script.aculo.us/1.9.0/src', 
+            'dragdrop.js' => '_lib/script.aculo.us/1.9.0/src', 'effects.js' => '_lib/script.aculo.us/1.9.0/src', 
+            'slider.js' => '_lib/script.aculo.us/1.9.0/src', 'sound.js' => '_lib/script.aculo.us/1.9.0/src', 
+            '2.03.3/css/lightbox.css' => '_lib/lightbox.js', '2.03.3/js/lightbox.js' => '_lib/lightbox.js', 
+            'moo.fx.js' => '_lib/moo.fx/2.0/source', 'moo.fx.pack.js' => '_lib/moo.fx/2.0/source', 'moo.fx.utils.js' => '_lib/moo.fx/2.0/source', 
+            'accordion.js' => '_lib/moo.fx/2.0/source', 'moo.fx.transitions.js' => '_lib/moo.fx/2.0/source', 
+            'mootools-more-1.6.0.js' => '_lib/mootools/more/1.6.0', 'mootools-more-1.6.0-min.js' => '_lib/mootools/more/1.6.0', 
+            'mootools-core-1.6.0.js' => '_lib/mootools/core/1.6.0', 'mootools-core-1.6.0-min.js' => '_lib/mootools/core/1.6.0');
 
         $this->asset_routing_data_key_lookup_ARRAY['js'] = $tmp_ARRAY;
 
@@ -54049,72 +54048,72 @@ print_r($tmp_channel_ARRAY, true) .
             'crnrstn.jquery-mobile-inline-png-1.4.5.min.css' => self::$crnrstn_session_salt, 'crnrstn.jquery-mobile-inline-svg-1.4.5.css' => self::$crnrstn_session_salt, 
             'crnrstn.jquery-mobile-inline-svg-1.4.5.min.css' => self::$crnrstn_session_salt, 'crnrstn.jquery-mobile-theme-1.4.5.css' => self::$crnrstn_session_salt, 
             'crnrstn.jquery-mobile-theme-1.4.5.min.css' => self::$crnrstn_session_salt, 'crnrstn.jquery-mobile-1.4.5.css' => self::$crnrstn_session_salt, 
-            'crnrstn.jquery-mobile-1.4.5.min.css' => self::$crnrstn_session_salt, 'simple-grid.min.css' => '_lib/frameworks/simple_grid', 
-            'simple-grid.css' => '_lib/frameworks/simple_grid', '12cols.css' => '_lib/frameworks/responsive_grid_system/css', 
-            '11cols.css' => '_lib/frameworks/responsive_grid_system/css', '10cols.css' => '_lib/frameworks/responsive_grid_system/css', 
-            '9cols.css' => '_lib/frameworks/responsive_grid_system/css', '8cols.css' => '_lib/frameworks/responsive_grid_system/css', 
-            '7cols.css' => '_lib/frameworks/responsive_grid_system/css', '6cols.css' => '_lib/frameworks/responsive_grid_system/css', 
-            '5cols.css' => '_lib/frameworks/responsive_grid_system/css', '4cols.css' => '_lib/frameworks/responsive_grid_system/css', 
-            '3cols.css' => '_lib/frameworks/responsive_grid_system/css', '2cols.css' => '_lib/frameworks/responsive_grid_system/css', 
-            'col.css' => '_lib/frameworks/responsive_grid_system/css', 'html5reset.css' => '_lib/frameworks/responsive_grid_system/css', 
-            'main.js' => '_lib/frameworks/html5_boilerplate/8.0.0/js', 'plugins.js' => '_lib/frameworks/html5_boilerplate/8.0.0/js', 
-            'modernizr-3.11.2.min.js' => '_lib/frameworks/html5_boilerplate/8.0.0/js/vendor', 'main.css' => '_lib/frameworks/html5_boilerplate/8.0.0/css', 
-            'normalize.css' => '_lib/frameworks/html5_boilerplate/8.0.0/css', '6.7.5/js/vendor/foundation.js' => '_lib/frameworks/foundation', 
-            '6.7.5/js/vendor/foundation.min.js' => '_lib/frameworks/foundation', '6.7.5/js/vendor/what-input.js' => '_lib/frameworks/foundation', 
-            '960_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 'min/960_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 
-            'text.css' => '_lib/frameworks/960_grid_system/code/css', 'min/text.css' => '_lib/frameworks/960_grid_system/code/css', 
-            'reset.css' => '_lib/frameworks/960_grid_system/code/css', 'min/reset.css' => '_lib/frameworks/960_grid_system/code/css', 
-            '960_12_col_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 'min/960_12_col_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 
-            '960_16_col_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 'min/960_16_col_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 
-            '960_24_col_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 'min/960_24_col_rtl.css' => '_lib/frameworks/960_grid_system/code/css', 
-            '960_16_col.css' => '_lib/frameworks/960_grid_system/code/css', 'min/960_16_col.css' => '_lib/frameworks/960_grid_system/code/css', 
-            '960_24_col.css' => '_lib/frameworks/960_grid_system/code/css', '960.css' => '_lib/frameworks/960_grid_system/code/css', 
-            'min/960.css' => '_lib/frameworks/960_grid_system/code/css', 'simplegrid.css' => '_lib/frameworks/this_is_dallas_simple_grid', 
-            'style.css' => '_lib/frameworks/rwdgrid/2.0/css', 'rwdgrid.css' => '_lib/frameworks/rwdgrid/2.0/css', 
-            'rwdgrid.min.css' => '_lib/frameworks/rwdgrid/2.0/css/rwdgrid.min.css', 'skeleton.css' => '_lib/frameworks/skeleton/2.0.4/css/skeleton.css', 
-            '2.0.4/css/normalize.css' => '_lib/frameworks/skeleton/2.0.4/css/normalize.css', 'screen.css' => '_lib/frameworks/dead_simple_grid/css/screen.css', 
-            'grid.css' => '_lib/frameworks/dead_simple_grid/css', 'html5.js' => '_lib/frameworks/unsemantic/assets/javascripts', 
-            'adapt.min.js' => '_lib/frameworks/unsemantic/assets/javascripts', 'demo.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'ie-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'ie.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'reset-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'frameworks/unsemantic/assets/stylesheets/reset.css' => '_lib', 
-            'frameworks/unsemantic/assets/stylesheets/text.css' => '_lib', 'unsemantic-grid-base-no-ie7-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-base-no-ie7.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-base-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-base-tablet-no-ie7-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-base-tablet-no-ie7.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-base-tablet-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-base-tablet.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-base.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-desktop-no-ie7-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-desktop-no-ie7.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-desktop-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-desktop.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-mobile-no-ie7-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-mobile-no-ie7.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-mobile-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-mobile.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-no-ie7-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-responsive-no-ie7.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-responsive-tablet-no-ie7-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-tablet-no-ie7.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-responsive-tablet-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-tablet.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-responsive.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-tablet-no-ie7-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-tablet-no-ie7.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'unsemantic-grid-tablet-rtl.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 
-            'unsemantic-grid-tablet.css' => '_lib/frameworks/unsemantic/assets/stylesheets', 'demo.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'ie-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'ie.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'reset.scss' => '_lib/frameworks/unsemantic/assets/sass', 'text.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-base-no-ie7-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-base-no-ie7.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-base-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-base-tablet-no-ie7-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-base-tablet-no-ie7.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-base-tablet-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-base-tablet.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-base.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-desktop-no-ie7-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-desktop-no-ie7.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-desktop-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-desktop.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-mobile-no-ie7-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-mobile-no-ie7.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-mobile-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-mobile.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-responsive-no-ie7-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-responsive-no-ie7.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-responsive-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-responsive-tablet-no-ie7-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-responsive-tablet-no-ie7.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-responsive-tablet-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-responsive-tablet.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-responsive.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-tablet-no-ie7-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-tablet-no-ie7.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            'unsemantic-grid-tablet-rtl.scss' => '_lib/frameworks/unsemantic/assets/sass', 'unsemantic-grid-tablet.scss' => '_lib/frameworks/unsemantic/assets/sass', 
-            '_demo.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', '_ie.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', 
-            '_reset.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', '_text.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', 
-            '_unsemantic-grid-responsive-tablet.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', '_unsemantic-grid-responsive.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', 
-            '_unsemantic-ie-snap.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', '_unsemantic-vars.scss' => '_lib/frameworks/unsemantic/assets/sass/partials', 
-            'grid.js' => '_lib/frameworks/unsemantic/assets/react/dist', 'grid_clear.js' => '_lib/frameworks/unsemantic/assets/react/dist', 
-            'grid_container.js' => '_lib/frameworks/unsemantic/assets/react/dist', 'grid_offset.js' => '_lib/frameworks/unsemantic/assets/react/dist', 
-            'frameworks/unsemantic/assets/react/dist/index.js' => '_lib');
+            'crnrstn.jquery-mobile-1.4.5.min.css' => self::$crnrstn_session_salt, 'simple-grid.min.css' => '_lib/simple_grid', 
+            'simple-grid.css' => '_lib/simple_grid', '12cols.css' => '_lib/responsive_grid_system/css', 
+            '11cols.css' => '_lib/responsive_grid_system/css', '10cols.css' => '_lib/responsive_grid_system/css', 
+            '9cols.css' => '_lib/responsive_grid_system/css', '8cols.css' => '_lib/responsive_grid_system/css', 
+            '7cols.css' => '_lib/responsive_grid_system/css', '6cols.css' => '_lib/responsive_grid_system/css', 
+            '5cols.css' => '_lib/responsive_grid_system/css', '4cols.css' => '_lib/responsive_grid_system/css', 
+            '3cols.css' => '_lib/responsive_grid_system/css', '2cols.css' => '_lib/responsive_grid_system/css', 
+            'col.css' => '_lib/responsive_grid_system/css', 'html5reset.css' => '_lib/responsive_grid_system/css', 
+            'main.js' => '_lib/html5_boilerplate/8.0.0/js', 'plugins.js' => '_lib/html5_boilerplate/8.0.0/js', 
+            'modernizr-3.11.2.min.js' => '_lib/html5_boilerplate/8.0.0/js/vendor', 'main.css' => '_lib/html5_boilerplate/8.0.0/css', 
+            'normalize.css' => '_lib/html5_boilerplate/8.0.0/css', '6.7.5/js/vendor/foundation.js' => '_lib/foundation', 
+            '6.7.5/js/vendor/foundation.min.js' => '_lib/foundation', '6.7.5/js/vendor/what-input.js' => '_lib/foundation', 
+            '960_rtl.css' => '_lib/960_grid_system/code/css', 'min/960_rtl.css' => '_lib/960_grid_system/code/css', 
+            'text.css' => '_lib/960_grid_system/code/css', 'min/text.css' => '_lib/960_grid_system/code/css', 
+            'reset.css' => '_lib/960_grid_system/code/css', 'min/reset.css' => '_lib/960_grid_system/code/css', 
+            '960_12_col_rtl.css' => '_lib/960_grid_system/code/css', 'min/960_12_col_rtl.css' => '_lib/960_grid_system/code/css', 
+            '960_16_col_rtl.css' => '_lib/960_grid_system/code/css', 'min/960_16_col_rtl.css' => '_lib/960_grid_system/code/css', 
+            '960_24_col_rtl.css' => '_lib/960_grid_system/code/css', 'min/960_24_col_rtl.css' => '_lib/960_grid_system/code/css', 
+            '960_16_col.css' => '_lib/960_grid_system/code/css', 'min/960_16_col.css' => '_lib/960_grid_system/code/css', 
+            '960_24_col.css' => '_lib/960_grid_system/code/css', '960.css' => '_lib/960_grid_system/code/css', 
+            'min/960.css' => '_lib/960_grid_system/code/css', 'simplegrid.css' => '_lib/this_is_dallas_simple_grid', 
+            'style.css' => '_lib/rwdgrid/2.0/css', 'rwdgrid.css' => '_lib/rwdgrid/2.0/css', 
+            'rwdgrid.min.css' => '_lib/rwdgrid/2.0/css/rwdgrid.min.css', 'skeleton.css' => '_lib/skeleton/2.0.4/css/skeleton.css', 
+            '2.0.4/css/normalize.css' => '_lib/skeleton/2.0.4/css/normalize.css', 'screen.css' => '_lib/dead_simple_grid/css/screen.css', 
+            'grid.css' => '_lib/dead_simple_grid/css', 'html5.js' => '_lib/unsemantic/assets/javascripts', 
+            'adapt.min.js' => '_lib/unsemantic/assets/javascripts', 'demo.css' => '_lib/unsemantic/assets/stylesheets', 
+            'ie-rtl.css' => '_lib/unsemantic/assets/stylesheets', 'ie.css' => '_lib/unsemantic/assets/stylesheets', 
+            'reset-rtl.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic/assets/stylesheets/reset.css' => '_lib', 
+            'unsemantic/assets/stylesheets/text.css' => '_lib', 'unsemantic-grid-base-no-ie7-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-base-no-ie7.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-base-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-base-tablet-no-ie7-rtl.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-base-tablet-no-ie7.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-base-tablet-rtl.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-base-tablet.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-base.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-desktop-no-ie7-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-desktop-no-ie7.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-desktop-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-desktop.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-mobile-no-ie7-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-mobile-no-ie7.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-mobile-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-mobile.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-no-ie7-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-responsive-no-ie7.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-responsive-tablet-no-ie7-rtl.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-tablet-no-ie7.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-responsive-tablet-rtl.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-responsive-tablet.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-responsive.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-tablet-no-ie7-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-tablet-no-ie7.css' => '_lib/unsemantic/assets/stylesheets', 'unsemantic-grid-tablet-rtl.css' => '_lib/unsemantic/assets/stylesheets', 
+            'unsemantic-grid-tablet.css' => '_lib/unsemantic/assets/stylesheets', 'demo.scss' => '_lib/unsemantic/assets/sass', 
+            'ie-rtl.scss' => '_lib/unsemantic/assets/sass', 'ie.scss' => '_lib/unsemantic/assets/sass', 
+            'reset.scss' => '_lib/unsemantic/assets/sass', 'text.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-base-no-ie7-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-base-no-ie7.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-base-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-base-tablet-no-ie7-rtl.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-base-tablet-no-ie7.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-base-tablet-rtl.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-base-tablet.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-base.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-desktop-no-ie7-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-desktop-no-ie7.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-desktop-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-desktop.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-mobile-no-ie7-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-mobile-no-ie7.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-mobile-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-mobile.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-responsive-no-ie7-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-responsive-no-ie7.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-responsive-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-responsive-tablet-no-ie7-rtl.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-responsive-tablet-no-ie7.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-responsive-tablet-rtl.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-responsive-tablet.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-responsive.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-tablet-no-ie7-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-tablet-no-ie7.scss' => '_lib/unsemantic/assets/sass', 
+            'unsemantic-grid-tablet-rtl.scss' => '_lib/unsemantic/assets/sass', 'unsemantic-grid-tablet.scss' => '_lib/unsemantic/assets/sass', 
+            '_demo.scss' => '_lib/unsemantic/assets/sass/partials', '_ie.scss' => '_lib/unsemantic/assets/sass/partials', 
+            '_reset.scss' => '_lib/unsemantic/assets/sass/partials', '_text.scss' => '_lib/unsemantic/assets/sass/partials', 
+            '_unsemantic-grid-responsive-tablet.scss' => '_lib/unsemantic/assets/sass/partials', '_unsemantic-grid-responsive.scss' => '_lib/unsemantic/assets/sass/partials', 
+            '_unsemantic-ie-snap.scss' => '_lib/unsemantic/assets/sass/partials', '_unsemantic-vars.scss' => '_lib/unsemantic/assets/sass/partials', 
+            'grid.js' => '_lib/unsemantic/assets/react/dist', 'grid_clear.js' => '_lib/unsemantic/assets/react/dist', 
+            'grid_container.js' => '_lib/unsemantic/assets/react/dist', 'grid_offset.js' => '_lib/unsemantic/assets/react/dist', 
+            'unsemantic/assets/react/dist/index.js' => '_lib');
 
         $this->asset_routing_data_key_lookup_ARRAY['css'] = $tmp_ARRAY;
 
@@ -63701,6 +63700,52 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                                  $R_str_replacements, 
                                  $R_resp[$mem_ptr]['title']['TEXT']);
 
+/*
+        $meta_keys = 'TITLE_HTML|DESCRIPTION';  // [TITLE, TITLE_TEXT, TITLE_HTML, DESCRIPTION]
+        if(!($R_resp = _crnrstn_native_resource_registry(
+                       'meta', 
+                       $this, 
+                       'new', 
+                       $R_resp[$mem_ptr]['data_resource_name'][0], 
+                       self::$R_data['R_debug_mode'], 
+                       $meta_keys)))
+        {
+
+            $clr_ssl_msg = 'Meta data error getting ' . 
+                           \print_r($name, true) . ' for resource: ' . 
+                           \print_r($R_index_000, true);
+            // 5 :: Mon May xxxxxxxxxxxxxxxxxxxxxxxxxxx
+            $msg_token = 'd9c5ca131ab8615a1738c340cf44c4ff' .
+                         'xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+            $token_generation_date = '2026xxxxxxxxxxxxxxxxxxxxxxxxxxx';
+            $token = array(
+                     'token'                   => $msg_token, 
+                     'token_generation_date'   => $token_generation_date, 
+                     'request_type'            => __METHOD__, 
+                     'code'                    => 200, 
+                     'clr_ssl_msg'             => $clr_ssl_msg);
+            $this->error_log(
+                   $clr_ssl_msg, 
+                   \LOG_ERR, 
+                   \E_ERROR, 
+                   __LINE__, 
+                   __METHOD__, 
+                   __FILE__, 
+                   $token);
+
+        }
+
+        echo '<br><pre><code>[' .
+$this->return_micro_time() . '] 
+[mthd ' . __METHOD__ . '] 
+[lnum ' . __LINE__ . '] 
+[rtime ' . $this->wall_time() . '] 
+R_resp = 
+' . \print_r($R_resp, true) . '</code></pre>';
+        die();
+
+*/
+
         if(isset($R_resp[$mem_ptr]['data'][0])){
 
             switch($this->gettype($R_resp[$mem_ptr]['data'][0], self::$R_data['int_flag']['R_integer'])){
@@ -63760,72 +63805,72 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         <script type="application/json" src="' . 
             self::$R_data['directory_shift'] . '/' . 
             self::$R_data['R_framework_directory'] .
-            '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
+            '/ui/js/_lib/jquery/4.0.0/' . 
             'jquery-4.0.0.min.map?' .
             $session_salt . '=jquery-4.0.0.min.map' .
             '&R_cache=' .
             $this->file_url_cache_id(self::$R_data['R_framework_path'] .
-                   '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
+                   '/ui/js/_lib/jquery/4.0.0/' . 
                    'jquery-4.0.0.min.map') . '"></script>
         <script type="text/javascript" src="' . 
             self::$R_data['directory_shift'] . '/' . 
             self::$R_data['R_framework_directory'] .
-            '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
+            '/ui/js/_lib/jquery/4.0.0/' . 
             'jquery-4.0.0.min.js?' .
             $session_salt . '=jquery-4.0.0.min.js' .
             '&R_cache=' .
             $this->file_url_cache_id(self::$R_data['R_framework_path'] .
-                   '/ui/js/_lib/frameworks/jquery/4.0.0/' . 
+                   '/ui/js/_lib/jquery/4.0.0/' . 
                    'jquery-4.0.0.min.js') . '"></script>
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
             self::$R_data['R_framework_directory'] .
-            '/ui/js/_lib/frameworks/lightbox.js' . 
+            '/ui/js/_lib/lightbox.js' . 
             '/2.12.0/dist/css/lightbox.min.css?' .
             $session_salt . '=lightbox.min.css' .
             '&R_cache=' .
             $this->file_url_cache_id(self::$R_data['R_framework_path'] .
-                   '/ui/js/_lib/frameworks/lightbox.js' . 
+                   '/ui/js/_lib/lightbox.js' . 
                    '/2.12.0/dist/css/lightbox.min.css') . '">
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
             self::$R_data['R_framework_directory'] .
-            '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
+            '/ui/js/_lib/jquery_ui/1.14.2/' . 
             'jquery-ui.theme.min.css?' .
             $session_salt . '=jquery-ui-1.14.2/jquery-ui.theme.min.css' .
             '&R_cache=' .
             $this->file_url_cache_id(self::$R_data['R_framework_path'] .
-                   '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
+                   '/ui/js/_lib/jquery_ui/1.14.2/' . 
                    'jquery-ui.theme.min.css') . '">
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
             self::$R_data['R_framework_directory'] .
-            '/ui/js/_lib/frameworks/jquery_ui/1.14.2' . 
+            '/ui/js/_lib/jquery_ui/1.14.2' . 
             '/jquery-ui.structure.min.css?' .
             $session_salt . '=jquery-ui-1.14.2/jquery-ui.structure.min.css' .
             '&R_cache=' .
             $this->file_url_cache_id(self::$R_data['R_framework_path'] .
-                   '/ui/js/_lib/frameworks/jquery_ui/1.14.2' . 
+                   '/ui/js/_lib/jquery_ui/1.14.2' . 
                    '/jquery-ui.structure.min.css') . '">
         <link type="text/css" rel="stylesheet" href="' . 
             self::$R_data['directory_shift'] . '/' . 
             self::$R_data['R_framework_directory'] .
-            '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
+            '/ui/js/_lib/jquery_ui/1.14.2/' . 
             'jquery-ui.min.css?' .
             $session_salt . '=jquery-ui-1.14.2/jquery-ui.min.css' .
             '&R_cache=' .
             $this->file_url_cache_id(self::$R_data['R_framework_path'] .
-                   '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
+                   '/ui/js/_lib/jquery_ui/1.14.2/' . 
                    'jquery-ui.min.css') . '">
         <script type="text/javascript" src="' . 
             self::$R_data['directory_shift'] . '/' . 
             self::$R_data['R_framework_directory'] .
-            '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
+            '/ui/js/_lib/jquery_ui/1.14.2/' . 
             'jquery-ui.min.js?' .
             $session_salt . '=jquery-ui-1.14.2/jquery-ui.min.js' .
             '&R_cache=' .
             $this->file_url_cache_id(self::$R_data['R_framework_path'] .
-                   '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' . 
+                   '/ui/js/_lib/jquery_ui/1.14.2/' . 
                    'jquery-ui.min.js') . '"></script>
         <script type="text/javascript" src="' . 
             self::$R_data['directory_shift'] . '/' . 
@@ -64274,7 +64319,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
         $R_resp[$mem_ptr]['loading_arch'][$R_resp[$mem_ptr]['software_version'][0]]        => 9876
         $R_resp[$mem_ptr]['namespace']                      => CRNRSTN
         $R_resp[$mem_ptr]['file_path']['definition'][$R_resp[$mem_ptr]['software_version'][0]]  => /var/www/html/_crnrstn/class/crnrstn/crnrstn.kivotos.class.php
-        $R_resp[$mem_ptr]['file_path']['new_obj_exe'][$R_resp[$mem_ptr]['software_version'][0]] => /var/www/html/_crnrstn/_config/_config.resource_registry/resource/object_return/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
+        $R_resp[$mem_ptr]['file_path']['new_obj_exe'][$R_resp[$mem_ptr]['software_version'][0]] => /var/www/html/_crnrstn/_config/resource_registry/obj/crnrstn_kivotos/crnrstn.crnrstn_kivotos.fire_bolt_exe.php
         $R_resp[$mem_ptr]['file_name'][$R_resp[$mem_ptr]['software_version'][0]]                => crnrstn.kivotos.class.php
         $R_resp[$mem_ptr]['software_version'][0]                                                => 1.00.0000
         $R_resp[$mem_ptr]['is_active'][$R_resp[$mem_ptr]['software_version'][0]]                => 1
@@ -84892,7 +84937,7 @@ $oCRNRSTN->config_detect_environment(\'APACHE_WOLF_PUP\', \'SERVER_' .
                      * for URL formatting: 
                      * System.security.allowDomain();
                      *
-                     * See, /_R/ui/js/_lib/frameworks/google_ajaxslt/0.4/demo/eVifweb_2026/
+                     * See, /_R/ui/js/_lib/google_ajaxslt/0.4/demo/eVifweb_2026/
                      *
                      *
                      * 5 :: Wednesday, May 20, 2026 @ 0330 hrs.
@@ -93481,7 +93526,7 @@ $http_status_codes[$response_code] . '</div>
 
         /* [Tue Mar 10 03:07:34.831970 2026] [:error] [pid 20742] 
          * [client 172.16.225.1:51844] [lnum 69321] [class crnrstn] 
-         * $file_path[/var/www/html/sysops/_crnrstn/_config/_config.resource_registry
+         * $file_path[/var/www/html/sysops/_crnrstn/_config/resource_registry
          * /crnrstn.native_resource_registry.function.php], 
          * $algorithm_override[sha256]. 
          * 

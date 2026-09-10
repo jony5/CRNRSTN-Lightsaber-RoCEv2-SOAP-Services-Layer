@@ -3487,7 +3487,7 @@ case 'CRNRSTN_STRING':
 case 'CRNRSTN_HTML':
     // PREVIOUSLY CRNRSTN_HTML_WRAPPED
     // '.html' => 'CRNRSTN_HTML',
-    public_html/_R/ui/js/_lib/frameworks/jquery_ui/1.13.2/index.html
+    public_html/_R/ui/js/_lib/jquery_ui/1.13.2/index.html
 case 'CRNRSTN_BASE64':
 case 'CRNRSTN_HTM':
     // '.htm' => 'CRNRSTN_HTM',
@@ -3504,8 +3504,8 @@ case 'CRNRSTN_XHTML':
     Projects\Creative\crnrstn_lightsaber\_unit_test_src_files\CRNRSTN_XHTML
 case 'CRNRSTN_XML':
     // '.xml' => 'CRNRSTN_XML',
-    public_html/_R/ui/css/_lib/frameworks/html5_boilerplate/8.0.0/browserconfig.xml
-    public_html/_R/ui/css/_lib/frameworks/rwdgrid/2.0/js/html5shiv/test/jquery-1.7.1/data/dashboard.xml
+    public_html/_R/ui/css/_lib/html5_boilerplate/8.0.0/browserconfig.xml
+    public_html/_R/ui/css/_lib/rwdgrid/2.0/js/html5shiv/test/jquery-1.7.1/data/dashboard.xml
 case 'CRNRSTN_XSLT':
     // '.xslt' => 'CRNRSTN_XSLT',
     Projects\Creative\crnrstn_lightsaber\_unit_test_src_files\CRNRSTN_XSLT\nutrition
@@ -3516,7 +3516,7 @@ case 'CRNRSTN_CSV':
     Projects\Creative\crnrstn_lightsaber\_unit_test_src_files\CRNRSTN_CSV\
 case 'CRNRSTN_TXT':
     // '.txt' => 'CRNRSTN_TXT',
-    public_html/_R/ui/js/_lib/frameworks/moo.fx/2.0/License.txt
+    public_html/_R/ui/js/_lib/moo.fx/2.0/License.txt
 case 'CRNRSTN_SQL':
     // '.sql' => 'CRNRSTN_SQL',
     \Projects\Creative\crnrstn_lightsaber\_unit_test_src_files\CRNRSTN_SQL\
@@ -3536,7 +3536,7 @@ case 'CRNRSTN_PHPS':
     // '.phps' => 'CRNRSTN_PHPS',
 case 'CRNRSTN_AS':
     // '.as' => 'CRNRSTN_AS',
-    public_html/_R/ui/js/_lib/frameworks/swfobject/2.2/src/expressInstall.as
+    public_html/_R/ui/js/_lib/swfobject/2.2/src/expressInstall.as
 case 'CRNRSTN_C':
     // '.C' => 'CRNRSTN_C',
     Projects\Creative\crnrstn_lightsaber\_unit_test_src_files\CRNRSTN_C
@@ -3646,7 +3646,7 @@ case 'CRNRSTN_ICO':
     Projects\Creative\crnrstn_lightsaber\_unit_test_src_files\CRNRSTN_ICO
 case 'CRNRSTN_JPG':
     // '.jpg' => 'CRNRSTN_JPG',
-    public_html/_R/ui/js/_lib/frameworks/mithril/2.2.3/examples/animation/flowers.jpg
+    public_html/_R/ui/js/_lib/mithril/2.2.3/examples/animation/flowers.jpg
 case 'CRNRSTN_JPE':
     // '.jpe' => 'CRNRSTN_JPE',
 case 'CRNRSTN_JPEG':
@@ -3699,7 +3699,7 @@ case 'CRNRSTN_M2A':
     // '.m2a' => 'CRNRSTN_M2A',
 case 'CRNRSTN_MP3':
     // '.mp3' => 'CRNRSTN_MP3',
-    _R/ui/js/_lib/frameworks/script.aculo.us/1.9.0/test/functional/sword.mp3
+    _R/ui/js/_lib/script.aculo.us/1.9.0/test/functional/sword.mp3
 case 'CRNRSTN_MPGA':
     // '.mpga' => 'CRNRSTN_MPGA',
 case 'CRNRSTN_MPA':
@@ -3792,7 +3792,7 @@ case 'CRNRSTN_MV':
     // '.mv' => 'CRNRSTN_MV',
 case 'CRNRSTN_SWF':
     // '.swf' => 'CRNRSTN_SWF',
-    public_html/_R/ui/css/_lib/frameworks/rwdgrid/2.0/js/html5shiv/test/data/paramtracer.swf
+    public_html/_R/ui/css/_lib/rwdgrid/2.0/js/html5shiv/test/data/paramtracer.swf
 case 'CRNRSTN_AVI':
     // '.avi' => 'CRNRSTN_AVI',
     Projects\Creative\crnrstn_lightsaber\_unit_test_src_files\CRNRSTN_AVI

@@ -1809,7 +1809,7 @@ class crnrstn_system_asset_manager extends crnrstn
         /*
         // R :: RESOURCE //
         ////
-        $tmp_file_path = '/_lib/frameworks/prototype.js/1.7.3/prototype.js';
+        $tmp_file_path = '/_lib/prototype.js/1.7.3/prototype.js';
         $tmp_file_name = 'prototype.js';
         $tmp_file_type_const = CRNRSTN_JS;
         ////
@@ -2291,7 +2291,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib'. $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.6.1.min.map';
@@ -2317,7 +2316,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.6.1.min.js';
@@ -2343,7 +2341,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.6.1.js';
@@ -2386,7 +2383,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib'. $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '4.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-4.0.0.min.map';
@@ -2412,7 +2408,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '4.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-4.0.0.min.js';
@@ -2438,7 +2433,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '4.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-4.0.0.js';
@@ -2481,7 +2475,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.7.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.7.0.min.map';
@@ -2508,7 +2501,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.7.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.7.0.min.js';
@@ -2535,7 +2527,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.7.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.7.0.js';
@@ -2577,7 +2568,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.6.1.min.map';
@@ -2604,7 +2594,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.6.1.min.js';
@@ -2631,7 +2620,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-3.6.1.js';
@@ -2673,7 +2661,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.2.4' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-2.2.4.min.js';
@@ -2700,7 +2687,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.2.4' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-2.2.4.js';
@@ -2742,7 +2728,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.4' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-1.12.4.min.js';
@@ -2769,7 +2754,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.4' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-1.12.4.js';
@@ -2811,7 +2795,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.11.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-1.11.1.min.js';
@@ -2857,7 +2840,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.min.css';
@@ -2885,7 +2867,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.min.css';
@@ -2913,7 +2894,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.css';
@@ -2941,7 +2921,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.css';
@@ -2969,7 +2948,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.css';
@@ -2997,7 +2975,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.css';
@@ -3038,7 +3015,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -3065,7 +3041,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -3101,7 +3076,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.js';
@@ -3129,7 +3103,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.js';
@@ -3172,7 +3145,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.min.css';
@@ -3200,7 +3172,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.min.css';
@@ -3228,7 +3199,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.css';
@@ -3256,7 +3226,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.css';
@@ -3284,7 +3253,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.css';
@@ -3312,7 +3280,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.css';
@@ -3353,7 +3320,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -3380,7 +3346,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -3416,7 +3381,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.js';
@@ -3444,7 +3408,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.js';
@@ -3487,7 +3450,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.min.css';
@@ -3515,7 +3477,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.min.css';
@@ -3543,7 +3504,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.css';
@@ -3571,7 +3531,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.css';
@@ -3599,7 +3558,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.css';
@@ -3627,7 +3585,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.css';
@@ -3674,7 +3631,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -3701,7 +3657,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -3736,7 +3691,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.js';
@@ -3764,7 +3718,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.12.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.js';
@@ -3807,7 +3760,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-external-png-1.4.5.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -3835,7 +3787,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-icons-1.4.5.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -3863,7 +3814,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-inline-png-1.4.5.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -3891,7 +3841,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-inline-svg-1.4.5.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -3919,7 +3868,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -3947,7 +3895,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-theme-1.4.5.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -3975,7 +3922,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-1.4.5.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4003,7 +3949,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-external-png-1.4.5.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4031,7 +3976,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-icons-1.4.5.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4059,7 +4003,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-inline-png-1.4.5.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4087,7 +4030,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-inline-svg-1.4.5.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4115,7 +4057,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4143,7 +4084,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-theme-1.4.5.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4171,7 +4111,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.jquery-mobile-1.4.5.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4221,7 +4160,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.11.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-1.11.1.min.js';
@@ -4257,7 +4195,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4286,7 +4223,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4314,7 +4250,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_mobi' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery.mobile-1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4360,7 +4295,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4390,7 +4324,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4440,7 +4373,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -4467,7 +4399,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -4503,7 +4434,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4533,7 +4463,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4577,7 +4506,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4607,7 +4535,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4655,7 +4582,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -4682,7 +4608,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -4718,7 +4643,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4748,7 +4672,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4792,7 +4715,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4822,7 +4744,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4870,7 +4791,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -4897,7 +4817,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -4933,7 +4852,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -4963,7 +4881,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -5007,7 +4924,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -5037,7 +4953,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -5067,7 +4982,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -5097,7 +5011,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -5141,7 +5054,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox-2.03.3.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -5183,7 +5095,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'prototype.js' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.7.3' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'prototype.js';
@@ -5219,7 +5130,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox-2.03.3.js';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -5655,7 +5565,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone.min.map';
@@ -5683,7 +5592,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.backbone_1_4_1.min.js';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone.min.js';
@@ -5711,7 +5619,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone.js';
@@ -5753,7 +5660,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone.min.map';
@@ -5781,7 +5687,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.backbone_1_4_1.min.js';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone.min.js';
@@ -5809,7 +5714,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.4.1' . $this->R_data['os_path_dir_separator_char'] . 
                                              'backbone.js';
@@ -5856,7 +5760,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'prototype.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.7.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'prototype.js';
@@ -5897,7 +5800,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'prototype.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.7.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'prototype.js';
@@ -5943,7 +5845,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'prototype.js' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.7.3' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'prototype.js';
@@ -5981,7 +5882,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6009,7 +5909,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6037,7 +5936,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6065,7 +5963,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6093,7 +5990,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6121,7 +6017,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6149,7 +6044,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6186,7 +6080,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'script.aculo.us' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.9.0' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'src' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6235,7 +6128,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'prototype.js' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '1.7.3' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'prototype.js';
@@ -6271,7 +6163,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'moo.fx' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'source' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6299,7 +6190,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'moo.fx' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'source' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6327,7 +6217,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'moo.fx' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'source' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6355,7 +6244,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'moo.fx' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'source' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6383,7 +6271,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'moo.fx' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'source' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6429,7 +6316,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'more' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6457,7 +6343,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'more' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6499,7 +6384,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'more' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6527,7 +6411,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'more' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6573,7 +6456,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'core' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6601,7 +6483,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'core' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6643,7 +6524,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'core' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6671,7 +6551,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'mootools' . $this->R_data['os_path_dir_separator_char'] . 
                                              'core' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.6.0' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6713,7 +6592,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.min.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6743,7 +6621,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = 'crnrstn.lightbox.css';
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -6793,7 +6670,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -6820,7 +6696,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -6856,7 +6731,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.min.css';
@@ -6884,7 +6758,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.min.css';
@@ -6912,7 +6785,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.css';
@@ -6940,7 +6812,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.theme.css';
@@ -6968,7 +6839,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.structure.css';
@@ -6996,7 +6866,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.css';
@@ -7024,7 +6893,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.min.js';
@@ -7052,7 +6920,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery_ui' . $this->R_data['os_path_dir_separator_char'] . 
                                              '1.13.2' . $this->R_data['os_path_dir_separator_char'] . 
                                              'jquery-ui.js';
@@ -7288,7 +7155,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'simple_grid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'simple-grid.min.css';
                             $tmp_file_name = 'simple-grid.min.css';
@@ -7314,7 +7180,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'simple_grid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'simple-grid.css';
                             $tmp_file_name = 'simple-grid.css';
@@ -7387,7 +7252,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7417,7 +7281,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7445,7 +7308,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7475,7 +7337,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7503,7 +7364,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7533,7 +7393,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7575,7 +7434,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7605,7 +7463,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7633,7 +7490,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7663,7 +7519,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7691,7 +7546,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7721,7 +7575,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7763,7 +7616,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7793,7 +7645,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7821,7 +7672,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7851,7 +7701,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7879,7 +7728,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7909,7 +7757,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7951,7 +7798,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -7981,7 +7827,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8008,7 +7853,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8038,7 +7882,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8066,7 +7909,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8095,7 +7937,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8137,7 +7978,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8167,7 +8007,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8195,7 +8034,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8225,7 +8063,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8253,7 +8090,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8283,7 +8119,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8325,7 +8160,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8355,7 +8189,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8383,7 +8216,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                             '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                             '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                             'code' . $this->R_data['os_path_dir_separator_char'] . 
                             'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8413,7 +8245,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8441,7 +8272,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8471,7 +8301,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8513,7 +8342,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8543,7 +8371,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8571,7 +8398,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8601,7 +8427,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8628,7 +8453,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8658,7 +8482,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8700,7 +8523,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8730,7 +8552,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8758,7 +8579,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8788,7 +8608,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8816,7 +8635,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8846,7 +8664,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              '960_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'code' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -8905,7 +8722,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -8932,7 +8748,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -8968,7 +8783,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'foundation' . $this->R_data['os_path_dir_separator_char'] . 
                                              '6.7.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9000,7 +8814,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'foundation' . $this->R_data['os_path_dir_separator_char'] . 
                                              '6.7.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9032,7 +8845,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'foundation' . $this->R_data['os_path_dir_separator_char'] . 
                                              '6.7.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9090,7 +8902,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.min.js';
@@ -9117,7 +8928,6 @@ class crnrstn_system_asset_manager extends crnrstn
                                 $tmp_crnrstn_mod = NULL;
                                 $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                                  '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                                 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery' . $this->R_data['os_path_dir_separator_char'] . 
                                                  '3.6.1' . $this->R_data['os_path_dir_separator_char'] . 
                                                  'jquery-3.6.1.js';
@@ -9152,7 +8962,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'foundation' . $this->R_data['os_path_dir_separator_char'] . 
                                              '6.7.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9184,7 +8993,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'foundation' . $this->R_data['os_path_dir_separator_char'] . 
                                              '6.7.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9216,7 +9024,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'foundation' . $this->R_data['os_path_dir_separator_char'] . 
                                              '6.7.5' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9278,7 +9085,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9296,7 +9102,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9324,7 +9129,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9353,7 +9157,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9380,7 +9183,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9434,7 +9236,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9461,7 +9262,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9489,7 +9289,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9518,7 +9317,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9545,7 +9343,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5_boilerplate' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8.0.0' . $this->R_data['os_path_dir_separator_char'] . 
                                              'js' . $this->R_data['os_path_dir_separator_char'] . 
@@ -9616,7 +9413,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'html5reset.css';
@@ -9642,7 +9438,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'col.css';
@@ -9669,7 +9464,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2cols.css';
@@ -9696,7 +9490,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '3cols.css';
@@ -9722,7 +9515,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '4cols.css';
@@ -9749,7 +9541,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '5cols.css';
@@ -9776,7 +9567,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '6cols.css';
@@ -9803,7 +9593,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '7cols.css';
@@ -9830,7 +9619,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '8cols.css';
@@ -9857,7 +9645,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '9cols.css';
@@ -9884,7 +9671,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '10cols.css';
@@ -9909,7 +9695,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '11cols.css';
@@ -9936,7 +9721,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'responsive_grid_system' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              '12cols.css';
@@ -10013,7 +9797,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'javascripts' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10051,7 +9834,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10088,7 +9870,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10160,7 +9941,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'javascripts' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10198,7 +9978,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10236,7 +10015,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10280,16 +10058,11 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'reset.css';
-                            $tmp_file_name = 'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'assets' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'reset.css';
+                            $tmp_file_name = 'reset.css';
                             $tmp_meta_type = 'text/css';
                             $tmp_file_is_minimized = false;
                             $tmp_asset_minimization_mode_is_active = false;
@@ -10326,7 +10099,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10408,7 +10180,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'javascripts' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10444,7 +10215,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10481,7 +10251,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10531,7 +10300,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'javascripts' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10610,7 +10378,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'javascripts' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10647,7 +10414,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10684,7 +10450,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'stylesheets' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10734,7 +10499,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'unsemantic' . $this->R_data['os_path_dir_separator_char'] . 
                                              'assets' . $this->R_data['os_path_dir_separator_char'] . 
                                              'javascripts' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10779,7 +10543,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'dead_simple_grid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'grid.css';
@@ -10841,7 +10604,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'dead_simple_grid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'screen.css';
@@ -10892,7 +10654,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'skeleton' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.0.4' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10922,7 +10683,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'skeleton' . $this->R_data['os_path_dir_separator_char'] . 
                                              '2.0.4' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
@@ -10973,7 +10733,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid.min.css';
@@ -11000,7 +10759,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid.css';
@@ -11026,7 +10784,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'style.css';
@@ -11079,7 +10836,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid.min.css';
@@ -11106,7 +10862,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid.css';
@@ -11133,7 +10888,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'rwdgrid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'css' . $this->R_data['os_path_dir_separator_char'] . 
                                              'style.css';
@@ -11182,7 +10936,6 @@ class crnrstn_system_asset_manager extends crnrstn
                             $tmp_crnrstn_mod = NULL;
                             $tmp_file_path = $this->R_data['os_path_dir_separator_char'] . 
                                              '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                             'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                              'this_is_dallas_simple_grid' . $this->R_data['os_path_dir_separator_char'] . 
                                              'simplegrid.css';
                             $tmp_file_name = 'simplegrid.css';
@@ -11707,7 +11460,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -11736,7 +11488,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11766,7 +11517,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11796,7 +11546,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11826,7 +11575,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11856,7 +11604,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11886,7 +11633,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11916,7 +11662,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11946,7 +11691,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -11976,7 +11720,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5/images' . $this->R_data['os_path_dir_separator_char'] . 
                                 'icons-png';
@@ -12005,7 +11748,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12035,7 +11777,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12065,7 +11806,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5/images' . $this->R_data['os_path_dir_separator_char'] . 
                                 'icons-png';
@@ -12094,7 +11834,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12124,7 +11863,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12154,7 +11892,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12184,7 +11921,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12214,7 +11950,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12244,7 +11979,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12274,7 +12008,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12304,7 +12037,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12334,7 +12066,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12364,7 +12095,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12394,7 +12124,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12424,7 +12153,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12454,7 +12182,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12484,7 +12211,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12514,7 +12240,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12544,7 +12269,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12574,7 +12298,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12604,7 +12327,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12634,7 +12356,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12664,7 +12385,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12695,7 +12415,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12725,7 +12444,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12755,7 +12473,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12785,7 +12502,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12815,7 +12531,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12845,7 +12560,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12875,7 +12589,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12905,7 +12618,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12935,7 +12647,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12965,7 +12676,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -12995,7 +12705,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13025,7 +12734,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13055,7 +12763,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13085,7 +12792,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13115,7 +12821,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13145,7 +12850,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13175,7 +12879,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13205,7 +12908,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13235,7 +12937,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13265,7 +12966,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13295,7 +12995,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13325,7 +13024,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13355,7 +13053,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13385,7 +13082,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13415,7 +13111,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13445,7 +13140,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13475,7 +13169,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13505,7 +13198,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13535,7 +13227,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13565,7 +13256,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13595,7 +13285,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13625,7 +13314,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13655,7 +13343,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13685,7 +13372,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13715,7 +13401,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13745,7 +13430,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13775,7 +13459,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13805,7 +13488,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13835,7 +13517,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13865,7 +13546,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13895,7 +13575,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13923,7 +13602,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13953,7 +13631,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -13983,7 +13660,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14013,7 +13689,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14043,7 +13718,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14073,7 +13747,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14104,7 +13777,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14134,7 +13806,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14164,7 +13835,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14194,7 +13864,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14224,7 +13893,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14254,7 +13922,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14284,7 +13951,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14314,7 +13980,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14344,7 +14009,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14374,7 +14038,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14404,7 +14067,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14434,7 +14096,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14464,7 +14125,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14494,7 +14154,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14524,7 +14183,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14554,7 +14212,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14584,7 +14241,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14614,7 +14270,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14644,7 +14299,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14674,7 +14328,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14704,7 +14357,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
                                 '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -14733,7 +14385,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -14761,7 +14412,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -14789,7 +14439,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -14817,7 +14466,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -14845,7 +14493,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -14873,7 +14520,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js/2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
                 $tmp_filepath .= $this->R_data['os_path_dir_separator_char'] . 
@@ -14900,7 +14546,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -14928,7 +14573,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -14956,7 +14600,6 @@ class crnrstn_system_asset_manager extends crnrstn
                 $tmp_filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
                                 'js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-                                'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
                                 'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
                                 '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
                                 'images';
@@ -22695,7 +22338,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -22710,7 +22352,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22726,7 +22367,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22742,7 +22382,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22758,7 +22397,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22774,7 +22412,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22790,7 +22427,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22806,7 +22442,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22822,7 +22457,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22838,7 +22472,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22854,7 +22487,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22870,7 +22502,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22886,7 +22517,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22903,7 +22533,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22920,7 +22549,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22936,7 +22564,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22952,7 +22579,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22968,7 +22594,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -22984,7 +22609,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23000,7 +22624,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23016,7 +22639,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23032,7 +22654,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23048,7 +22669,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23064,7 +22684,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23080,7 +22699,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23096,7 +22714,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23112,7 +22729,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23128,7 +22744,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23144,7 +22759,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23160,7 +22774,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23176,7 +22789,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23192,7 +22804,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23208,7 +22819,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23224,7 +22834,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23240,7 +22849,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23256,7 +22864,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23272,7 +22879,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23288,7 +22894,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23304,7 +22909,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23320,7 +22924,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23336,7 +22939,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23352,7 +22954,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23368,7 +22969,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23384,7 +22984,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23401,7 +23000,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23417,7 +23015,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23433,7 +23030,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23449,7 +23045,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23465,7 +23060,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23481,7 +23075,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23497,7 +23090,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23511,7 +23103,7 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filename = 'edit-black';
 //                            $file_extension = 'png';
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'js/_lib/frameworks/jquery_mobile/1.4.5/images/icons-png';
+//                                            'js/_lib/jquery_mobile/1.4.5/images/icons-png';
 //                            $filepath .= $this->R_data['os_path_dir_separator_char'] . 
 //                                             $filename . '.' . $file_extension;
 //
@@ -23523,7 +23115,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23539,7 +23130,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23555,7 +23145,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23571,7 +23160,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23587,7 +23175,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23603,7 +23190,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23619,7 +23205,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23635,7 +23220,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23651,7 +23235,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23667,7 +23250,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23683,7 +23265,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23699,7 +23280,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23715,7 +23295,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23731,7 +23310,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23747,7 +23325,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23763,7 +23340,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23779,7 +23355,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23795,7 +23370,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23811,7 +23385,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23827,7 +23400,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23843,7 +23415,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23859,7 +23430,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23875,7 +23445,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23891,7 +23460,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23907,7 +23475,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23923,7 +23490,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23939,7 +23505,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23955,7 +23520,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23971,7 +23535,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -23987,7 +23550,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24003,7 +23565,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24019,7 +23580,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24035,7 +23595,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24051,7 +23610,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24067,7 +23625,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24083,7 +23640,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24099,7 +23655,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24115,7 +23670,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24131,7 +23685,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24147,7 +23700,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24163,7 +23715,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24179,7 +23730,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24195,7 +23745,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24211,7 +23760,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24227,7 +23775,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24243,7 +23790,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24259,7 +23805,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24275,7 +23820,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'jquery_mobile' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '1.4.5' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images' . $this->R_data['os_path_dir_separator_char'] . 
@@ -24289,7 +23833,7 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filename = 'video-white';
 //                            $file_extension = 'png';
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'js/_lib/frameworks/jquery_mobile/1.4.5/images/icons-png';
+//                                            'js/_lib/jquery_mobile/1.4.5/images/icons-png';
 //                            $filepath .= $this->R_data['os_path_dir_separator_char'] . 
 //                                             $filename . '.' . $file_extension;
 //
@@ -24301,7 +23845,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -24316,7 +23859,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -24331,7 +23873,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -24346,7 +23887,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.11.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -24361,7 +23901,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -24376,7 +23915,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -24391,7 +23929,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.03.3' . $this->R_data['os_path_dir_separator_char'] .
 //                                            'images';
@@ -24406,7 +23943,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -24421,7 +23957,6 @@ class crnrstn_system_asset_manager extends crnrstn
 //                            $filepath = $path . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '_lib' . $this->R_data['os_path_dir_separator_char'] . 
-//                                            'frameworks' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'lightbox.js' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            '2.03.3' . $this->R_data['os_path_dir_separator_char'] . 
 //                                            'images';
@@ -26495,23 +26030,23 @@ class crnrstn_system_asset_manager extends crnrstn
         }
 
         /*
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.external-png-1.4.5.css
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.external-png-1.4.5.min.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.external-png-1.4.5.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.external-png-1.4.5.min.css
 
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.icons-1.4.5.css
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.icons-1.4.5.min.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.icons-1.4.5.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.icons-1.4.5.min.css
 
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.inline-png-1.4.5.css
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.inline-png-1.4.5.min.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.inline-png-1.4.5.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.inline-png-1.4.5.min.css
 
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.inline-svg-1.4.5.css
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.inline-svg-1.4.5.min.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.inline-svg-1.4.5.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.inline-svg-1.4.5.min.css
 
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile-1.4.5.css
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile-1.4.5.min.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile-1.4.5.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile-1.4.5.min.css
 
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.theme-1.4.5.css
-        public_html/_R/ui/js/_lib/frameworks/jquery_mobile/1.4.5/jquery.mobile.theme-1.4.5.min.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.theme-1.4.5.css
+        public_html/_R/ui/js/_lib/jquery_mobile/1.4.5/jquery.mobile.theme-1.4.5.min.css
 
         jquery_mobile_external_png_1_4_5_css
         jquery_mobile_external_png_1_4_5_min_css

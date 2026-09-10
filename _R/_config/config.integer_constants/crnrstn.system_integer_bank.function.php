@@ -329,7 +329,7 @@ function _crnrstn_system_integer_bank(
      * Edit: Renamed $tmp_resource_meta_ARRAY 
      *       variable to $R_meta, replaced 
      *       $tmp_slsh with 
-     *       \DIRECTORY_SEPARATOR and 
+     *       $R_os_path_dir_separator_char and 
      *       adjusted content line wrapping. 
      *       5 :: Wednesday, May 27, 2026 @ 1404 hrs.
      *
@@ -366,7 +366,9 @@ function _crnrstn_system_integer_bank(
      */
 
     // 5 :: Wednesday, July 15, 2026 @ 0748 hrs.
-    $R_int_flag = $R->get_crnrstn('int_flag');
+    $R_int_flag                   = $R->get_crnrstn('int_flag');
+    $R_os_path_dir_separator_char = $R->get_crnrstn('os_path_dir_separator_char');
+    
     switch($resource_constant){
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY':
 
@@ -382,12 +384,11 @@ function _crnrstn_system_integer_bank(
              *
              */
             $R_meta['family']                 = 'JQUERY';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery' . $R_os_path_dir_separator_char . 
                                                 '4.0.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY';
@@ -456,12 +457,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_4_0_0':
 
             $R_meta['family']                 = 'JQUERY';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery' . $R_os_path_dir_separator_char . 
                                                 '4.0.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_4_0_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_4_0_0';
@@ -508,12 +508,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_3_7_0':
 
             $R_meta['family']                 = 'JQUERY';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery' . $R_os_path_dir_separator_char . 
                                                 '3.7.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_3_7_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_3_7_0';
@@ -560,12 +559,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_3_6_1':
 
             $R_meta['family']                 = 'JQUERY';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery' . $R_os_path_dir_separator_char . 
                                                 '3.6.1';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_3_6_1'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_3_6_1';
@@ -612,12 +610,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_2_2_4':
 
             $R_meta['family']                 = 'JQUERY';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery' . $R_os_path_dir_separator_char . 
                                                 '2.2.4';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_2_2_4'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_2_2_4';
@@ -664,12 +661,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_1_12_4':
 
             $R_meta['family']                 = 'JQUERY';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery' . $R_os_path_dir_separator_char . 
                                                 '1.12.4';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_1_12_4'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_1_12_4';
@@ -716,12 +712,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_1_11_1':
 
             $R_meta['family']                 = 'JQUERY';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery' . $R_os_path_dir_separator_char . 
                                                 '1.11.1';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_1_11_1'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_1_11_1';
@@ -779,12 +774,11 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'JQUERY_UI';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery_ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery_ui' . $R_os_path_dir_separator_char . 
                                                 '1.14.2';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_UI'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_UI';
@@ -826,25 +820,24 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE.txt';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'AUTHORS.txt';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_14_2':
 
             $R_meta['family']                 = 'JQUERY_UI';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery_ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery_ui' . $R_os_path_dir_separator_char . 
                                                 '1.14.2';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_14_2'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_14_2';
@@ -886,25 +879,24 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE.txt';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'AUTHORS.txt';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_13_2':
 
             $R_meta['family']                 = 'JQUERY_UI';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery_ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery_ui' . $R_os_path_dir_separator_char . 
                                                 '1.13.2';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_13_2'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_13_2';
@@ -946,25 +938,24 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE.txt';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'AUTHORS.txt';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
         case 'CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_12_1':
 
             $R_meta['family']                 = 'JQUERY_UI';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery_ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery_ui' . $R_os_path_dir_separator_char . 
                                                 '1.12.1';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_12_1'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_UI_1_12_1';
@@ -1005,12 +996,12 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'jquery-ui-1.12.1' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'jquery-ui-1.12.1' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE.txt';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'jquery-ui-1.12.1' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'jquery-ui-1.12.1' . $R_os_path_dir_separator_char . 
                                                                 'AUTHORS.txt';
 
         break;
@@ -1018,12 +1009,11 @@ function _crnrstn_system_integer_bank(
             //case CRNRSTN_JS_FRAMEWORK_JQUERY_MOBILE_1_4_5:  // <-- AS JQUERY_MOBILE IS DISCONTINUED...DO WE NEED TO HOLD THIS DOWN?
 
             $R_meta['family']                 = 'JQUERY_MOBILE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'jquery_mobi' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'jquery_mobi' . $R_os_path_dir_separator_char . 
                                                 '1.4.5';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_JQUERY_MOBILE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_JQUERY_MOBILE';
@@ -1084,8 +1074,8 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['readme_path'][]              = '';
             $R_meta['file_sys']['changelog_path'][]           = '';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'demos' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'demos' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
@@ -1103,12 +1093,11 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'LIGHTBOX_DOT_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'lightbox.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'lightbox.js' . $R_os_path_dir_separator_char . 
                                                 '2.12.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS';
@@ -1166,27 +1155,27 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'DEPLOY.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'JQUERY.md';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'PLAN.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'ROADMAP.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'examples' . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
             //lightbox_js_lokesh_dhakar_hq.png
@@ -1200,12 +1189,11 @@ function _crnrstn_system_integer_bank(
              */
 
             $R_meta['family']                 = 'LIGHTBOX_DOT_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'lightbox.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'lightbox.js' . $R_os_path_dir_separator_char . 
                                                 '2.12.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_12_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_12_0';
@@ -1263,27 +1251,27 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'DEPLOY.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'JQUERY.md';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'PLAN.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'ROADMAP.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'examples' . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
             //lightbox_js_lokesh_dhakar_hq.png
@@ -1292,12 +1280,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_11_3':
 
             $R_meta['family']                 = 'LIGHTBOX_DOT_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'lightbox.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'lightbox.js' . $R_os_path_dir_separator_char . 
                                                 '2.11.3';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_11_3'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_11_3';
@@ -1355,13 +1342,13 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'ROADMAP.md';
 
             //lightbox_js_lokesh_dhakar_hq.png
@@ -1370,12 +1357,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_10_0':
 
             $R_meta['family']                 = 'LIGHTBOX_DOT_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'lightbox.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'lightbox.js' . $R_os_path_dir_separator_char . 
                                                 '2.10.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_10_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_10_0';
@@ -1433,21 +1419,21 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'DEPLOY.md';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'ROADMAP.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'examples' . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
             //lightbox_js_lokesh_dhakar_hq.png
@@ -1456,12 +1442,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_PLUS_JQUERY':
 
             $R_meta['family']                 = 'LIGHTBOX_DOT_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'lightbox.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'lightbox.js' . $R_os_path_dir_separator_char . 
                                                 '2.11.3';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_PLUS_JQUERY'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_PLUS_JQUERY';
@@ -1519,13 +1504,13 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'ROADMAP.md';
 
             //lightbox_js_lokesh_dhakar_hq.png
@@ -1534,12 +1519,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_03_3':
 
             $R_meta['family']                 = 'LIGHTBOX_DOT_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'lightbox.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'lightbox.js' . $R_os_path_dir_separator_char . 
                                                 '2.03.3';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_03_3'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_LIGHTBOX_DOT_JS_2_03_3';
@@ -1592,11 +1576,10 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'REACT';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'react';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_REACT_CDN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_REACT_CDN';
@@ -1648,247 +1631,246 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CODE_OF_CONDUCT.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'SECURITY.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-art' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-art' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-cache' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-cache' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-debug-tools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-debug-tools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'AUTHORS';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CONTRIBUTING.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'OVERVIEW.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-core' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-core' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-extensions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-extensions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-inline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-inline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shared' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shared' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-timeline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-timeline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-dom' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-dom' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-interactions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-interactions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-is' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-is' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-noop-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-noop-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-reconciler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-reconciler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-refresh' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-refresh' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-esm' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-esm' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-webpack' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-webpack' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-suspense-test-utils' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-suspense-test-utils' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-test-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-test-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'scheduler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'scheduler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'use-subscription' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'use-subscription' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'use-sync-external-store' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'use-sync-external-store' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'app.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shell' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shell' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
         case 'CRNRSTN_JS_FRAMEWORK_REACT_CDN_18_2_0':
 
             $R_meta['family']                 = 'REACT';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'react';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_REACT_CDN_18_2_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_REACT_CDN_18_2_0';
@@ -1940,236 +1922,236 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CODE_OF_CONDUCT.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'SECURITY.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-art' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-art' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-cache' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-cache' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-debug-tools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-debug-tools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'AUTHORS';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CONTRIBUTING.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'OVERVIEW.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-core' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-core' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-extensions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-extensions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-inline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-inline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shared' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shared' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-timeline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-timeline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-dom' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-dom' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-interactions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-interactions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-is' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-is' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-noop-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-noop-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-reconciler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-reconciler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-refresh' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-refresh' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-esm' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-esm' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-webpack' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-webpack' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-suspense-test-utils' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-suspense-test-utils' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-test-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-test-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'scheduler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'scheduler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'use-subscription' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'use-subscription' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'use-sync-external-store' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'use-sync-external-store' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'app.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shell' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shell' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
@@ -2187,11 +2169,10 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'REACT';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'react';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_REACT_DOM_CDN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_REACT_DOM_CDN';
@@ -2245,247 +2226,246 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CODE_OF_CONDUCT.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'SECURITY.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-art' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-art' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-cache' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-cache' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-debug-tools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-debug-tools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'AUTHORS';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CONTRIBUTING.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'OVERVIEW.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-core' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-core' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-extensions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-extensions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-inline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-inline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shared' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shared' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-timeline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-timeline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-dom' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-dom' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-interactions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-interactions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-is' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-is' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-noop-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-noop-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-reconciler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-reconciler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-refresh' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-refresh' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-esm' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-esm' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-webpack' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-webpack' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-suspense-test-utils' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-suspense-test-utils' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-test-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-test-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'scheduler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'scheduler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'use-subscription' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'use-subscription' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
                                                                 'use-sync-external-store' .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'app.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shell' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shell' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
         case 'CRNRSTN_JS_FRAMEWORK_REACT_DOM_CDN_18_2_0':
 
             $R_meta['family']                 = 'REACT';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'react';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_REACT_DOM_CDN_18_2_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_REACT_DOM_CDN_18_2_0';
@@ -2538,236 +2518,236 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CODE_OF_CONDUCT.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'SECURITY.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-art' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-art' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-cache' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-cache' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-debug-tools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-debug-tools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-client' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-client' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'AUTHORS';
             $R_meta['file_sys']['authors_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CONTRIBUTING.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'OVERVIEW.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-core' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-core' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-extensions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-extensions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-inline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-inline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shared' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shared' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-timeline' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-timeline' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-dom' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-dom' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-interactions' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-interactions' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-is' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-is' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-noop-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-noop-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-reconciler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-reconciler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-refresh' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-refresh' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-esm' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-esm' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-server-dom-webpack' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-server-dom-webpack' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-suspense-test-utils' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-suspense-test-utils' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-test-renderer' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-test-renderer' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'scheduler' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'scheduler' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'use-subscription' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'use-subscription' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'use-sync-external-store' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'use-sync-external-store' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools' . $R_os_path_dir_separator_char . 
                                                                 'app.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '18.2.0' . \DIRECTORY_SEPARATOR . 
-                                                                'packages' . \DIRECTORY_SEPARATOR . 
-                                                                'react-devtools-shell' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '18.2.0' . $R_os_path_dir_separator_char . 
+                                                                'packages' . $R_os_path_dir_separator_char . 
+                                                                'react-devtools-shell' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
@@ -2785,11 +2765,10 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'MITHRIL';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'mithril';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_MITHRIL_CDN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_MITHRIL_CDN';
@@ -2842,328 +2821,327 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'scripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'scripts' . $R_os_path_dir_separator_char . 
                                                                 'bundler-readme.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'animation.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'api.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'autoredraw.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'buildPathname.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'buildQueryString.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'censor.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'changelog.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'code-of-conduct.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'components.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'contributing.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'credits.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'es6.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'examples.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'fragment.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'framework-comparison.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'hyperscript.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'index.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'installation.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'integrating-libs.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'jsx.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'keys.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'learning-mithril.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'lifecycle-methods.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'migration-v02x.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'migration-v1x.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'mount.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'nav-guides.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'nav-methods.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'parsePathname.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'parseQueryString.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'paths.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'recent-changes.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'redraw.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'releasing.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'render.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'request.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'route.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'signatures.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'simple-application.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'stream.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'support.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'testing.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'trust.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'vnodes.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'performance' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'performance' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'todomvc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'todomvc' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'threaditjs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'threaditjs' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'svg' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'svg' . $R_os_path_dir_separator_char . 
                                                                 'clock.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'svg' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'svg' . $R_os_path_dir_separator_char . 
                                                                 'ring.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'svg' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'svg' . $R_os_path_dir_separator_char . 
                                                                 'tiger.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'editor' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'editor' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'vue' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'vue' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'mithril' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'mithril' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'angular' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'angular' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'animation-stream' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'animation-stream' . $R_os_path_dir_separator_char . 
                                                                 'mosaic-stream.html';
 
         break;
         case 'CRNRSTN_JS_FRAMEWORK_MITHRIL_CDN_2_2_2':
 
             $R_meta['family']                 = 'MITHRIL';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'mithril';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_MITHRIL_CDN_2_2_2'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_MITHRIL_CDN_2_2_2';
@@ -3215,317 +3193,317 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'scripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'scripts' . $R_os_path_dir_separator_char . 
                                                                 'bundler-readme.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'animation.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'api.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'autoredraw.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'buildPathname.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'buildQueryString.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'censor.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'changelog.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'code-of-conduct.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'components.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'contributing.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'credits.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'es6.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'examples.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'fragment.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'framework-comparison.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'hyperscript.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'index.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'installation.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'integrating-libs.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'jsx.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'keys.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'learning-mithril.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'lifecycle-methods.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'migration-v02x.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'migration-v1x.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'mount.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'nav-guides.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'nav-methods.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'parsePathname.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'parseQueryString.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'paths.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'recent-changes.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'redraw.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'releasing.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'render.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'request.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'route.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'signatures.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'simple-application.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'stream.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'support.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'testing.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'trust.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'docs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'docs' . $R_os_path_dir_separator_char . 
                                                                 'vnodes.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'performance' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'performance' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'todomvc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'todomvc' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'threaditjs' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'threaditjs' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'svg' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'svg' . $R_os_path_dir_separator_char . 
                                                                 'clock.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'svg' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'svg' . $R_os_path_dir_separator_char . 
                                                                 'ring.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'svg' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'svg' . $R_os_path_dir_separator_char . 
                                                                 'tiger.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'editor' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'editor' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'vue' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'vue' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'mithril' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'mithril' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'dbmonster' . \DIRECTORY_SEPARATOR . 
-                                                                'angular' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'dbmonster' . $R_os_path_dir_separator_char . 
+                                                                'angular' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.2.3' . \DIRECTORY_SEPARATOR . 
-                                                                'examples' . \DIRECTORY_SEPARATOR . 
-                                                                'animation-stream' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.2.3' . $R_os_path_dir_separator_char . 
+                                                                'examples' . $R_os_path_dir_separator_char . 
+                                                                'animation-stream' . $R_os_path_dir_separator_char . 
                                                                 'mosaic-stream.html';
 
         break;
@@ -3543,11 +3521,10 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'BACKBONE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'backbone';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_BACKBONE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_BACKBONE';
@@ -3601,11 +3578,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_BACKBONE_1_4_1':
 
             $R_meta['family']                 = 'BACKBONE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'backbone';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_BACKBONE_1_4_1'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_BACKBONE_1_4_1';
@@ -3659,11 +3635,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_UMD':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_UMD'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_UMD';
@@ -3735,11 +3710,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD';
@@ -3811,11 +3785,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_UMD_EDGE':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_UMD_EDGE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_UMD_EDGE';
@@ -3888,11 +3861,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_CDN':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_CDN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_CDN';
@@ -3964,11 +3936,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_UNPKG':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_UNPKG'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_UNPKG';
@@ -4040,11 +4011,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_PAGECDN':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_PAGECDN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_PAGECDN';
@@ -4116,11 +4086,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_CDNJS':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_CDNJS'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_UMD_CDNJS';
@@ -4192,11 +4161,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_ESM':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_ESM'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_ESM';
@@ -4268,11 +4236,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM';
@@ -4344,11 +4311,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_ESM_EDGE':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_ESM_EDGE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_ESM_EDGE';
@@ -4420,11 +4386,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_CDN':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_CDN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_CDN';
@@ -4496,11 +4461,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_UNPKG':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_UNPKG'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_UNPKG';
@@ -4572,11 +4536,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_PAGECDN':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_PAGECDN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_PAGECDN';
@@ -4648,11 +4611,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_CDNJS':
 
             $R_meta['family']                 = 'UNDERSCORE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'underscore';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_CDNJS'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_UNDERSCORE_1_13_6_ESM_CDNJS';
@@ -4735,12 +4697,11 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'PROTOTYPE_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'prototype.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'prototype.js' . $R_os_path_dir_separator_char . 
                                                 '1.7.3';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_PROTOTYPE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_PROTOTYPE';
@@ -4790,12 +4751,11 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_PROTOTYPE_1_7_3':
 
             $R_meta['family']                 = 'PROTOTYPE_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'prototype.js' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'prototype.js' . $R_os_path_dir_separator_char . 
                                                 '1.7.3';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_PROTOTYPE_1_7_3'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_PROTOTYPE_1_7_3';
@@ -4846,12 +4806,11 @@ function _crnrstn_system_integer_bank(
         //case CRNRSTN_JS_FRAMEWORK_SCRIPTACULOUS_1_9_0:  // AS THIS IS NO LONGER AN ACTIVE PROJECT, WE SHOULD NOT NEED A VERSION BASED INTEGER.
 
             $R_meta['family']                 = 'SCRIPTACULOUS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'script.aculo.us' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'script.aculo.us' . $R_os_path_dir_separator_char . 
                                                 '1.9.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_SCRIPTACULOUS'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_SCRIPTACULOUS';
@@ -4897,38 +4856,38 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '1.9.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '1.9.0' . $R_os_path_dir_separator_char . 
                                                                 'MIT-LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '1.9.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '1.9.0' . $R_os_path_dir_separator_char . 
                                                                 'README.rdoc';
             $R_meta['file_sys']['changelog_path'][]           = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '1.9.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '1.9.0' . $R_os_path_dir_separator_char . 
                                                                 'CHANGELOG';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '1.9.0' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '1.9.0' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'run_unit_tests.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '1.9.0' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '1.9.0' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'run_functional_tests.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '1.9.0' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
-                                                                'unit' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '1.9.0' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
+                                                                'unit' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '1.9.0' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
-                                                                'functional' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '1.9.0' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
+                                                                'functional' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
@@ -4936,12 +4895,11 @@ function _crnrstn_system_integer_bank(
         //case CRNRSTN_JS_FRAMEWORK_PROTOTYPE_MOOFX_2_0:  // AS THIS IS NO LONGER AN ACTIVE PROJECT, WE SHOULD NOT NEED A VERSION BASED INTEGER.
 
             $R_meta['family']                 = 'MOOFX';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'moo.fx' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'moo.fx' . $R_os_path_dir_separator_char . 
                                                 '2.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_PROTOTYPE_MOOFX'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_PROTOTYPE_MOOFX';
@@ -4984,20 +4942,19 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.0' . $R_os_path_dir_separator_char . 
                                                                 'License.txt';
 
         break;
         case 'CRNRSTN_JS_FRAMEWORK_SWFOBJECT_DOT_JS':
 
             $R_meta['family']                 = 'SWFOBJECT';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'swfobject'. \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'swfobject'. $R_os_path_dir_separator_char . 
                                                 '2.2';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_SWFOBJECT_DOT_JS'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_SWFOBJECT_DOT_JS';
@@ -5031,10 +4988,10 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] .
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index_dynamic.html';
 
         break;
@@ -5052,13 +5009,12 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'MOOTOOLS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'mootools' . \DIRECTORY_SEPARATOR . 
-                                                'more' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'mootools' . $R_os_path_dir_separator_char . 
+                                                'more' . $R_os_path_dir_separator_char . 
                                                 '1.6.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_MOOTOOLS_MORE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_MOOTOOLS_MORE';
@@ -5115,13 +5071,12 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_MOOTOOLS_MORE_1_6_0':
 
             $R_meta['family']                 = 'MOOTOOLS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'mootools' . \DIRECTORY_SEPARATOR . 
-                                                'more' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'mootools' . $R_os_path_dir_separator_char . 
+                                                'more' . $R_os_path_dir_separator_char . 
                                                 '1.6.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_MOOTOOLS_MORE_1_6_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_MOOTOOLS_MORE_1_6_0';
@@ -5189,13 +5144,12 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'MOOTOOLS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' .  \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'mootools' . \DIRECTORY_SEPARATOR . 
-                                                'core' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'mootools' . $R_os_path_dir_separator_char . 
+                                                'core' . $R_os_path_dir_separator_char . 
                                                 '1.6.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_MOOTOOLS_CORE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_MOOTOOLS_CORE';
@@ -5247,13 +5201,12 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_FRAMEWORK_MOOTOOLS_CORE_1_6_0':
 
             $R_meta['family']                 = 'MOOTOOLS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' .  \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'mootools' . \DIRECTORY_SEPARATOR . 
-                                                'core' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'js' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'mootools' . $R_os_path_dir_separator_char . 
+                                                'core' . $R_os_path_dir_separator_char . 
                                                 '1.6.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_FRAMEWORK_MOOTOOLS_CORE_1_6_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_FRAMEWORK_MOOTOOLS_CORE_1_6_0';
@@ -5305,8 +5258,8 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_JS_MAIN':
 
             $R_meta['family']                 = 'CRNRSTN_JS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
                                                 'js';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_JS_MAIN'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_JS_MAIN';
@@ -5356,11 +5309,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_FRAMEWORK_SIMPLE_GRID':
 
             $R_meta['family']                 = 'SIMPLE_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'simple_grid';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_SIMPLE_GRID'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_SIMPLE_GRID';
@@ -5405,7 +5357,7 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
 
             //zachacole_simple_grid_hq.png
@@ -5414,11 +5366,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' .  \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM';
@@ -5469,46 +5420,45 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_24COL':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' .  \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_24COL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_24COL';
@@ -5560,46 +5510,45 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_16COL':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_16COL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_16COL';
@@ -5651,46 +5600,45 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_12COL':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_12COL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_12COL';
@@ -5742,46 +5690,45 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_24COL_RTL':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_24COL_RTL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_24COL_RTL';
@@ -5833,46 +5780,45 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_16COL_RTL':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' .  \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_16COL_RTL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_16COL_RTL';
@@ -5921,46 +5867,45 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_12COL_RTL':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_12COL_RTL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_12COL_RTL';
@@ -6012,46 +5957,45 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_RTL':
 
             $R_meta['family']                 = '960_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 '960_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_RTL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_960_GRID_SYSTEM_RTL';
@@ -6102,35 +6046,35 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'GPL_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'licenses' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'licenses' . $R_os_path_dir_separator_char . 
                                                                 'MIT_license.txt';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'logo_files' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'logo_files' . $R_os_path_dir_separator_char . 
                                                                 'LOGO_USAGE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'code' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'code' . $R_os_path_dir_separator_char . 
                                                                 'demo_24_col_rtl.html';
 
         break;
@@ -6148,12 +6092,11 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'FOUNDATION';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'foundation' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'foundation' . $R_os_path_dir_separator_char . 
                                                 '6.7.5';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_FOUNDATION'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_FOUNDATION';
@@ -6195,19 +6138,18 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_FOUNDATION_6_7_5':
 
             $R_meta['family']                 = 'FOUNDATION';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'foundation' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'foundation' . $R_os_path_dir_separator_char . 
                                                 '6.7.5';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_FOUNDATION_6_7_5'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_FOUNDATION_6_7_5';
@@ -6249,7 +6191,7 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
@@ -6267,11 +6209,10 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'HTML5_BOILERPLATE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'html5_boilerplate';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_HTML5_BOILERPLATE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_HTML5_BOILERPLATE';
@@ -6313,57 +6254,57 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'css.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'extend.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'faq.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'html.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'js.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'html.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'misc.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'TOC.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'usage.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
             //html5_boilerplate_hq.png
@@ -6372,11 +6313,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_FRAMEWORK_HTML5_BOILERPLATE_8_0_0':
 
             $R_meta['family']                 = 'HTML5_BOILERPLATE';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'html5_boilerplate';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_HTML5_BOILERPLATE_8_0_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_HTML5_BOILERPLATE_8_0_0';
@@ -6418,57 +6358,57 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
                                                                 'LICENSE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'css.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'extend.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'faq.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'html.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'js.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'html.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'misc.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'TOC.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
-                                                                'doc' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
+                                                                'doc' . $R_os_path_dir_separator_char . 
                                                                 'usage.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '8.0.0' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '8.0.0' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
             //html5_boilerplate_hq.png
@@ -6477,11 +6417,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_FRAMEWORK_RESPONSIVE_GRID_SYSTEM':
 
             $R_meta['family']                 = 'RESPONSIVE_GRID_SYSTEM';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'responsive_grid_system';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_RESPONSIVE_GRID_SYSTEM'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_RESPONSIVE_GRID_SYSTEM';
@@ -6519,7 +6458,7 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsivegridsystem.html';
 
             //responsive_grid_system_hq.png
@@ -6528,11 +6467,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC':
 
             $R_meta['family']                 = 'UNSEMANTIC';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'unsemantic';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC';
@@ -6571,43 +6509,42 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'javascripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'javascripts' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive-rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt-rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RTL':
 
             $R_meta['family']                 = 'UNSEMANTIC';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'unsemantic';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RTL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RTL';
@@ -6646,43 +6583,42 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'javascripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'javascripts' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive-rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt-rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RESET':
 
             $R_meta['family']                 = 'UNSEMANTIC';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'unsemantic';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RESET'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RESET';
@@ -6721,43 +6657,42 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'javascripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'javascripts' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive-rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt-rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RESET_RTL':
 
             $R_meta['family']                 = 'UNSEMANTIC';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'unsemantic';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RESET_RTL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_RESET_RTL';
@@ -6795,43 +6730,42 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'javascripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'javascripts' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive-rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt-rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_ADAPT':
 
             $R_meta['family']                 = 'UNSEMANTIC';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'unsemantic';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_ADAPT'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_ADAPT';
@@ -6870,43 +6804,42 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'javascripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'javascripts' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive-rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt-rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_ADAPT_RTL':
 
             $R_meta['family']                 = 'UNSEMANTIC';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'unsemantic';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_ADAPT_RTL'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_UNSEMANTIC_ADAPT_RTL';
@@ -6945,43 +6878,42 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'react' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'react' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'assets' . \DIRECTORY_SEPARATOR . 
-                                                                'javascripts' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'assets' . $R_os_path_dir_separator_char . 
+                                                                'javascripts' . $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'responsive-rtl.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'adapt-rtl.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_DEAD_SIMPLE_GRID':
 
             $R_meta['family']                 = 'DEAD_SIMPLE_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'dead_simple_grid';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_DEAD_SIMPLE_GRID'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_DEAD_SIMPLE_GRID';
@@ -7022,13 +6954,13 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'LICENSE.txt';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
             //volodymyr_agafonkin_me_hq.png
@@ -7037,11 +6969,10 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_FRAMEWORK_SKELETON':
 
             $R_meta['family']                 = 'SKELETON';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'skeleton';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_SKELETON'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_SKELETON';
@@ -7087,8 +7018,8 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                '2.0.4' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                '2.0.4' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
@@ -7106,12 +7037,11 @@ function _crnrstn_system_integer_bank(
             */
 
             $R_meta['family']                 = 'RWDGRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'rwdgrid' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'rwdgrid' . $R_os_path_dir_separator_char . 
                                                 '2.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_RWDGRID'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_RWDGRID';
@@ -7153,75 +7083,74 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
                                                                 'MIT%20and%20GPL2%20licenses.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
                                                                 'readme.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'html5shiv.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'mixed-test.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'object-test.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'perf.1.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'perf.2.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
-                                                                'data' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
+                                                                'data' . $R_os_path_dir_separator_char . 
                                                                 'iframed-tests.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_RWDGRID_2_0':
 
             $R_meta['family']                 = 'RWDGRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
-                                                'rwdgrid' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
+                                                'rwdgrid' . $R_os_path_dir_separator_char . 
                                                 '2.0';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_RWDGRID_2_0'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_RWDGRID_2_0';
@@ -7263,73 +7192,72 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['license_path'][]             = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 'MIT%20and%20GPL2%20licenses.md';
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 'MIT%20and%20GPL2%20licenses.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
                                                                 'readme.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'index.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'html5shiv.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'mixed-test.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'object-test.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'perf.1.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
                                                                 'perf.2.html';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
-                                                                'js' . \DIRECTORY_SEPARATOR . 
-                                                                'html5shiv' . \DIRECTORY_SEPARATOR . 
-                                                                'test' . \DIRECTORY_SEPARATOR . 
-                                                                'data' . \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
+                                                                'js' . $R_os_path_dir_separator_char . 
+                                                                'html5shiv' . $R_os_path_dir_separator_char . 
+                                                                'test' . $R_os_path_dir_separator_char . 
+                                                                'data' . $R_os_path_dir_separator_char . 
                                                                 'iframed-tests.html';
 
         break;
         case 'CRNRSTN_CSS_FRAMEWORK_THIS_IS_DALLAS_SIMPLE_GRID':
 
             $R_meta['family']                 = 'THIS_IS_DALLAS_SIMPLE_GRID';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
-                                                'css' . \DIRECTORY_SEPARATOR . 
-                                                '_lib' . \DIRECTORY_SEPARATOR . 
-                                                'frameworks' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
+                                                'css' . $R_os_path_dir_separator_char . 
+                                                '_lib' . $R_os_path_dir_separator_char . 
                                                 'this_is_dallas_simple_grid';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_FRAMEWORK_THIS_IS_DALLAS_SIMPLE_GRID'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_FRAMEWORK_THIS_IS_DALLAS_SIMPLE_GRID';
@@ -7375,18 +7303,18 @@ function _crnrstn_system_integer_bank(
             $R_meta['file_sys']['url']['blog'][]              = '';
             $R_meta['file_sys']['url']['release_notes'][]     = '';
             $R_meta['file_sys']['readme_path'][]              = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'README.md';
             $R_meta['file_sys']['demo_path'][]                = $R_meta['SYSTEM_DIR_PATH'] . 
-                                                                \DIRECTORY_SEPARATOR . 
+                                                                $R_os_path_dir_separator_char . 
                                                                 'index.html';
 
         break;
         case 'CRNRSTN_CSS_MAIN_DESKTOP':
 
             $R_meta['family']                 = 'CRNRSTN_CSS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
                                                 'css';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_MAIN_DESKTOP'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_MAIN_DESKTOP';
@@ -7428,8 +7356,8 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_MAIN_TABLET':
 
             $R_meta['family']                 = 'CRNRSTN_CSS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
                                                 'css';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_MAIN_TABLET'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_MAIN_TABLET';
@@ -7470,8 +7398,8 @@ function _crnrstn_system_integer_bank(
         case 'CRNRSTN_CSS_MAIN_MOBILE':
 
             $R_meta['family']                 = 'CRNRSTN_CSS';
-            $R_meta['resource_dir_path']      = \DIRECTORY_SEPARATOR . 
-                                                'ui' . \DIRECTORY_SEPARATOR . 
+            $R_meta['resource_dir_path']      = $R_os_path_dir_separator_char . 
+                                                'ui' . $R_os_path_dir_separator_char . 
                                                 'css';
             $R_meta[$R_int_flag['R_integer']] = $R_int_flag['CRNRSTN_CSS_MAIN_MOBILE'];
             $R_meta[$R_int_flag['R_string']]  = 'CRNRSTN_CSS_MAIN_MOBILE';
@@ -9379,7 +9307,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -9563,7 +9491,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             // /_R/_config/config.mime_types/text_html/CRNRSTN_HTML/my_NextWeb.html
             // /_R/_config/config.mime_types/text_html/CRNRSTN_HTML/array1.cpp.html
@@ -9951,7 +9879,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -10120,7 +10048,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -10280,7 +10208,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -10388,7 +10316,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -11052,7 +10980,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -11372,7 +11300,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -11584,7 +11512,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -11754,7 +11682,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -11867,7 +11795,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -11980,7 +11908,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -12093,7 +12021,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -12258,7 +12186,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -12445,7 +12373,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -12615,7 +12543,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -12755,7 +12683,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -12916,7 +12844,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -13110,7 +13038,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -13264,7 +13192,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -13366,7 +13294,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -13468,7 +13396,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -13676,7 +13604,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -13861,7 +13789,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -13963,7 +13891,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -14065,7 +13993,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -14167,7 +14095,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -14269,7 +14197,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -14371,7 +14299,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -14473,7 +14401,7 @@ function _crnrstn_system_integer_bank(
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -14677,7 +14605,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -14862,7 +14790,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -15047,7 +14975,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -15548,7 +15476,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -15668,7 +15596,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -15770,7 +15698,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -15870,7 +15798,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -16371,7 +16299,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -16755,7 +16683,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -16857,7 +16785,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -17053,7 +16981,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -17428,7 +17356,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -17530,7 +17458,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -17632,7 +17560,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -17734,7 +17662,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -17836,7 +17764,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -17938,7 +17866,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18040,7 +17968,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18142,7 +18070,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18283,7 +18211,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18422,7 +18350,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18522,7 +18450,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18622,7 +18550,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18722,7 +18650,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18822,7 +18750,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -18922,7 +18850,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19022,7 +18950,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19122,7 +19050,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19222,7 +19150,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19322,7 +19250,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19422,7 +19350,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19522,7 +19450,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19622,7 +19550,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19722,7 +19650,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -19981,7 +19909,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -20240,7 +20168,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -20503,7 +20431,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -20762,7 +20690,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21021,7 +20949,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21280,7 +21208,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21397,7 +21325,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21514,7 +21442,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21631,7 +21559,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21748,7 +21676,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21865,7 +21793,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -21965,7 +21893,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -22106,7 +22034,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -22223,7 +22151,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -22425,7 +22353,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -22644,7 +22572,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -22770,7 +22698,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -22876,7 +22804,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -22982,7 +22910,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -23176,7 +23104,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -23287,7 +23215,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -23393,7 +23321,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -23775,7 +23703,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -23886,7 +23814,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -23997,7 +23925,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24107,7 +24035,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24225,7 +24153,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24341,7 +24269,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24465,7 +24393,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24576,7 +24504,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24687,7 +24615,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24853,7 +24781,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -24968,7 +24896,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25083,7 +25011,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25194,7 +25122,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25305,7 +25233,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25416,7 +25344,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25523,7 +25451,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25619,7 +25547,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25726,7 +25654,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25822,7 +25750,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -25922,7 +25850,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26045,7 +25973,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26151,7 +26079,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26267,7 +26195,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26383,7 +26311,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26494,7 +26422,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26596,7 +26524,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26702,7 +26630,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26856,7 +26784,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -26972,7 +26900,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27078,7 +27006,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27184,7 +27112,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27290,7 +27218,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27396,7 +27324,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27507,7 +27435,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27703,7 +27631,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27819,7 +27747,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -27935,7 +27863,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28041,7 +27969,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28147,7 +28075,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28293,7 +28221,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28414,7 +28342,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28527,7 +28455,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28633,7 +28561,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28739,7 +28667,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28845,7 +28773,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -28961,7 +28889,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29077,7 +29005,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29208,7 +29136,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29310,7 +29238,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29436,7 +29364,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29552,7 +29480,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29668,7 +29596,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29784,7 +29712,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29884,7 +29812,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -29984,7 +29912,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30085,7 +30013,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30185,7 +30113,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30285,7 +30213,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30385,7 +30313,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30487,7 +30415,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30587,7 +30515,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30689,7 +30617,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30791,7 +30719,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -30893,7 +30821,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31010,7 +30938,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31110,7 +31038,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31210,7 +31138,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31469,7 +31397,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31569,7 +31497,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31669,7 +31597,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31877,7 +31805,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -31977,7 +31905,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -32236,7 +32164,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -32336,7 +32264,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -32436,7 +32364,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -32536,7 +32464,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -32845,7 +32773,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -32945,7 +32873,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33045,7 +32973,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33145,7 +33073,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33245,7 +33173,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33345,7 +33273,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33445,7 +33373,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33545,7 +33473,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33647,7 +33575,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33747,7 +33675,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33847,7 +33775,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -33947,7 +33875,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34047,7 +33975,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34147,7 +34075,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34247,7 +34175,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34347,7 +34275,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34447,7 +34375,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34547,7 +34475,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34647,7 +34575,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34747,7 +34675,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -34847,7 +34775,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35055,7 +34983,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35155,7 +35083,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35255,7 +35183,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35355,7 +35283,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35455,7 +35383,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35555,7 +35483,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35655,7 +35583,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35755,7 +35683,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35855,7 +35783,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -35955,7 +35883,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36264,7 +36192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36364,7 +36292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36464,7 +36392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36564,7 +36492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36664,7 +36592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36764,7 +36692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36864,7 +36792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -36964,7 +36892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37064,7 +36992,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37164,7 +37092,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37264,7 +37192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37364,7 +37292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37464,7 +37392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37564,7 +37492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37664,7 +37592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37764,7 +37692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37864,7 +37792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -37964,7 +37892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38064,7 +37992,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38164,7 +38092,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38264,7 +38192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38364,7 +38292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38464,7 +38392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38564,7 +38492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38664,7 +38592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38764,7 +38692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38864,7 +38792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -38964,7 +38892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39064,7 +38992,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39164,7 +39092,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39264,7 +39192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39364,7 +39292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39464,7 +39392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39564,7 +39492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39664,7 +39592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39764,7 +39692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39864,7 +39792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -39964,7 +39892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40064,7 +39992,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40164,7 +40092,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40264,7 +40192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40364,7 +40292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40464,7 +40392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40564,7 +40492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40664,7 +40592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40764,7 +40692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40864,7 +40792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -40964,7 +40892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41064,7 +40992,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41164,7 +41092,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41264,7 +41192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41364,7 +41292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41464,7 +41392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41564,7 +41492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41664,7 +41592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41764,7 +41692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41864,7 +41792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -41964,7 +41892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42064,7 +41992,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42164,7 +42092,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42264,7 +42192,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42364,7 +42292,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42464,7 +42392,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42564,7 +42492,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42664,7 +42592,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42764,7 +42692,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42864,7 +42792,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -42964,7 +42892,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43066,7 +42994,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43168,7 +43096,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43270,7 +43198,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43372,7 +43300,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43472,7 +43400,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43572,7 +43500,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43672,7 +43600,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43772,7 +43700,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43872,7 +43800,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -43972,7 +43900,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44072,7 +44000,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44172,7 +44100,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44294,7 +44222,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44417,7 +44345,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44517,7 +44445,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44617,7 +44545,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44717,7 +44645,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 
@@ -44817,7 +44745,7 @@ In late 2012 and 2013, several projects for alternative implementations for Perl
              * 5
              *
              */
-            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = \DIRECTORY_SEPARATOR . '';
+            $R_meta['file_sys']['UNIT_TEST']['DIR_FILE_PATH'] = $R_os_path_dir_separator_char . '';
 
             /* # C # R # N # R # S # T # N # :: # L # I # G # H # T
              * Specifiy a system file 

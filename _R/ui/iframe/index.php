@@ -808,81 +808,81 @@ else
     <script type="application/json" src="<?php
         echo $R_directory_shift . '/' .
              $R_framework_directory .
-             '/ui/js/_lib/frameworks/jquery/4.0.0/' .
+             '/ui/js/_lib/jquery/4.0.0/' .
              'jquery-4.0.0.min.map?'.
              $session_salt . '=jquery-4.0.0.min.map' .
              '&R_cache=' .
              $R->file_url_cache_id(
                  $root .
-                 '/ui/js/_lib/frameworks/jquery/4.0.0/' .
+                 '/ui/js/_lib/jquery/4.0.0/' .
                  'jquery-4.0.0.min.map');
     ?>"></script>
     <script type="text/javascript" src="<?php
         echo $R_directory_shift . '/' .
              $R_framework_directory .
-             '/ui/js/_lib/frameworks/jquery/4.0.0/' .
+             '/ui/js/_lib/jquery/4.0.0/' .
              'jquery-4.0.0.min.js?'.
              $session_salt . '=jquery-4.0.0.min.js' .
              '&R_cache=' .
              $R->file_url_cache_id(
                  $root .
-                 '/ui/js/_lib/frameworks/jquery/4.0.0/' .
+                 '/ui/js/_lib/jquery/4.0.0/' .
                  'jquery-4.0.0.min.js');
     ?>"></script>
     <link type="text/css" rel="stylesheet" href="<?php
         echo $R_directory_shift . '/' .
              $R_framework_directory .
-             '/ui/js/_lib/frameworks/lightbox.js' .
+             '/ui/js/_lib/lightbox.js' .
              '/2.12.0/dist/css/lightbox.min.css?' .
              $session_salt . '=lightbox.min.css' .
              '&R_cache=' .
              $R->file_url_cache_id($root .
-                 '/ui/js/_lib/frameworks/lightbox.js' .
+                 '/ui/js/_lib/lightbox.js' .
                  '/2.12.0/dist/css/lightbox.min.css');
     ?>">
     <link type="text/css" rel="stylesheet" href="<?php
         echo $R_directory_shift . '/' .
              $R_framework_directory .
-             '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' .
+             '/ui/js/_lib/jquery_ui/1.14.2/' .
              'jquery-ui.theme.min.css?' .
              $session_salt . '=jquery-ui-1.14.2/jquery-ui.theme.min.css' .
              '&R_cache=' .
              $R->file_url_cache_id(
                  $root .
-                 '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' .
+                 '/ui/js/_lib/jquery_ui/1.14.2/' .
                  'jquery-ui.theme.min.css');
     ?>">
     <link type="text/css" rel="stylesheet" href="<?php
         echo $R_directory_shift . '/' .
              $R_framework_directory .
-             '/ui/js/_lib/frameworks/jquery_ui/1.14.2' .
+             '/ui/js/_lib/jquery_ui/1.14.2' .
              '/jquery-ui.structure.min.css?' .
              $session_salt . '=jquery-ui-1.14.2/jquery-ui.structure.min.css' .
              '&R_cache=' .
              $R->file_url_cache_id($root .
-                 '/ui/js/_lib/frameworks/jquery_ui/1.14.2' .
+                 '/ui/js/_lib/jquery_ui/1.14.2' .
                  '/jquery-ui.structure.min.css');
     ?>">
     <link type="text/css" rel="stylesheet" href="<?php
         echo $R_directory_shift . '/' .
              $R_framework_directory .
-             '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' .
+             '/ui/js/_lib/jquery_ui/1.14.2/' .
              'jquery-ui.min.css?'.
              $session_salt . '=jquery-ui-1.14.2/jquery-ui.min.css' .
              '&R_cache=' .
              $R->file_url_cache_id($root .
-                 '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' .
+                 '/ui/js/_lib/jquery_ui/1.14.2/' .
                  'jquery-ui.min.css');
     ?>">
     <script type="text/javascript" src="<?php
         echo $R_directory_shift . '/' .
              $R_framework_directory .
-             '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' .
+             '/ui/js/_lib/jquery_ui/1.14.2/' .
              'jquery-ui.min.js?'.
              $session_salt . '=jquery-ui-1.14.2/jquery-ui.min.js' .
              '&R_cache=' .
              $R->file_url_cache_id($root .
-                 '/ui/js/_lib/frameworks/jquery_ui/1.14.2/' .
+                 '/ui/js/_lib/jquery_ui/1.14.2/' .
                  'jquery-ui.min.js');
     ?>"></script>
     <script type="text/javascript" src="<?php
